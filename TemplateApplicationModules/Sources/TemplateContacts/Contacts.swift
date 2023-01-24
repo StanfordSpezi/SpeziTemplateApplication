@@ -11,6 +11,7 @@ import Foundation
 import SwiftUI
 
 
+/// <#Description#>
 public struct Contacts: View {
     let contacts = [
         Contact(

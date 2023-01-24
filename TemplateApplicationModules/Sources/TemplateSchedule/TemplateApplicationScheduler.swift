@@ -6,15 +6,17 @@
 // SPDX-License-Identifier: MIT
 //
 
-import Scheduler
 import FHIR
 import Foundation
+import Scheduler
 
 
+/// <#Description#>
 public typealias TemplateApplicationScheduler = Scheduler<FHIR, TemplateApplicationTaskContext>
 
 
 extension TemplateApplicationScheduler {
+    /// <#Description#>
     public convenience init() {
         self.init(
             tasks: [
