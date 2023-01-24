@@ -11,7 +11,7 @@ import Foundation
 import SwiftUI
 
 
-/// <#Description#>
+/// Displays the contacts for the CardinalKit Template Application.
 public struct Contacts: View {
     let contacts = [
         Contact(

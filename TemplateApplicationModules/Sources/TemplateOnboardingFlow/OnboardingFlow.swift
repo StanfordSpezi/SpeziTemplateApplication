@@ -10,7 +10,7 @@ import SwiftUI
 import TemplateSharedContext
 
 
-/// <#Description#>
+/// Displays an multi-step onboarding flow for the CardinalKit Template Application.
 public struct OnboardingFlow: View {
     enum Step: String, Codable {
         case interestingModules
