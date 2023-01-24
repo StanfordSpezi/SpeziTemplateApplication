@@ -669,8 +669,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordBDHG/CardinalKit";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.0;
+				branch = bugfix/buildError;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

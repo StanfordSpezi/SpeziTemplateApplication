@@ -21,10 +21,10 @@
     {
       "identity" : "cardinalkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordBDHG/CardinalKit.git",
+      "location" : "https://github.com/StanfordBDHG/CardinalKit",
       "state" : {
-        "revision" : "0ea23b3cb37dbabac3841c1a1486b6318c70f6ad",
-        "version" : "0.2.0"
+        "branch" : "bugfix/buildError",
+        "revision" : "a15670689674b5f543b2a6b33998006202c89b2f"
       }
     },
     {
