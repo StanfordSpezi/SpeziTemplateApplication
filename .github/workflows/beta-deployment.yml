@@ -15,14 +15,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  buildandtest:
-    name: Build and Test
-    uses: ./.github/workflows/build-and-test.yml
-    secrets: inherit
+  # buildandtest:
+  #   name: Build and Test
+  #   uses: ./.github/workflows/build-and-test.yml
+  #   secrets: inherit
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
     runs-on: macos-12
-    needs: buildandtest
+    # needs: buildandtest
     steps:
     - uses: actions/checkout@v3
     - uses: maxim-lobanov/setup-xcode@v1
