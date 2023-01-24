@@ -12,6 +12,8 @@
 		<dict/>
 	</dict>
 	<key>NSHealthShareUsageDescription</key>
-	<string>The CardinalKit Template Application uses the step count to demonstrate CardinalKit&apos;s integration with HealthKit</string>
+	<string>The CardinalKit Template Application uses the step count to demonstrate CardinalKit&apos;s integration with HealthKit.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>The CardinalKit Template Application uses the step count to demonstrate CardinalKit&apos;s integration with HealthKit.</string>
 </dict>
 </plist>
