@@ -78,6 +78,9 @@ extension OnboardingTests {
             app.staticTexts["CardinalKit offers several modules including HealthKit integration, questionnaires, and more ..."]
                 .waitForExistence(timeout: 0.5)
         )
+        
+        XCTAssertTrue(app.buttons["Learn More"].waitForExistence(timeout: 0.5))
+        app.buttons["Learn More"].tap()
     }
     
     private static func navigateOnboardingFlowInterestingModules() throws {
@@ -118,6 +121,7 @@ extension OnboardingTests {
             app.staticTexts["The HealthKit data source module allows you to fetch data from HealthKit and e.g. transform it to FHIR resources."]
                 .waitForExistence(timeout: 0.5)
         )
+        
         XCTAssertTrue(app.buttons["Next"].waitForExistence(timeout: 0.5))
         app.buttons["Next"].tap()
     }
