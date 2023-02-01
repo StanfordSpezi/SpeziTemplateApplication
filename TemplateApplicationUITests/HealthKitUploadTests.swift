@@ -19,7 +19,7 @@ class HealthKitUploadTests: XCTestCase {
     
     func testHealthKitMockUpload() throws {
         let app = XCUIApplication()
-        app.launch()
+        app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
         
         try OnboardingTests.conductOnboardingIfNeeded()
         

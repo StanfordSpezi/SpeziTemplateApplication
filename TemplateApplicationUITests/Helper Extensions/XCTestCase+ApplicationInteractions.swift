@@ -9,11 +9,9 @@
 import XCTest
 
 
-extension XCTestCase {
-    func delete(applicationNamed appName: String) {
-        let app = XCUIApplication()
-        app.launch()
-        app.terminate()
+extension XCUIApplication {
+    func deleteAndLaunch(withSpringboardAppName appName: String) {
+        self.terminate()
         
         let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
         
@@ -26,5 +24,7 @@ extension XCTestCase {
         springboard.alerts["Remove “\(appName)”?"].scrollViews.otherElements.buttons["Delete App"].tap()
         XCTAssertTrue(springboard.alerts["Delete “\(appName)”?"].scrollViews.otherElements.buttons["Delete"].waitForExistence(timeout: 0.5))
         springboard.alerts["Delete “\(appName)”?"].scrollViews.otherElements.buttons["Delete"].tap()
+        
+        self.launch()
     }
 }

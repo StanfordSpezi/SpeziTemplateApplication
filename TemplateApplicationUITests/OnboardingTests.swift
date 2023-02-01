@@ -21,7 +21,7 @@ class OnboardingTests: XCTestCase {
     func testOnboardingFlow() throws {
         let app = XCUIApplication()
         app.launchArguments = ["--showOnboarding"]
-        app.launch()
+        app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
         
         try OnboardingTests.navigateOnboardingFlow()
         
