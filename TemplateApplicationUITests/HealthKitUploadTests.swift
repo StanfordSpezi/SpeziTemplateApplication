@@ -14,14 +14,18 @@ class HealthKitUploadTests: XCTestCase {
         try super.setUpWithError()
         
         continueAfterFailure = false
+        
+        let app = XCUIApplication()
+        app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
     }
     
     
     func testHealthKitMockUpload() throws {
         let app = XCUIApplication()
-        app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
         
-        try OnboardingTests.conductOnboardingIfNeeded()
+        print("********** deleteAndLaunch worked **********")
+        try app.conductOnboardingIfNeeded()
+        print("********** navigateOnboardingFlow worked **********")
         
         try navigateToMockUpload()
         try assertObservationCellPresent(false)
