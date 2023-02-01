@@ -19,7 +19,7 @@ class SchedulerAndQuestionnaireTests: XCTestCase {
     
     func testSchedulerAndQuestionnaire() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["--hideOnboarding"]
+        app.launchArguments = ["--skipOnboarding"]
         app.launch()
         
         XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Schedule"].waitForExistence(timeout: 0.5))

@@ -17,9 +17,9 @@ class ContactsTests: XCTestCase {
     }
     
     
-    func testSchedulerAndQuestionnaire() throws {
+    func testContacts() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["--hideOnboarding"]
+        app.launchArguments = ["--skipOnboarding"]
         app.launch()
         
         XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Contacts"].waitForExistence(timeout: 0.5))

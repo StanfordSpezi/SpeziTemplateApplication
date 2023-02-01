@@ -12,11 +12,12 @@ import XCTest
 extension XCTestCase {
     func delete(applicationNamed appName: String) {
         let app = XCUIApplication()
+        app.launch()
         app.terminate()
         
         let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
         
-        XCTAssertTrue(springboard.icons[appName].waitForExistence(timeout: 0.5))
+        XCTAssertTrue(springboard.icons[appName].waitForExistence(timeout: 2.0))
         springboard.icons[appName].press(forDuration: 1.5)
         
         XCTAssertTrue(springboard.collectionViews.buttons["Remove App"].waitForExistence(timeout: 0.5))
