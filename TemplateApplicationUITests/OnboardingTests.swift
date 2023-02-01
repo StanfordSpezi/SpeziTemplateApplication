@@ -19,9 +19,6 @@ class OnboardingTests: XCTestCase {
     
     
     func testOnboardingFlow() throws {
-        // We delete the application to reset HealthKit permissions.
-        delete(applicationNamed: "TemplateApplication")
-        
         let app = XCUIApplication()
         app.launchArguments = ["--showOnboarding"]
         app.launch()

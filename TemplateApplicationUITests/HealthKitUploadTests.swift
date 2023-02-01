@@ -18,8 +18,6 @@ class HealthKitUploadTests: XCTestCase {
     
     
     func testHealthKitMockUpload() throws {
-        delete(applicationNamed: "TemplateApplication")
-        
         let app = XCUIApplication()
         app.launch()
         
