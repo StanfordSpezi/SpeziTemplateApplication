@@ -45,7 +45,9 @@ extension XCUIApplication {
     func navigateOnboardingFlow(assertThatHealthKitConsentIsShown: Bool = true) throws {
         try navigateOnboardingFlowWelcome()
         try navigateOnboardingFlowInterestingModules()
-        try navigateOnboardingFlowConsent()
+        if staticTexts["Consent Example"].waitForExistence(timeout: 0.5) {
+            try navigateOnboardingFlowConsent()
+        }
         try navigateOnboardingFlowHealthKitAccess(assertThatHealthKitConsentIsShown: assertThatHealthKitConsentIsShown)
     }
     
