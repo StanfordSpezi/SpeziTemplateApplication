@@ -25,7 +25,7 @@ class OnboardingTests: XCTestCase {
     func testOnboardingFlow() throws {
         let app = XCUIApplication()
         
-        try app.navigateOnboardingFlow()
+        try app.navigateOnboardingFlow(assertThatHealthKitConsentIsShown: false)
         
         let tabBar = app.tabBars["Tab Bar"]
         XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 0.5))
@@ -38,15 +38,15 @@ class OnboardingTests: XCTestCase {
 extension XCUIApplication {
     func conductOnboardingIfNeeded() throws {
         if self.staticTexts["CardinalKit\nTemplate Application"].waitForExistence(timeout: 0.5) {
-            try navigateOnboardingFlow()
+            try navigateOnboardingFlow(assertThatHealthKitConsentIsShown: false)
         }
     }
     
-    func navigateOnboardingFlow() throws {
+    func navigateOnboardingFlow(assertThatHealthKitConsentIsShown: Bool = true) throws {
         try navigateOnboardingFlowWelcome()
         try navigateOnboardingFlowInterestingModules()
         try navigateOnboardingFlowConsent()
-        try navigateOnboardingFlowHealthKitAccess()
+        try navigateOnboardingFlowHealthKitAccess(assertThatHealthKitConsentIsShown: assertThatHealthKitConsentIsShown)
     }
     
     private func navigateOnboardingFlowWelcome() throws {
@@ -147,7 +147,7 @@ extension XCUIApplication {
         buttons["I Consent"].tap()
     }
     
-    private func navigateOnboardingFlowHealthKitAccess() throws {
+    private func navigateOnboardingFlowHealthKitAccess(assertThatHealthKitConsentIsShown: Bool = true) throws {
         XCTAssertTrue(staticTexts["HealthKit Access"].waitForExistence(timeout: 0.5))
         XCTAssertTrue(
             staticTexts["CardinalKit can access data from HealthKit using the HealthKitDataSource module."].waitForExistence(timeout: 0.5)
@@ -157,6 +157,8 @@ extension XCUIApplication {
         
         buttons["Grant Access"].tap()
         
-        try handleHealthKitAuthorization()
+        if self.navigationBars["Health Access"].waitForExistence(timeout: 20) || assertThatHealthKitConsentIsShown {
+            try handleHealthKitAuthorization()
+        }
     }
 }

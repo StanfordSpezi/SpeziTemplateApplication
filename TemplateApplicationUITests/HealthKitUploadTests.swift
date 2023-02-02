@@ -9,6 +9,7 @@
 import XCTest
 import XCTHealthKit
 
+
 class HealthKitUploadTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -16,16 +17,14 @@ class HealthKitUploadTests: XCTestCase {
         continueAfterFailure = false
         
         let app = XCUIApplication()
-        app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
+        app.launch()
     }
     
     
     func testHealthKitMockUpload() throws {
         let app = XCUIApplication()
         
-        print("********** deleteAndLaunch worked **********")
         try app.conductOnboardingIfNeeded()
-        print("********** navigateOnboardingFlow worked **********")
         
         try navigateToMockUpload()
         try assertObservationCellPresent(false)
