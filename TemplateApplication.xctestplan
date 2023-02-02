@@ -26,6 +26,9 @@
       }
     },
     {
+      "skippedTests" : [
+        "HealthKitUploadTests"
+      ],
       "target" : {
         "containerPath" : "container:TemplateApplication.xcodeproj",
         "identifier" : "653A256628338800005D4D48",

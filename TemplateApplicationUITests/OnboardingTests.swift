@@ -18,16 +18,14 @@ class OnboardingTests: XCTestCase {
         
         let app = XCUIApplication()
         app.launchArguments = ["--showOnboarding"]
-        app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
+        app.launch()
     }
     
     
     func testOnboardingFlow() throws {
         let app = XCUIApplication()
         
-        print("********** deleteAndLaunch worked **********")
         try app.navigateOnboardingFlow()
-        print("********** navigateOnboardingFlow worked **********")
         
         let tabBar = app.tabBars["Tab Bar"]
         XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 0.5))
@@ -143,7 +141,7 @@ extension XCUIApplication {
         staticTexts["Given Name"].swipeUp()
         
         XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 0.5))
-        staticTexts["Leland Stanford"].swipeUp()
+        staticTexts["Leland Stanford"].firstMatch.swipeUp()
         
         XCTAssertTrue(buttons["I Consent"].waitForExistence(timeout: 0.5))
         buttons["I Consent"].tap()
