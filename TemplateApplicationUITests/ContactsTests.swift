@@ -14,13 +14,15 @@ class ContactsTests: XCTestCase {
         try super.setUpWithError()
         
         continueAfterFailure = false
+        
+        let app = XCUIApplication()
+        app.launchArguments = ["--skipOnboarding"]
+        app.launch()
     }
     
     
     func testContacts() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["--skipOnboarding"]
-        app.launch()
         
         XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Contacts"].waitForExistence(timeout: 0.5))
         app.tabBars["Tab Bar"].buttons["Contacts"].tap()

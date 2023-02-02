@@ -18,7 +18,7 @@ class HealthKitUploadTests: XCTestCase {
         
         let app = XCUIApplication()
         app.launchArguments = ["--showOnboarding"]
-        app.launch()
+        app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
     }
     
     

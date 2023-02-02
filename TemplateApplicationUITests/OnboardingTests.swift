@@ -18,14 +18,14 @@ class OnboardingTests: XCTestCase {
         
         let app = XCUIApplication()
         app.launchArguments = ["--showOnboarding"]
-        app.launch()
+        app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
     }
     
     
     func testOnboardingFlow() throws {
         let app = XCUIApplication()
         
-        try app.navigateOnboardingFlow(assertThatHealthKitConsentIsShown: false)
+        try app.navigateOnboardingFlow(assertThatHealthKitConsentIsShown: true)
         
         let tabBar = app.tabBars["Tab Bar"]
         XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 0.5))

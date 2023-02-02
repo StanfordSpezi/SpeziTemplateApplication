@@ -14,13 +14,15 @@ class SchedulerAndQuestionnaireTests: XCTestCase {
         try super.setUpWithError()
         
         continueAfterFailure = false
+        
+        let app = XCUIApplication()
+        app.launchArguments = ["--skipOnboarding"]
+        app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
     }
     
     
     func testSchedulerAndQuestionnaire() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["--skipOnboarding"]
-        app.launch()
         
         XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Schedule"].waitForExistence(timeout: 0.5))
         app.tabBars["Tab Bar"].buttons["Schedule"].tap()
