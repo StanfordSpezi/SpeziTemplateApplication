@@ -17,6 +17,7 @@ class HealthKitUploadTests: XCTestCase {
         continueAfterFailure = false
         
         let app = XCUIApplication()
+        app.launchArguments = ["--showOnboarding"]
         app.launch()
     }
     

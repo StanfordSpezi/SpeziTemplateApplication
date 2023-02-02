@@ -157,8 +157,11 @@ extension XCUIApplication {
         
         buttons["Grant Access"].tap()
         
-        if self.navigationBars["Health Access"].waitForExistence(timeout: 20) || assertThatHealthKitConsentIsShown {
-            try handleHealthKitAuthorization()
+        if self.navigationBars["Health Access"].waitForExistence(timeout: 30) {
+            self.tables.staticTexts["Turn On All"].tap()
+            self.navigationBars["Health Access"].buttons["Allow"].tap()
+        } else if assertThatHealthKitConsentIsShown {
+            XCTFail("Did not display the HealthKit Consent Screen")
         }
     }
 }
