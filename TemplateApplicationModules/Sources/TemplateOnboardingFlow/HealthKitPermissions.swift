@@ -8,7 +8,6 @@
 
 import FHIR
 import HealthKitDataSource
-import HealthKitToFHIRAdapter
 import Onboarding
 import SwiftUI
 import TemplateSharedContext
