@@ -55,7 +55,6 @@ let package = Package(
                 .target(name: "TemplateSharedContext"),
                 .product(name: "FHIR", package: "CardinalKit"),
                 .product(name: "HealthKitDataSource", package: "CardinalKit"),
-                .product(name: "HealthKitToFHIRAdapter", package: "CardinalKit"),
                 .product(name: "Onboarding", package: "CardinalKit")
             ],
             resources: [
