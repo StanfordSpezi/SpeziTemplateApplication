@@ -134,12 +134,10 @@ extension XCUIApplication {
         )
         
         XCTAssertTrue(staticTexts["Given Name"].waitForExistence(timeout: 5))
-        staticTexts["Given Name"].tap()
-        textFields["Enter your given name ..."].typeText("Leland")
+        try textFields["Enter your given name ..."].enter(value: "Leland")
         
         XCTAssertTrue(staticTexts["Family Name"].waitForExistence(timeout: 5))
-        staticTexts["Family Name"].tap()
-        textFields["Enter your family name ..."].typeText("Stanford")
+        try textFields["Enter your family name ..."].enter(value: "Stanford")
         
         staticTexts["Given Name"].swipeUp()
         

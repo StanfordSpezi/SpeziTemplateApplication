@@ -34,7 +34,7 @@ struct Consent: View {
                 consentDocument
             },
             action: {
-                onboardingSteps.append(.healthKitPermissions)
+                onboardingSteps.append(.accountSetup)
             }
         )
     }
