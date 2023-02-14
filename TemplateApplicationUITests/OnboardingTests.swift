@@ -178,10 +178,10 @@ extension XCUIApplication {
         swipeUp()
         
         try textFields["Enter your given name ..."].enter(value: "Leland")
-        swipeUp()
+        staticTexts["Repeat\nPassword"].swipeUp()
         
         try textFields["Enter your family name ..."].enter(value: "Stanford")
-        swipeUp()
+        staticTexts["Repeat\nPassword"].swipeUp()
         
         collectionViews.buttons["Sign Up"].tap()
         
