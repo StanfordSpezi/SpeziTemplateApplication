@@ -171,10 +171,20 @@ extension XCUIApplication {
         try textFields["Enter your email ..."].enter(value: "leland@stanford.edu")
         swipeUp()
         
-        try secureTextFields["Enter your password ..."].enter(value: "StanfordRocks!")
+        do {
+            try secureTextFields["Enter your password ..."].enter(value: "StanfordRocks!")
+        } catch {
+            try secureTextFields["Enter your password ..."].delete(count: 42)
+            try secureTextFields["Enter your password ..."].enter(value: "StanfordRocks!")
+        }
         swipeUp()
         
-        try secureTextFields["Repeat your password ..."].enter(value: "StanfordRocks!")
+        do {
+            try secureTextFields["Repeat your password ..."].enter(value: "StanfordRocks!")
+        } catch {
+            try secureTextFields["Repeat your password ..."].delete(count: 42)
+            try secureTextFields["Repeat your password ..."].enter(value: "StanfordRocks!")
+        }
         swipeUp()
         
         try textFields["Enter your given name ..."].enter(value: "Leland")
