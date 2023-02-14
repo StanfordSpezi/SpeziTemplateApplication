@@ -51,6 +51,12 @@ jobs:
     - name: Build and Test Example App
       run: |
           firebase emulators:exec 'bundler install && bundle exec fastlane test'
+    - name: Upload Artifact
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: TemplateApplication.xcresult
+        path: TemplateApplication.xcresult
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
