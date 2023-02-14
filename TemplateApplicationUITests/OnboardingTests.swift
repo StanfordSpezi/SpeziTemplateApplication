@@ -169,23 +169,26 @@ extension XCUIApplication {
         buttons["Email and Password"].tap()
         
         try textFields["Enter your email ..."].enter(value: "leland@stanford.edu")
-        textFields["Enter your email ..."].typeText("\n")
+        swipeUp()
         
         try secureTextFields["Enter your password ..."].enter(value: "StanfordRocks!")
-        secureTextFields["Enter your password ..."].typeText("\n")
+        swipeUp()
         
         try secureTextFields["Repeat your password ..."].enter(value: "StanfordRocks!")
-        secureTextFields["Repeat your password ..."].typeText("\n")
+        swipeUp()
         
         try textFields["Enter your given name ..."].enter(value: "Leland")
-        textFields["Enter your given name ..."].typeText("\n")
+        swipeUp()
         
         try textFields["Enter your family name ..."].enter(value: "Stanford")
-        textFields["Enter your family name ..."].typeText("\n")
+        swipeUp()
         
         collectionViews.buttons["Sign Up"].tap()
         
+        sleep(3)
+        
         XCTAssertTrue(navigationBars["Sign Up"].buttons["Back"].waitForExistence(timeout: 5))
+        navigationBars["Sign Up"].buttons["Back"].tap()
         
         XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 5))
         XCTAssertTrue(staticTexts["leland@stanford.edu"].waitForExistence(timeout: 5))
