@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/CardinalKit",
       "state" : {
-        "branch" : "feature/firebaseImprovements",
-        "revision" : "b1796bc682f5dc8d2f6dd589e4a754435a4cecaf"
+        "revision" : "f86fd8e39b64c685ee57e691b84f1cf851c146ae",
+        "version" : "0.3.0"
       }
     },
     {
