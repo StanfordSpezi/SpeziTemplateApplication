@@ -18,6 +18,7 @@ struct IconView: View {
         Image(uiImage: Bundle.module.image(withName: "AppIcon", fileExtension: "png"))
             .resizable()
             .scaledToFill()
+            .accessibilityLabel(Text("App Icon"))
             .frame(width: size, height: size)
             .clipShape(RoundedRectangle(cornerRadius: size / 5))
             .shadow(color: Color(.systemGray4), radius: 4, x: 0, y: 4)
@@ -31,6 +32,7 @@ struct IconView: View {
 }
 
 
+#if DEBUG
 struct IconView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
@@ -39,3 +41,4 @@ struct IconView_Previews: PreviewProvider {
         }
     }
 }
+#endif
