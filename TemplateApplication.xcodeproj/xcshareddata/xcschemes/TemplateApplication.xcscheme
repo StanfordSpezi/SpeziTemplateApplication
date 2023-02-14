@@ -79,7 +79,11 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "--showOnboarding"
-            isEnabled = "YES">
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "--disableFirebase"
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "--skipOnboarding"

@@ -26,8 +26,10 @@ import TemplateSchedule
 class TemplateAppDelegate: CardinalKitAppDelegate {
     override var configuration: Configuration {
         Configuration(standard: FHIR()) {
-            FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))
-            firestore
+            if !CommandLine.arguments.contains("--disableFirebase") {
+                FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))
+                firestore
+            }
             if HKHealthStore.isHealthDataAvailable() {
                 healthKit
             }
