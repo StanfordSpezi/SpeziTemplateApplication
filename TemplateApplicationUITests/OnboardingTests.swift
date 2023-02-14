@@ -171,8 +171,10 @@ extension XCUIApplication {
         try textFields["Enter your email ..."].enter(value: "leland@stanford.edu")
         swipeUp()
         
+        secureTextFields["Enter your password ..."].tap()
         secureTextFields["Enter your password ..."].typeText("StanfordRocks")
         swipeUp()
+        secureTextFields["Repeat your password ..."].tap()
         secureTextFields["Repeat your password ..."].typeText("StanfordRocks")
         swipeUp()
         
