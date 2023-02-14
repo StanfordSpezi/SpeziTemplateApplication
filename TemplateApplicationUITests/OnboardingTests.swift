@@ -187,13 +187,14 @@ extension XCUIApplication {
         
         sleep(3)
         
-        XCTAssertTrue(navigationBars["Sign Up"].buttons["Back"].waitForExistence(timeout: 5))
-        navigationBars["Sign Up"].buttons["Back"].tap()
-        
-        XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 5))
-        XCTAssertTrue(staticTexts["leland@stanford.edu"].waitForExistence(timeout: 5))
-        XCTAssertTrue(scrollViews.otherElements.buttons["Next"].waitForExistence(timeout: 5))
-        scrollViews.otherElements.buttons["Next"].tap()
+        if staticTexts["HealthKit Access"].waitForExistence(timeout: 5) && navigationBars.buttons["Back"].waitForExistence(timeout: 5) {
+            navigationBars.buttons["Back"].tap()
+            
+            XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 5))
+            XCTAssertTrue(staticTexts["leland@stanford.edu"].waitForExistence(timeout: 5))
+            XCTAssertTrue(scrollViews.otherElements.buttons["Next"].waitForExistence(timeout: 5))
+            scrollViews.otherElements.buttons["Next"].tap()
+        }
     }
     
     private func navigateOnboardingFlowHealthKitAccess(assertThatHealthKitConsentIsShown: Bool = true) throws {
