@@ -60,6 +60,10 @@ let package = Package(
                 .product(name: "Onboarding", package: "CardinalKit"),
                 .product(name: "Views", package: "CardinalKit")
             ],
+            exclude: [
+                "Resources/en.lproj/ConsentDocument.md.license",
+                "Resources/AppIcon.png.license"
+            ],
             resources: [
                 .process("Resources")
             ]

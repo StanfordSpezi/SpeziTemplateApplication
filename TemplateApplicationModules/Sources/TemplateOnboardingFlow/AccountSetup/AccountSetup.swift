@@ -26,10 +26,10 @@ struct AccountSetup: View {
                         title: "ACCOUNT_TITLE".moduleLocalized,
                         subtitle: "ACCOUNT_SUBTITLE".moduleLocalized
                     )
-                    Spacer()
+                    Spacer(minLength: 0)
                     accountImage
                     accountDescription
-                    Spacer()
+                    Spacer(minLength: 0)
                 }
             }, actionView: {
                 actionView
@@ -71,9 +71,9 @@ struct AccountSetup: View {
         VStack {
             Group {
                 if account.signedIn {
-                    Text("ACCOUNT_SETUP_DESCRIPTION", bundle: .module)
-                } else {
                     Text("ACCOUNT_SIGNED_IN_DESCRIPTION", bundle: .module)
+                } else {
+                    Text("ACCOUNT_SETUP_DESCRIPTION", bundle: .module)
                 }
             }
                 .multilineTextAlignment(.center)
@@ -89,18 +89,18 @@ struct AccountSetup: View {
     private var actionView: some View {
         if account.signedIn {
             OnboardingActionsView(
-                "ACCOUNT_NEXT",
+                "ACCOUNT_NEXT".moduleLocalized,
                 action: {
                     onboardingSteps.append(.healthKitPermissions)
                 }
             )
         } else {
             OnboardingActionsView(
-                primaryText: "ACCOUNT_SIGN_UP",
+                primaryText: "ACCOUNT_SIGN_UP".moduleLocalized,
                 primaryAction: {
                     onboardingSteps.append(.signUp)
                 },
-                secondaryText: "ACCOUNT_LOGIN",
+                secondaryText: "ACCOUNT_LOGIN".moduleLocalized,
                 secondaryAction: {
                     onboardingSteps.append(.login)
                 }

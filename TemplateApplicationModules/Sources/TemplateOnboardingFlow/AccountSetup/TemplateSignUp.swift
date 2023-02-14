@@ -14,12 +14,14 @@ import SwiftUI
 struct TemplateSignUp: View {
     var body: some View {
         SignUp {
-            OnboardingTitleView(
-                title: "SIGN_UP_TITLE",
-                subtitle: "SIGN_UP_SUBTITLE"
-            )
-            Spacer()
+            IconView()
+                .padding(.top, 32)
+            Text("SIGN_UP_SUBTITLE", bundle: .module)
+                .multilineTextAlignment(.center)
+                .padding()
+            Spacer(minLength: 0)
         }
+            .navigationBarTitleDisplayMode(.large)
     }
 }
 
@@ -28,6 +30,7 @@ struct TemplateSignUp: View {
 struct TemplateSignUp_Previews: PreviewProvider {
     static var previews: some View {
         TemplateSignUp()
+            .environmentObject(Account(accountServices: []))
     }
 }
 #endif
