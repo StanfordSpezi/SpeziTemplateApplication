@@ -18,6 +18,7 @@ platform :ios do
   lane :test do
     run_tests(
       code_coverage: true,
+      derived_data_path: ".derivedData",
       result_bundle: true,
       output_directory: "."
     )
@@ -25,7 +26,9 @@ platform :ios do
 
   desc "Build app"
   lane :build do
-    build_app
+    build_app(
+      derived_data_path: ".derivedData"
+    )
   end
 
   desc "Sign in to the App Store Connect API"
@@ -43,7 +46,7 @@ platform :ios do
     signin
     increment_build_number({
       build_number: latest_testflight_build_number + 1,
-      xcodeproj: "TemplateApplication.xcodeproj"
+      xcodeproj: "GetMoovin.xcodeproj"
     })
     build
     upload_to_testflight
