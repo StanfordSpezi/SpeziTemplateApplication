@@ -46,7 +46,7 @@ platform :ios do
     signin
     increment_build_number({
       build_number: latest_testflight_build_number + 1,
-      xcodeproj: "GetMoovin.xcodeproj"
+      xcodeproj: "TemplateApplication.xcodeproj"
     })
     build
     upload_to_testflight
