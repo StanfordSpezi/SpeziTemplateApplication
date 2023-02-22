@@ -27,5 +27,5 @@ jobs:
     with:
       runsonlabels: [macos-12]
       scheme: TemplateApplication
-      fastlanelane: test
+      fastlanelane: beta
       setupsigning: true

@@ -27,7 +27,8 @@ jobs:
     with:
       runsonlabels: '["macOS", "self-hosted"]'
       scheme: TemplateApplication
-      fastlanelane: test
+      setupfirebaseemulator: true
+      customcommand: "firebase emulators:exec 'bundler install && bundle exec fastlane test'"
   uploadcoveragereport:
     name: Upload Coverage Report
     needs: buildandtest
