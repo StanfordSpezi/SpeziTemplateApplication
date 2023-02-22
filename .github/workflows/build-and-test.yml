@@ -30,6 +30,7 @@ jobs:
       fastlanelane: test
   uploadcoveragereport:
     name: Upload Coverage Report
+    needs: buildandtest
     uses: StanfordBDHG/.github/.github/workflows/create-and-upload-coverage-report.yml@selfHostedCI
     with:
       coveragereports: TemplateApplication.xcresult
