@@ -35,7 +35,6 @@ jobs:
     secrets: inherit
     with:
       runsonlabels: '["macos-12"]'
-      scheme: TemplateApplication
       setupfirebaseemulator: true
       customcommand: "firebase emulators:exec 'bundler install && bundle exec fastlane test'"
   uploadcoveragereport:
