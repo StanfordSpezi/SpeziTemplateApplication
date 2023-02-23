@@ -22,7 +22,7 @@ jobs:
     uses: StanfordBDHG/.github/.github/workflows/swiftlint.yml@v1
   buildandtest:
     name: Build and Test
-    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@selfHostedCI
+    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     secrets: inherit
     with:
       artifactname: TemplateApplication.xcresult
@@ -31,7 +31,7 @@ jobs:
       customcommand: "firebase emulators:exec 'fastlane test'"
   buildandtestongithub:
     name: Build and Test
-    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@selfHostedCI
+    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     secrets: inherit
     with:
       artifactname: TemplateApplication.xcresult
@@ -41,6 +41,6 @@ jobs:
   uploadcoveragereport:
     name: Upload Coverage Report
     needs: buildandtest
-    uses: StanfordBDHG/.github/.github/workflows/create-and-upload-coverage-report.yml@selfHostedCI
+    uses: StanfordBDHG/.github/.github/workflows/create-and-upload-coverage-report.yml@v2
     with:
       coveragereports: TemplateApplication.xcresult

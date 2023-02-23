@@ -22,7 +22,7 @@ jobs:
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
     needs: buildandtest
-    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@selfHostedCI
+    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     secrets: inherit
     with:
       runsonlabels: [macos-12]
