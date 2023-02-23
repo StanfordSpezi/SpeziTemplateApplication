@@ -29,15 +29,6 @@ jobs:
       runsonlabels: '["macOS", "self-hosted"]'
       setupfirebaseemulator: true
       customcommand: "firebase emulators:exec 'fastlane test'"
-  buildandtestongithub:
-    name: Build and Test
-    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
-    secrets: inherit
-    with:
-      artifactname: TemplateApplication.xcresult
-      runsonlabels: '["macos-12"]'
-      setupfirebaseemulator: true
-      customcommand: "firebase emulators:exec 'bundler install && bundle exec fastlane test'"
   uploadcoveragereport:
     name: Upload Coverage Report
     needs: buildandtest
