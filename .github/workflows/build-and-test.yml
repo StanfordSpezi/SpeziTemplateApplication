@@ -25,6 +25,7 @@ jobs:
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@selfHostedCI
     secrets: inherit
     with:
+      artifactname: TemplateApplication.xcresult
       runsonlabels: '["macOS", "self-hosted"]'
       setupfirebaseemulator: true
       customcommand: "firebase emulators:exec 'fastlane test'"
@@ -33,6 +34,7 @@ jobs:
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@selfHostedCI
     secrets: inherit
     with:
+      artifactname: TemplateApplication.xcresult
       runsonlabels: '["macos-12"]'
       setupfirebaseemulator: true
       customcommand: "firebase emulators:exec 'bundler install && bundle exec fastlane test'"
