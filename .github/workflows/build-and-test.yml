@@ -26,7 +26,6 @@ jobs:
     secrets: inherit
     with:
       runsonlabels: '["macOS", "self-hosted"]'
-      scheme: TemplateApplication
       setupfirebaseemulator: true
       customcommand: "firebase emulators:exec 'fastlane test'"
   buildandtestongithub:
