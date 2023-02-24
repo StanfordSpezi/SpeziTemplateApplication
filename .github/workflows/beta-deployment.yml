@@ -26,6 +26,6 @@ jobs:
     secrets: inherit
     with:
       artifactname: TemplateApplication.xcresult
-      runsonlabels: '["macos-latest", "self-hosted"]'
+      runsonlabels: '["macOS", "self-hosted"]'
       fastlanelane: beta
       setupsigning: true
