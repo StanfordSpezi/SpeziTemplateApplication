@@ -26,7 +26,7 @@ jobs:
     secrets: inherit
     with:
       artifactname: TemplateApplication.xcresult
-      runsonlabels: '["macos-latest"]'
+      runsonlabels: '["macOS", "self-hosted"]'
       setupfirebaseemulator: true
       customcommand: "firebase emulators:exec 'fastlane test'"
   uploadcoveragereport:
