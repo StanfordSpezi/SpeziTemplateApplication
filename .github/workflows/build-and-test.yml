@@ -23,7 +23,6 @@ jobs:
   buildandtest:
     name: Build and Test
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
-    secrets: inherit
     with:
       artifactname: TemplateApplication.xcresult
       runsonlabels: '["macOS", "self-hosted"]'
