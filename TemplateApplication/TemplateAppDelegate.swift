@@ -9,6 +9,7 @@
 import CardinalKit
 import FHIR
 import FHIRToFirestoreAdapter
+import FHIRMockDataStorageProvider
 import FirebaseAccount
 import class FirebaseFirestore.FirestoreSettings
 import FirebaseAuth
@@ -20,7 +21,6 @@ import HealthKitToFHIRAdapter
 import Questionnaires
 import Scheduler
 import SwiftUI
-import TemplateMockDataStorageProvider
 import TemplateSchedule
 import TemplateSharedContext
 

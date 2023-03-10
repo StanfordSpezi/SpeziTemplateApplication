@@ -8,7 +8,7 @@
 
 import SwiftUI
 import TemplateContacts
-import TemplateMockDataStorageProvider
+import FHIRMockDataStorageProvider
 import TemplateSchedule
 import TemplateSharedContext
 

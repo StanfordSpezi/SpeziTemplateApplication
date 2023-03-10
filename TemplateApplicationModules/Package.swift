@@ -19,13 +19,12 @@ let package = Package(
     ],
     products: [
         .library(name: "TemplateContacts", targets: ["TemplateContacts"]),
-        .library(name: "TemplateMockDataStorageProvider", targets: ["TemplateMockDataStorageProvider"]),
         .library(name: "TemplateOnboardingFlow", targets: ["TemplateOnboardingFlow"]),
         .library(name: "TemplateSchedule", targets: ["TemplateSchedule"]),
         .library(name: "TemplateSharedContext", targets: ["TemplateSharedContext"])
     ],
     dependencies: [
-        .package(url: "https://github.com/StanfordBDHG/CardinalKit.git", .upToNextMinor(from: "0.3.0"))
+        .package(url: "https://github.com/StanfordBDHG/CardinalKit", .upToNextMinor(from: "0.3.5"))
     ],
     targets: [
         .target(
@@ -33,17 +32,6 @@ let package = Package(
             dependencies: [
                 .target(name: "TemplateSharedContext"),
                 .product(name: "Contact", package: "CardinalKit")
-            ],
-            resources: [
-                .process("Resources")
-            ]
-        ),
-        .target(
-            name: "TemplateMockDataStorageProvider",
-            dependencies: [
-                .target(name: "TemplateSharedContext"),
-                .product(name: "CardinalKit", package: "CardinalKit"),
-                .product(name: "FHIR", package: "CardinalKit")
             ],
             resources: [
                 .process("Resources")

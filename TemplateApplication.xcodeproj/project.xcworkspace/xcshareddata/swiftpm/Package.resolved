@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/CardinalKit",
       "state" : {
-        "revision" : "5ad27f4b7c47d9d3ab1435eb55bcd3db139dbd8b",
-        "version" : "0.3.2"
+        "revision" : "6162a67a0b821c2be9358bec798d5d3e94cc5783",
+        "version" : "0.3.5"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKitOnFHIR",
       "state" : {
-        "revision" : "efb23f31a79a0b914af6a4a3c90ef2608c95bfeb",
-        "version" : "0.1.5"
+        "revision" : "1bc7a15760916ade4c5058fa798a871e80c2955c",
+        "version" : "0.1.6"
       }
     },
     {
