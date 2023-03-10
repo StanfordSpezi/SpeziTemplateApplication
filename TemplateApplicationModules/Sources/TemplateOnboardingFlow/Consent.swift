@@ -7,8 +7,8 @@
 //
 
 import Onboarding
-import PAWSSharedContext
 import SwiftUI
+import TemplateSharedContext
 
 
 struct Consent: View {

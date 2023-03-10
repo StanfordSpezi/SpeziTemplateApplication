@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F2C507A29B98DF20028C873 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F2C507929B98DF20028C873 /* GoogleService-Info.plist */; };
 		2F38E234298047DA00E05C29 /* TemplateSharedContext in Frameworks */ = {isa = PBXBuildFile; productRef = 2F38E233298047DA00E05C29 /* TemplateSharedContext */; };
 		2F38E236298048E500E05C29 /* TemplateMockDataStorageProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 2F38E235298048E500E05C29 /* TemplateMockDataStorageProvider */; };
 		2F38E23829804AA300E05C29 /* TemplateContacts in Frameworks */ = {isa = PBXBuildFile; productRef = 2F38E23729804AA300E05C29 /* TemplateContacts */; };
@@ -27,6 +26,7 @@
 		2F4E23872989DB360013F3D9 /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E23862989DB360013F3D9 /* ContactsTests.swift */; };
 		2F4E23892989DB400013F3D9 /* HealthKitUploadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E23882989DB400013F3D9 /* HealthKitUploadTests.swift */; };
 		2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */; };
+		2F6025C929BBE6400045459E /* GoogleService-Into.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F6025C829BBE6400045459E /* GoogleService-Into.plist */; };
 		2FC9759F2978E39600BA99FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FC9759E2978E39600BA99FE /* Localizable.strings */; };
 		2FC975A82978F11A00BA99FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* Home.swift */; };
 		2FED18F22999AAF400A51A28 /* Account in Frameworks */ = {isa = PBXBuildFile; productRef = 2FED18F12999AAF400A51A28 /* Account */; };
@@ -59,13 +59,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F2C507929B98DF20028C873 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F49B77329803E8F00BCB272 /* TemplateApplicationModules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TemplateApplicationModules; sourceTree = "<group>"; };
 		2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
 		2F4E23822989D51F0013F3D9 /* TemplateAppTestingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppTestingSetup.swift; sourceTree = "<group>"; };
 		2F4E23862989DB360013F3D9 /* ContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTests.swift; sourceTree = "<group>"; };
 		2F4E23882989DB400013F3D9 /* HealthKitUploadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitUploadTests.swift; sourceTree = "<group>"; };
 		2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppDelegate.swift; sourceTree = "<group>"; };
+		2F6025C829BBE6400045459E /* GoogleService-Into.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Into.plist"; sourceTree = "<group>"; };
 		2FAEC07F297F583900C11C42 /* TemplateApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TemplateApplication.entitlements; sourceTree = "<group>"; };
 		2FC94CD4298B0A1D009C8209 /* TemplateApplication.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateApplication.xctestplan; sourceTree = "<group>"; };
 		2FC9759E2978E39600BA99FE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 			children = (
 				2FAEC07F297F583900C11C42 /* TemplateApplication.entitlements */,
 				653A258928339462005D4D48 /* Info.plist */,
-				2F2C507929B98DF20028C873 /* GoogleService-Info.plist */,
+				2F6025C829BBE6400045459E /* GoogleService-Into.plist */,
 				653A255428338800005D4D48 /* Assets.xcassets */,
 				2FC9759E2978E39600BA99FE /* Localizable.strings */,
 			);
@@ -331,8 +331,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F2C507A29B98DF20028C873 /* GoogleService-Info.plist in Resources */,
 				653A255528338800005D4D48 /* Assets.xcassets in Resources */,
+				2F6025C929BBE6400045459E /* GoogleService-Into.plist in Resources */,
 				2FC9759F2978E39600BA99FE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

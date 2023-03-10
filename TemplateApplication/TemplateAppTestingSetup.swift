@@ -17,10 +17,10 @@ private struct TemplateAppTestingSetup: ViewModifier {
     func body(content: Content) -> some View {
         content
             .task {
-                if if FeatureFlags.skipOnboarding {
+                if FeatureFlags.skipOnboarding {
                     completedOnboardingFlow = true
                 }
-                if if FeatureFlags.showOnboarding {
+                if FeatureFlags.showOnboarding {
                     completedOnboardingFlow = false
                 }
             }
