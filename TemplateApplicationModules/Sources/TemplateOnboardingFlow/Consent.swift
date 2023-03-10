@@ -7,6 +7,7 @@
 //
 
 import Onboarding
+import PAWSSharedContext
 import SwiftUI
 
 
@@ -34,7 +35,7 @@ struct Consent: View {
                 consentDocument
             },
             action: {
-                if !CommandLine.arguments.contains("--disableFirebase") {
+                if !FeatureFlags.disableFirebase {
                     onboardingSteps.append(.accountSetup)
                 } else {
                     onboardingSteps.append(.healthKitPermissions)

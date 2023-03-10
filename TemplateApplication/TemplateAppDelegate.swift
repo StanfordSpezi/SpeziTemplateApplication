@@ -10,6 +10,7 @@ import CardinalKit
 import FHIR
 import FHIRToFirestoreAdapter
 import FirebaseAccount
+import class FirebaseFirestore.FirestoreSettings
 import FirebaseAuth
 import FirestoreDataStorage
 import FirestoreStoragePrefixUserIdAdapter
@@ -21,13 +22,18 @@ import Scheduler
 import SwiftUI
 import TemplateMockDataStorageProvider
 import TemplateSchedule
+import TemplateSharedContext
 
 
 class TemplateAppDelegate: CardinalKitAppDelegate {
     override var configuration: Configuration {
         Configuration(standard: FHIR()) {
-            if !CommandLine.arguments.contains("--disableFirebase") {
-                FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))
+            if !FeatureFlags.disableFirebase {
+                if FeatureFlags.useFirebaseEmulator {
+                    FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))
+                } else {
+                    FirebaseAccountConfiguration()
+                }
                 firestore
             }
             if HKHealthStore.isHealthDataAvailable() {
@@ -41,14 +47,23 @@ class TemplateAppDelegate: CardinalKitAppDelegate {
     
     
     private var firestore: Firestore<FHIR> {
-        Firestore(
+        var firestoreSettings = FirestoreSettings()
+        if FeatureFlags.useFirebaseEmulator {
+            let settings = FirestoreSettings()
+            settings.host = "localhost:8080"
+            settings.isPersistenceEnabled = false
+            settings.isSSLEnabled = false
+        }
+        
+        return Firestore(
             adapter: {
                 FHIRToFirestoreAdapter()
                 FirestoreStoragePrefixUserIdAdapter()
             },
-            settings: .emulator
+            settings: firestoreSettings
         )
     }
+    
     
     
     private var healthKit: HealthKit<FHIR> {

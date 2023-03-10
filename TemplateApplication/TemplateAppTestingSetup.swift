@@ -17,10 +17,10 @@ private struct TemplateAppTestingSetup: ViewModifier {
     func body(content: Content) -> some View {
         content
             .task {
-                if CommandLine.arguments.contains("--skipOnboarding") {
+                if if FeatureFlags.skipOnboarding {
                     completedOnboardingFlow = true
                 }
-                if CommandLine.arguments.contains("--showOnboarding") {
+                if if FeatureFlags.showOnboarding {
                     completedOnboardingFlow = false
                 }
             }
