@@ -8,8 +8,8 @@
 
 import CardinalKit
 import FHIR
-import FHIRToFirestoreAdapter
 import FHIRMockDataStorageProvider
+import FHIRToFirestoreAdapter
 import FirebaseAccount
 import class FirebaseFirestore.FirestoreSettings
 import FirebaseAuth
@@ -62,7 +62,6 @@ class TemplateAppDelegate: CardinalKitAppDelegate {
             settings: settings
         )
     }
-    
     
     
     private var healthKit: HealthKit<FHIR> {

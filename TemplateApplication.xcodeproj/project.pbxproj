@@ -27,6 +27,8 @@
 		2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */; };
 		2F6025CB29BBE70F0045459E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F6025CA29BBE70F0045459E /* GoogleService-Info.plist */; };
 		2F6025CD29BBE92B0045459E /* FHIRMockDataStorageProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 2F6025CC29BBE92B0045459E /* FHIRMockDataStorageProvider */; };
+		2F6025D029BBEC610045459E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2F6025CF29BBEC610045459E /* FirebaseAuth */; };
+		2F6025D229BBF4840045459E /* TemplateProfile in Frameworks */ = {isa = PBXBuildFile; productRef = 2F6025D129BBF4840045459E /* TemplateProfile */; };
 		2FC9759F2978E39600BA99FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FC9759E2978E39600BA99FE /* Localizable.strings */; };
 		2FC975A82978F11A00BA99FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* Home.swift */; };
 		2FED18F22999AAF400A51A28 /* Account in Frameworks */ = {isa = PBXBuildFile; productRef = 2FED18F12999AAF400A51A28 /* Account */; };
@@ -93,11 +95,13 @@
 				2F49B784298041F300BCB272 /* Contact in Frameworks */,
 				2F38E234298047DA00E05C29 /* TemplateSharedContext in Frameworks */,
 				2FED18FA299A0C7600A51A28 /* FHIRToFirestoreAdapter in Frameworks */,
+				2F6025D229BBF4840045459E /* TemplateProfile in Frameworks */,
 				2FED18F42999AAF400A51A28 /* FirebaseAccount in Frameworks */,
 				2FED18FC299A0C7600A51A28 /* FirestoreDataStorage in Frameworks */,
 				2F38E23829804AA300E05C29 /* TemplateContacts in Frameworks */,
 				2F49B7782980407C00BCB272 /* FHIR in Frameworks */,
 				2F38E23C29804EFA00E05C29 /* TemplateSchedule in Frameworks */,
+				2F6025D029BBEC610045459E /* FirebaseAuth in Frameworks */,
 				2F49B7802980418400BCB272 /* Onboarding in Frameworks */,
 				2FED18F22999AAF400A51A28 /* Account in Frameworks */,
 				2F49B7762980407C00BCB272 /* CardinalKit in Frameworks */,
@@ -208,6 +212,7 @@
 				653A2549283387FE005D4D48 /* Sources */,
 				653A254A283387FE005D4D48 /* Frameworks */,
 				653A254B283387FE005D4D48 /* Resources */,
+				2F5B528D29BD237B002020B7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -233,6 +238,8 @@
 				2FED18FB299A0C7600A51A28 /* FirestoreDataStorage */,
 				2FED18FD299AE00500A51A28 /* FirestoreStoragePrefixUserIdAdapter */,
 				2F6025CC29BBE92B0045459E /* FHIRMockDataStorageProvider */,
+				2F6025CF29BBEC610045459E /* FirebaseAuth */,
+				2F6025D129BBF4840045459E /* TemplateProfile */,
 			);
 			productName = TemplateApplication;
 			productReference = 653A254D283387FE005D4D48 /* TemplateApplication.app */;
@@ -314,6 +321,7 @@
 				2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "CardinalKit" */,
 				2F4E237F2989C5930013F3D9 /* XCRemoteSwiftPackageReference "XCTHealthKit" */,
 				2FEE103B2998E580000822E1 /* XCRemoteSwiftPackageReference "XCTestExtensions" */,
+				2F6025CE29BBEC610045459E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 653A254E283387FE005D4D48 /* Products */;
 			projectDirPath = "";
@@ -352,6 +360,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F5B528D29BD237B002020B7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  export PATH=\"$PATH:/opt/homebrew/bin\"\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		653A2549283387FE005D4D48 /* Sources */ = {
@@ -866,6 +895,14 @@
 				minimumVersion = 0.3.3;
 			};
 		};
+		2F6025CE29BBEC610045459E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.6.0;
+			};
+		};
 		2FEE103B2998E580000822E1 /* XCRemoteSwiftPackageReference "XCTestExtensions" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordBDHG/XCTestExtensions";
@@ -942,6 +979,15 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "CardinalKit" */;
 			productName = FHIRMockDataStorageProvider;
+		};
+		2F6025CF29BBEC610045459E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F6025CE29BBEC610045459E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2F6025D129BBF4840045459E /* TemplateProfile */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TemplateProfile;
 		};
 		2FED18F12999AAF400A51A28 /* Account */ = {
 			isa = XCSwiftPackageProductDependency;
