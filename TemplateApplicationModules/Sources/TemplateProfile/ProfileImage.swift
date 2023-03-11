@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
+// This source file is part of the Stanford CardinalKit Template Application project
 //
-//  Created by Paul Shmiedmayer on 3/10/23.
+// SPDX-FileCopyrightText: 2023 Stanford University
+//
+// SPDX-License-Identifier: MIT
 //
 
 import Account
