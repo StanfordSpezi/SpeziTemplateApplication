@@ -28,7 +28,6 @@
 		2F6025CB29BBE70F0045459E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F6025CA29BBE70F0045459E /* GoogleService-Info.plist */; };
 		2F6025CD29BBE92B0045459E /* FHIRMockDataStorageProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 2F6025CC29BBE92B0045459E /* FHIRMockDataStorageProvider */; };
 		2F6025D029BBEC610045459E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2F6025CF29BBEC610045459E /* FirebaseAuth */; };
-		2F6025D229BBF4840045459E /* TemplateProfile in Frameworks */ = {isa = PBXBuildFile; productRef = 2F6025D129BBF4840045459E /* TemplateProfile */; };
 		2FC9759F2978E39600BA99FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FC9759E2978E39600BA99FE /* Localizable.strings */; };
 		2FC975A82978F11A00BA99FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* Home.swift */; };
 		2FED18F22999AAF400A51A28 /* Account in Frameworks */ = {isa = PBXBuildFile; productRef = 2FED18F12999AAF400A51A28 /* Account */; };
@@ -95,7 +94,6 @@
 				2F49B784298041F300BCB272 /* Contact in Frameworks */,
 				2F38E234298047DA00E05C29 /* TemplateSharedContext in Frameworks */,
 				2FED18FA299A0C7600A51A28 /* FHIRToFirestoreAdapter in Frameworks */,
-				2F6025D229BBF4840045459E /* TemplateProfile in Frameworks */,
 				2FED18F42999AAF400A51A28 /* FirebaseAccount in Frameworks */,
 				2FED18FC299A0C7600A51A28 /* FirestoreDataStorage in Frameworks */,
 				2F38E23829804AA300E05C29 /* TemplateContacts in Frameworks */,
@@ -239,7 +237,6 @@
 				2FED18FD299AE00500A51A28 /* FirestoreStoragePrefixUserIdAdapter */,
 				2F6025CC29BBE92B0045459E /* FHIRMockDataStorageProvider */,
 				2F6025CF29BBEC610045459E /* FirebaseAuth */,
-				2F6025D129BBF4840045459E /* TemplateProfile */,
 			);
 			productName = TemplateApplication;
 			productReference = 653A254D283387FE005D4D48 /* TemplateApplication.app */;
@@ -984,10 +981,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F6025CE29BBEC610045459E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
-		};
-		2F6025D129BBF4840045459E /* TemplateProfile */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TemplateProfile;
 		};
 		2FED18F12999AAF400A51A28 /* Account */ = {
 			isa = XCSwiftPackageProductDependency;

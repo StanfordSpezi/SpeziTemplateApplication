@@ -20,7 +20,6 @@ let package = Package(
     products: [
         .library(name: "TemplateContacts", targets: ["TemplateContacts"]),
         .library(name: "TemplateOnboardingFlow", targets: ["TemplateOnboardingFlow"]),
-        .library(name: "TemplateProfile", targets: ["TemplateProfile"]),
         .library(name: "TemplateSchedule", targets: ["TemplateSchedule"]),
         .library(name: "TemplateSharedContext", targets: ["TemplateSharedContext"])
     ],
@@ -54,20 +53,6 @@ let package = Package(
             exclude: [
                 "Resources/en.lproj/ConsentDocument.md.license",
                 "Resources/AppIcon.png.license"
-            ],
-            resources: [
-                .process("Resources")
-            ]
-        ),
-        .target(
-            name: "TemplateProfile",
-            dependencies: [
-                .target(name: "TemplateSharedContext"),
-                .product(name: "Account", package: "CardinalKit"),
-                .product(name: "FHIR", package: "CardinalKit"),
-                .product(name: "FirebaseAccount", package: "CardinalKit"),
-                .product(name: "Views", package: "CardinalKit"),
-                .product(name: "FirebaseAuth", package: "firebase-ios-sdk")
             ],
             resources: [
                 .process("Resources")
