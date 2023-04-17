@@ -6,11 +6,8 @@
 // SPDX-License-Identifier: MIT
 //
 
-import FHIRMockDataStorageProvider
+import CardinalKitFHIRMockDataStorageProvider
 import SwiftUI
-import TemplateContacts
-import TemplateSchedule
-import TemplateSharedContext
 
 
 struct HomeView: View {

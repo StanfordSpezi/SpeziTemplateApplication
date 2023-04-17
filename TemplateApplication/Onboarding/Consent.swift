@@ -6,9 +6,8 @@
 // SPDX-License-Identifier: MIT
 //
 
-import Onboarding
+import CardinalKitOnboarding
 import SwiftUI
-import TemplateSharedContext
 
 
 struct Consent: View {
@@ -16,7 +15,7 @@ struct Consent: View {
     
     
     private var consentDocument: Data {
-        guard let path = Bundle.module.url(forResource: "ConsentDocument", withExtension: "md"),
+        guard let path = Bundle.main.url(forResource: "ConsentDocument", withExtension: "md"),
               let data = try? Data(contentsOf: path) else {
             return Data("CONSENT_LOADING_ERROR".moduleLocalized.utf8)
         }

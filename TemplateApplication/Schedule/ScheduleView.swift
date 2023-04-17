@@ -7,8 +7,8 @@
 //
 
 
-import Questionnaires
-import Scheduler
+import CardinalKitQuestionnaire
+import CardinalKitScheduler
 import SwiftUI
 
 
@@ -46,7 +46,7 @@ public struct ScheduleView: View {
                 .sheet(item: $presentedContext) { presentedContext in
                     destination(withContext: presentedContext)
                 }
-                .navigationTitle(String(localized: "SCHEDULE_LIST_TITLE", bundle: .module))
+                .navigationTitle(String(localized: "SCHEDULE_LIST_TITLE"))
         }
     }
     

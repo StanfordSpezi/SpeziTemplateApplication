@@ -6,7 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
-import Contact
+import CardinalKitContact
 import Foundation
 import SwiftUI
 
@@ -21,7 +21,7 @@ public struct Contacts: View {
             ),
             image: Image(systemName: "figure.wave.circle"),
             title: "University Founder",
-            description: String(localized: "LELAND_STANFORD_BIO", bundle: .module),
+            description: String(localized: "LELAND_STANFORD_BIO"),
             organization: "Stanford University",
             address: {
                 let address = CNMutablePostalAddress()
@@ -53,7 +53,7 @@ public struct Contacts: View {
     public var body: some View {
         NavigationStack {
             ContactsList(contacts: contacts)
-                .navigationTitle(String(localized: "CONTACTS_NAVIGATION_TITLE", bundle: .module))
+                .navigationTitle(String(localized: "CONTACTS_NAVIGATION_TITLE"))
         }
     }
     

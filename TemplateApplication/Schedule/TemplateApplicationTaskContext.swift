@@ -6,7 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
-import FHIR
+import CardinalKitFHIR
 
 
 /// The context attached to each task in the CardinalKit Template Application.
@@ -27,7 +27,7 @@ public enum TemplateApplicationTaskContext: Codable, Identifiable {
     var actionType: String {
         switch self {
         case .questionnaire:
-            return String(localized: "TASK_CONTEXT_ACTION_QUESTIONNAIRE", bundle: .module)
+            return String(localized: "TASK_CONTEXT_ACTION_QUESTIONNAIRE")
         }
     }
 }
