@@ -10,7 +10,7 @@ import SwiftUI
 
 
 /// Displays an multi-step onboarding flow for the CardinalKit Template Application.
-public struct OnboardingFlow: View {
+struct OnboardingFlow: View {
     enum Step: String, Codable {
         case interestingModules
         case consent
@@ -24,7 +24,7 @@ public struct OnboardingFlow: View {
     @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     
     
-    public var body: some View {
+    var body: some View {
         NavigationStack(path: $onboardingSteps) {
             Welcome(onboardingSteps: $onboardingSteps)
                 .navigationDestination(for: Step.self) { onboardingStep in
@@ -49,7 +49,7 @@ public struct OnboardingFlow: View {
     }
     
     
-    public init() {}
+    init() {}
 }
 
 

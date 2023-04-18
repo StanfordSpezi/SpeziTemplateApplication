@@ -13,12 +13,12 @@ import Foundation
 
 /// A `Scheduler` using the `FHIR` standard as well as the ``TemplateApplicationTaskContext`` to schedule and manage tasks and events in the
 /// CardinalKit Template Applciation.
-public typealias TemplateApplicationScheduler = Scheduler<FHIR, TemplateApplicationTaskContext>
+typealias TemplateApplicationScheduler = Scheduler<FHIR, TemplateApplicationTaskContext>
 
 
 extension TemplateApplicationScheduler {
     /// Creates a default instance of the ``TemplateApplicationScheduler`` by scheduling the tasks listed below.
-    public convenience init() {
+    convenience init() {
         self.init(
             tasks: [
                 Task(

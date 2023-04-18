@@ -12,7 +12,7 @@ import CardinalKitScheduler
 import SwiftUI
 
 
-public struct ScheduleView: View {
+struct ScheduleView: View {
     @EnvironmentObject var scheduler: TemplateApplicationScheduler
     @State var eventContextsByDate: [Date: [EventContext]] = [:]
     @State var presentedContext: EventContext?
@@ -23,7 +23,7 @@ public struct ScheduleView: View {
     }
     
     
-    public var body: some View {
+    var body: some View {
         NavigationStack {
             List(startOfDays, id: \.timeIntervalSinceNow) { startOfDay in
                 Section(format(startOfDay: startOfDay)) {
@@ -51,7 +51,7 @@ public struct ScheduleView: View {
     }
     
     
-    public init() {}
+    init() {}
     
     
     private func destination(withContext eventContext: EventContext) -> some View {

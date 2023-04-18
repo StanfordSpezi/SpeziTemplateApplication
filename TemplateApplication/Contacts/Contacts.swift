@@ -12,7 +12,7 @@ import SwiftUI
 
 
 /// Displays the contacts for the CardinalKit Template Application.
-public struct Contacts: View {
+struct Contacts: View {
     let contacts = [
         Contact(
             name: PersonNameComponents(
@@ -50,7 +50,7 @@ public struct Contacts: View {
     ]
     
     
-    public var body: some View {
+    var body: some View {
         NavigationStack {
             ContactsList(contacts: contacts)
                 .navigationTitle(String(localized: "CONTACTS_NAVIGATION_TITLE"))
@@ -58,7 +58,7 @@ public struct Contacts: View {
     }
     
     
-    public init() {}
+    init() {}
 }
 
 
