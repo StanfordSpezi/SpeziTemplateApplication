@@ -63,6 +63,7 @@ class HealthKitUploadTests: XCTestCase {
             XCTAssertTrue(app.staticTexts.containing(predicate).firstMatch.waitForExistence(timeout: 2))
             if pressIfPresent {
                 app.staticTexts.containing(predicate).firstMatch.tap()
+                XCTAssert(app.navigationBars.buttons["Mock Upload"].waitForExistence(timeout: 2))
             }
         } else {
             XCTAssertFalse(app.staticTexts.containing(predicate).firstMatch.waitForExistence(timeout: 2))

@@ -33,7 +33,7 @@ struct HomeView: View {
                 .tabItem {
                     Label("CONTACTS_TAB_TITLE", systemImage: "person.fill")
                 }
-            MockUploadList()
+            MockUpload()
                 .tag(Tabs.mockUpload)
                 .tabItem {
                     Label("MOCK_UPLOAD_TAB_TITLE", systemImage: "server.rack")

@@ -46,7 +46,7 @@ public struct ScheduleView: View {
                 .sheet(item: $presentedContext) { presentedContext in
                     destination(withContext: presentedContext)
                 }
-                .navigationTitle(String(localized: "SCHEDULE_LIST_TITLE"))
+                .navigationTitle("SCHEDULE_LIST_TITLE")
         }
     }
     
