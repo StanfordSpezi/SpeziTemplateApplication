@@ -7,22 +7,20 @@
 //
 
 import CardinalKit
-import FHIR
-import FHIRMockDataStorageProvider
-import FHIRToFirestoreAdapter
-import FirebaseAccount
+import CardinalKitFHIR
+import CardinalKitFHIRMockDataStorageProvider
+import CardinalKitFHIRToFirestoreAdapter
+import CardinalKitFirebaseAccount
 import class FirebaseFirestore.FirestoreSettings
+import CardinalKitFirestore
+import CardinalKitFirestorePrefixUserIdAdapter
+import CardinalKitHealthKit
+import CardinalKitHealthKitToFHIRAdapter
+import CardinalKitQuestionnaire
+import CardinalKitScheduler
 import FirebaseAuth
-import FirestoreDataStorage
-import FirestoreStoragePrefixUserIdAdapter
 import HealthKit
-import HealthKitDataSource
-import HealthKitToFHIRAdapter
-import Questionnaires
-import Scheduler
 import SwiftUI
-import TemplateSchedule
-import TemplateSharedContext
 
 
 class TemplateAppDelegate: CardinalKitAppDelegate {
@@ -57,7 +55,7 @@ class TemplateAppDelegate: CardinalKitAppDelegate {
         return Firestore(
             adapter: {
                 FHIRToFirestoreAdapter()
-                FirestoreStoragePrefixUserIdAdapter()
+                FirestorePrefixUserIdAdapter()
             },
             settings: settings
         )

@@ -20,11 +20,9 @@ It demonstrates using the [CardinalKit](https://github.com/StanfordBDHG/Cardinal
 
 ## Application Structure
 
-The CardinalKit Template Application uses a modularized structure enabled by using the Swift Package Manager.
+The CardinalKit Template Application uses a modularized structure using the [CardinalKit modules](https://swiftpackageindex.com/StanfordBDHG) enabled by the Swift Package Manager.
 
-The application contains the following five modules that are separated into different Swift Package Manger Targets in the `TemplateApplicationModules` Swift Package.
-
-The application uses the CardinalKit `FHIR` standard to provide a shared repository for data exchanged between different modules using the `FHIR` standard.
+The application uses the CardinalKit [`FHIR` standard](https://github.com/StanfordBDHG/CardinalKitFHIR) to provide a shared repository for data exchanged between different modules using the `FHIR` standard.
 You can learn more about the CardinalKit standards-based software architecture in the [CardinalKit documentation](https://github.com/StanfordBDHG/CardinalKit).
 
 
@@ -53,7 +51,7 @@ The application includes the following feature flags that can be configured in t
 
 ### Template Onboarding Flow
 
-The `TemplateOnboardingFlow` module contains the different steps displayed in the onboarding flow.
+The onboarding contains the different steps.
 It uses the CardinalKit `Onboarding` module to display different onboarding-related views like the information about the application, a consent screen, and a screen to display a HealthKit consent view.
 
 <p float="left">
@@ -66,7 +64,7 @@ It uses the CardinalKit `Onboarding` module to display different onboarding-rela
 
 ### Template Schedule
 
-The `TemplateSchedule` module provides the functionality to schedule a recurring task and bind it to an action, e.g., displaying a questionnaire.
+The scheduler part of the application provides the functionality to schedule a recurring task and bind it to an action, e.g., displaying a questionnaire.
 It uses the CardinalKit `Scheduler` and `Questionnaires` modules to schedule the tasks as defined in the `TemplateApplicationScheduler`.
 
 <p float="left">
@@ -78,7 +76,7 @@ It uses the CardinalKit `Scheduler` and `Questionnaires` modules to schedule the
 
 ### Template Contacts
 
-The `TemplateContacts` module provides the functionality to display contact information in your application.
+The contacts part of the application provides the functionality to display contact information in your application.
 It uses the CardinalKit `Contacts` module to use the contact-related views provided by CardinalKit.
 
 <p float="left">
@@ -88,8 +86,8 @@ It uses the CardinalKit `Contacts` module to use the contact-related views provi
 
 ### Template Mock Data Storage Provider
 
-The `TemplateMockDataStorageProvider` module allows a developer to get an overview of the synconization of data between the local `FHIR` model and a cloud storage provider.
-It uses the CardinalKit `DataStorageProvider`s to get information that is stored in the `FHIR` standard in the CardinalKit Template Application.
+The mock upload view allows a developer to get an overview of the synconization of data between the local `FHIR` model and a cloud storage provider.
+It uses the CardinalKit [`FHIRMockDataStorageProvider`](https://github.com/StanfordBDHG/CardinalKitFHIR) to get information that is stored in the `FHIR` standard in the CardinalKit Template Application.
 
 <p float="left">
  <img width="250" alt="A screen displaying the list of Mock Data Storage Provider uploads." src="Figures/TemplateMockDataStorageProvider/TemplateMockDataStorageProviderList.png">
