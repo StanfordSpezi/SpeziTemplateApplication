@@ -53,11 +53,11 @@
 		2FE5DC8F29EDD980004B9AB4 /* CardinalKitViews in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8E29EDD980004B9AB4 /* CardinalKitViews */; };
 		2FE5DC9929EDD9D9004B9AB4 /* XCTestExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC9829EDD9D9004B9AB4 /* XCTestExtensions */; };
 		2FE5DC9C29EDD9EF004B9AB4 /* XCTHealthKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC9B29EDD9EF004B9AB4 /* XCTHealthKit */; };
-		2FE5DCA329EDE0B7004B9AB4 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC9E29EDE0B7004B9AB4 /* IconView.swift */; };
-		2FE5DCA429EDE0B7004B9AB4 /* TemplateSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC9F29EDE0B7004B9AB4 /* TemplateSignUp.swift */; };
-		2FE5DCA529EDE0B7004B9AB4 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCA029EDE0B7004B9AB4 /* UserView.swift */; };
-		2FE5DCA629EDE0B7004B9AB4 /* AccountSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCA129EDE0B7004B9AB4 /* AccountSetup.swift */; };
-		2FE5DCA729EDE0B7004B9AB4 /* TemplateLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCA229EDE0B7004B9AB4 /* TemplateLogin.swift */; };
+		2FE5DCAE29EE6107004B9AB4 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCA929EE6107004B9AB4 /* IconView.swift */; };
+		2FE5DCAF29EE6107004B9AB4 /* TemplateSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCAA29EE6107004B9AB4 /* TemplateSignUp.swift */; };
+		2FE5DCB029EE6107004B9AB4 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCAB29EE6107004B9AB4 /* UserView.swift */; };
+		2FE5DCB129EE6107004B9AB4 /* AccountSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCAC29EE6107004B9AB4 /* AccountSetup.swift */; };
+		2FE5DCB229EE6107004B9AB4 /* TemplateLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCAD29EE6107004B9AB4 /* TemplateLogin.swift */; };
 		653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A2550283387FE005D4D48 /* TemplateApplication.swift */; };
 		653A255528338800005D4D48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A255428338800005D4D48 /* Assets.xcassets */; };
 		653A256228338800005D4D48 /* TemplateApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A256128338800005D4D48 /* TemplateApplicationTests.swift */; };
@@ -113,11 +113,11 @@
 		2FE5DC4C29EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateApplicationScheduler.swift; sourceTree = "<group>"; };
 		2FE5DC4D29EDD7FA004B9AB4 /* Bundle+Questionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Questionnaire.swift"; sourceTree = "<group>"; };
 		2FE5DC5529EDD811004B9AB4 /* SocialSupportQuestionnaire.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SocialSupportQuestionnaire.json; sourceTree = "<group>"; };
-		2FE5DC9E29EDE0B7004B9AB4 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
-		2FE5DC9F29EDE0B7004B9AB4 /* TemplateSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateSignUp.swift; sourceTree = "<group>"; };
-		2FE5DCA029EDE0B7004B9AB4 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
-		2FE5DCA129EDE0B7004B9AB4 /* AccountSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSetup.swift; sourceTree = "<group>"; };
-		2FE5DCA229EDE0B7004B9AB4 /* TemplateLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateLogin.swift; sourceTree = "<group>"; };
+		2FE5DCA929EE6107004B9AB4 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		2FE5DCAA29EE6107004B9AB4 /* TemplateSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateSignUp.swift; sourceTree = "<group>"; };
+		2FE5DCAB29EE6107004B9AB4 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		2FE5DCAC29EE6107004B9AB4 /* AccountSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSetup.swift; sourceTree = "<group>"; };
+		2FE5DCAD29EE6107004B9AB4 /* TemplateLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateLogin.swift; sourceTree = "<group>"; };
 		653A254D283387FE005D4D48 /* TemplateApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653A2550283387FE005D4D48 /* TemplateApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplication.swift; sourceTree = "<group>"; };
 		653A255428338800005D4D48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 		2FE5DC2829EDD398004B9AB4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				2FE5DC9D29EDE0B7004B9AB4 /* AccountSetup */,
+				2FE5DCA829EE6107004B9AB4 /* AccountSetup */,
 				2FE5DC2F29EDD7CA004B9AB4 /* Consent.swift */,
 				2FE5DC3029EDD7CA004B9AB4 /* HealthKitPermissions.swift */,
 				2FE5DC3229EDD7CA004B9AB4 /* InterestingModules.swift */,
@@ -256,18 +256,17 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		2FE5DC9D29EDE0B7004B9AB4 /* AccountSetup */ = {
+		2FE5DCA829EE6107004B9AB4 /* AccountSetup */ = {
 			isa = PBXGroup;
 			children = (
-				2FE5DC9E29EDE0B7004B9AB4 /* IconView.swift */,
-				2FE5DC9F29EDE0B7004B9AB4 /* TemplateSignUp.swift */,
-				2FE5DCA029EDE0B7004B9AB4 /* UserView.swift */,
-				2FE5DCA129EDE0B7004B9AB4 /* AccountSetup.swift */,
-				2FE5DCA229EDE0B7004B9AB4 /* TemplateLogin.swift */,
+				2FE5DCA929EE6107004B9AB4 /* IconView.swift */,
+				2FE5DCAA29EE6107004B9AB4 /* TemplateSignUp.swift */,
+				2FE5DCAB29EE6107004B9AB4 /* UserView.swift */,
+				2FE5DCAC29EE6107004B9AB4 /* AccountSetup.swift */,
+				2FE5DCAD29EE6107004B9AB4 /* TemplateLogin.swift */,
 			);
-			name = AccountSetup;
-			path = TemplateApplicationModules/Sources/TemplateOnboardingFlow/AccountSetup;
-			sourceTree = SOURCE_ROOT;
+			path = AccountSetup;
+			sourceTree = "<group>";
 		};
 		653A2544283387FE005D4D48 = {
 			isa = PBXGroup;
@@ -532,19 +531,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FE5DC4129EDD7EE004B9AB4 /* StorageKeys.swift in Sources */,
-				2FE5DCA629EDE0B7004B9AB4 /* AccountSetup.swift in Sources */,
-				2FE5DCA429EDE0B7004B9AB4 /* TemplateSignUp.swift in Sources */,
-				2FE5DCA529EDE0B7004B9AB4 /* UserView.swift in Sources */,
+				2FE5DCB129EE6107004B9AB4 /* AccountSetup.swift in Sources */,
+				2FE5DCAF29EE6107004B9AB4 /* TemplateSignUp.swift in Sources */,
+				2FE5DCB029EE6107004B9AB4 /* UserView.swift in Sources */,
 				2FE5DC3929EDD7CA004B9AB4 /* String+ModuleLocalized.swift in Sources */,
 				2FE5DC3A29EDD7CA004B9AB4 /* Welcome.swift in Sources */,
 				2FE5DC3829EDD7CA004B9AB4 /* InterestingModules.swift in Sources */,
 				2FE5DC3529EDD7CA004B9AB4 /* Consent.swift in Sources */,
 				2FE5DC4529EDD7F2004B9AB4 /* Binding+Negate.swift in Sources */,
-				2FE5DCA729EDE0B7004B9AB4 /* TemplateLogin.swift in Sources */,
+				2FE5DCB229EE6107004B9AB4 /* TemplateLogin.swift in Sources */,
 				2FC975A82978F11A00BA99FE /* Home.swift in Sources */,
 				2FE5DC4E29EDD7FA004B9AB4 /* ScheduleView.swift in Sources */,
 				2FE5DC3729EDD7CA004B9AB4 /* OnboardingFlow.swift in Sources */,
-				2FE5DCA329EDE0B7004B9AB4 /* IconView.swift in Sources */,
+				2FE5DCAE29EE6107004B9AB4 /* IconView.swift in Sources */,
 				2FE5DC4729EDD7F2004B9AB4 /* CodableArray+RawRepresentable.swift in Sources */,
 				2FE5DC4029EDD7EE004B9AB4 /* FeatureFlags.swift in Sources */,
 				2FE5DC4629EDD7F2004B9AB4 /* Bundle+Image.swift in Sources */,
