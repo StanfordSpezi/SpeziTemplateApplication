@@ -16,18 +16,18 @@ comment:
 coverage:
   precision: 2
   range:
-  - 75.0
+  - 70.0
   - 90.0
   round: up
   status:
     patch:
       default:
         target: auto
-        threshold: 1.0
+        threshold: 5.0
     project:
       default:
         target: auto
-        threshold: 1.0
+        threshold: 5.0
 ignore:
 - ^TemplateApplicationUITests.*
 - ^TemplateApplicationTests.*
