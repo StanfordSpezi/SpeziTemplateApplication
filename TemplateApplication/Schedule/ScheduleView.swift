@@ -51,9 +51,6 @@ struct ScheduleView: View {
     }
     
     
-    init() {}
-    
-    
     private func destination(withContext eventContext: EventContext) -> some View {
         @ViewBuilder
         var destination: some View {

@@ -47,9 +47,6 @@ struct OnboardingFlow: View {
         }
         .interactiveDismissDisabled(!completedOnboardingFlow)
     }
-    
-    
-    init() {}
 }
 
 

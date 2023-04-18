@@ -56,9 +56,6 @@ struct Contacts: View {
                 .navigationTitle(String(localized: "CONTACTS_NAVIGATION_TITLE"))
         }
     }
-    
-    
-    init() {}
 }
 
 
