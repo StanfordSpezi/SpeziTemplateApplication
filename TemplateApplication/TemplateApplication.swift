@@ -18,7 +18,13 @@ struct TemplateApplication: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            Group {
+                if completedOnboardingFlow {
+                    HomeView()
+                } else {
+                    EmptyView()
+                }
+            }
                 .sheet(isPresented: !$completedOnboardingFlow) {
                     OnboardingFlow()
                 }
