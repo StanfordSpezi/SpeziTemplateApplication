@@ -8,7 +8,7 @@
   "publisher": "RAND Corp",
   "meta": {
     "profile": [
-      "http://cardinalkit.org/fhir/StructureDefinition/sdf-Questionnaire"
+      "http://spezi.stanford.edu/fhir/StructureDefinition/sdf-Questionnaire"
     ],
     "tag": [
       {
@@ -37,13 +37,13 @@
   ],
   "contact": [
     {
-      "name": "http://cardinalkit.orghttps://www.rand.org/health-care/surveys_tools/mos/social-support/survey-instrument.html"
+      "name": "http://spezi.stanford.eduhttps://www.rand.org/health-care/surveys_tools/mos/social-support/survey-instrument.html"
     }
   ],
   "subjectType": [
     "Patient"
   ],
-  "url": "http://cardinalkit.org/fhir/questionnaire/32f43c8e-93e9-4c70-97a0-e716f8030073",
+  "url": "http://spezi.stanford.edu/fhir/questionnaire/32f43c8e-93e9-4c70-97a0-e716f8030073",
   "id": "socialsupport",
   "version": "1",
   "date": "2023-01-23T00:00:00-08:00",

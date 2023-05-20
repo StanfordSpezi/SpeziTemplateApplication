@@ -1,29 +1,30 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford Spezi Template Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
 // SPDX-License-Identifier: MIT
 //
 
-import CardinalKit
-import CardinalKitFHIR
-import CardinalKitFHIRMockDataStorageProvider
-import CardinalKitFHIRToFirestoreAdapter
-import CardinalKitFirebaseAccount
+import Spezi
+import SpeziFHIR
+import SpeziFHIRMockDataStorageProvider
+import SpeziFHIRToFirestoreAdapter
+import SpeziFirebaseAccount
 import class FirebaseFirestore.FirestoreSettings
-import CardinalKitFirestore
-import CardinalKitFirestorePrefixUserIdAdapter
-import CardinalKitHealthKit
-import CardinalKitHealthKitToFHIRAdapter
-import CardinalKitQuestionnaire
-import CardinalKitScheduler
+import class FirebaseFirestore.MemoryCacheSettings
 import FirebaseAuth
 import HealthKit
+import SpeziFirestore
+import SpeziFirestorePrefixUserIdAdapter
+import SpeziHealthKit
+import SpeziHealthKitToFHIRAdapter
+import SpeziQuestionnaire
+import SpeziScheduler
 import SwiftUI
 
 
-class TemplateAppDelegate: CardinalKitAppDelegate {
+class TemplateAppDelegate: SpeziAppDelegate {
     override var configuration: Configuration {
         Configuration(standard: FHIR()) {
             if !FeatureFlags.disableFirebase {
@@ -48,7 +49,7 @@ class TemplateAppDelegate: CardinalKitAppDelegate {
         let settings = FirestoreSettings()
         if FeatureFlags.useFirebaseEmulator {
             settings.host = "localhost:8080"
-            settings.isPersistenceEnabled = false
+            settings.cacheSettings = MemoryCacheSettings()
             settings.isSSLEnabled = false
         }
         
