@@ -1,15 +1,15 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford Spezi Template Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
 // SPDX-License-Identifier: MIT
 //
 
-import CardinalKitFHIR
+import SpeziFHIR
 
 
-/// The context attached to each task in the CardinalKit Template Application.
+/// The context attached to each task in the Spezi Template Application.
 ///
 /// We currently only support `Questionnaire`s, more cases can be added in the future.
 enum TemplateApplicationTaskContext: Codable, Identifiable {

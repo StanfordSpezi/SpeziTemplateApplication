@@ -1,16 +1,16 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford Spezi Template Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
 // SPDX-License-Identifier: MIT
 //
 
-import CardinalKitAccount
-import class CardinalKitFHIR.FHIR
-import CardinalKitFirebaseAccount
-import CardinalKitOnboarding
+import SpeziAccount
+import class SpeziFHIR.FHIR
 import FirebaseAuth
+import SpeziFirebaseAccount
+import SpeziOnboarding
 import SwiftUI
 
 

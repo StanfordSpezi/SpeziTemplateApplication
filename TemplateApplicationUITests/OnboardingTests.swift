@@ -1,5 +1,5 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford Spezi Template Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
@@ -40,7 +40,7 @@ class OnboardingTests: XCTestCase {
 
 extension XCUIApplication {
     func conductOnboardingIfNeeded() throws {
-        if self.staticTexts["CardinalKit\nTemplate Application"].waitForExistence(timeout: 5) {
+        if self.staticTexts["Spezi\nTemplate Application"].waitForExistence(timeout: 5) {
             try navigateOnboardingFlow(assertThatHealthKitConsentIsShown: false)
         }
     }
@@ -56,7 +56,7 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingFlowWelcome() throws {
-        XCTAssertTrue(staticTexts["CardinalKit\nTemplate Application"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Spezi\nTemplate Application"].waitForExistence(timeout: 2))
         
         XCTAssertTrue(buttons["Learn More"].waitForExistence(timeout: 2))
         buttons["Learn More"].tap()

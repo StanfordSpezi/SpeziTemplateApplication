@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F49B7762980407C00BCB272 /* CardinalKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F49B7752980407B00BCB272 /* CardinalKit */; };
+		2F49B7762980407C00BCB272 /* Spezi in Frameworks */ = {isa = PBXBuildFile; productRef = 2F49B7752980407B00BCB272 /* Spezi */; };
 		2F4E237E2989A2FE0013F3D9 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */; };
 		2F4E23832989D51F0013F3D9 /* TemplateAppTestingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E23822989D51F0013F3D9 /* TemplateAppTestingSetup.swift */; };
 		2F4E23872989DB360013F3D9 /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E23862989DB360013F3D9 /* ContactsTests.swift */; };
@@ -38,23 +38,23 @@
 		2FE5DC5129EDD7FA004B9AB4 /* TemplateApplicationTaskContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC4B29EDD7FA004B9AB4 /* TemplateApplicationTaskContext.swift */; };
 		2FE5DC5229EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC4C29EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift */; };
 		2FE5DC5329EDD7FA004B9AB4 /* Bundle+Questionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC4D29EDD7FA004B9AB4 /* Bundle+Questionnaire.swift */; };
-		2FE5DC6429EDD883004B9AB4 /* CardinalKitAccount in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6329EDD883004B9AB4 /* CardinalKitAccount */; };
-		2FE5DC6729EDD894004B9AB4 /* CardinalKitContact in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6629EDD894004B9AB4 /* CardinalKitContact */; };
-		2FE5DC6A29EDD8A9004B9AB4 /* CardinalKitFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6929EDD8A9004B9AB4 /* CardinalKitFHIR */; };
-		2FE5DC6C29EDD8A9004B9AB4 /* CardinalKitFHIRMockDataStorageProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6B29EDD8A9004B9AB4 /* CardinalKitFHIRMockDataStorageProvider */; };
-		2FE5DC6F29EDD8BF004B9AB4 /* CardinalKitFHIRToFirestoreAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6E29EDD8BF004B9AB4 /* CardinalKitFHIRToFirestoreAdapter */; };
-		2FE5DC7229EDD8D3004B9AB4 /* CardinalKitHealthKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7129EDD8D3004B9AB4 /* CardinalKitHealthKit */; };
-		2FE5DC7529EDD8E6004B9AB4 /* CardinalKitFirebaseAccount in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7429EDD8E6004B9AB4 /* CardinalKitFirebaseAccount */; };
-		2FE5DC7729EDD8E6004B9AB4 /* CardinalKitFirebaseConfiguration in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7629EDD8E6004B9AB4 /* CardinalKitFirebaseConfiguration */; };
-		2FE5DC7929EDD8E6004B9AB4 /* CardinalKitFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7829EDD8E6004B9AB4 /* CardinalKitFirestore */; };
-		2FE5DC7B29EDD8E6004B9AB4 /* CardinalKitFirestorePrefixUserIdAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7A29EDD8E6004B9AB4 /* CardinalKitFirestorePrefixUserIdAdapter */; };
-		2FE5DC7E29EDD907004B9AB4 /* CardinalKitHealthKitToFHIRAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7D29EDD907004B9AB4 /* CardinalKitHealthKitToFHIRAdapter */; };
-		2FE5DC8129EDD91D004B9AB4 /* CardinalKitOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8029EDD91D004B9AB4 /* CardinalKitOnboarding */; };
-		2FE5DC8429EDD934004B9AB4 /* CardinalKitQuestionnaire in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8329EDD934004B9AB4 /* CardinalKitQuestionnaire */; };
-		2FE5DC8729EDD950004B9AB4 /* CardinalKitScheduler in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8629EDD950004B9AB4 /* CardinalKitScheduler */; };
-		2FE5DC8A29EDD972004B9AB4 /* CardinalKitLocalStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8929EDD972004B9AB4 /* CardinalKitLocalStorage */; };
-		2FE5DC8C29EDD972004B9AB4 /* CardinalKitSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8B29EDD972004B9AB4 /* CardinalKitSecureStorage */; };
-		2FE5DC8F29EDD980004B9AB4 /* CardinalKitViews in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8E29EDD980004B9AB4 /* CardinalKitViews */; };
+		2FE5DC6429EDD883004B9AB4 /* SpeziAccount in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6329EDD883004B9AB4 /* SpeziAccount */; };
+		2FE5DC6729EDD894004B9AB4 /* SpeziContact in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6629EDD894004B9AB4 /* SpeziContact */; };
+		2FE5DC6A29EDD8A9004B9AB4 /* SpeziFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6929EDD8A9004B9AB4 /* SpeziFHIR */; };
+		2FE5DC6C29EDD8A9004B9AB4 /* SpeziFHIRMockDataStorageProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6B29EDD8A9004B9AB4 /* SpeziFHIRMockDataStorageProvider */; };
+		2FE5DC6F29EDD8BF004B9AB4 /* SpeziFHIRToFirestoreAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC6E29EDD8BF004B9AB4 /* SpeziFHIRToFirestoreAdapter */; };
+		2FE5DC7229EDD8D3004B9AB4 /* SpeziHealthKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7129EDD8D3004B9AB4 /* SpeziHealthKit */; };
+		2FE5DC7529EDD8E6004B9AB4 /* SpeziFirebaseAccount in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7429EDD8E6004B9AB4 /* SpeziFirebaseAccount */; };
+		2FE5DC7729EDD8E6004B9AB4 /* SpeziFirebaseConfiguration in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7629EDD8E6004B9AB4 /* SpeziFirebaseConfiguration */; };
+		2FE5DC7929EDD8E6004B9AB4 /* SpeziFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7829EDD8E6004B9AB4 /* SpeziFirestore */; };
+		2FE5DC7B29EDD8E6004B9AB4 /* SpeziFirestorePrefixUserIdAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7A29EDD8E6004B9AB4 /* SpeziFirestorePrefixUserIdAdapter */; };
+		2FE5DC7E29EDD907004B9AB4 /* SpeziHealthKitToFHIRAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC7D29EDD907004B9AB4 /* SpeziHealthKitToFHIRAdapter */; };
+		2FE5DC8129EDD91D004B9AB4 /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8029EDD91D004B9AB4 /* SpeziOnboarding */; };
+		2FE5DC8429EDD934004B9AB4 /* SpeziQuestionnaire in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8329EDD934004B9AB4 /* SpeziQuestionnaire */; };
+		2FE5DC8729EDD950004B9AB4 /* SpeziScheduler in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8629EDD950004B9AB4 /* SpeziScheduler */; };
+		2FE5DC8A29EDD972004B9AB4 /* SpeziLocalStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8929EDD972004B9AB4 /* SpeziLocalStorage */; };
+		2FE5DC8C29EDD972004B9AB4 /* SpeziSecureStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8B29EDD972004B9AB4 /* SpeziSecureStorage */; };
+		2FE5DC8F29EDD980004B9AB4 /* SpeziViews in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8E29EDD980004B9AB4 /* SpeziViews */; };
 		2FE5DC9929EDD9D9004B9AB4 /* XCTestExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC9829EDD9D9004B9AB4 /* XCTestExtensions */; };
 		2FE5DC9C29EDD9EF004B9AB4 /* XCTHealthKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC9B29EDD9EF004B9AB4 /* XCTHealthKit */; };
 		2FE5DCAE29EE6107004B9AB4 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCA929EE6107004B9AB4 /* IconView.swift */; };
@@ -138,24 +138,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FE5DC6429EDD883004B9AB4 /* CardinalKitAccount in Frameworks */,
-				2FE5DC6729EDD894004B9AB4 /* CardinalKitContact in Frameworks */,
-				2FE5DC8429EDD934004B9AB4 /* CardinalKitQuestionnaire in Frameworks */,
-				2FE5DC8A29EDD972004B9AB4 /* CardinalKitLocalStorage in Frameworks */,
-				2FE5DC8C29EDD972004B9AB4 /* CardinalKitSecureStorage in Frameworks */,
-				2FE5DC6F29EDD8BF004B9AB4 /* CardinalKitFHIRToFirestoreAdapter in Frameworks */,
-				2FE5DC7529EDD8E6004B9AB4 /* CardinalKitFirebaseAccount in Frameworks */,
-				2FE5DC7229EDD8D3004B9AB4 /* CardinalKitHealthKit in Frameworks */,
-				2FE5DC7B29EDD8E6004B9AB4 /* CardinalKitFirestorePrefixUserIdAdapter in Frameworks */,
-				2FE5DC7E29EDD907004B9AB4 /* CardinalKitHealthKitToFHIRAdapter in Frameworks */,
-				2F49B7762980407C00BCB272 /* CardinalKit in Frameworks */,
-				2FE5DC8F29EDD980004B9AB4 /* CardinalKitViews in Frameworks */,
-				2FE5DC8729EDD950004B9AB4 /* CardinalKitScheduler in Frameworks */,
-				2FE5DC6A29EDD8A9004B9AB4 /* CardinalKitFHIR in Frameworks */,
-				2FE5DC8129EDD91D004B9AB4 /* CardinalKitOnboarding in Frameworks */,
-				2FE5DC6C29EDD8A9004B9AB4 /* CardinalKitFHIRMockDataStorageProvider in Frameworks */,
-				2FE5DC7929EDD8E6004B9AB4 /* CardinalKitFirestore in Frameworks */,
-				2FE5DC7729EDD8E6004B9AB4 /* CardinalKitFirebaseConfiguration in Frameworks */,
+				2FE5DC6429EDD883004B9AB4 /* SpeziAccount in Frameworks */,
+				2FE5DC6729EDD894004B9AB4 /* SpeziContact in Frameworks */,
+				2FE5DC8429EDD934004B9AB4 /* SpeziQuestionnaire in Frameworks */,
+				2FE5DC8A29EDD972004B9AB4 /* SpeziLocalStorage in Frameworks */,
+				2FE5DC8C29EDD972004B9AB4 /* SpeziSecureStorage in Frameworks */,
+				2FE5DC6F29EDD8BF004B9AB4 /* SpeziFHIRToFirestoreAdapter in Frameworks */,
+				2FE5DC7529EDD8E6004B9AB4 /* SpeziFirebaseAccount in Frameworks */,
+				2FE5DC7229EDD8D3004B9AB4 /* SpeziHealthKit in Frameworks */,
+				2FE5DC7B29EDD8E6004B9AB4 /* SpeziFirestorePrefixUserIdAdapter in Frameworks */,
+				2FE5DC7E29EDD907004B9AB4 /* SpeziHealthKitToFHIRAdapter in Frameworks */,
+				2F49B7762980407C00BCB272 /* Spezi in Frameworks */,
+				2FE5DC8F29EDD980004B9AB4 /* SpeziViews in Frameworks */,
+				2FE5DC8729EDD950004B9AB4 /* SpeziScheduler in Frameworks */,
+				2FE5DC6A29EDD8A9004B9AB4 /* SpeziFHIR in Frameworks */,
+				2FE5DC8129EDD91D004B9AB4 /* SpeziOnboarding in Frameworks */,
+				2FE5DC6C29EDD8A9004B9AB4 /* SpeziFHIRMockDataStorageProvider in Frameworks */,
+				2FE5DC7929EDD8E6004B9AB4 /* SpeziFirestore in Frameworks */,
+				2FE5DC7729EDD8E6004B9AB4 /* SpeziFirebaseConfiguration in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,24 +359,24 @@
 			);
 			name = TemplateApplication;
 			packageProductDependencies = (
-				2F49B7752980407B00BCB272 /* CardinalKit */,
-				2FE5DC6329EDD883004B9AB4 /* CardinalKitAccount */,
-				2FE5DC6629EDD894004B9AB4 /* CardinalKitContact */,
-				2FE5DC6929EDD8A9004B9AB4 /* CardinalKitFHIR */,
-				2FE5DC6B29EDD8A9004B9AB4 /* CardinalKitFHIRMockDataStorageProvider */,
-				2FE5DC6E29EDD8BF004B9AB4 /* CardinalKitFHIRToFirestoreAdapter */,
-				2FE5DC7129EDD8D3004B9AB4 /* CardinalKitHealthKit */,
-				2FE5DC7429EDD8E6004B9AB4 /* CardinalKitFirebaseAccount */,
-				2FE5DC7629EDD8E6004B9AB4 /* CardinalKitFirebaseConfiguration */,
-				2FE5DC7829EDD8E6004B9AB4 /* CardinalKitFirestore */,
-				2FE5DC7A29EDD8E6004B9AB4 /* CardinalKitFirestorePrefixUserIdAdapter */,
-				2FE5DC7D29EDD907004B9AB4 /* CardinalKitHealthKitToFHIRAdapter */,
-				2FE5DC8029EDD91D004B9AB4 /* CardinalKitOnboarding */,
-				2FE5DC8329EDD934004B9AB4 /* CardinalKitQuestionnaire */,
-				2FE5DC8629EDD950004B9AB4 /* CardinalKitScheduler */,
-				2FE5DC8929EDD972004B9AB4 /* CardinalKitLocalStorage */,
-				2FE5DC8B29EDD972004B9AB4 /* CardinalKitSecureStorage */,
-				2FE5DC8E29EDD980004B9AB4 /* CardinalKitViews */,
+				2F49B7752980407B00BCB272 /* Spezi */,
+				2FE5DC6329EDD883004B9AB4 /* SpeziAccount */,
+				2FE5DC6629EDD894004B9AB4 /* SpeziContact */,
+				2FE5DC6929EDD8A9004B9AB4 /* SpeziFHIR */,
+				2FE5DC6B29EDD8A9004B9AB4 /* SpeziFHIRMockDataStorageProvider */,
+				2FE5DC6E29EDD8BF004B9AB4 /* SpeziFHIRToFirestoreAdapter */,
+				2FE5DC7129EDD8D3004B9AB4 /* SpeziHealthKit */,
+				2FE5DC7429EDD8E6004B9AB4 /* SpeziFirebaseAccount */,
+				2FE5DC7629EDD8E6004B9AB4 /* SpeziFirebaseConfiguration */,
+				2FE5DC7829EDD8E6004B9AB4 /* SpeziFirestore */,
+				2FE5DC7A29EDD8E6004B9AB4 /* SpeziFirestorePrefixUserIdAdapter */,
+				2FE5DC7D29EDD907004B9AB4 /* SpeziHealthKitToFHIRAdapter */,
+				2FE5DC8029EDD91D004B9AB4 /* SpeziOnboarding */,
+				2FE5DC8329EDD934004B9AB4 /* SpeziQuestionnaire */,
+				2FE5DC8629EDD950004B9AB4 /* SpeziScheduler */,
+				2FE5DC8929EDD972004B9AB4 /* SpeziLocalStorage */,
+				2FE5DC8B29EDD972004B9AB4 /* SpeziSecureStorage */,
+				2FE5DC8E29EDD980004B9AB4 /* SpeziViews */,
 			);
 			productName = TemplateApplication;
 			productReference = 653A254D283387FE005D4D48 /* TemplateApplication.app */;
@@ -455,19 +455,19 @@
 			);
 			mainGroup = 653A2544283387FE005D4D48;
 			packageReferences = (
-				2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "CardinalKit" */,
-				2FE5DC6229EDD883004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitAccount" */,
-				2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitContact" */,
-				2FE5DC6829EDD8A9004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFHIR" */,
-				2FE5DC6D29EDD8BF004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFHIRtoFirestoreAdapter" */,
-				2FE5DC7029EDD8D3004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitHealthKit" */,
-				2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFirebase" */,
-				2FE5DC7C29EDD907004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitHealthKitToFHIRAdapter" */,
-				2FE5DC7F29EDD91D004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitOnboarding" */,
-				2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitQuestionnaire" */,
-				2FE5DC8529EDD950004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitScheduler" */,
-				2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitStorage" */,
-				2FE5DC8D29EDD980004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitViews" */,
+				2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "Spezi" */,
+				2FE5DC6229EDD883004B9AB4 /* XCRemoteSwiftPackageReference "SpeziAccount" */,
+				2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */,
+				2FE5DC6829EDD8A9004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFHIR" */,
+				2FE5DC6D29EDD8BF004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFHIRtoFirestoreAdapter" */,
+				2FE5DC7029EDD8D3004B9AB4 /* XCRemoteSwiftPackageReference "SpeziHealthKit" */,
+				2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */,
+				2FE5DC7C29EDD907004B9AB4 /* XCRemoteSwiftPackageReference "SpeziHealthKitToFHIRAdapter" */,
+				2FE5DC7F29EDD91D004B9AB4 /* XCRemoteSwiftPackageReference "SpeziOnboarding" */,
+				2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "SpeziQuestionnaire" */,
+				2FE5DC8529EDD950004B9AB4 /* XCRemoteSwiftPackageReference "SpeziScheduler" */,
+				2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "SpeziStorage" */,
+				2FE5DC8D29EDD980004B9AB4 /* XCRemoteSwiftPackageReference "SpeziViews" */,
 				2FE5DC9029EDD9C3004B9AB4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2FE5DC9729EDD9D9004B9AB4 /* XCRemoteSwiftPackageReference "XCTestExtensions" */,
 				2FE5DC9A29EDD9EF004B9AB4 /* XCRemoteSwiftPackageReference "XCTHealthKit" */,
@@ -690,7 +690,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cardinalkittemplateapplication;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.spezi.templateapplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -713,7 +713,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cardinalkittemplateapplicationtests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.spezi.templateapplication.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"SWIFT_ELicenseRef-TemplateApplication_LOC_STRINGS" = NO;
 				SWIFT_VERSION = 5.0;
@@ -732,7 +732,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cardinalkittemplateapplicationuitests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.spezi.templateapplicationuitests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"SWIFT_ELicenseRef-TemplateApplication_LOC_STRINGS" = NO;
 				SWIFT_VERSION = 5.0;
@@ -880,7 +880,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cardinalkittemplateapplication;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.spezi.templateapplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -918,10 +918,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cardinalkittemplateapplication;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.spezi.templateapplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "CardinalKit Template Application";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Spezi Template Application";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -942,7 +942,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cardinalkittemplateapplicationtests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.spezi.templateapplication.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"SWIFT_ELicenseRef-TemplateApplication_LOC_STRINGS" = NO;
 				SWIFT_VERSION = 5.0;
@@ -962,7 +962,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cardinalkittemplateapplicationtests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.spezi.templateapplication.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"SWIFT_ELicenseRef-TemplateApplication_LOC_STRINGS" = NO;
 				SWIFT_VERSION = 5.0;
@@ -981,7 +981,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cardinalkittemplateapplicationuitests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.spezi.templateapplicationuitests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"SWIFT_ELicenseRef-TemplateApplication_LOC_STRINGS" = NO;
 				SWIFT_VERSION = 5.0;
@@ -1000,7 +1000,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cardinalkittemplateapplicationuitests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.spezi.templateapplicationuitests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"SWIFT_ELicenseRef-TemplateApplication_LOC_STRINGS" = NO;
 				SWIFT_VERSION = 5.0;
@@ -1055,108 +1055,108 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "CardinalKit" */ = {
+		2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "Spezi" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKit";
+			repositoryURL = "https://github.com/StanfordSpezi/Spezi";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.1;
+				minimumVersion = 0.5.0;
 			};
 		};
-		2FE5DC6229EDD883004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitAccount" */ = {
+		2FE5DC6229EDD883004B9AB4 /* XCRemoteSwiftPackageReference "SpeziAccount" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitAccount.git";
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziAccount.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+		2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziContact.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+		2FE5DC6829EDD8A9004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFHIR" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziFHIR.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+		2FE5DC6D29EDD8BF004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFHIRtoFirestoreAdapter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziFHIRtoFirestoreAdapter.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+		2FE5DC7029EDD8D3004B9AB4 /* XCRemoteSwiftPackageReference "SpeziHealthKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziHealthKit.git";
 			requirement = {
 				kind = upToNextMinorVersion;
 				minimumVersion = 0.2.0;
 			};
 		};
-		2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitContact" */ = {
+		2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitContact.git";
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziFirebase.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.0;
+				minimumVersion = 0.3.0;
 			};
 		};
-		2FE5DC6829EDD8A9004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFHIR" */ = {
+		2FE5DC7C29EDD907004B9AB4 /* XCRemoteSwiftPackageReference "SpeziHealthKitToFHIRAdapter" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitFHIR.git";
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziHealthKitToFHIRAdapter.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.1;
+				minimumVersion = 0.3.0;
 			};
 		};
-		2FE5DC6D29EDD8BF004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFHIRtoFirestoreAdapter" */ = {
+		2FE5DC7F29EDD91D004B9AB4 /* XCRemoteSwiftPackageReference "SpeziOnboarding" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitFHIRtoFirestoreAdapter.git";
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziOnboarding.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.0;
+				minimumVersion = 0.3.0;
 			};
 		};
-		2FE5DC7029EDD8D3004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitHealthKit" */ = {
+		2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "SpeziQuestionnaire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitHealthKit.git";
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziQuestionnaire.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.1.0;
+				minimumVersion = 0.3.0;
 			};
 		};
-		2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFirebase" */ = {
+		2FE5DC8529EDD950004B9AB4 /* XCRemoteSwiftPackageReference "SpeziScheduler" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitFirebase.git";
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziScheduler.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.0;
+				minimumVersion = 0.4.0;
 			};
 		};
-		2FE5DC7C29EDD907004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitHealthKitToFHIRAdapter" */ = {
+		2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "SpeziStorage" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitHealthKitToFHIRAdapter.git";
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziStorage.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.0;
+				minimumVersion = 0.3.1;
 			};
 		};
-		2FE5DC7F29EDD91D004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitOnboarding" */ = {
+		2FE5DC8D29EDD980004B9AB4 /* XCRemoteSwiftPackageReference "SpeziViews" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitOnboarding.git";
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziViews.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.1;
-			};
-		};
-		2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitQuestionnaire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitQuestionnaire.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.0;
-			};
-		};
-		2FE5DC8529EDD950004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitScheduler" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitScheduler.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.1;
-			};
-		};
-		2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitStorage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitStorage.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.2;
-			};
-		};
-		2FE5DC8D29EDD980004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitViews" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitViews.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.1;
+				minimumVersion = 0.3.0;
 			};
 		};
 		2FE5DC9029EDD9C3004B9AB4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -1172,7 +1172,7 @@
 			repositoryURL = "https://github.com/StanfordBDHG/XCTestExtensions.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.0;
+				minimumVersion = 0.4.2;
 			};
 		};
 		2FE5DC9A29EDD9EF004B9AB4 /* XCRemoteSwiftPackageReference "XCTHealthKit" */ = {
@@ -1186,95 +1186,95 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2F49B7752980407B00BCB272 /* CardinalKit */ = {
+		2F49B7752980407B00BCB272 /* Spezi */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "CardinalKit" */;
-			productName = CardinalKit;
+			package = 2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "Spezi" */;
+			productName = Spezi;
 		};
-		2FE5DC6329EDD883004B9AB4 /* CardinalKitAccount */ = {
+		2FE5DC6329EDD883004B9AB4 /* SpeziAccount */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC6229EDD883004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitAccount" */;
-			productName = CardinalKitAccount;
+			package = 2FE5DC6229EDD883004B9AB4 /* XCRemoteSwiftPackageReference "SpeziAccount" */;
+			productName = SpeziAccount;
 		};
-		2FE5DC6629EDD894004B9AB4 /* CardinalKitContact */ = {
+		2FE5DC6629EDD894004B9AB4 /* SpeziContact */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitContact" */;
-			productName = CardinalKitContact;
+			package = 2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */;
+			productName = SpeziContact;
 		};
-		2FE5DC6929EDD8A9004B9AB4 /* CardinalKitFHIR */ = {
+		2FE5DC6929EDD8A9004B9AB4 /* SpeziFHIR */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC6829EDD8A9004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFHIR" */;
-			productName = CardinalKitFHIR;
+			package = 2FE5DC6829EDD8A9004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFHIR" */;
+			productName = SpeziFHIR;
 		};
-		2FE5DC6B29EDD8A9004B9AB4 /* CardinalKitFHIRMockDataStorageProvider */ = {
+		2FE5DC6B29EDD8A9004B9AB4 /* SpeziFHIRMockDataStorageProvider */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC6829EDD8A9004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFHIR" */;
-			productName = CardinalKitFHIRMockDataStorageProvider;
+			package = 2FE5DC6829EDD8A9004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFHIR" */;
+			productName = SpeziFHIRMockDataStorageProvider;
 		};
-		2FE5DC6E29EDD8BF004B9AB4 /* CardinalKitFHIRToFirestoreAdapter */ = {
+		2FE5DC6E29EDD8BF004B9AB4 /* SpeziFHIRToFirestoreAdapter */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC6D29EDD8BF004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFHIRtoFirestoreAdapter" */;
-			productName = CardinalKitFHIRToFirestoreAdapter;
+			package = 2FE5DC6D29EDD8BF004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFHIRtoFirestoreAdapter" */;
+			productName = SpeziFHIRToFirestoreAdapter;
 		};
-		2FE5DC7129EDD8D3004B9AB4 /* CardinalKitHealthKit */ = {
+		2FE5DC7129EDD8D3004B9AB4 /* SpeziHealthKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC7029EDD8D3004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitHealthKit" */;
-			productName = CardinalKitHealthKit;
+			package = 2FE5DC7029EDD8D3004B9AB4 /* XCRemoteSwiftPackageReference "SpeziHealthKit" */;
+			productName = SpeziHealthKit;
 		};
-		2FE5DC7429EDD8E6004B9AB4 /* CardinalKitFirebaseAccount */ = {
+		2FE5DC7429EDD8E6004B9AB4 /* SpeziFirebaseAccount */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFirebase" */;
-			productName = CardinalKitFirebaseAccount;
+			package = 2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */;
+			productName = SpeziFirebaseAccount;
 		};
-		2FE5DC7629EDD8E6004B9AB4 /* CardinalKitFirebaseConfiguration */ = {
+		2FE5DC7629EDD8E6004B9AB4 /* SpeziFirebaseConfiguration */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFirebase" */;
-			productName = CardinalKitFirebaseConfiguration;
+			package = 2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */;
+			productName = SpeziFirebaseConfiguration;
 		};
-		2FE5DC7829EDD8E6004B9AB4 /* CardinalKitFirestore */ = {
+		2FE5DC7829EDD8E6004B9AB4 /* SpeziFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFirebase" */;
-			productName = CardinalKitFirestore;
+			package = 2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */;
+			productName = SpeziFirestore;
 		};
-		2FE5DC7A29EDD8E6004B9AB4 /* CardinalKitFirestorePrefixUserIdAdapter */ = {
+		2FE5DC7A29EDD8E6004B9AB4 /* SpeziFirestorePrefixUserIdAdapter */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitFirebase" */;
-			productName = CardinalKitFirestorePrefixUserIdAdapter;
+			package = 2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */;
+			productName = SpeziFirestorePrefixUserIdAdapter;
 		};
-		2FE5DC7D29EDD907004B9AB4 /* CardinalKitHealthKitToFHIRAdapter */ = {
+		2FE5DC7D29EDD907004B9AB4 /* SpeziHealthKitToFHIRAdapter */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC7C29EDD907004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitHealthKitToFHIRAdapter" */;
-			productName = CardinalKitHealthKitToFHIRAdapter;
+			package = 2FE5DC7C29EDD907004B9AB4 /* XCRemoteSwiftPackageReference "SpeziHealthKitToFHIRAdapter" */;
+			productName = SpeziHealthKitToFHIRAdapter;
 		};
-		2FE5DC8029EDD91D004B9AB4 /* CardinalKitOnboarding */ = {
+		2FE5DC8029EDD91D004B9AB4 /* SpeziOnboarding */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC7F29EDD91D004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitOnboarding" */;
-			productName = CardinalKitOnboarding;
+			package = 2FE5DC7F29EDD91D004B9AB4 /* XCRemoteSwiftPackageReference "SpeziOnboarding" */;
+			productName = SpeziOnboarding;
 		};
-		2FE5DC8329EDD934004B9AB4 /* CardinalKitQuestionnaire */ = {
+		2FE5DC8329EDD934004B9AB4 /* SpeziQuestionnaire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitQuestionnaire" */;
-			productName = CardinalKitQuestionnaire;
+			package = 2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "SpeziQuestionnaire" */;
+			productName = SpeziQuestionnaire;
 		};
-		2FE5DC8629EDD950004B9AB4 /* CardinalKitScheduler */ = {
+		2FE5DC8629EDD950004B9AB4 /* SpeziScheduler */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC8529EDD950004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitScheduler" */;
-			productName = CardinalKitScheduler;
+			package = 2FE5DC8529EDD950004B9AB4 /* XCRemoteSwiftPackageReference "SpeziScheduler" */;
+			productName = SpeziScheduler;
 		};
-		2FE5DC8929EDD972004B9AB4 /* CardinalKitLocalStorage */ = {
+		2FE5DC8929EDD972004B9AB4 /* SpeziLocalStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitStorage" */;
-			productName = CardinalKitLocalStorage;
+			package = 2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "SpeziStorage" */;
+			productName = SpeziLocalStorage;
 		};
-		2FE5DC8B29EDD972004B9AB4 /* CardinalKitSecureStorage */ = {
+		2FE5DC8B29EDD972004B9AB4 /* SpeziSecureStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitStorage" */;
-			productName = CardinalKitSecureStorage;
+			package = 2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "SpeziStorage" */;
+			productName = SpeziSecureStorage;
 		};
-		2FE5DC8E29EDD980004B9AB4 /* CardinalKitViews */ = {
+		2FE5DC8E29EDD980004B9AB4 /* SpeziViews */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC8D29EDD980004B9AB4 /* XCRemoteSwiftPackageReference "CardinalKitViews" */;
-			productName = CardinalKitViews;
+			package = 2FE5DC8D29EDD980004B9AB4 /* XCRemoteSwiftPackageReference "SpeziViews" */;
+			productName = SpeziViews;
 		};
 		2FE5DC9829EDD9D9004B9AB4 /* XCTestExtensions */ = {
 			isa = XCSwiftPackageProductDependency;

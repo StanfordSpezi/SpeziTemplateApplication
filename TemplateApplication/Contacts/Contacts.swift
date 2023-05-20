@@ -1,17 +1,17 @@
 //
-// This source file is part of the Stanford CardinalKit Template Application project
+// This source file is part of the Stanford Spezi Template Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
 // SPDX-License-Identifier: MIT
 //
 
-import CardinalKitContact
 import Foundation
+import SpeziContact
 import SwiftUI
 
 
-/// Displays the contacts for the CardinalKit Template Application.
+/// Displays the contacts for the Spezi Template Application.
 struct Contacts: View {
     let contacts = [
         Contact(
