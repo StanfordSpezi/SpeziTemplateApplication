@@ -15,7 +15,7 @@ SPDX-License-Identifier: MIT
 [![DOI](https://zenodo.org/badge/589846478.svg)](https://zenodo.org/badge/latestdoi/589846478)
 
 This repository contains the Spezi Template Application.
-It demonstrates using the [Spezi](https://github.com/StanfordSpezi/Spezi) framework template and builds on top of the [StanfordSpezi Template Application](https://github.com/StanfordSpezi/TemplateApplication).
+It demonstrates using the [Spezi](https://github.com/StanfordSpezi/Spezi) framework template and builds on top of the [Stanford Biodesign Digital Health Template Application](https://github.com/StanfordBDHG/TemplateApplication).
 
 
 ## Application Structure
@@ -103,7 +103,7 @@ The Spezi Template application includes continuous integration (CI) and continuo
 - Ensure a coherent code style by checking the conformance to the SwiftLint rules defined in `.swiftlint.yml` on every pull request and commit.
 - Ensure conformance to the [REUSE Spacification]() to property license the application and all related code.
 
-Please refer to the [StanfordSpezi Template Application](https://github.com/StanfordSpezi/TemplateApplication) and the [ContinousDelivery Example by Paul Schmiedmayer](https://github.com/PSchmiedmayer/ContinousDelivery) for more background about the CI and CD setup for the Spezi Template Application.
+Please refer to the [Stanford Biodesign Digital Health Template Application](https://github.com/StanfordBDHG/TemplateApplication) and the [ContinousDelivery Example by Paul Schmiedmayer](https://github.com/PSchmiedmayer/ContinousDelivery) for more background about the CI and CD setup for the Spezi Template Application.
 
 
 ## Contributors & License
