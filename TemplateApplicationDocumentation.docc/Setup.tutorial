@@ -1,25 +1,41 @@
-@Tutorial(time: 10) {
-    @Intro(title: "<#text#>") {
-        <#text#>
-    }
-    
-    @Section(title: "<#text#>") {
-        @ContentAndMedia {
-            <#text#>
+//
+// This source file is part of the Stanford Spezi Template Application project
+//
+// SPDX-FileCopyrightText: 2023 Stanford University
+//
+// SPDX-License-Identifier: MIT
+//
+
+@Tutorial(time: 30) {
+    @Intro(title: "Set up the Template Application") {
+        In this section, we will obtain the latest version of the Spezi Template Application from Github and set it up in your Xcode environment using the Firebase Emulator to simulate a cloud backend.
         }
         
-        @Steps {
-            @Step {
-                <#text#>
+        @Section(title: "Install Xcode") {
+            @ContentAndMedia {
+                In order to use the Template Application, you will need the latest version of Xcode installed on your Mac.
+                }
                 
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                @Steps {
+                    @Step {
+                        Download the latest version of Xcode from the Apple Developer Portal and install it on your Mac.
+                        
+                        @Image(source: <#file#>, alt: "<#accessible description#>")
+                    }
+                }
             }
             
-            @Step {
-                <#text#>
-                
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+            @Section(title: "Clone the Spezi Template Application") {
+                @ContentAndMedia {
+                    Now, we will download the latest version of the Spezi Template Application from Github. 
+                    }
+                    
+                    @Steps {
+                        @Step {
+                            If you have git installed on your system, you can clone the Spezi Template Application by running the following command in your terminal.
+                            
+                            @Image(source: <#file#>, alt: "<#accessible description#>")
+                        }
+                    }
+                }
             }
-        }
-    }
-}
