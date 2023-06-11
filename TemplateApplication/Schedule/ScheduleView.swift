@@ -34,27 +34,30 @@ struct ScheduleView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(startOfDays, id: \.self) { date in
+                            let startOfDay = Calendar.current.startOfDay(for: date)
                             Button(action: {
                                 withAnimation {
-                                    selectedDate = Calendar.current.startOfDay(for: date)
+                                    selectedDate = startOfDay
                                 }
                             }) {
-                                Text(format(startOfDay: date))
+                                Text(format(startOfDay: startOfDay))
                                     .padding()
-                                    .background(selectedDate == date ? Color.blue : Color.clear)
-                                    .foregroundColor(selectedDate == date ? Color.white : Color.black)
+                                    .background(selectedDate == startOfDay ? Color.blue : Color.clear)
+                                    .foregroundColor(selectedDate == startOfDay ? Color.white : Color.black)
                                     .cornerRadius(10)
+                                    .padding(5)
                             }
                         }
                     }
                 }
 
                 List {
-                    Section(format(startOfDay: selectedDate)) {
+                    Section {
                         ForEach(eventContextsByDate[selectedDate] ?? [], id: \.event) { eventContext in
-                            EventContextView(eventContext: eventContext, buttonEnabled: selectedDate == Calendar.current.startOfDay(for: Date()))
+                            let isToday = selectedDate == Calendar.current.startOfDay(for: Date())
+                            EventContextView(eventContext: eventContext, buttonEnabled: isToday)
                                 .onTapGesture {
-                                    if !eventContext.event.complete {
+                                    if !eventContext.event.complete && isToday {
                                         presentedContext = eventContext
                                     }
                                 }
@@ -94,12 +97,29 @@ struct ScheduleView: View {
         }
         return destination
     }
-    
-    
+
     private func format(startOfDay: Date) -> String {
+        let calendar = Calendar.current
+        let dayOfMonth = calendar.component(.day, from: startOfDay)
+
+        guard let rangeOfMonth = calendar.range(of: .day, in: .month, for: startOfDay) else {
+            return ""
+        }
+
+        let firstDayOfMonth = rangeOfMonth.lowerBound
+        let lastDayOfMonth = rangeOfMonth.upperBound - 1
+
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
+
+        if dayOfMonth == firstDayOfMonth || dayOfMonth == lastDayOfMonth {
+            // If the date is on the border of two months, display the month and year
+            dateFormatter.dateFormat = "MMMM, yyyy"
+        } else {
+            // Otherwise, display only the month and day
+            dateFormatter.dateFormat = "MMMM dd"
+        }
+
         return dateFormatter.string(from: startOfDay)
     }
     
