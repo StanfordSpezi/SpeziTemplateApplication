@@ -14,11 +14,6 @@ struct EventContextView: View {
     let eventContext: EventContext
     let buttonEnabled: Bool
 
-    init(eventContext: EventContext, buttonEnabled: Bool = true) {
-        self.eventContext = eventContext
-        self.buttonEnabled = buttonEnabled
-    }
-    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -52,7 +47,12 @@ struct EventContextView: View {
             .contentShape(Rectangle())
     }
     
-    
+
+    init(eventContext: EventContext, buttonEnabled: Bool = true) {
+        self.eventContext = eventContext
+        self.buttonEnabled = buttonEnabled
+    }
+
     private func format(eventDate: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none

@@ -20,39 +20,48 @@ struct ScheduleView: View {
 
     var startOfDays: [Date] {
         var dates = [Date]()
+        let today = Date()
+        let calendar = Calendar.current
+
+        guard let sunday = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: today)) else {
+            return dates
+        }
+
         for day in 0..<7 {
-            if let date = Calendar.current.date(byAdding: .day, value: day, to: Date()) {
+            if let date = calendar.date(byAdding: .day, value: day, to: sunday) {
                 dates.append(date)
             }
         }
         return dates
     }
 
+    var dateSelector: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(startOfDays, id: \.self) { date in
+                    let startOfDay = Calendar.current.startOfDay(for: date)
+                    Button(action: {
+                        withAnimation {
+                            selectedDate = startOfDay
+                        }
+                    }) {
+                        Text(extractDayNumber(from: startOfDay))
+                            .padding()
+                            .background(selectedDate == startOfDay ? Color.blue : Color.clear)
+                            .foregroundColor(selectedDate == startOfDay ? Color.white : Color.black)
+                            .cornerRadius(10)
+                    }
+                }
+            }
+        }
+    }
+
     var body: some View {
         NavigationStack {
             VStack {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(startOfDays, id: \.self) { date in
-                            let startOfDay = Calendar.current.startOfDay(for: date)
-                            Button(action: {
-                                withAnimation {
-                                    selectedDate = startOfDay
-                                }
-                            }) {
-                                Text(format(startOfDay: startOfDay))
-                                    .padding()
-                                    .background(selectedDate == startOfDay ? Color.blue : Color.clear)
-                                    .foregroundColor(selectedDate == startOfDay ? Color.white : Color.black)
-                                    .cornerRadius(10)
-                                    .padding(5)
-                            }
-                        }
-                    }
-                }
-
+                dateSelector
                 List {
-                    Section {
+                    Section(format(startOfDay: selectedDate)) {
                         ForEach(eventContextsByDate[selectedDate] ?? [], id: \.event) { eventContext in
                             let isToday = selectedDate == Calendar.current.startOfDay(for: Date())
                             EventContextView(eventContext: eventContext, buttonEnabled: isToday)
@@ -66,13 +75,13 @@ struct ScheduleView: View {
                     .id(selectedDate)
                 }
                 .onChange(of: scheduler) { _ in
-                    calculateEventContextsByDate()
+                    calculateEventContextsByDate(for: selectedDate)
                 }
                 .onChange(of: selectedDate) { newDate in
                     calculateEventContextsByDate(for: newDate)
                 }
                 .task {
-                    calculateEventContextsByDate()
+                    calculateEventContextsByDate(for: selectedDate)
                 }
             }
             .sheet(item: $presentedContext) { presentedContext in
@@ -81,7 +90,6 @@ struct ScheduleView: View {
             .navigationTitle("SCHEDULE_LIST_TITLE")
         }
     }
-    
     
     private func destination(withContext eventContext: EventContext) -> some View {
         @ViewBuilder
@@ -99,28 +107,16 @@ struct ScheduleView: View {
     }
 
     private func format(startOfDay: Date) -> String {
-        let calendar = Calendar.current
-        let dayOfMonth = calendar.component(.day, from: startOfDay)
-
-        guard let rangeOfMonth = calendar.range(of: .day, in: .month, for: startOfDay) else {
-            return ""
-        }
-
-        let firstDayOfMonth = rangeOfMonth.lowerBound
-        let lastDayOfMonth = rangeOfMonth.upperBound - 1
-
         let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
-
-        if dayOfMonth == firstDayOfMonth || dayOfMonth == lastDayOfMonth {
-            // If the date is on the border of two months, display the month and year
-            dateFormatter.dateFormat = "MMMM, yyyy"
-        } else {
-            // Otherwise, display only the month and day
-            dateFormatter.dateFormat = "MMMM dd"
-        }
-
         return dateFormatter.string(from: startOfDay)
+    }
+
+    func extractDayNumber(from date: Date) -> String {
+        let calendar = Calendar.current
+        let dayNumber = calendar.component(.day, from: date)
+        return String(dayNumber)
     }
     
     private func calculateEventContextsByDate(for date: Date = Calendar.current.startOfDay(for: Date())) {
@@ -128,7 +124,10 @@ struct ScheduleView: View {
             task
                 .events(
                     from: Calendar.current.startOfDay(for: date),
-                    to: .endDate(Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: date) ?? date)
+                    to: .numberOfEventsOrEndDate(
+                        100,
+                        Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: date) ?? date
+                    )
                 )
                 .map { event in
                     EventContext(event: event, task: task)
