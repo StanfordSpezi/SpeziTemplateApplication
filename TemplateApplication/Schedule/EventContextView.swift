@@ -12,7 +12,7 @@ import SwiftUI
 
 struct EventContextView: View {
     let eventContext: EventContext
-    
+    let buttonEnabled: Bool
     
     var body: some View {
         HStack {
@@ -43,7 +43,7 @@ struct EventContextView: View {
                 }
             }
         }
-            .disabled(eventContext.event.complete)
+            .disabled(eventContext.event.complete || !buttonEnabled)
             .contentShape(Rectangle())
     }
     
@@ -73,7 +73,8 @@ struct EventContextView_Previews: PreviewProvider {
                 // swiftlint:disable:next force_unwrapping
                 event: task.events(from: .now.addingTimeInterval(-60 * 60 * 24)).first!,
                 task: task
-            )
+            ),
+            buttonEnabled: true
         )
             .padding()
     }

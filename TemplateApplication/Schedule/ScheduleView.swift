@@ -16,37 +16,66 @@ struct ScheduleView: View {
     @EnvironmentObject var scheduler: TemplateApplicationScheduler
     @State var eventContextsByDate: [Date: [EventContext]] = [:]
     @State var presentedContext: EventContext?
-    
-    
+    @State private var selectedDate: Date = Calendar.current.startOfDay(for: Date())
+
     var startOfDays: [Date] {
-        Array(eventContextsByDate.keys)
+        var dates = [Date]()
+        for day in 0..<7 {
+            if let date = Calendar.current.date(byAdding: .day, value: day, to: Date()) {
+                dates.append(date)
+            }
+        }
+        return dates
     }
-    
-    
+
     var body: some View {
         NavigationStack {
-            List(startOfDays, id: \.timeIntervalSinceNow) { startOfDay in
-                Section(format(startOfDay: startOfDay)) {
-                    ForEach(eventContextsByDate[startOfDay] ?? [], id: \.event) { eventContext in
-                        EventContextView(eventContext: eventContext)
-                            .onTapGesture {
-                                if !eventContext.event.complete {
-                                    presentedContext = eventContext
+            VStack {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(startOfDays, id: \.self) { date in
+                            Button(action: {
+                                withAnimation {
+                                    selectedDate = Calendar.current.startOfDay(for: date)
                                 }
+                            }) {
+                                Text(format(startOfDay: date))
+                                    .padding()
+                                    .background(selectedDate == date ? Color.blue : Color.clear)
+                                    .foregroundColor(selectedDate == date ? Color.white : Color.black)
+                                    .cornerRadius(10)
                             }
+                        }
                     }
                 }
-            }
+
+                List {
+                    Section(format(startOfDay: selectedDate)) {
+                        ForEach(eventContextsByDate[selectedDate] ?? [], id: \.event) { eventContext in
+                            EventContextView(eventContext: eventContext, buttonEnabled: selectedDate == Calendar.current.startOfDay(for: Date()))
+                                .onTapGesture {
+                                    if !eventContext.event.complete {
+                                        presentedContext = eventContext
+                                    }
+                                }
+                        }
+                    }
+                    .id(selectedDate)
+                }
                 .onChange(of: scheduler) { _ in
                     calculateEventContextsByDate()
+                }
+                .onChange(of: selectedDate) { newDate in
+                    calculateEventContextsByDate(for: newDate)
                 }
                 .task {
                     calculateEventContextsByDate()
                 }
-                .sheet(item: $presentedContext) { presentedContext in
-                    destination(withContext: presentedContext)
-                }
-                .navigationTitle("SCHEDULE_LIST_TITLE")
+            }
+            .sheet(item: $presentedContext) { presentedContext in
+                destination(withContext: presentedContext)
+            }
+            .navigationTitle("SCHEDULE_LIST_TITLE")
         }
     }
     
@@ -74,23 +103,23 @@ struct ScheduleView: View {
         return dateFormatter.string(from: startOfDay)
     }
     
-    private func calculateEventContextsByDate() {
+    private func calculateEventContextsByDate(for date: Date = Calendar.current.startOfDay(for: Date())) {
         let eventContexts = scheduler.tasks.flatMap { task in
             task
                 .events(
-                    from: Calendar.current.startOfDay(for: .now),
-                    to: .numberOfEventsOrEndDate(100, .now)
+                    from: Calendar.current.startOfDay(for: date),
+                    to: .endDate(Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: date) ?? date)
                 )
                 .map { event in
                     EventContext(event: event, task: task)
                 }
         }
-            .sorted()
-        
+        .sorted()
+
         let newEventContextsByDate = Dictionary(grouping: eventContexts) { eventContext in
             Calendar.current.startOfDay(for: eventContext.event.scheduledAt)
         }
-        
+
         if newEventContextsByDate != eventContextsByDate {
             eventContextsByDate = newEventContextsByDate
         }
