@@ -62,14 +62,18 @@ struct ScheduleView: View {
                 dateSelector
                 List {
                     Section(format(startOfDay: selectedDate)) {
-                        ForEach(eventContextsByDate[selectedDate] ?? [], id: \.event) { eventContext in
-                            let isToday = selectedDate == Calendar.current.startOfDay(for: Date())
-                            EventContextView(eventContext: eventContext, buttonEnabled: isToday)
-                                .onTapGesture {
-                                    if !eventContext.event.complete && isToday {
-                                        presentedContext = eventContext
+                        if let events = eventContextsByDate[selectedDate] {
+                            ForEach(events, id: \.event) { eventContext in
+                                let isToday = selectedDate == Calendar.current.startOfDay(for: Date())
+                                EventContextView(eventContext: eventContext, buttonEnabled: isToday)
+                                    .onTapGesture {
+                                        if !eventContext.event.complete && isToday {
+                                            presentedContext = eventContext
+                                        }
                                     }
-                                }
+                            }
+                        } else {
+                            Text("SCHEDULE_NO_TASKS")
                         }
                     }
                     .id(selectedDate)

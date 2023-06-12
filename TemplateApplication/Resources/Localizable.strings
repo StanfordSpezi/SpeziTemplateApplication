@@ -88,6 +88,7 @@
 
 // MARK: - Schedule
 "SCHEDULE_TAB_TITLE" = "Schedule";
+"SCHEDULE_NO_TASKS" = "No tasks today.";
 
 "SCHEDULE_LIST_TITLE" = "Schedule";
 "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_TITLE" = "Social Support Questionnaire";
