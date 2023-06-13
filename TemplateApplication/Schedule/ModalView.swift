@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ModalView: View {
     @Environment(\.dismiss) private var dismiss
-    
+
     let text: String
     let buttonText: String
     let onClose: () -> Void
@@ -19,20 +19,19 @@ struct ModalView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             Text(text)
-                .font(.largeTitle)
                 .padding()
+            Spacer()
             Button {
                 self.dismiss()
                 self.onClose()
             } label: {
                 Text(buttonText)
-                    .font(.title)
-                    .padding()
-                    .background(Color.red)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .frame(maxWidth: .infinity, minHeight: 38)
             }
+                .padding()
+                .buttonStyle(.borderedProminent)
         }
     }
 }
