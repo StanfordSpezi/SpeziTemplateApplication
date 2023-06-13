@@ -34,7 +34,7 @@ extension TemplateApplicationScheduler {
 
         /// Adds a task at the current time for UI testing if the `--testSchedule` feature flag is set
         if FeatureFlags.testSchedule {
-            let currentDate = Date()
+            let currentDate = Date.now
             let currentHour = Calendar.current.component(.hour, from: currentDate)
             let currentMinute = Calendar.current.component(.minute, from: currentDate)
 
@@ -42,11 +42,11 @@ extension TemplateApplicationScheduler {
                 title: String(localized: "TASK_TEST_TITLE"),
                 description: String(localized: "TASK_TEST_DESCRIPTION"),
                 schedule: Schedule(
-                    start: Calendar.current.startOfDay(for: Date()),
+                    start: Calendar.current.startOfDay(for: currentDate),
                     repetition: .matching(.init(hour: currentHour, minute: currentMinute)), // repeat at current time
                     end: .numberOfEvents(1)
                 ),
-                context: TemplateApplicationTaskContext.test("This is a test")
+                context: TemplateApplicationTaskContext.test(String(localized: "TASK_TEST_CONTENT"))
             )
             tasks.append(testTask)
         }

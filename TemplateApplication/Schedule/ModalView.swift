@@ -8,23 +8,24 @@
 
 import SwiftUI
 
+
 struct ModalView: View {
     @Environment(\.dismiss) private var dismiss
-
+    
     let text: String
     let buttonText: String
     let onClose: () -> Void
-
+    
+    
     var body: some View {
         VStack {
             Text(text)
                 .font(.largeTitle)
                 .padding()
-
-            Button(action: {
+            Button {
                 self.dismiss()
                 self.onClose()
-            }) {
+            } label: {
                 Text(buttonText)
                     .font(.title)
                     .padding()
@@ -35,6 +36,7 @@ struct ModalView: View {
         }
     }
 }
+
 
 struct ModalView_Previews: PreviewProvider {
     static var previews: some View {
