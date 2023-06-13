@@ -61,6 +61,12 @@ struct ScheduleView: View {
                         await eventContext.event.complete(true)
                     }
                 }
+            case let .test(string):
+                ModalView(text: string, buttonText: "Close") {
+                    _Concurrency.Task {
+                        await eventContext.event.complete(true)
+                    }
+                }
             }
         }
         return destination
