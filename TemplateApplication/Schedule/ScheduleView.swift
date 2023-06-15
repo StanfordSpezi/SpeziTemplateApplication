@@ -108,6 +108,12 @@ struct ScheduleView: View {
                         updateId = UUID()
                     }
                 }
+            case let .test(string):
+                ModalView(text: string, buttonText: String(localized: "TASK_TEST_CLOSE_TITLE")) {
+                    _Concurrency.Task {
+                        await eventContext.event.complete(true)
+                    }
+                }
             }
         }
         return destination
