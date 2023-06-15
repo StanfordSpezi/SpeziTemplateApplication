@@ -18,6 +18,7 @@ struct OnboardingFlow: View {
         case login
         case signUp
         case healthKitPermissions
+        case notificationPermissions
     }
     
     @SceneStorage(StorageKeys.onboardingFlowStep) private var onboardingSteps: [Step] = []
@@ -40,7 +41,9 @@ struct OnboardingFlow: View {
                     case .signUp:
                         TemplateSignUp()
                     case .healthKitPermissions:
-                        HealthKitPermissions()
+                        HealthKitPermissions(onboardingSteps: $onboardingSteps)
+                    case .notificationPermissions:
+                        NotificationPermissions()
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)

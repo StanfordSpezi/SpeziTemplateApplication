@@ -28,7 +28,7 @@ class OnboardingTests: XCTestCase {
     func testOnboardingFlow() throws {
         let app = XCUIApplication()
         
-        try app.navigateOnboardingFlow(assertThatHealthKitConsentIsShown: true)
+        try app.navigateOnboardingFlow()
         
         let tabBar = app.tabBars["Tab Bar"]
         XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 2))
@@ -40,19 +40,22 @@ class OnboardingTests: XCTestCase {
 
 extension XCUIApplication {
     func conductOnboardingIfNeeded() throws {
-        if self.staticTexts["Spezi\nTemplate Application"].waitForExistence(timeout: 5) {
-            try navigateOnboardingFlow(assertThatHealthKitConsentIsShown: false)
+        let app = XCUIApplication()
+        
+        if app.staticTexts["Spezi\nTemplate Application"].waitForExistence(timeout: 5) {
+            try app.navigateOnboardingFlow()
         }
     }
     
-    func navigateOnboardingFlow(assertThatHealthKitConsentIsShown: Bool = true) throws {
+    fileprivate func navigateOnboardingFlow() throws {
         try navigateOnboardingFlowWelcome()
         try navigateOnboardingFlowInterestingModules()
         if staticTexts["Consent Example"].waitForExistence(timeout: 5) {
             try navigateOnboardingFlowConsent()
         }
         try navigateOnboardingAccount()
-        try navigateOnboardingFlowHealthKitAccess(assertThatHealthKitConsentIsShown: assertThatHealthKitConsentIsShown)
+        try navigateOnboardingFlowHealthKitAccess()
+        try navigateOnboardingFlowNotification()
     }
     
     private func navigateOnboardingFlowWelcome() throws {
@@ -139,12 +142,25 @@ extension XCUIApplication {
         }
     }
     
-    private func navigateOnboardingFlowHealthKitAccess(assertThatHealthKitConsentIsShown: Bool = true) throws {
+    private func navigateOnboardingFlowHealthKitAccess() throws {
         XCTAssertTrue(staticTexts["HealthKit Access"].waitForExistence(timeout: 2))
         
         XCTAssertTrue(buttons["Grant Access"].waitForExistence(timeout: 2))
         buttons["Grant Access"].tap()
         
         try handleHealthKitAuthorization()
+    }
+    
+    private func navigateOnboardingFlowNotification() throws {
+        XCTAssertTrue(staticTexts["Notifications"].waitForExistence(timeout: 2))
+        
+        XCTAssertTrue(buttons["Allow Notifications"].waitForExistence(timeout: 2))
+        buttons["Allow Notifications"].tap()
+        
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        let alertAllowButton = springboard.buttons["Allow"]
+        if alertAllowButton.waitForExistence(timeout: 5) {
+           alertAllowButton.tap()
+        }
     }
 }
