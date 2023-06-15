@@ -17,6 +17,7 @@ struct ScheduleView: View {
     @State var eventContextsByDate: [Date: [EventContext]] = [:]
     @State var presentedContext: EventContext?
     @State private var selectedDate: Date = Calendar.current.startOfDay(for: Date())
+    @State private var updateId = UUID()
 
     var startOfDays: [Date] {
         var dates = [Date]()
@@ -63,9 +64,10 @@ struct ScheduleView: View {
                 List {
                     Section(format(startOfDay: selectedDate)) {
                         if let events = eventContextsByDate[selectedDate] {
-                            ForEach(events, id: \.event) { eventContext in
+                            ForEach(events, id: \.event.id) { eventContext in
                                 let isToday = selectedDate == Calendar.current.startOfDay(for: Date())
                                 EventContextView(eventContext: eventContext, buttonEnabled: isToday)
+                                    .id(updateId)
                                     .onTapGesture {
                                         if !eventContext.event.complete && isToday {
                                             presentedContext = eventContext
@@ -103,6 +105,7 @@ struct ScheduleView: View {
                 QuestionnaireView(questionnaire: questionnaire) { _ in
                     _Concurrency.Task {
                         await eventContext.event.complete(true)
+                        updateId = UUID()
                     }
                 }
             }
@@ -123,7 +126,7 @@ struct ScheduleView: View {
         return String(dayNumber)
     }
     
-    private func calculateEventContextsByDate(for date: Date = Calendar.current.startOfDay(for: Date())) {
+    private func calculateEventContextsByDate(for date: Date = Date()) {
         let eventContexts = scheduler.tasks.flatMap { task in
             task
                 .events(
