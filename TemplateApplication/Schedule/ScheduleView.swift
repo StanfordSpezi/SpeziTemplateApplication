@@ -17,9 +17,8 @@ struct ScheduleView: View {
     @State var eventContextsByDate: [Date: [EventContext]] = [:]
     @State var presentedContext: EventContext?
     @State private var selectedDate: Date = Calendar.current.startOfDay(for: Date())
-    @State private var updateId = UUID()
 
-    var startOfDays: [Date] {
+    var days: [Date] {
         var dates = [Date]()
         let today = Date()
         let calendar = Calendar.current
@@ -39,8 +38,8 @@ struct ScheduleView: View {
     var dateSelector: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(startOfDays, id: \.self) { date in
-                    let startOfDay = Calendar.current.startOfDay(for: date)
+                ForEach(days, id: \.self) { day in
+                    let startOfDay = Calendar.current.startOfDay(for: day)
                     Button(action: {
                         withAnimation {
                             selectedDate = startOfDay
@@ -67,7 +66,6 @@ struct ScheduleView: View {
                             ForEach(events, id: \.event.id) { eventContext in
                                 let isToday = selectedDate == Calendar.current.startOfDay(for: Date())
                                 EventContextView(eventContext: eventContext, buttonEnabled: isToday)
-                                    .id(updateId)
                                     .onTapGesture {
                                         if !eventContext.event.complete && isToday {
                                             presentedContext = eventContext
@@ -78,7 +76,6 @@ struct ScheduleView: View {
                             Text("SCHEDULE_NO_TASKS")
                         }
                     }
-                    .id(selectedDate)
                 }
                 .onChange(of: scheduler) { _ in
                     calculateEventContextsByDate(for: selectedDate)
@@ -105,7 +102,6 @@ struct ScheduleView: View {
                 QuestionnaireView(questionnaire: questionnaire) { _ in
                     _Concurrency.Task {
                         await eventContext.event.complete(true)
-                        updateId = UUID()
                     }
                 }
             case let .test(string):
