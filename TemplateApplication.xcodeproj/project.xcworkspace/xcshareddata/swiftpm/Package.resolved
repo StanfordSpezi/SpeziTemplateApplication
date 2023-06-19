@@ -221,8 +221,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
       "state" : {
-        "revision" : "1f4493908f620aa565df4116b61c738b51938630",
-        "version" : "0.4.1"
+        "revision" : "34dafda29a424017a6c54efe4d2c7569c50c49ed",
+        "version" : "0.4.2"
       }
     },
     {
