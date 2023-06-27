@@ -131,8 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/Spezi",
       "state" : {
-        "revision" : "57ddc03668efce968e1376fbd686915c76d1dfa7",
-        "version" : "0.5.1"
+        "revision" : "cfcb4d81640f3b7794f36f47e70d72ccfa00f099",
+        "version" : "0.5.3"
       }
     },
     {
@@ -221,8 +221,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
       "state" : {
-        "revision" : "34dafda29a424017a6c54efe4d2c7569c50c49ed",
-        "version" : "0.4.2"
+        "revision" : "cf4d9a0147b2ac16504a24a765e68c9e39afc19a",
+        "version" : "0.4.4"
       }
     },
     {
