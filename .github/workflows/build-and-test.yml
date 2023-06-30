@@ -25,8 +25,10 @@ jobs:
     uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@reuseCISetup
     with:
       artifactname: TemplateApplication.xcresult
-      runsonlabels: '["macos-latest"]'
+      runsonlabels: '["macos-13"]'
+      xcodeversion: 14.2
       setupfirebaseemulator: true
+      codeql: true
       customcommand: "firebase emulators:exec 'fastlane test'"
   uploadcoveragereport:
     name: Upload Coverage Report
