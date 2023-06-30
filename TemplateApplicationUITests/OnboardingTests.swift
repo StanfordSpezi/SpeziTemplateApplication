@@ -110,20 +110,12 @@ extension XCUIApplication {
         buttons["Email and Password"].tap()
         
         try textFields["Enter your email ..."].enter(value: "leland@stanford.edu")
-        swipeUp()
-        
         try secureTextFields["Enter your password ..."].enter(value: "StanfordRocks")
-        swipeUp()
-        
         try secureTextFields["Repeat your password ..."].enter(value: "StanfordRocks")
-        swipeUp()
-        
         try textFields["Enter your first name ..."].enter(value: "Leland")
-        staticTexts["Repeat\nPassword"].swipeUp()
-        
         try textFields["Enter your last name ..."].enter(value: "Stanford")
-        staticTexts["Repeat\nPassword"].swipeUp()
         
+        XCTAssertTrue(buttons["Sign Up"].waitForExistence(timeout: 2))
         collectionViews.buttons["Sign Up"].tap()
         
         sleep(3)
@@ -133,6 +125,7 @@ extension XCUIApplication {
             
             XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 2))
             XCTAssertTrue(staticTexts["leland@stanford.edu"].waitForExistence(timeout: 2))
+            
             XCTAssertTrue(scrollViews.otherElements.buttons["Next"].waitForExistence(timeout: 2))
             scrollViews.otherElements.buttons["Next"].tap()
         }
