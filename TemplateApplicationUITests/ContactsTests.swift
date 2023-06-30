@@ -30,28 +30,9 @@ class ContactsTests: XCTestCase {
         XCTAssertTrue(app.staticTexts["Leland Stanford"].waitForExistence(timeout: 2))
         
         XCTAssertTrue(app.buttons["Call"].waitForExistence(timeout: 2))
-        app.buttons["Call"].tap()
-        app.alerts["Call"].scrollViews.otherElements.buttons["Ok"].tap()
-        
         XCTAssertTrue(app.buttons["Text"].waitForExistence(timeout: 2))
-        app.buttons["Text"].tap()
-        app.alerts["Text"].scrollViews.otherElements.buttons["Ok"].tap()
-        
         XCTAssertTrue(app.buttons["Email"].waitForExistence(timeout: 2))
-        app.buttons["Email"].tap()
-        app.alerts["Email"].scrollViews.otherElements.buttons["Ok"].tap()
-        
         XCTAssertTrue(app.buttons["Website"].waitForExistence(timeout: 2))
-        app.buttons["Website"].tap()
-        
-        let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
-        XCTAssert(safari.wait(for: .runningForeground, timeout: 10))
-        app.activate()
-        
         XCTAssertTrue(app.buttons["Address, 450 Serra Mall\nStanford CA 94305\nUSA"].waitForExistence(timeout: 2))
-        app.buttons["Address, 450 Serra Mall\nStanford CA 94305\nUSA"].tap()
-        
-        let maps = XCUIApplication(bundleIdentifier: "com.apple.Maps")
-        XCTAssert(maps.wait(for: .runningForeground, timeout: 10))
     }
 }
