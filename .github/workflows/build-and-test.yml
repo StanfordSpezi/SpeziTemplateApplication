@@ -16,13 +16,13 @@ on:
 jobs:
   reuse_action:
     name: REUSE Compliance Check
-    uses: StanfordSpezi/.github/.github/workflows/reuse.yml@reuseCISetup
+    uses: StanfordSpezi/.github/.github/workflows/reuse.yml@v2
   swiftlint:
     name: SwiftLint
-    uses: StanfordSpezi/.github/.github/workflows/swiftlint.yml@reuseCISetup
+    uses: StanfordSpezi/.github/.github/workflows/swiftlint.yml@v2
   buildandtest:
     name: Build and Test
-    uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@reuseCISetup
+    uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     with:
       artifactname: TemplateApplication.xcresult
       runsonlabels: '["macos-13"]'
@@ -31,6 +31,6 @@ jobs:
   uploadcoveragereport:
     name: Upload Coverage Report
     needs: buildandtest
-    uses: StanfordSpezi/.github/.github/workflows/create-and-upload-coverage-report.yml@reuseCISetup
+    uses: StanfordSpezi/.github/.github/workflows/create-and-upload-coverage-report.yml@v2
     with:
       coveragereports: TemplateApplication.xcresult
