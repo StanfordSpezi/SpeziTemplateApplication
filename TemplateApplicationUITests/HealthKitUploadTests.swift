@@ -28,7 +28,7 @@ class HealthKitUploadTests: XCTestCase {
     func testHealthKitMockUpload() throws {
         let app = XCUIApplication()
         
-        try conductOnboardingIfNeeded()
+        try app.conductOnboardingIfNeeded()
         
         try navigateToMockUpload()
         
