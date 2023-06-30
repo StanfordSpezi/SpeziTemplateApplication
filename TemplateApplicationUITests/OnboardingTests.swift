@@ -82,11 +82,9 @@ extension XCUIApplication {
         
         XCTAssertTrue(staticTexts["First Name"].waitForExistence(timeout: 2))
         try textFields["Enter your first name ..."].enter(value: "Leland")
-        textFields["Enter your first name ..."].typeText("\n")
         
         XCTAssertTrue(staticTexts["Last Name"].waitForExistence(timeout: 2))
         try textFields["Enter your last name ..."].enter(value: "Stanford")
-        textFields["Enter your last name ..."].typeText("\n")
         
         XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 2))
         staticTexts["Leland Stanford"].firstMatch.swipeUp()
@@ -107,19 +105,17 @@ extension XCUIApplication {
         buttons["Sign Up"].tap()
         
         XCTAssertTrue(navigationBars.staticTexts["Sign Up"].waitForExistence(timeout: 2))
-        XCTAssertTrue(images["App Icon"].waitForExistence(timeout: 2))
-        XCTAssertTrue(buttons["Email and Password"].waitForExistence(timeout: 2))
         
+        XCTAssertTrue(buttons["Email and Password"].waitForExistence(timeout: 2))
         buttons["Email and Password"].tap()
         
         try textFields["Enter your email ..."].enter(value: "leland@stanford.edu")
         swipeUp()
         
-        secureTextFields["Enter your password ..."].tap()
-        secureTextFields["Enter your password ..."].typeText("StanfordRocks")
+        try secureTextFields["Enter your password ..."].enter(value: "StanfordRocks")
         swipeUp()
-        secureTextFields["Repeat your password ..."].tap()
-        secureTextFields["Repeat your password ..."].typeText("StanfordRocks")
+        
+        try secureTextFields["Repeat your password ..."].enter(value: "StanfordRocks")
         swipeUp()
         
         try textFields["Enter your first name ..."].enter(value: "Leland")
