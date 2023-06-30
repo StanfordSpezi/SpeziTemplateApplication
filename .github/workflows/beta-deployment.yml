@@ -27,6 +27,5 @@ jobs:
     with:
       artifactname: TemplateApplication.xcresult
       runsonlabels: '["macos-13"]'
-      xcodeversion: 14.2
       fastlanelane: beta
       setupsigning: true
