@@ -8,6 +8,7 @@
 
 import SpeziAccount
 import class SpeziFHIR.FHIR
+import SpeziHealthKit
 import FirebaseAuth
 import HealthKit
 import SpeziFirebaseAccount
@@ -18,6 +19,7 @@ import SwiftUI
 struct AccountSetup: View {
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
     @EnvironmentObject var account: Account
+    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
     
     
     var body: some View {
@@ -39,7 +41,7 @@ struct AccountSetup: View {
         )
             .onReceive(account.objectWillChange) {
                 if account.signedIn {
-                    moveToNextOnboardingStep()
+                    moveToNextOnboardingStep(healthKitAuthorized: healthKitDataSource.authorized)
                 }
             }
     }
@@ -85,7 +87,7 @@ struct AccountSetup: View {
             OnboardingActionsView(
                 "ACCOUNT_NEXT".moduleLocalized,
                 action: {
-                    moveToNextOnboardingStep()
+                    moveToNextOnboardingStep(healthKitAuthorized: healthKitDataSource.authorized)
                 }
             )
         } else {
@@ -108,9 +110,14 @@ struct AccountSetup: View {
     }
     
     
-    private func moveToNextOnboardingStep() {
+    private func moveToNextOnboardingStep(healthKitAuthorized: Bool) {
         if HKHealthStore.isHealthDataAvailable() {
             onboardingSteps.append(.healthKitPermissions)
+            if !healthKitAuthorized {
+                onboardingSteps.append(.healthKitPermissions)
+            } else {
+                onboardingSteps.append(.notificationPermissions)
+            }
         } else {
             onboardingSteps.append(.notificationPermissions)
         }

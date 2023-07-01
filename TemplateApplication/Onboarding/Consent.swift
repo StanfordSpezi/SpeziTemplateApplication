@@ -6,12 +6,16 @@
 // SPDX-License-Identifier: MIT
 //
 
+import class SpeziFHIR.FHIR
+import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI
 
 
 struct Consent: View {
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
+    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
+    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     
     
     private var consentDocument: Data {
@@ -37,7 +41,11 @@ struct Consent: View {
                 if !FeatureFlags.disableFirebase {
                     onboardingSteps.append(.accountSetup)
                 } else {
-                    onboardingSteps.append(.healthKitPermissions)
+                    if !healthKitDataSource.authorized {
+                        onboardingSteps.append(.healthKitPermissions)
+                    } else {
+                        completedOnboardingFlow = true
+                    }
                 }
             }
         )
