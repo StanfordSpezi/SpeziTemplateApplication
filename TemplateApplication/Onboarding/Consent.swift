@@ -15,6 +15,7 @@ import SwiftUI
 struct Consent: View {
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
     @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
+    @EnvironmentObject var scheduler: TemplateApplicationScheduler
     @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     
     
@@ -43,6 +44,8 @@ struct Consent: View {
                 } else {
                     if !healthKitDataSource.authorized {
                         onboardingSteps.append(.healthKitPermissions)
+                    } else if await !scheduler.localNotificationAuthorization {
+                        onboardingSteps.append(.notificationPermissions)
                     } else {
                         completedOnboardingFlow = true
                     }

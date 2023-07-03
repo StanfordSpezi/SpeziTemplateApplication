@@ -8,10 +8,10 @@
 
 import SpeziAccount
 import class SpeziFHIR.FHIR
-import SpeziHealthKit
 import FirebaseAuth
 import HealthKit
 import SpeziFirebaseAccount
+import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI
 
@@ -20,6 +20,8 @@ struct AccountSetup: View {
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
     @EnvironmentObject var account: Account
     @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
+    @EnvironmentObject var scheduler: TemplateApplicationScheduler
+    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     
     
     var body: some View {
@@ -41,7 +43,12 @@ struct AccountSetup: View {
         )
             .onReceive(account.objectWillChange) {
                 if account.signedIn {
-                    moveToNextOnboardingStep(healthKitAuthorized: healthKitDataSource.authorized)
+                    Task {
+                        moveToNextOnboardingStep(
+                            healthKitAuthorized: healthKitDataSource.authorized,
+                            notificationAuthorized: await scheduler.localNotificationAuthorization
+                        )
+                    }
                 }
             }
     }
@@ -87,7 +94,10 @@ struct AccountSetup: View {
             OnboardingActionsView(
                 "ACCOUNT_NEXT".moduleLocalized,
                 action: {
-                    moveToNextOnboardingStep(healthKitAuthorized: healthKitDataSource.authorized)
+                    moveToNextOnboardingStep(
+                        healthKitAuthorized: healthKitDataSource.authorized,
+                        notificationAuthorized: await scheduler.localNotificationAuthorization
+                    )
                 }
             )
         } else {
@@ -110,17 +120,15 @@ struct AccountSetup: View {
     }
     
     
-    private func moveToNextOnboardingStep(healthKitAuthorized: Bool) {
-        if HKHealthStore.isHealthDataAvailable() {
+    private func moveToNextOnboardingStep(healthKitAuthorized: Bool, notificationAuthorized: Bool) {
+        if HKHealthStore.isHealthDataAvailable() && !healthKitAuthorized {
             onboardingSteps.append(.healthKitPermissions)
-            if !healthKitAuthorized {
-                onboardingSteps.append(.healthKitPermissions)
-            } else {
-                onboardingSteps.append(.notificationPermissions)
-            }
-        } else {
+        } else if !notificationAuthorized {
             onboardingSteps.append(.notificationPermissions)
+        } else {
+            completedOnboardingFlow = true
         }
+        
         // Unfortunately, SwiftUI currently animates changes in the navigation path that do not change
         // the current top view. Therefore we need to do the following async procedure to remove the
         // `.login` and `.signUp` steps while disabling the animations before and re-enabling them
