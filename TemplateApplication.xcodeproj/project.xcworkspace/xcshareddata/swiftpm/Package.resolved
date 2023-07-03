@@ -183,10 +183,10 @@
     {
       "identity" : "spezihealthkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziHealthKit.git",
+      "location" : "https://github.com/StanfordSpezi/SpeziHealthKit",
       "state" : {
-        "revision" : "7ae7c344c052fb7bdc9490cb4296b87a0abb8326",
-        "version" : "0.2.1"
+        "branch" : "feature/determine-health-authorizations-given",
+        "revision" : "0364392a459c0c0139aad4224d5d935460b45bf3"
       }
     },
     {
@@ -201,10 +201,10 @@
     {
       "identity" : "spezionboarding",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziOnboarding.git",
+      "location" : "https://github.com/StanfordSpezi/SpeziOnboarding",
       "state" : {
-        "revision" : "10109f18d7958098dbbc4c32786d237a57400f85",
-        "version" : "0.3.0"
+        "branch" : "feat/allow-async-action-OnboardingActionsView",
+        "revision" : "4c3810301fd147153a637073618a5c39c49e0f29"
       }
     },
     {
@@ -219,10 +219,10 @@
     {
       "identity" : "spezischeduler",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
+      "location" : "https://github.com/StanfordSpezi/SpeziScheduler",
       "state" : {
-        "revision" : "cf4d9a0147b2ac16504a24a765e68c9e39afc19a",
-        "version" : "0.4.4"
+        "branch" : "feat/flag-determining-notification-auth",
+        "revision" : "311f926543e87202e49343beb5e1ff3a2ae9b2f0"
       }
     },
     {
