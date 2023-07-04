@@ -7,15 +7,15 @@
 //
 
 import SpeziFHIR
-import SpeziHealthKit
 import SpeziOnboarding
+import SpeziScheduler
 import SwiftUI
 
 
-struct HealthKitPermissions: View {
-    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
-    @Binding private var onboardingSteps: [OnboardingFlow.Step]
-    @State var healthKitProcessing = false
+struct NotificationPermissions: View {
+    @EnvironmentObject var scheduler: TemplateApplicationScheduler
+    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
+    @State var notificationProcessing = false
     
     
     var body: some View {
@@ -23,56 +23,48 @@ struct HealthKitPermissions: View {
             contentView: {
                 VStack {
                     OnboardingTitleView(
-                        title: "HEALTHKIT_PERMISSIONS_TITLE".moduleLocalized,
-                        subtitle: "HEALTHKIT_PERMISSIONS_SUBTITLE".moduleLocalized
+                        title: "NOTIFICATION_PERMISSIONS_TITLE".moduleLocalized,
+                        subtitle: "NOTIFICATION_PERMISSIONS_SUBTITLE".moduleLocalized
                     )
                     Spacer()
-                    Image(systemName: "heart.text.square.fill")
+                    Image(systemName: "bell.square.fill")
                         .font(.system(size: 150))
                         .foregroundColor(.accentColor)
-                    Text("HEALTHKIT_PERMISSIONS_DESCRIPTION")
+                    Text("NOTIFICATION_PERMISSIONS_DESCRIPTION")
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 16)
                     Spacer()
                 }
             }, actionView: {
                 OnboardingActionsView(
-                    "HEALTHKIT_PERMISSIONS_BUTTON".moduleLocalized,
+                    "NOTIFICATION_PERMISSIONS_BUTTON".moduleLocalized,
                     action: {
                         do {
-                            healthKitProcessing = true
+                            notificationProcessing = true
                             // HealthKit is not available in the preview simulator.
                             if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
                                 try await _Concurrency.Task.sleep(for: .seconds(5))
                             } else {
-                                try await healthKitDataSource.askForAuthorization()
+                                try await scheduler.requestLocalNotificationAuthorization()
                             }
                         } catch {
-                            print("Could not request HealthKit permissions.")
+                            print("Could not request notification permissions.")
                         }
-                        healthKitProcessing = false
-                        onboardingSteps.append(.notificationPermissions)
+                        completedOnboardingFlow = true
+                        notificationProcessing = false
                     }
                 )
             }
         )
-            .navigationBarBackButtonHidden(healthKitProcessing)
-    }
-    
-    
-    init(onboardingSteps: Binding<[OnboardingFlow.Step]>) {
-        self._onboardingSteps = onboardingSteps
+            .navigationBarBackButtonHidden(notificationProcessing)
     }
 }
 
 
 #if DEBUG
-struct HealthKitPermissions_Previews: PreviewProvider {
-    @State private static var path: [OnboardingFlow.Step] = []
-    
-    
+struct NotificationPermissions_Previews: PreviewProvider {
     static var previews: some View {
-        HealthKitPermissions(onboardingSteps: $path)
+        NotificationPermissions()
     }
 }
 #endif
