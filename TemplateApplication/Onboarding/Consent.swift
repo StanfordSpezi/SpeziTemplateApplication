@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
+import HealthKit
 import class SpeziFHIR.FHIR
 import SpeziHealthKit
 import SpeziOnboarding
@@ -42,7 +43,7 @@ struct Consent: View {
                 if !FeatureFlags.disableFirebase {
                     onboardingSteps.append(.accountSetup)
                 } else {
-                    if !healthKitDataSource.authorized {
+                    if HKHealthStore.isHealthDataAvailable() && !healthKitDataSource.authorized {
                         onboardingSteps.append(.healthKitPermissions)
                     } else if await !scheduler.localNotificationAuthorization {
                         onboardingSteps.append(.notificationPermissions)

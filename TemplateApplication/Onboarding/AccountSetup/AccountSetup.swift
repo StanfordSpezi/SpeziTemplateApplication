@@ -44,10 +44,7 @@ struct AccountSetup: View {
             .onReceive(account.objectWillChange) {
                 if account.signedIn {
                     Task {
-                        moveToNextOnboardingStep(
-                            healthKitAuthorized: healthKitDataSource.authorized,
-                            notificationAuthorized: await scheduler.localNotificationAuthorization
-                        )
+                        await moveToNextOnboardingStep()
                     }
                 }
             }
@@ -94,10 +91,7 @@ struct AccountSetup: View {
             OnboardingActionsView(
                 "ACCOUNT_NEXT".moduleLocalized,
                 action: {
-                    moveToNextOnboardingStep(
-                        healthKitAuthorized: healthKitDataSource.authorized,
-                        notificationAuthorized: await scheduler.localNotificationAuthorization
-                    )
+                    await moveToNextOnboardingStep()
                 }
             )
         } else {
@@ -120,10 +114,10 @@ struct AccountSetup: View {
     }
     
     
-    private func moveToNextOnboardingStep(healthKitAuthorized: Bool, notificationAuthorized: Bool) {
-        if HKHealthStore.isHealthDataAvailable() && !healthKitAuthorized {
+    private func moveToNextOnboardingStep() async {
+        if HKHealthStore.isHealthDataAvailable() && !healthKitDataSource.authorized {
             onboardingSteps.append(.healthKitPermissions)
-        } else if !notificationAuthorized {
+        } else if await !scheduler.localNotificationAuthorization {
             onboardingSteps.append(.notificationPermissions)
         } else {
             completedOnboardingFlow = true
