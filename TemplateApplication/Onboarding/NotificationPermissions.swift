@@ -14,6 +14,7 @@ import SwiftUI
 
 struct NotificationPermissions: View {
     @EnvironmentObject var scheduler: TemplateApplicationScheduler
+    @EnvironmentObject private var onboardingController: OnboardingViewController
     @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     @State var notificationProcessing = false
     
@@ -50,7 +51,8 @@ struct NotificationPermissions: View {
                         } catch {
                             print("Could not request notification permissions.")
                         }
-                        completedOnboardingFlow = true
+                        //completedOnboardingFlow = true
+                        onboardingController.nextStep()
                         notificationProcessing = false
                     }
                 )

@@ -6,8 +6,11 @@
 // SPDX-License-Identifier: MIT
 //
 
+import HealthKit
 import SwiftUI
-
+import SpeziFHIR
+import SpeziOnboarding
+import SpeziHealthKit
 
 /// Displays an multi-step onboarding flow for the Spezi Template Application.
 struct OnboardingFlow: View {
@@ -21,11 +24,42 @@ struct OnboardingFlow: View {
         case notificationPermissions
     }
     
+    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
+    @EnvironmentObject var scheduler: TemplateApplicationScheduler
+    
     @SceneStorage(StorageKeys.onboardingFlowStep) private var onboardingSteps: [Step] = []
     @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
-    
+    @State private var localNotificationAuthorization = false
     
     var body: some View {
+        SpeziOnboarding.OnboardingFlow(onboardingFlowComplete: $completedOnboardingFlow) {
+            Welcome(onboardingSteps: .constant([]))
+            InterestingModules(onboardingSteps: .constant([]))
+            
+            #if !(targetEnvironment(simulator) && (arch(i386) || arch(x86_64)))
+                Consent(onboardingSteps: .constant([]))
+            #endif
+            
+            if !FeatureFlags.disableFirebase {
+                AccountSetup(onboardingSteps: .constant([]))
+                TemplateLogin()
+                TemplateSignUp()
+            }
+            
+            if HKHealthStore.isHealthDataAvailable() && !healthKitDataSource.authorized {
+                HealthKitPermissions(onboardingSteps: .constant([]))
+            }
+            
+            if !localNotificationAuthorization {
+                NotificationPermissions()
+            }
+        }
+        .interactiveDismissDisabled(!completedOnboardingFlow)
+        .task {
+            localNotificationAuthorization = await !scheduler.localNotificationAuthorization
+        }
+        
+        /*
         NavigationStack(path: $onboardingSteps) {
             Welcome(onboardingSteps: $onboardingSteps)
                 .navigationDestination(for: Step.self) { onboardingStep in
@@ -49,6 +83,7 @@ struct OnboardingFlow: View {
                 .navigationBarTitleDisplayMode(.inline)
         }
         .interactiveDismissDisabled(!completedOnboardingFlow)
+         */
     }
 }
 

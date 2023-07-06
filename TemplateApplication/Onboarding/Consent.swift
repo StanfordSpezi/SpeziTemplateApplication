@@ -17,6 +17,7 @@ struct Consent: View {
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
     @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
     @EnvironmentObject var scheduler: TemplateApplicationScheduler
+    @EnvironmentObject private var onboardingController: OnboardingViewController
     @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     
     
@@ -40,6 +41,8 @@ struct Consent: View {
                 consentDocument
             },
             action: {
+                onboardingController.nextStep()
+                /*
                 if !FeatureFlags.disableFirebase {
                     onboardingSteps.append(.accountSetup)
                 } else {
@@ -51,6 +54,7 @@ struct Consent: View {
                         completedOnboardingFlow = true
                     }
                 }
+                 */
             }
         )
     }

@@ -11,6 +11,7 @@ import SwiftUI
 
 
 struct Welcome: View {
+    @EnvironmentObject private var onboardingController: OnboardingViewController
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
     
     
@@ -37,7 +38,8 @@ struct Welcome: View {
             ],
             actionText: "WELCOME_BUTTON".moduleLocalized,
             action: {
-                onboardingSteps.append(.interestingModules)
+                // onboardingSteps.append(.interestingModules)
+                onboardingController.nextStep()
             }
         )
     }

@@ -11,6 +11,7 @@ import SwiftUI
 
 
 struct InterestingModules: View {
+    @EnvironmentObject private var onboardingController: OnboardingViewController
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
     
     
@@ -42,7 +43,8 @@ struct InterestingModules: View {
                 print("PKCanvas view-related views are currently skipped on Intel-based iOS simulators due to a metal bug on the simulator.")
                 onboardingSteps.append(.accountSetup)
                 #else
-                onboardingSteps.append(.consent)
+                // onboardingSteps.append(.consent)
+                onboardingController.nextStep()
                 #endif
             }
         )
