@@ -77,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR",
       "state" : {
-        "revision" : "d10f408766264183cd50bb117b99580255520aa3",
-        "version" : "0.2.3"
+        "revision" : "fdf8e4543718a940643598e4bd5e750e9c4c5540",
+        "version" : "0.2.4"
       }
     },
     {
@@ -257,8 +257,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTestExtensions.git",
       "state" : {
-        "revision" : "9b716267e7699b2ad8f0fc4a6798dd213c9b8e0a",
-        "version" : "0.4.5"
+        "revision" : "625477e0937294cb3fd6e7bbf72b78f951644b1d",
+        "version" : "0.4.6"
       }
     },
     {
@@ -266,8 +266,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTHealthKit.git",
       "state" : {
-        "revision" : "19395bbd14a2554e4c9d3fe5cf38aa626c807269",
-        "version" : "0.3.3"
+        "revision" : "6e9344a2d632b801d94fe3bbd1d891817e032103",
+        "version" : "0.3.5"
       }
     },
     {
