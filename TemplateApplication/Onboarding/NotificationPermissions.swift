@@ -15,7 +15,6 @@ import SwiftUI
 struct NotificationPermissions: View {
     @EnvironmentObject var scheduler: TemplateApplicationScheduler
     @EnvironmentObject private var onboardingController: OnboardingViewController
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     @State var notificationProcessing = false
     
     
@@ -42,7 +41,7 @@ struct NotificationPermissions: View {
                     action: {
                         do {
                             notificationProcessing = true
-                            // HealthKit is not available in the preview simulator.
+                            // Notification Authorization is not available in the preview simulator.
                             if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
                                 try await _Concurrency.Task.sleep(for: .seconds(5))
                             } else {
@@ -51,14 +50,14 @@ struct NotificationPermissions: View {
                         } catch {
                             print("Could not request notification permissions.")
                         }
-                        //completedOnboardingFlow = true
-                        onboardingController.nextStep()
                         notificationProcessing = false
+                        
+                        onboardingController.nextStep()
                     }
                 )
             }
         )
-            .navigationBarBackButtonHidden(notificationProcessing)
+        .navigationBarBackButtonHidden(notificationProcessing)
     }
 }
 

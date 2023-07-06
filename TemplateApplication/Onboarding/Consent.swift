@@ -14,12 +14,7 @@ import SwiftUI
 
 
 struct Consent: View {
-    @Binding private var onboardingSteps: [OnboardingFlow.Step]
-    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
-    @EnvironmentObject var scheduler: TemplateApplicationScheduler
     @EnvironmentObject private var onboardingController: OnboardingViewController
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
-    
     
     private var consentDocument: Data {
         guard let path = Bundle.main.url(forResource: "ConsentDocument", withExtension: "md"),
@@ -28,6 +23,7 @@ struct Consent: View {
         }
         return data
     }
+    
     
     var body: some View {
         ConsentView(
@@ -42,37 +38,16 @@ struct Consent: View {
             },
             action: {
                 onboardingController.nextStep()
-                /*
-                if !FeatureFlags.disableFirebase {
-                    onboardingSteps.append(.accountSetup)
-                } else {
-                    if HKHealthStore.isHealthDataAvailable() && !healthKitDataSource.authorized {
-                        onboardingSteps.append(.healthKitPermissions)
-                    } else if await !scheduler.localNotificationAuthorization {
-                        onboardingSteps.append(.notificationPermissions)
-                    } else {
-                        completedOnboardingFlow = true
-                    }
-                }
-                 */
             }
         )
-    }
-    
-    
-    init(onboardingSteps: Binding<[OnboardingFlow.Step]>) {
-        self._onboardingSteps = onboardingSteps
     }
 }
 
 
 #if DEBUG
 struct Consent_Previews: PreviewProvider {
-    @State private static var path: [OnboardingFlow.Step] = []
-    
-    
     static var previews: some View {
-        Consent(onboardingSteps: $path)
+        Consent()
     }
 }
 #endif

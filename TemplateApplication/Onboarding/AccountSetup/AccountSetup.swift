@@ -17,11 +17,8 @@ import SwiftUI
 
 
 struct AccountSetup: View {
-    @Binding private var onboardingSteps: [OnboardingFlow.Step]
     @EnvironmentObject var account: Account
-    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
-    @EnvironmentObject var scheduler: TemplateApplicationScheduler
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
+    @EnvironmentObject private var onboardingController: OnboardingViewController
     
     
     var body: some View {
@@ -43,9 +40,8 @@ struct AccountSetup: View {
         )
             .onReceive(account.objectWillChange) {
                 if account.signedIn {
-                    Task {
-                        await moveToNextOnboardingStep()
-                    }
+                    // TODO: Not correct here -> Jumps to Login screen but should actually go to health
+                    onboardingController.nextStep()
                 }
             }
     }
@@ -91,38 +87,29 @@ struct AccountSetup: View {
             OnboardingActionsView(
                 "ACCOUNT_NEXT".moduleLocalized,
                 action: {
-                    await moveToNextOnboardingStep()
+                    // TODO: Not correct here -> Jumps to Login screen but should actually go to health
+                    onboardingController.nextStep()
                 }
             )
         } else {
             OnboardingActionsView(
                 primaryText: "ACCOUNT_SIGN_UP".moduleLocalized,
                 primaryAction: {
-                    onboardingSteps.append(.signUp)
+                    // TODO: How to go to a specific next onboarding step
+                    // onboardingSteps.append(.signUp)
                 },
                 secondaryText: "ACCOUNT_LOGIN".moduleLocalized,
                 secondaryAction: {
-                    onboardingSteps.append(.login)
+                    // TODO: How to go to a specific next onboarding step
+                    // onboardingSteps.append(.login)
                 }
             )
         }
     }
     
-    
-    init(onboardingSteps: Binding<[OnboardingFlow.Step]>) {
-        self._onboardingSteps = onboardingSteps
-    }
-    
-    
+    // Might be useful regarding the notification disablement
+    /*
     private func moveToNextOnboardingStep() async {
-        if HKHealthStore.isHealthDataAvailable() && !healthKitDataSource.authorized {
-            onboardingSteps.append(.healthKitPermissions)
-        } else if await !scheduler.localNotificationAuthorization {
-            onboardingSteps.append(.notificationPermissions)
-        } else {
-            completedOnboardingFlow = true
-        }
-        
         // Unfortunately, SwiftUI currently animates changes in the navigation path that do not change
         // the current top view. Therefore we need to do the following async procedure to remove the
         // `.login` and `.signUp` steps while disabling the animations before and re-enabling them
@@ -135,16 +122,14 @@ struct AccountSetup: View {
             UIView.setAnimationsEnabled(true)
         }
     }
+     */
 }
 
 
 #if DEBUG
 struct AccountSetup_Previews: PreviewProvider {
-    @State private static var path: [OnboardingFlow.Step] = []
-    
-    
     static var previews: some View {
-        AccountSetup(onboardingSteps: $path)
+        AccountSetup()
             .environmentObject(Account(accountServices: []))
             .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
     }

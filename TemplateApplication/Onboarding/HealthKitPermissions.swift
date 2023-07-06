@@ -14,11 +14,8 @@ import SwiftUI
 
 struct HealthKitPermissions: View {
     @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
-    @EnvironmentObject var scheduler: TemplateApplicationScheduler
     @EnvironmentObject private var onboardingController: OnboardingViewController
-    @Binding private var onboardingSteps: [OnboardingFlow.Step]
     @State var healthKitProcessing = false
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     
     
     var body: some View {
@@ -56,34 +53,19 @@ struct HealthKitPermissions: View {
                         healthKitProcessing = false
                         
                         onboardingController.nextStep()
-                        /*
-                        if await !scheduler.localNotificationAuthorization {
-                            onboardingSteps.append(.notificationPermissions)
-                        } else {
-                            completedOnboardingFlow = true
-                        }
-                         */
                     }
                 )
             }
         )
-            .navigationBarBackButtonHidden(healthKitProcessing)
-    }
-    
-    
-    init(onboardingSteps: Binding<[OnboardingFlow.Step]>) {
-        self._onboardingSteps = onboardingSteps
+        .navigationBarBackButtonHidden(healthKitProcessing)
     }
 }
 
 
 #if DEBUG
 struct HealthKitPermissions_Previews: PreviewProvider {
-    @State private static var path: [OnboardingFlow.Step] = []
-    
-    
     static var previews: some View {
-        HealthKitPermissions(onboardingSteps: $path)
+        HealthKitPermissions()
     }
 }
 #endif

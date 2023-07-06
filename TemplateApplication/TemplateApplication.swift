@@ -26,7 +26,7 @@ struct TemplateApplication: App {
                 }
             }
                 .sheet(isPresented: !$completedOnboardingFlow) {
-                    OnboardingFlow()
+                    Onboarding()
                 }
                 .testingSetup()
                 .spezi(appDelegate)
