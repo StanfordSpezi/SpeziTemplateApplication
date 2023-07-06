@@ -11,6 +11,7 @@ import class SpeziFHIR.FHIR
 import FirebaseAuth
 import HealthKit
 import SpeziFirebaseAccount
+import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI
 
@@ -18,6 +19,9 @@ import SwiftUI
 struct AccountSetup: View {
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
     @EnvironmentObject var account: Account
+    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
+    @EnvironmentObject var scheduler: TemplateApplicationScheduler
+    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     
     
     var body: some View {
@@ -39,7 +43,9 @@ struct AccountSetup: View {
         )
             .onReceive(account.objectWillChange) {
                 if account.signedIn {
-                    moveToNextOnboardingStep()
+                    Task {
+                        await moveToNextOnboardingStep()
+                    }
                 }
             }
     }
@@ -85,7 +91,7 @@ struct AccountSetup: View {
             OnboardingActionsView(
                 "ACCOUNT_NEXT".moduleLocalized,
                 action: {
-                    moveToNextOnboardingStep()
+                    await moveToNextOnboardingStep()
                 }
             )
         } else {
@@ -108,12 +114,15 @@ struct AccountSetup: View {
     }
     
     
-    private func moveToNextOnboardingStep() {
-        if HKHealthStore.isHealthDataAvailable() {
+    private func moveToNextOnboardingStep() async {
+        if HKHealthStore.isHealthDataAvailable() && !healthKitDataSource.authorized {
             onboardingSteps.append(.healthKitPermissions)
-        } else {
+        } else if await !scheduler.localNotificationAuthorization {
             onboardingSteps.append(.notificationPermissions)
+        } else {
+            completedOnboardingFlow = true
         }
+        
         // Unfortunately, SwiftUI currently animates changes in the navigation path that do not change
         // the current top view. Therefore we need to do the following async procedure to remove the
         // `.login` and `.signUp` steps while disabling the animations before and re-enabling them

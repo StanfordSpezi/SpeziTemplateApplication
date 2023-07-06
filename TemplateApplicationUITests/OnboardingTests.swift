@@ -30,10 +30,24 @@ class OnboardingTests: XCTestCase {
         
         try app.navigateOnboardingFlow()
         
-        let tabBar = app.tabBars["Tab Bar"]
-        XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 2))
-        XCTAssertTrue(tabBar.buttons["Contacts"].waitForExistence(timeout: 2))
-        XCTAssertTrue(tabBar.buttons["Mock Upload"].waitForExistence(timeout: 2))
+        try app.assertOnboardingComplete()
+    }
+    
+    func testOnboardingFlowRepeated() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["--showOnboarding"]
+        
+        try app.navigateOnboardingFlow()
+        try app.assertOnboardingComplete()
+        
+        app.terminate()
+        
+        // Second onboarding round shouldn't display HealthKit and Notification authorizations anymore
+        app.activate()
+        
+        try app.navigateOnboardingFlow(repeated: true)
+        // Do not show HealthKit and Notification authorization view again
+        try app.assertOnboardingComplete()
     }
 }
 
@@ -47,15 +61,17 @@ extension XCUIApplication {
         }
     }
     
-    fileprivate func navigateOnboardingFlow() throws {
+    fileprivate func navigateOnboardingFlow(repeated skippedIfRepeated: Bool = false) throws {
         try navigateOnboardingFlowWelcome()
         try navigateOnboardingFlowInterestingModules()
         if staticTexts["Consent Example"].waitForExistence(timeout: 5) {
             try navigateOnboardingFlowConsent()
         }
         try navigateOnboardingAccount()
-        try navigateOnboardingFlowHealthKitAccess()
-        try navigateOnboardingFlowNotification()
+        if !skippedIfRepeated {
+            try navigateOnboardingFlowHealthKitAccess()
+            try navigateOnboardingFlowNotification()
+        }
     }
     
     private func navigateOnboardingFlowWelcome() throws {
@@ -82,9 +98,11 @@ extension XCUIApplication {
         
         XCTAssertTrue(staticTexts["First Name"].waitForExistence(timeout: 2))
         try textFields["Enter your first name ..."].enter(value: "Leland")
+        textFields["Enter your first name ..."].typeText("\n")
         
         XCTAssertTrue(staticTexts["Last Name"].waitForExistence(timeout: 2))
         try textFields["Enter your last name ..."].enter(value: "Stanford")
+        textFields["Enter your last name ..."].typeText("\n")
         
         XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 2))
         staticTexts["Leland Stanford"].firstMatch.swipeUp()
@@ -151,5 +169,12 @@ extension XCUIApplication {
         if alertAllowButton.waitForExistence(timeout: 5) {
            alertAllowButton.tap()
         }
+    }
+    
+    fileprivate func assertOnboardingComplete() throws {
+        let tabBar = tabBars["Tab Bar"]
+        XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 2))
+        XCTAssertTrue(tabBar.buttons["Contacts"].waitForExistence(timeout: 2))
+        XCTAssertTrue(tabBar.buttons["Mock Upload"].waitForExistence(timeout: 2))
     }
 }
