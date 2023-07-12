@@ -14,10 +14,9 @@ import SwiftUI
 
 struct HealthKitPermissions: View {
     @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
-    @EnvironmentObject private var onboardingController: OnboardingViewController
+    @EnvironmentObject private var onboardingController: OnboardingNavigationPath
     @State var healthKitProcessing = false
     @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
-    
     
     var body: some View {
         OnboardingView(

@@ -14,7 +14,7 @@ import SwiftUI
 
 struct NotificationPermissions: View {
     @EnvironmentObject var scheduler: TemplateApplicationScheduler
-    @EnvironmentObject private var onboardingController: OnboardingViewController
+    @EnvironmentObject private var onboardingController: OnboardingNavigationPath
     @State var notificationProcessing = false
     
     

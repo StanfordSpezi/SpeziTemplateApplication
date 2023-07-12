@@ -24,7 +24,7 @@ struct Onboarding: View {
     @State private var localNotificationAuthorization = false
     
     var body: some View {
-        OnboardingFlow(onboardingFlowComplete: $completedOnboardingFlow) {
+        OnboardingStack(onboardingFlowComplete: $completedOnboardingFlow) {
             Welcome()
             InterestingModules()
             
@@ -53,7 +53,6 @@ struct Onboarding: View {
         .interactiveDismissDisabled(!completedOnboardingFlow)
     }
 }
-
 
 #if DEBUG
 struct OnboardingFlow_Previews: PreviewProvider {

@@ -18,8 +18,7 @@ import SwiftUI
 
 struct AccountSetup: View {
     @EnvironmentObject var account: Account
-    @EnvironmentObject private var onboardingController: OnboardingViewController
-    
+    @EnvironmentObject private var onboardingController: OnboardingNavigationPath
     
     var body: some View {
         OnboardingView(
