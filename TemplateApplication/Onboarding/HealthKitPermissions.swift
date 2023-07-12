@@ -14,8 +14,10 @@ import SwiftUI
 
 struct HealthKitPermissions: View {
     @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
+    @EnvironmentObject var scheduler: TemplateApplicationScheduler
     @Binding private var onboardingSteps: [OnboardingFlow.Step]
     @State var healthKitProcessing = false
+    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     
     
     var body: some View {
@@ -51,7 +53,11 @@ struct HealthKitPermissions: View {
                             print("Could not request HealthKit permissions.")
                         }
                         healthKitProcessing = false
-                        onboardingSteps.append(.notificationPermissions)
+                        if await !scheduler.localNotificationAuthorization {
+                            onboardingSteps.append(.notificationPermissions)
+                        } else {
+                            completedOnboardingFlow = true
+                        }
                     }
                 )
             }
