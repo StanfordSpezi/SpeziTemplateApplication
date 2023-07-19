@@ -14,7 +14,7 @@ import SwiftUI
 
 
 struct Consent: View {
-    @EnvironmentObject private var onboardingController: OnboardingNavigationPath
+    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
     private var consentDocument: Data {
         guard let path = Bundle.main.url(forResource: "ConsentDocument", withExtension: "md"),
@@ -37,7 +37,7 @@ struct Consent: View {
                 consentDocument
             },
             action: {
-                onboardingController.nextStep()
+                onboardingNavigationPath.nextStep()
             }
         )
     }

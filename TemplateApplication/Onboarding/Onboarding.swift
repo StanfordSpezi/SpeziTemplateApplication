@@ -17,7 +17,6 @@ import SwiftUI
 struct Onboarding: View {
     @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
     @EnvironmentObject var scheduler: TemplateApplicationScheduler
-    @EnvironmentObject var account: SpeziAccount.Account
     
     @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
     
@@ -34,21 +33,18 @@ struct Onboarding: View {
             
             if !FeatureFlags.disableFirebase {
                 AccountSetup()
-                
-                if !account.signedIn {
-                    TemplateLogin()
-                    TemplateSignUp()
-                }
             }
             
             if HKHealthStore.isHealthDataAvailable() && !healthKitDataSource.authorized {
                 HealthKitPermissions()
             }
             
-            // TODO: This doesn't work, the task closure doesnt change the result of the result builder
             if !localNotificationAuthorization {
                 NotificationPermissions()
             }
+        }
+        .task {
+            localNotificationAuthorization = await scheduler.localNotificationAuthorization
         }
         .interactiveDismissDisabled(!completedOnboardingFlow)
     }

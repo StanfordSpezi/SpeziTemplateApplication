@@ -18,7 +18,8 @@ import SwiftUI
 
 struct AccountSetup: View {
     @EnvironmentObject var account: Account
-    @EnvironmentObject private var onboardingController: OnboardingNavigationPath
+    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
+    @State var signingOutPretrigger = false
     
     var body: some View {
         OnboardingView(
@@ -37,12 +38,15 @@ struct AccountSetup: View {
                 actionView
             }
         )
-            .onReceive(account.objectWillChange) {
+        .onReceive(account.objectWillChange) {
+            if !signingOutPretrigger {
                 if account.signedIn {
-                    // TODO: Not correct here -> Jumps to Login screen but should actually go to health
-                    onboardingController.nextStep()
+                    onboardingNavigationPath.nextStep()
                 }
+            } else {
+                signingOutPretrigger = false
             }
+        }
     }
     
     @ViewBuilder
@@ -74,6 +78,7 @@ struct AccountSetup: View {
                 UserView()
                     .padding()
                 Button("Logout", role: .destructive) {
+                    signingOutPretrigger = true
                     try? Auth.auth().signOut()
                 }
             }
@@ -86,21 +91,18 @@ struct AccountSetup: View {
             OnboardingActionsView(
                 "ACCOUNT_NEXT".moduleLocalized,
                 action: {
-                    // TODO: Not correct here -> Jumps to Login screen but should actually go to health
-                    onboardingController.nextStep()
+                    onboardingNavigationPath.nextStep()
                 }
             )
         } else {
             OnboardingActionsView(
                 primaryText: "ACCOUNT_SIGN_UP".moduleLocalized,
                 primaryAction: {
-                    // TODO: How to go to a specific next onboarding step
-                    // onboardingSteps.append(.signUp)
+                    onboardingNavigationPath.append(customView: TemplateSignUp())
                 },
                 secondaryText: "ACCOUNT_LOGIN".moduleLocalized,
                 secondaryAction: {
-                    // TODO: How to go to a specific next onboarding step
-                    // onboardingSteps.append(.login)
+                    onboardingNavigationPath.append(customView: TemplateLogin())
                 }
             )
         }

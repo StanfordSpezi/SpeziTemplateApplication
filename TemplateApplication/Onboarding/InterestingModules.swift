@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct InterestingModules: View {
-    @EnvironmentObject private var onboardingController: OnboardingNavigationPath
+    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
 
     
     var body: some View {
@@ -40,9 +40,9 @@ struct InterestingModules: View {
             action: {
                 #if targetEnvironment(simulator) && (arch(i386) || arch(x86_64))
                 print("PKCanvas view-related views are currently skipped on Intel-based iOS simulators due to a metal bug on the simulator.")
-                onboardingSteps.append(.accountSetup)
+                onboardingNavigationPath.append(AccountSetup.self)
                 #else
-                onboardingController.nextStep()
+                onboardingNavigationPath.nextStep()
                 #endif
             }
         )
