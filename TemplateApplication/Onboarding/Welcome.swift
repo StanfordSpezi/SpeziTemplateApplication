@@ -38,7 +38,6 @@ struct Welcome: View {
             actionText: "WELCOME_BUTTON".moduleLocalized,
             action: {
                 onboardingNavigationPath.nextStep()
-                //onboardingNavigationPath.append(InterestingModules.self)
             }
         )
     }
