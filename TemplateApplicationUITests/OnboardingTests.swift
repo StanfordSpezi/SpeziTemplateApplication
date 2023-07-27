@@ -75,14 +75,14 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingFlowWelcome() throws {
-        XCTAssertTrue(staticTexts["Spezi\nTemplate Application"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Spezi\nTemplate Application"].waitForExistence(timeout: 5))
         
         XCTAssertTrue(buttons["Learn More"].waitForExistence(timeout: 2))
         buttons["Learn More"].tap()
     }
     
     private func navigateOnboardingFlowInterestingModules() throws {
-        XCTAssertTrue(staticTexts["Interesting Modules"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Interesting Modules"].waitForExistence(timeout: 5))
         
         for _ in 1..<4 {
             XCTAssertTrue(buttons["Next"].waitForExistence(timeout: 2))
@@ -94,7 +94,7 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingFlowConsent() throws {
-        XCTAssertTrue(staticTexts["Consent Example"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Consent Example"].waitForExistence(timeout: 5))
         
         XCTAssertTrue(staticTexts["First Name"].waitForExistence(timeout: 2))
         try textFields["Enter your first name ..."].enter(value: "Leland")
@@ -112,7 +112,7 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingAccount() throws {
-        XCTAssertTrue(staticTexts["Your Account"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Your Account"].waitForExistence(timeout: 5))
         
         guard !buttons["Next"].waitForExistence(timeout: 5) else {
             buttons["Next"].tap()
@@ -150,7 +150,7 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingFlowHealthKitAccess() throws {
-        XCTAssertTrue(staticTexts["HealthKit Access"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["HealthKit Access"].waitForExistence(timeout: 5))
         
         XCTAssertTrue(buttons["Grant Access"].waitForExistence(timeout: 2))
         buttons["Grant Access"].tap()
@@ -159,7 +159,7 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingFlowNotification() throws {
-        XCTAssertTrue(staticTexts["Notifications"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Notifications"].waitForExistence(timeout: 5))
         
         XCTAssertTrue(buttons["Allow Notifications"].waitForExistence(timeout: 2))
         buttons["Allow Notifications"].tap()
