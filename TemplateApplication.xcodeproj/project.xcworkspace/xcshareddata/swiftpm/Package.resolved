@@ -199,6 +199,15 @@
       }
     },
     {
+      "identity" : "spezionboarding",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/StanfordSpezi/SpeziOnboarding",
+      "state" : {
+        "branch" : "feat/advanced-onboarding-flow",
+        "revision" : "00c75ab81d8fc826717cf735cafef17a013511f0"
+      }
+    },
+    {
       "identity" : "speziquestionnaire",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziQuestionnaire.git",
@@ -212,8 +221,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
       "state" : {
-        "revision" : "8688e48da3f7b9623303793042a4c48dcaaa0d49",
-        "version" : "0.4.5"
+        "revision" : "5bb5e67af244308ca0d19ee73a58accb9fbbf3f2",
+        "version" : "0.4.6"
       }
     },
     {
