@@ -27,7 +27,7 @@
 		2FE5DC2629EDD38A004B9AB4 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2529EDD38A004B9AB4 /* Contacts.swift */; };
 		2FE5DC3529EDD7CA004B9AB4 /* Consent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2F29EDD7CA004B9AB4 /* Consent.swift */; };
 		2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3029EDD7CA004B9AB4 /* HealthKitPermissions.swift */; };
-		2FE5DC3729EDD7CA004B9AB4 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3129EDD7CA004B9AB4 /* Onboarding.swift */; };
+		2FE5DC3729EDD7CA004B9AB4 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3129EDD7CA004B9AB4 /* OnboardingFlow.swift */; };
 		2FE5DC3829EDD7CA004B9AB4 /* InterestingModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3229EDD7CA004B9AB4 /* InterestingModules.swift */; };
 		2FE5DC3929EDD7CA004B9AB4 /* String+ModuleLocalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3329EDD7CA004B9AB4 /* String+ModuleLocalized.swift */; };
 		2FE5DC3A29EDD7CA004B9AB4 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3429EDD7CA004B9AB4 /* Welcome.swift */; };
@@ -71,7 +71,7 @@
 		9731DB3B2A57768A00658C39 /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 9731DB3A2A57768A00658C39 /* SpeziOnboarding */; };
 		97BB58C52A755498005AA74C /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 97BB58C42A755498005AA74C /* SpeziOnboarding */; };
 		97D8B2A42A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8B2A32A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift */; };
-		97D8B2AB2A769A6E00715F50 /* Onboarding+PreviewSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8B2AA2A769A6E00715F50 /* Onboarding+PreviewSimulator.swift */; };
+		97D8B2AB2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */; };
 		97D8B2AE2A769B4800715F50 /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 97D8B2AD2A769B4800715F50 /* SpeziOnboarding */; };
 		97F466E82A76BBEE005DC9B4 /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 97F466E72A76BBEE005DC9B4 /* SpeziOnboarding */; };
 /* End PBXBuildFile section */
@@ -112,7 +112,7 @@
 		2FE5DC2C29EDD78E004B9AB4 /* ConsentDocument.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ConsentDocument.md; sourceTree = "<group>"; };
 		2FE5DC2F29EDD7CA004B9AB4 /* Consent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consent.swift; sourceTree = "<group>"; };
 		2FE5DC3029EDD7CA004B9AB4 /* HealthKitPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitPermissions.swift; sourceTree = "<group>"; };
-		2FE5DC3129EDD7CA004B9AB4 /* Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		2FE5DC3129EDD7CA004B9AB4 /* OnboardingFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		2FE5DC3229EDD7CA004B9AB4 /* InterestingModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestingModules.swift; sourceTree = "<group>"; };
 		2FE5DC3329EDD7CA004B9AB4 /* String+ModuleLocalized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ModuleLocalized.swift"; sourceTree = "<group>"; };
 		2FE5DC3429EDD7CA004B9AB4 /* Welcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		653A256B28338800005D4D48 /* SchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerTests.swift; sourceTree = "<group>"; };
 		653A258928339462005D4D48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97D8B2A32A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+PreviewSimulator.swift"; sourceTree = "<group>"; };
-		97D8B2AA2A769A6E00715F50 /* Onboarding+PreviewSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding+PreviewSimulator.swift"; sourceTree = "<group>"; };
+		97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingFlow+PreviewSimulator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,14 +224,14 @@
 			isa = PBXGroup;
 			children = (
 				2FE5DCA829EE6107004B9AB4 /* AccountSetup */,
-				2FE5DC3129EDD7CA004B9AB4 /* Onboarding.swift */,
+				2FE5DC3129EDD7CA004B9AB4 /* OnboardingFlow.swift */,
 				2FE5DC3429EDD7CA004B9AB4 /* Welcome.swift */,
 				2FE5DC3229EDD7CA004B9AB4 /* InterestingModules.swift */,
 				2FE5DC2F29EDD7CA004B9AB4 /* Consent.swift */,
 				2FE5DC3029EDD7CA004B9AB4 /* HealthKitPermissions.swift */,
 				2F65B44D2A3B8B0600A36932 /* NotificationPermissions.swift */,
 				2FE5DC3329EDD7CA004B9AB4 /* String+ModuleLocalized.swift */,
-				97D8B2AA2A769A6E00715F50 /* Onboarding+PreviewSimulator.swift */,
+				97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -576,7 +576,7 @@
 				2FE5DCB229EE6107004B9AB4 /* TemplateLogin.swift in Sources */,
 				2FC975A82978F11A00BA99FE /* Home.swift in Sources */,
 				2FE5DC4E29EDD7FA004B9AB4 /* ScheduleView.swift in Sources */,
-				2FE5DC3729EDD7CA004B9AB4 /* Onboarding.swift in Sources */,
+				2FE5DC3729EDD7CA004B9AB4 /* OnboardingFlow.swift in Sources */,
 				2FE5DCAE29EE6107004B9AB4 /* IconView.swift in Sources */,
 				2FE5DC4729EDD7F2004B9AB4 /* CodableArray+RawRepresentable.swift in Sources */,
 				2FE5DC4029EDD7EE004B9AB4 /* FeatureFlags.swift in Sources */,
@@ -586,7 +586,7 @@
 				2F4E23832989D51F0013F3D9 /* TemplateAppTestingSetup.swift in Sources */,
 				2FE5DC5329EDD7FA004B9AB4 /* Bundle+Questionnaire.swift in Sources */,
 				2FE5DC5129EDD7FA004B9AB4 /* TemplateApplicationTaskContext.swift in Sources */,
-				97D8B2AB2A769A6E00715F50 /* Onboarding+PreviewSimulator.swift in Sources */,
+				97D8B2AB2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift in Sources */,
 				2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */,
 				2FE5DC5229EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift in Sources */,
 				653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */,
