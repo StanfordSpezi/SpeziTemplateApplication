@@ -15,7 +15,7 @@ import SpeziOnboarding
 import SwiftUI
 
 /// Displays an multi-step onboarding flow for the Spezi Template Application.
-struct Onboarding: View {
+struct OnboardingFlow: View {
     @EnvironmentObject private var healthKitDataSource: HealthKit<FHIR>
     @EnvironmentObject private var scheduler: TemplateApplicationScheduler
     
@@ -64,7 +64,7 @@ struct Onboarding: View {
 #if DEBUG
 struct OnboardingFlow_Previews: PreviewProvider {
     static var previews: some View {
-        Onboarding()
+        OnboardingFlow()
             .environmentObject(Account(accountServices: []))
             .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
             .environmentObject(TemplateApplicationScheduler())

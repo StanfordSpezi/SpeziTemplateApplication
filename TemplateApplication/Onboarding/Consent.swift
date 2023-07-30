@@ -47,7 +47,7 @@ struct Consent: View {
 struct Consent_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingStack(startAtStep: Consent.self) {
-            for onboardingView in Onboarding.previewSimulatorViews {
+            for onboardingView in OnboardingFlow.previewSimulatorViews {
                 onboardingView
             }
         }

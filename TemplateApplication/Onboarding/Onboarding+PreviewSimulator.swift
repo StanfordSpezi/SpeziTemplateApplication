@@ -9,7 +9,7 @@
 import SwiftUI
 
 /// Defines onboarding views that are shown in the Xcode preview simulator
-extension Onboarding {
+extension OnboardingFlow {
     static let previewSimulatorViews: [any View] = {
         [Welcome(), InterestingModules(), Consent(), AccountSetup(), HealthKitPermissions(), NotificationPermissions()]
     }()

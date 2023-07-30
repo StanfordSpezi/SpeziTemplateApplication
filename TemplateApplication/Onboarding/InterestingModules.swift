@@ -54,7 +54,7 @@ struct InterestingModules: View {
 struct ThingsToKnow_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingStack(startAtStep: InterestingModules.self) {
-            for onboardingView in Onboarding.previewSimulatorViews {
+            for onboardingView in OnboardingFlow.previewSimulatorViews {
                 onboardingView
             }
         }

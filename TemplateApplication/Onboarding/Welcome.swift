@@ -48,7 +48,7 @@ struct Welcome: View {
 struct Welcome_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingStack(startAtStep: Welcome.self) {
-            for onboardingView in Onboarding.previewSimulatorViews {
+            for onboardingView in OnboardingFlow.previewSimulatorViews {
                 onboardingView
             }
         }
