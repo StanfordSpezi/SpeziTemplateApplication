@@ -68,12 +68,8 @@
 		653A255528338800005D4D48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A255428338800005D4D48 /* Assets.xcassets */; };
 		653A256228338800005D4D48 /* TemplateApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A256128338800005D4D48 /* TemplateApplicationTests.swift */; };
 		653A256C28338800005D4D48 /* SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A256B28338800005D4D48 /* SchedulerTests.swift */; };
-		9731DB3B2A57768A00658C39 /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 9731DB3A2A57768A00658C39 /* SpeziOnboarding */; };
-		97BB58C52A755498005AA74C /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 97BB58C42A755498005AA74C /* SpeziOnboarding */; };
 		97D8B2A42A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8B2A32A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift */; };
 		97D8B2AB2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */; };
-		97D8B2AE2A769B4800715F50 /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 97D8B2AD2A769B4800715F50 /* SpeziOnboarding */; };
-		97F466E82A76BBEE005DC9B4 /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 97F466E72A76BBEE005DC9B4 /* SpeziOnboarding */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,7 +152,6 @@
 				2FE5DC8A29EDD972004B9AB4 /* SpeziLocalStorage in Frameworks */,
 				9731DB3B2A57768A00658C39 /* SpeziOnboarding in Frameworks */,
 				2FE5DC8C29EDD972004B9AB4 /* SpeziSecureStorage in Frameworks */,
-				97D8B2AE2A769B4800715F50 /* SpeziOnboarding in Frameworks */,
 				2FE5DC6F29EDD8BF004B9AB4 /* SpeziFHIRToFirestoreAdapter in Frameworks */,
 				2FE5DC7529EDD8E6004B9AB4 /* SpeziFirebaseAccount in Frameworks */,
 				2FE5DC7229EDD8D3004B9AB4 /* SpeziHealthKit in Frameworks */,
@@ -164,8 +159,6 @@
 				2FE5DC7E29EDD907004B9AB4 /* SpeziHealthKitToFHIRAdapter in Frameworks */,
 				2F49B7762980407C00BCB272 /* Spezi in Frameworks */,
 				2FE5DC8F29EDD980004B9AB4 /* SpeziViews in Frameworks */,
-				97BB58C52A755498005AA74C /* SpeziOnboarding in Frameworks */,
-				97F466E82A76BBEE005DC9B4 /* SpeziOnboarding in Frameworks */,
 				2F3D4ABC2A4E7C290068FB2F /* SpeziScheduler in Frameworks */,
 				2FE5DC6A29EDD8A9004B9AB4 /* SpeziFHIR in Frameworks */,
 				2FBD738C2A3BD150004228E7 /* SpeziScheduler in Frameworks */,
@@ -398,9 +391,6 @@
 				2FBD738B2A3BD150004228E7 /* SpeziScheduler */,
 				2F3D4ABB2A4E7C290068FB2F /* SpeziScheduler */,
 				9731DB3A2A57768A00658C39 /* SpeziOnboarding */,
-				97BB58C42A755498005AA74C /* SpeziOnboarding */,
-				97D8B2AD2A769B4800715F50 /* SpeziOnboarding */,
-				97F466E72A76BBEE005DC9B4 /* SpeziOnboarding */,
 			);
 			productName = TemplateApplication;
 			productReference = 653A254D283387FE005D4D48 /* TemplateApplication.app */;
@@ -1312,18 +1302,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2FE5DC9A29EDD9EF004B9AB4 /* XCRemoteSwiftPackageReference "XCTHealthKit" */;
 			productName = XCTHealthKit;
-		};
-		9731DB3A2A57768A00658C39 /* SpeziOnboarding */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SpeziOnboarding;
-		};
-		97BB58C42A755498005AA74C /* SpeziOnboarding */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SpeziOnboarding;
-		};
-		97D8B2AD2A769B4800715F50 /* SpeziOnboarding */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SpeziOnboarding;
 		};
 		97F466E72A76BBEE005DC9B4 /* SpeziOnboarding */ = {
 			isa = XCSwiftPackageProductDependency;
