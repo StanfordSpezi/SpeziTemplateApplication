@@ -9,18 +9,28 @@
 import HealthKit
 import SpeziAccount
 import SpeziFHIR
+import SpeziFirebaseAccount
 import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI
 
 /// Displays an multi-step onboarding flow for the Spezi Template Application.
 struct Onboarding: View {
-    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
-    @EnvironmentObject var scheduler: TemplateApplicationScheduler
+    @EnvironmentObject private var healthKitDataSource: HealthKit<FHIR>
+    @EnvironmentObject private var scheduler: TemplateApplicationScheduler
     
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
+    @AppStorage(StorageKeys.onboardingFlowComplete) private var completedOnboardingFlow = false
     
     @State private var localNotificationAuthorization = false
+    
+    private var healthKitAuthorization: Bool {
+        // As HealthKit not available in preview simulator
+        if ProcessInfo.processInfo.isPreviewSimulator {
+            return false
+        }
+        
+        return healthKitDataSource.authorized
+    }
     
     var body: some View {
         OnboardingStack(onboardingFlowComplete: $completedOnboardingFlow) {
@@ -35,7 +45,7 @@ struct Onboarding: View {
                 AccountSetup()
             }
             
-            if HKHealthStore.isHealthDataAvailable() && !healthKitDataSource.authorized {
+            if HKHealthStore.isHealthDataAvailable() && !healthKitAuthorization {
                 HealthKitPermissions()
             }
             
@@ -50,10 +60,14 @@ struct Onboarding: View {
     }
 }
 
+
 #if DEBUG
 struct OnboardingFlow_Previews: PreviewProvider {
     static var previews: some View {
         Onboarding()
+            .environmentObject(Account(accountServices: []))
+            .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
+            .environmentObject(TemplateApplicationScheduler())
     }
 }
 #endif

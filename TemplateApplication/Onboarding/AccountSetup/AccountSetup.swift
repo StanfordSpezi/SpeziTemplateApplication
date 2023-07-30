@@ -17,9 +17,10 @@ import SwiftUI
 
 
 struct AccountSetup: View {
-    @EnvironmentObject var account: Account
+    @EnvironmentObject private var account: Account
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
-    @State var signingOutPretrigger = false
+    
+    @State private var signingOutPretrigger = false
     
     var body: some View {
         OnboardingView(
@@ -113,9 +114,13 @@ struct AccountSetup: View {
 #if DEBUG
 struct AccountSetup_Previews: PreviewProvider {
     static var previews: some View {
-        AccountSetup()
-            .environmentObject(Account(accountServices: []))
-            .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
+        OnboardingStack(startAtStep: AccountSetup.self) {
+            for onboardingView in Onboarding.previewSimulatorViews {
+                onboardingView
+            }
+        }
+        .environmentObject(Account(accountServices: []))
+        .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
     }
 }
 #endif

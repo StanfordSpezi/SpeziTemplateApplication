@@ -13,10 +13,10 @@ import SwiftUI
 
 
 struct HealthKitPermissions: View {
-    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
+    @EnvironmentObject private var healthKitDataSource: HealthKit<FHIR>
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
-    @State var healthKitProcessing = false
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
+    
+    @State private var healthKitProcessing = false
     
     var body: some View {
         OnboardingView(
@@ -42,7 +42,7 @@ struct HealthKitPermissions: View {
                         do {
                             healthKitProcessing = true
                             // HealthKit is not available in the preview simulator.
-                            if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+                            if ProcessInfo.processInfo.isPreviewSimulator {
                                 try await _Concurrency.Task.sleep(for: .seconds(5))
                             } else {
                                 try await healthKitDataSource.askForAuthorization()
@@ -67,7 +67,11 @@ struct HealthKitPermissions: View {
 #if DEBUG
 struct HealthKitPermissions_Previews: PreviewProvider {
     static var previews: some View {
-        HealthKitPermissions()
+        OnboardingStack(startAtStep: HealthKitPermissions.self) {
+            for onboardingView in Onboarding.previewSimulatorViews {
+                onboardingView
+            }
+        }
     }
 }
 #endif

@@ -13,9 +13,10 @@ import SwiftUI
 
 
 struct NotificationPermissions: View {
-    @EnvironmentObject var scheduler: TemplateApplicationScheduler
+    @EnvironmentObject private var scheduler: TemplateApplicationScheduler
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
-    @State var notificationProcessing = false
+    
+    @State private var notificationProcessing = false
     
     
     var body: some View {
@@ -42,7 +43,7 @@ struct NotificationPermissions: View {
                         do {
                             notificationProcessing = true
                             // Notification Authorization is not available in the preview simulator.
-                            if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+                            if ProcessInfo.processInfo.isPreviewSimulator {
                                 try await _Concurrency.Task.sleep(for: .seconds(5))
                             } else {
                                 try await scheduler.requestLocalNotificationAuthorization()
@@ -67,7 +68,11 @@ struct NotificationPermissions: View {
 #if DEBUG
 struct NotificationPermissions_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationPermissions()
+        OnboardingStack(startAtStep: NotificationPermissions.self) {
+            for onboardingView in Onboarding.previewSimulatorViews {
+                onboardingView
+            }
+        }
     }
 }
 #endif
