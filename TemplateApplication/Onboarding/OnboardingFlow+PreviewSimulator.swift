@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 /// Defines onboarding views that are shown in the Xcode preview simulator
 extension OnboardingFlow {
     static let previewSimulatorViews: [any View] = {

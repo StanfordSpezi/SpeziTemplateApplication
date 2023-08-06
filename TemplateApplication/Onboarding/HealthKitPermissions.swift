@@ -18,6 +18,7 @@ struct HealthKitPermissions: View {
     
     @State private var healthKitProcessing = false
     
+    
     var body: some View {
         OnboardingView(
             contentView: {

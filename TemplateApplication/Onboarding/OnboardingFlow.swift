@@ -14,6 +14,7 @@ import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI
 
+
 /// Displays an multi-step onboarding flow for the Spezi Template Application.
 struct OnboardingFlow: View {
     @EnvironmentObject private var healthKitDataSource: HealthKit<FHIR>
@@ -23,6 +24,7 @@ struct OnboardingFlow: View {
     
     @State private var localNotificationAuthorization = false
     
+    
     private var healthKitAuthorization: Bool {
         // As HealthKit not available in preview simulator
         if ProcessInfo.processInfo.isPreviewSimulator {
@@ -31,6 +33,7 @@ struct OnboardingFlow: View {
         
         return healthKitDataSource.authorized
     }
+    
     
     var body: some View {
         OnboardingStack(onboardingFlowComplete: $completedOnboardingFlow) {

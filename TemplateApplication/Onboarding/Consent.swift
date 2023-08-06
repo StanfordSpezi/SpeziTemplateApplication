@@ -16,6 +16,7 @@ import SwiftUI
 struct Consent: View {
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
+    
     private var consentDocument: Data {
         guard let path = Bundle.main.url(forResource: "ConsentDocument", withExtension: "md"),
               let data = try? Data(contentsOf: path) else {
@@ -23,6 +24,7 @@ struct Consent: View {
         }
         return data
     }
+    
     
     var body: some View {
         ConsentView(
