@@ -203,8 +203,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziOnboarding",
       "state" : {
-        "branch" : "feat/advanced-onboarding-flow",
-        "revision" : "0e139b2a315c81055f77af3b64d7eaaf2f5bea92"
+        "branch" : "main",
+        "revision" : "e5d3aed572bf3f57ae0a9b8d4acc2a147ec690d7"
       }
     },
     {
