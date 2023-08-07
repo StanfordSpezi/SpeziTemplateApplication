@@ -98,11 +98,9 @@ extension XCUIApplication {
         
         XCTAssertTrue(staticTexts["First Name"].waitForExistence(timeout: 2))
         try textFields["Enter your first name ..."].enter(value: "Leland")
-        textFields["Enter your first name ..."].typeText("\n")
         
         XCTAssertTrue(staticTexts["Last Name"].waitForExistence(timeout: 2))
         try textFields["Enter your last name ..."].enter(value: "Stanford")
-        textFields["Enter your last name ..."].typeText("\n")
         
         XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 2))
         staticTexts["Leland Stanford"].firstMatch.swipeUp()
