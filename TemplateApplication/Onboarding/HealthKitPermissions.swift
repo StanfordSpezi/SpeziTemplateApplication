@@ -13,11 +13,10 @@ import SwiftUI
 
 
 struct HealthKitPermissions: View {
-    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
-    @EnvironmentObject var scheduler: TemplateApplicationScheduler
-    @Binding private var onboardingSteps: [OnboardingFlow.Step]
-    @State var healthKitProcessing = false
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
+    @EnvironmentObject private var healthKitDataSource: HealthKit<FHIR>
+    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
+    
+    @State private var healthKitProcessing = false
     
     
     var body: some View {
@@ -44,7 +43,7 @@ struct HealthKitPermissions: View {
                         do {
                             healthKitProcessing = true
                             // HealthKit is not available in the preview simulator.
-                            if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+                            if ProcessInfo.processInfo.isPreviewSimulator {
                                 try await _Concurrency.Task.sleep(for: .seconds(5))
                             } else {
                                 try await healthKitDataSource.askForAuthorization()
@@ -53,32 +52,27 @@ struct HealthKitPermissions: View {
                             print("Could not request HealthKit permissions.")
                         }
                         healthKitProcessing = false
-                        if await !scheduler.localNotificationAuthorization {
-                            onboardingSteps.append(.notificationPermissions)
-                        } else {
-                            completedOnboardingFlow = true
-                        }
+                        
+                        onboardingNavigationPath.nextStep()
                     }
                 )
             }
         )
-            .navigationBarBackButtonHidden(healthKitProcessing)
-    }
-    
-    
-    init(onboardingSteps: Binding<[OnboardingFlow.Step]>) {
-        self._onboardingSteps = onboardingSteps
+        .navigationBarBackButtonHidden(healthKitProcessing)
+        // Small fix as otherwise "Login" or "Sign up" is still shown in the nav bar
+        .navigationTitle("")
     }
 }
 
 
 #if DEBUG
 struct HealthKitPermissions_Previews: PreviewProvider {
-    @State private static var path: [OnboardingFlow.Step] = []
-    
-    
     static var previews: some View {
-        HealthKitPermissions(onboardingSteps: $path)
+        OnboardingStack(startAtStep: HealthKitPermissions.self) {
+            for onboardingView in OnboardingFlow.previewSimulatorViews {
+                onboardingView
+            }
+        }
     }
 }
 #endif
