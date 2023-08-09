@@ -14,10 +14,7 @@ import SwiftUI
 
 
 struct Consent: View {
-    @Binding private var onboardingSteps: [OnboardingFlow.Step]
-    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
-    @EnvironmentObject var scheduler: TemplateApplicationScheduler
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
+    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
     
     private var consentDocument: Data {
@@ -27,6 +24,7 @@ struct Consent: View {
         }
         return data
     }
+    
     
     var body: some View {
         ConsentView(
@@ -40,35 +38,21 @@ struct Consent: View {
                 consentDocument
             },
             action: {
-                if !FeatureFlags.disableFirebase {
-                    onboardingSteps.append(.accountSetup)
-                } else {
-                    if HKHealthStore.isHealthDataAvailable() && !healthKitDataSource.authorized {
-                        onboardingSteps.append(.healthKitPermissions)
-                    } else if await !scheduler.localNotificationAuthorization {
-                        onboardingSteps.append(.notificationPermissions)
-                    } else {
-                        completedOnboardingFlow = true
-                    }
-                }
+                onboardingNavigationPath.nextStep()
             }
         )
-    }
-    
-    
-    init(onboardingSteps: Binding<[OnboardingFlow.Step]>) {
-        self._onboardingSteps = onboardingSteps
     }
 }
 
 
 #if DEBUG
 struct Consent_Previews: PreviewProvider {
-    @State private static var path: [OnboardingFlow.Step] = []
-    
-    
     static var previews: some View {
-        Consent(onboardingSteps: $path)
+        OnboardingStack(startAtStep: Consent.self) {
+            for onboardingView in OnboardingFlow.previewSimulatorViews {
+                onboardingView
+            }
+        }
     }
 }
 #endif

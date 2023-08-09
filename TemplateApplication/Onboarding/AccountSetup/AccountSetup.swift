@@ -17,12 +17,10 @@ import SwiftUI
 
 
 struct AccountSetup: View {
-    @Binding private var onboardingSteps: [OnboardingFlow.Step]
-    @EnvironmentObject var account: Account
-    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
-    @EnvironmentObject var scheduler: TemplateApplicationScheduler
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
+    @EnvironmentObject private var account: Account
+    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
+    @State private var signingOutPretrigger = false
     
     var body: some View {
         OnboardingView(
@@ -41,13 +39,15 @@ struct AccountSetup: View {
                 actionView
             }
         )
-            .onReceive(account.objectWillChange) {
+        .onReceive(account.objectWillChange) {
+            if !signingOutPretrigger {
                 if account.signedIn {
-                    Task {
-                        await moveToNextOnboardingStep()
-                    }
+                    onboardingNavigationPath.nextStep()
                 }
+            } else {
+                signingOutPretrigger = false
             }
+        }
     }
     
     @ViewBuilder
@@ -79,6 +79,7 @@ struct AccountSetup: View {
                 UserView()
                     .padding()
                 Button("Logout", role: .destructive) {
+                    signingOutPretrigger = true
                     try? Auth.auth().signOut()
                 }
             }
@@ -91,48 +92,20 @@ struct AccountSetup: View {
             OnboardingActionsView(
                 "ACCOUNT_NEXT".moduleLocalized,
                 action: {
-                    await moveToNextOnboardingStep()
+                    onboardingNavigationPath.nextStep()
                 }
             )
         } else {
             OnboardingActionsView(
                 primaryText: "ACCOUNT_SIGN_UP".moduleLocalized,
                 primaryAction: {
-                    onboardingSteps.append(.signUp)
+                    onboardingNavigationPath.append(customView: TemplateSignUp())
                 },
                 secondaryText: "ACCOUNT_LOGIN".moduleLocalized,
                 secondaryAction: {
-                    onboardingSteps.append(.login)
+                    onboardingNavigationPath.append(customView: TemplateLogin())
                 }
             )
-        }
-    }
-    
-    
-    init(onboardingSteps: Binding<[OnboardingFlow.Step]>) {
-        self._onboardingSteps = onboardingSteps
-    }
-    
-    
-    private func moveToNextOnboardingStep() async {
-        if HKHealthStore.isHealthDataAvailable() && !healthKitDataSource.authorized {
-            onboardingSteps.append(.healthKitPermissions)
-        } else if await !scheduler.localNotificationAuthorization {
-            onboardingSteps.append(.notificationPermissions)
-        } else {
-            completedOnboardingFlow = true
-        }
-        
-        // Unfortunately, SwiftUI currently animates changes in the navigation path that do not change
-        // the current top view. Therefore we need to do the following async procedure to remove the
-        // `.login` and `.signUp` steps while disabling the animations before and re-enabling them
-        // after the elements have been changed.
-        Task { @MainActor in
-            try? await Task.sleep(for: .seconds(1.0))
-            UIView.setAnimationsEnabled(false)
-            onboardingSteps.removeAll(where: { $0 == .login || $0 == .signUp })
-            try? await Task.sleep(for: .seconds(1.0))
-            UIView.setAnimationsEnabled(true)
         }
     }
 }
@@ -140,13 +113,14 @@ struct AccountSetup: View {
 
 #if DEBUG
 struct AccountSetup_Previews: PreviewProvider {
-    @State private static var path: [OnboardingFlow.Step] = []
-    
-    
     static var previews: some View {
-        AccountSetup(onboardingSteps: $path)
-            .environmentObject(Account(accountServices: []))
-            .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
+        OnboardingStack(startAtStep: AccountSetup.self) {
+            for onboardingView in OnboardingFlow.previewSimulatorViews {
+                onboardingView
+            }
+        }
+        .environmentObject(Account(accountServices: []))
+        .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
     }
 }
 #endif
