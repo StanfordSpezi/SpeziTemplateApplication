@@ -6,7 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziFHIRMockDataStorageProvider
+import SpeziMockWebService
 import SwiftUI
 
 
@@ -48,7 +48,7 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .environmentObject(TemplateApplicationScheduler())
-            .environmentObject(MockDataStorageProvider())
+            .environmentObject(MockWebService())
     }
 }
 #endif

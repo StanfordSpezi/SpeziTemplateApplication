@@ -7,7 +7,6 @@
 //
 
 import HealthKit
-import class SpeziFHIR.FHIR
 import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI

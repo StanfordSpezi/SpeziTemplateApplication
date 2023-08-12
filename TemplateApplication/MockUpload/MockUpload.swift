@@ -6,14 +6,14 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziFHIRMockDataStorageProvider
+import SpeziMockWebService
 import SwiftUI
 
 
 struct MockUpload: View {
     var body: some View {
         NavigationStack {
-            MockUploadList()
+            RequestList()
         }
     }
 }
@@ -23,7 +23,7 @@ struct MockUpload: View {
 struct MockUpload_Previews: PreviewProvider {
     static var previews: some View {
         MockUpload()
-            .environmentObject(MockDataStorageProvider())
+            .environmentObject(MockWebService())
     }
 }
 #endif

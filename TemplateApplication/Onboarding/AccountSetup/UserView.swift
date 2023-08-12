@@ -6,9 +6,8 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziAccount
-import class SpeziFHIR.FHIR
 import Foundation
+import SpeziAccount
 import SpeziFirebaseAccount
 import SpeziViews
 import SwiftUI
@@ -16,7 +15,7 @@ import SwiftUI
 
 struct UserView: View {
     @EnvironmentObject private var account: Account
-    @EnvironmentObject private var firebaseAccountConfiguration: FirebaseAccountConfiguration<FHIR>
+    @EnvironmentObject private var firebaseAccountConfiguration: FirebaseAccountConfiguration
     
     
     var body: some View {
@@ -65,7 +64,7 @@ struct UserView_Previews: PreviewProvider {
     static var previews: some View {
         UserView()
             .padding()
-            .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
+            .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
     }
 }
 #endif

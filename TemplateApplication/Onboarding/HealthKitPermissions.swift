@@ -6,14 +6,13 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziFHIR
 import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI
 
 
 struct HealthKitPermissions: View {
-    @EnvironmentObject private var healthKitDataSource: HealthKit<FHIR>
+    @EnvironmentObject private var healthKitDataSource: HealthKit
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
     @State private var healthKitProcessing = false

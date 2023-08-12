@@ -6,10 +6,9 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziAccount
-import class SpeziFHIR.FHIR
 import FirebaseAuth
 import HealthKit
+import SpeziAccount
 import SpeziFirebaseAccount
 import SpeziHealthKit
 import SpeziOnboarding
@@ -120,7 +119,7 @@ struct AccountSetup_Previews: PreviewProvider {
             }
         }
         .environmentObject(Account(accountServices: []))
-        .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
+        .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
     }
 }
 #endif
