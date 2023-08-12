@@ -7,10 +7,8 @@
 //
 
 import FirebaseAuth
-import HealthKit
 import SpeziAccount
 import SpeziFirebaseAccount
-import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI
 
@@ -26,8 +24,8 @@ struct AccountSetup: View {
             contentView: {
                 VStack {
                     OnboardingTitleView(
-                        title: "ACCOUNT_TITLE".moduleLocalized,
-                        subtitle: "ACCOUNT_SUBTITLE".moduleLocalized
+                        title: "ACCOUNT_TITLE",
+                        subtitle: "ACCOUNT_SUBTITLE"
                     )
                     Spacer(minLength: 0)
                     accountImage
@@ -89,18 +87,18 @@ struct AccountSetup: View {
     private var actionView: some View {
         if account.signedIn {
             OnboardingActionsView(
-                "ACCOUNT_NEXT".moduleLocalized,
+                "ACCOUNT_NEXT",
                 action: {
                     onboardingNavigationPath.nextStep()
                 }
             )
         } else {
             OnboardingActionsView(
-                primaryText: "ACCOUNT_SIGN_UP".moduleLocalized,
+                primaryText: "ACCOUNT_SIGN_UP",
                 primaryAction: {
                     onboardingNavigationPath.append(customView: TemplateSignUp())
                 },
-                secondaryText: "ACCOUNT_LOGIN".moduleLocalized,
+                secondaryText: "ACCOUNT_LOGIN",
                 secondaryAction: {
                     onboardingNavigationPath.append(customView: TemplateLogin())
                 }

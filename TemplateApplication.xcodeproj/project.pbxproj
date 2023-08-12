@@ -29,7 +29,6 @@
 		2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3029EDD7CA004B9AB4 /* HealthKitPermissions.swift */; };
 		2FE5DC3729EDD7CA004B9AB4 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3129EDD7CA004B9AB4 /* OnboardingFlow.swift */; };
 		2FE5DC3829EDD7CA004B9AB4 /* InterestingModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3229EDD7CA004B9AB4 /* InterestingModules.swift */; };
-		2FE5DC3929EDD7CA004B9AB4 /* String+ModuleLocalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3329EDD7CA004B9AB4 /* String+ModuleLocalized.swift */; };
 		2FE5DC3A29EDD7CA004B9AB4 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3429EDD7CA004B9AB4 /* Welcome.swift */; };
 		2FE5DC4029EDD7EE004B9AB4 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3E29EDD7ED004B9AB4 /* FeatureFlags.swift */; };
 		2FE5DC4129EDD7EE004B9AB4 /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3F29EDD7EE004B9AB4 /* StorageKeys.swift */; };
@@ -61,6 +60,7 @@
 		2FE5DCB229EE6107004B9AB4 /* TemplateLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCAD29EE6107004B9AB4 /* TemplateLogin.swift */; };
 		2FE750CD2A87255000723EAE /* SpeziFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE750CC2A87255000723EAE /* SpeziFHIR */; };
 		2FF53D8B2A8725DE00042B76 /* SpeziMockWebService in Frameworks */ = {isa = PBXBuildFile; productRef = 2FF53D8A2A8725DE00042B76 /* SpeziMockWebService */; };
+		2FF53D8D2A8729D600042B76 /* TemplateApplicationStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF53D8C2A8729D600042B76 /* TemplateApplicationStandard.swift */; };
 		653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A2550283387FE005D4D48 /* TemplateApplication.swift */; };
 		653A255528338800005D4D48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A255428338800005D4D48 /* Assets.xcassets */; };
 		653A256228338800005D4D48 /* TemplateApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A256128338800005D4D48 /* TemplateApplicationTests.swift */; };
@@ -108,7 +108,6 @@
 		2FE5DC3029EDD7CA004B9AB4 /* HealthKitPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitPermissions.swift; sourceTree = "<group>"; };
 		2FE5DC3129EDD7CA004B9AB4 /* OnboardingFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		2FE5DC3229EDD7CA004B9AB4 /* InterestingModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestingModules.swift; sourceTree = "<group>"; };
-		2FE5DC3329EDD7CA004B9AB4 /* String+ModuleLocalized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ModuleLocalized.swift"; sourceTree = "<group>"; };
 		2FE5DC3429EDD7CA004B9AB4 /* Welcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		2FE5DC3E29EDD7ED004B9AB4 /* FeatureFlags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		2FE5DC3F29EDD7EE004B9AB4 /* StorageKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageKeys.swift; sourceTree = "<group>"; };
@@ -127,6 +126,7 @@
 		2FE5DCAB29EE6107004B9AB4 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		2FE5DCAC29EE6107004B9AB4 /* AccountSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSetup.swift; sourceTree = "<group>"; };
 		2FE5DCAD29EE6107004B9AB4 /* TemplateLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateLogin.swift; sourceTree = "<group>"; };
+		2FF53D8C2A8729D600042B76 /* TemplateApplicationStandard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateApplicationStandard.swift; sourceTree = "<group>"; };
 		653A254D283387FE005D4D48 /* TemplateApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653A2550283387FE005D4D48 /* TemplateApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplication.swift; sourceTree = "<group>"; };
 		653A255428338800005D4D48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,7 +218,6 @@
 				2FE5DC2F29EDD7CA004B9AB4 /* Consent.swift */,
 				2FE5DC3029EDD7CA004B9AB4 /* HealthKitPermissions.swift */,
 				2F65B44D2A3B8B0600A36932 /* NotificationPermissions.swift */,
-				2FE5DC3329EDD7CA004B9AB4 /* String+ModuleLocalized.swift */,
 				97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */,
 			);
 			path = Onboarding;
@@ -309,6 +308,7 @@
 			children = (
 				653A2550283387FE005D4D48 /* TemplateApplication.swift */,
 				2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */,
+				2FF53D8C2A8729D600042B76 /* TemplateApplicationStandard.swift */,
 				2F4E23822989D51F0013F3D9 /* TemplateAppTestingSetup.swift */,
 				2FC975A72978F11A00BA99FE /* Home.swift */,
 				2FE5DC2829EDD398004B9AB4 /* Onboarding */,
@@ -549,7 +549,6 @@
 				2F4FC8D729EE69D300BFFE26 /* MockUpload.swift in Sources */,
 				2FE5DCAF29EE6107004B9AB4 /* TemplateSignUp.swift in Sources */,
 				2FE5DCB029EE6107004B9AB4 /* UserView.swift in Sources */,
-				2FE5DC3929EDD7CA004B9AB4 /* String+ModuleLocalized.swift in Sources */,
 				2FE5DC3A29EDD7CA004B9AB4 /* Welcome.swift in Sources */,
 				2FE5DC3829EDD7CA004B9AB4 /* InterestingModules.swift in Sources */,
 				2FE5DC3529EDD7CA004B9AB4 /* Consent.swift in Sources */,
@@ -558,6 +557,7 @@
 				2FC975A82978F11A00BA99FE /* Home.swift in Sources */,
 				2FE5DC4E29EDD7FA004B9AB4 /* ScheduleView.swift in Sources */,
 				2FE5DC3729EDD7CA004B9AB4 /* OnboardingFlow.swift in Sources */,
+				2FF53D8D2A8729D600042B76 /* TemplateApplicationStandard.swift in Sources */,
 				2FE5DCAE29EE6107004B9AB4 /* IconView.swift in Sources */,
 				2FE5DC4729EDD7F2004B9AB4 /* CodableArray+RawRepresentable.swift in Sources */,
 				2FE5DC4029EDD7EE004B9AB4 /* FeatureFlags.swift in Sources */,
@@ -1077,15 +1077,15 @@
 			repositoryURL = "https://github.com/StanfordSpezi/Spezi";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.7.0;
+				minimumVersion = 0.7.1;
 			};
 		};
 		2FE5DC6229EDD883004B9AB4 /* XCRemoteSwiftPackageReference "SpeziAccount" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziAccount.git";
 			requirement = {
-				branch = speziviews040;
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.4.1;
 			};
 		};
 		2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */ = {
@@ -1093,15 +1093,15 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziContact.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.3.0;
+				minimumVersion = 0.3.3;
 			};
 		};
 		2FE5DC7029EDD8D3004B9AB4 /* XCRemoteSwiftPackageReference "SpeziHealthKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziHealthKit.git";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.3.0;
+				branch = export;
+				kind = branch;
 			};
 		};
 		2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */ = {
@@ -1116,8 +1116,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziQuestionnaire.git";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.0;
+				branch = export;
+				kind = branch;
 			};
 		};
 		2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "SpeziStorage" */ = {
@@ -1181,7 +1181,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziOnboarding";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.0;
+				minimumVersion = 0.4.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

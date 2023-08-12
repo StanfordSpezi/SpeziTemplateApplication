@@ -131,8 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
-        "branch" : "speziviews040",
-        "revision" : "0ad4f94629371458996d2fb7403e0cc957b642e7"
+        "revision" : "520bb338bf32d98470cadd26bad87f5bda075337",
+        "version" : "0.4.1"
       }
     },
     {
@@ -165,10 +165,10 @@
     {
       "identity" : "spezihealthkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziHealthKit",
+      "location" : "https://github.com/StanfordSpezi/SpeziHealthKit.git",
       "state" : {
-        "revision" : "36a9d3bb1d9af777f15c05854ad0d8971a2e005d",
-        "version" : "0.3.0"
+        "branch" : "export",
+        "revision" : "5e8ecbe3ee717f90552c5769bf9826ea3720270a"
       }
     },
     {
@@ -194,8 +194,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziQuestionnaire.git",
       "state" : {
-        "revision" : "84ce36755dd391f56bbd81c8230751c26fa63305",
-        "version" : "0.4.0"
+        "branch" : "export",
+        "revision" : "faee0ab934dad41528c8126365e53438633bcdf1"
       }
     },
     {

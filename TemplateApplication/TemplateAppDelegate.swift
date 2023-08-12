@@ -8,10 +8,6 @@
 
 import Spezi
 import SpeziFirebaseAccount
-import class FirebaseFirestore.FirestoreSettings
-import class FirebaseFirestore.MemoryCacheSettings
-import FirebaseAuth
-import HealthKit
 import SpeziFirestore
 import SpeziHealthKit
 import SpeziMockWebService
@@ -22,7 +18,7 @@ import SwiftUI
 
 class TemplateAppDelegate: SpeziAppDelegate {
     override var configuration: Configuration {
-        Configuration {
+        Configuration(standard: TemplateApplicationStandard()) {
             if !FeatureFlags.disableFirebase {
                 if FeatureFlags.useFirebaseEmulator {
                     FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))

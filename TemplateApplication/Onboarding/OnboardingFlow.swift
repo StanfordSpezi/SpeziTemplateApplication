@@ -6,7 +6,6 @@
 // SPDX-License-Identifier: MIT
 //
 
-import HealthKit
 import SpeziAccount
 import SpeziFirebaseAccount
 import SpeziHealthKit
