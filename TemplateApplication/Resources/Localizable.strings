@@ -90,7 +90,7 @@
 
 
 // MARK: - Mock Upload Data Storage Provider
-"MOCK_UPLOAD_TAB_TITLE" = "Mock Upload";
+"MOCK_WEB_SERVICE_TAB_TITLE" = "Mock Web Service";
 
 
 // MARK: - Schedule

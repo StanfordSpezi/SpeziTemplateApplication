@@ -36,7 +36,7 @@ struct HomeView: View {
             MockUpload()
                 .tag(Tabs.mockUpload)
                 .tabItem {
-                    Label("MOCK_UPLOAD_TAB_TITLE", systemImage: "server.rack")
+                    Label("MOCK_WEB_SERVICE_TAB_TITLE", systemImage: "server.rack")
                 }
         }
     }

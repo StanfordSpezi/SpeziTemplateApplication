@@ -24,6 +24,15 @@ platform :ios do
     )
   end
 
+  desc "CodeQL"
+  lane :codeql do
+    build_app(
+      skip_archive: true,
+      skip_codesigning: true,
+      derived_data_path: ".derivedData"
+    )
+  end
+
   desc "Build app"
   lane :build do
     build_app(

@@ -167,8 +167,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziHealthKit.git",
       "state" : {
-        "branch" : "export",
-        "revision" : "5e8ecbe3ee717f90552c5769bf9826ea3720270a"
+        "revision" : "f8f664549e81c8fa107a1fff616e0eaca6e8a6fa",
+        "version" : "0.3.1"
       }
     },
     {
@@ -194,8 +194,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziQuestionnaire.git",
       "state" : {
-        "branch" : "export",
-        "revision" : "faee0ab934dad41528c8126365e53438633bcdf1"
+        "revision" : "3c876f98201db122ecd212aec999540bd111b7cd",
+        "version" : "0.4.1"
       }
     },
     {
