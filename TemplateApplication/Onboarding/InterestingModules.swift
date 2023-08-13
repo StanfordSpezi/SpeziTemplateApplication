@@ -11,8 +11,8 @@ import SwiftUI
 
 
 struct InterestingModules: View {
-    @Binding private var onboardingSteps: [OnboardingFlow.Step]
-    
+    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
+
     
     var body: some View {
         SequentialOnboardingView(
@@ -38,30 +38,21 @@ struct InterestingModules: View {
             ],
             actionText: "INTERESTING_MODULES_BUTTON".moduleLocalized,
             action: {
-                #if targetEnvironment(simulator) && (arch(i386) || arch(x86_64))
-                print("PKCanvas view-related views are currently skipped on Intel-based iOS simulators due to a metal bug on the simulator.")
-                onboardingSteps.append(.accountSetup)
-                #else
-                onboardingSteps.append(.consent)
-                #endif
+                onboardingNavigationPath.nextStep()
             }
         )
-    }
-    
-    
-    init(onboardingSteps: Binding<[OnboardingFlow.Step]>) {
-        self._onboardingSteps = onboardingSteps
     }
 }
 
 
 #if DEBUG
 struct ThingsToKnow_Previews: PreviewProvider {
-    @State private static var path: [OnboardingFlow.Step] = []
-    
-    
     static var previews: some View {
-        InterestingModules(onboardingSteps: $path)
+        OnboardingStack(startAtStep: InterestingModules.self) {
+            for onboardingView in OnboardingFlow.previewSimulatorViews {
+                onboardingView
+            }
+        }
     }
 }
 #endif

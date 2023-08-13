@@ -7,16 +7,16 @@
 //
 
 import SpeziFHIR
-import SpeziHealthKit
 import SpeziOnboarding
+import SpeziScheduler
 import SwiftUI
 
 
-struct HealthKitPermissions: View {
-    @EnvironmentObject private var healthKitDataSource: HealthKit<FHIR>
+struct NotificationPermissions: View {
+    @EnvironmentObject private var scheduler: TemplateApplicationScheduler
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
-    @State private var healthKitProcessing = false
+    @State private var notificationProcessing = false
     
     
     var body: some View {
@@ -24,41 +24,41 @@ struct HealthKitPermissions: View {
             contentView: {
                 VStack {
                     OnboardingTitleView(
-                        title: "HEALTHKIT_PERMISSIONS_TITLE".moduleLocalized,
-                        subtitle: "HEALTHKIT_PERMISSIONS_SUBTITLE".moduleLocalized
+                        title: "NOTIFICATION_PERMISSIONS_TITLE".moduleLocalized,
+                        subtitle: "NOTIFICATION_PERMISSIONS_SUBTITLE".moduleLocalized
                     )
                     Spacer()
-                    Image(systemName: "heart.text.square.fill")
+                    Image(systemName: "bell.square.fill")
                         .font(.system(size: 150))
                         .foregroundColor(.accentColor)
-                    Text("HEALTHKIT_PERMISSIONS_DESCRIPTION")
+                    Text("NOTIFICATION_PERMISSIONS_DESCRIPTION")
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 16)
                     Spacer()
                 }
             }, actionView: {
                 OnboardingActionsView(
-                    "HEALTHKIT_PERMISSIONS_BUTTON".moduleLocalized,
+                    "NOTIFICATION_PERMISSIONS_BUTTON".moduleLocalized,
                     action: {
                         do {
-                            healthKitProcessing = true
-                            // HealthKit is not available in the preview simulator.
+                            notificationProcessing = true
+                            // Notification Authorization is not available in the preview simulator.
                             if ProcessInfo.processInfo.isPreviewSimulator {
                                 try await _Concurrency.Task.sleep(for: .seconds(5))
                             } else {
-                                try await healthKitDataSource.askForAuthorization()
+                                try await scheduler.requestLocalNotificationAuthorization()
                             }
                         } catch {
-                            print("Could not request HealthKit permissions.")
+                            print("Could not request notification permissions.")
                         }
-                        healthKitProcessing = false
+                        notificationProcessing = false
                         
                         onboardingNavigationPath.nextStep()
                     }
                 )
             }
         )
-        .navigationBarBackButtonHidden(healthKitProcessing)
+        .navigationBarBackButtonHidden(notificationProcessing)
         // Small fix as otherwise "Login" or "Sign up" is still shown in the nav bar
         .navigationTitle("")
     }
@@ -66,9 +66,9 @@ struct HealthKitPermissions: View {
 
 
 #if DEBUG
-struct HealthKitPermissions_Previews: PreviewProvider {
+struct NotificationPermissions_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingStack(startAtStep: HealthKitPermissions.self) {
+        OnboardingStack(startAtStep: NotificationPermissions.self) {
             for onboardingView in OnboardingFlow.previewSimulatorViews {
                 onboardingView
             }
