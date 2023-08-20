@@ -37,7 +37,7 @@
   ],
   "contact": [
     {
-      "name": "http://spezi.stanford.eduhttps://www.rand.org/health-care/surveys_tools/mos/social-support/survey-instrument.html"
+      "name": "https://www.rand.org/health-care/surveys_tools/mos/social-support/survey-instrument.html"
     }
   ],
   "subjectType": [
@@ -256,7 +256,7 @@
           "valueInteger": 120
         },
         {
-          "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
+          "url": "http://biodesign.stanford.edu/fhir/StructureDefinition/validationtext",
           "valueString": "Please enter a valid age."
         }
       ],
@@ -277,7 +277,7 @@
               "valueString": "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
             },
             {
-              "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
+              "url": "http://biodesign.stanford.edu/fhir/StructureDefinition/validationtext",
               "valueString": "Please enter a valid email"
             },
             {
@@ -324,10 +324,10 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/regex",
-              "valueString": "(xxx) xxx-xxxxx"
+              "valueString": "^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$"
             },
             {
-              "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
+              "url": "http://biodesign.stanford.edu/fhir/StructureDefinition/validationtext",
               "valueString": "Please enter a valid phone number."
             }
           ]
