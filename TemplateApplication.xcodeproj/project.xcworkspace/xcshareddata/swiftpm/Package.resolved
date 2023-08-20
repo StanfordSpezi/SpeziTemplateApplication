@@ -113,8 +113,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKit",
       "state" : {
-        "revision" : "d66e17369cfa238179db8ab65285fe6e7fa3e3c8",
-        "version" : "2.2.12"
+        "revision" : "3ea06dcc596bd49571ae3353c9c1555776114072",
+        "version" : "2.2.9"
       }
     },
     {
@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziContact.git",
       "state" : {
-        "revision" : "03034b813b8f97128209cfe7b4fc6fa1a904f9ab",
-        "version" : "0.3.2"
+        "revision" : "16b1d4ff1d8ad95e1aaa642d93e49daea2d6de00",
+        "version" : "0.3.0"
       }
     },
     {
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
-        "revision" : "2aeebfc9dbd4a39e0ceffb7caa96fa9b53e46b2a",
-        "version" : "0.3.1"
+        "revision" : "2532605d27127a9fccde9cc3108c809fd03ee7f8",
+        "version" : "0.3.0"
       }
     },
     {
