@@ -6,36 +6,37 @@
 // SPDX-License-Identifier: MIT
 //
 
-@Tutorial(time: 30) {
-    @Intro(title: "Set up the Template Application") {
-        In this section, we will obtain the latest version of the Spezi Template Application from Github and set it up in your Xcode environment using the Firebase Emulator to simulate a cloud backend.
+@Tutorial(time: 20) {
+    @Intro(title: "Setting up your Environment") {
+        In this tutorial, we will set up the Spezi Template Application in your development environment so you can start building your digital health app.
+        
+        @Image(source: "install-xcode.png", alt: "Install Xcode")
+    }
+    
+    @Section(title: "Install Xcode") {
+        @ContentAndMedia {
+            In order to use the Spezi Template application, you will need to have the latest version of Xcode installed on your Mac computer. You can obtain Xcode either from the Mac App Store or the Apple Developer Portal at developer.apple.com.
+            
+            @Image(source: "install-xcode.png", alt: "Install Xcode")
         }
         
-        @Section(title: "Install Xcode") {
-            @ContentAndMedia {
-                In order to use the Template Application, you will need the latest version of Xcode installed on your Mac.
-                }
-                
-                @Steps {
-                    @Step {
-                        Download the latest version of Xcode from the Apple Developer Portal and install it on your Mac.
-                        
-                        @Image(source: <#file#>, alt: "<#accessible description#>")
-                    }
-                }
+        @Steps {
+            @Step {
+                Open the `App Store` on your Mac computer and search for Xcode. Install Xcode, or update it if it is already installed.
+                @Image(source: "install-xcode.png", alt: "Search for Xcode on the App Store.")
             }
-            
-            @Section(title: "Clone the Spezi Template Application") {
-                @ContentAndMedia {
-                    Now, we will download the latest version of the Spezi Template Application from Github. 
-                    }
-                    
-                    @Steps {
-                        @Step {
-                            If you have git installed on your system, you can clone the Spezi Template Application by running the following command in your terminal.
-                            
-                            @Image(source: <#file#>, alt: "<#accessible description#>")
-                        }
-                    }
-                }
+        }
+    }
+    
+    @Section(title: "Install the Firebase Emulator"){
+        @ContentAndMedia {
+            The Spezi Template Application comes pre-configured to use Google's Firebase as a backend for your iOS app. You can use the Firebase Emulator to run a simulated Firebase backend on your computer that you can use for development. 
+        }
+        
+        @Steps {
+            @Step {
+                Visit [firebase.google.com](https://firebase.google.com) and follow the directions for installing the Firebase emulator.
             }
+        }
+    }
+}

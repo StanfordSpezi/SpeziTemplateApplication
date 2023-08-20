@@ -6,19 +6,15 @@
 // SPDX-License-Identifier: MIT
 //
 
-@Tutorials(name: "Build a digital health app with the Spezi Template") {
-    @Intro(title: "Build a digital health app with the Spezi Template") {
+@Tutorials(name: "Build a Digital Health App with Spezi") {
+    @Intro(title: "Getting Started with the Spezi Template") {
         In this tutorial, we will show you how to set up and use the Spezi Template Application to build your own digital health app on iOS.
     }
     
-    @Chapter(name: "Set up the Template Application") {
-        In this section, we will obtain the latest version of the Spezi Template Application from Github and set it up in your Xcode environment using the Firebase Emulator to simulate a cloud backend.
+    @Chapter(name: "Set up your Development Environment") {
+        In this section, we will set up your development environment with Xcode, Firebase CLI, and Git. If you already have these installed, you can skip to the next chapter.
         
-        @TutorialReference(tutorial: "doc:Setup")
-    }
-    
-    @Chapter(name: "Customize the Onboarding Process") {
-        In this section, we will customize the onboarding process, including screens for explaining your app to your users, agreeing to a terms or consent document, and creating an account. 
+        @Image(source: "install-xcode.png", alt: "Install Xcode")
         
         @TutorialReference(tutorial: "doc:Setup")
     }
