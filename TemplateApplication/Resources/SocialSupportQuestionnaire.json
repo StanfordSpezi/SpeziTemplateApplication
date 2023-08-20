@@ -321,6 +321,32 @@
       ]
     },
     {
+      "linkId": "8e906a39-5fd0-42a8-f42c-bd96d719dd13",
+      "type": "string",
+      "text": "What is your text number? Ex. (555) 555-5555",
+      "required": false,
+      "enableWhen": [
+        {
+          "question": "695525f3-3e89-4455-8e25-878171c596da",
+          "operator": "=",
+          "answerCoding": {
+            "system": "urn:uuid:736ac230-812a-4f4a-edec-5156910fb6ec",
+            "code": "text-message"
+          }
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString": "^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$"
+        },
+        {
+          "url": "http://biodesign.stanford.edu/fhir/StructureDefinition/validationtext",
+          "valueString": "Please enter a valid phone number."
+        }
+      ]
+    },
+    {
       "linkId": "86290b0a-017e-4193-8707-dc0c2146f0eb",
       "type": "string",
       "text": "What is your e-mail?",
