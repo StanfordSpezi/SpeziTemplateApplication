@@ -12,9 +12,9 @@
     }
     
     @Chapter(name: "Set up your Development Environment") {
-        In this section, we will set up your development environment with Xcode, Firebase CLI, and Git. If you already have these installed, you can skip to the next chapter.
+        In this section, we will set up your development environment with Xcode and the Firebase Emulator. If you already have both of these installed, you can skip to the next chapter.
         
-        @Image(source: "install-xcode.png", alt: "Install Xcode")
+        @Image(source: "tutorial-install-xcode.png", alt: "Install Xcode")
         
         @TutorialReference(tutorial: "doc:Setup")
     }

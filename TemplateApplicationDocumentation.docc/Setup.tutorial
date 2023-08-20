@@ -7,23 +7,23 @@
 //
 
 @Tutorial(time: 20) {
-    @Intro(title: "Setting up your Environment") {
-        In this tutorial, we will set up the Spezi Template Application in your development environment so you can start building your digital health app.
+    @Intro(title: "Install Xcode and the Firebase Emulator") {
+        In this tutorial, we will set up the software needed in your development environment to work with the Spezi Template Application. If you already have the latest versions of Xcode and the Firebase Emulator installed, you can skip to the next chapter.
         
-        @Image(source: "install-xcode.png", alt: "Install Xcode")
+        @Image(source: "tutorial-install-xcode.png", alt: "Install Xcode")
     }
     
     @Section(title: "Install Xcode") {
         @ContentAndMedia {
             In order to use the Spezi Template application, you will need to have the latest version of Xcode installed on your Mac computer. You can obtain Xcode either from the Mac App Store or the Apple Developer Portal at developer.apple.com.
             
-            @Image(source: "install-xcode.png", alt: "Install Xcode")
+            @Image(source: "tutorial-install-xcode.png", alt: "Install Xcode")
         }
         
         @Steps {
             @Step {
                 Open the `App Store` on your Mac computer and search for Xcode. Install Xcode, or update it if it is already installed.
-                @Image(source: "install-xcode.png", alt: "Search for Xcode on the App Store.")
+                @Image(source: "tutorial-install-xcode.png", alt: "Search for Xcode on the App Store.")
             }
         }
     }
@@ -35,7 +35,13 @@
         
         @Steps {
             @Step {
-                Visit [firebase.google.com](https://firebase.google.com) and follow the directions for installing the Firebase emulator.
+                The Firebase Emulator requires Java JDK version 11 or higher to be installed on your Mac. You can install the Java JDK at [jdk.java.net](https://jdk.java.net/).
+            }
+            @Step {
+                The Firebase CLI can be installed on Mac OS by either an automatic script or a standalone binary. Please follow the latest instructions on [the official Firebase documentation](https://firebase.google.com/docs/cli#install-cli-mac-linux) to install this package on your Mac.
+            }
+            @Step {
+                Once the Firebase CLI is installed, open a Terminal window and run `firebase --version` to check that it is functioning.
             }
         }
     }
