@@ -13,9 +13,10 @@ import SwiftUI
 
 
 struct NotificationPermissions: View {
-    @EnvironmentObject var scheduler: TemplateApplicationScheduler
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
-    @State var notificationProcessing = false
+    @EnvironmentObject private var scheduler: TemplateApplicationScheduler
+    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
+    
+    @State private var notificationProcessing = false
     
     
     var body: some View {
@@ -41,8 +42,8 @@ struct NotificationPermissions: View {
                     action: {
                         do {
                             notificationProcessing = true
-                            // HealthKit is not available in the preview simulator.
-                            if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+                            // Notification Authorization is not available in the preview simulator.
+                            if ProcessInfo.processInfo.isPreviewSimulator {
                                 try await _Concurrency.Task.sleep(for: .seconds(5))
                             } else {
                                 try await scheduler.requestLocalNotificationAuthorization()
@@ -50,13 +51,16 @@ struct NotificationPermissions: View {
                         } catch {
                             print("Could not request notification permissions.")
                         }
-                        completedOnboardingFlow = true
                         notificationProcessing = false
+                        
+                        onboardingNavigationPath.nextStep()
                     }
                 )
             }
         )
-            .navigationBarBackButtonHidden(notificationProcessing)
+        .navigationBarBackButtonHidden(notificationProcessing)
+        // Small fix as otherwise "Login" or "Sign up" is still shown in the nav bar
+        .navigationTitle("")
     }
 }
 
@@ -64,7 +68,11 @@ struct NotificationPermissions: View {
 #if DEBUG
 struct NotificationPermissions_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationPermissions()
+        OnboardingStack(startAtStep: NotificationPermissions.self) {
+            for onboardingView in OnboardingFlow.previewSimulatorViews {
+                onboardingView
+            }
+        }
     }
 }
 #endif

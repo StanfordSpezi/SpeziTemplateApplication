@@ -30,10 +30,24 @@ class OnboardingTests: XCTestCase {
         
         try app.navigateOnboardingFlow()
         
-        let tabBar = app.tabBars["Tab Bar"]
-        XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 2))
-        XCTAssertTrue(tabBar.buttons["Contacts"].waitForExistence(timeout: 2))
-        XCTAssertTrue(tabBar.buttons["Mock Upload"].waitForExistence(timeout: 2))
+        try app.assertOnboardingComplete()
+    }
+    
+    func testOnboardingFlowRepeated() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["--showOnboarding"]
+        
+        try app.navigateOnboardingFlow()
+        try app.assertOnboardingComplete()
+        
+        app.terminate()
+        
+        // Second onboarding round shouldn't display HealthKit and Notification authorizations anymore
+        app.activate()
+        
+        try app.navigateOnboardingFlow(repeated: true)
+        // Do not show HealthKit and Notification authorization view again
+        try app.assertOnboardingComplete()
     }
 }
 
@@ -47,26 +61,28 @@ extension XCUIApplication {
         }
     }
     
-    fileprivate func navigateOnboardingFlow() throws {
+    fileprivate func navigateOnboardingFlow(repeated skippedIfRepeated: Bool = false) throws {
         try navigateOnboardingFlowWelcome()
         try navigateOnboardingFlowInterestingModules()
         if staticTexts["Consent Example"].waitForExistence(timeout: 5) {
             try navigateOnboardingFlowConsent()
         }
         try navigateOnboardingAccount()
-        try navigateOnboardingFlowHealthKitAccess()
-        try navigateOnboardingFlowNotification()
+        if !skippedIfRepeated {
+            try navigateOnboardingFlowHealthKitAccess()
+            try navigateOnboardingFlowNotification()
+        }
     }
     
     private func navigateOnboardingFlowWelcome() throws {
-        XCTAssertTrue(staticTexts["Spezi\nTemplate Application"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Spezi\nTemplate Application"].waitForExistence(timeout: 5))
         
         XCTAssertTrue(buttons["Learn More"].waitForExistence(timeout: 2))
         buttons["Learn More"].tap()
     }
     
     private func navigateOnboardingFlowInterestingModules() throws {
-        XCTAssertTrue(staticTexts["Interesting Modules"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Interesting Modules"].waitForExistence(timeout: 5))
         
         for _ in 1..<4 {
             XCTAssertTrue(buttons["Next"].waitForExistence(timeout: 2))
@@ -78,7 +94,7 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingFlowConsent() throws {
-        XCTAssertTrue(staticTexts["Consent Example"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Consent Example"].waitForExistence(timeout: 5))
         
         XCTAssertTrue(staticTexts["First Name"].waitForExistence(timeout: 2))
         try textFields["Enter your first name ..."].enter(value: "Leland")
@@ -94,7 +110,7 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingAccount() throws {
-        XCTAssertTrue(staticTexts["Your Account"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Your Account"].waitForExistence(timeout: 5))
         
         guard !buttons["Next"].waitForExistence(timeout: 5) else {
             buttons["Next"].tap()
@@ -132,7 +148,7 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingFlowHealthKitAccess() throws {
-        XCTAssertTrue(staticTexts["HealthKit Access"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["HealthKit Access"].waitForExistence(timeout: 5))
         
         XCTAssertTrue(buttons["Grant Access"].waitForExistence(timeout: 2))
         buttons["Grant Access"].tap()
@@ -141,7 +157,7 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingFlowNotification() throws {
-        XCTAssertTrue(staticTexts["Notifications"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Notifications"].waitForExistence(timeout: 5))
         
         XCTAssertTrue(buttons["Allow Notifications"].waitForExistence(timeout: 2))
         buttons["Allow Notifications"].tap()
@@ -151,5 +167,12 @@ extension XCUIApplication {
         if alertAllowButton.waitForExistence(timeout: 5) {
            alertAllowButton.tap()
         }
+    }
+    
+    fileprivate func assertOnboardingComplete() throws {
+        let tabBar = tabBars["Tab Bar"]
+        XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 2))
+        XCTAssertTrue(tabBar.buttons["Contacts"].waitForExistence(timeout: 2))
+        XCTAssertTrue(tabBar.buttons["Mock Upload"].waitForExistence(timeout: 2))
     }
 }

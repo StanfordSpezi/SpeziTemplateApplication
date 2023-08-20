@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct IconView: View {
-    let size: Double
+    private let size: Double
     
     
     var body: some View {
