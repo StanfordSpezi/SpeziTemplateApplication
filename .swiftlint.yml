@@ -154,6 +154,8 @@ only_rules:
   - leading_whitespace
   # CGGeometry: Struct extension properties and methods are preferred over legacy functions
   - legacy_cggeometry_functions
+  # Prefer Swift value types to bridged Objective-C reference types
+  - legacy_objc_type
   # Struct-scoped constants are preferred over legacy global constants (CGSize, CGRect, NSPoint, ...).
   - legacy_constant
   # Swift constructors are preferred over legacy convenience functions (CGPointMake, CGSizeMake, UIOffsetMake, ...).
