@@ -6,29 +6,28 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziAccount
-import class SpeziFHIR.FHIR
 import FirebaseAuth
-import HealthKit
+import SpeziAccount
 import SpeziFirebaseAccount
-import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI
 
 
 struct AccountSetup: View {
     @EnvironmentObject private var account: Account
+    @EnvironmentObject private var standard: TemplateApplicationStandard
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
     @State private var signingOutPretrigger = false
+    
     
     var body: some View {
         OnboardingView(
             contentView: {
                 VStack {
                     OnboardingTitleView(
-                        title: "ACCOUNT_TITLE".moduleLocalized,
-                        subtitle: "ACCOUNT_SUBTITLE".moduleLocalized
+                        title: "ACCOUNT_TITLE",
+                        subtitle: "ACCOUNT_SUBTITLE"
                     )
                     Spacer(minLength: 0)
                     accountImage
@@ -43,6 +42,9 @@ struct AccountSetup: View {
             if !signingOutPretrigger {
                 if account.signedIn {
                     onboardingNavigationPath.nextStep()
+                    Task {
+                        await standard.signedIn()
+                    }
                 }
             } else {
                 signingOutPretrigger = false
@@ -50,8 +52,7 @@ struct AccountSetup: View {
         }
     }
     
-    @ViewBuilder
-    private var accountImage: some View {
+    @ViewBuilder private var accountImage: some View {
         Group {
             if account.signedIn {
                 Image(systemName: "person.badge.shield.checkmark.fill")
@@ -63,8 +64,7 @@ struct AccountSetup: View {
             .foregroundColor(.accentColor)
     }
     
-    @ViewBuilder
-    private var accountDescription: some View {
+    @ViewBuilder private var accountDescription: some View {
         VStack {
             Group {
                 if account.signedIn {
@@ -86,22 +86,21 @@ struct AccountSetup: View {
         }
     }
     
-    @ViewBuilder
-    private var actionView: some View {
+    @ViewBuilder private var actionView: some View {
         if account.signedIn {
             OnboardingActionsView(
-                "ACCOUNT_NEXT".moduleLocalized,
+                "ACCOUNT_NEXT",
                 action: {
                     onboardingNavigationPath.nextStep()
                 }
             )
         } else {
             OnboardingActionsView(
-                primaryText: "ACCOUNT_SIGN_UP".moduleLocalized,
+                primaryText: "ACCOUNT_SIGN_UP",
                 primaryAction: {
                     onboardingNavigationPath.append(customView: TemplateSignUp())
                 },
-                secondaryText: "ACCOUNT_LOGIN".moduleLocalized,
+                secondaryText: "ACCOUNT_LOGIN",
                 secondaryAction: {
                     onboardingNavigationPath.append(customView: TemplateLogin())
                 }
@@ -120,7 +119,7 @@ struct AccountSetup_Previews: PreviewProvider {
             }
         }
         .environmentObject(Account(accountServices: []))
-        .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
+        .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
     }
 }
 #endif

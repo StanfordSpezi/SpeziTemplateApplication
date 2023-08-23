@@ -6,9 +6,6 @@
 // SPDX-License-Identifier: MIT
 //
 
-import HealthKit
-import class SpeziFHIR.FHIR
-import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI
 
@@ -20,7 +17,7 @@ struct Consent: View {
     private var consentDocument: Data {
         guard let path = Bundle.main.url(forResource: "ConsentDocument", withExtension: "md"),
               let data = try? Data(contentsOf: path) else {
-            return Data("CONSENT_LOADING_ERROR".moduleLocalized.utf8)
+            return Data(String(localized: "CONSENT_LOADING_ERROR").utf8)
         }
         return data
     }
@@ -30,8 +27,8 @@ struct Consent: View {
         ConsentView(
             header: {
                 OnboardingTitleView(
-                    title: "CONSENT_TITLE".moduleLocalized,
-                    subtitle: "CONSENT_SUBTITLE".moduleLocalized
+                    title: "CONSENT_TITLE",
+                    subtitle: "CONSENT_SUBTITLE"
                 )
             },
             asyncMarkdown: {
