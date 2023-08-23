@@ -5,11 +5,13 @@
 #
 # SPDX-License-Identifier: MIT
 #
-  
+
 # The whitelist_rules configuration also includes rules that are enabled by default to provide a good overview of all rules.
 only_rules:
   # All Images that provide context should have an accessibility label. Purely decorative images can be hidden from accessibility.
   - accessibility_label_for_image
+  # Attributes should be on their own lines in functions and types, but on the same line as variables and imports.
+  - attributes
   # Prefer using Array(seq) over seq.map { $0 } to convert a sequence into an Array.
   - array_init
   # Prefer the new block based KVO API with keypaths when using Swift 3.2 or later.
@@ -162,8 +164,6 @@ only_rules:
   - legacy_multiple
   # Struct extension properties and methods are preferred over legacy functions
   - legacy_nsgeometry_functions
-  # Prefer Swift value types to bridged Objective-C reference types
-  - legacy_objc_type
   # Prefer using type.random(in:) over legacy functions.
   - legacy_random
   # Lines should not span too many characters.
@@ -367,6 +367,9 @@ only_rules:
   # The variable should be placed on the left, the constant on the right of a comparison operator.
   - yoda_condition
 
+attributes:
+  attributes_with_arguments_always_on_line_above: false
+
 deployment_target: # Availability checks or attributes shouldn’t be using older versions that are satisfied by the deployment target.
   iOSApplicationExtension_deployment_target: 16.0
   iOS_deployment_target: 16.0
@@ -374,6 +377,7 @@ deployment_target: # Availability checks or attributes shouldn’t be using olde
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - .build
   - .swiftpm
+  - .codeql
   - .derivedData
 
 closure_body_length: # Closure bodies should not span too many lines.
