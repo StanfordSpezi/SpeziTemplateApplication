@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import SpeziFHIR
 import SpeziScheduler
 
 
-/// A `Scheduler` using the `FHIR` standard as well as the ``TemplateApplicationTaskContext`` to schedule and manage tasks and events in the
+/// A `Scheduler` using the ``TemplateApplicationTaskContext`` to schedule and manage tasks and events in the
 /// Spezi Template Applciation.
-typealias TemplateApplicationScheduler = Scheduler<FHIR, TemplateApplicationTaskContext>
+typealias TemplateApplicationScheduler = Scheduler<TemplateApplicationTaskContext>
 
 
 extension TemplateApplicationScheduler {

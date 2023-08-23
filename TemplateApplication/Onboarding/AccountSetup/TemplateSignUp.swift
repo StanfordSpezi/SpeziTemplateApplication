@@ -7,7 +7,6 @@
 //
 
 import SpeziAccount
-import SpeziOnboarding
 import SwiftUI
 
 

@@ -35,7 +35,9 @@ class OnboardingTests: XCTestCase {
     
     func testOnboardingFlowRepeated() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["--showOnboarding"]
+        app.launchArguments = ["--showOnboarding", "--disableFirebase"]
+        app.terminate()
+        app.launch()
         
         try app.navigateOnboardingFlow()
         try app.assertOnboardingComplete()
@@ -67,7 +69,9 @@ extension XCUIApplication {
         if staticTexts["Consent Example"].waitForExistence(timeout: 5) {
             try navigateOnboardingFlowConsent()
         }
-        try navigateOnboardingAccount()
+        if staticTexts["Your Account"].waitForExistence(timeout: 5) {
+            try navigateOnboardingAccount()
+        }
         if !skippedIfRepeated {
             try navigateOnboardingFlowHealthKitAccess()
             try navigateOnboardingFlowNotification()
@@ -110,8 +114,6 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingAccount() throws {
-        XCTAssertTrue(staticTexts["Your Account"].waitForExistence(timeout: 5))
-        
         guard !buttons["Next"].waitForExistence(timeout: 5) else {
             buttons["Next"].tap()
             return
@@ -173,6 +175,5 @@ extension XCUIApplication {
         let tabBar = tabBars["Tab Bar"]
         XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 2))
         XCTAssertTrue(tabBar.buttons["Contacts"].waitForExistence(timeout: 2))
-        XCTAssertTrue(tabBar.buttons["Mock Upload"].waitForExistence(timeout: 2))
     }
 }
