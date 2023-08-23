@@ -6,7 +6,6 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziFHIR
 import SpeziOnboarding
 import SpeziScheduler
 import SwiftUI
@@ -24,8 +23,8 @@ struct NotificationPermissions: View {
             contentView: {
                 VStack {
                     OnboardingTitleView(
-                        title: "NOTIFICATION_PERMISSIONS_TITLE".moduleLocalized,
-                        subtitle: "NOTIFICATION_PERMISSIONS_SUBTITLE".moduleLocalized
+                        title: "NOTIFICATION_PERMISSIONS_TITLE",
+                        subtitle: "NOTIFICATION_PERMISSIONS_SUBTITLE"
                     )
                     Spacer()
                     Image(systemName: "bell.square.fill")
@@ -38,7 +37,7 @@ struct NotificationPermissions: View {
                 }
             }, actionView: {
                 OnboardingActionsView(
-                    "NOTIFICATION_PERMISSIONS_BUTTON".moduleLocalized,
+                    "NOTIFICATION_PERMISSIONS_BUTTON",
                     action: {
                         do {
                             notificationProcessing = true

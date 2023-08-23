@@ -16,7 +16,7 @@ class MockUploadTestsTests: XCTestCase {
         continueAfterFailure = false
         
         let app = XCUIApplication()
-        app.launchArguments = ["--skipOnboarding"]
+        app.launchArguments = ["--skipOnboarding", "--disableFirebase"]
         app.launch()
     }
     
@@ -24,9 +24,9 @@ class MockUploadTestsTests: XCTestCase {
     func testMockUpload() throws {
         let app = XCUIApplication()
         
-        XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Mock Upload"].waitForExistence(timeout: 2))
-        app.tabBars["Tab Bar"].buttons["Mock Upload"].tap()
+        XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Mock Web Service"].waitForExistence(timeout: 2))
+        app.tabBars["Tab Bar"].buttons["Mock Web Service"].tap()
         
-        XCTAssertTrue(app.staticTexts["Mock Upload"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Mock Requests"].waitForExistence(timeout: 2))
     }
 }

@@ -6,9 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
-import HealthKit
 import SpeziAccount
-import SpeziFHIR
 import SpeziFirebaseAccount
 import SpeziHealthKit
 import SpeziOnboarding
@@ -17,7 +15,7 @@ import SwiftUI
 
 /// Displays an multi-step onboarding flow for the Spezi Template Application.
 struct OnboardingFlow: View {
-    @EnvironmentObject private var healthKitDataSource: HealthKit<FHIR>
+    @EnvironmentObject private var healthKitDataSource: HealthKit
     @EnvironmentObject private var scheduler: TemplateApplicationScheduler
     
     @AppStorage(StorageKeys.onboardingFlowComplete) private var completedOnboardingFlow = false
@@ -69,7 +67,7 @@ struct OnboardingFlow_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingFlow()
             .environmentObject(Account(accountServices: []))
-            .environmentObject(FirebaseAccountConfiguration<FHIR>(emulatorSettings: (host: "localhost", port: 9099)))
+            .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
             .environmentObject(TemplateApplicationScheduler())
     }
 }
