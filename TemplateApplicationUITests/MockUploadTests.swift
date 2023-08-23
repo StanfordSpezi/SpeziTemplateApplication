@@ -16,7 +16,7 @@ class MockUploadTestsTests: XCTestCase {
         continueAfterFailure = false
         
         let app = XCUIApplication()
-        app.launchArguments = ["--skipOnboarding"]
+        app.launchArguments = ["--skipOnboarding", "--disableFirebase"]
         app.launch()
     }
     

@@ -33,11 +33,13 @@ struct HomeView: View {
                 .tabItem {
                     Label("CONTACTS_TAB_TITLE", systemImage: "person.fill")
                 }
-            MockUpload()
-                .tag(Tabs.mockUpload)
-                .tabItem {
-                    Label("MOCK_WEB_SERVICE_TAB_TITLE", systemImage: "server.rack")
-                }
+            if FeatureFlags.disableFirebase {
+                MockUpload()
+                    .tag(Tabs.mockUpload)
+                    .tabItem {
+                        Label("MOCK_WEB_SERVICE_TAB_TITLE", systemImage: "server.rack")
+                    }
+            }
         }
     }
 }

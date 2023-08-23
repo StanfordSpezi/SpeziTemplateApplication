@@ -15,9 +15,11 @@ import SwiftUI
 
 struct AccountSetup: View {
     @EnvironmentObject private var account: Account
+    @EnvironmentObject private var standard: TemplateApplicationStandard
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
     @State private var signingOutPretrigger = false
+    
     
     var body: some View {
         OnboardingView(
@@ -40,6 +42,9 @@ struct AccountSetup: View {
             if !signingOutPretrigger {
                 if account.signedIn {
                     onboardingNavigationPath.nextStep()
+                    Task {
+                        await standard.signedIn()
+                    }
                 }
             } else {
                 signingOutPretrigger = false
