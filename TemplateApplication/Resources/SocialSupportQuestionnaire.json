@@ -353,7 +353,7 @@
       "extension": [
         {
           "url": "http://hl7.org/fhir/StructureDefinition/regex",
-          "valueString": "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+          "valueString": ".*@.+"
         },
         {
           "url": "http://biodesign.stanford.edu/fhir/StructureDefinition/validationtext",
