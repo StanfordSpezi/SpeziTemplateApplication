@@ -66,8 +66,8 @@ struct OnboardingFlow: View {
 struct OnboardingFlow_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingFlow()
-            .environmentObject(Account(accountServices: []))
-            .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
+            .environmentObject(Account())
+            // TODO .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
             .environmentObject(TemplateApplicationScheduler())
     }
 }

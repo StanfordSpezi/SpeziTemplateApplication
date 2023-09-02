@@ -16,6 +16,7 @@ struct ScheduleView: View {
     @EnvironmentObject var scheduler: TemplateApplicationScheduler
     @State var eventContextsByDate: [Date: [EventContext]] = [:]
     @State var presentedContext: EventContext?
+    @State var presentingAccount = false
     
     
     var startOfDays: [Date] {
@@ -45,6 +46,18 @@ struct ScheduleView: View {
                 }
                 .sheet(item: $presentedContext) { presentedContext in
                     destination(withContext: presentedContext)
+                }
+                .sheet(isPresented: $presentingAccount) {
+                    AccountSheet()
+                }
+                .toolbar {
+                    if !FeatureFlags.disableFirebase {
+                        Button(action: {
+                            presentingAccount = true
+                        }) {
+                            Image(systemName: "person.crop.circle")
+                        }
+                    }
                 }
                 .navigationTitle("SCHEDULE_LIST_TITLE")
         }

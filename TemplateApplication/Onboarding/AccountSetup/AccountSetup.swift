@@ -6,7 +6,6 @@
 // SPDX-License-Identifier: MIT
 //
 
-import FirebaseAuth
 import SpeziAccount
 import SpeziFirebaseAccount
 import SpeziOnboarding
@@ -18,10 +17,24 @@ struct AccountSetup: View {
     @EnvironmentObject private var standard: TemplateApplicationStandard
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
-    @State private var signingOutPretrigger = false
-    
-    
     var body: some View {
+        SpeziAccount.AccountSetup {
+            OnboardingActionsView(
+                "ACCOUNT_NEXT",
+                action: {
+                    onboardingNavigationPath.nextStep()
+                }
+            )
+        }
+            .onReceive(account.$signedIn) { signedIn in
+                if signedIn {
+                    onboardingNavigationPath.nextStep()
+                    Task {
+                        await standard.signedIn() // TODO verify
+                    }
+                }
+            }
+        /*
         OnboardingView(
             contentView: {
                 VStack {
@@ -49,9 +62,10 @@ struct AccountSetup: View {
             } else {
                 signingOutPretrigger = false
             }
-        }
+        }*/
     }
     
+    /*
     @ViewBuilder private var accountImage: some View {
         Group {
             if account.signedIn {
@@ -63,7 +77,7 @@ struct AccountSetup: View {
             .font(.system(size: 150))
             .foregroundColor(.accentColor)
     }
-    
+
     @ViewBuilder private var accountDescription: some View {
         VStack {
             Group {
@@ -85,7 +99,6 @@ struct AccountSetup: View {
             }
         }
     }
-    
     @ViewBuilder private var actionView: some View {
         if account.signedIn {
             OnboardingActionsView(
@@ -106,7 +119,7 @@ struct AccountSetup: View {
                 }
             )
         }
-    }
+    }*/
 }
 
 
@@ -118,8 +131,8 @@ struct AccountSetup_Previews: PreviewProvider {
                 onboardingView
             }
         }
-        .environmentObject(Account(accountServices: []))
-        .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
+        .environmentObject(Account()) // TODO
+        // .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
     }
 }
 #endif

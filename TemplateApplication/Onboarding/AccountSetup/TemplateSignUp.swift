@@ -12,6 +12,8 @@ import SwiftUI
 
 struct TemplateSignUp: View {
     var body: some View {
+        EmptyView()
+        /*
         SignUp {
             IconView()
                 .padding(.top, 32)
@@ -21,6 +23,7 @@ struct TemplateSignUp: View {
             Spacer(minLength: 0)
         }
             .navigationBarTitleDisplayMode(.large)
+         */
     }
 }
 
@@ -29,7 +32,7 @@ struct TemplateSignUp: View {
 struct TemplateSignUp_Previews: PreviewProvider {
     static var previews: some View {
         TemplateSignUp()
-            .environmentObject(Account(accountServices: []))
+            .environmentObject(Account())
     }
 }
 #endif

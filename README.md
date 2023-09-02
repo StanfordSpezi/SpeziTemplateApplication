@@ -87,7 +87,7 @@ It uses the [**Spezi Scheduler**](https://github.com/StanfordSpezi/SpeziSchedule
 
 ## Template Contacts
 
-The contacts part of the application provides the functionality to display contact information in your application.
+The Contacts part of the application provides the functionality to display contact information in your application.
 It uses the [**Spezi Contacts** module](https://github.com/StanfordSpezi/SpeziContacts) to use the contact-related views provided by Spezi.
 
 <p float="left">
@@ -97,9 +97,9 @@ It uses the [**Spezi Contacts** module](https://github.com/StanfordSpezi/SpeziCo
 
 ## Template Mock Data Storage Provider
 
-The mock upload view allows a developer to get an overview of the synchronization of data between the application and a cloud storage provider.
+The mock upload view allows a developer to get an overview of the data synchronization between the application and a cloud storage provider.
 It is shown in the application when the ``--disableFirebase`` configuration flag is active.
-It uses the Spezi [**Spezi Mock Web Service** module](https://github.com/StanfordSpezi/SpeziMockWebService) to enable this functionality.
+It uses the [**Spezi Mock Web Service** module](https://github.com/StanfordSpezi/SpeziMockWebService) to enable this functionality.
 
 <p float="left">
  <img width="250" alt="A screen displaying the list of Mock Data Storage Provider uploads." src="Figures/TemplateMockDataStorageProvider/TemplateMockDataStorageProviderList.png">
@@ -107,22 +107,22 @@ It uses the Spezi [**Spezi Mock Web Service** module](https://github.com/Stanfor
 </p>
 
 
-## Continous Delivery Workflows
+## Continuous Delivery Workflows
 
 The Spezi Template application includes continuous integration (CI) and continuous delivery (CD) setup.
-- Automatically build and test the application on every pull request before deploying it. If your organization doesn't have a self-hosted macOS runner modeled after the setup in the [StanfordBDHG ContinousIntegration](https://github.com/StanfordBDHG/ContinousIntegration) setup, you will need to remove the `runsonlabels` arguments in the `build-and-test.yml` file to ensure that the build runs on the default macOS runners provided by GitHub.
+- Automatically build and test the application on every pull request before deploying it. If your organization doesn't have a self-hosted macOS runner modeled after the setup in the [StanfordBDHG ContinuousIntegration](https://github.com/StanfordBDHG/ContinousIntegration) setup, you will need to remove the `runsonlabels` arguments in the `build-and-test.yml` file to ensure that the build runs on the default macOS runners provided by GitHub.
 - An automated setup to deploy the application to TestFlight every time there is a new commit on the repository's main branch.
 - Ensure a coherent code style by checking the conformance to the SwiftLint rules defined in `.swiftlint.yml` on every pull request and commit.
-- Ensure conformance to the [REUSE Spacification]() to property license the application and all related code.
+- Ensure conformance to the [REUSE Specification]() to property license the application and all related code.
 
-Please refer to the [Stanford Biodesign Digital Health Template Application](https://github.com/StanfordBDHG/TemplateApplication) and the [ContinousDelivery Example by Paul Schmiedmayer](https://github.com/PSchmiedmayer/ContinousDelivery) for more background about the CI and CD setup for the Spezi Template Application.
+Please refer to the [Stanford Biodesign Digital Health Template Application](https://github.com/StanfordBDHG/TemplateApplication) and the [ContinuousDelivery Example by Paul Schmiedmayer](https://github.com/PSchmiedmayer/ContinousDelivery) for more background about the CI and CD setup for the Spezi Template Application.
 
 
 ## Contributing
 
 Contributions to this project are welcome. Please make sure to read the [contribution guidelines](https://github.com/StanfordSpezi/.github/blob/main/CONTRIBUTING.md) and the [contributor covenant code of conduct](https://github.com/StanfordSpezi/.github/blob/main/CODE_OF_CONDUCT.md) first.
 
-This project is based on [ContinousDelivery Example by Paul Schmiedmayer](https://github.com/PSchmiedmayer/ContinousDelivery) and the [StanfordSpezi Template Application](https://github.com/StanfordSpezi/TemplateApplication) provided using the MIT license.
+This project is based on [ContinuousDelivery Example by Paul Schmiedmayer](https://github.com/PSchmiedmayer/ContinousDelivery) and the [StanfordSpezi Template Application](https://github.com/StanfordSpezi/TemplateApplication) provided using the MIT license.
 
 
 ## License

@@ -46,6 +46,7 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
             return
         }
         
+        // TODO remove firebase dependence
         guard let user = Auth.auth().currentUser else {
             logger.error("Signed In called respite no authenticated user.")
             return

@@ -14,7 +14,7 @@ import SwiftUI
 
 struct UserView: View {
     @EnvironmentObject private var account: Account
-    @EnvironmentObject private var firebaseAccountConfiguration: FirebaseAccountConfiguration
+    // TODO @EnvironmentObject private var firebaseAccountConfiguration: FirebaseAccountConfiguration
     
     
     var body: some View {
@@ -30,17 +30,13 @@ struct UserView: View {
     
     @ViewBuilder private var userInformation: some View {
         HStack(spacing: 16) {
-            if account.signedIn,
-               let user = firebaseAccountConfiguration.user,
-               let displayName = user.displayName,
-               let name = try? PersonNameComponents(displayName) {
+            if let details = account.details,
+               let name = details.name {
                 UserProfileView(name: name)
                     .frame(height: 30)
                 VStack(alignment: .leading, spacing: 4) {
                     Text(name.formatted(.name(style: .medium)))
-                    if let email = user.email {
-                        Text(email)
-                    }
+                    Text(details.userId)
                 }
                 Spacer()
             } else {
@@ -62,7 +58,8 @@ struct UserView_Previews: PreviewProvider {
     static var previews: some View {
         UserView()
             .padding()
-            .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
+            .environmentObject(Account())
+            // TODO .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
     }
 }
 #endif
