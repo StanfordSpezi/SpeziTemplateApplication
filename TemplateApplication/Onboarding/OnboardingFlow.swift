@@ -37,8 +37,8 @@ struct OnboardingFlow: View {
     
     var body: some View {
         OnboardingStack(onboardingFlowComplete: $completedOnboardingFlow) {
-            Welcome()
-            InterestingModules()
+            //Welcome()
+            //InterestingModules()
             
             #if !(targetEnvironment(simulator) && (arch(i386) || arch(x86_64)))
                 Consent()
