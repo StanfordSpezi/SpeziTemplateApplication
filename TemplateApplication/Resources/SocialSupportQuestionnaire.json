@@ -1,9 +1,11 @@
 {
-  "title": "Social Support",
-  "description": "This survey measures tangible social support plus a couple of demographic questions.",
   "resourceType": "Questionnaire",
   "language": "en-US",
+  "id": "socialsupport",
   "name": "SocialSupport",
+  "title": "Social Support",
+  "description": "This survey measures tangible social support plus a couple of demographic questions.",
+  "version": "1",
   "status": "draft",
   "publisher": "RAND Corp",
   "meta": {
@@ -37,18 +39,16 @@
   ],
   "contact": [
     {
-      "name": "http://spezi.stanford.eduhttps://www.rand.org/health-care/surveys_tools/mos/social-support/survey-instrument.html"
+      "name": "https://www.rand.org/health-care/surveys_tools/mos/social-support/survey-instrument.html"
     }
   ],
   "subjectType": [
     "Patient"
   ],
-  "url": "http://spezi.stanford.edu/fhir/questionnaire/32f43c8e-93e9-4c70-97a0-e716f8030073",
-  "id": "socialsupport",
-  "version": "1",
-  "date": "2023-01-23T00:00:00-08:00",
   "purpose": "The RAND Medical Outcomes Social Support survey is a 4-item questionnaire that measures social support.",
   "copyright": "RAND Corp surveys are open-source and free to use.",
+  "date": "2023-01-23T00:00:00-08:00",
+  "url": "http://spezi.stanford.edu/fhir/questionnaire/32f43c8e-93e9-4c70-97a0-e716f8030073",
   "item": [
     {
       "linkId": "dcea2683-9815-4505-b240-e75b502b29ef",
@@ -256,7 +256,7 @@
           "valueInteger": 120
         },
         {
-          "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
+          "url": "http://biodesign.stanford.edu/fhir/StructureDefinition/validationtext",
           "valueString": "Please enter a valid age."
         }
       ],
@@ -266,73 +266,6 @@
       "linkId": "695525f3-3e89-4455-8e25-878171c596da",
       "type": "choice",
       "text": "What is your preferred contact method?",
-      "item": [
-        {
-          "linkId": "86290b0a-017e-4193-8707-dc0c2146f0eb",
-          "type": "string",
-          "text": "What is your e-mail?",
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/regex",
-              "valueString": "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-            },
-            {
-              "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
-              "valueString": "Please enter a valid email"
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/minLength",
-              "valueInteger": 1
-            }
-          ],
-          "required": false,
-          "maxLength": 50,
-          "enableWhen": [
-            {
-              "question": "695525f3-3e89-4455-8e25-878171c596da",
-              "operator": "=",
-              "answerCoding": {
-                "system": "urn:uuid:736ac230-812a-4f4a-edec-5156910fb6ec",
-                "code": "e-mail"
-              }
-            }
-          ]
-        },
-        {
-          "linkId": "c3bea33d-4c50-4f4a-8ae4-1a52be326b19",
-          "type": "string",
-          "text": "What is your phone number? Ex. (555) 555-5555",
-          "required": false,
-          "enableWhen": [
-            {
-              "question": "695525f3-3e89-4455-8e25-878171c596da",
-              "operator": "=",
-              "answerCoding": {
-                "system": "urn:uuid:736ac230-812a-4f4a-edec-5156910fb6ec",
-                "code": "phone-call"
-              }
-            },
-            {
-              "question": "695525f3-3e89-4455-8e25-878171c596da",
-              "operator": "=",
-              "answerCoding": {
-                "system": "urn:uuid:736ac230-812a-4f4a-edec-5156910fb6ec",
-                "code": "text-message"
-              }
-            }
-          ],
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/regex",
-              "valueString": "(xxx) xxx-xxxxx"
-            },
-            {
-              "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
-              "valueString": "Please enter a valid phone number."
-            }
-          ]
-        }
-      ],
       "required": false,
       "answerOption": [
         {
@@ -360,6 +293,95 @@
           }
         }
       ]
+    },
+    {
+      "linkId": "c3bea33d-4c50-4f4a-8ae4-1a52be326b19",
+      "type": "string",
+      "text": "What is your phone number? Ex. (555) 555-5555",
+      "required": false,
+      "enableWhen": [
+        {
+          "question": "695525f3-3e89-4455-8e25-878171c596da",
+          "operator": "=",
+          "answerCoding": {
+            "system": "urn:uuid:736ac230-812a-4f4a-edec-5156910fb6ec",
+            "code": "phone-call"
+          }
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString": "^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$"
+        },
+        {
+          "url": "http://biodesign.stanford.edu/fhir/StructureDefinition/validationtext",
+          "valueString": "Please enter a valid phone number."
+        }
+      ]
+    },
+    {
+      "linkId": "8e906a39-5fd0-42a8-f42c-bd96d719dd13",
+      "type": "string",
+      "text": "What is your text number? Ex. (555) 555-5555",
+      "required": false,
+      "enableWhen": [
+        {
+          "question": "695525f3-3e89-4455-8e25-878171c596da",
+          "operator": "=",
+          "answerCoding": {
+            "system": "urn:uuid:736ac230-812a-4f4a-edec-5156910fb6ec",
+            "code": "text-message"
+          }
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString": "^(\\([0-9]{3}\\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$"
+        },
+        {
+          "url": "http://biodesign.stanford.edu/fhir/StructureDefinition/validationtext",
+          "valueString": "Please enter a valid phone number."
+        }
+      ]
+    },
+    {
+      "linkId": "86290b0a-017e-4193-8707-dc0c2146f0eb",
+      "type": "string",
+      "text": "What is your e-mail?",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString": ".*@.+"
+        },
+        {
+          "url": "http://biodesign.stanford.edu/fhir/StructureDefinition/validationtext",
+          "valueString": "Please enter a valid email"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/minLength",
+          "valueInteger": 1
+        }
+      ],
+      "required": false,
+      "maxLength": 50,
+      "enableWhen": [
+        {
+          "question": "695525f3-3e89-4455-8e25-878171c596da",
+          "operator": "=",
+          "answerCoding": {
+            "system": "urn:uuid:736ac230-812a-4f4a-edec-5156910fb6ec",
+            "code": "e-mail"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "305f5381-2d8b-4b98-bc04-5a39bee2f7ec",
+      "type": "display",
+      "text": "Thank you for taking the survey!",
+      "required": false
     }
   ]
 }
