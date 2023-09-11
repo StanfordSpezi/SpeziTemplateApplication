@@ -8,7 +8,7 @@
 
 @Tutorial(time: 20) {
     @Intro(title: "Install Xcode and the Firebase Emulator") {
-        In this tutorial, we will set up the software needed in your development environment to work with the Spezi Template Application. If you already have the latest versions of Xcode and the Firebase Emulator installed, you can skip to the next chapter.
+        First we will set up the software needed in your development environment to work with the Spezi Template Application. If you already have the latest versions of Xcode and the Firebase Emulator installed, you can skip to the next chapter.
         
         @Image(source: "tutorial-install-xcode.png", alt: "Install Xcode")
     }
