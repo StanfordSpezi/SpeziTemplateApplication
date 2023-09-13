@@ -6,69 +6,50 @@
 // SPDX-License-Identifier: MIT
 //
 
-import HealthKit
-import class SpeziFHIR.FHIR
-import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI
 
 
 struct Consent: View {
-    @Binding private var onboardingSteps: [OnboardingFlow.Step]
-    @EnvironmentObject var healthKitDataSource: HealthKit<FHIR>
-    @EnvironmentObject var scheduler: TemplateApplicationScheduler
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
+    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
     
     private var consentDocument: Data {
         guard let path = Bundle.main.url(forResource: "ConsentDocument", withExtension: "md"),
               let data = try? Data(contentsOf: path) else {
-            return Data("CONSENT_LOADING_ERROR".moduleLocalized.utf8)
+            return Data(String(localized: "CONSENT_LOADING_ERROR").utf8)
         }
         return data
     }
+    
     
     var body: some View {
         ConsentView(
             header: {
                 OnboardingTitleView(
-                    title: "CONSENT_TITLE".moduleLocalized,
-                    subtitle: "CONSENT_SUBTITLE".moduleLocalized
+                    title: "CONSENT_TITLE",
+                    subtitle: "CONSENT_SUBTITLE"
                 )
             },
             asyncMarkdown: {
                 consentDocument
             },
             action: {
-                if !FeatureFlags.disableFirebase {
-                    onboardingSteps.append(.accountSetup)
-                } else {
-                    if HKHealthStore.isHealthDataAvailable() && !healthKitDataSource.authorized {
-                        onboardingSteps.append(.healthKitPermissions)
-                    } else if await !scheduler.localNotificationAuthorization {
-                        onboardingSteps.append(.notificationPermissions)
-                    } else {
-                        completedOnboardingFlow = true
-                    }
-                }
+                onboardingNavigationPath.nextStep()
             }
         )
-    }
-    
-    
-    init(onboardingSteps: Binding<[OnboardingFlow.Step]>) {
-        self._onboardingSteps = onboardingSteps
     }
 }
 
 
 #if DEBUG
 struct Consent_Previews: PreviewProvider {
-    @State private static var path: [OnboardingFlow.Step] = []
-    
-    
     static var previews: some View {
-        Consent(onboardingSteps: $path)
+        OnboardingStack(startAtStep: Consent.self) {
+            for onboardingView in OnboardingFlow.previewSimulatorViews {
+                onboardingView
+            }
+        }
     }
 }
 #endif

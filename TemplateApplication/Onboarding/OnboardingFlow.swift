@@ -6,47 +6,56 @@
 // SPDX-License-Identifier: MIT
 //
 
+import SpeziAccount
+import SpeziFirebaseAccount
+import SpeziHealthKit
+import SpeziOnboarding
 import SwiftUI
 
 
 /// Displays an multi-step onboarding flow for the Spezi Template Application.
 struct OnboardingFlow: View {
-    enum Step: String, Codable {
-        case interestingModules
-        case consent
-        case accountSetup
-        case login
-        case signUp
-        case healthKitPermissions
-        case notificationPermissions
-    }
+    @EnvironmentObject private var healthKitDataSource: HealthKit
+    @EnvironmentObject private var scheduler: TemplateApplicationScheduler
     
-    @SceneStorage(StorageKeys.onboardingFlowStep) private var onboardingSteps: [Step] = []
-    @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
+    @AppStorage(StorageKeys.onboardingFlowComplete) private var completedOnboardingFlow = false
+    
+    @State private var localNotificationAuthorization = false
+    
+    
+    private var healthKitAuthorization: Bool {
+        // As HealthKit not available in preview simulator
+        if ProcessInfo.processInfo.isPreviewSimulator {
+            return false
+        }
+        
+        return healthKitDataSource.authorized
+    }
     
     
     var body: some View {
-        NavigationStack(path: $onboardingSteps) {
-            Welcome(onboardingSteps: $onboardingSteps)
-                .navigationDestination(for: Step.self) { onboardingStep in
-                    switch onboardingStep {
-                    case .interestingModules:
-                        InterestingModules(onboardingSteps: $onboardingSteps)
-                    case .consent:
-                        Consent(onboardingSteps: $onboardingSteps)
-                    case .accountSetup:
-                        AccountSetup(onboardingSteps: $onboardingSteps)
-                    case .login:
-                        TemplateLogin()
-                    case .signUp:
-                        TemplateSignUp()
-                    case .healthKitPermissions:
-                        HealthKitPermissions(onboardingSteps: $onboardingSteps)
-                    case .notificationPermissions:
-                        NotificationPermissions()
-                    }
-                }
-                .navigationBarTitleDisplayMode(.inline)
+        OnboardingStack(onboardingFlowComplete: $completedOnboardingFlow) {
+            Welcome()
+            InterestingModules()
+            
+            #if !(targetEnvironment(simulator) && (arch(i386) || arch(x86_64)))
+                Consent()
+            #endif
+            
+            if !FeatureFlags.disableFirebase {
+                AccountSetup()
+            }
+            
+            if HKHealthStore.isHealthDataAvailable() && !healthKitAuthorization {
+                HealthKitPermissions()
+            }
+            
+            if !localNotificationAuthorization {
+                NotificationPermissions()
+            }
+        }
+        .task {
+            localNotificationAuthorization = await scheduler.localNotificationAuthorization
         }
         .interactiveDismissDisabled(!completedOnboardingFlow)
     }
@@ -57,6 +66,9 @@ struct OnboardingFlow: View {
 struct OnboardingFlow_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingFlow()
+            .environmentObject(Account(accountServices: []))
+            .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
+            .environmentObject(TemplateApplicationScheduler())
     }
 }
 #endif

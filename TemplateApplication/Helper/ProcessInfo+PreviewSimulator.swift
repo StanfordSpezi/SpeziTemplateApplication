@@ -6,8 +6,11 @@
 // SPDX-License-Identifier: MIT
 //
 
-extension String {
-    var moduleLocalized: String {
-        String(localized: LocalizationValue(self))
+import Foundation
+
+
+extension ProcessInfo {
+    var isPreviewSimulator: Bool {
+        environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
     }
 }
