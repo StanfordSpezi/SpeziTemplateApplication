@@ -19,26 +19,40 @@ struct HomeView: View {
     
     
     @AppStorage(StorageKeys.homeTabSelection) var selectedTab = Tabs.schedule
-    
+    @State private var showingSheet = false
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            ScheduleView()
-                .tag(Tabs.schedule)
-                .tabItem {
-                    Label("SCHEDULE_TAB_TITLE", systemImage: "list.clipboard")
-                }
-            Contacts()
-                .tag(Tabs.contact)
-                .tabItem {
-                    Label("CONTACTS_TAB_TITLE", systemImage: "person.fill")
-                }
-            if FeatureFlags.disableFirebase {
-                MockUpload()
-                    .tag(Tabs.mockUpload)
+        ZStack {
+            TabView(selection: $selectedTab) {
+                ScheduleView()
+                    .tag(Tabs.schedule)
                     .tabItem {
-                        Label("MOCK_WEB_SERVICE_TAB_TITLE", systemImage: "server.rack")
+                        Label("SCHEDULE_TAB_TITLE", systemImage: "list.clipboard")
                     }
+                Contacts()
+                    .tag(Tabs.contact)
+                    .tabItem {
+                        Label("CONTACTS_TAB_TITLE", systemImage: "person.fill")
+                    }
+                if FeatureFlags.disableFirebase {
+                    MockUpload()
+                        .tag(Tabs.mockUpload)
+                        .tabItem {
+                            Label("MOCK_WEB_SERVICE_TAB_TITLE", systemImage: "server.rack")
+                        }
+                }
+            }
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: { showingSheet.toggle() }) {
+                        Image(systemName: "info.circle").imageScale(.large)
+                    }
+                    .sheet(isPresented: $showingSheet) {
+                        Contributions()
+                    }.padding(10)
+                }
+                Spacer()
             }
         }
     }
