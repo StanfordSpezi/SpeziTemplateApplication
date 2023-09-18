@@ -11,7 +11,8 @@ import SwiftPackageList
 
 
 class PackageHelper {
-    func getPackageList() -> [Package] {
+    /// Helper function that calls the corrensponding API of `SwiftPackageList`to fetch the list of packages
+    static func getPackageList() -> [Package] {
         do {
             let packages = try packageList()
             return packages

@@ -16,6 +16,7 @@ enum LicenseType {
     case gplv2
     case gplv3
     
+    /// SPDX-License-Identifier for the UI
     var spdxIdentifier: String {
         switch self {
         case .mit: return "MIT"
@@ -25,15 +26,7 @@ enum LicenseType {
         }
     }
     
-    var localizedName: String {
-        let format = NSLocalizedString(
-            "LICENSE_NAME",
-            value: "%@ license",
-            comment: "The license name displayed to the user (%@ is the license type, e.g. Apache-2.0)"
-        )
-        return .localizedStringWithFormat(format, spdxIdentifier)
-    }
-    
+    /// Initializer that scans the license document for common licenses and versions
     init?(license: String) {
         if license.contains("MIT License") {
             self = .mit
@@ -50,6 +43,7 @@ enum LicenseType {
 }
 
 extension Package {
+    /// Generates the `LicenseType` from a license document of `String`
     func getLicenseType(license: String?) -> LicenseType? {
         if let license = license {
             let licenseType = LicenseType(license: license)
