@@ -6,10 +6,12 @@
 // SPDX-License-Identifier: MIT
 //
 
+import SwiftPackageList
 import SwiftUI
 
+
 struct Contributions: View {
-    let dependencies: [String: DependencyHelper.DependencyInformation] = DependencyHelper().getAllDependencies()
+    let packages: [Package] = PackageHelper().getPackageList()
     
     var body: some View {
         NavigationView {
@@ -17,26 +19,31 @@ struct Contributions: View {
                 Section(footer: Text("This project is licensed under the MIT License.")) {
                     Text("The following list contains all package dependencies SpeziTemplateApplication relies on.")
                 }
-                Section(header: Text("Packages"), footer: Text("For the package licenses refer to the individual links.")) {
-                    ForEach(dependencies.sorted(by: { $0.key < $1.key }), id: \.key) { dependency in
+                Section(header: Text("Packages"), footer: Text("For packages without license labels refer to the individual repository links.")) {
+                    ForEach(packages.sorted(by: { $0.name < $1.name }), id: \.name) { dependency in
                         HStack {
-                            VStack(alignment: .leading) {
-                                Text(dependency.key)
-                                    .font(.headline)
-                                switch dependency.value.dependencyVersion {
-                                case let .branch(name):
-                                    Text("Branch: \(name)")
-                                case let .revision(code):
-                                    Text("Revision: \(code)")
-                                case let .versionNumber(version):
-                                    Text("Version: \(version)")
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(dependency.name).font(.headline)
+                                HStack {
+                                    if let branch = dependency.branch { Text("Branch: \(branch)").font(.caption).padding(2)
+                                    } else if let version = dependency.version { Text("Version: \(version)").font(.caption).padding(2)
+                                    } else { Text("Revision: \(dependency.revision)").font(.caption).padding(2) }
+                                    
+                                    if let licenseType = dependency.getLicenseType(license: dependency.license) {
+                                        Text(licenseType.spdxIdentifier)
+                                            .font(.caption)
+                                            .fontWeight(.semibold)
+                                            .padding(2)
+                                            .background(Color(.systemGray5))
+                                            .cornerRadius(4)
+                                    }
                                 }
                             }
                             Spacer()
                             Button(action: {
-                                UIApplication.shared.open(dependency.value.dependencyWebsite)
+                                UIApplication.shared.open(dependency.repositoryURL)
                             }) {
-                                Image(systemName: "safari.fill")
+                                Image(systemName: "safari.fill").imageScale(.large)
                             }.foregroundColor(.blue)
                         }
                     }
@@ -47,8 +54,11 @@ struct Contributions: View {
     }
 }
 
+
+#if DEBUG
 struct Contributions_Previews: PreviewProvider {
     static var previews: some View {
         Contributions()
     }
 }
+#endif

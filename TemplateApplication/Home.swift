@@ -50,7 +50,8 @@ struct HomeView: View {
                     }
                     .sheet(isPresented: $showingSheet) {
                         Contributions()
-                    }.padding(10)
+                    }
+                    .padding()
                 }
                 Spacer()
             }

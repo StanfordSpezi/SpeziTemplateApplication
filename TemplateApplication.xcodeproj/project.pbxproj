@@ -65,8 +65,10 @@
 		2FE750CD2A87255000723EAE /* SpeziFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE750CC2A87255000723EAE /* SpeziFHIR */; };
 		2FF53D8B2A8725DE00042B76 /* SpeziMockWebService in Frameworks */ = {isa = PBXBuildFile; productRef = 2FF53D8A2A8725DE00042B76 /* SpeziMockWebService */; };
 		2FF53D8D2A8729D600042B76 /* TemplateApplicationStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF53D8C2A8729D600042B76 /* TemplateApplicationStandard.swift */; };
+		5661551D2AB8384200209B80 /* SwiftPackageList in Frameworks */ = {isa = PBXBuildFile; productRef = 5661551C2AB8384200209B80 /* SwiftPackageList */; };
+		566155292AB8447C00209B80 /* Package+LicenseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566155282AB8447C00209B80 /* Package+LicenseType.swift */; };
+		5661552E2AB854C000209B80 /* PackageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661552D2AB854C000209B80 /* PackageHelper.swift */; };
 		56F6F2A02AB441930022FE5A /* Contributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6F29F2AB441930022FE5A /* Contributions.swift */; };
-		56F6F2A32AB44BB20022FE5A /* DependencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6F2A22AB44BB20022FE5A /* DependencyHelper.swift */; };
 		653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A2550283387FE005D4D48 /* TemplateApplication.swift */; };
 		653A255528338800005D4D48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A255428338800005D4D48 /* Assets.xcassets */; };
 		653A256228338800005D4D48 /* TemplateApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A256128338800005D4D48 /* TemplateApplicationTests.swift */; };
@@ -133,8 +135,9 @@
 		2FE5DCAC29EE6107004B9AB4 /* AccountSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSetup.swift; sourceTree = "<group>"; };
 		2FE5DCAD29EE6107004B9AB4 /* TemplateLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateLogin.swift; sourceTree = "<group>"; };
 		2FF53D8C2A8729D600042B76 /* TemplateApplicationStandard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateApplicationStandard.swift; sourceTree = "<group>"; };
+		566155282AB8447C00209B80 /* Package+LicenseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package+LicenseType.swift"; sourceTree = "<group>"; };
+		5661552D2AB854C000209B80 /* PackageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageHelper.swift; sourceTree = "<group>"; };
 		56F6F29F2AB441930022FE5A /* Contributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributions.swift; sourceTree = "<group>"; };
-		56F6F2A22AB44BB20022FE5A /* DependencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyHelper.swift; sourceTree = "<group>"; };
 		653A254D283387FE005D4D48 /* TemplateApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653A2550283387FE005D4D48 /* TemplateApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplication.swift; sourceTree = "<group>"; };
 		653A255428338800005D4D48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 				2FE5DC6729EDD894004B9AB4 /* SpeziContact in Frameworks */,
 				2FE5DC8429EDD934004B9AB4 /* SpeziQuestionnaire in Frameworks */,
 				2FB099B32A875DF100B20952 /* FirebaseFirestoreSwift in Frameworks */,
+				5661551D2AB8384200209B80 /* SwiftPackageList in Frameworks */,
 				2FB099B12A875DF100B20952 /* FirebaseFirestore in Frameworks */,
 				2FB099B62A875E2B00B20952 /* HealthKitOnFHIR in Frameworks */,
 				2FE5DC8A29EDD972004B9AB4 /* SpeziLocalStorage in Frameworks */,
@@ -297,7 +301,8 @@
 			isa = PBXGroup;
 			children = (
 				56F6F29F2AB441930022FE5A /* Contributions.swift */,
-				56F6F2A22AB44BB20022FE5A /* DependencyHelper.swift */,
+				566155282AB8447C00209B80 /* Package+LicenseType.swift */,
+				5661552D2AB854C000209B80 /* PackageHelper.swift */,
 			);
 			path = Contributions;
 			sourceTree = "<group>";
@@ -380,13 +385,14 @@
 			buildPhases = (
 				653A2549283387FE005D4D48 /* Sources */,
 				653A254A283387FE005D4D48 /* Frameworks */,
+				566155202AB8387700209B80 /* Run Script - Generate Swift Package List */,
 				653A254B283387FE005D4D48 /* Resources */,
 				2F5B528D29BD237B002020B7 /* ShellScript */,
-				56F6F2A12AB44AA50022FE5A /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				566155222AB83CF200209B80 /* PBXTargetDependency */,
 			);
 			name = TemplateApplication;
 			packageProductDependencies = (
@@ -410,6 +416,7 @@
 				2FB099B02A875DF100B20952 /* FirebaseFirestore */,
 				2FB099B22A875DF100B20952 /* FirebaseFirestoreSwift */,
 				2FB099B52A875E2B00B20952 /* HealthKitOnFHIR */,
+				5661551C2AB8384200209B80 /* SwiftPackageList */,
 			);
 			productName = TemplateApplication;
 			productReference = 653A254D283387FE005D4D48 /* TemplateApplication.app */;
@@ -504,6 +511,7 @@
 				2FE750CA2A87240100723EAE /* XCRemoteSwiftPackageReference "SpeziMockWebService" */,
 				2FE750CB2A87255000723EAE /* XCRemoteSwiftPackageReference "SpeziFHIR" */,
 				2FB099B42A875E2B00B20952 /* XCRemoteSwiftPackageReference "HealthKitOnFHIR" */,
+				5661551B2AB8384200209B80 /* XCRemoteSwiftPackageReference "swift-package-list" */,
 			);
 			productRefGroup = 653A254E283387FE005D4D48 /* Products */;
 			projectDirPath = "";
@@ -565,7 +573,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  export PATH=\"$PATH:/opt/homebrew/bin\"\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi\n";
 		};
-		56F6F2A12AB44AA50022FE5A /* ShellScript */ = {
+		566155202AB8387700209B80 /* Run Script - Generate Swift Package List */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -575,13 +583,14 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script - Generate Swift Package List";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  exit 0;\nfi\n\n# Directory paths\nPROJECT_DIR=\"${SRCROOT}\"\nDESTINATION_DIR=\"${SRCROOT}/Resources/\"\nDESTINATION_FILE=\"${DESTINATION_DIR}Package.json\" # New file name and extension\n\n# Find Package.resolved recursively\nSOURCE_DIR=$(find \"$PROJECT_DIR\" -name \"Package.resolved\" -print -quit)\n\nif [ -n \"$SOURCE_DIR\" ]; then\n    if cmp -s \"$SOURCE_DIR\" \"$DESTINATION_FILE\"; then\n        echo \"INFO: Content of $SOURCE_DIR and $DESTINATION_FILE is the same. Skipping copy operation.\"\n        exit 0\n    else\n        cp \"$SOURCE_DIR\" \"$DESTINATION_FILE\"\n         echo \"INFO: Copy operation successful: $SOURCE_DIR copied to $DESTINATION_FILE\"\n    fi\nelse\n    echo \"ERROR: Couldn't find Package.resolved in '$PROJECT_DIR' or its subdirectories.\"\n    exit 0\nfi\n\n# Create destination directory if it doesn't exist\nif [ ! -d \"$DESTINATION_DIR\" ]; then\n  mkdir \"$DESTINATION_DIR\"\nelse\n  echo \"INFO: $DESTINATION_DIR already exists\"\nfi\n\n# Copy Package.json to app bundle\ncp -R \"$DESTINATION_FILE\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\"\necho \"INFO: Package.json copied to app bundle: ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Package.json\"\n";
+			shellScript = "if command -v swift-package-list &> /dev/null; then\n    OUTPUT_PATH=$SOURCE_ROOT/$TARGETNAME\n    swift-package-list generate \"$PROJECT_FILE_PATH\" --output-path \"$OUTPUT_PATH\" --requires-license\nelse\n    echo \"warning: swift-package-list not installed\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -600,7 +609,6 @@
 				2FE5DC3529EDD7CA004B9AB4 /* Consent.swift in Sources */,
 				2FE5DC4529EDD7F2004B9AB4 /* Binding+Negate.swift in Sources */,
 				2FE5DCB229EE6107004B9AB4 /* TemplateLogin.swift in Sources */,
-				56F6F2A32AB44BB20022FE5A /* DependencyHelper.swift in Sources */,
 				2FC975A82978F11A00BA99FE /* Home.swift in Sources */,
 				2FE5DC4E29EDD7FA004B9AB4 /* ScheduleView.swift in Sources */,
 				2FE5DC3729EDD7CA004B9AB4 /* OnboardingFlow.swift in Sources */,
@@ -618,10 +626,12 @@
 				56F6F2A02AB441930022FE5A /* Contributions.swift in Sources */,
 				2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */,
 				2FE5DC5229EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift in Sources */,
+				566155292AB8447C00209B80 /* Package+LicenseType.swift in Sources */,
 				653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */,
 				2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */,
 				2F65B44E2A3B8B0600A36932 /* NotificationPermissions.swift in Sources */,
 				97D8B2A42A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift in Sources */,
+				5661552E2AB854C000209B80 /* PackageHelper.swift in Sources */,
 				27FA29902A388E9B009CAC45 /* ModalView.swift in Sources */,
 				2FE5DC2629EDD38A004B9AB4 /* Contacts.swift in Sources */,
 			);
@@ -649,6 +659,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		566155222AB83CF200209B80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 566155212AB83CF200209B80 /* SwiftPackageListJSONPlugin */;
+		};
 		653A255F28338800005D4D48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 653A254C283387FE005D4D48 /* TemplateApplication */;
@@ -1254,6 +1268,14 @@
 				minimumVersion = 0.4.0;
 			};
 		};
+		5661551B2AB8384200209B80 /* XCRemoteSwiftPackageReference "swift-package-list" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FelixHerrmann/swift-package-list";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		97F466E62A76BBEE005DC9B4 /* XCRemoteSwiftPackageReference "SpeziOnboarding" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziOnboarding";
@@ -1373,6 +1395,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2FE750CA2A87240100723EAE /* XCRemoteSwiftPackageReference "SpeziMockWebService" */;
 			productName = SpeziMockWebService;
+		};
+		5661551C2AB8384200209B80 /* SwiftPackageList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5661551B2AB8384200209B80 /* XCRemoteSwiftPackageReference "swift-package-list" */;
+			productName = SwiftPackageList;
+		};
+		566155212AB83CF200209B80 /* SwiftPackageListJSONPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5661551B2AB8384200209B80 /* XCRemoteSwiftPackageReference "swift-package-list" */;
+			productName = "plugin:SwiftPackageListJSONPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
