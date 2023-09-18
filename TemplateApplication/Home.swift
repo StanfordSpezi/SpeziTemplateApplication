@@ -46,15 +46,16 @@ struct HomeView: View {
                 HStack {
                     Spacer()
                     Button(action: { showingSheet.toggle() }) {
-                        Image(systemName: "info.circle").imageScale(.large)
-                    }
-                    .sheet(isPresented: $showingSheet) {
-                        ContributionsList()
+                        Image(systemName: "info.circle")
+                            .imageScale(.large)
+                            .accessibility(label: Text("Info"))
                     }
                     .padding()
                 }
                 Spacer()
             }
+        }.sheet(isPresented: $showingSheet) {
+            ContributionsList()
         }
     }
 }
