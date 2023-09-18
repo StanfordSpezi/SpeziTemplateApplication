@@ -49,7 +49,7 @@ struct HomeView: View {
                         Image(systemName: "info.circle").imageScale(.large)
                     }
                     .sheet(isPresented: $showingSheet) {
-                        Contributions()
+                        ContributionsList()
                     }
                     .padding()
                 }

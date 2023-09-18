@@ -10,7 +10,7 @@ import Foundation
 import SwiftPackageList
 
 
-class PackageHelper {
+enum PackageHelper {
     /// Helper function that calls the corrensponding API of `SwiftPackageList`to fetch the list of packages
     static func getPackageList() -> [Package] {
         do {

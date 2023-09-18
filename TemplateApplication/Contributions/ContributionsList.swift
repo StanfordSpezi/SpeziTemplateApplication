@@ -10,7 +10,7 @@ import SwiftPackageList
 import SwiftUI
 
 
-struct Contributions: View {
+struct ContributionsList: View {
     var packages: [Package] = PackageHelper.getPackageList()
     
     var body: some View {
@@ -32,7 +32,7 @@ struct Contributions: View {
 
 
 #if DEBUG
-struct Contributions_Previews: PreviewProvider {
+struct ContributionsList_Previews: PreviewProvider {
     static var previews: some View {
         let mockPackages = [
             Package(
@@ -44,7 +44,7 @@ struct Contributions_Previews: PreviewProvider {
                 license: "MIT License"
             )
         ]
-        return Contributions(packages: mockPackages)
+        return ContributionsList(packages: mockPackages)
     }
 }
 #endif

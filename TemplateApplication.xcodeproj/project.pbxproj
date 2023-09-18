@@ -69,7 +69,7 @@
 		566155292AB8447C00209B80 /* Package+LicenseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566155282AB8447C00209B80 /* Package+LicenseType.swift */; };
 		5661552E2AB854C000209B80 /* PackageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661552D2AB854C000209B80 /* PackageHelper.swift */; };
 		5680DD392AB8983D004E6D4A /* PackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5680DD382AB8983D004E6D4A /* PackageCell.swift */; };
-		56F6F2A02AB441930022FE5A /* Contributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6F29F2AB441930022FE5A /* Contributions.swift */; };
+		56F6F2A02AB441930022FE5A /* ContributionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F6F29F2AB441930022FE5A /* ContributionsList.swift */; };
 		653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A2550283387FE005D4D48 /* TemplateApplication.swift */; };
 		653A255528338800005D4D48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A255428338800005D4D48 /* Assets.xcassets */; };
 		653A256228338800005D4D48 /* TemplateApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A256128338800005D4D48 /* TemplateApplicationTests.swift */; };
@@ -139,7 +139,7 @@
 		566155282AB8447C00209B80 /* Package+LicenseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package+LicenseType.swift"; sourceTree = "<group>"; };
 		5661552D2AB854C000209B80 /* PackageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageHelper.swift; sourceTree = "<group>"; };
 		5680DD382AB8983D004E6D4A /* PackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCell.swift; sourceTree = "<group>"; };
-		56F6F29F2AB441930022FE5A /* Contributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributions.swift; sourceTree = "<group>"; };
+		56F6F29F2AB441930022FE5A /* ContributionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionsList.swift; sourceTree = "<group>"; };
 		653A254D283387FE005D4D48 /* TemplateApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653A2550283387FE005D4D48 /* TemplateApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplication.swift; sourceTree = "<group>"; };
 		653A255428338800005D4D48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -302,10 +302,10 @@
 		56F6F29E2AB441640022FE5A /* Contributions */ = {
 			isa = PBXGroup;
 			children = (
-				56F6F29F2AB441930022FE5A /* Contributions.swift */,
+				56F6F29F2AB441930022FE5A /* ContributionsList.swift */,
+				5680DD382AB8983D004E6D4A /* PackageCell.swift */,
 				566155282AB8447C00209B80 /* Package+LicenseType.swift */,
 				5661552D2AB854C000209B80 /* PackageHelper.swift */,
-				5680DD382AB8983D004E6D4A /* PackageCell.swift */,
 			);
 			path = Contributions;
 			sourceTree = "<group>";
@@ -626,7 +626,7 @@
 				2FE5DC5329EDD7FA004B9AB4 /* Bundle+Questionnaire.swift in Sources */,
 				2FE5DC5129EDD7FA004B9AB4 /* TemplateApplicationTaskContext.swift in Sources */,
 				97D8B2AB2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift in Sources */,
-				56F6F2A02AB441930022FE5A /* Contributions.swift in Sources */,
+				56F6F2A02AB441930022FE5A /* ContributionsList.swift in Sources */,
 				2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */,
 				2FE5DC5229EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift in Sources */,
 				566155292AB8447C00209B80 /* Package+LicenseType.swift in Sources */,
