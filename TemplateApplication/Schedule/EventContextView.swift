@@ -22,11 +22,17 @@ struct EventContextView: View {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(.accentColor)
                             .font(.system(size: 30))
+                            .accessibilityHidden(true)
                     }
                     VStack(alignment: .leading, spacing: 8) {
-                        Text(eventContext.task.title)
+                        Text(verbatim: eventContext.task.title)
                             .font(.headline)
-                        Text(format(eventDate: eventContext.event.scheduledAt))
+                            .accessibilityLabel(
+                                eventContext.event.complete
+                                    ? "COMPLETED_TASK_LABEL \(eventContext.task.title)"
+                                    : "TASK_LABEL \(eventContext.task.title)"
+                            )
+                        Text(verbatim: format(eventDate: eventContext.event.scheduledAt))
                             .font(.subheadline)
                     }
                 }
@@ -59,11 +65,8 @@ struct EventContextView: View {
 
 #if DEBUG
 struct EventContextView_Previews: PreviewProvider {
-    // We use a force unwrap in the preview as we can not recover from an error here
-    // and the code will never end up in a production environment.
-    // swiftlint:disable:next force_unwrapping
-    private static let task = TemplateApplicationScheduler().tasks.first!
-    
+    private static let task = TemplateApplicationScheduler.socialSupportTask
+
     
     static var previews: some View {
         EventContextView(

@@ -19,7 +19,7 @@ struct Contacts: View {
                 givenName: "Leland",
                 familyName: "Stanford"
             ),
-            image: Image(systemName: "figure.wave.circle"),
+            image: Image(systemName: "figure.wave.circle"), // swiftlint:disable:this accessibility_label_for_image
             title: "University Founder",
             description: String(localized: "LELAND_STANFORD_BIO"),
             organization: "Stanford University",
@@ -37,7 +37,7 @@ struct Contacts: View {
                 .text("+1 (650) 723-2300"),
                 .email(addresses: ["contact@stanford.edu"]),
                 ContactOption(
-                    image: Image(systemName: "safari.fill"),
+                    image: Image(systemName: "safari.fill"), // swiftlint:disable:this accessibility_label_for_image
                     title: "Website",
                     action: {
                         if let url = URL(string: "https://stanford.edu") {

@@ -41,8 +41,6 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
         }
     }
 
-    // TODO add account notify standard support
-
     
     func updateAccount(details: AccountDetails) async {
         guard !FeatureFlags.disableFirebase else {

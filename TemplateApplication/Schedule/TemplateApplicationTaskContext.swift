@@ -29,12 +29,12 @@ enum TemplateApplicationTaskContext: Codable, Identifiable {
         }
     }
     
-    var actionType: String {
+    var actionType: LocalizedStringResource {
         switch self {
         case .questionnaire:
-            return String(localized: "TASK_CONTEXT_ACTION_QUESTIONNAIRE")
+            return LocalizedStringResource("TASK_CONTEXT_ACTION_QUESTIONNAIRE")
         case .test:
-            return String(localized: "TASK_CONTEXT_ACTION_TEST")
+            return LocalizedStringResource("TASK_CONTEXT_ACTION_TEST")
         }
     }
 }
