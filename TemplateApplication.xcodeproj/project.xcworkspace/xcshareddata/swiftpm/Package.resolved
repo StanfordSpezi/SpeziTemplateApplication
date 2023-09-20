@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
-        "branch" : "feature/signup-sheet-no-navigationstacks",
-        "revision" : "3cd75b33ef62e050346982eaa6f3fa230fa666dc"
+        "revision" : "1685d1c01a94f61ca6039df6cd22a94632ccab6d",
+        "version" : "0.5.1"
       }
     },
     {
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
-        "branch" : "feature/account-upgrade-navstack",
-        "revision" : "6747c6079cc04ee6ca3393764084c1520da6b0fa"
+        "revision" : "7e31453c06f76ab3f2d0e7d3cff2e186d562dfd3",
+        "version" : "0.5.1"
       }
     },
     {

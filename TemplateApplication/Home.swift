@@ -51,7 +51,7 @@ struct HomeView: View {
                     .interactiveDismissDisabled(!account.signedIn)
             }
 
-        if !(FeatureFlags.disableFirebase && FeatureFlags.skipOnboarding) {
+        if !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding {
             tab
                 .onChange(of: account.signedIn) { newValue in
                     if !newValue {

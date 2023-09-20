@@ -1105,8 +1105,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziAccount.git";
 			requirement = {
-				branch = "feature/signup-sheet-no-navigationstacks";
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.5.1;
 			};
 		};
 		2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */ = {
@@ -1129,8 +1129,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziFirebase.git";
 			requirement = {
-				branch = "feature/account-upgrade-navstack";
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.5.1;
 			};
 		};
 		2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "SpeziQuestionnaire" */ = {

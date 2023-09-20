@@ -31,6 +31,7 @@ class OnboardingTests: XCTestCase {
         try app.navigateOnboardingFlow()
         
         try app.assertOnboardingComplete()
+        try app.assertAccountInformation()
     }
     
     func testOnboardingFlowRepeated() throws {
@@ -171,7 +172,9 @@ extension XCUIApplication {
         let tabBar = tabBars["Tab Bar"]
         XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 2))
         XCTAssertTrue(tabBar.buttons["Contacts"].waitForExistence(timeout: 2))
+    }
 
+    fileprivate func assertAccountInformation() throws {
         XCTAssertTrue(navigationBars.buttons["Your Account"].waitForExistence(timeout: 2))
         navigationBars.buttons["Your Account"].tap()
 
