@@ -24,6 +24,6 @@ class AccountTests: XCTestCase {
     }
 
     func testAccountSheet() throws {
-        let app = XCUIApplication()
+        let app = XCUIApplication() // TODO remove or tests?
     }
 }

@@ -1,8 +1,9 @@
 //
-//  AccountSheet.swift
-//  TemplateApplication
+// This source file is part of the Stanford Spezi Template Application project
 //
-//  Created by Andreas Bauer on 02.09.23.
+// SPDX-FileCopyrightText: 2023 Stanford University
+//
+// SPDX-License-Identifier: MIT
 //
 
 import SpeziAccount
