@@ -16,7 +16,7 @@ class OnboardingTests: XCTestCase {
         try super.setUpWithError()
         
         try disablePasswordAutofill()
-        
+
         continueAfterFailure = false
         
         let app = XCUIApplication()
@@ -105,10 +105,10 @@ extension XCUIApplication {
         
         XCTAssertTrue(staticTexts["Last Name"].waitForExistence(timeout: 2))
         try textFields["Enter your last name ..."].enter(value: "Stanford")
-        
-        XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 2))
-        staticTexts["Leland Stanford"].firstMatch.swipeUp()
-        
+
+        XCTAssertTrue(scrollViews["Signature Field"].waitForExistence(timeout: 2))
+        scrollViews["Signature Field"].swipeRight()
+
         XCTAssertTrue(buttons["I Consent"].waitForExistence(timeout: 2))
         buttons["I Consent"].tap()
     }
@@ -119,23 +119,19 @@ extension XCUIApplication {
             return
         }
         
-        XCTAssertTrue(buttons["Sign Up"].waitForExistence(timeout: 2))
-        buttons["Sign Up"].tap()
+        XCTAssertTrue(buttons["Signup"].waitForExistence(timeout: 2))
+        buttons["Signup"].tap()
+
+        XCTAssertTrue(navigationBars.staticTexts["Signup"].waitForExistence(timeout: 2))
         
-        XCTAssertTrue(navigationBars.staticTexts["Sign Up"].waitForExistence(timeout: 2))
-        
-        XCTAssertTrue(buttons["Email and Password"].waitForExistence(timeout: 2))
-        buttons["Email and Password"].tap()
-        
-        try textFields["Enter your email ..."].enter(value: "leland@stanford.edu")
-        try secureTextFields["Enter your password ..."].enter(value: "StanfordRocks")
-        try secureTextFields["Repeat your password ..."].enter(value: "StanfordRocks")
-        try textFields["Enter your first name ..."].enter(value: "Leland")
-        try textFields["Enter your last name ..."].enter(value: "Stanford")
-        
-        XCTAssertTrue(buttons["Sign Up"].waitForExistence(timeout: 2))
-        collectionViews.buttons["Sign Up"].tap()
-        
+        try collectionViews.textFields["E-Mail Address"].enter(value: "leland@stanford.edu")
+        try collectionViews.secureTextFields["Password"].enter(value: "StanfordRocks")
+        try textFields["enter first name"].enter(value: "Leland")
+        try textFields["enter last name"].enter(value: "Stanford")
+
+        XCTAssertTrue(collectionViews.buttons["Signup"].waitForExistence(timeout: 2))
+        collectionViews.buttons["Signup"].tap()
+
         sleep(3)
         
         if staticTexts["HealthKit Access"].waitForExistence(timeout: 5) && navigationBars.buttons["Back"].waitForExistence(timeout: 5) {
@@ -144,8 +140,8 @@ extension XCUIApplication {
             XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 2))
             XCTAssertTrue(staticTexts["leland@stanford.edu"].waitForExistence(timeout: 2))
             
-            XCTAssertTrue(scrollViews.otherElements.buttons["Next"].waitForExistence(timeout: 2))
-            scrollViews.otherElements.buttons["Next"].tap()
+            XCTAssertTrue(buttons["Next"].waitForExistence(timeout: 2))
+            buttons["Next"].tap()
         }
     }
     
@@ -175,5 +171,12 @@ extension XCUIApplication {
         let tabBar = tabBars["Tab Bar"]
         XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 2))
         XCTAssertTrue(tabBar.buttons["Contacts"].waitForExistence(timeout: 2))
+
+        XCTAssertTrue(navigationBars.buttons["Your Account"].waitForExistence(timeout: 2))
+        navigationBars.buttons["Your Account"].tap()
+
+        XCTAssertTrue(staticTexts["Account Overview"].waitForExistence(timeout: 5.0))
+        XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 0.5))
+        XCTAssertTrue(staticTexts["leland@stanford.edu"].waitForExistence(timeout: 0.5))
     }
 }

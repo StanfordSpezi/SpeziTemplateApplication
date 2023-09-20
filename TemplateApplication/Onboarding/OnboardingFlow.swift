@@ -43,7 +43,7 @@ struct OnboardingFlow: View {
             #endif
             
             if !FeatureFlags.disableFirebase {
-                AccountSetup()
+                AccountOnboarding()
             }
             
             if HKHealthStore.isHealthDataAvailable() && !healthKitAuthorization {
@@ -66,8 +66,7 @@ struct OnboardingFlow: View {
 struct OnboardingFlow_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingFlow()
-            .environmentObject(Account())
-            // TODO .environmentObject(FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099)))
+            .environmentObject(Account(MockUserIdPasswordAccountService()))
             .environmentObject(TemplateApplicationScheduler())
     }
 }

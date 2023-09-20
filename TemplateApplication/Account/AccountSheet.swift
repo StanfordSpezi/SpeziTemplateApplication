@@ -8,6 +8,7 @@
 import SpeziAccount
 import SwiftUI
 
+
 struct AccountSheet: View {
     @Environment(\.dismiss) var dismiss
 
@@ -20,14 +21,24 @@ struct AccountSheet: View {
             ZStack {
                 if account.signedIn {
                     AccountOverview(isEditing: $overviewIsEditing)
+                        .onDisappear {
+                            overviewIsEditing = false
+                        }
                 } else {
-                    AccountSetup()
+                    AccountSetup(header: {
+                        AccountSetupHeader()
+                    })
                 }
             }
+                .onChange(of: account.signedIn) { newValue in
+                    if newValue {
+                        dismiss() // we just signed in, dismiss the account setup sheet
+                    }
+                }
                 .toolbar {
-                    if !overviewIsEditing {
+                    if account.signedIn || FeatureFlags.skipOnboarding {
                         ToolbarItem(placement: .cancellationAction) {
-                            Button("Close") { // TODO translation
+                            Button("CLOSE") {
                                 dismiss()
                             }
                         }

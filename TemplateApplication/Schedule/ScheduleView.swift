@@ -7,6 +7,7 @@
 //
 
 
+import SpeziAccount
 import SpeziQuestionnaire
 import SpeziScheduler
 import SwiftUI
@@ -16,8 +17,10 @@ struct ScheduleView: View {
     @EnvironmentObject var scheduler: TemplateApplicationScheduler
     @State var eventContextsByDate: [Date: [EventContext]] = [:]
     @State var presentedContext: EventContext?
-    @State var presentingAccount = false
-    
+
+
+    @Binding var presentingAccount: Bool
+
     
     var startOfDays: [Date] {
         Array(eventContextsByDate.keys)
@@ -47,22 +50,25 @@ struct ScheduleView: View {
                 .sheet(item: $presentedContext) { presentedContext in
                     destination(withContext: presentedContext)
                 }
-                .sheet(isPresented: $presentingAccount) {
-                    AccountSheet()
-                }
                 .toolbar {
-                    if !FeatureFlags.disableFirebase {
+                    if !FeatureFlags.disableFirebase || ProcessInfo.processInfo.isPreviewSimulator {
                         Button(action: {
                             presentingAccount = true
                         }) {
                             Image(systemName: "person.crop.circle")
                         }
+                            .accessibilityLabel("ACCOUNT_TITLE")
                     }
                 }
                 .navigationTitle("SCHEDULE_LIST_TITLE")
         }
     }
-    
+
+
+    init(presentingAccount: Binding<Bool>) {
+        self._presentingAccount = presentingAccount
+    }
+
     
     private func destination(withContext eventContext: EventContext) -> some View {
         @ViewBuilder var destination: some View {
@@ -74,7 +80,7 @@ struct ScheduleView: View {
                     }
                 }
             case let .test(string):
-                ModalView(text: string, buttonText: String(localized: "TASK_TEST_CLOSE_TITLE")) {
+                ModalView(text: string, buttonText: String(localized: "CLOSE")) {
                     _Concurrency.Task {
                         await eventContext.event.complete(true)
                     }
@@ -118,9 +124,18 @@ struct ScheduleView: View {
 
 #if DEBUG
 struct SchedulerView_Previews: PreviewProvider {
+    static let details = AccountDetails.Builder()
+        .set(\.userId, value: "lelandstanford@stanford.edu")
+        .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
+
     static var previews: some View {
-        ScheduleView()
+        ScheduleView(presentingAccount: .constant(false))
             .environmentObject(TemplateApplicationScheduler())
+            .environmentObject(Account())
+
+        ScheduleView(presentingAccount: .constant(true))
+            .environmentObject(TemplateApplicationScheduler())
+            .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
     }
 }
 #endif

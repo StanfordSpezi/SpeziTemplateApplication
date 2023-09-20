@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
+import SpeziAccount
 import SpeziMockWebService
 import SwiftUI
 
@@ -19,11 +20,15 @@ struct HomeView: View {
     
     
     @AppStorage(StorageKeys.homeTabSelection) var selectedTab = Tabs.schedule
-    
+
+    @EnvironmentObject private var account: Account
+
+    @State private var presentingAccount = false
+
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            ScheduleView()
+        let tab = TabView(selection: $selectedTab) {
+            ScheduleView(presentingAccount: $presentingAccount)
                 .tag(Tabs.schedule)
                 .tabItem {
                     Label("SCHEDULE_TAB_TITLE", systemImage: "list.clipboard")
@@ -41,6 +46,27 @@ struct HomeView: View {
                     }
             }
         }
+            .sheet(isPresented: $presentingAccount) {
+                AccountSheet()
+                    .interactiveDismissDisabled(!account.signedIn)
+            }
+
+        if !(FeatureFlags.disableFirebase && FeatureFlags.skipOnboarding) {
+            tab
+                .onChange(of: account.signedIn) { newValue in
+                    if !newValue {
+                        presentingAccount = true
+                    }
+                }
+                .task {
+                    try? await Task.sleep(for: .milliseconds(500))
+                    if !account.signedIn {
+                        presentingAccount = true
+                    }
+                }
+        } else {
+            tab
+        }
     }
 }
 
@@ -49,6 +75,7 @@ struct HomeView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(Account(MockUserIdPasswordAccountService()))
             .environmentObject(TemplateApplicationScheduler())
             .environmentObject(MockWebService())
     }
