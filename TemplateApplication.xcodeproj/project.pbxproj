@@ -70,7 +70,6 @@
 		97D8B2AB2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */; };
 		A9720E402ABB5EEE00872D23 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9720E3F2ABB5EEE00872D23 /* MainView.swift */; };
 		A9720E432ABB68CC00872D23 /* AccountSetupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */; };
-		A9720E452ABB7DA400872D23 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9720E442ABB7DA400872D23 /* AccountTests.swift */; };
 		A9FE7AD02AA39BAB0077B045 /* AccountSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE7ACF2AA39BAB0077B045 /* AccountSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -139,7 +138,6 @@
 		97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingFlow+PreviewSimulator.swift"; sourceTree = "<group>"; };
 		A9720E3F2ABB5EEE00872D23 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetupHeader.swift; sourceTree = "<group>"; };
-		A9720E442ABB7DA400872D23 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		A9FE7ACF2AA39BAB0077B045 /* AccountSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,7 +334,6 @@
 				653A256B28338800005D4D48 /* SchedulerTests.swift */,
 				2F4E23862989DB360013F3D9 /* ContactsTests.swift */,
 				2F1B52CD2A4F5CCE003AE151 /* MockUploadTests.swift */,
-				A9720E442ABB7DA400872D23 /* AccountTests.swift */,
 			);
 			path = TemplateApplicationUITests;
 			sourceTree = "<group>";
@@ -607,7 +604,6 @@
 				2F4E237E2989A2FE0013F3D9 /* OnboardingTests.swift in Sources */,
 				2F1B52CE2A4F5CCE003AE151 /* MockUploadTests.swift in Sources */,
 				653A256C28338800005D4D48 /* SchedulerTests.swift in Sources */,
-				A9720E452ABB7DA400872D23 /* AccountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

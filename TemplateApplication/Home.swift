@@ -53,8 +53,8 @@ struct HomeView: View {
 
         if !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding {
             tab
-                .onChange(of: account.signedIn) { newValue in
-                    if !newValue {
+                .onChange(of: [account.signedIn, presentingAccount]) { _ in
+                    if !account.signedIn && !presentingAccount {
                         presentingAccount = true
                     }
                 }

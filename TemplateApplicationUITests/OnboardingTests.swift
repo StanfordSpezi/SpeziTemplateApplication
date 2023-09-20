@@ -30,7 +30,7 @@ class OnboardingTests: XCTestCase {
         
         try app.navigateOnboardingFlow()
         
-        try app.assertOnboardingComplete()
+        app.assertOnboardingComplete()
         try app.assertAccountInformation()
     }
     
@@ -41,7 +41,7 @@ class OnboardingTests: XCTestCase {
         app.launch()
         
         try app.navigateOnboardingFlow()
-        try app.assertOnboardingComplete()
+        app.assertOnboardingComplete()
         
         app.terminate()
         
@@ -50,7 +50,7 @@ class OnboardingTests: XCTestCase {
         
         try app.navigateOnboardingFlow(repeated: true)
         // Do not show HealthKit and Notification authorization view again
-        try app.assertOnboardingComplete()
+        app.assertOnboardingComplete()
     }
 }
 
@@ -145,7 +145,7 @@ extension XCUIApplication {
             buttons["Next"].tap()
         }
     }
-    
+
     private func navigateOnboardingFlowHealthKitAccess() throws {
         XCTAssertTrue(staticTexts["HealthKit Access"].waitForExistence(timeout: 5))
         
@@ -168,7 +168,7 @@ extension XCUIApplication {
         }
     }
     
-    fileprivate func assertOnboardingComplete() throws {
+    fileprivate func assertOnboardingComplete() {
         let tabBar = tabBars["Tab Bar"]
         XCTAssertTrue(tabBar.buttons["Schedule"].waitForExistence(timeout: 2))
         XCTAssertTrue(tabBar.buttons["Contacts"].waitForExistence(timeout: 2))
@@ -181,5 +181,32 @@ extension XCUIApplication {
         XCTAssertTrue(staticTexts["Account Overview"].waitForExistence(timeout: 5.0))
         XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 0.5))
         XCTAssertTrue(staticTexts["leland@stanford.edu"].waitForExistence(timeout: 0.5))
+
+
+        XCTAssertTrue(navigationBars.buttons["Close"].waitForExistence(timeout: 0.5))
+        navigationBars.buttons["Close"].tap()
+
+        assertOnboardingComplete()
+
+        XCTAssertTrue(navigationBars.buttons["Your Account"].waitForExistence(timeout: 2))
+        navigationBars.buttons["Your Account"].tap()
+
+        XCTAssertTrue(buttons["Logout"].waitForExistence(timeout: 2))
+        buttons["Logout"].tap()
+
+        let alert = "Are you sure you want to logout?"
+        XCTAssertTrue(alerts[alert].waitForExistence(timeout: 6.0))
+        alerts[alert].buttons["Logout"].tap()
+
+        sleep(2)
+
+        // Login
+        try textFields["E-Mail Address"].enter(value: "leland@stanford.edu")
+        try secureTextFields["Password"].enter(value: "StanfordRocks")
+
+        XCTAssertTrue(buttons["Login"].waitForExistence(timeout: 0.5))
+        buttons["Login"].tap()
+
+        assertOnboardingComplete()
     }
 }
