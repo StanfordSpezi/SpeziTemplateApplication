@@ -37,7 +37,7 @@ struct AccountSheet: View {
                     }
                 }
                 .toolbar {
-                    if account.signedIn || FeatureFlags.skipOnboarding {
+                    if !overviewIsEditing && (account.signedIn || FeatureFlags.skipOnboarding) {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("CLOSE") {
                                 dismiss()

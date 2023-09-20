@@ -19,7 +19,8 @@ import SpeziQuestionnaire
 import SwiftUI
 
 
-actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectProvider, HealthKitConstraint, QuestionnaireConstraint {
+actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectProvider, HealthKitConstraint,
+                                   QuestionnaireConstraint, AccountNotifyStandard {
     enum TemplateApplicationStandardError: Error {
         case userNotAuthenticatedYet
     }
@@ -114,5 +115,14 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
         try await userDocumentReference
             .collection("HealthKit") // Add all HealthKit sources in a /HealthKit collection.
             .document(uuid.uuidString) // Set the document identifier to the UUID of the document.
+    }
+
+    func deletedAccount() async throws {
+        // delete all user associated data
+        do {
+            try await userDocumentReference.delete()
+        } catch {
+            logger.error("Could not delete user document: \(error)")
+        }
     }
 }
