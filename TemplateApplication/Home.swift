@@ -27,7 +27,7 @@ struct HomeView: View {
 
     
     var body: some View {
-        let tab = TabView(selection: $selectedTab) {
+        TabView(selection: $selectedTab) {
             ScheduleView(presentingAccount: $presentingAccount)
                 .tag(Tabs.schedule)
                 .tabItem {
@@ -50,23 +50,7 @@ struct HomeView: View {
                 AccountSheet()
                     .interactiveDismissDisabled(!account.signedIn)
             }
-
-        if !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding {
-            tab
-                .onChange(of: [account.signedIn, presentingAccount]) { _ in
-                    if !account.signedIn && !presentingAccount {
-                        presentingAccount = true
-                    }
-                }
-                .task {
-                    try? await Task.sleep(for: .milliseconds(500))
-                    if !account.signedIn {
-                        presentingAccount = true
-                    }
-                }
-        } else {
-            tab
-        }
+            .accountRequired(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding, sheetPresented: $presentingAccount)
     }
 }
 

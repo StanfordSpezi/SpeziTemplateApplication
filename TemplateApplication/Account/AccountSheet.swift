@@ -14,6 +14,7 @@ struct AccountSheet: View {
     @Environment(\.dismiss) var dismiss
 
     @EnvironmentObject var account: Account
+    @Environment(\.accountRequired) var accountRequired
 
     @State var overviewIsEditing = false
 
@@ -37,7 +38,7 @@ struct AccountSheet: View {
                     }
                 }
                 .toolbar {
-                    if !overviewIsEditing && (account.signedIn || FeatureFlags.skipOnboarding) {
+                    if !overviewIsEditing && (account.signedIn || !accountRequired) {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("CLOSE") {
                                 dismiss()
@@ -48,6 +49,7 @@ struct AccountSheet: View {
         }
     }
 }
+
 
 struct AccountSheet_Previews: PreviewProvider {
     static let details = AccountDetails.Builder()
