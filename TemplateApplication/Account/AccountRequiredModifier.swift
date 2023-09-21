@@ -16,6 +16,13 @@ struct AccountRequiredModifier: ViewModifier {
     @EnvironmentObject private var account: Account
     @Binding private var presentingAccount: Bool
 
+
+    init(required: Bool, presentingAccount: Binding<Bool>) {
+        self.required = required
+        self._presentingAccount = presentingAccount
+    }
+
+
     func body(content: Content) -> some View {
         if required {
             content
@@ -35,17 +42,11 @@ struct AccountRequiredModifier: ViewModifier {
             content
         }
     }
-
-    
-    init(required: Bool, presentingAccount: Binding<Bool>) {
-        self.required = required
-        self._presentingAccount = presentingAccount
-    }
 }
 
 
 extension View {
-    func accountRequired(_ required: Bool = true, sheetPresented presentingAccount: Binding<Bool>) -> some View {
+    func accountRequired(sheetPresented presentingAccount: Binding<Bool>, _ required: Bool = true) -> some View {
         modifier(AccountRequiredModifier(required: required, presentingAccount: presentingAccount))
     }
 }
