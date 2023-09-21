@@ -46,7 +46,7 @@ struct AccountRequiredModifier: ViewModifier {
 
 
 extension View {
-    func accountRequired(sheetPresented presentingAccount: Binding<Bool>, _ required: Bool = true) -> some View {
+    func accountRequired(_ required: Bool, sheetPresented presentingAccount: Binding<Bool>) -> some View {
         modifier(AccountRequiredModifier(required: required, presentingAccount: presentingAccount))
     }
 }
