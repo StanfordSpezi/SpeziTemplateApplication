@@ -48,13 +48,25 @@ struct Contacts: View {
             ]
         )
     ]
-    
+
+    @Binding var presentingAccount: Bool
+
     
     var body: some View {
         NavigationStack {
             ContactsList(contacts: contacts)
                 .navigationTitle(String(localized: "CONTACTS_NAVIGATION_TITLE"))
+                .toolbar {
+                    if AccountButton.shouldDisplay {
+                        AccountButton(isPresented: $presentingAccount)
+                    }
+                }
         }
+    }
+
+
+    init(presentingAccount: Binding<Bool>) {
+        self._presentingAccount = presentingAccount
     }
 }
 
@@ -62,7 +74,7 @@ struct Contacts: View {
 #if DEBUG
 struct Contacts_Previews: PreviewProvider {
     static var previews: some View {
-        Contacts()
+        Contacts(presentingAccount: .constant(false))
     }
 }
 #endif

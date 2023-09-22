@@ -33,13 +33,13 @@ struct HomeView: View {
                 .tabItem {
                     Label("SCHEDULE_TAB_TITLE", systemImage: "list.clipboard")
                 }
-            Contacts()
+            Contacts(presentingAccount: $presentingAccount)
                 .tag(Tabs.contact)
                 .tabItem {
                     Label("CONTACTS_TAB_TITLE", systemImage: "person.fill")
                 }
             if FeatureFlags.disableFirebase {
-                MockUpload()
+                MockUpload(presentingAccount: $presentingAccount)
                     .tag(Tabs.mockUpload)
                     .tabItem {
                         Label("MOCK_WEB_SERVICE_TAB_TITLE", systemImage: "server.rack")

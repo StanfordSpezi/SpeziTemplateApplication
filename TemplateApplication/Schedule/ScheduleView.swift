@@ -51,13 +51,8 @@ struct ScheduleView: View {
                     destination(withContext: presentedContext)
                 }
                 .toolbar {
-                    if !FeatureFlags.disableFirebase || ProcessInfo.processInfo.isPreviewSimulator {
-                        Button(action: {
-                            presentingAccount = true
-                        }) {
-                            Image(systemName: "person.crop.circle")
-                        }
-                            .accessibilityLabel("ACCOUNT_TITLE")
+                    if AccountButton.shouldDisplay {
+                        AccountButton(isPresented: $presentingAccount)
                     }
                 }
                 .navigationTitle("SCHEDULE_LIST_TITLE")
