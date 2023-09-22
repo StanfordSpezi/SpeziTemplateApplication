@@ -40,6 +40,9 @@ struct ContributionsList_Previews: PreviewProvider {
                 version: "1.0",
                 branch: nil,
                 revision: "0",
+                // We use a force unwrap in the preview as we can not recover from an error here
+                // and the code will never end up in a production environment.
+                // swiftlint:disable:next force_unwrapping
                 repositoryURL: URL(string: "github.com")!,
                 license: "MIT License"
             )

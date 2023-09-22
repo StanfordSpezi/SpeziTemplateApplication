@@ -23,3 +23,8 @@ export_options(
     }
   }
 )
+
+# In order to trust and enable the SwiftPackageListJSONPlugin of the “swift-package-list” package
+build_app(
+  xcargs: "-skipPackagePluginValidation"
+)
