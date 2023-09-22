@@ -35,7 +35,9 @@ struct PackageCell: View {
             Button(action: {
                 UIApplication.shared.open(package.repositoryURL)
             }) {
-                Image(systemName: "safari.fill").imageScale(.large)
+                Image(systemName: "safari.fill")
+                    .imageScale(.large)
+                    .accessibilityLabel(Text("Repository Link"))
             }.buttonStyle(PlainButtonStyle())
                 .foregroundColor(.blue)
         }

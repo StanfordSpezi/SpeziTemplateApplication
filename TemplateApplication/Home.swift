@@ -48,7 +48,7 @@ struct HomeView: View {
                     Button(action: { showingSheet.toggle() }) {
                         Image(systemName: "info.circle")
                             .imageScale(.large)
-                            .accessibility(label: Text("Info"))
+                            .accessibilityLabel(Text("Info"))
                     }
                     .padding()
                 }
