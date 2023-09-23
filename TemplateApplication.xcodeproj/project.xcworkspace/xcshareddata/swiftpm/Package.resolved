@@ -23,13 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk.git",
       "state" : {
-<<<<<<< HEAD
-        "revision" : "2bfe6abe1014aafe5cf28401708f7d39f9926a76",
-        "version" : "10.14.0"
-=======
         "revision" : "8a8ec57a272e0d31480fb0893dda0cf4f769b57e",
         "version" : "10.15.0"
->>>>>>> origin/main
       }
     },
     {
@@ -136,13 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKitOnFHIR",
       "state" : {
-<<<<<<< HEAD
-        "revision" : "b3576031a96abb25a2534a6a1fbf55c0b5c1a6ce",
-        "version" : "0.2.1"
-=======
         "revision" : "7dc09f7acd7fb19673594e0fdd4d72d0869ee006",
         "version" : "0.2.3"
->>>>>>> origin/main
       }
     },
     {
@@ -159,13 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
-<<<<<<< HEAD
-        "revision" : "e5f8db63ad205c635ecaca782de87e6e5dd06432",
-        "version" : "0.4.2"
-=======
         "revision" : "5937ed6e0baea9f53688c2752acfff23d45335cd",
         "version" : "0.5.2"
->>>>>>> origin/main
       }
     },
     {
@@ -209,13 +194,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziMockWebService.git",
       "state" : {
-<<<<<<< HEAD
-        "revision" : "414af8351f1cc0b6085f6d697e83275314068493",
-        "version" : "0.1.3"
-=======
         "revision" : "2ea46969069d04a1c3c2d1925751bfe0d6cf9adb",
         "version" : "0.2.0"
->>>>>>> origin/main
       }
     },
     {
@@ -223,13 +203,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziOnboarding.git",
       "state" : {
-<<<<<<< HEAD
-        "revision" : "38810393108d9135d33841d9a24d18efb65ccb99",
-        "version" : "0.4.4"
-=======
         "revision" : "e0b11e101a920fa01f92e0ebf77fa0bb1c0265ef",
         "version" : "0.5.1"
->>>>>>> origin/main
       }
     },
     {
@@ -264,10 +239,6 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziViews.git",
       "state" : {
-<<<<<<< HEAD
-        "revision" : "7bb90ed4967c8a992109351f9e63c9cb22988aa2",
-        "version" : "0.4.2"
-=======
         "revision" : "626914fa7554aa2b994257541c0794eb930520ba",
         "version" : "0.5.0"
       }
@@ -279,7 +250,6 @@
       "state" : {
         "revision" : "937e904258d22af6e447a0b72c0bc67583ef64a2",
         "version" : "1.0.4"
->>>>>>> origin/main
       }
     },
     {
@@ -287,13 +257,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
-<<<<<<< HEAD
-        "revision" : "f25867a208f459d3c5a06935dceb9083b11cd539",
-        "version" : "1.22.0"
-=======
         "revision" : "cf62cdaea48b77f1a631e5cb3aeda6047c2cba1d",
         "version" : "1.23.0"
->>>>>>> origin/main
       }
     },
     {
