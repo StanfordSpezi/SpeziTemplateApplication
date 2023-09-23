@@ -20,7 +20,7 @@ platform :ios do
       code_coverage: true,
       derived_data_path: ".derivedData",
       result_bundle: true,
-      output_directory: "."
+      output_directory: ".",
       xcargs: "-skipPackagePluginValidation"
     )
   end
@@ -38,7 +38,7 @@ platform :ios do
   desc "Build app"
   lane :build do
     build_app(
-      derived_data_path: ".derivedData"
+      derived_data_path: ".derivedData",
       xcargs: "-skipPackagePluginValidation"
     )
   end
