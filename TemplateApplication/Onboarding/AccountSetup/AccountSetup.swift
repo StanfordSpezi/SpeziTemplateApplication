@@ -62,6 +62,7 @@ struct AccountSetup: View {
         }
             .font(.system(size: 150))
             .foregroundColor(.accentColor)
+            .accessibilityHidden(true)
     }
     
     @ViewBuilder private var accountDescription: some View {

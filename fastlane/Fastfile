@@ -21,6 +21,7 @@ platform :ios do
       derived_data_path: ".derivedData",
       result_bundle: true,
       output_directory: "."
+      xcargs: "-skipPackagePluginValidation"
     )
   end
 
@@ -29,7 +30,8 @@ platform :ios do
     build_app(
       skip_archive: true,
       skip_codesigning: true,
-      derived_data_path: ".derivedData"
+      derived_data_path: ".derivedData",
+      xcargs: "-skipPackagePluginValidation"
     )
   end
 
@@ -37,6 +39,7 @@ platform :ios do
   lane :build do
     build_app(
       derived_data_path: ".derivedData"
+      xcargs: "-skipPackagePluginValidation"
     )
   end
 

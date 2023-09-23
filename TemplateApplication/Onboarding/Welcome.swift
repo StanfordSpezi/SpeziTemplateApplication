@@ -18,6 +18,7 @@ struct Welcome: View {
         OnboardingView(
             title: "WELCOME_TITLE",
             subtitle: "WELCOME_SUBTITLE",
+            // swiftlint:disable accessibility_label_for_image
             areas: [
                 .init(
                     icon: Image(systemName: "apps.iphone"),

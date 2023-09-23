@@ -37,9 +37,9 @@ struct PackageCell: View {
             }) {
                 Image(systemName: "safari.fill")
                     .imageScale(.large)
-                    .accessibilityLabel(Text("Repository Link"))
             }.buttonStyle(PlainButtonStyle())
                 .foregroundColor(.blue)
+                .accessibilityLabel(Text("Repository Link"))
         }
     }
     

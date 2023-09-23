@@ -22,6 +22,7 @@ struct EventContextView: View {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundColor(.accentColor)
                             .font(.system(size: 30))
+                            .accessibilityLabel(Text("Completed"))
                     }
                     VStack(alignment: .leading, spacing: 8) {
                         Text(eventContext.task.title)
