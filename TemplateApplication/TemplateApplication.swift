@@ -14,11 +14,11 @@ import SwiftUI
 struct TemplateApplication: App {
     @UIApplicationDelegateAdaptor(TemplateAppDelegate.self) var appDelegate
     @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
-    
+
     
     var body: some Scene {
         WindowGroup {
-            Group {
+            ZStack {
                 if completedOnboardingFlow {
                     HomeView()
                 } else {
@@ -28,6 +28,7 @@ struct TemplateApplication: App {
                 .sheet(isPresented: !$completedOnboardingFlow) {
                     OnboardingFlow()
                 }
+                .standardAccountUpdate()
                 .testingSetup()
                 .spezi(appDelegate)
         }

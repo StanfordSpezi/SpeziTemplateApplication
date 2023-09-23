@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
+import SpeziAccount
 import SpeziMockWebService
 import SwiftUI
 
@@ -19,23 +20,27 @@ struct HomeView: View {
     
     
     @AppStorage(StorageKeys.homeTabSelection) var selectedTab = Tabs.schedule
+    
+    @EnvironmentObject private var account: Account
+    
+    @State private var presentingAccount = false
     @State private var showingSheet = false
     
     var body: some View {
         ZStack {
             TabView(selection: $selectedTab) {
-                ScheduleView()
+                ScheduleView(presentingAccount: $presentingAccount)
                     .tag(Tabs.schedule)
                     .tabItem {
                         Label("SCHEDULE_TAB_TITLE", systemImage: "list.clipboard")
                     }
-                Contacts()
+                Contacts(presentingAccount: $presentingAccount)
                     .tag(Tabs.contact)
                     .tabItem {
                         Label("CONTACTS_TAB_TITLE", systemImage: "person.fill")
                     }
                 if FeatureFlags.disableFirebase {
-                    MockUpload()
+                    MockUpload(presentingAccount: $presentingAccount)
                         .tag(Tabs.mockUpload)
                         .tabItem {
                             Label("MOCK_WEB_SERVICE_TAB_TITLE", systemImage: "server.rack")
@@ -57,6 +62,11 @@ struct HomeView: View {
         }.sheet(isPresented: $showingSheet) {
             ContributionsList()
         }
+        .sheet(isPresented: $presentingAccount) {
+            AccountSheet()
+                .interactiveDismissDisabled(!account.signedIn)
+        }
+        .accountRequired(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding, sheetPresented: $presentingAccount)
     }
 }
 
@@ -65,6 +75,7 @@ struct HomeView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(Account(MockUserIdPasswordAccountService()))
             .environmentObject(TemplateApplicationScheduler())
             .environmentObject(MockWebService())
     }
