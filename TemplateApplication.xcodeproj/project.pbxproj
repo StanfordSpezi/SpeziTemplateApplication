@@ -57,11 +57,7 @@
 		2FE5DC8F29EDD980004B9AB4 /* SpeziViews in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8E29EDD980004B9AB4 /* SpeziViews */; };
 		2FE5DC9929EDD9D9004B9AB4 /* XCTestExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC9829EDD9D9004B9AB4 /* XCTestExtensions */; };
 		2FE5DC9C29EDD9EF004B9AB4 /* XCTHealthKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC9B29EDD9EF004B9AB4 /* XCTHealthKit */; };
-		2FE5DCAE29EE6107004B9AB4 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCA929EE6107004B9AB4 /* IconView.swift */; };
-		2FE5DCAF29EE6107004B9AB4 /* TemplateSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCAA29EE6107004B9AB4 /* TemplateSignUp.swift */; };
-		2FE5DCB029EE6107004B9AB4 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCAB29EE6107004B9AB4 /* UserView.swift */; };
-		2FE5DCB129EE6107004B9AB4 /* AccountSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCAC29EE6107004B9AB4 /* AccountSetup.swift */; };
-		2FE5DCB229EE6107004B9AB4 /* TemplateLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCAD29EE6107004B9AB4 /* TemplateLogin.swift */; };
+		2FE5DCB129EE6107004B9AB4 /* AccountOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DCAC29EE6107004B9AB4 /* AccountOnboarding.swift */; };
 		2FE750CD2A87255000723EAE /* SpeziFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE750CC2A87255000723EAE /* SpeziFHIR */; };
 		2FF53D8B2A8725DE00042B76 /* SpeziMockWebService in Frameworks */ = {isa = PBXBuildFile; productRef = 2FF53D8A2A8725DE00042B76 /* SpeziMockWebService */; };
 		2FF53D8D2A8729D600042B76 /* TemplateApplicationStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF53D8C2A8729D600042B76 /* TemplateApplicationStandard.swift */; };
@@ -72,6 +68,12 @@
 		9733CFC62A8066DE001B7ABC /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE5DC8029EDD91D004B9AB4 /* SpeziOnboarding */; };
 		97D8B2A42A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8B2A32A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift */; };
 		97D8B2AB2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */; };
+		A92525A72ABC4B5F00640379 /* AccountUpdateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92525A62ABC4B5F00640379 /* AccountUpdateModifier.swift */; };
+		A92525A92ABC4C7800640379 /* AccountRequiredModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92525A82ABC4C7800640379 /* AccountRequiredModifier.swift */; };
+		A92525AB2ABC4EB200640379 /* AccountRequiredKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92525AA2ABC4EB200640379 /* AccountRequiredKey.swift */; };
+		A9720E432ABB68CC00872D23 /* AccountSetupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */; };
+		A9DFE8A92ABE551400428242 /* AccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DFE8A82ABE551400428242 /* AccountButton.swift */; };
+		A9FE7AD02AA39BAB0077B045 /* AccountSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE7ACF2AA39BAB0077B045 /* AccountSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,11 +127,7 @@
 		2FE5DC4C29EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateApplicationScheduler.swift; sourceTree = "<group>"; };
 		2FE5DC4D29EDD7FA004B9AB4 /* Bundle+Questionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Questionnaire.swift"; sourceTree = "<group>"; };
 		2FE5DC5529EDD811004B9AB4 /* SocialSupportQuestionnaire.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SocialSupportQuestionnaire.json; sourceTree = "<group>"; };
-		2FE5DCA929EE6107004B9AB4 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
-		2FE5DCAA29EE6107004B9AB4 /* TemplateSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateSignUp.swift; sourceTree = "<group>"; };
-		2FE5DCAB29EE6107004B9AB4 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
-		2FE5DCAC29EE6107004B9AB4 /* AccountSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSetup.swift; sourceTree = "<group>"; };
-		2FE5DCAD29EE6107004B9AB4 /* TemplateLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateLogin.swift; sourceTree = "<group>"; };
+		2FE5DCAC29EE6107004B9AB4 /* AccountOnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountOnboarding.swift; sourceTree = "<group>"; };
 		2FF53D8C2A8729D600042B76 /* TemplateApplicationStandard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateApplicationStandard.swift; sourceTree = "<group>"; };
 		653A254D283387FE005D4D48 /* TemplateApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653A2550283387FE005D4D48 /* TemplateApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplication.swift; sourceTree = "<group>"; };
@@ -141,6 +139,12 @@
 		653A258928339462005D4D48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97D8B2A32A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+PreviewSimulator.swift"; sourceTree = "<group>"; };
 		97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingFlow+PreviewSimulator.swift"; sourceTree = "<group>"; };
+		A92525A62ABC4B5F00640379 /* AccountUpdateModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUpdateModifier.swift; sourceTree = "<group>"; };
+		A92525A82ABC4C7800640379 /* AccountRequiredModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequiredModifier.swift; sourceTree = "<group>"; };
+		A92525AA2ABC4EB200640379 /* AccountRequiredKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequiredKey.swift; sourceTree = "<group>"; };
+		A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetupHeader.swift; sourceTree = "<group>"; };
+		A9DFE8A82ABE551400428242 /* AccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountButton.swift; sourceTree = "<group>"; };
+		A9FE7ACF2AA39BAB0077B045 /* AccountSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,7 +223,7 @@
 		2FE5DC2829EDD398004B9AB4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				2FE5DCA829EE6107004B9AB4 /* AccountSetup */,
+				2FE5DCAC29EE6107004B9AB4 /* AccountOnboarding.swift */,
 				2FE5DC3129EDD7CA004B9AB4 /* OnboardingFlow.swift */,
 				2FE5DC3429EDD7CA004B9AB4 /* Welcome.swift */,
 				2FE5DC3229EDD7CA004B9AB4 /* InterestingModules.swift */,
@@ -277,18 +281,6 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		2FE5DCA829EE6107004B9AB4 /* AccountSetup */ = {
-			isa = PBXGroup;
-			children = (
-				2FE5DCA929EE6107004B9AB4 /* IconView.swift */,
-				2FE5DCAA29EE6107004B9AB4 /* TemplateSignUp.swift */,
-				2FE5DCAB29EE6107004B9AB4 /* UserView.swift */,
-				2FE5DCAC29EE6107004B9AB4 /* AccountSetup.swift */,
-				2FE5DCAD29EE6107004B9AB4 /* TemplateLogin.swift */,
-			);
-			path = AccountSetup;
-			sourceTree = "<group>";
-		};
 		653A2544283387FE005D4D48 = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +311,7 @@
 				2FF53D8C2A8729D600042B76 /* TemplateApplicationStandard.swift */,
 				2F4E23822989D51F0013F3D9 /* TemplateAppTestingSetup.swift */,
 				2FC975A72978F11A00BA99FE /* Home.swift */,
+				A9720E412ABB68B300872D23 /* Account */,
 				2FE5DC2829EDD398004B9AB4 /* Onboarding */,
 				2FE5DC3B29EDD7D0004B9AB4 /* Schedule */,
 				2FE5DC2729EDD38D004B9AB4 /* Contacts */,
@@ -355,6 +348,19 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9720E412ABB68B300872D23 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				A9FE7ACF2AA39BAB0077B045 /* AccountSheet.swift */,
+				A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */,
+				A92525A62ABC4B5F00640379 /* AccountUpdateModifier.swift */,
+				A92525A82ABC4C7800640379 /* AccountRequiredModifier.swift */,
+				A92525AA2ABC4EB200640379 /* AccountRequiredKey.swift */,
+				A9DFE8A82ABE551400428242 /* AccountButton.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -558,21 +564,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FE5DC4129EDD7EE004B9AB4 /* StorageKeys.swift in Sources */,
-				2FE5DCB129EE6107004B9AB4 /* AccountSetup.swift in Sources */,
+				2FE5DCB129EE6107004B9AB4 /* AccountOnboarding.swift in Sources */,
 				2F4FC8D729EE69D300BFFE26 /* MockUpload.swift in Sources */,
-				2FE5DCAF29EE6107004B9AB4 /* TemplateSignUp.swift in Sources */,
-				2FE5DCB029EE6107004B9AB4 /* UserView.swift in Sources */,
 				2FE5DC3A29EDD7CA004B9AB4 /* Welcome.swift in Sources */,
 				2FE5DC3829EDD7CA004B9AB4 /* InterestingModules.swift in Sources */,
 				2FE5DC3529EDD7CA004B9AB4 /* Consent.swift in Sources */,
 				2FE5DC4529EDD7F2004B9AB4 /* Binding+Negate.swift in Sources */,
-				2FE5DCB229EE6107004B9AB4 /* TemplateLogin.swift in Sources */,
 				2FC975A82978F11A00BA99FE /* Home.swift in Sources */,
 				2FE5DC4E29EDD7FA004B9AB4 /* ScheduleView.swift in Sources */,
+				A9DFE8A92ABE551400428242 /* AccountButton.swift in Sources */,
 				2FE5DC3729EDD7CA004B9AB4 /* OnboardingFlow.swift in Sources */,
 				2FF53D8D2A8729D600042B76 /* TemplateApplicationStandard.swift in Sources */,
-				2FE5DCAE29EE6107004B9AB4 /* IconView.swift in Sources */,
 				2FE5DC4729EDD7F2004B9AB4 /* CodableArray+RawRepresentable.swift in Sources */,
+				A9720E432ABB68CC00872D23 /* AccountSetupHeader.swift in Sources */,
 				2FE5DC4029EDD7EE004B9AB4 /* FeatureFlags.swift in Sources */,
 				2FE5DC4629EDD7F2004B9AB4 /* Bundle+Image.swift in Sources */,
 				2FE5DC4F29EDD7FA004B9AB4 /* EventContext.swift in Sources */,
@@ -581,11 +585,15 @@
 				2FE5DC5329EDD7FA004B9AB4 /* Bundle+Questionnaire.swift in Sources */,
 				2FE5DC5129EDD7FA004B9AB4 /* TemplateApplicationTaskContext.swift in Sources */,
 				97D8B2AB2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift in Sources */,
+				A92525A92ABC4C7800640379 /* AccountRequiredModifier.swift in Sources */,
+				A92525A72ABC4B5F00640379 /* AccountUpdateModifier.swift in Sources */,
 				2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */,
 				2FE5DC5229EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift in Sources */,
+				A9FE7AD02AA39BAB0077B045 /* AccountSheet.swift in Sources */,
 				653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */,
 				2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */,
 				2F65B44E2A3B8B0600A36932 /* NotificationPermissions.swift in Sources */,
+				A92525AB2ABC4EB200640379 /* AccountRequiredKey.swift in Sources */,
 				97D8B2A42A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift in Sources */,
 				27FA29902A388E9B009CAC45 /* ModalView.swift in Sources */,
 				2FE5DC2629EDD38A004B9AB4 /* Contacts.swift in Sources */,
@@ -1106,7 +1114,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziAccount.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.1;
+				minimumVersion = 0.5.2;
 			};
 		};
 		2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */ = {
@@ -1114,7 +1122,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziContact.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.3.3;
+				minimumVersion = 0.4.0;
 			};
 		};
 		2FE5DC7029EDD8D3004B9AB4 /* XCRemoteSwiftPackageReference "SpeziHealthKit" */ = {
@@ -1130,7 +1138,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziFirebase.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.0;
+				minimumVersion = 0.5.1;
 			};
 		};
 		2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "SpeziQuestionnaire" */ = {
@@ -1154,7 +1162,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziViews.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.1;
+				minimumVersion = 0.5.0;
 			};
 		};
 		2FE5DC9029EDD9C3004B9AB4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -1186,7 +1194,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziMockWebService.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.1.2;
+				minimumVersion = 0.2.0;
 			};
 		};
 		2FE750CB2A87255000723EAE /* XCRemoteSwiftPackageReference "SpeziFHIR" */ = {
@@ -1202,7 +1210,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziOnboarding";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.3;
+				minimumVersion = 0.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

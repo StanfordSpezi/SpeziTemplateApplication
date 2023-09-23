@@ -30,6 +30,7 @@ struct HealthKitPermissions: View {
                     Image(systemName: "heart.text.square.fill")
                         .font(.system(size: 150))
                         .foregroundColor(.accentColor)
+                        .accessibilityHidden(true)
                     Text("HEALTHKIT_PERMISSIONS_DESCRIPTION")
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 16)

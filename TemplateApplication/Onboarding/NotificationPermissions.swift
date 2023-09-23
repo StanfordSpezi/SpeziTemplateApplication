@@ -30,6 +30,7 @@ struct NotificationPermissions: View {
                     Image(systemName: "bell.square.fill")
                         .font(.system(size: 150))
                         .foregroundColor(.accentColor)
+                        .accessibilityHidden(true)
                     Text("NOTIFICATION_PERMISSIONS_DESCRIPTION")
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 16)

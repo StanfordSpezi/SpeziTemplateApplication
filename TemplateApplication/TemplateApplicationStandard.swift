@@ -6,12 +6,12 @@
 // SPDX-License-Identifier: MIT
 //
 
-import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import HealthKitOnFHIR
 import OSLog
 import Spezi
+import SpeziAccount
 import SpeziFirestore
 import SpeziHealthKit
 import SpeziMockWebService
@@ -19,49 +19,46 @@ import SpeziQuestionnaire
 import SwiftUI
 
 
-actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectProvider, HealthKitConstraint, QuestionnaireConstraint {
+actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectProvider, HealthKitConstraint,
+                                   QuestionnaireConstraint, AccountNotifyStandard {
     enum TemplateApplicationStandardError: Error {
         case userNotAuthenticatedYet
     }
     
     
     @Dependency var mockWebService = MockWebService()
+    @AccountReference var account: Account
+
     private let logger = Logger(subsystem: "TemplateApplication", category: "Standard")
     
     
     private var userDocumentReference: DocumentReference {
-        get throws {
-            guard let user = Auth.auth().currentUser else {
+        get async throws {
+            guard let details = await account.details else {
                 throw TemplateApplicationStandardError.userNotAuthenticatedYet
             }
             
-            return Firestore.firestore().collection("users").document(user.uid)
+            return Firestore.firestore().collection("users").document(details.userId)
         }
     }
+
     
-    
-    func signedIn() async {
+    func updateAccount(details: AccountDetails) async {
         guard !FeatureFlags.disableFirebase else {
-            try? await mockWebService.upload(path: "user", body: "Login")
+            try? await mockWebService.upload(path: "user", body: "Account Update")
             return
         }
-        
-        guard let user = Auth.auth().currentUser else {
-            logger.error("Signed In called respite no authenticated user.")
-            return
-        }
-        
-        let name = user.displayName?.components(separatedBy: " ")
+
         let data: [String: Any] = [
-            "id": user.uid,
-            "firstName": name?.first ?? "",
-            "lastName": name?.last ?? ""
+            "id": details.userId,
+            "firstName": details.name?.givenName ?? "",
+            "lastName": details.name?.familyName ?? ""
         ]
         
         do {
             try await userDocumentReference.setData(data)
         } catch {
-            logger.error("Could not store user information in Firebase: \(error)")
+            logger.error("Could not update user information in Firebase: \(error)")
         }
     }
     
@@ -114,9 +111,18 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
     }
     
     
-    private func healthKitDocument(id uuid: UUID) throws -> DocumentReference {
-        try userDocumentReference
+    private func healthKitDocument(id uuid: UUID) async throws -> DocumentReference {
+        try await userDocumentReference
             .collection("HealthKit") // Add all HealthKit sources in a /HealthKit collection.
             .document(uuid.uuidString) // Set the document identifier to the UUID of the document.
+    }
+
+    func deletedAccount() async throws {
+        // delete all user associated data
+        do {
+            try await userDocumentReference.delete()
+        } catch {
+            logger.error("Could not delete user document: \(error)")
+        }
     }
 }
