@@ -7,6 +7,7 @@
 //
 
 import Spezi
+import SpeziAccount
 import SpeziFirebaseAccount
 import SpeziFirestore
 import SpeziHealthKit
@@ -20,6 +21,12 @@ class TemplateAppDelegate: SpeziAppDelegate {
     override var configuration: Configuration {
         Configuration(standard: TemplateApplicationStandard()) {
             if !FeatureFlags.disableFirebase {
+                AccountConfiguration(configuration: [
+                    .requires(\.userId),
+                    .requires(\.password),
+                    .collects(\.name)
+                ])
+
                 if FeatureFlags.useFirebaseEmulator {
                     FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))
                 } else {
