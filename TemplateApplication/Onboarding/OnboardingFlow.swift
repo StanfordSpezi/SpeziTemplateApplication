@@ -38,9 +38,9 @@ struct OnboardingFlow: View {
             Welcome()
             InterestingModules()
             
-            #if !(targetEnvironment(simulator) && (arch(i386) || arch(x86_64)))
-                Consent()
-            #endif
+#if !(targetEnvironment(simulator) && (arch(i386) || arch(x86_64)))
+            Consent()
+#endif
             
             if !FeatureFlags.disableFirebase {
                 AccountOnboarding()
@@ -63,11 +63,9 @@ struct OnboardingFlow: View {
 
 
 #if DEBUG
-struct OnboardingFlow_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingFlow()
-            .environmentObject(Account(MockUserIdPasswordAccountService()))
-            .environmentObject(TemplateApplicationScheduler())
-    }
+#Preview {
+    OnboardingFlow()
+        .environmentObject(Account(MockUserIdPasswordAccountService()))
+        .environmentObject(TemplateApplicationScheduler())
 }
 #endif

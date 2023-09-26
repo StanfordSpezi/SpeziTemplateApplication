@@ -12,7 +12,7 @@ import SwiftUI
 
 struct InterestingModules: View {
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
-
+    
     
     var body: some View {
         SequentialOnboardingView(
@@ -46,12 +46,10 @@ struct InterestingModules: View {
 
 
 #if DEBUG
-struct ThingsToKnow_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingStack(startAtStep: InterestingModules.self) {
-            for onboardingView in OnboardingFlow.previewSimulatorViews {
-                onboardingView
-            }
+#Preview {
+    OnboardingStack(startAtStep: InterestingModules.self) {
+        for onboardingView in OnboardingFlow.previewSimulatorViews {
+            onboardingView
         }
     }
 }

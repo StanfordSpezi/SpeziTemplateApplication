@@ -26,7 +26,7 @@ struct AccountRequiredModifier: ViewModifier {
     func body(content: Content) -> some View {
         if required {
             content
-                .onChange(of: [account.signedIn, presentingAccount]) { _ in
+                .onChange(of: [account.signedIn, presentingAccount]) {
                     if !account.signedIn && !presentingAccount {
                         presentingAccount = true
                     }

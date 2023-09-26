@@ -56,12 +56,10 @@ struct HomeView: View {
 
 
 #if DEBUG
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-            .environmentObject(Account(MockUserIdPasswordAccountService()))
-            .environmentObject(TemplateApplicationScheduler())
-            .environmentObject(MockWebService())
-    }
+#Preview {
+    HomeView()
+        .environmentObject(Account(MockUserIdPasswordAccountService()))
+        .environmentObject(TemplateApplicationScheduler())
+        .environmentObject(MockWebService())
 }
 #endif

@@ -29,8 +29,8 @@ struct EventContextView: View {
                             .font(.headline)
                             .accessibilityLabel(
                                 eventContext.event.complete
-                                    ? "COMPLETED_TASK_LABEL \(eventContext.task.title)"
-                                    : "TASK_LABEL \(eventContext.task.title)"
+                                ? "COMPLETED_TASK_LABEL \(eventContext.task.title)"
+                                : "TASK_LABEL \(eventContext.task.title)"
                             )
                         Text(verbatim: format(eventDate: eventContext.event.scheduledAt))
                             .font(.subheadline)
@@ -49,8 +49,8 @@ struct EventContextView: View {
                 }
             }
         }
-            .disabled(eventContext.event.complete)
-            .contentShape(Rectangle())
+        .disabled(eventContext.event.complete)
+        .contentShape(Rectangle())
     }
     
     
@@ -64,21 +64,17 @@ struct EventContextView: View {
 
 
 #if DEBUG
-struct EventContextView_Previews: PreviewProvider {
-    private static let task = TemplateApplicationScheduler.socialSupportTask
-
+#Preview {
+    let task = TemplateApplicationScheduler.socialSupportTask
     
-    static var previews: some View {
-        EventContextView(
-            eventContext: EventContext(
-                // We use a force unwrap in the preview as we can not recover from an error here
-                // and the code will never end up in a production environment.
-                // swiftlint:disable:next force_unwrapping
-                event: task.events(from: .now.addingTimeInterval(-60 * 60 * 24)).first!,
-                task: task
-            )
+    return EventContextView(
+        eventContext: EventContext(
+            // We use a force unwrap in the preview as we can not recover from an error here
+            // and the code will never end up in a production environment.
+            // swiftlint:disable:next force_unwrapping
+            event: task.events(from: .now.addingTimeInterval(-60 * 60 * 24)).first!,
+            task: task
         )
-            .padding()
-    }
+    ).padding()
 }
 #endif

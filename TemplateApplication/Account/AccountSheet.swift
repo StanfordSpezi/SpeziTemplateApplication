@@ -32,8 +32,8 @@ struct AccountSheet: View {
                     })
                 }
             }
-                .onChange(of: account.signedIn) { newValue in
-                    if newValue {
+                .onChange(of: account.signedIn) {
+                    if account.signedIn {
                         dismiss() // we just signed in, dismiss the account setup sheet
                     }
                 }
@@ -51,16 +51,18 @@ struct AccountSheet: View {
 }
 
 
-struct AccountSheet_Previews: PreviewProvider {
-    static let details = AccountDetails.Builder()
+#if DEBUG
+#Preview("AccountSheet") {
+    let details = AccountDetails.Builder()
         .set(\.userId, value: "lelandstanford@stanford.edu")
         .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
-
-    static var previews: some View {
-        AccountSheet()
-            .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
-
-        AccountSheet()
-            .environmentObject(Account(MockUserIdPasswordAccountService()))
-    }
+    
+    return AccountSheet()
+        .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
 }
+
+#Preview("AccountSheet SignIn") {
+    AccountSheet()
+        .environmentObject(Account(MockUserIdPasswordAccountService()))
+}
+#endif

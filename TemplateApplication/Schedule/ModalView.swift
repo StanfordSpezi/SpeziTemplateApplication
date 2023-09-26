@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ModalView: View {
     @Environment(\.dismiss) private var dismiss
-
+    
     let text: String
     let buttonText: String
     let onClose: () -> Void
@@ -30,17 +30,17 @@ struct ModalView: View {
                 Text(buttonText)
                     .frame(maxWidth: .infinity, minHeight: 38)
             }
-                .padding()
-                .buttonStyle(.borderedProminent)
+            .padding()
+            .buttonStyle(.borderedProminent)
         }
     }
 }
 
 
-struct ModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        ModalView(text: "Preview Modal", buttonText: "Close") {
-            print("Preview Modal closed.")
-        }
+#if DEBUG
+#Preview {
+    ModalView(text: "Preview Modal", buttonText: "Close") {
+        print("Preview Modal closed.")
     }
 }
+#endif

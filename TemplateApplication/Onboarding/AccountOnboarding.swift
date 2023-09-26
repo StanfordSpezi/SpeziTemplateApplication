@@ -26,8 +26,8 @@ struct AccountOnboarding: View {
         } header: {
             AccountSetupHeader()
         }
-            .onChange(of: account.signedIn) { newValue in
-                if newValue {
+            .onChange(of: account.signedIn) {
+                if account.signedIn {
                     Task {
                         // Placing the nextStep() call inside this task will ensure that the sheet dismiss animation is
                         // played till the end before we navigate to the next step.
@@ -40,23 +40,23 @@ struct AccountOnboarding: View {
 
 
 #if DEBUG
-struct AccountSetup_Previews: PreviewProvider {
-    static let details = AccountDetails.Builder()
+#Preview("Account Onboarding SignIn") {
+    OnboardingStack(startAtStep: AccountOnboarding.self) {
+        for onboardingView in OnboardingFlow.previewSimulatorViews {
+            onboardingView
+        }
+    }.environmentObject(Account(MockUserIdPasswordAccountService()))
+}
+
+#Preview("Account Onboarding") {
+    let details = AccountDetails.Builder()
         .set(\.userId, value: "lelandstanford@stanford.edu")
         .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
-
-    static var previews: some View {
-        let stack = OnboardingStack(startAtStep: AccountOnboarding.self) {
-            for onboardingView in OnboardingFlow.previewSimulatorViews {
-                onboardingView
-            }
+    
+    return OnboardingStack(startAtStep: AccountOnboarding.self) {
+        for onboardingView in OnboardingFlow.previewSimulatorViews {
+            onboardingView
         }
-
-        stack
-            .environmentObject(Account(MockUserIdPasswordAccountService()))
-
-        stack
-            .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
-    }
+    }.environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
 }
 #endif
