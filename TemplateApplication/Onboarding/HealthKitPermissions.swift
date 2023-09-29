@@ -6,14 +6,13 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziFHIR
 import SpeziHealthKit
 import SpeziOnboarding
 import SwiftUI
 
 
 struct HealthKitPermissions: View {
-    @EnvironmentObject private var healthKitDataSource: HealthKit<FHIR>
+    @EnvironmentObject private var healthKitDataSource: HealthKit
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     
     @State private var healthKitProcessing = false
@@ -24,13 +23,14 @@ struct HealthKitPermissions: View {
             contentView: {
                 VStack {
                     OnboardingTitleView(
-                        title: "HEALTHKIT_PERMISSIONS_TITLE".moduleLocalized,
-                        subtitle: "HEALTHKIT_PERMISSIONS_SUBTITLE".moduleLocalized
+                        title: "HEALTHKIT_PERMISSIONS_TITLE",
+                        subtitle: "HEALTHKIT_PERMISSIONS_SUBTITLE"
                     )
                     Spacer()
                     Image(systemName: "heart.text.square.fill")
                         .font(.system(size: 150))
                         .foregroundColor(.accentColor)
+                        .accessibilityHidden(true)
                     Text("HEALTHKIT_PERMISSIONS_DESCRIPTION")
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 16)
@@ -38,7 +38,7 @@ struct HealthKitPermissions: View {
                 }
             }, actionView: {
                 OnboardingActionsView(
-                    "HEALTHKIT_PERMISSIONS_BUTTON".moduleLocalized,
+                    "HEALTHKIT_PERMISSIONS_BUTTON",
                     action: {
                         do {
                             healthKitProcessing = true

@@ -7,18 +7,11 @@
 //
 
 import Spezi
-import SpeziFHIR
-import SpeziFHIRMockDataStorageProvider
-import SpeziFHIRToFirestoreAdapter
+import SpeziAccount
 import SpeziFirebaseAccount
-import class FirebaseFirestore.FirestoreSettings
-import class FirebaseFirestore.MemoryCacheSettings
-import FirebaseAuth
-import HealthKit
 import SpeziFirestore
-import SpeziFirestorePrefixUserIdAdapter
 import SpeziHealthKit
-import SpeziHealthKitToFHIRAdapter
+import SpeziMockWebService
 import SpeziQuestionnaire
 import SpeziScheduler
 import SwiftUI
@@ -26,8 +19,14 @@ import SwiftUI
 
 class TemplateAppDelegate: SpeziAppDelegate {
     override var configuration: Configuration {
-        Configuration(standard: FHIR()) {
+        Configuration(standard: TemplateApplicationStandard()) {
             if !FeatureFlags.disableFirebase {
+                AccountConfiguration(configuration: [
+                    .requires(\.userId),
+                    .requires(\.password),
+                    .collects(\.name)
+                ])
+
                 if FeatureFlags.useFirebaseEmulator {
                     FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))
                 } else {
@@ -39,13 +38,13 @@ class TemplateAppDelegate: SpeziAppDelegate {
                 healthKit
             }
             QuestionnaireDataSource()
-            MockDataStorageProvider()
+            MockWebService()
             TemplateApplicationScheduler()
         }
     }
     
     
-    private var firestore: Firestore<FHIR> {
+    private var firestore: Firestore {
         let settings = FirestoreSettings()
         if FeatureFlags.useFirebaseEmulator {
             settings.host = "localhost:8080"
@@ -54,23 +53,17 @@ class TemplateAppDelegate: SpeziAppDelegate {
         }
         
         return Firestore(
-            adapter: {
-                FHIRToFirestoreAdapter()
-                FirestorePrefixUserIdAdapter()
-            },
             settings: settings
         )
     }
     
     
-    private var healthKit: HealthKit<FHIR> {
+    private var healthKit: HealthKit {
         HealthKit {
             CollectSample(
                 HKQuantityType(.stepCount),
                 deliverySetting: .anchorQuery(.afterAuthorizationAndApplicationWillLaunch)
             )
-        } adapter: {
-            HealthKitToFHIRAdapter()
         }
     }
 }
