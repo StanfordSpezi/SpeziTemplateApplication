@@ -12,6 +12,7 @@ import SpeziFirebaseAccount
 import SpeziFirestore
 import SpeziHealthKit
 import SpeziMockWebService
+import SpeziOnboarding
 import SpeziQuestionnaire
 import SpeziScheduler
 import SwiftUI
@@ -40,6 +41,7 @@ class TemplateAppDelegate: SpeziAppDelegate {
             QuestionnaireDataSource()
             MockWebService()
             TemplateApplicationScheduler()
+            OnboardingDataSource()
         }
     }
     

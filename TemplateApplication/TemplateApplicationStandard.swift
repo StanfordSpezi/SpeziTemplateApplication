@@ -15,12 +15,13 @@ import SpeziAccount
 import SpeziFirestore
 import SpeziHealthKit
 import SpeziMockWebService
+import SpeziOnboarding
 import SpeziQuestionnaire
 import SwiftUI
 
 
 actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectProvider, HealthKitConstraint,
-                                   QuestionnaireConstraint, AccountNotifyStandard {
+                                   QuestionnaireConstraint, AccountNotifyStandard, OnboardingConstraint {
     enum TemplateApplicationStandardError: Error {
         case userNotAuthenticatedYet
     }
@@ -123,6 +124,25 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
             try await userDocumentReference.delete()
         } catch {
             logger.error("Could not delete user document: \(error)")
+        }
+    }
+    
+    func store(consent: Data) {
+        guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            logger.error("Could not create path for writing consent form to user document directory.")
+            return
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd_HHmmss"
+        let dateString = formatter.string(from: Date())
+        
+        let filePath = basePath.appending(path: "consentForm_\(dateString).pdf")
+        
+        do {
+            try consent.write(to: filePath)
+        } catch {
+            logger.error("Could not write consent form: \(error).")
         }
     }
 }

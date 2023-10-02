@@ -24,20 +24,22 @@ struct Consent: View {
     
     
     var body: some View {
-        ConsentView(
-            header: {
-                OnboardingTitleView(
-                    title: "CONSENT_TITLE",
-                    subtitle: "CONSENT_SUBTITLE"
-                )
-            },
-            asyncMarkdown: {
-                consentDocument
-            },
-            action: {
-                onboardingNavigationPath.nextStep()
-            }
-        )
+        ConsentViewCapture {
+            ConsentView(
+                header: {
+                    OnboardingTitleView(
+                        title: "CONSENT_TITLE",
+                        subtitle: "CONSENT_SUBTITLE"
+                    )
+                },
+                asyncMarkdown: {
+                    consentDocument
+                },
+                action: {
+                    onboardingNavigationPath.nextStep()
+                }
+            )
+        }
     }
 }
 

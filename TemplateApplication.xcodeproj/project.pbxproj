@@ -1274,11 +1274,6 @@
 			package = 2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */;
 			productName = SpeziFirestore;
 		};
-		2FE5DC7A29EDD8E6004B9AB4 /* SpeziFirestorePrefixUserIdAdapter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */;
-			productName = SpeziFirestorePrefixUserIdAdapter;
-		};
 		2FE5DC8329EDD934004B9AB4 /* SpeziQuestionnaire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "SpeziQuestionnaire" */;
@@ -1304,14 +1299,6 @@
 			package = 2FE5DC9A29EDD9EF004B9AB4 /* XCRemoteSwiftPackageReference "XCTHealthKit" */;
 			productName = XCTHealthKit;
 		};
-		97D772BA2A81257900EC1156 /* SpeziOnboarding */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SpeziOnboarding;
-		};
-		97D772BD2A8126BE00EC1156 /* SpeziViews */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SpeziViews;
-		};
 		2FE750CC2A87255000723EAE /* SpeziFHIR */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2FE750CB2A87255000723EAE /* XCRemoteSwiftPackageReference "SpeziFHIR" */;
@@ -1321,6 +1308,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2FE750CA2A87240100723EAE /* XCRemoteSwiftPackageReference "SpeziMockWebService" */;
 			productName = SpeziMockWebService;
+		};
+		97D772BA2A81257900EC1156 /* SpeziOnboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpeziOnboarding;
+		};
+		97D772BD2A8126BE00EC1156 /* SpeziViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SpeziViews;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
