@@ -118,7 +118,7 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
             .document(uuid.uuidString) // Set the document identifier to the UUID of the document.
     }
 
-    func deletedAccount() async {
+    func deletedAccount() async throws {
         // delete all user associated data
         do {
             try await userDocumentReference.delete()
@@ -127,6 +127,9 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
         }
     }
     
+    /// Stores the given consent data in the user's document directory with a unique timestamped filename.
+    ///
+    /// - Parameter consent: The consent form's data to be stored.
     func store(consent: Data) async {
         guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             logger.error("Could not create path for writing consent form to user document directory.")
@@ -146,6 +149,10 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
         }
     }
     
+    /// Loads the latest stored consent data from the user's document directory.
+    ///
+    /// - Returns: The most recent consent form data.
+    /// - Throws: Relevant `ConsentExportError` if any issues arise during retrieval.
     func loadConsent() async throws -> Data {
         guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             logger.error("Could not retrieve user document directory.")
