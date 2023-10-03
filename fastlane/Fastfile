@@ -44,13 +44,11 @@ platform :ios do
   lane :build do
     build_app(
       derived_data_path: ".derivedData",
-      export_options(
-        {
-          provisioningProfiles: {
-            "edu.stanford.spezi.templateapplication" => "Spezi Template Application"
-          }
+      export_options: {
+        provisioningProfiles: {
+          "edu.stanford.spezi.templateapplication" => "Spezi Template Application"
         }
-      )
+      }
     )
   end
 
