@@ -1,5 +1,5 @@
 #
-# This source file is part of the Stanford Spezi Template Application project
+# This source file is part of the StanfordBDHG Template Application project
 #
 # SPDX-FileCopyrightText: 2023 Stanford University
 #
@@ -10,7 +10,7 @@
 *.xcodeproj
 .swiftpm
 .derivedData
-.build/
+.build
 !TemplateApplication.xcodeproj
 
 # IDE related folders
@@ -31,14 +31,5 @@ report.junit
 report.html
 TemplateApplication.xcresult
 
-# Logs
-logs
+# Tests
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-firebase-debug.log*
-firebase-debug.*.log*
-
-# Firebase cache
-.firebase/
