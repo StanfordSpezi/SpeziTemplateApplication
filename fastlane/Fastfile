@@ -43,7 +43,7 @@ platform :ios do
   desc "Build app"
   lane :build do
     build_app(
-      derived_data_path: ".derivedData"
+      derived_data_path: ".derivedData",
       export_options(
         {
           provisioningProfiles: {
