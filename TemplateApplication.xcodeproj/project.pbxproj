@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -64,6 +64,9 @@
 		653A255528338800005D4D48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653A255428338800005D4D48 /* Assets.xcassets */; };
 		653A256228338800005D4D48 /* TemplateApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A256128338800005D4D48 /* TemplateApplicationTests.swift */; };
 		653A256C28338800005D4D48 /* SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653A256B28338800005D4D48 /* SchedulerTests.swift */; };
+		97085FBC2ACCBFB000605FF3 /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 97085FBB2ACCBFB000605FF3 /* SpeziOnboarding */; };
+		97085FBF2ACCBFC800605FF3 /* SpeziViews in Frameworks */ = {isa = PBXBuildFile; productRef = 97085FBE2ACCBFC800605FF3 /* SpeziViews */; };
+		97085FC12ACCC15000605FF3 /* ConsentExportError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97085FC02ACCC15000605FF3 /* ConsentExportError.swift */; };
 		97D772BB2A81257900EC1156 /* SpeziOnboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 97D772BA2A81257900EC1156 /* SpeziOnboarding */; };
 		97D772BE2A8126BE00EC1156 /* SpeziViews in Frameworks */ = {isa = PBXBuildFile; productRef = 97D772BD2A8126BE00EC1156 /* SpeziViews */; };
 		97D8B2A42A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8B2A32A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift */; };
@@ -137,6 +140,7 @@
 		653A256728338800005D4D48 /* TemplateApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		653A256B28338800005D4D48 /* SchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerTests.swift; sourceTree = "<group>"; };
 		653A258928339462005D4D48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97085FC02ACCC15000605FF3 /* ConsentExportError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentExportError.swift; sourceTree = "<group>"; };
 		97D8B2A32A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+PreviewSimulator.swift"; sourceTree = "<group>"; };
 		97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingFlow+PreviewSimulator.swift"; sourceTree = "<group>"; };
 		A92525A62ABC4B5F00640379 /* AccountUpdateModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUpdateModifier.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				2FE5DC8429EDD934004B9AB4 /* SpeziQuestionnaire in Frameworks */,
 				2FB099B32A875DF100B20952 /* FirebaseFirestoreSwift in Frameworks */,
 				2FB099B12A875DF100B20952 /* FirebaseFirestore in Frameworks */,
+				97085FBC2ACCBFB000605FF3 /* SpeziOnboarding in Frameworks */,
+				97085FBF2ACCBFC800605FF3 /* SpeziViews in Frameworks */,
 				2FB099B62A875E2B00B20952 /* HealthKitOnFHIR in Frameworks */,
 				2FE5DC8A29EDD972004B9AB4 /* SpeziLocalStorage in Frameworks */,
 				97D772BB2A81257900EC1156 /* SpeziOnboarding in Frameworks */,
@@ -277,6 +283,7 @@
 				2FE5DC4329EDD7F2004B9AB4 /* Bundle+Image.swift */,
 				2FE5DC4429EDD7F2004B9AB4 /* CodableArray+RawRepresentable.swift */,
 				97D8B2A32A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift */,
+				97085FC02ACCC15000605FF3 /* ConsentExportError.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -400,6 +407,8 @@
 				2FB099B02A875DF100B20952 /* FirebaseFirestore */,
 				2FB099B22A875DF100B20952 /* FirebaseFirestoreSwift */,
 				2FB099B52A875E2B00B20952 /* HealthKitOnFHIR */,
+				97085FBB2ACCBFB000605FF3 /* SpeziOnboarding */,
+				97085FBE2ACCBFC800605FF3 /* SpeziViews */,
 			);
 			productName = TemplateApplication;
 			productReference = 653A254D283387FE005D4D48 /* TemplateApplication.app */;
@@ -489,11 +498,11 @@
 				2FE5DC9729EDD9D9004B9AB4 /* XCRemoteSwiftPackageReference "XCTestExtensions" */,
 				2FE5DC9A29EDD9EF004B9AB4 /* XCRemoteSwiftPackageReference "XCTHealthKit" */,
 				2F3D4ABA2A4E7C290068FB2F /* XCRemoteSwiftPackageReference "SpeziScheduler" */,
-				97D772B92A81257900EC1156 /* XCLocalSwiftPackageReference "../SpeziOnboarding" */,
-				97D772BC2A8126BE00EC1156 /* XCLocalSwiftPackageReference "../SpeziViews" */,
 				2FE750CA2A87240100723EAE /* XCRemoteSwiftPackageReference "SpeziMockWebService" */,
 				2FE750CB2A87255000723EAE /* XCRemoteSwiftPackageReference "SpeziFHIR" */,
 				2FB099B42A875E2B00B20952 /* XCRemoteSwiftPackageReference "HealthKitOnFHIR" */,
+				97085FBA2ACCBFB000605FF3 /* XCRemoteSwiftPackageReference "SpeziOnboarding" */,
+				97085FBD2ACCBFC800605FF3 /* XCRemoteSwiftPackageReference "SpeziViews" */,
 			);
 			productRefGroup = 653A254E283387FE005D4D48 /* Products */;
 			projectDirPath = "";
@@ -589,6 +598,7 @@
 				2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */,
 				2FE5DC5229EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift in Sources */,
 				A9FE7AD02AA39BAB0077B045 /* AccountSheet.swift in Sources */,
+				97085FC12ACCC15000605FF3 /* ConsentExportError.swift in Sources */,
 				653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */,
 				2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */,
 				2F65B44E2A3B8B0600A36932 /* NotificationPermissions.swift in Sources */,
@@ -1083,17 +1093,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		97D772B92A81257900EC1156 /* XCLocalSwiftPackageReference "../SpeziOnboarding" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SpeziOnboarding;
-		};
-		97D772BC2A8126BE00EC1156 /* XCLocalSwiftPackageReference "../SpeziViews" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SpeziViews;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		2F3D4ABA2A4E7C290068FB2F /* XCRemoteSwiftPackageReference "SpeziScheduler" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -1171,7 +1170,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = upToNextMinorVersion;
 				minimumVersion = 10.13.0;
 			};
 		};
@@ -1205,6 +1204,22 @@
 			requirement = {
 				kind = upToNextMinorVersion;
 				minimumVersion = 0.4.0;
+			};
+		};
+		97085FBA2ACCBFB000605FF3 /* XCRemoteSwiftPackageReference "SpeziOnboarding" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziOnboarding";
+			requirement = {
+				branch = "feat/export-consent-forms";
+				kind = branch;
+			};
+		};
+		97085FBD2ACCBFC800605FF3 /* XCRemoteSwiftPackageReference "SpeziViews" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziViews";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1308,6 +1323,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2FE750CA2A87240100723EAE /* XCRemoteSwiftPackageReference "SpeziMockWebService" */;
 			productName = SpeziMockWebService;
+		};
+		97085FBB2ACCBFB000605FF3 /* SpeziOnboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97085FBA2ACCBFB000605FF3 /* XCRemoteSwiftPackageReference "SpeziOnboarding" */;
+			productName = SpeziOnboarding;
+		};
+		97085FBE2ACCBFC800605FF3 /* SpeziViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97085FBD2ACCBFC800605FF3 /* XCRemoteSwiftPackageReference "SpeziViews" */;
+			productName = SpeziViews;
 		};
 		97D772BA2A81257900EC1156 /* SpeziOnboarding */ = {
 			isa = XCSwiftPackageProductDependency;

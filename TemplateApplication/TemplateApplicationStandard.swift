@@ -118,7 +118,7 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
             .document(uuid.uuidString) // Set the document identifier to the UUID of the document.
     }
 
-    func deletedAccount() async throws {
+    func deletedAccount() async {
         // delete all user associated data
         do {
             try await userDocumentReference.delete()
@@ -127,7 +127,7 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
         }
     }
     
-    func store(consent: Data) {
+    func store(consent: Data) async {
         guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             logger.error("Could not create path for writing consent form to user document directory.")
             return
@@ -143,6 +143,28 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
             try consent.write(to: filePath)
         } catch {
             logger.error("Could not write consent form: \(error).")
+        }
+    }
+    
+    func loadConsent() async throws -> Data {
+        guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            logger.error("Could not retrieve user document directory.")
+            throw ConsentExportError.documentDirectoryNotFound
+        }
+
+        do {
+            let allFiles = try FileManager.default.contentsOfDirectory(at: basePath, includingPropertiesForKeys: nil, options: [])
+            let consentFiles = allFiles.filter { $0.lastPathComponent.hasPrefix("consentForm_") }
+
+            if let latestFile = consentFiles.max(by: { $0.lastPathComponent < $1.lastPathComponent }) {
+                return try Data(contentsOf: latestFile)
+            } else {
+                logger.error("No consent forms found.")
+                throw ConsentExportError.noConsentFormsFound
+            }
+        } catch {
+            logger.error("Error reading consent forms: \(error).")
+            throw ConsentExportError.readError
         }
     }
 }
