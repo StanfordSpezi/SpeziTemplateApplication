@@ -75,7 +75,7 @@
     {
       "identity" : "healthkitonfhir",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR",
+      "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR.git",
       "state" : {
         "revision" : "fdf8e4543718a940643598e4bd5e750e9c4c5540",
         "version" : "0.2.4"
@@ -131,8 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKitOnFHIR",
       "state" : {
-        "revision" : "7dc09f7acd7fb19673594e0fdd4d72d0869ee006",
-        "version" : "0.2.3"
+        "revision" : "f728c67e6ba5358b4b9ef8fe1832741712e460d6",
+        "version" : "0.2.2"
       }
     },
     {
@@ -221,8 +221,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
       "state" : {
-        "revision" : "16547b338bb153b2ed584427baf38ab36504fb26",
-        "version" : "0.5.0"
+        "revision" : "dcba98814d783438b8505e692d0dfb8d90968597",
+        "version" : "0.6.3"
       }
     },
     {
