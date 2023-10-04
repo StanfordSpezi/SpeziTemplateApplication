@@ -10,7 +10,7 @@
 *.xcodeproj
 .swiftpm
 .derivedData
-.build/
+.build
 !TemplateApplication.xcodeproj
 
 # IDE related folders
