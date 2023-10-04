@@ -10,6 +10,7 @@ import SpeziOnboarding
 import SwiftUI
 
 
+/// - Note: The `ConsentView` automatically exports the signed consent form as PDF to the Spezi `Standard`.
 struct Consent: View {
     @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
     

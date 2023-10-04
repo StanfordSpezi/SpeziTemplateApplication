@@ -225,8 +225,8 @@
 		2FE5DC2829EDD398004B9AB4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				2FE5DCAC29EE6107004B9AB4 /* AccountOnboarding.swift */,
 				2FE5DC3129EDD7CA004B9AB4 /* OnboardingFlow.swift */,
+				2FE5DCAC29EE6107004B9AB4 /* AccountOnboarding.swift */,
 				2FE5DC3429EDD7CA004B9AB4 /* Welcome.swift */,
 				2FE5DC3229EDD7CA004B9AB4 /* InterestingModules.swift */,
 				2FE5DC2F29EDD7CA004B9AB4 /* Consent.swift */,
