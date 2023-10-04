@@ -131,8 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKitOnFHIR",
       "state" : {
-        "revision" : "f728c67e6ba5358b4b9ef8fe1832741712e460d6",
-        "version" : "0.2.2"
+        "revision" : "7dc09f7acd7fb19673594e0fdd4d72d0869ee006",
+        "version" : "0.2.3"
       }
     },
     {

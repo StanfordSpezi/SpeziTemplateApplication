@@ -18,6 +18,9 @@ jobs:
   buildandtest:
     name: Build and Test
     uses: ./.github/workflows/build-and-test.yml
+    permissions:
+      security-events: write
+      actions: read
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
     needs: buildandtest
