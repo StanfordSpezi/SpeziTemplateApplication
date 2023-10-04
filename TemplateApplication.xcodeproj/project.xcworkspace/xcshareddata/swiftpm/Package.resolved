@@ -122,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKit",
       "state" : {
-        "revision" : "d66e17369cfa238179db8ab65285fe6e7fa3e3c8",
-        "version" : "2.2.12"
+        "revision" : "9530fadc9d09c0b783388c752b0dbe841974b6af",
+        "version" : "2.2.18"
       }
     },
     {
@@ -131,8 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKitOnFHIR",
       "state" : {
-        "revision" : "f728c67e6ba5358b4b9ef8fe1832741712e460d6",
-        "version" : "0.2.2"
+        "revision" : "7dc09f7acd7fb19673594e0fdd4d72d0869ee006",
+        "version" : "0.2.3"
       }
     },
     {
@@ -257,8 +257,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
       "state" : {
-        "revision" : "ce20dc083ee485524b802669890291c0d8090170",
-        "version" : "1.22.1"
+        "revision" : "3c54ab05249f59f2c6641dd2920b8358ea9ed127",
+        "version" : "1.24.0"
       }
     },
     {
