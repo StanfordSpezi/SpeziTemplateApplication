@@ -67,7 +67,7 @@ extension XCUIApplication {
     fileprivate func navigateOnboardingFlow(repeated skippedIfRepeated: Bool = false) throws {
         try navigateOnboardingFlowWelcome()
         try navigateOnboardingFlowInterestingModules()
-        if staticTexts["Consent Example"].waitForExistence(timeout: 5) {
+        if staticTexts["Consent"].waitForExistence(timeout: 5) {
             try navigateOnboardingFlowConsent()
         }
         if staticTexts["Your Account"].waitForExistence(timeout: 5) {
@@ -99,7 +99,7 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingFlowConsent() throws {
-        XCTAssertTrue(staticTexts["Consent Example"].waitForExistence(timeout: 5))
+        XCTAssertTrue(staticTexts["Consent"].waitForExistence(timeout: 5))
         
         XCTAssertTrue(staticTexts["First Name"].waitForExistence(timeout: 2))
         try textFields["Enter your first name ..."].enter(value: "Leland")
