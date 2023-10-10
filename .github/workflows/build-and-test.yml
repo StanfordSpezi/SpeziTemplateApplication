@@ -25,7 +25,7 @@ jobs:
     uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     with:
       codeql: true
-      xcodeversion: "15.0"
+      xcodeversion: '14.3.1'
       fastlanelane: codeql
     permissions:
       security-events: write
