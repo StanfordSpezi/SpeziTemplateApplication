@@ -25,14 +25,8 @@ struct Consent: View {
     
     
     var body: some View {
-        ConsentView(
-            header: {
-                OnboardingTitleView(
-                    title: "CONSENT_TITLE",
-                    subtitle: "CONSENT_SUBTITLE"
-                )
-            },
-            asyncMarkdown: {
+        OnboardingConsentView(
+            markdown: {
                 consentDocument
             },
             action: {

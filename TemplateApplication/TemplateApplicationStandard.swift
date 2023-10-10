@@ -10,6 +10,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import HealthKitOnFHIR
 import OSLog
+import PDFKit
 import Spezi
 import SpeziAccount
 import SpeziFirestore
@@ -127,10 +128,10 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
         }
     }
     
-    /// Stores the given consent data in the user's document directory with a unique timestamped filename.
+    /// Stores the given consent form in the user's document directory with a unique timestamped filename.
     ///
-    /// - Parameter consent: The consent form's data to be stored.
-    func store(consent: Data) async {
+    /// - Parameter consent: The consent form's data to be stored as a `PDFDocument`.
+    func store(consent: PDFDocument) async {
         guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             logger.error("Could not create path for writing consent form to user document directory.")
             return
@@ -141,37 +142,6 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
         let dateString = formatter.string(from: Date())
         
         let filePath = basePath.appending(path: "consentForm_\(dateString).pdf")
-        
-        do {
-            try consent.write(to: filePath)
-        } catch {
-            logger.error("Could not write consent form: \(error).")
-        }
-    }
-    
-    /// Loads the latest stored consent data from the user's document directory.
-    ///
-    /// - Returns: The most recent consent form data.
-    /// - Throws: Relevant `ConsentExportError` if any issues arise during retrieval.
-    func loadConsent() async throws -> Data {
-        guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            logger.error("Could not retrieve user document directory.")
-            throw ConsentExportError.documentDirectoryNotFound
-        }
-
-        do {
-            let allFiles = try FileManager.default.contentsOfDirectory(at: basePath, includingPropertiesForKeys: nil, options: [])
-            let consentFiles = allFiles.filter { $0.lastPathComponent.hasPrefix("consentForm_") }
-
-            if let latestFile = consentFiles.max(by: { $0.lastPathComponent < $1.lastPathComponent }) {
-                return try Data(contentsOf: latestFile)
-            } else {
-                logger.error("No consent forms found.")
-                throw ConsentExportError.noConsentFormsFound
-            }
-        } catch {
-            logger.error("Error reading consent forms: \(error).")
-            throw ConsentExportError.readError
-        }
+        consent.write(to: filePath)
     }
 }
