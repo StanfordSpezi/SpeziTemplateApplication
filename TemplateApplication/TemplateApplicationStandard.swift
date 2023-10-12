@@ -45,6 +45,15 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
             return Firestore.firestore().collection("users").document(details.userId)
         }
     }
+    
+    private var userBucketReference: StorageReference {
+        get async throws {
+            guard let uid = Auth.auth().currentUser?.uid else {
+                throw TemplateApplicationStandardError.userNotAuthenticatedYet
+            }
+            return Storage.storage().reference().child("users/\(uid)")
+        }
+    }
 
     
     func updateAccount(details: AccountDetails) async {
@@ -127,15 +136,6 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
             try await userDocumentReference.delete()
         } catch {
             logger.error("Could not delete user document: \(error)")
-        }
-    }
-    
-    private var userBucketReference: StorageReference {
-        get async throws {
-            guard let uid = Auth.auth().currentUser?.uid else {
-                throw TemplateApplicationStandardError.userNotAuthenticatedYet
-            }
-            return Storage.storage().reference().child("users/\(uid)")
         }
     }
     
