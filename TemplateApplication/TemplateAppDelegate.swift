@@ -9,6 +9,7 @@
 import Spezi
 import SpeziAccount
 import SpeziFirebaseAccount
+import SpeziFirebaseStorage
 import SpeziFirestore
 import SpeziHealthKit
 import SpeziMockWebService
@@ -34,6 +35,7 @@ class TemplateAppDelegate: SpeziAppDelegate {
                     FirebaseAccountConfiguration()
                 }
                 firestore
+                FirebaseStorageConfiguration(emulatorSettings: (host: "localhost", port: 9199))
             }
             if HKHealthStore.isHealthDataAvailable() {
                 healthKit

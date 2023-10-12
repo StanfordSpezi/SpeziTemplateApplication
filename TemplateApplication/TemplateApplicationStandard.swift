@@ -6,8 +6,10 @@
 // SPDX-License-Identifier: MIT
 //
 
+import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseStorage
 import HealthKitOnFHIR
 import OSLog
 import PDFKit
@@ -128,6 +130,15 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
         }
     }
     
+    private var userBucketReference: StorageReference {
+        get async throws {
+            guard let uid = Auth.auth().currentUser?.uid else {
+                throw TemplateApplicationStandardError.userNotAuthenticatedYet
+            }
+            return Storage.storage().reference().child("users/\(uid)")
+        }
+    }
+    
     /// Stores the given consent form in the user's document directory with a unique timestamped filename.
     ///
     /// - Parameter consent: The consent form's data to be stored as a `PDFDocument`.
@@ -154,10 +165,9 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
                 return
             }
             
-            try await userDocumentReference
-                .collection("Consent")
-                .document(dateString)
-                .setData(["data": consentData])
+            let metadata = StorageMetadata()
+            metadata.contentType = "application/pdf"
+            _ = try await userBucketReference.child("consent/\(dateString).pdf").putDataAsync(consentData, metadata: metadata)
         } catch {
             logger.error("Could not store consent form: \(error)")
         }
