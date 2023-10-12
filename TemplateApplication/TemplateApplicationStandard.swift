@@ -132,16 +132,34 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
     ///
     /// - Parameter consent: The consent form's data to be stored as a `PDFDocument`.
     func store(consent: PDFDocument) async {
-        guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            logger.error("Could not create path for writing consent form to user document directory.")
-            return
-        }
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd_HHmmss"
         let dateString = formatter.string(from: Date())
         
-        let filePath = basePath.appending(path: "consentForm_\(dateString).pdf")
-        consent.write(to: filePath)
+        guard !FeatureFlags.disableFirebase else {
+            guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+                logger.error("Could not create path for writing consent form to user document directory.")
+                return
+            }
+            
+            let filePath = basePath.appending(path: "consentForm_\(dateString).pdf")
+            consent.write(to: filePath)
+            
+            return
+        }
+        
+        do {
+            guard let consentData = consent.dataRepresentation() else {
+                logger.error("Could not store consent form.")
+                return
+            }
+            
+            try await userDocumentReference
+                .collection("Consent")
+                .document(dateString)
+                .setData(["data": consentData])
+        } catch {
+            logger.error("Could not store consent form: \(error)")
+        }
     }
 }
