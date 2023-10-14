@@ -203,8 +203,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziOnboarding",
       "state" : {
-        "branch" : "feat/export-consent-forms",
-        "revision" : "9b9f362c95c807902a0b7f7bbf1ded238f84748b"
+        "revision" : "0ea46a66c17615e1a933481a07434bfd41717c54",
+        "version" : "0.6.0"
       }
     },
     {
