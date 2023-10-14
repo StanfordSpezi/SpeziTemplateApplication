@@ -3,7 +3,7 @@
     "rules": "firestore.rules"
   },
   "storage": {
-    "rules": "storage.rules"
+    "rules": "firebasestorage.rules"
   },
   "emulators": {
     "auth": {
