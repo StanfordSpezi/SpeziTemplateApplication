@@ -38,13 +38,13 @@ struct OnboardingFlow: View {
             Welcome()
             InterestingModules()
             
-            #if !(targetEnvironment(simulator) && (arch(i386) || arch(x86_64)))
-                Consent()
-            #endif
-            
             if !FeatureFlags.disableFirebase {
                 AccountOnboarding()
             }
+            
+            #if !(targetEnvironment(simulator) && (arch(i386) || arch(x86_64)))
+                Consent()
+            #endif
             
             if HKHealthStore.isHealthDataAvailable() && !healthKitAuthorization {
                 HealthKitPermissions()

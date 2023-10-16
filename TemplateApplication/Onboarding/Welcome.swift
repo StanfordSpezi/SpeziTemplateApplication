@@ -41,6 +41,7 @@ struct Welcome: View {
                 onboardingNavigationPath.nextStep()
             }
         )
+            .padding(.top, 24)
     }
 }
 

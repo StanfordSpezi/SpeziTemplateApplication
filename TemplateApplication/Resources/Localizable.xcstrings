@@ -86,27 +86,6 @@
         }
       }
     },
-    "CONSENT_SUBTITLE" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spezi can collect consent from a user. You can provide the consent document using a markdown file."
-          }
-        }
-      }
-    },
-    "CONSENT_TITLE" : {
-      "comment" : "MARK: Consent",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Consent Example"
-          }
-        }
-      }
-    },
     "CONTACTS_NAVIGATION_TITLE" : {
       "localizations" : {
         "en" : {

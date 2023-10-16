@@ -6,21 +6,25 @@
 // SPDX-License-Identifier: MIT
 //
 
+import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseStorage
 import HealthKitOnFHIR
 import OSLog
+import PDFKit
 import Spezi
 import SpeziAccount
 import SpeziFirestore
 import SpeziHealthKit
 import SpeziMockWebService
+import SpeziOnboarding
 import SpeziQuestionnaire
 import SwiftUI
 
 
 actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectProvider, HealthKitConstraint,
-                                   QuestionnaireConstraint, AccountNotifyStandard {
+                                   QuestionnaireConstraint, AccountNotifyStandard, OnboardingConstraint {
     enum TemplateApplicationStandardError: Error {
         case userNotAuthenticatedYet
     }
@@ -39,6 +43,15 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
             }
             
             return Firestore.firestore().collection("users").document(details.userId)
+        }
+    }
+    
+    private var userBucketReference: StorageReference {
+        get async throws {
+            guard let uid = Auth.auth().currentUser?.uid else {
+                throw TemplateApplicationStandardError.userNotAuthenticatedYet
+            }
+            return Storage.storage().reference().child("users/\(uid)")
         }
     }
 
@@ -123,6 +136,40 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
             try await userDocumentReference.delete()
         } catch {
             logger.error("Could not delete user document: \(error)")
+        }
+    }
+    
+    /// Stores the given consent form in the user's document directory with a unique timestamped filename.
+    ///
+    /// - Parameter consent: The consent form's data to be stored as a `PDFDocument`.
+    func store(consent: PDFDocument) async {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd_HHmmss"
+        let dateString = formatter.string(from: Date())
+        
+        guard !FeatureFlags.disableFirebase else {
+            guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+                logger.error("Could not create path for writing consent form to user document directory.")
+                return
+            }
+            
+            let filePath = basePath.appending(path: "consentForm_\(dateString).pdf")
+            consent.write(to: filePath)
+            
+            return
+        }
+        
+        do {
+            guard let consentData = consent.dataRepresentation() else {
+                logger.error("Could not store consent form.")
+                return
+            }
+            
+            let metadata = StorageMetadata()
+            metadata.contentType = "application/pdf"
+            _ = try await userBucketReference.child("consent/\(dateString).pdf").putDataAsync(consentData, metadata: metadata)
+        } catch {
+            logger.error("Could not store consent form: \(error)")
         }
     }
 }
