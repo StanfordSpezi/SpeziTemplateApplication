@@ -1,12 +1,10 @@
+rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
-    // Matches any file uploaded to a user's specific path
     match /users/{userId}/{allPaths=**} {
-      // Ensure the user is authenticated
       allow read, write: if request.auth != null && request.auth.uid == userId;
     }
 
-    // Deny all other requests by default
     match /{allPaths=**} {
       allow read, write: if false;
     }
