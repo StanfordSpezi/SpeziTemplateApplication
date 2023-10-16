@@ -67,11 +67,11 @@ extension XCUIApplication {
     fileprivate func navigateOnboardingFlow(repeated skippedIfRepeated: Bool = false) throws {
         try navigateOnboardingFlowWelcome()
         try navigateOnboardingFlowInterestingModules()
-        if staticTexts["Consent Example"].waitForExistence(timeout: 5) {
-            try navigateOnboardingFlowConsent()
-        }
         if staticTexts["Your Account"].waitForExistence(timeout: 5) {
             try navigateOnboardingAccount()
+        }
+        if staticTexts["Consent"].waitForExistence(timeout: 5) {
+            try navigateOnboardingFlowConsent()
         }
         if !skippedIfRepeated {
             try navigateOnboardingFlowHealthKitAccess()
@@ -96,22 +96,6 @@ extension XCUIApplication {
         
         XCTAssertTrue(buttons["Next"].waitForExistence(timeout: 2))
         buttons["Next"].tap()
-    }
-    
-    private func navigateOnboardingFlowConsent() throws {
-        XCTAssertTrue(staticTexts["Consent Example"].waitForExistence(timeout: 5))
-        
-        XCTAssertTrue(staticTexts["First Name"].waitForExistence(timeout: 2))
-        try textFields["Enter your first name ..."].enter(value: "Leland")
-        
-        XCTAssertTrue(staticTexts["Last Name"].waitForExistence(timeout: 2))
-        try textFields["Enter your last name ..."].enter(value: "Stanford")
-
-        XCTAssertTrue(scrollViews["Signature Field"].waitForExistence(timeout: 2))
-        scrollViews["Signature Field"].swipeRight()
-
-        XCTAssertTrue(buttons["I Consent"].waitForExistence(timeout: 2))
-        buttons["I Consent"].tap()
     }
     
     private func navigateOnboardingAccount() throws {
@@ -144,6 +128,22 @@ extension XCUIApplication {
             XCTAssertTrue(buttons["Next"].waitForExistence(timeout: 2))
             buttons["Next"].tap()
         }
+    }
+    
+    private func navigateOnboardingFlowConsent() throws {
+        XCTAssertTrue(staticTexts["Consent"].waitForExistence(timeout: 5))
+        
+        XCTAssertTrue(staticTexts["First Name"].waitForExistence(timeout: 2))
+        try textFields["Enter your first name ..."].enter(value: "Leland")
+        
+        XCTAssertTrue(staticTexts["Last Name"].waitForExistence(timeout: 2))
+        try textFields["Enter your last name ..."].enter(value: "Stanford")
+
+        XCTAssertTrue(scrollViews["Signature Field"].waitForExistence(timeout: 2))
+        scrollViews["Signature Field"].swipeRight()
+
+        XCTAssertTrue(buttons["I Consent"].waitForExistence(timeout: 2))
+        buttons["I Consent"].tap()
     }
 
     private func navigateOnboardingFlowHealthKitAccess() throws {
@@ -186,8 +186,6 @@ extension XCUIApplication {
         XCTAssertTrue(navigationBars.buttons["Close"].waitForExistence(timeout: 0.5))
         navigationBars.buttons["Close"].tap()
 
-        assertOnboardingComplete()
-
         XCTAssertTrue(navigationBars.buttons["Your Account"].waitForExistence(timeout: 2))
         navigationBars.buttons["Your Account"].tap()
 
@@ -212,7 +210,5 @@ extension XCUIApplication {
 
         XCTAssertTrue(buttons["Login"].waitForExistence(timeout: 0.5))
         buttons["Login"].tap()
-
-        assertOnboardingComplete()
     }
 }

@@ -75,7 +75,7 @@
     {
       "identity" : "healthkitonfhir",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR.git",
+      "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR",
       "state" : {
         "revision" : "fdf8e4543718a940643598e4bd5e750e9c4c5540",
         "version" : "0.2.4"
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
-        "revision" : "7e31453c06f76ab3f2d0e7d3cff2e186d562dfd3",
-        "version" : "0.5.1"
+        "revision" : "56dd7fb9204f9ec48f54c5c867f9755bec50b8ac",
+        "version" : "0.6.0"
       }
     },
     {
@@ -203,8 +203,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziOnboarding",
       "state" : {
-        "revision" : "e0b11e101a920fa01f92e0ebf77fa0bb1c0265ef",
-        "version" : "0.5.1"
+        "revision" : "0ea46a66c17615e1a933481a07434bfd41717c54",
+        "version" : "0.6.0"
       }
     },
     {
@@ -237,10 +237,10 @@
     {
       "identity" : "speziviews",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziViews.git",
+      "location" : "https://github.com/StanfordSpezi/SpeziViews",
       "state" : {
-        "revision" : "626914fa7554aa2b994257541c0794eb930520ba",
-        "version" : "0.5.0"
+        "revision" : "4b7cc423fd823123d354ec1d541ca7d2e0a9d6e3",
+        "version" : "0.5.1"
       }
     },
     {
