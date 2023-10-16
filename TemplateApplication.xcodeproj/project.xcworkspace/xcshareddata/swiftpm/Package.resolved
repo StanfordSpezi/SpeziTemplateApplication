@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
-        "branch" : "feat/firebase-storage",
-        "revision" : "e8f178eee45830f75081d3bd4b291881fee5d7c9"
+        "revision" : "56dd7fb9204f9ec48f54c5c867f9755bec50b8ac",
+        "version" : "0.6.0"
       }
     },
     {
