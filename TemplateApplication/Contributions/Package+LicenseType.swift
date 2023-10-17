@@ -39,19 +39,17 @@ enum LicenseType {
     /// Initializer that scans the license document for common licenses and versions
     init?(license: String) {
         let license = license
-            .replacingOccurrences(of: "\n", with: " ")
-            .replacingOccurrences(of: "    ", with: "")
-            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(of: "\\s+|\\n", with: " ", options: .regularExpression)
         
-        if license.contains("MIT License") {
+        if license.contains(mitText) {
             self = .mit
-        } else if license.contains("Apache License") && license.contains("Version 2.0") {
+        } else if license.contains(apacheText) && license.contains("Version 2.0") {
             self = .apachev2
-        } else if license.contains("GNU GENERAL PUBLIC LICENSE") && license.contains("Version 2") {
+        } else if license.contains(gnuText) && license.contains("Version 2") {
             self = .gplv2
-        } else if license.contains("GNU GENERAL PUBLIC LICENSE") && license.contains("Version 3") {
+        } else if license.contains(gnuText) && license.contains("Version 3") {
             self = .gplv3
-        } else if license.range(of: bsdFourClausePattern, options: .regularExpression) != nil {
+        } else if license.contains(bsdFourClauseText) {
             self = .bsd4
         } else if license.range(of: bsdThreeClausePattern, options: .regularExpression) != nil {
             self = .bsd3
@@ -65,12 +63,33 @@ enum LicenseType {
     }
 }
 
-// swiftlint:disable all
-let bsdTwoClauseText = "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met"
-let bsdThreeClausePattern = "Neither the name of (.+) nor the names of (.+) may be used to endorse or promote products derived from this software without specific prior written permission"
-let bsdFourClausePattern = "All advertising materials mentioning features or use of this software must display the following acknowledgement: this product includes software developed by the (.+)"
 
-let zlibPattern = "The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.(.*) Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.(.*)This notice may not be removed or altered from any source distribution."
+// Constants representing typical text and regular expression patterns often found in license files.
+// They are used for matching and identifying different types of licenses within text documents.
+let mitText = "MIT License"
+let apacheText = "Apache License"
+let gnuText = "GNU GENERAL PUBLIC LICENSE"
+let bsdTwoClauseText =
+    """
+    Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met
+    """
+let bsdThreeClausePattern =
+    """
+    Neither the name of (.+) nor the names of (.+) may be used to endorse or promote products derived from this software \
+    without specific prior written permission
+    """
+let bsdFourClauseText =
+    """
+    All advertising materials mentioning features or use of this software must display the following acknowledgement: \
+    this product includes software developed by
+    """
+let zlibPattern =
+    """
+    The origin of this software must not be misrepresented; you must not claim that you wrote the original software. \
+    If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.(.*) \
+    Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.(.*) \
+    This notice may not be removed or altered from any source distribution.
+    """
 
 
 extension Package {
