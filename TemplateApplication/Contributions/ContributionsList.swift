@@ -14,7 +14,6 @@ struct ContributionsList: View {
     var packages: [Package] = PackageHelper.getPackageList()
     
     var body: some View {
-        NavigationView {
             List {
                 Section(footer: Text("PROJECT_LICENSE_DESCRIPTION")) {
                     Text("CONTRIBUTIONS_LIST_DESCRIPTION")
@@ -27,9 +26,9 @@ struct ContributionsList: View {
                         PackageCell(package: package)
                     }
                 }
-            }.navigationTitle("SpeziTemplateApplication")
+            }
+                .navigationTitle("CONTRIBUTIONS_LIST_NAVIGATION_TITLE")
                 .navigationBarTitleDisplayMode(.inline)
-        }
     }
 }
 
