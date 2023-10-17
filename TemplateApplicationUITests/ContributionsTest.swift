@@ -13,11 +13,12 @@ final class ContributionsTest: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         
+        try disablePasswordAutofill()
+        
         continueAfterFailure = false
         
         let app = XCUIApplication()
         app.launchArguments = ["--showOnboarding"]
-        app.terminate()
         app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
     }
 
