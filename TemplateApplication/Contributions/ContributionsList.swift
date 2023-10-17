@@ -27,7 +27,7 @@ struct ContributionsList: View {
                     }
                 }
             }
-                .navigationTitle("CONTRIBUTIONS_LIST_NAVIGATION_TITLE")
+                .navigationTitle("LICENSE_INFO_TITLE")
                 .navigationBarTitleDisplayMode(.inline)
     }
 }

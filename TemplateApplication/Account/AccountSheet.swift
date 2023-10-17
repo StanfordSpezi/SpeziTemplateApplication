@@ -27,7 +27,7 @@ struct AccountSheet: View {
                         NavigationLink {
                             ContributionsList()
                         } label: {
-                            Text("License Information")
+                            Text("LICENSE_INFO_TITLE")
                         }
                     }
                         .onDisappear {
