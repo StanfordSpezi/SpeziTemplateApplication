@@ -16,10 +16,13 @@ struct ContributionsList: View {
     var body: some View {
         NavigationView {
             List {
-                Section(footer: Text("This project is licensed under the MIT License.")) {
-                    Text("The following list contains all package dependencies SpeziTemplateApplication relies on.")
+                Section(footer: Text("PROJECT_LICENSE_DESCRIPTION")) {
+                    Text("CONTRIBUTIONS_LIST_DESCRIPTION")
                 }
-                Section(header: Text("Packages"), footer: Text("For packages without license labels refer to the individual repository links.")) {
+                Section(
+                    header: Text("CONTRIBUTIONS_LIST_HEADER"),
+                    footer: Text("CONTRIBUTIONS_LIST_FOOTER")
+                ) {
                     ForEach(packages.sorted(by: { $0.name < $1.name }), id: \.name) { package in
                         PackageCell(package: package)
                     }
@@ -36,7 +39,7 @@ struct ContributionsList_Previews: PreviewProvider {
     static var previews: some View {
         let mockPackages = [
             Package(
-                name: "mockPackage",
+                name: "MockPackage",
                 version: "1.0",
                 branch: nil,
                 revision: "0",

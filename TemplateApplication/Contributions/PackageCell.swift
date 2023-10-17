@@ -20,7 +20,6 @@ struct PackageCell: View {
                 HStack {
                     Text(getPackageDetails(package: package))
                         .font(.caption)
-                        .padding(2)
                     if let licenseType = package.getLicenseType(license: package.license) {
                         Text(licenseType.spdxIdentifier)
                             .font(.caption)
@@ -59,7 +58,7 @@ struct PackageCell: View {
 struct PackageCell_Previews: PreviewProvider {
     static var previews: some View {
         let mockPackage = Package(
-            name: "mockPackage",
+            name: "MockPackage",
             version: "1.0",
             branch: nil,
             revision: "0",

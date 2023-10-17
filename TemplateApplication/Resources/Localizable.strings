@@ -96,3 +96,10 @@
 
 // MARK: General
 "CLOSE" = "Close";
+
+// MARK: - Contributions
+"PROJECT_LICENSE_DESCRIPTION" = "This project is licensed under the MIT License.";
+"CONTRIBUTIONS_LIST_DESCRIPTION" = "The following list contains all Swift Package dependencies of the SpeziTemplateApplication.";
+"CONTRIBUTIONS_LIST_HEADER" = "Packages";
+"CONTRIBUTIONS_LIST_FOOTER" = "Please refer to the individual repository links for packages without license labels.";
+
