@@ -9,9 +9,9 @@
 import Foundation
 import SwiftPackageList
 
+
 // This section of code is based on the SwiftPackageList package:
 // - Original code: https://github.com/FelixHerrmann/swift-package-list/issues/43
-
 enum LicenseType {
     case mit
     case apachev2

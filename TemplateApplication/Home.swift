@@ -24,7 +24,6 @@ struct HomeView: View {
     @EnvironmentObject private var account: Account
     
     @State private var presentingAccount = false
-    @State private var showingSheet = false
     
     var body: some View {
         TabView(selection: $selectedTab) {

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import XCTestExtensions
+
 
 final class ContributionsTest: XCTestCase {
     override func setUpWithError() throws {
