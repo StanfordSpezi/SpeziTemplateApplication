@@ -75,7 +75,7 @@
     {
       "identity" : "healthkitonfhir",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR",
+      "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR.git",
       "state" : {
         "revision" : "fdf8e4543718a940643598e4bd5e750e9c4c5540",
         "version" : "0.2.4"
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/Spezi",
       "state" : {
-        "revision" : "7462510badaa156c1e25efd7eabbf5b85ecb0098",
-        "version" : "0.7.2"
+        "revision" : "e75ea4d241b6eb611ca4c1c25926097cf324ce37",
+        "version" : "0.7.3"
       }
     },
     {
@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
-        "revision" : "5937ed6e0baea9f53688c2752acfff23d45335cd",
-        "version" : "0.5.2"
+        "revision" : "1eca29373a5c27e7dfe7871be77be306ca626989",
+        "version" : "0.5.3"
       }
     },
     {
@@ -158,8 +158,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziContact.git",
       "state" : {
-        "revision" : "2d2b8096dcea737723430a3b98ebe3c3a79f6f41",
-        "version" : "0.4.0"
+        "revision" : "9dea670bcfea51c2db04ea73b80fda923c2ebaed",
+        "version" : "0.4.1"
       }
     },
     {
@@ -212,8 +212,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziQuestionnaire.git",
       "state" : {
-        "revision" : "9c4edec01e786447cf37ad272ebbb7b2f12e692a",
-        "version" : "0.4.2"
+        "revision" : "849e207da973a089e7a209289217ff3efab68596",
+        "version" : "0.4.3"
       }
     },
     {
@@ -230,8 +230,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziStorage.git",
       "state" : {
-        "revision" : "739ee1eadc5f9b1b5d2e8752ba077243d42fa79f",
-        "version" : "0.4.2"
+        "revision" : "58f79a21291da6d2d2193275486fa3c69b4f31fa",
+        "version" : "0.4.3"
       }
     },
     {
@@ -250,6 +250,24 @@
       "state" : {
         "revision" : "a902f1823a7ff3c9ab2fba0f992396b948eda307",
         "version" : "1.0.5"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser",
+      "state" : {
+        "revision" : "8f4d2753f0e4778c76d5f05ad16c74f707390531",
+        "version" : "1.2.3"
+      }
+    },
+    {
+      "identity" : "swift-package-list",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FelixHerrmann/swift-package-list",
+      "state" : {
+        "revision" : "374fedd183a1682f3fd5fd0c2e2676d5f3e7c352",
+        "version" : "3.0.9"
       }
     },
     {

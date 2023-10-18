@@ -23,7 +23,13 @@ struct AccountSheet: View {
         NavigationStack {
             ZStack {
                 if account.signedIn {
-                    AccountOverview(isEditing: $overviewIsEditing)
+                    AccountOverview(isEditing: $overviewIsEditing) {
+                        NavigationLink {
+                            ContributionsList()
+                        } label: {
+                            Text("LICENSE_INFO_TITLE")
+                        }
+                    }
                         .onDisappear {
                             overviewIsEditing = false
                         }

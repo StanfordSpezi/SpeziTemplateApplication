@@ -27,7 +27,8 @@ platform :ios do
       concurrent_workers: 1,
       max_concurrent_simulators: 1,
       result_bundle: true,
-      output_directory: "."
+      output_directory: ".",
+      xcargs: "-skipPackagePluginValidation"
     )
   end
 
@@ -36,7 +37,8 @@ platform :ios do
     build_app(
       skip_archive: true,
       skip_codesigning: true,
-      derived_data_path: ".derivedData"
+      derived_data_path: ".derivedData",
+      xcargs: "-skipPackagePluginValidation"
     )
   end
 
@@ -44,6 +46,7 @@ platform :ios do
   lane :build do
     build_app(
       derived_data_path: ".derivedData",
+      xcargs: "-skipPackagePluginValidation",
       export_options: {
         provisioningProfiles: {
           "edu.stanford.spezi.templateapplication" => "Spezi Template Application"
