@@ -14,7 +14,6 @@ import SwiftUI
 /// Displays the contacts for the Spezi Template Application.
 struct Contacts: View {
     let contacts = [
-        // swiftlint:disable accessibility_label_for_image
         Contact(
             name: PersonNameComponents(
                 givenName: "Leland",
