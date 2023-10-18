@@ -20,10 +20,11 @@ struct HomeView: View {
     
     
     @AppStorage(StorageKeys.homeTabSelection) var selectedTab = Tabs.schedule
-    
+
     @EnvironmentObject private var account: Account
-    
+
     @State private var presentingAccount = false
+
     
     var body: some View {
         TabView(selection: $selectedTab) {
