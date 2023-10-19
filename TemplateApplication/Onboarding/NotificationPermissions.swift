@@ -58,9 +58,9 @@ struct NotificationPermissions: View {
                 )
             }
         )
-        .navigationBarBackButtonHidden(notificationProcessing)
-        // Small fix as otherwise "Login" or "Sign up" is still shown in the nav bar
-        .navigationTitle("")
+            .navigationBarBackButtonHidden(notificationProcessing)
+            // Small fix as otherwise "Login" or "Sign up" is still shown in the nav bar
+            .navigationTitle("")
     }
 }
 

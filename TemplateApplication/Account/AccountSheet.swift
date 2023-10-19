@@ -12,17 +12,24 @@ import SwiftUI
 
 struct AccountSheet: View {
     @Environment(\.dismiss) var dismiss
-
+    
     @EnvironmentObject var account: Account
     @Environment(\.accountRequired) var accountRequired
-
+    
     @State var overviewIsEditing = false
-
+    
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 if account.signedIn {
-                    AccountOverview(isEditing: $overviewIsEditing)
+                    AccountOverview(isEditing: $overviewIsEditing) {
+                        NavigationLink {
+                            ContributionsList()
+                        } label: {
+                            Text("LICENSE_INFO_TITLE")
+                        }
+                    }
                         .onDisappear {
                             overviewIsEditing = false
                         }

@@ -13,7 +13,8 @@ import SwiftUI
 struct AccountSetupHeader: View {
     @EnvironmentObject private var account: Account
     @Environment(\._accountSetupState) private var setupState
-
+    
+    
     var body: some View {
         VStack {
             Text("ACCOUNT_TITLE")
@@ -21,10 +22,8 @@ struct AccountSetupHeader: View {
                 .bold()
                 .padding(.bottom)
                 .padding(.top, 30)
-
             Text("ACCOUNT_SUBTITLE")
                 .padding(.bottom, 8)
-
             if !account.signedIn || setupState == .loadingExistingAccount {
                 Text("ACCOUNT_SETUP_DESCRIPTION")
             } else {

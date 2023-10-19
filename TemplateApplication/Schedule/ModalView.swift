@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
+import SpeziViews
 import SwiftUI
 
 
@@ -14,7 +15,7 @@ struct ModalView: View {
     
     let text: String
     let buttonText: String
-    let onClose: () -> Void
+    let onClose: () async -> Void
     
     
     var body: some View {
@@ -23,9 +24,9 @@ struct ModalView: View {
             Text(text)
                 .padding()
             Spacer()
-            Button {
+            AsyncButton {
                 self.dismiss()
-                self.onClose()
+                await self.onClose()
             } label: {
                 Text(buttonText)
                     .frame(maxWidth: .infinity, minHeight: 38)

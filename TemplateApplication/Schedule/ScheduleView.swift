@@ -70,15 +70,11 @@ struct ScheduleView: View {
             switch eventContext.task.context {
             case let .questionnaire(questionnaire):
                 QuestionnaireView(questionnaire: questionnaire) { _ in
-                    _Concurrency.Task {
-                        await eventContext.event.complete(true)
-                    }
+                    await eventContext.event.complete(true)
                 }
             case let .test(string):
                 ModalView(text: string, buttonText: String(localized: "CLOSE")) {
-                    _Concurrency.Task {
-                        await eventContext.event.complete(true)
-                    }
+                    await eventContext.event.complete(true)
                 }
             }
         }
