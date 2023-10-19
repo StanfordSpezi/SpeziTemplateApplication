@@ -57,8 +57,12 @@ struct HomeView: View {
 
 #if DEBUG
 #Preview {
-    HomeView()
-        .environmentObject(Account(MockUserIdPasswordAccountService()))
+    let details = AccountDetails.Builder()
+        .set(\.userId, value: "lelandstanford@stanford.edu")
+        .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
+    
+    return HomeView()
+        .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
         .environmentObject(TemplateApplicationScheduler())
         .environmentObject(MockWebService())
 }

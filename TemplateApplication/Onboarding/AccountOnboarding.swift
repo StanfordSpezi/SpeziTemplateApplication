@@ -46,7 +46,8 @@ struct AccountOnboarding: View {
         for onboardingView in OnboardingFlow.previewSimulatorViews {
             onboardingView
         }
-    }.environmentObject(Account(MockUserIdPasswordAccountService()))
+    }
+        .environmentObject(Account(MockUserIdPasswordAccountService()))
 }
 
 #Preview("Account Onboarding") {
@@ -58,6 +59,7 @@ struct AccountOnboarding: View {
         for onboardingView in OnboardingFlow.previewSimulatorViews {
             onboardingView
         }
-    }.environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
+    }
+        .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
 }
 #endif

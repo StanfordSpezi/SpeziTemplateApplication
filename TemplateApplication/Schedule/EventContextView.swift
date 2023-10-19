@@ -49,8 +49,8 @@ struct EventContextView: View {
                 }
             }
         }
-        .disabled(eventContext.event.complete)
-        .contentShape(Rectangle())
+            .disabled(eventContext.event.complete)
+            .contentShape(Rectangle())
     }
     
     
@@ -75,6 +75,7 @@ struct EventContextView: View {
             event: task.events(from: .now.addingTimeInterval(-60 * 60 * 24)).first!,
             task: task
         )
-    ).padding()
+    )
+        .padding()
 }
 #endif
