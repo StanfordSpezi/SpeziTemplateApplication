@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
-        "branch" : "feature/single-sign-on",
-        "revision" : "dccb7208552ad805e3989fd9cf416504b2774564"
+        "revision" : "2f88e04a66bb3f1444763f7e3c103353b9be6f77",
+        "version" : "0.6.0"
       }
     },
     {
@@ -176,8 +176,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
-        "branch" : "feature/apple-single-sign-on",
-        "revision" : "63aab00ca251f6faade5d8eed6606a7a2d093663"
+        "revision" : "774c5e311c94e411f4f7c49b846d82e5e3755a55",
+        "version" : "0.7.0"
       }
     },
     {
