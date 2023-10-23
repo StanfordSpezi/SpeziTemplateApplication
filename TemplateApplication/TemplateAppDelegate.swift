@@ -37,7 +37,11 @@ class TemplateAppDelegate: SpeziAppDelegate {
                     FirebaseAccountConfiguration(authenticationMethods: [.emailAndPassword, .signInWithApple])
                 }
                 firestore
-                FirebaseStorageConfiguration(emulatorSettings: (host: "localhost", port: 9199))
+                if FeatureFlags.useFirebaseEmulator {
+                    FirebaseStorageConfiguration(emulatorSettings: (host: "localhost", port: 9199))
+                } else {
+                    FirebaseStorageConfiguration()
+                }
             }
             if HKHealthStore.isHealthDataAvailable() {
                 healthKit

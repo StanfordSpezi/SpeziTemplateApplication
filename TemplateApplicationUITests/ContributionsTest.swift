@@ -28,7 +28,7 @@ final class ContributionsTest: XCTestCase {
         try app.conductOnboardingIfNeeded()
         
         
-        XCTAssertTrue(app.buttons["Your Account"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["Your Account"].waitForExistence(timeout: 6.0))
         app.buttons["Your Account"].tap()
         
         XCTAssertTrue(app.buttons["License Information"].waitForExistence(timeout: 2))
