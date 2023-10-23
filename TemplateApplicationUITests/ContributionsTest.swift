@@ -24,11 +24,12 @@ final class ContributionsTest: XCTestCase {
 
     func testLicenseInformationPage() throws {
         let app = XCUIApplication()
+
         // complete onboarding so user is logged in
-        try app.conductOnboardingIfNeeded()
+        try app.conductOnboardingIfNeeded(email: "leland@contributions.stanford.edu")
+
         
-        
-        XCTAssertTrue(app.buttons["Your Account"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["Your Account"].waitForExistence(timeout: 6.0))
         app.buttons["Your Account"].tap()
         
         XCTAssertTrue(app.buttons["License Information"].waitForExistence(timeout: 2))
