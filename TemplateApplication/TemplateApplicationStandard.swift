@@ -6,7 +6,6 @@
 // SPDX-License-Identifier: MIT
 //
 
-import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import FirebaseStorage
@@ -42,16 +41,17 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
                 throw TemplateApplicationStandardError.userNotAuthenticatedYet
             }
             
-            return Firestore.firestore().collection("users").document(details.userId)
+            return Firestore.firestore().collection("users").document(details.accountId)
         }
     }
     
     private var userBucketReference: StorageReference {
         get async throws {
-            guard let uid = Auth.auth().currentUser?.uid else {
+            guard let details = await account.details else {
                 throw TemplateApplicationStandardError.userNotAuthenticatedYet
             }
-            return Storage.storage().reference().child("users/\(uid)")
+
+            return Storage.storage().reference().child("users/\(details.accountId)")
         }
     }
 

@@ -7,6 +7,7 @@
 //
 
 import Spezi
+import SpeziFirebaseAccount
 import SwiftUI
 
 
@@ -29,6 +30,7 @@ struct TemplateApplication: App {
                     OnboardingFlow()
                 }
                 .standardAccountUpdate()
+                .firebaseAccount()
                 .testingSetup()
                 .spezi(appDelegate)
         }
