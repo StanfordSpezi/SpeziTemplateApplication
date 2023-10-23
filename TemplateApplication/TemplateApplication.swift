@@ -30,7 +30,7 @@ struct TemplateApplication: App {
                     OnboardingFlow()
                 }
                 .standardAccountUpdate()
-                .firebaseAccount()
+                .firebaseAccount(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding)
                 .testingSetup()
                 .spezi(appDelegate)
         }

@@ -13,7 +13,7 @@ final class ContributionsTest: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         
-        try disablePasswordAutofill()
+        // TODO try disablePasswordAutofill()
         
         continueAfterFailure = false
         

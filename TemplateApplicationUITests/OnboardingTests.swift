@@ -107,7 +107,7 @@ extension XCUIApplication {
         XCTAssertTrue(buttons["Signup"].waitForExistence(timeout: 2))
         buttons["Signup"].tap()
 
-        XCTAssertTrue(navigationBars.staticTexts["Signup"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Create a new Account"].waitForExistence(timeout: 2))
         
         try collectionViews.textFields["E-Mail Address"].enter(value: "leland@stanford.edu")
         try collectionViews.secureTextFields["Password"].enter(value: "StanfordRocks")
