@@ -27,11 +27,12 @@ class OnboardingTests: XCTestCase {
     
     func testOnboardingFlow() throws {
         let app = XCUIApplication()
+        let email = "leland@onboarding.stanford.edu"
         
-        try app.navigateOnboardingFlow()
-        
+        try app.navigateOnboardingFlow(email: email)
+
         app.assertOnboardingComplete()
-        try app.assertAccountInformation()
+        try app.assertAccountInformation(email: email)
     }
     
     func testOnboardingFlowRepeated() throws {
@@ -56,19 +57,22 @@ class OnboardingTests: XCTestCase {
 
 
 extension XCUIApplication {
-    func conductOnboardingIfNeeded() throws {
+    func conductOnboardingIfNeeded(email: String = "leland@stanford.edu") throws {
         let app = XCUIApplication()
         
         if app.staticTexts["Spezi\nTemplate Application"].waitForExistence(timeout: 5) {
-            try app.navigateOnboardingFlow()
+            try app.navigateOnboardingFlow(email: email)
         }
     }
     
-    fileprivate func navigateOnboardingFlow(repeated skippedIfRepeated: Bool = false) throws {
+    fileprivate func navigateOnboardingFlow(
+        email: String = "leland@stanford.edu",
+        repeated skippedIfRepeated: Bool = false
+    ) throws {
         try navigateOnboardingFlowWelcome()
         try navigateOnboardingFlowInterestingModules()
         if staticTexts["Your Account"].waitForExistence(timeout: 5) {
-            try navigateOnboardingAccount()
+            try navigateOnboardingAccount(email: email)
         }
         if staticTexts["Consent"].waitForExistence(timeout: 5) {
             try navigateOnboardingFlowConsent()
@@ -98,7 +102,7 @@ extension XCUIApplication {
         buttons["Next"].tap()
     }
     
-    private func navigateOnboardingAccount() throws {
+    private func navigateOnboardingAccount(email: String) throws {
         guard !buttons["Next"].waitForExistence(timeout: 5) else {
             buttons["Next"].tap()
             return
@@ -107,9 +111,9 @@ extension XCUIApplication {
         XCTAssertTrue(buttons["Signup"].waitForExistence(timeout: 2))
         buttons["Signup"].tap()
 
-        XCTAssertTrue(navigationBars.staticTexts["Signup"].waitForExistence(timeout: 2))
+        XCTAssertTrue(staticTexts["Create a new Account"].waitForExistence(timeout: 2))
         
-        try collectionViews.textFields["E-Mail Address"].enter(value: "leland@stanford.edu")
+        try collectionViews.textFields["E-Mail Address"].enter(value: email)
         try collectionViews.secureTextFields["Password"].enter(value: "StanfordRocks")
         try textFields["enter first name"].enter(value: "Leland")
         try textFields["enter last name"].enter(value: "Stanford")
@@ -123,7 +127,7 @@ extension XCUIApplication {
             navigationBars.buttons["Back"].tap()
             
             XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 2))
-            XCTAssertTrue(staticTexts["leland@stanford.edu"].waitForExistence(timeout: 2))
+            XCTAssertTrue(staticTexts[email].waitForExistence(timeout: 2))
             
             XCTAssertTrue(buttons["Next"].waitForExistence(timeout: 2))
             buttons["Next"].tap()
@@ -174,13 +178,13 @@ extension XCUIApplication {
         XCTAssertTrue(tabBar.buttons["Contacts"].waitForExistence(timeout: 2))
     }
 
-    fileprivate func assertAccountInformation() throws {
+    fileprivate func assertAccountInformation(email: String) throws {
         XCTAssertTrue(navigationBars.buttons["Your Account"].waitForExistence(timeout: 2))
         navigationBars.buttons["Your Account"].tap()
 
         XCTAssertTrue(staticTexts["Account Overview"].waitForExistence(timeout: 5.0))
         XCTAssertTrue(staticTexts["Leland Stanford"].waitForExistence(timeout: 0.5))
-        XCTAssertTrue(staticTexts["leland@stanford.edu"].waitForExistence(timeout: 0.5))
+        XCTAssertTrue(staticTexts[email].waitForExistence(timeout: 0.5))
 
 
         XCTAssertTrue(navigationBars.buttons["Close"].waitForExistence(timeout: 0.5))
@@ -205,7 +209,7 @@ extension XCUIApplication {
         sleep(2)
 
         // Login
-        try textFields["E-Mail Address"].enter(value: "leland@stanford.edu")
+        try textFields["E-Mail Address"].enter(value: email)
         try secureTextFields["Password"].enter(value: "StanfordRocks")
 
         XCTAssertTrue(buttons["Login"].waitForExistence(timeout: 0.5))

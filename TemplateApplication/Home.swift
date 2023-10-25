@@ -48,9 +48,11 @@ struct HomeView: View {
         }
             .sheet(isPresented: $presentingAccount) {
                 AccountSheet()
-                    .interactiveDismissDisabled(!account.signedIn)
             }
-            .accountRequired(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding, sheetPresented: $presentingAccount)
+            .accountRequired(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding) {
+                AccountSheet()
+            }
+            .verifyRequiredAccountDetails(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding)
     }
 }
 

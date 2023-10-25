@@ -16,13 +16,14 @@ struct AccountSheet: View {
     @EnvironmentObject var account: Account
     @Environment(\.accountRequired) var accountRequired
     
+    @State var isInSetup = false
     @State var overviewIsEditing = false
     
     
     var body: some View {
         NavigationStack {
             ZStack {
-                if account.signedIn {
+                if account.signedIn && !isInSetup {
                     AccountOverview(isEditing: $overviewIsEditing) {
                         NavigationLink {
                             ContributionsList()
@@ -33,26 +34,35 @@ struct AccountSheet: View {
                         .onDisappear {
                             overviewIsEditing = false
                         }
-                } else {
-                    AccountSetup(header: {
-                        AccountSetupHeader()
-                    })
-                }
-            }
-                .onChange(of: account.signedIn) {
-                    if account.signedIn {
-                        dismiss() // we just signed in, dismiss the account setup sheet
-                    }
-                }
-                .toolbar {
-                    if !overviewIsEditing && (account.signedIn || !accountRequired) {
-                        ToolbarItem(placement: .cancellationAction) {
-                            Button("CLOSE") {
-                                dismiss()
+                        .toolbar {
+                            if !overviewIsEditing {
+                                closeButton
                             }
                         }
+                } else {
+                    AccountSetup { _ in
+                        dismiss() // we just signed in, dismiss the account setup sheet
+                    } header: {
+                        AccountSetupHeader()
                     }
+                        .onAppear {
+                            isInSetup = true
+                        }
+                        .toolbar {
+                            if !accountRequired {
+                                closeButton
+                            }
+                        }
                 }
+            }
+        }
+    }
+
+    var closeButton: some ToolbarContent {
+        ToolbarItem(placement: .cancellationAction) {
+            Button("CLOSE") {
+                dismiss()
+            }
         }
     }
 }
