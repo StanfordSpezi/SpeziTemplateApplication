@@ -9,9 +9,11 @@
 import Spezi
 import SpeziAccount
 import SpeziFirebaseAccount
+import SpeziFirebaseStorage
 import SpeziFirestore
 import SpeziHealthKit
 import SpeziMockWebService
+import SpeziOnboarding
 import SpeziQuestionnaire
 import SpeziScheduler
 import SwiftUI
@@ -23,16 +25,23 @@ class TemplateAppDelegate: SpeziAppDelegate {
             if !FeatureFlags.disableFirebase {
                 AccountConfiguration(configuration: [
                     .requires(\.userId),
-                    .requires(\.password),
                     .collects(\.name)
                 ])
 
                 if FeatureFlags.useFirebaseEmulator {
-                    FirebaseAccountConfiguration(emulatorSettings: (host: "localhost", port: 9099))
+                    FirebaseAccountConfiguration(
+                        authenticationMethods: [.emailAndPassword, .signInWithApple],
+                        emulatorSettings: (host: "localhost", port: 9099)
+                    )
                 } else {
-                    FirebaseAccountConfiguration()
+                    FirebaseAccountConfiguration(authenticationMethods: [.emailAndPassword, .signInWithApple])
                 }
                 firestore
+                if FeatureFlags.useFirebaseEmulator {
+                    FirebaseStorageConfiguration(emulatorSettings: (host: "localhost", port: 9199))
+                } else {
+                    FirebaseStorageConfiguration()
+                }
             }
             if HKHealthStore.isHealthDataAvailable() {
                 healthKit
@@ -40,6 +49,7 @@ class TemplateAppDelegate: SpeziAppDelegate {
             QuestionnaireDataSource()
             MockWebService()
             TemplateApplicationScheduler()
+            OnboardingDataSource()
         }
     }
     
