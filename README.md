@@ -75,19 +75,19 @@ It uses the [**Spezi Onboarding** module](https://github.com/StanfordSpezi/Spezi
         <img width="250" alt="A screen showing an overview of the modules used in the Spezi Template application." src="Figures/TemplateOnboardingFlow/InterestingModules.png" />
     </picture>
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/YourAccount.png" />
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/YourAccount-dark.png" />
         <img width="250" alt="A screen showing the account login view" src="Figures/TemplateOnboardingFlow/YourAccount.png" />
     </picture>
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/Consent.png" />
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/Consent-dark.png" />
         <img width="250" alt="A screen displaying the consent view." src="Figures/TemplateOnboardingFlow/Consent.png" />
     </picture>
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/HealthKitAccess.png" />   
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/HealthKitAccess-dark.png" />   
         <img width="250" alt="A screen showing a view displaying the HealthKit access screen." src="Figures/TemplateOnboardingFlow/HealthKitAccess.png" />
     </picture>
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/Notifications.png" />   
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/Notifications-dark.png" />   
         <img width="250" alt="A screen showing a view displaying the Notifications permission screen" src="Figures/TemplateOnboardingFlow/Notifications.png" />
     </picture>
 </p>
