@@ -166,7 +166,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This onboarding step allows you to customize the onboarding flow to explain how the application uses the HealhtKit data and allows a user to cusomize the selection."
+            "value" : "This onboarding step allows you to customize the onboarding flow to explain how the application uses the HealthKit data and allows a user to cusomize the selection."
           }
         }
       }
