@@ -99,9 +99,18 @@ The scheduler part of the application provides the functionality to schedule a r
 It uses the [**Spezi Scheduler**](https://github.com/StanfordSpezi/SpeziScheduler) and [**Spezi Questionnaire**](https://github.com/StanfordSpezi/SpeziQuestionnaire) modules to schedule the tasks as defined in the `TemplateApplicationScheduler`.
 
 <p float="left">
- <img width="250" alt="A screen displaying the Scheduler UI." src="Figures/TemplateSchedule/Scheduler.png">
- <img width="250" alt="A screen showing a questionnaire using ResearchKit." src="Figures/TemplateSchedule/Questionnaire.png">
- <img width="250" alt="A screen displaying the Scheduler UI when the questionnaire is finished." src="Figures/TemplateSchedule/QuestionnaireFinished.png">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateSchedule/Scheduler-dark.png" />   
+        <img width="250" alt="A screen displaying the Scheduler UI." src="Figures/TemplateSchedule/Scheduler.png">
+    </picture>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateSchedule/Questionnaire-dark.png" />   
+        <img width="250" alt="A screen showing a questionnaire using ResearchKit." src="Figures/TemplateSchedule/Questionnaire.png">
+    </picture>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateSchedule/QuestionnaireFinished.png" />
+        <img width="250" alt="A screen displaying the Scheduler UI when the questionnaire is finished." src="Figures/TemplateSchedule/QuestionnaireFinished.png">
+    </picture>
 </p>
 
 
@@ -111,7 +120,10 @@ The Contacts part of the application provides the functionality to display conta
 It uses the [**Spezi Contacts** module](https://github.com/StanfordSpezi/SpeziContacts) to use the contact-related views provided by Spezi.
 
 <p float="left">
- <img width="250" alt="A screen displaying the Contact UI." src="Figures/TemplateContacts/Contacts.png">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateContacts/Contacts-dark.png" />   
+        <img width="250" alt="A screen displaying the Contact UI." src="Figures/TemplateContacts/Contacts.png">
+    </picture>
 </p>
 
 
