@@ -66,10 +66,30 @@ The onboarding contains different steps.
 It uses the [**Spezi Onboarding** module](https://github.com/StanfordSpezi/SpeziOnboarding) to display different onboarding-related views like the information about the application, a consent screen, and a screen to display a HealthKit consent view.
 
 <p float="left">
- <img width="250" alt="A screen displaying welcome information." src="Figures/TemplateOnboardingFlow/Welcome.png">
- <img width="250" alt="A screen showing an overview of the modules used in the Spezi Template application." src="Figures/TemplateOnboardingFlow/InterestingModules.png">
- <img width="250" alt="A screen displaying the consent view." src="Figures/TemplateOnboardingFlow/Consent.png">
- <img width="250" alt="A screen showing a view displaying the HealthKit access screen." src="Figures/TemplateOnboardingFlow/HealthKitAccess.png">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/Welcome-dark.png" />   
+        <img width="250" alt="A screen displaying welcome information." src="Figures/TemplateOnboardingFlow/Welcome.png" />
+    </picture>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/InterestingModules-dark.png" />
+        <img width="250" alt="A screen showing an overview of the modules used in the Spezi Template application." src="Figures/TemplateOnboardingFlow/InterestingModules.png" />
+    </picture>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/YourAccount.png" />
+        <img width="250" alt="A screen showing the account login view" src="Figures/TemplateOnboardingFlow/YourAccount.png" />
+    </picture>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/Consent.png" />
+        <img width="250" alt="A screen displaying the consent view." src="Figures/TemplateOnboardingFlow/Consent.png" />
+    </picture>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/HealthKitAccess.png" />   
+        <img width="250" alt="A screen showing a view displaying the HealthKit access screen." src="Figures/TemplateOnboardingFlow/HealthKitAccess.png" />
+    </picture>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateOnboardingFlow/Notifications.png" />   
+        <img width="250" alt="A screen showing a view displaying the Notifications permission screen" src="Figures/TemplateOnboardingFlow/Notifications.png" />
+    </picture>
 </p>
 
 
