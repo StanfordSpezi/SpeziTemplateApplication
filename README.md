@@ -108,7 +108,7 @@ It uses the [**Spezi Scheduler**](https://github.com/StanfordSpezi/SpeziSchedule
         <img width="250" alt="A screen showing a questionnaire using ResearchKit." src="Figures/TemplateSchedule/Questionnaire.png">
     </picture>
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateSchedule/QuestionnaireFinished.png" />
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateSchedule/QuestionnaireFinished-dark.png" />
         <img width="250" alt="A screen displaying the Scheduler UI when the questionnaire is finished." src="Figures/TemplateSchedule/QuestionnaireFinished.png">
     </picture>
 </p>
