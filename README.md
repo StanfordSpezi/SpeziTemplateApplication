@@ -101,15 +101,15 @@ It uses the [**Spezi Scheduler**](https://github.com/StanfordSpezi/SpeziSchedule
 <p float="left">
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateSchedule/Scheduler-dark.png" />   
-        <img width="250" alt="A screen displaying the Scheduler UI." src="Figures/TemplateSchedule/Scheduler.png">
+        <img width="250" alt="A screen displaying the Scheduler UI." src="Figures/TemplateSchedule/Scheduler.png" />
     </picture>
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateSchedule/Questionnaire-dark.png" />   
-        <img width="250" alt="A screen showing a questionnaire using ResearchKit." src="Figures/TemplateSchedule/Questionnaire.png">
+        <img width="250" alt="A screen showing a questionnaire using ResearchKit." src="Figures/TemplateSchedule/Questionnaire.png" />
     </picture>
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateSchedule/QuestionnaireFinished-dark.png" />
-        <img width="250" alt="A screen displaying the Scheduler UI when the questionnaire is finished." src="Figures/TemplateSchedule/QuestionnaireFinished.png">
+        <img width="250" alt="A screen displaying the Scheduler UI when the questionnaire is finished." src="Figures/TemplateSchedule/QuestionnaireFinished.png" />
     </picture>
 </p>
 
@@ -122,7 +122,7 @@ It uses the [**Spezi Contacts** module](https://github.com/StanfordSpezi/SpeziCo
 <p float="left">
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateContacts/Contacts-dark.png" />   
-        <img width="250" alt="A screen displaying the Contact UI." src="Figures/TemplateContacts/Contacts.png">
+        <img width="250" alt="A screen displaying the Contact UI." src="Figures/TemplateContacts/Contacts.png"/>
     </picture>
 </p>
 
@@ -134,8 +134,14 @@ It is shown in the application when the ``--disableFirebase`` configuration flag
 It uses the [**Spezi Mock Web Service** module](https://github.com/StanfordSpezi/SpeziMockWebService) to enable this functionality.
 
 <p float="left">
- <img width="250" alt="A screen displaying the list of Mock Data Storage Provider uploads." src="Figures/TemplateMockDataStorageProvider/TemplateMockDataStorageProviderList.png">
- <img width="250" alt="A screen displaying the detailed overview of one Mock Data Storage Provider upload." src="Figures/TemplateMockDataStorageProvider/TemplateMockDataStorageProviderDetail.png">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateMockDataStorageProvider/TemplateMockDataStorageProviderList-dark.png" />   
+        <img width="250" alt="A screen displaying the list of Mock Data Storage Provider uploads." src="Figures/TemplateMockDataStorageProvider/TemplateMockDataStorageProviderList.png" />
+    </picture>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="Figures/TemplateMockDataStorageProvider/TemplateMockDataStorageProviderDetail-dark.png" />
+        <img width="250" alt="A screen displaying the detailed overview of one Mock Data Storage Provider upload." src="Figures/TemplateMockDataStorageProvider/TemplateMockDataStorageProviderDetail.png" />
+    </picture>
 </p>
 
 
