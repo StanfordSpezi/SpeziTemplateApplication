@@ -108,7 +108,6 @@
       }
     },
     "CONTRIBUTIONS_LIST_DESCRIPTION" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -119,7 +118,6 @@
       }
     },
     "CONTRIBUTIONS_LIST_FOOTER" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -130,23 +128,11 @@
       }
     },
     "CONTRIBUTIONS_LIST_HEADER" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Packages"
-          }
-        }
-      }
-    },
-    "CONTRIBUTIONS_LIST_NAVIGATION_TITLE" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "License Information"
           }
         }
       }
@@ -314,7 +300,6 @@
       }
     },
     "LICENSE_INFO_TITLE" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -377,7 +362,6 @@
       }
     },
     "PROJECT_LICENSE_DESCRIPTION" : {
-      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
