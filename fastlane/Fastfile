@@ -48,6 +48,9 @@ platform :ios do
       derived_data_path: ".derivedData",
       xcargs: "-skipPackagePluginValidation",
       export_options: {
+        signingStyle: "manual",
+        signingCertificate: "iPhone Distribution",
+        teamID: "637867499T",
         provisioningProfiles: {
           "edu.stanford.spezi.templateapplication" => "Spezi Template Application"
         }
