@@ -15,17 +15,33 @@ on:
   workflow_dispatch:
 
 jobs:
-  buildandtest:
-    name: Build and Test
-    uses: ./.github/workflows/build-and-test.yml
-    permissions:
-      security-events: write
-      actions: read
-  iosapptestflightdeployment:
-    name: iOS App TestFlight Deployment
-    needs: buildandtest
-    uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
-    secrets: inherit
-    with:
-      setupsigning: true
-      fastlanelane: beta
+  # buildandtest:
+  #   name: Build and Test
+  #   uses: ./.github/workflows/build-and-test.yml
+  #   permissions:
+  #     security-events: write
+  #     actions: read
+  # iosapptestflightdeployment:
+  #   name: iOS App TestFlight Deployment
+  #   needs: buildandtest
+  #   uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
+  #   secrets: inherit
+  #   with:
+  #     setupsigning: true
+  #     fastlanelane: beta
+  deployfirebase:
+    name: Deploy Firebase Project
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup NodeJS
+      uses: actions/setup-node@v3
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'microsoft'
+        java-version: '17'
+    - name: Install Firebase CLI Tools
+      run: npm install -g firebase-tools
+    - name: Deploy to Firebase
+      run: firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
