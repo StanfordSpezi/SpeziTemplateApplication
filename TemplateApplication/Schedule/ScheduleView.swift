@@ -6,7 +6,6 @@
 // SPDX-License-Identifier: MIT
 //
 
-
 import SpeziAccount
 import SpeziQuestionnaire
 import SpeziScheduler
@@ -41,21 +40,21 @@ struct ScheduleView: View {
                     }
                 }
             }
-            .onChange(of: scheduler) {
-                calculateEventContextsByDate()
-            }
-            .task {
-                calculateEventContextsByDate()
-            }
-            .sheet(item: $presentedContext) { presentedContext in
-                destination(withContext: presentedContext)
-            }
-            .toolbar {
-                if AccountButton.shouldDisplay {
-                    AccountButton(isPresented: $presentingAccount)
+                .onChange(of: scheduler) {
+                    calculateEventContextsByDate()
                 }
-            }
-            .navigationTitle("SCHEDULE_LIST_TITLE")
+                .task {
+                    calculateEventContextsByDate()
+                }
+                .sheet(item: $presentedContext) { presentedContext in
+                    destination(withContext: presentedContext)
+                }
+                .toolbar {
+                    if AccountButton.shouldDisplay {
+                        AccountButton(isPresented: $presentingAccount)
+                    }
+                }
+                .navigationTitle("SCHEDULE_LIST_TITLE")
         }
     }
     

@@ -54,10 +54,10 @@ struct OnboardingFlow: View {
                 NotificationPermissions()
             }
         }
-        .task {
-            localNotificationAuthorization = await scheduler.localNotificationAuthorization
-        }
-        .interactiveDismissDisabled(!completedOnboardingFlow)
+            .task {
+                localNotificationAuthorization = await scheduler.localNotificationAuthorization
+            }
+            .interactiveDismissDisabled(!completedOnboardingFlow)
     }
 }
 

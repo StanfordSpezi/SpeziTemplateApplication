@@ -21,7 +21,7 @@ struct AccountButton: View {
         }) {
             Image(systemName: "person.crop.circle")
         }
-        .accessibilityLabel("ACCOUNT_TITLE")
+            .accessibilityLabel("ACCOUNT_TITLE")
     }
 
 

@@ -55,7 +55,7 @@ struct PackageCell: View {
 
 
 #if DEBUG
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     let mockPackage = Package(
         name: "MockPackage",
         version: "1.0",
@@ -67,6 +67,7 @@ struct PackageCell: View {
         repositoryURL: URL(string: "github.com")!,
         license: "MIT License"
     )
-    return PackageCell(package: mockPackage).previewLayout(.sizeThatFits)
+    
+    return PackageCell(package: mockPackage)
 }
 #endif

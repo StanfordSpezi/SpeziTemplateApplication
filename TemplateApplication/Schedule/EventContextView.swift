@@ -29,8 +29,8 @@ struct EventContextView: View {
                             .font(.headline)
                             .accessibilityLabel(
                                 eventContext.event.complete
-                                ? "COMPLETED_TASK_LABEL \(eventContext.task.title)"
-                                : "TASK_LABEL \(eventContext.task.title)"
+                                    ? "COMPLETED_TASK_LABEL \(eventContext.task.title)"
+                                    : "TASK_LABEL \(eventContext.task.title)"
                             )
                         Text(verbatim: format(eventDate: eventContext.event.scheduledAt))
                             .font(.subheadline)
@@ -64,7 +64,7 @@ struct EventContextView: View {
 
 
 #if DEBUG
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     let task = TemplateApplicationScheduler.socialSupportTask
     
     return EventContextView(

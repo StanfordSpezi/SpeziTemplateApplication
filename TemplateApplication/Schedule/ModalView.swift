@@ -31,8 +31,8 @@ struct ModalView: View {
                 Text(buttonText)
                     .frame(maxWidth: .infinity, minHeight: 38)
             }
-            .padding()
-            .buttonStyle(.borderedProminent)
+                .padding()
+                .buttonStyle(.borderedProminent)
         }
     }
 }
@@ -40,8 +40,10 @@ struct ModalView: View {
 
 #if DEBUG
 #Preview {
-    ModalView(text: "Preview Modal", buttonText: "Close") {
-        print("Preview Modal closed.")
+    Text("Background").sheet(isPresented: .constant(true)) {
+        ModalView(text: "Preview Modal", buttonText: "Close") {
+            print("Preview Modal closed.")
+        }
     }
 }
 #endif
