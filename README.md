@@ -17,6 +17,9 @@ SPDX-License-Identifier: MIT
 This repository contains the Spezi Template Application.
 It demonstrates using the [Spezi](https://github.com/StanfordSpezi/Spezi) framework template and builds on top of the [Stanford Biodesign Digital Health Template Application](https://github.com/StanfordBDHG/TemplateApplication).
 
+> [!NOTE] 
+> Do you want to try out the Spezi Template Application? You can download it to your iOS device using [TestFlight](https://testflight.apple.com/join/ipEezBY1)!
+
 
 ## Application Structure
 
@@ -88,7 +91,7 @@ It uses the [**Spezi Scheduler**](https://github.com/StanfordSpezi/SpeziSchedule
 ## Template Contacts
 
 The Contacts part of the application provides the functionality to display contact information in your application.
-It uses the [**Spezi Contacts** module](https://github.com/StanfordSpezi/SpeziContacts) to use the contact-related views provided by Spezi.
+It uses the [**Spezi Contacts** module](https://github.com/StanfordSpezi/SpeziContact) to use the contact-related views provided by Spezi.
 
 <p float="left">
  <img width="250" alt="A screen displaying the Contact UI." src="Figures/TemplateContacts/Contacts.png">
@@ -122,7 +125,7 @@ Please refer to the [Stanford Biodesign Digital Health Template Application](htt
 
 Contributions to this project are welcome. Please make sure to read the [contribution guidelines](https://github.com/StanfordSpezi/.github/blob/main/CONTRIBUTING.md) and the [contributor covenant code of conduct](https://github.com/StanfordSpezi/.github/blob/main/CODE_OF_CONDUCT.md) first.
 
-This project is based on [ContinuousDelivery Example by Paul Schmiedmayer](https://github.com/PSchmiedmayer/ContinousDelivery) and the [StanfordSpezi Template Application](https://github.com/StanfordSpezi/TemplateApplication) provided using the MIT license.
+This project is based on [ContinuousDelivery Example by Paul Schmiedmayer](https://github.com/PSchmiedmayer/ContinousDelivery) and the [Stanford Biodesign Digital Health Template Application](https://github.com/StanfordBDHG/TemplateApplication) provided using the MIT license.
 
 
 ## License

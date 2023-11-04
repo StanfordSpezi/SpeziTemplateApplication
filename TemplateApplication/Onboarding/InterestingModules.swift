@@ -19,19 +19,19 @@ struct InterestingModules: View {
             title: "INTERESTING_MODULES_TITLE",
             subtitle: "INTERESTING_MODULES_SUBTITLE",
             content: [
-                .init(
+                SequentialOnboardingView.Content(
                     title: "INTERESTING_MODULES_AREA1_TITLE",
                     description: "INTERESTING_MODULES_AREA1_DESCRIPTION"
                 ),
-                .init(
+                SequentialOnboardingView.Content(
                     title: "INTERESTING_MODULES_AREA2_TITLE",
                     description: "INTERESTING_MODULES_AREA2_DESCRIPTION"
                 ),
-                .init(
+                SequentialOnboardingView.Content(
                     title: "INTERESTING_MODULES_AREA3_TITLE",
                     description: "INTERESTING_MODULES_AREA3_DESCRIPTION"
                 ),
-                .init(
+                SequentialOnboardingView.Content(
                     title: "INTERESTING_MODULES_AREA4_TITLE",
                     description: "INTERESTING_MODULES_AREA4_DESCRIPTION"
                 )
