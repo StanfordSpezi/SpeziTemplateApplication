@@ -14,16 +14,29 @@ import SwiftUI
 
 
 struct ScheduleView: View {
-    @EnvironmentObject var scheduler: TemplateApplicationScheduler
-    @State var eventContextsByDate: [Date: [EventContext]] = [:]
-    @State var presentedContext: EventContext?
+    @EnvironmentObject private var scheduler: TemplateApplicationScheduler
+    @State private var eventContextsByDate: [Date: [EventContext]] = [:]
+    @State private var presentedContext: EventContext?
 
 
-    @Binding var presentingAccount: Bool
+    @Binding private var presentingAccount: Bool
 
     
-    var startOfDays: [Date] {
+    private var startOfDays: [Date] {
         Array(eventContextsByDate.keys)
+    }
+    
+    private var presentContextSheet: Binding<Bool> {
+        Binding(
+            get: {
+                presentedContext != nil
+            },
+            set: { newValue in
+                if !newValue {
+                    presentedContext = nil
+                }
+            }
+        )
     }
     
     
@@ -41,7 +54,7 @@ struct ScheduleView: View {
                     }
                 }
             }
-                .onChange(of: scheduler) { _ in
+                .onChange(of: scheduler) {
                     calculateEventContextsByDate()
                 }
                 .task {
@@ -69,7 +82,7 @@ struct ScheduleView: View {
         @ViewBuilder var destination: some View {
             switch eventContext.task.context {
             case let .questionnaire(questionnaire):
-                QuestionnaireView(questionnaire: questionnaire) { _ in
+                QuestionnaireView(questionnaire: questionnaire, isPresented: presentContextSheet) { _ in
                     await eventContext.event.complete(true)
                 }
             case let .test(string):
