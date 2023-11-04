@@ -17,6 +17,9 @@ SPDX-License-Identifier: MIT
 This repository contains the Spezi Template Application.
 It demonstrates using the [Spezi](https://github.com/StanfordSpezi/Spezi) framework template and builds on top of the [Stanford Biodesign Digital Health Template Application](https://github.com/StanfordBDHG/TemplateApplication).
 
+> [!NOTE] 
+> Do you want to try out the Spezi Template Application? You can download it to your iOS device using [TestFlight](https://testflight.apple.com/join/ipEezBY1)!
+
 
 ## Application Structure
 
