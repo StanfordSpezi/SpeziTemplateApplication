@@ -121,8 +121,8 @@ on:
       CHECKOUT_TOKEN:
         description: 'The Personal access token (PAT) to use with the checkout action'
         required: false
-      GOOGLE_SERVICE_INFO_PLIST:
-        description: 'The content of the GoogleService-Info.plist file that is used to replace the file found at googleserviceinfoplistpath if the arguemnt is set.'
+      GOOGLE_SERVICE_INFO_PLIST_BASE64:
+        description: 'The Base64 version of the GoogleService-Info.plist file that is used to replace the file found at googleserviceinfoplistpath if the arguemnt is set.'
         required: false
 
 jobs:
@@ -217,7 +217,7 @@ jobs:
     - name: Setup Google Services File
       if: ${{ inputs.googleserviceinfoplistpath != '' }}
       run: |
-        echo "${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}" > "${{ inputs.googleserviceinfoplistpath }}"
+        echo -n "${{ secrets.GOOGLE_SERVICE_INFO_PLIST_BASE64 }}" | base64 --decode -o "${{ inputs.googleserviceinfoplistpath }}"
     - name: Initialize CodeQL
       if: ${{ !env.selfhosted && inputs.codeql }}
       uses: github/codeql-action/init@v2
