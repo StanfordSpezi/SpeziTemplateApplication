@@ -34,5 +34,7 @@ jobs:
     name: Deploy Firebase Project
     # needs: iosapptestflightdeployment
     uses: ./.github/workflows/firebase-deploy.yml
+    with:
+      arguments: '--debug'
     secrets:
       GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
