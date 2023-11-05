@@ -44,7 +44,8 @@ You can start using the application without any additional installations if you 
 The application also provides a [Firebase Firestore](https://firebase.google.com/docs/firestore)-based data upload and [Firebase Authentication](https://firebase.google.com/docs/auth) login & sign-up.
 It is required to have the [Firebase Emulator Suite](https://firebase.google.com/docs/emulator-suite) to be up and running to use these features to build and test the application locally. Please follow the [installation instructions](https://firebase.google.com/docs/emulator-suite/install_and_configure). 
 
-You do not have to make any modifications to the Firebase configuration, login into the `firebase` CLI using your Google account, or create a project in Firebase to run, build, and test the application!
+> [!NOTE] 
+> You do not have to make any modifications to the Firebase configuration, login into the `firebase` CLI using your Google account, or create a project in Firebase to run, build, and test the application!
 
 Startup the [Firebase Emulator Suite](https://firebase.google.com/docs/emulator-suite) using
 ```
@@ -52,6 +53,20 @@ $ firebase emulators:start
 ```
 
 After the emulators have started up, you can run the application in your simulator to build, test, and run the application and see the results show up in Firebase.
+
+If you want to connect your project to a development or production Firebase cloud project, you can provide your [`GoogleService-Info.plist`](https://firebase.google.com/docs/ios/setup) in a base 64 representation in the [GitHub secrets](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions) (`GOOGLE_SERVICE_INFO_PLIST_BASE64`) of your project where it is picked up and loaded in the configured path setup in the [`beta-deployment.yml`](.github/workflows/beta-deployment.yml) [GitHub Action](https://docs.github.com/en/actions) using the `googleserviceinfoplistpath` parameter that needs to be adapted to your project structure.
+
+You can generate a base 64 representation of a file after you [navigated into the folder](https://en.wikipedia.org/wiki/Cd_(command)#Usage) where you have downloaded your [`GoogleService-Info.plist`](https://firebase.google.com/docs/ios/setup) file to.
+```shell
+base64 -i GoogleService-Info.plist
+```
+
+> [!WARNING]  
+> We do **not recommend** to commit your Firebase secrets and configuration file to your project. While it can extract the file from the deployed application, we encourage open-source projects to make it clear to contributors to set up their own Firebase project.
+
+The deployment requires you to store your Google service account JSON credentials in a base 64 representation in the `GOOGLE_APPLICATION_CREDENTIALS_BASE64`. You can learn more about how to generate the JSON in the [Firebase documentation](https://firebase.google.com/docs/app-distribution/authenticate-service-account). The service account must have the minimally required permissions (not the `Firebase App Distribution Admin` role) as documented at https://firebase.google.com/docs/projects/iam/roles-predefined for your deployment needs and setup.
+
+Be sure to update your `.firebaserc` project name and placeholder `GoogleService-Info.plist` project identifier to always reflect the name of your project and all security rules to reflect any changes in your application.
 
 
 ### Other Configuration Options
@@ -130,7 +145,7 @@ This project is based on [ContinuousDelivery Example by Paul Schmiedmayer](https
 
 ## License
 
-This project is licensed under the MIT License. See [Licenses](https://github.com/StanfordSpezi/Spezi/tree/main/LICENSES) for more information.
+This project is licensed under the MIT License. See [Licenses](LICENSES) for more information.
 
 ![Spezi Footer](https://raw.githubusercontent.com/StanfordSpezi/.github/main/assets/FooterLight.png#gh-light-mode-only)
 ![Spezi Footer](https://raw.githubusercontent.com/StanfordSpezi/.github/main/assets/FooterDark.png#gh-dark-mode-only)
