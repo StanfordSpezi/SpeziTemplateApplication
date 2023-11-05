@@ -75,15 +75,15 @@ platform :ios do
     )
     build
     commit = last_git_commit
-    upload_to_testflight(
-      distribute_external: true,
-      groups: [
-        "External Testers"
-      ],
-      submit_beta_review: true,
-      notify_external_testers: true,
-      expire_previous_builds: true,
-      changelog: commit[:message]
-    )
+    # upload_to_testflight(
+    #   distribute_external: true,
+    #   groups: [
+    #     "External Testers"
+    #   ],
+    #   submit_beta_review: true,
+    #   notify_external_testers: true,
+    #   expire_previous_builds: true,
+    #   changelog: commit[:message]
+    # )
   end
 end
