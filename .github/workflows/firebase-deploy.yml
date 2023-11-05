@@ -46,7 +46,7 @@ jobs:
       run: npm install -g firebase-tools
     - name: Deploy to Firebase
       run: |
-        echo -n "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}" | base64 --decode -o "$RUNNER_TEMP/google-application-credentials.json"
+        echo -n "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}" | base64 -d > "$RUNNER_TEMP/google-application-credentials.json"
         export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/google-application-credentials.json"
         echo "Stored the Google application credentials at $GOOGLE_APPLICATION_CREDENTIALS"
         firebase deploy ${{ inputs.arguments }}
