@@ -15,16 +15,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  # buildandtest:
-  #   name: Build and Test
-  #   uses: ./.github/workflows/build-and-test.yml
-  #   permissions:
-  #     security-events: write
-  #     actions: read
+  buildandtest:
+    name: Build and Test
+    uses: ./.github/workflows/build-and-test.yml
+    permissions:
+      security-events: write
+      actions: read
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
-    # needs: buildandtest
-    uses: ./.github/workflows/xcodebuild-or-fastlane.yml
+    needs: buildandtest
+    uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@firebaseDeployment
     secrets: inherit
     with:
       googleserviceinfoplistpath: 'TemplateApplication/Supporting Files/GoogleService-Info.plist'
@@ -32,8 +32,8 @@ jobs:
       fastlanelane: beta
   deployfirebase:
     name: Deploy Firebase Project
-    # needs: iosapptestflightdeployment
-    uses: ./.github/workflows/firebase-deploy.yml
+    needs: iosapptestflightdeployment
+    uses: StanfordSpezi/.github/.github/workflows/firebase-deploy.yml@firebaseDeployment
     with:
       arguments: '--debug'
     secrets:
