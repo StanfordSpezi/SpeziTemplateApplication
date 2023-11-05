@@ -6,7 +6,6 @@
 // SPDX-License-Identifier: MIT
 //
 
-
 import SpeziAccount
 import SpeziQuestionnaire
 import SpeziScheduler
@@ -20,7 +19,7 @@ struct ScheduleView: View {
 
 
     @Binding private var presentingAccount: Bool
-
+    
     
     private var startOfDays: [Date] {
         Array(eventContextsByDate.keys)
@@ -71,12 +70,12 @@ struct ScheduleView: View {
                 .navigationTitle("SCHEDULE_LIST_TITLE")
         }
     }
-
-
+    
+    
     init(presentingAccount: Binding<Bool>) {
         self._presentingAccount = presentingAccount
     }
-
+    
     
     private func destination(withContext eventContext: EventContext) -> some View {
         @ViewBuilder var destination: some View {
@@ -127,19 +126,19 @@ struct ScheduleView: View {
 
 
 #if DEBUG
-struct SchedulerView_Previews: PreviewProvider {
-    static let details = AccountDetails.Builder()
+#Preview("ScheduleView") {
+    ScheduleView(presentingAccount: .constant(false))
+        .environmentObject(TemplateApplicationScheduler())
+        .environmentObject(Account())
+}
+
+#Preview("ScheduleView") {
+    let details = AccountDetails.Builder()
         .set(\.userId, value: "lelandstanford@stanford.edu")
         .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
-
-    static var previews: some View {
-        ScheduleView(presentingAccount: .constant(false))
-            .environmentObject(TemplateApplicationScheduler())
-            .environmentObject(Account())
-
-        ScheduleView(presentingAccount: .constant(true))
-            .environmentObject(TemplateApplicationScheduler())
-            .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
-    }
+    
+    return ScheduleView(presentingAccount: .constant(true))
+        .environmentObject(TemplateApplicationScheduler())
+        .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
 }
 #endif

@@ -66,12 +66,10 @@ struct HealthKitPermissions: View {
 
 
 #if DEBUG
-struct HealthKitPermissions_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingStack(startAtStep: HealthKitPermissions.self) {
-            for onboardingView in OnboardingFlow.previewSimulatorViews {
-                onboardingView
-            }
+#Preview {
+    OnboardingStack(startAtStep: HealthKitPermissions.self) {
+        for onboardingView in OnboardingFlow.previewSimulatorViews {
+            onboardingView
         }
     }
 }

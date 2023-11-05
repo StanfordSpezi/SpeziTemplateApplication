@@ -64,21 +64,18 @@ struct EventContextView: View {
 
 
 #if DEBUG
-struct EventContextView_Previews: PreviewProvider {
-    private static let task = TemplateApplicationScheduler.socialSupportTask
-
+#Preview(traits: .sizeThatFitsLayout) {
+    let task = TemplateApplicationScheduler.socialSupportTask
     
-    static var previews: some View {
-        EventContextView(
-            eventContext: EventContext(
-                // We use a force unwrap in the preview as we can not recover from an error here
-                // and the code will never end up in a production environment.
-                // swiftlint:disable:next force_unwrapping
-                event: task.events(from: .now.addingTimeInterval(-60 * 60 * 24)).first!,
-                task: task
-            )
+    return EventContextView(
+        eventContext: EventContext(
+            // We use a force unwrap in the preview as we can not recover from an error here
+            // and the code will never end up in a production environment.
+            // swiftlint:disable:next force_unwrapping
+            event: task.events(from: .now.addingTimeInterval(-60 * 60 * 24)).first!,
+            task: task
         )
-            .padding()
-    }
+    )
+        .padding()
 }
 #endif
