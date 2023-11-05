@@ -33,7 +33,7 @@ jobs:
   deployfirebase:
     name: Deploy Firebase Project
     needs: iosapptestflightdeployment
-    uses: StanfordSpezi/.github/.github/workflows/firebase-deploy.yml@firebaseDeployment
+    uses: StanfordBDHG/.github/.github/workflows/firebase-deploy.yml@firebaseDeployment
     with:
       arguments: '--debug'
     secrets:
