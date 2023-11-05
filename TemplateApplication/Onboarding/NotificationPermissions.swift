@@ -66,12 +66,10 @@ struct NotificationPermissions: View {
 
 
 #if DEBUG
-struct NotificationPermissions_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingStack(startAtStep: NotificationPermissions.self) {
-            for onboardingView in OnboardingFlow.previewSimulatorViews {
-                onboardingView
-            }
+#Preview {
+    OnboardingStack(startAtStep: NotificationPermissions.self) {
+        for onboardingView in OnboardingFlow.previewSimulatorViews {
+            onboardingView
         }
     }
 }

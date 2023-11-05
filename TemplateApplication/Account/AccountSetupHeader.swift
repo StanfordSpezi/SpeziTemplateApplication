@@ -36,10 +36,8 @@ struct AccountSetupHeader: View {
 
 
 #if DEBUG
-struct AccountSetupHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        AccountSetupHeader()
-            .environmentObject(Account())
-    }
+#Preview {
+    AccountSetupHeader()
+        .environmentObject(Account())
 }
 #endif

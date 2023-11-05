@@ -54,20 +54,18 @@ struct OnboardingFlow: View {
                 NotificationPermissions()
             }
         }
-        .task {
-            localNotificationAuthorization = await scheduler.localNotificationAuthorization
-        }
-        .interactiveDismissDisabled(!completedOnboardingFlow)
+            .task {
+                localNotificationAuthorization = await scheduler.localNotificationAuthorization
+            }
+            .interactiveDismissDisabled(!completedOnboardingFlow)
     }
 }
 
 
 #if DEBUG
-struct OnboardingFlow_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingFlow()
-            .environmentObject(Account(MockUserIdPasswordAccountService()))
-            .environmentObject(TemplateApplicationScheduler())
-    }
+#Preview {
+    OnboardingFlow()
+        .environmentObject(Account(MockUserIdPasswordAccountService()))
+        .environmentObject(TemplateApplicationScheduler())
 }
 #endif

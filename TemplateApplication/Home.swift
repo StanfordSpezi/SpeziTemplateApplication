@@ -58,12 +58,14 @@ struct HomeView: View {
 
 
 #if DEBUG
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-            .environmentObject(Account(MockUserIdPasswordAccountService()))
-            .environmentObject(TemplateApplicationScheduler())
-            .environmentObject(MockWebService())
-    }
+#Preview {
+    let details = AccountDetails.Builder()
+        .set(\.userId, value: "lelandstanford@stanford.edu")
+        .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
+    
+    return HomeView()
+        .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
+        .environmentObject(TemplateApplicationScheduler())
+        .environmentObject(MockWebService())
 }
 #endif

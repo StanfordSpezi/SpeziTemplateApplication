@@ -41,16 +41,16 @@ struct Contacts: View {
                     title: "Website",
                     action: {
                         if let url = URL(string: "https://stanford.edu") {
-                           UIApplication.shared.open(url)
+                            UIApplication.shared.open(url)
                         }
                     }
                 )
             ]
         )
     ]
-
+    
     @Binding var presentingAccount: Bool
-
+    
     
     var body: some View {
         NavigationStack {
@@ -63,8 +63,8 @@ struct Contacts: View {
                 }
         }
     }
-
-
+    
+    
     init(presentingAccount: Binding<Bool>) {
         self._presentingAccount = presentingAccount
     }
@@ -72,9 +72,7 @@ struct Contacts: View {
 
 
 #if DEBUG
-struct Contacts_Previews: PreviewProvider {
-    static var previews: some View {
-        Contacts(presentingAccount: .constant(false))
-    }
+#Preview {
+    Contacts(presentingAccount: .constant(false))
 }
 #endif

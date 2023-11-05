@@ -12,7 +12,7 @@ import SwiftUI
 
 struct ModalView: View {
     @Environment(\.dismiss) private var dismiss
-
+    
     let text: String
     let buttonText: String
     let onClose: () async -> Void
@@ -38,10 +38,12 @@ struct ModalView: View {
 }
 
 
-struct ModalView_Previews: PreviewProvider {
-    static var previews: some View {
+#if DEBUG
+#Preview {
+    Text("Background").sheet(isPresented: .constant(true)) {
         ModalView(text: "Preview Modal", buttonText: "Close") {
             print("Preview Modal closed.")
         }
     }
 }
+#endif
