@@ -13,7 +13,7 @@ import SwiftUI
 
 
 struct ScheduleView: View {
-    @EnvironmentObject private var scheduler: TemplateApplicationScheduler
+    @Environment(TemplateApplicationScheduler.self) private var scheduler
     @State private var eventContextsByDate: [Date: [EventContext]] = [:]
     @State private var presentedContext: EventContext?
 
@@ -53,7 +53,7 @@ struct ScheduleView: View {
                     }
                 }
             }
-                .onChange(of: scheduler) {
+                .onChange(of: scheduler) { _ in // TODO: EQ!
                     calculateEventContextsByDate()
                 }
                 .task {
@@ -118,9 +118,7 @@ struct ScheduleView: View {
             Calendar.current.startOfDay(for: eventContext.event.scheduledAt)
         }
         
-        if newEventContextsByDate != eventContextsByDate {
-            eventContextsByDate = newEventContextsByDate
-        }
+        eventContextsByDate = newEventContextsByDate
     }
 }
 
@@ -128,8 +126,8 @@ struct ScheduleView: View {
 #if DEBUG
 #Preview("ScheduleView") {
     ScheduleView(presentingAccount: .constant(false))
-        .environmentObject(TemplateApplicationScheduler())
-        .environmentObject(Account())
+        .environment(TemplateApplicationScheduler())
+        .environment(Account())
 }
 
 #Preview("ScheduleView") {
@@ -138,7 +136,7 @@ struct ScheduleView: View {
         .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
     
     return ScheduleView(presentingAccount: .constant(true))
-        .environmentObject(TemplateApplicationScheduler())
-        .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
+        .environment(TemplateApplicationScheduler())
+        .environment(Account(building: details, active: MockUserIdPasswordAccountService()))
 }
 #endif

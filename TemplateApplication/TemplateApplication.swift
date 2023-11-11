@@ -29,8 +29,6 @@ struct TemplateApplication: App {
                 .sheet(isPresented: !$completedOnboardingFlow) {
                     OnboardingFlow()
                 }
-                .standardAccountUpdate()
-                .firebaseAccount(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding)
                 .testingSetup()
                 .spezi(appDelegate)
         }

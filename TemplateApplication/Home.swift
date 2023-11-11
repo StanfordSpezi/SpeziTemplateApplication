@@ -21,7 +21,7 @@ struct HomeView: View {
     
     @AppStorage(StorageKeys.homeTabSelection) var selectedTab = Tabs.schedule
 
-    @EnvironmentObject private var account: Account
+    @Environment(Account.self) private var account
 
     @State private var presentingAccount = false
 
@@ -64,8 +64,8 @@ struct HomeView: View {
         .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
     
     return HomeView()
-        .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
-        .environmentObject(TemplateApplicationScheduler())
-        .environmentObject(MockWebService())
+        .environment(Account(building: details, active: MockUserIdPasswordAccountService()))
+        .environment(TemplateApplicationScheduler())
+        .environment(MockWebService())
 }
 #endif

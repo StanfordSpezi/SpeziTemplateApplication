@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct AccountSetupHeader: View {
-    @EnvironmentObject private var account: Account
+    @Environment(Account.self) private var account
     @Environment(\._accountSetupState) private var setupState
     
     
@@ -38,6 +38,6 @@ struct AccountSetupHeader: View {
 #if DEBUG
 #Preview {
     AccountSetupHeader()
-        .environmentObject(Account())
+        .environment(Account())
 }
 #endif

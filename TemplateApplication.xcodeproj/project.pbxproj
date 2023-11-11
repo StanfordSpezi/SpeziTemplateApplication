@@ -76,9 +76,8 @@
 		97D73D6A2AD860AD00B47FA0 /* SpeziFirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 97D73D692AD860AD00B47FA0 /* SpeziFirebaseStorage */; };
 		97D8B2A42A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8B2A32A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift */; };
 		97D8B2AB2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */; };
-		A92525A72ABC4B5F00640379 /* AccountUpdateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92525A62ABC4B5F00640379 /* AccountUpdateModifier.swift */; };
-		A92525AB2ABC4EB200640379 /* AccountRequiredKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92525AA2ABC4EB200640379 /* AccountRequiredKey.swift */; };
 		A9720E432ABB68CC00872D23 /* AccountSetupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */; };
+		A9805D2C2AFF056500E7EF68 /* AccountStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9805D2B2AFF056500E7EF68 /* AccountStorage.swift */; };
 		A9DFE8A92ABE551400428242 /* AccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DFE8A82ABE551400428242 /* AccountButton.swift */; };
 		A9FE7AD02AA39BAB0077B045 /* AccountSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FE7ACF2AA39BAB0077B045 /* AccountSheet.swift */; };
 /* End PBXBuildFile section */
@@ -151,9 +150,8 @@
 		653A258928339462005D4D48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97D8B2A32A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+PreviewSimulator.swift"; sourceTree = "<group>"; };
 		97D8B2AA2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingFlow+PreviewSimulator.swift"; sourceTree = "<group>"; };
-		A92525A62ABC4B5F00640379 /* AccountUpdateModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountUpdateModifier.swift; sourceTree = "<group>"; };
-		A92525AA2ABC4EB200640379 /* AccountRequiredKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequiredKey.swift; sourceTree = "<group>"; };
 		A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSetupHeader.swift; sourceTree = "<group>"; };
+		A9805D2B2AFF056500E7EF68 /* AccountStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountStorage.swift; sourceTree = "<group>"; };
 		A9DFE8A82ABE551400428242 /* AccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountButton.swift; sourceTree = "<group>"; };
 		A9FE7ACF2AA39BAB0077B045 /* AccountSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -382,9 +380,8 @@
 			children = (
 				A9FE7ACF2AA39BAB0077B045 /* AccountSheet.swift */,
 				A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */,
-				A92525A62ABC4B5F00640379 /* AccountUpdateModifier.swift */,
-				A92525AA2ABC4EB200640379 /* AccountRequiredKey.swift */,
 				A9DFE8A82ABE551400428242 /* AccountButton.swift */,
+				A9805D2B2AFF056500E7EF68 /* AccountStorage.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -623,6 +620,7 @@
 				2FE5DC4529EDD7F2004B9AB4 /* Binding+Negate.swift in Sources */,
 				2FC975A82978F11A00BA99FE /* Home.swift in Sources */,
 				2FE5DC4E29EDD7FA004B9AB4 /* ScheduleView.swift in Sources */,
+				A9805D2C2AFF056500E7EF68 /* AccountStorage.swift in Sources */,
 				A9DFE8A92ABE551400428242 /* AccountButton.swift in Sources */,
 				2FE5DC3729EDD7CA004B9AB4 /* OnboardingFlow.swift in Sources */,
 				2FF53D8D2A8729D600042B76 /* TemplateApplicationStandard.swift in Sources */,
@@ -639,14 +637,12 @@
 				56F6F2A02AB441930022FE5A /* ContributionsList.swift in Sources */,
 				566155292AB8447C00209B80 /* Package+LicenseType.swift in Sources */,
 				5680DD392AB8983D004E6D4A /* PackageCell.swift in Sources */,
-				A92525A72ABC4B5F00640379 /* AccountUpdateModifier.swift in Sources */,
 				2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */,
 				2FE5DC5229EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift in Sources */,
 				A9FE7AD02AA39BAB0077B045 /* AccountSheet.swift in Sources */,
 				653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */,
 				2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */,
 				2F65B44E2A3B8B0600A36932 /* NotificationPermissions.swift in Sources */,
-				A92525AB2ABC4EB200640379 /* AccountRequiredKey.swift in Sources */,
 				97D8B2A42A7653E600715F50 /* ProcessInfo+PreviewSimulator.swift in Sources */,
 				5661552E2AB854C000209B80 /* PackageHelper.swift in Sources */,
 				27FA29902A388E9B009CAC45 /* ModalView.swift in Sources */,
@@ -1182,8 +1178,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziScheduler.git";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.6.3;
+				branch = "feature/restructuring-spezi-upgrade";
+				kind = branch;
 			};
 		};
 		2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "Spezi" */ = {
@@ -1191,7 +1187,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/Spezi";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.7.2;
+				minimumVersion = 0.8.0;
 			};
 		};
 		2FB099B42A875E2B00B20952 /* XCRemoteSwiftPackageReference "HealthKitOnFHIR" */ = {
@@ -1207,7 +1203,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziAccount.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.6.1;
+				minimumVersion = 0.7.1;
 			};
 		};
 		2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */ = {
@@ -1215,7 +1211,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziContact.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.1;
+				minimumVersion = 0.5.0;
 			};
 		};
 		2FE5DC7029EDD8D3004B9AB4 /* XCRemoteSwiftPackageReference "SpeziHealthKit" */ = {
@@ -1223,23 +1219,23 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziHealthKit.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.3.1;
+				minimumVersion = 0.4.0;
 			};
 		};
 		2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziFirebase.git";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.7.1;
+				branch = "feature/spezi-upgrade";
+				kind = branch;
 			};
 		};
 		2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "SpeziQuestionnaire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziQuestionnaire.git";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.3;
+				branch = "feature/upgrade-spezi";
+				kind = branch;
 			};
 		};
 		2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "SpeziStorage" */ = {
@@ -1247,7 +1243,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziStorage.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.3;
+				minimumVersion = 0.5.0;
 			};
 		};
 		2FE5DC8D29EDD980004B9AB4 /* XCRemoteSwiftPackageReference "SpeziViews" */ = {
@@ -1255,7 +1251,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziViews.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.5.1;
+				minimumVersion = 0.6.2;
 			};
 		};
 		2FE5DC9029EDD9C3004B9AB4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -1287,15 +1283,15 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziMockWebService.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.0;
+				minimumVersion = 0.3.0;
 			};
 		};
 		2FE750CB2A87255000723EAE /* XCRemoteSwiftPackageReference "SpeziFHIR" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziFHIR.git";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.0;
+				branch = "feature/spezi-0.8";
+				kind = branch;
 			};
 		};
 		5661551B2AB8384200209B80 /* XCRemoteSwiftPackageReference "swift-package-list" */ = {
@@ -1310,8 +1306,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziOnboarding";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.6.2;
+				branch = "feature/string-catalogs-and-spezi";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

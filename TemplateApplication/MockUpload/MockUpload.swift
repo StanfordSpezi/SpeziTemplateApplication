@@ -34,6 +34,6 @@ struct MockUpload: View {
 #if DEBUG
 #Preview {
     MockUpload(presentingAccount: .constant(false))
-        .environmentObject(MockWebService())
+        .environment(MockWebService())
 }
 #endif
