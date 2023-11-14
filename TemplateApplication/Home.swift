@@ -21,8 +21,6 @@ struct HomeView: View {
     
     @AppStorage(StorageKeys.homeTabSelection) var selectedTab = Tabs.schedule
 
-    @Environment(Account.self) private var account
-
     @State private var presentingAccount = false
 
     
@@ -49,10 +47,23 @@ struct HomeView: View {
             .sheet(isPresented: $presentingAccount) {
                 AccountSheet()
             }
-            .accountRequired(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding) {
-                AccountSheet()
-            }
-            .verifyRequiredAccountDetails(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding)
+            .configureAccount(enable: !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding)
+    }
+}
+
+
+extension View {
+    @ViewBuilder
+    func configureAccount(enable: Bool) -> some View {
+        if enable {
+            self
+                .accountRequired(enable) {
+                    AccountSheet()
+                }
+                .verifyRequiredAccountDetails(enable)
+        } else {
+            self
+        }
     }
 }
 

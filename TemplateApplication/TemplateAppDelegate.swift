@@ -24,8 +24,7 @@ class TemplateAppDelegate: SpeziAppDelegate {
             if !FeatureFlags.disableFirebase {
                 AccountConfiguration(configuration: [
                     .requires(\.userId),
-                    .collects(\.name),
-                    .collects(\.dateOfBirth)
+                    .collects(\.name)
                 ])
 
                 if FeatureFlags.useFirebaseEmulator {
