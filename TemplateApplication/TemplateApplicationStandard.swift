@@ -23,7 +23,7 @@ import SwiftUI
 
 
 actor TemplateApplicationStandard: Standard, EnvironmentAccessible,
-                                   HealthKitConstraint, QuestionnaireConstraint, AccountStorageStandard, OnboardingConstraint {
+                                   HealthKitConstraint, AccountStorageStandard, OnboardingConstraint {
     enum TemplateApplicationStandardError: Error {
         case userNotAuthenticatedYet
     }

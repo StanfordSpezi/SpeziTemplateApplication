@@ -13,6 +13,7 @@ import SwiftUI
 
 
 struct ScheduleView: View {
+    @Environment(TemplateApplicationStandard.self) private var standard
     @Environment(TemplateApplicationScheduler.self) private var scheduler
     @State private var eventContextsByDate: [Date: [EventContext]] = [:]
     @State private var presentedContext: EventContext?
@@ -23,19 +24,6 @@ struct ScheduleView: View {
     
     private var startOfDays: [Date] {
         Array(eventContextsByDate.keys)
-    }
-    
-    private var presentContextSheet: Binding<Bool> {
-        Binding(
-            get: {
-                presentedContext != nil
-            },
-            set: { newValue in
-                if !newValue {
-                    presentedContext = nil
-                }
-            }
-        )
     }
     
     
@@ -53,7 +41,7 @@ struct ScheduleView: View {
                     }
                 }
             }
-                .onChange(of: scheduler) { _ in // TODO: EQ!
+                .onChange(of: scheduler) {
                     calculateEventContextsByDate()
                 }
                 .task {
@@ -81,8 +69,15 @@ struct ScheduleView: View {
         @ViewBuilder var destination: some View {
             switch eventContext.task.context {
             case let .questionnaire(questionnaire):
-                QuestionnaireView(questionnaire: questionnaire, isPresented: presentContextSheet) { _ in
-                    await eventContext.event.complete(true)
+                QuestionnaireView(questionnaire: questionnaire) { result in
+                    presentedContext = nil
+
+                    guard case let .completed(response) = result else {
+                        return // user cancelled the task
+                    }
+
+                    eventContext.event.complete(true)
+                    await standard.add(response: response)
                 }
             case let .test(string):
                 ModalView(text: string, buttonText: String(localized: "CLOSE")) {
