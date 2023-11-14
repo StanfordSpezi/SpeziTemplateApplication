@@ -39,12 +39,8 @@ actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitCon
             guard let details = await account.details else {
                 throw TemplateApplicationStandardError.userNotAuthenticatedYet
             }
-            
 
-            return Firestore
-                .firestore()
-                .collection("users")
-                .document(details.accountId)
+            return Firestore.firestore().collection("users").document(details.accountId)
         }
     }
     
