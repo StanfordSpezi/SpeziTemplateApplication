@@ -1199,7 +1199,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziAccount.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.7.1;
+				minimumVersion = 0.7.3;
 			};
 		};
 		2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */ = {

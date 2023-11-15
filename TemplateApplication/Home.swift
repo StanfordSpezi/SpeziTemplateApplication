@@ -23,6 +23,10 @@ struct HomeView: View {
 
     @State private var presentingAccount = false
 
+    static var accountEnabled: Bool {
+        !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding
+    }
+
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -47,23 +51,10 @@ struct HomeView: View {
             .sheet(isPresented: $presentingAccount) {
                 AccountSheet()
             }
-            .configureAccount(enable: !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding)
-    }
-}
-
-
-extension View {
-    @ViewBuilder
-    func configureAccount(enable: Bool) -> some View {
-        if enable {
-            self
-                .accountRequired(enable) {
-                    AccountSheet()
-                }
-                .verifyRequiredAccountDetails(enable)
-        } else {
-            self
-        }
+            .accountRequired(Self.accountEnabled) {
+                AccountSheet()
+            }
+            .verifyRequiredAccountDetails(Self.accountEnabled)
     }
 }
 
