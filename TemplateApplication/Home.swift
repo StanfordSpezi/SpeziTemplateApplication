@@ -18,14 +18,13 @@ struct HomeView: View {
         case mockUpload
     }
     
-    
-    @AppStorage(StorageKeys.homeTabSelection) var selectedTab = Tabs.schedule
-
-    @State private var presentingAccount = false
-
     static var accountEnabled: Bool {
         !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding
     }
+
+
+    @AppStorage(StorageKeys.homeTabSelection) private var selectedTab = Tabs.schedule
+    @State private var presentingAccount = false
 
     
     var body: some View {

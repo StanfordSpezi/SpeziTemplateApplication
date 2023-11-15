@@ -1174,8 +1174,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziScheduler.git";
 			requirement = {
-				branch = "feature/restructuring-spezi-upgrade";
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.7.0;
 			};
 		};
 		2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "Spezi" */ = {
@@ -1230,8 +1230,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziQuestionnaire.git";
 			requirement = {
-				branch = "feature/upgrade-spezi";
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.5.0;
 			};
 		};
 		2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "SpeziStorage" */ = {

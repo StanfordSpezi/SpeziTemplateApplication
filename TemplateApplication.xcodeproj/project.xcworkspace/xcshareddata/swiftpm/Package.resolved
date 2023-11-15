@@ -221,8 +221,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziQuestionnaire.git",
       "state" : {
-        "branch" : "feature/upgrade-spezi",
-        "revision" : "d65394b5a077febd3c015a562da08956c30a31f4"
+        "revision" : "4f3e1cd25c271244a4f8fe3653969f17063603a6",
+        "version" : "0.5.0"
       }
     },
     {
@@ -230,8 +230,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
       "state" : {
-        "branch" : "feature/restructuring-spezi-upgrade",
-        "revision" : "1e4d026e3585df4ab584ed9fb005f9c61c0dc885"
+        "revision" : "5cb5f592adf11e9d390d7639c6f905ac8145eeba",
+        "version" : "0.7.0"
       }
     },
     {
