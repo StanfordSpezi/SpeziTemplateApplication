@@ -12,7 +12,7 @@ import SwiftUI
 
 /// - Note: The `OnboardingConsentView` exports the signed consent form as PDF to the Spezi `Standard`, necessitating the conformance of the `Standard` to the `OnboardingConstraint`.
 struct Consent: View {
-    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
+    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
     
     
     private var consentDocument: Data {

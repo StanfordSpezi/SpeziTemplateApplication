@@ -14,7 +14,6 @@ import SpeziFirestore
 import SpeziHealthKit
 import SpeziMockWebService
 import SpeziOnboarding
-import SpeziQuestionnaire
 import SpeziScheduler
 import SwiftUI
 
@@ -46,7 +45,6 @@ class TemplateAppDelegate: SpeziAppDelegate {
             if HKHealthStore.isHealthDataAvailable() {
                 healthKit
             }
-            QuestionnaireDataSource()
             MockWebService()
             TemplateApplicationScheduler()
             OnboardingDataSource()

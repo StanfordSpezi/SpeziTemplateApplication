@@ -18,11 +18,12 @@ struct HomeView: View {
         case mockUpload
     }
     
-    
-    @AppStorage(StorageKeys.homeTabSelection) var selectedTab = Tabs.schedule
+    static var accountEnabled: Bool {
+        !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding
+    }
 
-    @EnvironmentObject private var account: Account
 
+    @AppStorage(StorageKeys.homeTabSelection) private var selectedTab = Tabs.schedule
     @State private var presentingAccount = false
 
     
@@ -49,10 +50,10 @@ struct HomeView: View {
             .sheet(isPresented: $presentingAccount) {
                 AccountSheet()
             }
-            .accountRequired(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding) {
+            .accountRequired(Self.accountEnabled) {
                 AccountSheet()
             }
-            .verifyRequiredAccountDetails(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding)
+            .verifyRequiredAccountDetails(Self.accountEnabled)
     }
 }
 
@@ -64,8 +65,8 @@ struct HomeView: View {
         .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
     
     return HomeView()
-        .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
-        .environmentObject(TemplateApplicationScheduler())
-        .environmentObject(MockWebService())
+        .environment(Account(building: details, active: MockUserIdPasswordAccountService()))
+        .environment(TemplateApplicationScheduler())
+        .environment(MockWebService())
 }
 #endif

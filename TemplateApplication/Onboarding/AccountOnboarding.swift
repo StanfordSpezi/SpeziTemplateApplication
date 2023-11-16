@@ -12,8 +12,8 @@ import SwiftUI
 
 
 struct AccountOnboarding: View {
-    @EnvironmentObject private var account: Account
-    @EnvironmentObject private var onboardingNavigationPath: OnboardingNavigationPath
+    @Environment(Account.self) private var account
+    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
     
     
     var body: some View {
@@ -44,7 +44,7 @@ struct AccountOnboarding: View {
             onboardingView
         }
     }
-        .environmentObject(Account(MockUserIdPasswordAccountService()))
+        .environment(Account(MockUserIdPasswordAccountService()))
 }
 
 #Preview("Account Onboarding") {
@@ -57,6 +57,6 @@ struct AccountOnboarding: View {
             onboardingView
         }
     }
-        .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
+        .environment(Account(building: details, active: MockUserIdPasswordAccountService()))
 }
 #endif

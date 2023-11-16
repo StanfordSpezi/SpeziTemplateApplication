@@ -206,6 +206,12 @@ extension XCUIApplication {
         XCTAssertTrue(alerts[alert].waitForExistence(timeout: 6.0))
         alerts[alert].buttons["Delete"].tap()
 
+        XCTAssertTrue(alerts["Authentication Required"].waitForExistence(timeout: 2.0))
+        XCTAssertTrue(alerts["Authentication Required"].secureTextFields["Password"].waitForExistence(timeout: 0.5))
+        typeText("StanfordRocks") // the password field has focus already
+        XCTAssertTrue(alerts["Authentication Required"].buttons["Login"].waitForExistence(timeout: 0.5))
+        alerts["Authentication Required"].buttons["Login"].tap()
+
         sleep(2)
 
         // Login
@@ -214,5 +220,7 @@ extension XCUIApplication {
 
         XCTAssertTrue(buttons["Login"].waitForExistence(timeout: 0.5))
         buttons["Login"].tap()
+
+        XCTAssertTrue(alerts["Invalid Credentials"].waitForExistence(timeout: 2.0))
     }
 }

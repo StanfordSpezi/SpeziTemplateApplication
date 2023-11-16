@@ -15,9 +15,9 @@ import SwiftUI
 
 /// Displays an multi-step onboarding flow for the Spezi Template Application.
 struct OnboardingFlow: View {
-    @EnvironmentObject private var healthKitDataSource: HealthKit
-    @EnvironmentObject private var scheduler: TemplateApplicationScheduler
-    
+    @Environment(HealthKit.self) private var healthKitDataSource
+    @Environment(TemplateApplicationScheduler.self) private var scheduler
+
     @AppStorage(StorageKeys.onboardingFlowComplete) private var completedOnboardingFlow = false
     
     @State private var localNotificationAuthorization = false
@@ -65,7 +65,7 @@ struct OnboardingFlow: View {
 #if DEBUG
 #Preview {
     OnboardingFlow()
-        .environmentObject(Account(MockUserIdPasswordAccountService()))
-        .environmentObject(TemplateApplicationScheduler())
+        .environment(Account(MockUserIdPasswordAccountService()))
+        .environment(TemplateApplicationScheduler())
 }
 #endif

@@ -13,7 +13,7 @@ import SwiftUI
 struct AccountSheet: View {
     @Environment(\.dismiss) var dismiss
     
-    @EnvironmentObject var account: Account
+    @Environment(Account.self) private var account
     @Environment(\.accountRequired) var accountRequired
     
     @State var isInSetup = false
@@ -75,11 +75,11 @@ struct AccountSheet: View {
         .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
     
     return AccountSheet()
-        .environmentObject(Account(building: details, active: MockUserIdPasswordAccountService()))
+        .environment(Account(building: details, active: MockUserIdPasswordAccountService()))
 }
 
 #Preview("AccountSheet SignIn") {
     AccountSheet()
-        .environmentObject(Account(MockUserIdPasswordAccountService()))
+        .environment(Account(MockUserIdPasswordAccountService()))
 }
 #endif

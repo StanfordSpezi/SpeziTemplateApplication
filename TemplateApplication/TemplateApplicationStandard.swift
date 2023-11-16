@@ -22,14 +22,13 @@ import SpeziQuestionnaire
 import SwiftUI
 
 
-actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectProvider, HealthKitConstraint,
-                                   QuestionnaireConstraint, AccountNotifyStandard, OnboardingConstraint {
+actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitConstraint, OnboardingConstraint {
     enum TemplateApplicationStandardError: Error {
         case userNotAuthenticatedYet
     }
-    
-    
+
     @Dependency var mockWebService = MockWebService()
+
     @AccountReference var account: Account
 
     private let logger = Logger(subsystem: "TemplateApplication", category: "Standard")
@@ -40,7 +39,7 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
             guard let details = await account.details else {
                 throw TemplateApplicationStandardError.userNotAuthenticatedYet
             }
-            
+
             return Firestore.firestore().collection("users").document(details.accountId)
         }
     }
@@ -52,26 +51,6 @@ actor TemplateApplicationStandard: Standard, ObservableObject, ObservableObjectP
             }
 
             return Storage.storage().reference().child("users/\(details.accountId)")
-        }
-    }
-
-    
-    func updateAccount(details: AccountDetails) async {
-        guard !FeatureFlags.disableFirebase else {
-            try? await mockWebService.upload(path: "user", body: "Account Update")
-            return
-        }
-
-        let data: [String: Any] = [
-            "id": details.userId,
-            "firstName": details.name?.givenName ?? "",
-            "lastName": details.name?.familyName ?? ""
-        ]
-        
-        do {
-            try await userDocumentReference.setData(data)
-        } catch {
-            logger.error("Could not update user information in Firebase: \(error)")
         }
     }
     
