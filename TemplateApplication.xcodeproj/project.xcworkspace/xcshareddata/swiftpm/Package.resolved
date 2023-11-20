@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "app-check",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/app-check.git",
+      "state" : {
+        "revision" : "5746b2d35c91c50581590ed97abe4c06b5037274",
+        "version" : "10.18.0"
+      }
+    },
+    {
       "identity" : "fhirmodels",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/FHIRModels",
@@ -23,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk.git",
       "state" : {
-        "revision" : "8872dbd7d947acf757abab933da10e83c1842280",
-        "version" : "10.17.0"
+        "revision" : "5de0369ee79ad096c164eb3afeb7921d92a43b58",
+        "version" : "10.18.0"
       }
     },
     {
@@ -77,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR.git",
       "state" : {
-        "revision" : "fdf8e4543718a940643598e4bd5e750e9c4c5540",
-        "version" : "0.2.4"
+        "revision" : "825e96007d83ed83f81ee49eb3ebab29d7b7ba2f",
+        "version" : "0.2.5"
       }
     },
     {
@@ -149,8 +158,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
-        "revision" : "d65ad46827f748af7f6c99bd783f74225b530747",
-        "version" : "0.7.3"
+        "revision" : "a9d37971e78fbdce02b0f8b57edfd2eecd4bb22e",
+        "version" : "0.8.1"
       }
     },
     {
@@ -158,8 +167,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziContact.git",
       "state" : {
-        "revision" : "bd38bd769a20ebe89cec75ebc80dcbccfbd25230",
-        "version" : "0.5.0"
+        "revision" : "07515418259c68d6f5058a45b9e70ad0a0706680",
+        "version" : "0.5.1"
       }
     },
     {
@@ -176,8 +185,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
-        "revision" : "084d697f58dc1a3275677992f6a5884736e3e2f6",
-        "version" : "0.8.0"
+        "branch" : "fix/use-autoclosure-flexibility",
+        "revision" : "108ca3f349c2fbd5fa0193209e17ffa351d1dd82"
       }
     },
     {
