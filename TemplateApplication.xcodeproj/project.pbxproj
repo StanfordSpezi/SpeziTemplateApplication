@@ -1225,8 +1225,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziFirebase.git";
 			requirement = {
-				branch = "fix/use-autoclosure-flexibility";
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.8.2;
 			};
 		};
 		2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "SpeziQuestionnaire" */ = {

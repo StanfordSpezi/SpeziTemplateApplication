@@ -185,8 +185,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
-        "branch" : "fix/use-autoclosure-flexibility",
-        "revision" : "108ca3f349c2fbd5fa0193209e17ffa351d1dd82"
+        "revision" : "db46d60f85aa9d77d247c1f59a30a7b9f7909f82",
+        "version" : "0.8.2"
       }
     },
     {
