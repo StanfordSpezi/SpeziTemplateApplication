@@ -7,13 +7,13 @@
 //
 
 import FirebaseFirestore
-import FirebaseFirestoreSwift
 import FirebaseStorage
 import HealthKitOnFHIR
 import OSLog
 import PDFKit
 import Spezi
 import SpeziAccount
+import SpeziFirebaseAccountStorage
 import SpeziFirestore
 import SpeziHealthKit
 import SpeziMockWebService
@@ -22,12 +22,17 @@ import SpeziQuestionnaire
 import SwiftUI
 
 
-actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitConstraint, OnboardingConstraint {
+actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitConstraint, OnboardingConstraint, AccountStorageStandard {
     enum TemplateApplicationStandardError: Error {
         case userNotAuthenticatedYet
     }
 
+    private static var userCollection: CollectionReference {
+        Firestore.firestore().collection("users")
+    }
+
     @Dependency var mockWebService = MockWebService()
+    @Dependency var accountStorage = FirestoreAccountStorage(storeIn: userCollection)
 
     @AccountReference var account: Account
 
@@ -40,7 +45,7 @@ actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitCon
                 throw TemplateApplicationStandardError.userNotAuthenticatedYet
             }
 
-            return Firestore.firestore().collection("users").document(details.accountId)
+            return Self.userCollection.document(details.accountId)
         }
     }
     
@@ -150,5 +155,26 @@ actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitCon
         } catch {
             logger.error("Could not store consent form: \(error)")
         }
+    }
+
+
+    func create(_ identifier: AdditionalRecordId, _ details: SignupDetails) async throws {
+        try await accountStorage.create(identifier, details)
+    }
+
+    func load(_ identifier: AdditionalRecordId, _ keys: [any AccountKey.Type]) async throws -> PartialAccountDetails {
+        try await accountStorage.load(identifier, keys)
+    }
+
+    func modify(_ identifier: AdditionalRecordId, _ modifications: AccountModifications) async throws {
+        try await accountStorage.modify(identifier, modifications)
+    }
+
+    func clear(_ identifier: AdditionalRecordId) async {
+        await accountStorage.clear(identifier)
+    }
+
+    func delete(_ identifier: AdditionalRecordId) async throws {
+        try await accountStorage.delete(identifier)
     }
 }
