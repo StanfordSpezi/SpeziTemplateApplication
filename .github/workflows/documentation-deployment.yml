@@ -45,6 +45,7 @@ jobs:
           xcodebuild docbuild -scheme TemplateApplication \
             -derivedDataPath .derivedData \
             -destination 'generic/platform=iOS' \
+            -skipPackagePluginValidation \
             CODE_SIGN_IDENTITY=""  \
             CODE_SIGNING_REQUIRED=NO
           $(xcrun --find docc) process-archive \
