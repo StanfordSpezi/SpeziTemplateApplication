@@ -67,10 +67,11 @@ struct HealthKitPermissions: View {
 
 #if DEBUG
 #Preview {
-    OnboardingStack(startAtStep: HealthKitPermissions.self) {
-        for onboardingView in OnboardingFlow.previewSimulatorViews {
-            onboardingView
-        }
+    OnboardingStack {
+        HealthKitPermissions()
     }
+        .previewWith(standard: TemplateApplicationStandard()) {
+            HealthKit()
+        }
 }
 #endif

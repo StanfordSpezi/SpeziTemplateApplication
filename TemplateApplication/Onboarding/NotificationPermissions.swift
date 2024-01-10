@@ -67,10 +67,11 @@ struct NotificationPermissions: View {
 
 #if DEBUG
 #Preview {
-    OnboardingStack(startAtStep: NotificationPermissions.self) {
-        for onboardingView in OnboardingFlow.previewSimulatorViews {
-            onboardingView
-        }
+    OnboardingStack {
+        NotificationPermissions()
     }
+        .previewWith {
+            TemplateApplicationScheduler()
+        }
 }
 #endif
