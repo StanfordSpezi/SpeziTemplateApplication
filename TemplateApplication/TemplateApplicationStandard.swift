@@ -61,9 +61,7 @@ actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitCon
 
 
     init() {
-        if FeatureFlags.disableFirebase {
-            _mockWebService = Dependency(wrappedValue: MockWebService())
-        } else {
+        if !FeatureFlags.disableFirebase {
             _accountStorage = Dependency(wrappedValue: FirestoreAccountStorage(storeIn: TemplateApplicationStandard.userCollection))
         }
     }
