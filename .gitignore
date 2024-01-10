@@ -43,3 +43,6 @@ firebase-debug.*.log*
 
 # Firebase cache
 .firebase/
+
+# Swift Package List
+TemplateApplication/package-list.json
