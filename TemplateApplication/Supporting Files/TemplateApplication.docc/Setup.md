@@ -10,11 +10,13 @@ You will need access to a macOS-based machine to build and run the Swift-based S
 
 Please ensure that your Mac meets the following criteria and that you install or update the software on your Mac accordingly.
 
+
 ### macOS - Sonoma 14.2 Or Newer
 
 The Mac needs to run macOS Sonoma 14.2 or newer. Please [update to the latest operating system version following the Apple-provided instructions](https://support.apple.com/en-us/HT201541).
 
 You can verify that you run the latest macOS version by clicking on the Apple Logo on the top left of your screen and selecting "About this Mac". You can see the macOS version number in the specs list under your Mac picture.
+
 
 ### Xcode - 15.2 Or Newer
 
@@ -37,7 +39,7 @@ We provide a simple setup script that installs essential tools like [homebrew](h
 The script also installs the [Google Firebase emulator and command line interface (CLI)](https://firebase.google.com/docs/cli), including java, node, and other dependencies needed to execute the Firebase emulator to allow you to locally test your application's future cloud connection without setting up a cloud firebase project.
 
 You can simply run the script by opening up your macOS [Terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac) and executing the following command:
-"`bash
+```bash
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/StanfordSpezi/SpeziTemplateApplication/HEAD/Scripts/setup.sh)"
 ```
 
@@ -51,7 +53,7 @@ It hosts databases, services, authentication, and integration for a variety of a
 Stanford provides its version of a Firebase instance in the form of the [Stanford mHealth platform](https://med.stanford.edu/mhealth.html).
 We use Firebase and the mHealt platform as the default integrated cloud provided in the Spezi Template Application.
 
-> Note: Spezi itself is independent of any cloud provider or platform! Spezi offers different modules to connect to cloud providers, including [Spezi Firebase](https://github.com/StanfordSpezi/SpeziFirebase), which is the cloud provider demonstrated in the template application.
+> Tip: Spezi itself is independent of any cloud provider or platform! Spezi offers different modules to connect to cloud providers, including [Spezi Firebase](https://github.com/StanfordSpezi/SpeziFirebase), which is the cloud provider demonstrated in the template application.
 
 
 ### Alternative A: Get Started without Firebase
@@ -69,10 +71,10 @@ The application also provides a [Firebase Firestore](https://firebase.google.com
 It is required to have the [Firebase Emulator Suite](https://firebase.google.com/docs/emulator-suite) to be up and running to use these features to build and test the application locally.
 The setup script described above installs the [Firebase Emulator Suite](https://firebase.google.com/docs/emulator-suite).
 
-> Note: You do not have to make any modifications to the Firebase configuration, log into the `Firebase` CLI using your Google account, or create a project in Firebase to run, build, and test the application!
+> Important: You do not have to make any modifications to the Firebase configuration, log into the `Firebase` CLI using your Google account, or create a project in Firebase to run, build, and test the application!
 
 Navigate to the root folder of this setup containing your **.xcodeproj** file ([using `cd` in your terminal](https://tutorials.codebar.io/command-line/introduction/tutorial.html)) and startup the [Firebase Emulator Suite](https://firebase.google.com/docs/emulator-suite) in your [Terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac) using
-"`bash
+```bash
 $ firebase emulators:start
 ```
 
@@ -90,6 +92,7 @@ You can follow the Apple Documentation on [Building and running an app](https://
 
 > Tip: You can learn more about changing up the code if the application and customizing your Spezi Template Application-based app in the <doc:Modify> article.
 
+
 ### Firebase Cloud Setup
 
 If you want to connect your project to a development or production Firebase cloud project, you can provide your [`GoogleService-Info.plist`](https://firebase.google.com/docs/ios/setup) in a base 64 representation in the [GitHub secrets](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions) (`GOOGLE_SERVICE_INFO_PLIST_BASE64`) of your project where it is picked up and loaded in the configured path setup in the [`beta-deployment.yml`](.github/workflows/beta-deployment.yml) [GitHub Action](https://docs.github.com/en/actions) using the `googleserviceinfoplistpath` parameter that needs to be adapted to your project structure.
@@ -99,8 +102,7 @@ You can generate a base 64 representation of a file after you [navigated into th
 base64 -i GoogleService-Info.plist
 ```
 
-> [!WARNING]  
-> We do **not recommend** to commit your Firebase secrets and configuration file to your project. While it can extract the file from the deployed application, we encourage open-source projects to make it clear to contributors to set up their own Firebase project.
+> Warning: We do **not recommend** to commit your Firebase secrets and configuration file to your project. While one can extract the file from the deployed application, we encourage open-source projects to make it clear to contributors to set up their own Firebase project if they plan to build and deploy a version of an open-source project.
 
 The deployment requires you to store your Google service account JSON credentials in a base 64 representation in the `GOOGLE_APPLICATION_CREDENTIALS_BASE64`. You can learn more about how to generate the JSON in the [Firebase documentation](https://firebase.google.com/docs/app-distribution/authenticate-service-account). The service account must have the minimally required permissions (not the `Firebase App Distribution Admin` role) as documented at https://firebase.google.com/docs/projects/iam/roles-predefined for your deployment needs and setup.
 
@@ -110,9 +112,9 @@ Be sure to update your `.firebaserc` project name and placeholder `GoogleService
 ### Other Configuration Options
 
 The application also includes the following feature flags that can be configured in the [scheme editor in Xcode](https://help.apple.com/xcode/mac/11.4/index.html?localePath=en.lproj#/dev0bee46f46) and selecting your scheme, the **Run** configuration, and to switch to the **Arguments** tab to add, enable, disable, or remove the following arguments passed on launch:
-- "--skipOnboarding": Skips the onboarding flow to enable easier development of features in the application and to allow UI tests to skip the onboarding flow.
-- "--showOnboarding": Always show the onboarding when the application is launched. Makes it easy to modify and test the onboarding flow without the need to manually remove the application or reset the simulator.
-- "--disableFirebase": Disables the Firebase interactions, including the login/sign-up step and the Firebase Firestore upload.
-- "--useFirebaseEmulator": Defines if the application should connect to the local Firebase emulator. Always set to true when using the iOS simulator.
+- `--skipOnboarding`: Skips the onboarding flow to enable easier development of features in the application and to allow UI tests to skip the onboarding flow.
+- `--showOnboarding`: Always show the onboarding when the application is launched. Makes it easy to modify and test the onboarding flow without the need to manually remove the application or reset the simulator.
+- `--disableFirebase`: Disables the Firebase interactions, including the login/sign-up step and the Firebase Firestore upload.
+- `--useFirebaseEmulator`: Defines if the application should connect to the local Firebase emulator. Always set to true when using the iOS simulator.
 
-> Tip: You can learn how to add, modify, and remove feature flags that are passed to the application when it is started in the [Customizing the build schemes for a project](https://developer.apple.com/documentation/xcode/customizing-the-build-schemes-for-a-project#Specify-launch-arguments-and-environment-variables) tutorial in ([*Specify launch arguments and environment variables* section](https://developer.apple.com/documentation/xcode/customizing-the-build-schemes-for-a-project#Specify-launch-arguments-and-environment-variables)).
+> Tip: You can learn how to add, modify, and remove feature flags that are passed to the application when it is started in the [Customizing the build schemes for a project](https://developer.apple.com/documentation/xcode/customizing-the-build-schemes-for-a-project#Specify-launch-arguments-and-environment-variables) tutorial in the [*Specify launch arguments and environment variables* section](https://developer.apple.com/documentation/xcode/customizing-the-build-schemes-for-a-project#Specify-launch-arguments-and-environment-variables).

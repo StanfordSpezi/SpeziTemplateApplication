@@ -13,4 +13,3 @@ The Spezi Template Application demonstrates using the [Spezi](https://github.com
 - <doc:Setup>
 - <doc:Create>
 - <doc:Modify>
-- <doc:Continous>
