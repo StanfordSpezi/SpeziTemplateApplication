@@ -32,6 +32,14 @@ jobs:
     runs-on: macos-13
     steps:
       - uses: actions/checkout@v4
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+      - name: Check environment
+        run: |
+          xcodebuild -version
+          swift --version
+          echo "env.selfhosted: ${{ env.selfhosted }}"
       - name: Build DocC
         run: |
           xcodebuild docbuild -scheme TemplateApplication \
