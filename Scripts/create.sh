@@ -1,6 +1,6 @@
 #!/bin/s
 #
-# This source file is part of the Stanford Spezi Template Application project
+# This source file is part of the Stanford Spezi Template Application open-source project
 #
 # SPDX-FileCopyrightText: 2022 Stanford University and the project authors (see CONTRIBUTORS.md)
 #

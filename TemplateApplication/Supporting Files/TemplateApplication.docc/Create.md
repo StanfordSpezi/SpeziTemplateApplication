@@ -1,5 +1,15 @@
 # Create Your Spezi-based Application
 
+<!--
+#
+# This source file is part of the Stanford Spezi Template Application open-source project
+#
+# SPDX-FileCopyrightText: 2023 Stanford University and the project authors (see CONTRIBUTORS.md)
+#
+# SPDX-License-Identifier: MIT
+#       
+-->
+
 How to create your own Spezi-based application based on the Spezi Template Application.
 
 
