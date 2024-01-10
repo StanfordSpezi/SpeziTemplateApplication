@@ -1,12 +1,12 @@
 //
-// This source file is part of the CS342 2023 PAWS Team Application project
+// This source file is part of the Stanford Spezi Template Application project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
 // SPDX-License-Identifier: MIT
 //
 
-/// A collection of feature flags for the PAWS app.
+/// A collection of feature flags for the Template Application.
 enum FeatureFlags {
     /// Skips the onboarding flow to enable easier development of features in the application and to allow UI tests to skip the onboarding flow.
     static let skipOnboarding = CommandLine.arguments.contains("--skipOnboarding")

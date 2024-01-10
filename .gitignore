@@ -11,6 +11,7 @@
 .swiftpm
 .derivedData
 .build
+.docs
 !TemplateApplication.xcodeproj
 
 # IDE related folders

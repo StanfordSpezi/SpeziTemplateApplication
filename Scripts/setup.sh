@@ -36,6 +36,9 @@ brew install git-lfs
 git lfs install
 git lfs install --system
 
+brew tap FelixHerrmann/tap
+brew install swift-package-list
+
 # Ensure that everything on the system is up-to-date
 brew upgrade
 

@@ -55,6 +55,9 @@
         }
       }
     },
+    "Background" : {
+
+    },
     "CLOSE" : {
       "comment" : "MARK: General",
       "localizations" : {
