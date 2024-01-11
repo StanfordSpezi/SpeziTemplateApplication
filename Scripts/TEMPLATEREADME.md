@@ -14,7 +14,7 @@ This repository contains the Spezi Template Application.
 The Spezi Template Application is using the [Spezi](https://github.com/StanfordSpezi/Spezi) ecosystem and builds on top of the [{{SSTA}}](https://github.com/StanfordSpezi/TA).
 
 > [!NOTE] 
-> Do you want to learn more about the {{SSTA}} and how to use, extend, and modify this application? Check out the [{{SSTA}} documentation](stanfordspezi.github.io/Spezi{{TA}}/)
+> Do you want to learn more about the {{SSTA}} and how to use, extend, and modify this application? Check out the [{{SSTA}} documentation](https://stanfordspezi.github.io/Spezi{{TA}})
 
 
 ## Spezi Template Application Features

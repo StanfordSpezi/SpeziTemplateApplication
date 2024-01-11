@@ -124,11 +124,11 @@ projectNameNoSpacesEscaped=$(sed 's:/:\\/:g' <<< "TemplateApplication")
 projectNameSpeziEscaped=$(sed 's:/:\\/:g' <<< "Spezi Template Application")
 projectNameEscaped=$(sed 's:/:\\/:g' <<< "Template Application")
 templateEscaped=$(sed 's:/:\\/:g' <<< "Template")
-
 sstaEscaped=$(sed 's:/:\\/:g' <<< "{{SSTA}}")
 taEscaped=$(sed 's:/:\\/:g' <<< "{{TA}}")
+
 sstaFullEscaped=$(sed 's:/:\\/:g' <<< "Stanford Spezi Template Application")
-taFullEscaped=$(sed 's:/:\\/:g' <<< "Template Application")
+taFullEscaped=$(sed 's:/:\\/:g' <<< "TemplateApplication")
 newHeaderFileEscaped=$(sed 's:/:\\/:g' <<< "$appName based on the $sstaEscaped")
 appNameEscaped=$(sed 's:/:\\/:g' <<< "$appName")
 appNameNoSpacesEscaped=$(sed 's:/:\\/:g' <<< "$appNameNoSpaces")
