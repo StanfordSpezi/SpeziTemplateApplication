@@ -193,3 +193,4 @@ sed -i '' "s/${linkCheckDisabledEscaped}//g" "./README.md"
 
 
 rm -rf "./Scripts"
+rm -f "./.github/workflows/documentation-deployment.yml"
