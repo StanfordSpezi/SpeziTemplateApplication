@@ -125,16 +125,17 @@ projectNameSpeziEscaped=$(sed 's:/:\\/:g' <<< "Spezi Template Application")
 projectNameEscaped=$(sed 's:/:\\/:g' <<< "Template Application")
 templateEscaped=$(sed 's:/:\\/:g' <<< "Template")
 
-sstaEscaped=$(sed 's:/:\\/:g' <<< "SSTA")
-taEscaped=$(sed 's:/:\\/:g' <<< "TA")
+sstaEscaped=$(sed 's:/:\\/:g' <<< "{{SSTA}}")
+taEscaped=$(sed 's:/:\\/:g' <<< "{{TA}}")
 sstaFullEscaped=$(sed 's:/:\\/:g' <<< "Stanford Spezi Template Application")
 taFullEscaped=$(sed 's:/:\\/:g' <<< "Template Application")
-appNameEscaped=$(sed 's:/:\\/:g' <<< "$appName based on the $sstaEscaped")
+newHeaderFileEscaped=$(sed 's:/:\\/:g' <<< "$appName based on the $sstaEscaped")
+appNameEscaped=$(sed 's:/:\\/:g' <<< "$appName")
 appNameNoSpacesEscaped=$(sed 's:/:\\/:g' <<< "$appNameNoSpaces")
 
 find . -type f -not \( -path '*/.git/*' \) -not \( -path '*/Scripts/create.sh' \) -exec grep -Iq . {} \; -print | while read -r file; do
     sed -i '' "s/${projectNameLowercaseEscaped}/${appNameLowerNoSpacesEscaped}/g" "$file" || echo "Failed to process $file"
-    sed -i '' "s/${headerFileEscaped}/${appNameEscaped}/g" "$file" || echo "Failed to process $file"
+    sed -i '' "s/${headerFileEscaped}/${newHeaderFileEscaped}/g" "$file" || echo "Failed to process $file"
     sed -i '' "s/${projectNameNoSpacesEscaped}/${appNameNoSpacesEscaped}/g" "$file" || echo "Failed to process $file"
     sed -i '' "s/${projectNameSpeziEscaped}/${appNameEscaped}/g" "$file" || echo "Failed to process $file"
     sed -i '' "s/${projectNameEscaped}/${appNameEscaped}/g" "$file" || echo "Failed to process $file"
