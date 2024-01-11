@@ -12,7 +12,6 @@ on:
   push:
     branches:
       - main
-      - feature/setup
   workflow_dispatch:
 
 permissions:
