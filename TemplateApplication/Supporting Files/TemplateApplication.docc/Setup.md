@@ -38,6 +38,8 @@ Please open Xcode and follow the instructions to finish the installation.
 
 You can verify that you run the latest version of Xcode and everything is installed if you can see the "Welcome to Xcode" screen when you open Xcode, showing 15.2 or newer as the version number.
 
+@Image(source: "Xcode", alt: "Screenshot showing the Welcome to Xcode window.")
+
 You can learn more about Xcode, including [creating an Xcode project for an app](https://developer.apple.com/documentation/xcode/creating-an-xcode-project-for-an-app), information about the IDE interface by following the instructions on [creating your app's interface with SwiftUI](https://developer.apple.com/documentation/xcode/creating-your-app-s-interface-with-swiftui) & [Previewing your app's interface in Xcode](https://developer.apple.com/documentation/xcode/previewing-your-apps-interface-in-xcode).
 
 
@@ -68,9 +70,11 @@ We use Firebase and the mHealt platform as the default integrated cloud provided
 
 ### Alternative A: Get Started without Firebase
 
-You can start using the application without a cloud connection if you use the "--disableFirebase "feature flag, enabled by default when opening the Xcode project.
+You can start using the application without a cloud connection if you enable the `--disableFirebase` feature flag, enabled by default when opening the Xcode project.
 
 The application includes feature flags that can be configured in the [scheme editor in Xcode](https://help.apple.com/xcode/mac/11.4/index.html?localePath=en.lproj#/dev0bee46f46) and selecting your application scheme (default **TemplateApplication**), the **Run** configuration, and to switch to the **Arguments** tab to add, enable, disable, or remove arguments passed on launch.
+
+@Image(source: "Scheme", alt: "Screenshot showing the application scheme Run configuration's launch arguments.")
 
 The login and account setup is skipped in this configuration.
 
@@ -88,7 +92,11 @@ Navigate to the root folder of this setup containing your **.xcodeproj** file ([
 $ firebase emulators:start
 ```
 
+@Image(source: "FirebaseCLI", alt: "Screenshot showing the terminal and the running Firebase Emulators.")
+
 After the emulators have started up, you can run the application in your simulator to build, test, and run the application and see the results show up in Firebase.
+
+@Image(source: "FirebaseWeb", alt: "Screenshot showing Safari and the Firebase Emulators web interface.")
 
 
 ### Run the App
@@ -97,6 +105,18 @@ You can build and run the application using [Xcode](https://developer.apple.com/
 
 You can follow the Apple Documentation on [Building and running an app](https://developer.apple.com/documentation/xcode/building-and-running-an-app) to run the application in the iOS simulator right on your Mac.
 
+@Row(numberOfColumns: 4) {
+    @Column(size: 3) {
+        @Image(source: "Run", alt: "Press the run button in the upper left corner to run the app.") {
+            Press the run button in the upper left corner to run the app.
+        }
+    }
+    @Column {
+        @Image(source: "Welcome", alt: "The Spezi Template Application running in the iOS Simulator.") {
+            The Spezi Template Application running in the iOS Simulator.
+        }
+    }
+}
 
 ## 4. Modify The Application
 

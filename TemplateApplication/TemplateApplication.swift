@@ -13,7 +13,7 @@ import SwiftUI
 
 @main
 struct TemplateApplication: App {
-    @UIApplicationDelegateAdaptor(TemplateAppDelegate.self) var appDelegate
+    @UIApplicationDelegateAdaptor(TemplateApplicationDelegate.self) var appDelegate
     @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
 
     

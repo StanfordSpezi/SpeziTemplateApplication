@@ -18,7 +18,7 @@ import SpeziScheduler
 import SwiftUI
 
 
-class TemplateAppDelegate: SpeziAppDelegate {
+class TemplateApplicationDelegate: SpeziAppDelegate {
     override var configuration: Configuration {
         Configuration(standard: TemplateApplicationStandard()) {
             if !FeatureFlags.disableFirebase {
