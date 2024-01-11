@@ -18,7 +18,7 @@ The Spezi Template Application demonstrates using the [Spezi](https://github.com
 
 > Tip: Do you want to try out the Spezi Template Application? You can download it to your iOS device using [TestFlight](https://testflight.apple.com/join/ipEezBY1)!
 
-The following screenshots show a wide varity of features based on Spezi Modules that are part of the Spezi Template Application.
+The following screenshots show a wide variety of features based on Spezi Modules that are part of the Spezi Template Application.
 
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
