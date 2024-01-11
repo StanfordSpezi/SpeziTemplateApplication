@@ -63,7 +63,7 @@ It hosts databases, services, authentication, and integration for a variety of a
 Stanford provides its version of a Firebase instance in the form of the [Stanford mHealth platform](https://med.stanford.edu/mhealth.html).
 We use Firebase and the mHealt platform as the default integrated cloud provided in the Spezi Template Application.
 
-> Tip: Spezi itself is independent of any cloud provider or platform! Spezi offers different modules to connect to cloud providers, including [Spezi Firebase](https://github.com/StanfordSpezi/SpeziFirebase), which is the cloud provider demonstrated in the template application.
+> Tip: Spezi itself is independent of any cloud provider or platform! Spezi offers different modules to connect to cloud providers, including [Spezi Firebase](https://github.com/StanfordSpezi/SpeziFirebase), which is the cloud provider demonstrated in the Spezi Template Application.
 
 
 ### Alternative A: Get Started without Firebase

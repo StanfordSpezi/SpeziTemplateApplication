@@ -12,7 +12,7 @@
 
 Overview of the different parts of the a Spezi Template Application-based Spezi app and how to modify them your needs.
 
-> Important: Please first follow the instructions on how to install all the nescessary software to build, run, and modify the application (<doc:Setup>) and how to create your own Spezi-based application based on the template application (<doc:Create>).
+> Important: Please first follow the instructions on how to install all the nescessary software to build, run, and modify the application (<doc:Setup>) and how to create your own Spezi-based application based on the Spezi Template Application (<doc:Create>).
 
 
 ## Onboarding Flow
