@@ -11,10 +11,10 @@ SPDX-License-Identifier: MIT
 # Spezi Template Application
 
 This repository contains the Spezi Template Application.
-The Spezi Template Application is using the [Spezi](https://github.com/StanfordSpezi/Spezi) ecosystem and builds on top of the [{{SSTA}}](https://github.com/StanfordSpezi/{{TA}}).
+The Spezi Template Application is using the [Spezi](https://github.com/StanfordSpezi/Spezi) ecosystem and builds on top of the [{{SSTA}}](https://github.com/StanfordSpezi/{{TA}}).<!-- markdown-link-check-disable-line -->
 
 > [!NOTE] 
-> Do you want to learn more about the {{SSTA}} and how to use, extend, and modify this application? Check out the [{{SSTA}} documentation](https://stanfordspezi.github.io/Spezi{{TA}})
+> Do you want to learn more about the {{SSTA}} and how to use, extend, and modify this application? Check out the [{{SSTA}} documentation](https://stanfordspezi.github.io/Spezi{{TA}})<!-- markdown-link-check-disable-line -->
 
 
 ## Spezi Template Application Features
@@ -29,4 +29,4 @@ The Spezi Template Application is using the [Spezi](https://github.com/StanfordS
 
 ## License
 
-This project is licensed under the MIT License. See [Licenses](LICENSES) for more information.
+This project is licensed under the MIT License. See [Licenses](LICENSES) for more information.<!-- markdown-link-check-disable-line -->

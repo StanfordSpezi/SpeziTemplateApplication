@@ -7,8 +7,6 @@
 # SPDX-License-Identifier: MIT
 #
 
-#!/bin/bash
-
 export LC_CTYPE=UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -189,4 +187,9 @@ done
 # Remove the DocC documentation, Figures, and replace the README with a placeholder README
 rm -rf "./${appNameNoSpacesEscaped}/Supporting Files/${appNameNoSpacesEscaped}.docc"
 mv "./Scripts/TEMPLATEREADME.md" "./README.md"
+
+linkCheckDisabledEscaped=$(sed 's:/:\\/:g' <<< "<!-- markdown-link-check-disable-line -->")
+sed -i '' "s/${linkCheckDisabledEscaped}//g" "./README.md"
+
+
 rm -rf "./Scripts"
