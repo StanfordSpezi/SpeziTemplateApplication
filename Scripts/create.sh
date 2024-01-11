@@ -109,7 +109,7 @@ sed -i '' "s/${oldProvisioningProfileEscaped}/${provisioningProfileEscaped}/g" "
 
 # Firebase project name:
 firebaseProjectNameEscaped=$(sed 's:/:\\/:g' <<< "stanfordspezitemplateapp")
-appNameLowerNoSpacesEscaped=$(sed 's:/:\\/:g' <<< "\"$appNameLowerNoSpaces\"")
+appNameLowerNoSpacesEscaped=$(sed 's:/:\\/:g' <<< "$appNameLowerNoSpaces")
 
 sed -i '' "s/${firebaseProjectNameEscaped}/${appNameLowerNoSpacesEscaped}/g" ".firebaserc"
 sed -i '' "s/${firebaseProjectNameEscaped}/${appNameLowerNoSpacesEscaped}/g" "./TemplateApplication/Supporting Files/GoogleService-Info.plist"
