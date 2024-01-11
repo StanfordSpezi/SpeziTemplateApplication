@@ -1,5 +1,5 @@
 //
-// This source file is part of the Stanford Spezi Template Application project
+// This source file is part of the Stanford Spezi Template Application open-source project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University
 //
@@ -66,24 +66,24 @@ enum LicenseType {
 
 // Constants representing typical text and regular expression patterns often found in license files.
 // They are used for matching and identifying different types of licenses within text documents.
-let mitText = "MIT License"
-let apacheText = "Apache License"
-let gnuText = "GNU GENERAL PUBLIC LICENSE"
-let bsdTwoClauseText =
+private let mitText = "MIT License"
+private let apacheText = "Apache License"
+private let gnuText = "GNU GENERAL PUBLIC LICENSE"
+private let bsdTwoClauseText =
     """
     Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met
     """
-let bsdThreeClausePattern =
+private let bsdThreeClausePattern =
     """
     Neither the name of (.+) nor the names of (.+) may be used to endorse or promote products derived from this software \
     without specific prior written permission
     """
-let bsdFourClauseText =
+private let bsdFourClauseText =
     """
     All advertising materials mentioning features or use of this software must display the following acknowledgement: \
     this product includes software developed by
     """
-let zlibPattern =
+private let zlibPattern =
     """
     The origin of this software must not be misrepresented; you must not claim that you wrote the original software. \
     If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.(.*) \
