@@ -125,8 +125,11 @@ projectNameSpeziEscaped=$(sed 's:/:\\/:g' <<< "Spezi Template Application")
 projectNameEscaped=$(sed 's:/:\\/:g' <<< "Template Application")
 templateEscaped=$(sed 's:/:\\/:g' <<< "Template")
 
-# appNameEscaped=$(sed 's:/:\\/:g' <<< "$appName based on the Stanford Spezi Template Application")
-appNameEscaped=$(sed 's:/:\\/:g' <<< "$appName")
+sstaEscaped=$(sed 's:/:\\/:g' <<< "SSTA")
+taEscaped=$(sed 's:/:\\/:g' <<< "TA")
+sstaFullEscaped=$(sed 's:/:\\/:g' <<< "Stanford Spezi Template Application")
+taFullEscaped=$(sed 's:/:\\/:g' <<< "Template Application")
+appNameEscaped=$(sed 's:/:\\/:g' <<< "$appName based on the $sstaEscaped")
 appNameNoSpacesEscaped=$(sed 's:/:\\/:g' <<< "$appNameNoSpaces")
 
 find . -type f -not \( -path '*/.git/*' \) -not \( -path '*/Scripts/create.sh' \) -exec grep -Iq . {} \; -print | while read -r file; do
@@ -136,6 +139,8 @@ find . -type f -not \( -path '*/.git/*' \) -not \( -path '*/Scripts/create.sh' \
     sed -i '' "s/${projectNameSpeziEscaped}/${appNameEscaped}/g" "$file" || echo "Failed to process $file"
     sed -i '' "s/${projectNameEscaped}/${appNameEscaped}/g" "$file" || echo "Failed to process $file"
     sed -i '' "s/${templateEscaped}/${appNameNoSpacesEscaped}/g" "$file" || echo "Failed to process $file"
+    sed -i '' "s/${sstaEscaped}/${sstaFullEscaped}/g" "$file" || echo "Failed to process $file"
+    sed -i '' "s/${taEscaped}/${taFullEscaped}/g" "$file" || echo "Failed to process $file"
 done
 
 # Remove the repo link and DOI from the citation file:
@@ -179,3 +184,8 @@ find . -type f -name "*${projectNameNoSpacesEscaped}*" | while read -r file; do
         mv "$file" "$new_file"
     fi
 done
+
+# Remove the DocC documentation, Figures, and replace the README with a placeholder README
+rm -rf "./${appNameNoSpacesEscaped}/Supporting Files/${appNameNoSpacesEscaped}.docc"
+mv "./Scripts/TEMPLATEREADME.md" "./README.md"
+rm -rf "./Scripts"
