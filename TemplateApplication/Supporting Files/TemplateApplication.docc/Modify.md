@@ -27,7 +27,7 @@ It uses the [**Spezi Onboarding** module](https://github.com/StanfordSpezi/Spezi
         }
     }
     @Column {
-        @Image(source: "InterestingModules", alt: "A screen showing an overview of the modules used in the Spezi Template application.") {
+        @Image(source: "InterestingModules", alt: "A screen showing an overview of the modules used in the Spezi Template Application.") {
             You can find and modify the sequencial onboarding information in the ``InterestingModules`` view.
         }
     }

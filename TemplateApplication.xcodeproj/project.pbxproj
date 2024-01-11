@@ -13,10 +13,10 @@
 		2F3D4ABC2A4E7C290068FB2F /* SpeziScheduler in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3D4ABB2A4E7C290068FB2F /* SpeziScheduler */; };
 		2F49B7762980407C00BCB272 /* Spezi in Frameworks */ = {isa = PBXBuildFile; productRef = 2F49B7752980407B00BCB272 /* Spezi */; };
 		2F4E237E2989A2FE0013F3D9 /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */; };
-		2F4E23832989D51F0013F3D9 /* TemplateAppTestingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E23822989D51F0013F3D9 /* TemplateAppTestingSetup.swift */; };
+		2F4E23832989D51F0013F3D9 /* TemplateApplicationTestingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E23822989D51F0013F3D9 /* TemplateApplicationTestingSetup.swift */; };
 		2F4E23872989DB360013F3D9 /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E23862989DB360013F3D9 /* ContactsTests.swift */; };
 		2F4FC8D729EE69D300BFFE26 /* MockUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FC8D629EE69D300BFFE26 /* MockUpload.swift */; };
-		2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */; };
+		2F5E32BD297E05EA003432F8 /* TemplateApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E32BC297E05EA003432F8 /* TemplateApplicationDelegate.swift */; };
 		2F6025CB29BBE70F0045459E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F6025CA29BBE70F0045459E /* GoogleService-Info.plist */; };
 		2F65B44E2A3B8B0600A36932 /* NotificationPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65B44D2A3B8B0600A36932 /* NotificationPermissions.swift */; };
 		2FA0BFED2ACC977500E0EF83 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2FA0BFEC2ACC977500E0EF83 /* Localizable.xcstrings */; };
@@ -105,10 +105,10 @@
 		2F1AC9DE2B4E840E00C24973 /* TemplateApplication.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TemplateApplication.docc; sourceTree = "<group>"; };
 		2F1B52CD2A4F5CCE003AE151 /* MockUploadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUploadTests.swift; sourceTree = "<group>"; };
 		2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
-		2F4E23822989D51F0013F3D9 /* TemplateAppTestingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppTestingSetup.swift; sourceTree = "<group>"; };
+		2F4E23822989D51F0013F3D9 /* TemplateApplicationTestingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplicationTestingSetup.swift; sourceTree = "<group>"; };
 		2F4E23862989DB360013F3D9 /* ContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTests.swift; sourceTree = "<group>"; };
 		2F4FC8D629EE69D300BFFE26 /* MockUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUpload.swift; sourceTree = "<group>"; };
-		2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppDelegate.swift; sourceTree = "<group>"; };
+		2F5E32BC297E05EA003432F8 /* TemplateApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplicationDelegate.swift; sourceTree = "<group>"; };
 		2F6025CA29BBE70F0045459E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F65B44D2A3B8B0600A36932 /* NotificationPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissions.swift; sourceTree = "<group>"; };
 		2FA0BFEC2ACC977500E0EF83 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -333,9 +333,9 @@
 			isa = PBXGroup;
 			children = (
 				653A2550283387FE005D4D48 /* TemplateApplication.swift */,
-				2F5E32BC297E05EA003432F8 /* TemplateAppDelegate.swift */,
+				2F5E32BC297E05EA003432F8 /* TemplateApplicationDelegate.swift */,
 				2FF53D8C2A8729D600042B76 /* TemplateApplicationStandard.swift */,
-				2F4E23822989D51F0013F3D9 /* TemplateAppTestingSetup.swift */,
+				2F4E23822989D51F0013F3D9 /* TemplateApplicationTestingSetup.swift */,
 				2FC975A72978F11A00BA99FE /* Home.swift */,
 				A9720E412ABB68B300872D23 /* Account */,
 				2FE5DC2829EDD398004B9AB4 /* Onboarding */,
@@ -633,14 +633,14 @@
 				2FE5DC4629EDD7F2004B9AB4 /* Bundle+Image.swift in Sources */,
 				2FE5DC4F29EDD7FA004B9AB4 /* EventContext.swift in Sources */,
 				2FE5DC5029EDD7FA004B9AB4 /* EventContextView.swift in Sources */,
-				2F4E23832989D51F0013F3D9 /* TemplateAppTestingSetup.swift in Sources */,
+				2F4E23832989D51F0013F3D9 /* TemplateApplicationTestingSetup.swift in Sources */,
 				2FE5DC5329EDD7FA004B9AB4 /* Bundle+Questionnaire.swift in Sources */,
 				2FE5DC5129EDD7FA004B9AB4 /* TemplateApplicationTaskContext.swift in Sources */,
 				97D8B2AB2A769A6E00715F50 /* OnboardingFlow+PreviewSimulator.swift in Sources */,
 				56F6F2A02AB441930022FE5A /* ContributionsList.swift in Sources */,
 				566155292AB8447C00209B80 /* Package+LicenseType.swift in Sources */,
 				5680DD392AB8983D004E6D4A /* PackageCell.swift in Sources */,
-				2F5E32BD297E05EA003432F8 /* TemplateAppDelegate.swift in Sources */,
+				2F5E32BD297E05EA003432F8 /* TemplateApplicationDelegate.swift in Sources */,
 				2FE5DC5229EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift in Sources */,
 				A9FE7AD02AA39BAB0077B045 /* AccountSheet.swift in Sources */,
 				653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */,

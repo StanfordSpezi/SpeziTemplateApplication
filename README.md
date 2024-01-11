@@ -15,7 +15,7 @@ SPDX-License-Identifier: MIT
 [![DOI](https://zenodo.org/badge/589846478.svg)](https://zenodo.org/badge/latestdoi/589846478)
 
 This repository contains the Spezi Template Application.
-It demonstrates using the [Spezi](https://github.com/StanfordSpezi/Spezi) framework template and builds on top of the [Stanford Biodesign Digital Health Template Application](https://github.com/StanfordBDHG/TemplateApplication).
+It demonstrates using the [Spezi](https://github.com/StanfordSpezi/Spezi) ecosystem and builds on top of the [Stanford Biodesign Digital Health Template Application](https://github.com/StanfordBDHG/TemplateApplication).
 
 > [!NOTE] 
 > Do you want to try out the Spezi Template Application? You can download it to your iOS device using [TestFlight](https://testflight.apple.com/join/ipEezBY1)!
@@ -85,7 +85,7 @@ It uses the [**Spezi Onboarding** module](https://github.com/StanfordSpezi/Spezi
 
 <p float="left">
  <img width="250" alt="A screen displaying welcome information." src="Figures/TemplateOnboardingFlow/Welcome.png">
- <img width="250" alt="A screen showing an overview of the modules used in the Spezi Template application." src="Figures/TemplateOnboardingFlow/InterestingModules.png">
+ <img width="250" alt="A screen showing an overview of the modules used in the Spezi Template Application." src="Figures/TemplateOnboardingFlow/InterestingModules.png">
  <img width="250" alt="A screen displaying the consent view." src="Figures/TemplateOnboardingFlow/Consent.png">
  <img width="250" alt="A screen showing a view displaying the HealthKit access screen." src="Figures/TemplateOnboardingFlow/HealthKitAccess.png">
 </p>
@@ -127,7 +127,7 @@ It uses the [**Spezi Mock Web Service** module](https://github.com/StanfordSpezi
 
 ## Continuous Delivery Workflows
 
-The Spezi Template application includes continuous integration (CI) and continuous delivery (CD) setup.
+The Spezi Template Application includes continuous integration (CI) and continuous delivery (CD) setup.
 - Automatically build and test the application on every pull request before deploying it. If your organization doesn't have a self-hosted macOS runner modeled after the setup in the [StanfordBDHG ContinuousIntegration](https://github.com/StanfordBDHG/ContinousIntegration) setup, you will need to remove the `runsonlabels` arguments in the `build-and-test.yml` file to ensure that the build runs on the default macOS runners provided by GitHub.
 - An automated setup to deploy the application to TestFlight every time there is a new commit on the repository's main branch.
 - Ensure a coherent code style by checking the conformance to the SwiftLint rules defined in `.swiftlint.yml` on every pull request and commit.

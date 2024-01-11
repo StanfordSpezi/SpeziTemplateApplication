@@ -28,7 +28,7 @@ You can create your own Spezi-based application by creating a new GitHub repo an
 ## 3. Setup the Continous Integration and Delivery Setup
 
 Continuous integration (CI) and continuous delivery (CD) is essential to automatically test and deploy your application at any time.
-Each Spezi Template Application-based Spezi app already has the nescessary infrastructure in place; the Spezi Template application includes continuous integration (CI) and continuous delivery (CD) setup:
+Each Spezi Template Application-based Spezi app already has the nescessary infrastructure in place; the Spezi Template Application includes continuous integration (CI) and continuous delivery (CD) setup:
 - Automatically build and test the application on every pull request before deploying it. If your organization doesn't have a self-hosted macOS runner modeled after the setup in the [StanfordBDHG ContinuousIntegration](https://github.com/StanfordBDHG/ContinousIntegration) setup, you will need to remove the `runsonlabels` arguments in the `build-and-test.yml` file to ensure that the build runs on the default macOS runners provided by GitHub.
 - An automated setup to deploy the application to TestFlight every time there is a new commit on the repository's main branch.
 - Ensure a coherent code style by checking the conformance to the SwiftLint rules defined in `.swiftlint.yml` on every pull request and commit.
