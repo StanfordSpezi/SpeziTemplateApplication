@@ -39,10 +39,11 @@ struct Consent: View {
 
 #if DEBUG
 #Preview {
-    OnboardingStack(startAtStep: Consent.self) {
-        for onboardingView in OnboardingFlow.previewSimulatorViews {
-            onboardingView
-        }
+    OnboardingStack {
+        Consent()
     }
+        .previewWith(standard: TemplateApplicationStandard()) {
+            OnboardingDataSource()
+        }
 }
 #endif

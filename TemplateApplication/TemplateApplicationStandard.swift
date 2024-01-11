@@ -22,7 +22,7 @@ import SpeziQuestionnaire
 import SwiftUI
 
 
-actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitConstraint, OnboardingConstraint, AccountStorageStandard {
+actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitConstraint, OnboardingConstraint, AccountStorageConstraint {
     enum TemplateApplicationStandardError: Error {
         case userNotAuthenticatedYet
     }
@@ -31,8 +31,8 @@ actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitCon
         Firestore.firestore().collection("users")
     }
 
-    @Dependency var mockWebService = MockWebService()
-    @Dependency var accountStorage = FirestoreAccountStorage(storeIn: userCollection)
+    @Dependency var mockWebService: MockWebService?
+    @Dependency var accountStorage: FirestoreAccountStorage?
 
     @AccountReference var account: Account
 
@@ -58,9 +58,17 @@ actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitCon
             return Storage.storage().reference().child("users/\(details.accountId)")
         }
     }
-    
+
+
+    init() {
+        if !FeatureFlags.disableFirebase {
+            _accountStorage = Dependency(wrappedValue: FirestoreAccountStorage(storeIn: TemplateApplicationStandard.userCollection))
+        }
+    }
+
+
     func add(sample: HKSample) async {
-        guard !FeatureFlags.disableFirebase else {
+        if let mockWebService {
             let encoder = JSONEncoder()
             encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
             let jsonRepresentation = (try? String(data: encoder.encode(sample.resource), encoding: .utf8)) ?? ""
@@ -76,7 +84,7 @@ actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitCon
     }
     
     func remove(sample: HKDeletedObject) async {
-        guard !FeatureFlags.disableFirebase else {
+        if let mockWebService {
             try? await mockWebService.remove(path: "healthkit/\(sample.uuid.uuidString)")
             return
         }
@@ -91,7 +99,7 @@ actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitCon
     func add(response: ModelsR4.QuestionnaireResponse) async {
         let id = response.identifier?.value?.value?.string ?? UUID().uuidString
         
-        guard !FeatureFlags.disableFirebase else {
+        if let mockWebService {
             let jsonRepresentation = (try? String(data: JSONEncoder().encode(response), encoding: .utf8)) ?? ""
             try? await mockWebService.upload(path: "questionnaireResponse/\(id)", body: jsonRepresentation)
             return
@@ -159,22 +167,37 @@ actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitCon
 
 
     func create(_ identifier: AdditionalRecordId, _ details: SignupDetails) async throws {
+        guard let accountStorage else {
+            preconditionFailure("Account Storage was requested although not enabled in current configuration.")
+        }
         try await accountStorage.create(identifier, details)
     }
 
     func load(_ identifier: AdditionalRecordId, _ keys: [any AccountKey.Type]) async throws -> PartialAccountDetails {
-        try await accountStorage.load(identifier, keys)
+        guard let accountStorage else {
+            preconditionFailure("Account Storage was requested although not enabled in current configuration.")
+        }
+        return try await accountStorage.load(identifier, keys)
     }
 
     func modify(_ identifier: AdditionalRecordId, _ modifications: AccountModifications) async throws {
+        guard let accountStorage else {
+            preconditionFailure("Account Storage was requested although not enabled in current configuration.")
+        }
         try await accountStorage.modify(identifier, modifications)
     }
 
     func clear(_ identifier: AdditionalRecordId) async {
+        guard let accountStorage else {
+            preconditionFailure("Account Storage was requested although not enabled in current configuration.")
+        }
         await accountStorage.clear(identifier)
     }
 
     func delete(_ identifier: AdditionalRecordId) async throws {
+        guard let accountStorage else {
+            preconditionFailure("Account Storage was requested although not enabled in current configuration.")
+        }
         try await accountStorage.delete(identifier)
     }
 }

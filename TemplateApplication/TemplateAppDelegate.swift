@@ -45,11 +45,14 @@ class TemplateAppDelegate: SpeziAppDelegate {
                 } else {
                     FirebaseStorageConfiguration()
                 }
+            } else {
+                MockWebService()
             }
+
             if HKHealthStore.isHealthDataAvailable() {
                 healthKit
             }
-            MockWebService()
+            
             TemplateApplicationScheduler()
             OnboardingDataSource()
         }

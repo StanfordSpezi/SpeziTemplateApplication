@@ -121,17 +121,11 @@ struct ScheduleView: View {
 #if DEBUG
 #Preview("ScheduleView") {
     ScheduleView(presentingAccount: .constant(false))
-        .environment(TemplateApplicationScheduler())
-        .environment(Account())
-}
-
-#Preview("ScheduleView") {
-    let details = AccountDetails.Builder()
-        .set(\.userId, value: "lelandstanford@stanford.edu")
-        .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
-    
-    return ScheduleView(presentingAccount: .constant(true))
-        .environment(TemplateApplicationScheduler())
-        .environment(Account(building: details, active: MockUserIdPasswordAccountService()))
+        .previewWith(standard: TemplateApplicationStandard()) {
+            TemplateApplicationScheduler()
+            AccountConfiguration {
+                MockUserIdPasswordAccountService()
+            }
+        }
 }
 #endif

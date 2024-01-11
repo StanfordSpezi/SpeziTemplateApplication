@@ -40,10 +40,8 @@ struct ModalView: View {
 
 #if DEBUG
 #Preview {
-    Text("Background").sheet(isPresented: .constant(true)) {
-        ModalView(text: "Preview Modal", buttonText: "Close") {
-            print("Preview Modal closed.")
-        }
+    ModalView(text: "Preview Modal", buttonText: "Close") {
+        print("Preview Modal closed.")
     }
 }
 #endif

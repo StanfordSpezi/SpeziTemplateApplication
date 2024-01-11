@@ -65,8 +65,22 @@ struct HomeView: View {
         .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
     
     return HomeView()
-        .environment(Account(building: details, active: MockUserIdPasswordAccountService()))
-        .environment(TemplateApplicationScheduler())
-        .environment(MockWebService())
+        .previewWith(standard: TemplateApplicationStandard()) {
+            TemplateApplicationScheduler()
+            MockWebService()
+            AccountConfiguration(building: details, active: MockUserIdPasswordAccountService())
+        }
+}
+
+#Preview {
+    CommandLine.arguments.append("--disableFirebase") // make sure the MockWebService is displayed
+    return HomeView()
+        .previewWith(standard: TemplateApplicationStandard()) {
+            TemplateApplicationScheduler()
+            MockWebService()
+            AccountConfiguration {
+                MockUserIdPasswordAccountService()
+            }
+        }
 }
 #endif
