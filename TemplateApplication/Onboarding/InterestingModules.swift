@@ -47,10 +47,8 @@ struct InterestingModules: View {
 
 #if DEBUG
 #Preview {
-    OnboardingStack(startAtStep: InterestingModules.self) {
-        for onboardingView in OnboardingFlow.previewSimulatorViews {
-            onboardingView
-        }
+    OnboardingStack {
+        InterestingModules()
     }
 }
 #endif

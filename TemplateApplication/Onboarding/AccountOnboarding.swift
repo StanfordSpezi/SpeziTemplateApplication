@@ -39,12 +39,14 @@ struct AccountOnboarding: View {
 
 #if DEBUG
 #Preview("Account Onboarding SignIn") {
-    OnboardingStack(startAtStep: AccountOnboarding.self) {
-        for onboardingView in OnboardingFlow.previewSimulatorViews {
-            onboardingView
-        }
+    OnboardingStack {
+        AccountOnboarding()
     }
-        .environment(Account(MockUserIdPasswordAccountService()))
+        .previewWith {
+            AccountConfiguration {
+                MockUserIdPasswordAccountService()
+            }
+        }
 }
 
 #Preview("Account Onboarding") {
@@ -52,11 +54,11 @@ struct AccountOnboarding: View {
         .set(\.userId, value: "lelandstanford@stanford.edu")
         .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
     
-    return OnboardingStack(startAtStep: AccountOnboarding.self) {
-        for onboardingView in OnboardingFlow.previewSimulatorViews {
-            onboardingView
-        }
+    return OnboardingStack {
+        AccountOnboarding()
     }
-        .environment(Account(building: details, active: MockUserIdPasswordAccountService()))
+        .previewWith {
+            AccountConfiguration(building: details, active: MockUserIdPasswordAccountService())
+        }
 }
 #endif

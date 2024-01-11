@@ -75,11 +75,17 @@ struct AccountSheet: View {
         .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
     
     return AccountSheet()
-        .environment(Account(building: details, active: MockUserIdPasswordAccountService()))
+        .previewWith {
+            AccountConfiguration(building: details, active: MockUserIdPasswordAccountService())
+        }
 }
 
 #Preview("AccountSheet SignIn") {
     AccountSheet()
-        .environment(Account(MockUserIdPasswordAccountService()))
+        .previewWith {
+            AccountConfiguration {
+                MockUserIdPasswordAccountService()
+            }
+        }
 }
 #endif

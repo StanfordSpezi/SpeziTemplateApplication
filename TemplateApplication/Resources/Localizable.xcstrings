@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
     "ACCOUNT_NEXT" : {
       "localizations" : {
         "en" : {
@@ -375,7 +372,14 @@
       }
     },
     "Repository Link" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repository Link"
+          }
+        }
+      }
     },
     "SCHEDULE_LIST_TITLE" : {
       "localizations" : {

@@ -11,7 +11,7 @@ import SwiftPackageList
 
 
 enum PackageHelper {
-    /// Helper function that calls the corrensponding API of `SwiftPackageList`to fetch the list of packages
+    /// Helper function that calls the corresponding API of `SwiftPackageList`to fetch the list of packages
     static func getPackageList() -> [Package] {
         do {
             let packages = try packageList()

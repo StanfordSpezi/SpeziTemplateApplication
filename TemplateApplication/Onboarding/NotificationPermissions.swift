@@ -60,17 +60,18 @@ struct NotificationPermissions: View {
         )
             .navigationBarBackButtonHidden(notificationProcessing)
             // Small fix as otherwise "Login" or "Sign up" is still shown in the nav bar
-            .navigationTitle("")
+            .navigationTitle(Text(verbatim: ""))
     }
 }
 
 
 #if DEBUG
 #Preview {
-    OnboardingStack(startAtStep: NotificationPermissions.self) {
-        for onboardingView in OnboardingFlow.previewSimulatorViews {
-            onboardingView
-        }
+    OnboardingStack {
+        NotificationPermissions()
     }
+        .previewWith {
+            TemplateApplicationScheduler()
+        }
 }
 #endif

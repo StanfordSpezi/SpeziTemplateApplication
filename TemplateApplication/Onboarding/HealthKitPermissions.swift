@@ -60,17 +60,18 @@ struct HealthKitPermissions: View {
         )
             .navigationBarBackButtonHidden(healthKitProcessing)
             // Small fix as otherwise "Login" or "Sign up" is still shown in the nav bar
-            .navigationTitle("")
+            .navigationTitle(Text(verbatim: ""))
     }
 }
 
 
 #if DEBUG
 #Preview {
-    OnboardingStack(startAtStep: HealthKitPermissions.self) {
-        for onboardingView in OnboardingFlow.previewSimulatorViews {
-            onboardingView
-        }
+    OnboardingStack {
+        HealthKitPermissions()
     }
+        .previewWith(standard: TemplateApplicationStandard()) {
+            HealthKit()
+        }
 }
 #endif

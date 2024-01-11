@@ -66,6 +66,14 @@ struct OnboardingFlow: View {
 #Preview {
     OnboardingFlow()
         .environment(Account(MockUserIdPasswordAccountService()))
-        .environment(TemplateApplicationScheduler())
+        .previewWith(standard: TemplateApplicationStandard()) {
+            OnboardingDataSource()
+            HealthKit()
+            AccountConfiguration {
+                MockUserIdPasswordAccountService()
+            }
+
+            TemplateApplicationScheduler()
+        }
 }
 #endif

@@ -56,10 +56,8 @@ struct Welcome: View {
 
 #if DEBUG
 #Preview {
-    OnboardingStack(startAtStep: Welcome.self) {
-        for onboardingView in OnboardingFlow.previewSimulatorViews {
-            onboardingView
-        }
+    OnboardingStack {
+        Welcome()
     }
 }
 #endif

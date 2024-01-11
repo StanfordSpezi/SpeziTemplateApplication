@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SpeziFHIR
+import ModelsR4
 
 
 /// The context attached to each task in the Spezi Template Application.
@@ -20,7 +20,7 @@ enum TemplateApplicationTaskContext: Codable, Identifiable {
     case test(String)
     
     
-    var id: Questionnaire.ID {
+    var id: FHIRPrimitive<FHIRString>? {
         switch self {
         case let .questionnaire(questionnaire):
             return questionnaire.id
