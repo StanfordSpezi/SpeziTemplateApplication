@@ -27,6 +27,7 @@ show_help() {
     echo "  --name                Name of the application. (required)"
     echo "  --bundleIdentifier    The iOS bundle identifier of the application. (required)"
     echo "  --provisioningProfile The name of the iOS provisioning profile to build the application. (optional, defaults to the value of --name)"
+    echo "  --firebaseProject     The Firebase project identifier. (optional, defaults to the value of --name lowercased without spaces)"
     echo "  --help                Display this help and exit."
 }
 
@@ -53,6 +54,11 @@ while [[ $# -gt 0 ]]; do
             shift # past argument
             shift # past value
             ;;
+        --firebaseProject)
+            firebaseProject="$2"
+            shift # past argument
+            shift # past value
+            ;;
         --help)
             show_help
             exit 0
@@ -72,16 +78,20 @@ if [ -z "$bundleIdentifier" ]; then
     error_exit_help "The --bundleIdentifier argument is required."
 fi
 
-# Set default value for provisioningProfile if not provided
-if [ -z "$provisioningProfile" ]; then
-    provisioningProfile="$appName"
-fi
-
 # Remove spaces from appName
 appNameNoSpaces="${appName// /}"
 
 # Convert appName to lowercase and remove spaces
 appNameLowerNoSpaces=$(echo "$appName" | tr '[:upper:]' '[:lower:]' | tr -d ' ')
+
+# Set default value for provisioningProfile & firebaseProject if not provided
+if [ -z "$provisioningProfile" ]; then
+    provisioningProfile="$appName"
+fi
+
+if [ -z "$firebaseProject" ]; then
+    firebaseProject="$appNameLowerNoSpaces"
+fi
 
 # Testing the input:
 echo "Application Name: $appName"
@@ -109,10 +119,10 @@ sed -i '' "s/${oldProvisioningProfileEscaped}/${provisioningProfileEscaped}/g" "
 
 # Firebase project name:
 firebaseProjectNameEscaped=$(sed 's:/:\\/:g' <<< "stanfordspezitemplateapp")
-appNameLowerNoSpacesEscaped=$(sed 's:/:\\/:g' <<< "$appNameLowerNoSpaces")
+firebaseProjectEscaped=$(sed 's:/:\\/:g' <<< "$firebaseProject")
 
-sed -i '' "s/${firebaseProjectNameEscaped}/${appNameLowerNoSpacesEscaped}/g" ".firebaserc"
-sed -i '' "s/${firebaseProjectNameEscaped}/${appNameLowerNoSpacesEscaped}/g" "./TemplateApplication/Supporting Files/GoogleService-Info.plist"
+sed -i '' "s/${firebaseProjectNameEscaped}/${firebaseProjectEscaped}/g" ".firebaserc"
+sed -i '' "s/${firebaseProjectNameEscaped}/${firebaseProjectEscaped}/g" "./TemplateApplication/Supporting Files/GoogleService-Info.plist"
 
 
 # Rename project and code:
@@ -130,6 +140,7 @@ taFullEscaped=$(sed 's:/:\\/:g' <<< "TemplateApplication")
 newHeaderFileEscaped=$(sed 's:/:\\/:g' <<< "$appName based on the $sstaEscaped")
 appNameEscaped=$(sed 's:/:\\/:g' <<< "$appName")
 appNameNoSpacesEscaped=$(sed 's:/:\\/:g' <<< "$appNameNoSpaces")
+appNameLowerNoSpacesEscaped=$(sed 's:/:\\/:g' <<< "$firebaseProject")
 
 find . -type f -not \( -path '*/.git/*' \) -not \( -path '*/Scripts/create.sh' \) -exec grep -Iq . {} \; -print | while read -r file; do
     sed -i '' "s/${projectNameLowercaseEscaped}/${appNameLowerNoSpacesEscaped}/g" "$file" || echo "Failed to process $file"
