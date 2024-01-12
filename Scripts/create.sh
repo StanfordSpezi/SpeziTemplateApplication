@@ -21,7 +21,7 @@ error_exit_help() {
 
 # Function to display help message
 show_help() {
-    echo "Usage: $0 --name <appName> --bundleIdentifier <bundleId> [--provisioningProfile <procitationFile>]"
+    echo "Usage: $0 --name <appName> --bundleIdentifier <bundleIdentifier> [--provisioningProfile <provisioningProfileName>] [--firebaseProject <firebaseProjectId>]"
     echo
     echo "Options:"
     echo "  --name                Name of the application. (required)"
