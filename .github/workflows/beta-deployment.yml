@@ -19,21 +19,26 @@ jobs:
     name: Build and Test
     uses: ./.github/workflows/build-and-test.yml
     permissions:
+      contents: read
       security-events: write
       actions: read
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
     needs: buildandtest
     uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
-    secrets: inherit
+    permissions:
+      contents: read
     with:
       googleserviceinfoplistpath: 'TemplateApplication/Supporting Files/GoogleService-Info.plist'
       setupsigning: true
       fastlanelane: beta
+    secrets: inherit
   deployfirebase:
     name: Deploy Firebase Project
     needs: iosapptestflightdeployment
     uses: StanfordBDHG/.github/.github/workflows/firebase-deploy.yml@v2
+    permissions:
+      contents: read
     with:
       arguments: '--debug'
     secrets:
