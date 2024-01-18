@@ -28,7 +28,8 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
 
                     // additional values stored using the `FirestoreAccountStorage` within our Standard implementation
                     .collects(\.genderIdentity),
-                    .collects(\.dateOfBirth)
+                    .collects(\.dateOfBirth),
+                    .collects(\.email)
                 ])
 
                 if FeatureFlags.useFirebaseEmulator {
