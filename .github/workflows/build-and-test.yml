@@ -47,3 +47,5 @@ jobs:
       contents: read
     with:
       coveragereports: TemplateApplication.xcresult
+    secrets:
+      token: ${{ secrets.CODECOV_TOKEN }}

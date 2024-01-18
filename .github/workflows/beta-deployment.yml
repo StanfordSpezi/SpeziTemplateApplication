@@ -20,6 +20,7 @@ jobs:
     uses: ./.github/workflows/build-and-test.yml
     permissions:
       contents: read
+    secrets: inherit
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
     needs: buildandtest
