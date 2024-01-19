@@ -14,8 +14,6 @@ import XCTHealthKit
 class OnboardingTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
-        
-        try disablePasswordAutofill()
 
         continueAfterFailure = false
         

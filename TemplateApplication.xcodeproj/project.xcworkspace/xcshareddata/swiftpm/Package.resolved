@@ -293,8 +293,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTestExtensions.git",
       "state" : {
-        "revision" : "388a6d6a5be48eff5d98a2c45e0b50f30ed21dc3",
-        "version" : "0.4.7"
+        "branch" : "bug/iOS172",
+        "revision" : "d0e04b538b0189b52c2078f2f0801d5465e5ccc9"
       }
     },
     {

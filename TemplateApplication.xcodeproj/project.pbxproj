@@ -1240,8 +1240,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordBDHG/XCTestExtensions.git";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.4.7;
+				branch = bug/iOS172;
+				kind = branch;
 			};
 		};
 		2FE5DC9A29EDD9EF004B9AB4 /* XCRemoteSwiftPackageReference "XCTHealthKit" */ = {
