@@ -21,6 +21,7 @@ platform :ios do
       derived_data_path: ".derivedData",
       code_coverage: true,
       devices: ["iPhone 15 Pro"],
+      reset_simulator: false,
       concurrent_workers: 1,
       max_concurrent_simulators: 1,
       result_bundle: true,
