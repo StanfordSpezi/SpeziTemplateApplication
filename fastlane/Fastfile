@@ -20,7 +20,7 @@ platform :ios do
       skip_build: true,
       derived_data_path: ".derivedData",
       code_coverage: true,
-      devices: ["iPhone 15 Pro"],
+      devices: ["iPhone 15 Pro Simulator"],
       force_quit_simulator: true,
       reset_simulator: true,
       prelaunch_simulator: false,
