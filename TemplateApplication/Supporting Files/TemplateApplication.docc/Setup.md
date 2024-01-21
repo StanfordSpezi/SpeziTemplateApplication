@@ -63,7 +63,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/StanfordSpezi/Spe
 [Google Firebase](https://firebase.google.com) is a set of backend cloud computing services and application development platforms provided by Google.
 It hosts databases, services, authentication, and integration for a variety of applications, including mobile applications like the Spezi Template Application.
 Stanford provides its version of a Firebase instance in the form of the [Stanford mHealth platform](https://med.stanford.edu/mhealth.html).
-We use Firebase and the mHealt platform as the default integrated cloud provided in the Spezi Template Application.
+We use Firebase and the mHealth platform as the default integrated cloud provider in the Spezi Template Application.
 
 > Tip: Spezi itself is independent of any cloud provider or platform! Spezi offers different modules to connect to cloud providers, including [Spezi Firebase](https://github.com/StanfordSpezi/SpeziFirebase), which is the cloud provider demonstrated in the Spezi Template Application.
 
