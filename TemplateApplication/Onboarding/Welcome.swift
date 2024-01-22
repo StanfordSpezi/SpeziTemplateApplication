@@ -9,10 +9,14 @@
 import SpeziOnboarding
 import SwiftUI
 
+/// Introduction to your app's features during onboarding.
+///
+/// The Welcome view can provide first time users with important information about your app.
+///
+/// ![A screenshot of the Welcome screen](Welcome)
 
 struct Welcome: View {
     @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
-    
     
     var body: some View {
         OnboardingView(
