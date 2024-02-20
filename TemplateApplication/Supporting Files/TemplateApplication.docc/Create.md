@@ -26,14 +26,15 @@ The Spezi Template application repository provides a convenient script to rename
 
 The shell script can be called as follows:
 ```bash
-$ sh Scripts/create.sh --name <appName> --bundleIdentifier <bundleId> [--provisioningProfile <procitationFile>]
+$ sh Scripts/create.sh --name <appName> --bundleIdentifier <bundleIdentifier> [--provisioningProfile <provisioningProfileName>] [--firebaseProject <firebaseProjectId>]
 ```
 
 Argument | Description
 --- | ---
 `--name` | Name of the application. (required)
 `--bundleIdentifier` | The iOS bundle identifier of the application. (required)
-`--provisioningProfile` | The name of the iOS provisioning profile to build the application. (optional, defaults to the value of --name).
+`--provisioningProfile` | The name of the iOS provisioning profile to build the application. (optional, defaults to the value of --name)
+`--firebaseProject` | The Firebase project identifier. (optional, defaults to the value of --name lowercased without spaces)
 `--help` | Display help and exit.
 
 The following example shows renaming the application to "My Spezi App":

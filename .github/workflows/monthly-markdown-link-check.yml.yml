@@ -1,5 +1,5 @@
 #
-# This source file is part of the Stanford Spezi open-source project
+# This source file is part of the Stanford Spezi Template Application open-source project
 #
 # SPDX-FileCopyrightText: 2023 Stanford University and the project authors (see CONTRIBUTORS.md)
 #
@@ -17,3 +17,5 @@ jobs:
   markdown_link_check:
     name: Markdown Link Check
     uses: StanfordBDHG/.github/.github/workflows/markdown-link-check.yml@v2
+    permissions:
+      contents: read
