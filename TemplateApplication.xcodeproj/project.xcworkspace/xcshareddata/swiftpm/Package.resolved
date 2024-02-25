@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk.git",
       "state" : {
-        "revision" : "b880ec8ec927a838c51c12862c6222c30d7097d7",
-        "version" : "10.20.0"
+        "revision" : "f91c8167141d0279726c6f6d9d4a47c026785cbc",
+        "version" : "10.21.0"
       }
     },
     {
@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleAppMeasurement.git",
       "state" : {
-        "revision" : "ceec9f28dea12b7cf3dabf18b5ed7621c88fd4aa",
-        "version" : "10.20.0"
+        "revision" : "cb8617fab75d181270a1d8f763f26b15c73e2e1e",
+        "version" : "10.21.0"
       }
     },
     {
@@ -77,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/gtm-session-fetcher.git",
       "state" : {
-        "revision" : "115f75e43851774934d695449a4836123c3246e1",
-        "version" : "3.2.0"
+        "revision" : "76135c9f4e1ac85459d5fec61b6f76ac47ab3a4c",
+        "version" : "3.3.1"
       }
     },
     {
@@ -122,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/promises.git",
       "state" : {
-        "revision" : "e70e889c0196c76d22759eb50d6a0270ca9f1d9e",
-        "version" : "2.3.1"
+        "revision" : "540318ecedd63d883069ae7f1ed811a2df00b6ac",
+        "version" : "2.4.0"
       }
     },
     {
@@ -131,8 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKit",
       "state" : {
-        "revision" : "cf79a15c7d8c436f98937fe93e72e880dd2f73e4",
-        "version" : "2.2.20"
+        "revision" : "15f06cf7c1d2d22805b7b939823536bc78ad63a6",
+        "version" : "2.2.25"
       }
     },
     {
@@ -140,8 +140,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKitOnFHIR",
       "state" : {
-        "revision" : "7dc09f7acd7fb19673594e0fdd4d72d0869ee006",
-        "version" : "1.0.0"
+        "revision" : "300fbc0038df28f53a9b653298931f71aa6f0bb5",
+        "version" : "1.1.1"
       }
     },
     {
@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/Spezi",
       "state" : {
-        "revision" : "c4bf0e99de40acfdd2baf0fa02769f06a4c3f0eb",
-        "version" : "1.1.0"
+        "revision" : "0ced3efbc2af9513c07ac913ad762c773a00a6c8",
+        "version" : "1.2.1"
       }
     },
     {
@@ -158,8 +158,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
-        "revision" : "714f01ae1e67bf9c1c0e7c07624380f9bea772b7",
-        "version" : "1.1.0"
+        "revision" : "a7d289ef3be54de62b25dc92e8f7ff1a0f093906",
+        "version" : "1.2.1"
       }
     },
     {
@@ -185,8 +185,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFoundation.git",
       "state" : {
-        "revision" : "d1e6d4cddcf236038d21a73d671806d8ba51b01c",
-        "version" : "1.0.1"
+        "revision" : "0346857e2f1d6fd4b1d950d271be6c82df97107f",
+        "version" : "1.0.2"
       }
     },
     {
@@ -194,8 +194,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziHealthKit.git",
       "state" : {
-        "revision" : "d882734a4ed31fce1bffd7b9977e2669080f21de",
-        "version" : "0.5.0"
+        "revision" : "b40695ffa4d1c9d58c5a0ee277640c2343fb5516",
+        "version" : "0.5.1"
       }
     },
     {
@@ -212,8 +212,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziOnboarding",
       "state" : {
-        "revision" : "3ee713576eaeaa03200ba26bbc1269ceeb6abb25",
-        "version" : "1.0.1"
+        "revision" : "91463ae190611bd14ef52b0657e8db3bf53c9ae8",
+        "version" : "1.1.0"
       }
     },
     {
@@ -221,8 +221,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziQuestionnaire.git",
       "state" : {
-        "revision" : "930a4099db1aca9db0b6ed4e77687141c4780052",
-        "version" : "1.0.0"
+        "revision" : "f25580e95bfdad02383980dcb94406cf97b08ea8",
+        "version" : "1.0.2"
       }
     },
     {
@@ -230,8 +230,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
       "state" : {
-        "revision" : "adf793cb47dc199f8ae88f5c719f4d3ba06a4c4e",
-        "version" : "0.8.0"
+        "revision" : "ba391084109a9a16622b07e9dcefe2ab1552d2a2",
+        "version" : "0.8.1"
       }
     },
     {
@@ -248,8 +248,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziViews.git",
       "state" : {
-        "revision" : "0137e69d156bf4001a8d6bf5661c9a37b2bbd0aa",
-        "version" : "1.0.0"
+        "revision" : "d49f716e4a4d634604bb0dcd6d53df679b6c1358",
+        "version" : "1.3.0"
       }
     },
     {
@@ -266,8 +266,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-collections.git",
       "state" : {
-        "revision" : "d029d9d39c87bed85b1c50adee7c41795261a192",
-        "version" : "1.0.6"
+        "revision" : "94cf62b3ba8d4bed62680a282d4c25f9c63c2efb",
+        "version" : "1.1.0"
       }
     },
     {
@@ -293,8 +293,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTestExtensions.git",
       "state" : {
-        "revision" : "fb7fcee97c574b950e03b0a53874e26db27db2fe",
-        "version" : "0.4.8"
+        "revision" : "1fe9b8e76aeb7a132af37bfa0892160c9b662dcc",
+        "version" : "0.4.10"
       }
     },
     {
@@ -311,8 +311,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTRuntimeAssertions",
       "state" : {
-        "revision" : "bb2a287c2544aa846e53670d1ece35e5949567be",
-        "version" : "1.0.0"
+        "revision" : "51da3403f128b120705571ce61e0fe190f8889e6",
+        "version" : "1.0.1"
       }
     }
   ],
