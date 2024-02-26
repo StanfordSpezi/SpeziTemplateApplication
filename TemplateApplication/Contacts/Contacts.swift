@@ -16,13 +16,13 @@ struct Contacts: View {
     let contacts = [
         Contact(
             name: PersonNameComponents(
-                givenName: "Leland",
-                familyName: "Stanford"
+                givenName: "Anne",
+                familyName: "Sinha"
             ),
             image: Image(systemName: "figure.wave.circle"), // swiftlint:disable:this accessibility_label_for_image
-            title: "University Founder",
-            description: String(localized: "LELAND_STANFORD_BIO"),
-            organization: "Stanford University",
+            title: "MOT, OTR/L, SWC",
+            description: String(localized: "ANNE_SINHA_BIO"),
+            organization: "Center for Rehabilitation Services, Stanford Medicine Children’s Health",
             address: {
                 let address = CNMutablePostalAddress()
                 address.country = "USA"
@@ -33,9 +33,9 @@ struct Contacts: View {
                 return address
             }(),
             contactOptions: [
-                .call("+1 (650) 723-2300"),
-                .text("+1 (650) 723-2300"),
-                .email(addresses: ["contact@stanford.edu"]),
+                .call("+1 (408) 209-2432‬"),
+                .text("‭+1 (408) 209-2432‬"),
+                .email(addresses: ["ASinha@stanfordchildrens.org"]),
                 ContactOption(
                     image: Image(systemName: "safari.fill"), // swiftlint:disable:this accessibility_label_for_image
                     title: "Website",

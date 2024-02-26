@@ -52,6 +52,9 @@
         }
       }
     },
+    "ANNE_SINHA_BIO" : {
+
+    },
     "CLOSE" : {
       "comment" : "MARK: General",
       "localizations" : {
@@ -287,6 +290,7 @@
       }
     },
     "LELAND_STANFORD_BIO" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
