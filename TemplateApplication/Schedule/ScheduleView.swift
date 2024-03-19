@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
+import OrderedCollections
 import SpeziAccount
 import SpeziQuestionnaire
 import SpeziScheduler
@@ -15,21 +16,34 @@ import SwiftUI
 struct ScheduleView: View {
     @Environment(TemplateApplicationStandard.self) private var standard
     @Environment(TemplateApplicationScheduler.self) private var scheduler
-    @State private var eventContextsByDate: [Date: [EventContext]] = [:]
+
     @State private var presentedContext: EventContext?
-
-
     @Binding private var presentingAccount: Bool
     
     
-    private var startOfDays: [Date] {
-        Array(eventContextsByDate.keys)
+    private var eventContextsByDate: OrderedDictionary<Date, [EventContext]> {
+        let eventContexts = scheduler.tasks.flatMap { task in
+            task
+                .events(
+                    from: Calendar.current.startOfDay(for: .now),
+                    to: .numberOfEventsOrEndDate(100, .now)
+                )
+                .map { event in
+                    EventContext(event: event, task: task)
+                }
+        }
+            .sorted()
+
+        return OrderedDictionary(grouping: eventContexts) { eventContext in
+            Calendar.current.startOfDay(for: eventContext.event.scheduledAt)
+        }
     }
-    
+
     
     var body: some View {
         NavigationStack {
-            List(startOfDays, id: \.timeIntervalSinceNow) { startOfDay in
+            let eventContextsByDate = eventContextsByDate
+            List(eventContextsByDate.keys, id: \.timeIntervalSinceNow) { startOfDay in
                 Section(format(startOfDay: startOfDay)) {
                     ForEach(eventContextsByDate[startOfDay] ?? [], id: \.event) { eventContext in
                         EventContextView(eventContext: eventContext)
@@ -41,12 +55,6 @@ struct ScheduleView: View {
                     }
                 }
             }
-                .onChange(of: scheduler) {
-                    calculateEventContextsByDate()
-                }
-                .task {
-                    calculateEventContextsByDate()
-                }
                 .sheet(item: $presentedContext) { presentedContext in
                     destination(withContext: presentedContext)
                 }
@@ -94,26 +102,6 @@ struct ScheduleView: View {
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
         return dateFormatter.string(from: startOfDay)
-    }
-    
-    private func calculateEventContextsByDate() {
-        let eventContexts = scheduler.tasks.flatMap { task in
-            task
-                .events(
-                    from: Calendar.current.startOfDay(for: .now),
-                    to: .numberOfEventsOrEndDate(100, .now)
-                )
-                .map { event in
-                    EventContext(event: event, task: task)
-                }
-        }
-            .sorted()
-        
-        let newEventContextsByDate = Dictionary(grouping: eventContexts) { eventContext in
-            Calendar.current.startOfDay(for: eventContext.event.scheduledAt)
-        }
-        
-        eventContextsByDate = newEventContextsByDate
     }
 }
 

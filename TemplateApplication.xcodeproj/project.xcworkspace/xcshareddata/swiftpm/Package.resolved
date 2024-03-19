@@ -1,12 +1,13 @@
 {
+  "originHash" : "9ddbf125e828f8f258514b9b7b616777823852827ae6b79035a44b66b986b5e0",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/abseil-cpp-binary.git",
       "state" : {
-        "revision" : "bfc0b6f81adc06ce5121eb23f628473638d67c5c",
-        "version" : "1.2022062300.0"
+        "revision" : "7ce7be095bc3ed3c98b009532fe2d7698c132614",
+        "version" : "1.2024011601.0"
       }
     },
     {
@@ -32,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk.git",
       "state" : {
-        "revision" : "f91c8167141d0279726c6f6d9d4a47c026785cbc",
-        "version" : "10.21.0"
+        "revision" : "fcf5ced6dae2d43fced2581e673cc3b59bdb8ffa",
+        "version" : "10.23.0"
       }
     },
     {
@@ -41,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleAppMeasurement.git",
       "state" : {
-        "revision" : "cb8617fab75d181270a1d8f763f26b15c73e2e1e",
-        "version" : "10.21.0"
+        "revision" : "6ec4ca62b00a665fa09b594fab897753a8c635fa",
+        "version" : "10.23.0"
       }
     },
     {
@@ -50,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleDataTransport.git",
       "state" : {
-        "revision" : "a732a4b47f59e4f725a2ea10f0c77e93a7131117",
-        "version" : "9.3.0"
+        "revision" : "a637d318ae7ae246b02d7305121275bc75ed5565",
+        "version" : "9.4.0"
       }
     },
     {
@@ -59,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleUtilities.git",
       "state" : {
-        "revision" : "bc27fad73504f3d4af235de451f02ee22586ebd3",
-        "version" : "7.12.1"
+        "revision" : "26c898aed8bed13b8a63057ee26500abbbcb8d55",
+        "version" : "7.13.1"
       }
     },
     {
@@ -68,8 +69,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/grpc-binary.git",
       "state" : {
-        "revision" : "a673bc2937fbe886dd1f99c401b01b6d977a9c98",
-        "version" : "1.49.1"
+        "revision" : "67043f6389d0e28b38fa02d1c6952afeb04d807f",
+        "version" : "1.62.1"
       }
     },
     {
@@ -86,8 +87,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR.git",
       "state" : {
-        "revision" : "825e96007d83ed83f81ee49eb3ebab29d7b7ba2f",
-        "version" : "0.2.5"
+        "revision" : "00d64d38a8f0d826ee9e27b6f3ce32314a29fd3e",
+        "version" : "0.2.6"
       }
     },
     {
@@ -104,8 +105,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",
       "state" : {
-        "revision" : "9d108e9112aa1d65ce508facf804674546116d9c",
-        "version" : "1.22.3"
+        "revision" : "43aaef65e0c665daadf848761d560e446d350d3d",
+        "version" : "1.22.4"
       }
     },
     {
@@ -113,8 +114,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/nanopb.git",
       "state" : {
-        "revision" : "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
-        "version" : "2.30909.0"
+        "revision" : "b7e1104502eca3a213b46303391ca4d3bc8ddec1",
+        "version" : "2.30910.0"
       }
     },
     {
@@ -131,8 +132,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKit",
       "state" : {
-        "revision" : "15f06cf7c1d2d22805b7b939823536bc78ad63a6",
-        "version" : "2.2.25"
+        "revision" : "6b28cdf0d06c3d6e96b5585369968b85deac96e0",
+        "version" : "2.2.29"
       }
     },
     {
@@ -140,8 +141,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKitOnFHIR",
       "state" : {
-        "revision" : "300fbc0038df28f53a9b653298931f71aa6f0bb5",
-        "version" : "1.1.1"
+        "revision" : "7c2efdcb17796fc9ee686900304dbbe9dd4aaf85",
+        "version" : "1.1.2"
       }
     },
     {
@@ -149,8 +150,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/Spezi",
       "state" : {
-        "revision" : "0ced3efbc2af9513c07ac913ad762c773a00a6c8",
-        "version" : "1.2.1"
+        "revision" : "c43e4fa3d3938a847de2b677091a34ddaea5bc76",
+        "version" : "1.2.3"
       }
     },
     {
@@ -176,17 +177,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
-        "revision" : "ca1edf678ec59e76c9869ee3448e6e165d9c2789",
-        "version" : "1.0.0"
+        "revision" : "e05e665b7da39aa399ecd7fba393aab49b8f3034",
+        "version" : "1.0.1"
       }
     },
     {
       "identity" : "spezifoundation",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziFoundation.git",
+      "location" : "https://github.com/StanfordSpezi/SpeziFoundation",
       "state" : {
-        "revision" : "0346857e2f1d6fd4b1d950d271be6c82df97107f",
-        "version" : "1.0.2"
+        "revision" : "01af5b91a54f30ddd121258e81aff2ddc2a99ff9",
+        "version" : "1.0.4"
       }
     },
     {
@@ -194,8 +195,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziHealthKit.git",
       "state" : {
-        "revision" : "b40695ffa4d1c9d58c5a0ee277640c2343fb5516",
-        "version" : "0.5.1"
+        "revision" : "1e9cb5a6036ac7f4ff37ea1c3ed4898103339ad1",
+        "version" : "0.5.3"
       }
     },
     {
@@ -212,8 +213,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziOnboarding",
       "state" : {
-        "revision" : "91463ae190611bd14ef52b0657e8db3bf53c9ae8",
-        "version" : "1.1.0"
+        "revision" : "4971a82e94996ce0c3d8ecf64fdeec874a1f20d6",
+        "version" : "1.1.1"
       }
     },
     {
@@ -221,8 +222,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziQuestionnaire.git",
       "state" : {
-        "revision" : "f25580e95bfdad02383980dcb94406cf97b08ea8",
-        "version" : "1.0.2"
+        "revision" : "f9d9b6d99bb1e00bda2974b440dca8367733d591",
+        "version" : "1.1.0"
       }
     },
     {
@@ -230,8 +231,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
       "state" : {
-        "revision" : "ba391084109a9a16622b07e9dcefe2ab1552d2a2",
-        "version" : "0.8.1"
+        "revision" : "eed3980f20b01a788720c869010e3fe2fbfcd1fd",
+        "version" : "0.8.2"
       }
     },
     {
@@ -239,8 +240,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziStorage.git",
       "state" : {
-        "revision" : "eaed2220375c35400aa69d1f96a8d32b7e66b1c7",
-        "version" : "1.0.0"
+        "revision" : "b958df9b31f24800388a7bfc28f457ce7b82556c",
+        "version" : "1.0.2"
       }
     },
     {
@@ -248,8 +249,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziViews.git",
       "state" : {
-        "revision" : "d49f716e4a4d634604bb0dcd6d53df679b6c1358",
-        "version" : "1.3.0"
+        "revision" : "4d2a724d97c8f19ac7de7aa2c046b1cb3ef7b279",
+        "version" : "1.3.1"
       }
     },
     {
@@ -257,8 +258,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-argument-parser",
       "state" : {
-        "revision" : "c8ed701b513cf5177118a175d85fbbbcd707ab41",
-        "version" : "1.3.0"
+        "revision" : "46989693916f56d1186bd59ac15124caef896560",
+        "version" : "1.3.1"
       }
     },
     {
@@ -316,5 +317,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
