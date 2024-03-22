@@ -101,9 +101,8 @@ extension XCUIApplication {
     }
     
     private func navigateOnboardingAccount(email: String) throws {
-        guard !buttons["Next"].waitForExistence(timeout: 5) else {
-            buttons["Next"].tap()
-            return
+        if buttons["Logout"].waitForExistence(timeout: 2.0) {
+            buttons["Logout"].tap()
         }
         
         XCTAssertTrue(buttons["Signup"].waitForExistence(timeout: 2))
