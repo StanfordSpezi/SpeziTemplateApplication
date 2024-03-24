@@ -105,6 +105,7 @@
       }
     },
     "CONTRIBUTIONS_LIST_DESCRIPTION" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -115,6 +116,7 @@
       }
     },
     "CONTRIBUTIONS_LIST_FOOTER" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -125,6 +127,7 @@
       }
     },
     "CONTRIBUTIONS_LIST_HEADER" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -359,6 +362,7 @@
       }
     },
     "PROJECT_LICENSE_DESCRIPTION" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -369,6 +373,7 @@
       }
     },
     "Repository Link" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
