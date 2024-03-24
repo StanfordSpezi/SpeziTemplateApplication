@@ -1,5 +1,5 @@
 {
-  "originHash" : "9ddbf125e828f8f258514b9b7b616777823852827ae6b79035a44b66b986b5e0",
+  "originHash" : "46cfc5a57fab0026331bdc973629aaa6fe4210d6de9c8ced81f70762b94ccf83",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -22,7 +22,7 @@
     {
       "identity" : "fhirmodels",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/FHIRModels",
+      "location" : "https://github.com/apple/FHIRModels.git",
       "state" : {
         "revision" : "861afd5816a98d38f86220eab2f812d76cad84a0",
         "version" : "0.5.0"
@@ -78,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/gtm-session-fetcher.git",
       "state" : {
-        "revision" : "76135c9f4e1ac85459d5fec61b6f76ac47ab3a4c",
-        "version" : "3.3.1"
+        "revision" : "9534039303015a84837090d20fa21cae6e5eadb6",
+        "version" : "3.3.2"
       }
     },
     {
@@ -200,6 +200,15 @@
       }
     },
     {
+      "identity" : "spezilicense",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/StanfordSpezi/SpeziLicense",
+      "state" : {
+        "branch" : "dependency-list",
+        "revision" : "b02011781d9769bc051ce875f2c4c9a46b98bf52"
+      }
+    },
+    {
       "identity" : "spezimockwebservice",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziMockWebService.git",
@@ -276,8 +285,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/FelixHerrmann/swift-package-list",
       "state" : {
-        "revision" : "412180a72b9a1f8262213c16459e3533b0385ea5",
-        "version" : "3.1.0"
+        "revision" : "9e7edc38f2a599424b9437c32baf1e6a8b9621b8",
+        "version" : "4.1.0"
       }
     },
     {

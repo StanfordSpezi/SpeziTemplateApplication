@@ -7,6 +7,7 @@
 //
 
 import SpeziAccount
+import SpeziLicense
 import SwiftUI
 
 
