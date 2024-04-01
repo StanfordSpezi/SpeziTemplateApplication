@@ -27,7 +27,7 @@ struct AccountSheet: View {
                 if account.signedIn && !isInSetup {
                     AccountOverview(isEditing: $overviewIsEditing) {
                         NavigationLink {
-                            ContributionsList()
+                            ContributionsList(projectLicense: "MIT")
                         } label: {
                             Text("LICENSE_INFO_TITLE")
                         }
