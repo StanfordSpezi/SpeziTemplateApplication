@@ -101,7 +101,7 @@ The application also gives credit to all dependencies in the Account Details. It
     }
     @Column(size: 1) {
         @Image(source: "Request", alt: "User Interface of the Mock Web Service") {
-            If Firebase is disabled, the Mock Web Service allows you to see the requests that would be sent to a web service.
+            If Firebase is disabled, the [**Spezi Mock Web Service** module](https://github.com/StanfordSpezi/SpeziMockWebService) allows you to see the requests that would be sent to a web service.
         }
     }
 }
