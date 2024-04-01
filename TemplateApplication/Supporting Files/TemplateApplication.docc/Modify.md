@@ -84,7 +84,9 @@ It uses the [**Spezi Scheduler**](https://github.com/StanfordSpezi/SpeziSchedule
 
 ## Additional Application
 
-The [**Spezi Contacts** module](https://github.com/StanfordSpezi/SpeziContact) uses the contact-related views provided by Spezi.
+The [**Spezi Contacts** module](https://github.com/StanfordSpezi/SpeziContact) uses the contact-related views provided by Spezi. 
+The application also gives credit to all dependencies in the Account Details. It uses the [**Spezi License** module](https://github.com/StanfordSpezi/SpeziLicense) to show a list of used Swift Packages.
+
 
 @Row(numberOfColumns: 4) {
     @Column(size: 1) {
@@ -94,7 +96,7 @@ The [**Spezi Contacts** module](https://github.com/StanfordSpezi/SpeziContact) u
     }
     @Column(size: 1) {
         @Image(source: "License", alt: "License information to list all used Swift Packages") {
-            You can investigate the ``ContributionsList`` to learn how the application loads and displays the license information.
+            You can investigate the [**Spezi License** module](https://github.com/StanfordSpezi/SpeziLicense) to learn how the application loads and displays the license information.
         }
     }
     @Column(size: 1) {
@@ -103,3 +105,4 @@ The [**Spezi Contacts** module](https://github.com/StanfordSpezi/SpeziContact) u
         }
     }
 }
+            
