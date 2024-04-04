@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/app-check.git",
       "state" : {
-        "revision" : "3e464dad87dad2d29bb29a97836789bf0f8f67d2",
-        "version" : "10.18.1"
+        "revision" : "c218c2054299b15ae577e818bbba16084d3eabe6",
+        "version" : "10.18.2"
       }
     },
     {
@@ -40,7 +40,7 @@
     {
       "identity" : "fhirmodels",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/FHIRModels.git",
+      "location" : "https://github.com/apple/FHIRModels",
       "state" : {
         "revision" : "861afd5816a98d38f86220eab2f812d76cad84a0",
         "version" : "0.5.0"
@@ -105,8 +105,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/HealthKitOnFHIR.git",
       "state" : {
-        "revision" : "00d64d38a8f0d826ee9e27b6f3ce32314a29fd3e",
-        "version" : "0.2.6"
+        "revision" : "d6ceecf11800d73fed0c6ce33717f3dc71a44bd7",
+        "version" : "0.2.7"
       }
     },
     {
@@ -150,8 +150,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKit",
       "state" : {
-        "revision" : "6b28cdf0d06c3d6e96b5585369968b85deac96e0",
-        "version" : "2.2.29"
+        "revision" : "3f70adf898b5985ba15e25d5074d86a9c657d305",
+        "version" : "2.2.30"
       }
     },
     {
@@ -159,8 +159,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/ResearchKitOnFHIR",
       "state" : {
-        "revision" : "7c2efdcb17796fc9ee686900304dbbe9dd4aaf85",
-        "version" : "1.1.2"
+        "revision" : "7cd02fe3eee061b8cfbb32d272715af8838b978e",
+        "version" : "1.2.0"
       }
     },
     {
@@ -186,8 +186,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
-        "revision" : "a7d289ef3be54de62b25dc92e8f7ff1a0f093906",
-        "version" : "1.2.1"
+        "revision" : "cb9441e5fe9ca31a17be2507d03817a080e63e9d",
+        "version" : "1.2.2"
       }
     },
     {
@@ -204,8 +204,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
-        "revision" : "e05e665b7da39aa399ecd7fba393aab49b8f3034",
-        "version" : "1.0.1"
+        "revision" : "16c1c751c14b08ae593eacf9bc2752c2e070fe2f",
+        "version" : "1.1.0"
       }
     },
     {
@@ -292,7 +292,7 @@
     {
       "identity" : "swift-argument-parser",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-argument-parser.git",
+      "location" : "https://github.com/apple/swift-argument-parser",
       "state" : {
         "revision" : "8f4d2753f0e4778c76d5f05ad16c74f707390531",
         "version" : "1.2.3"
