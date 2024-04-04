@@ -231,8 +231,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziLicense",
       "state" : {
-        "branch" : "dependency-list",
-        "revision" : "9b1713dd9ac14708c0381cf54ad84e13f3780083"
+        "revision" : "d839e7138ca2e231f5bdd90c3e4ab06dba9bc30b",
+        "version" : "0.1.0"
       }
     },
     {
