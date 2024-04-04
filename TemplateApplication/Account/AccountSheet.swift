@@ -7,6 +7,7 @@
 //
 
 import SpeziAccount
+import SpeziLicense
 import SwiftUI
 
 
@@ -26,7 +27,7 @@ struct AccountSheet: View {
                 if account.signedIn && !isInSetup {
                     AccountOverview(isEditing: $overviewIsEditing) {
                         NavigationLink {
-                            ContributionsList()
+                            ContributionsList(projectLicense: .mit)
                         } label: {
                             Text("LICENSE_INFO_TITLE")
                         }

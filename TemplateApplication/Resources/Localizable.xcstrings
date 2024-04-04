@@ -104,36 +104,6 @@
         }
       }
     },
-    "CONTRIBUTIONS_LIST_DESCRIPTION" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The following list contains all Swift Package dependencies of the SpeziTemplateApplication."
-          }
-        }
-      }
-    },
-    "CONTRIBUTIONS_LIST_FOOTER" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Please refer to the individual repository links for packages without license labels."
-          }
-        }
-      }
-    },
-    "CONTRIBUTIONS_LIST_HEADER" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Packages"
-          }
-        }
-      }
-    },
     "HEALTHKIT_PERMISSIONS_BUTTON" : {
       "localizations" : {
         "en" : {
@@ -354,26 +324,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notifications"
-          }
-        }
-      }
-    },
-    "PROJECT_LICENSE_DESCRIPTION" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This project is licensed under the MIT License."
-          }
-        }
-      }
-    },
-    "Repository Link" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Repository Link"
           }
         }
       }

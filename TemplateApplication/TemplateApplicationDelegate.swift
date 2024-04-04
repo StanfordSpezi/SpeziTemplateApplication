@@ -77,7 +77,7 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
         HealthKit {
             CollectSample(
                 HKQuantityType(.stepCount),
-                deliverySetting: .anchorQuery(.afterAuthorizationAndApplicationWillLaunch)
+                deliverySetting: .anchorQuery(.automatic)
             )
         }
     }

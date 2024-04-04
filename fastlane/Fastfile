@@ -26,7 +26,10 @@ platform :ios do
       max_concurrent_simulators: 1,
       result_bundle: true,
       output_directory: ".",
-      xcargs: "-skipPackagePluginValidation"
+      xcargs: [
+        "-skipPackagePluginValidation",
+        "-skipMacroValidation"
+      ]
     )
   end
 
@@ -36,7 +39,10 @@ platform :ios do
       skip_archive: true,
       skip_codesigning: true,
       derived_data_path: ".derivedData",
-      xcargs: "-skipPackagePluginValidation"
+      xcargs: [
+        "-skipPackagePluginValidation",
+        "-skipMacroValidation"
+      ]
     )
   end
 
@@ -44,7 +50,10 @@ platform :ios do
   lane :build do
     build_app(
       derived_data_path: ".derivedData",
-      xcargs: "-skipPackagePluginValidation",
+      xcargs: [
+        "-skipPackagePluginValidation",
+        "-skipMacroValidation"
+      ],
       export_options: {
         provisioningProfiles: {
           "edu.stanford.spezi.templateapplication" => "Spezi Template Application"
