@@ -47,7 +47,7 @@ You can learn more about Xcode, including [creating an Xcode project for an app]
 
 The Spezi Template Application and applications derived from it provide a pre-configured setup of integrated tools that make the development of applications easier and enforce best practices during the development of your application.
 
-We provide a simple setup script that installs essential tools like [homebrew](https://brew.sh) (macOS package manager), [swiftlint](https://github.com/realm/SwiftLint) (automated checking of your source code for programmatic and stylistic errors), [git LFS](https://git-lfs.com) (Git extension for versioning large files), and [swift-package-list](https://github.com/FelixHerrmann/swift-package-list) (automatically give credit to all dependencies in the application user interface).
+We provide a simple setup script that installs essential tools like [homebrew](https://brew.sh) (macOS package manager) and [git LFS](https://git-lfs.com) (Git extension for versioning large files).
 The script also installs the [Google Firebase emulator and command line interface (CLI)](https://firebase.google.com/docs/cli), including java, node, and other dependencies needed to execute the Firebase emulator to allow you to locally test your application's future cloud connection without setting up a cloud firebase project.
 
 You can simply run the script by opening up your macOS [Terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac) and executing the following command:

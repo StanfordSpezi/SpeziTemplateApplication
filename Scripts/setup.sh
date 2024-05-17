@@ -30,14 +30,9 @@ brew install fastlane
 echo 'export LC_ALL=en_US.UTF-8' >> ~/.zshrc
 echo 'export LANG=en_US.UTF-8' >> ~/.zshrc
 
-brew install swiftlint
-
 brew install git-lfs
 git lfs install
 git lfs install --system
-
-brew tap FelixHerrmann/tap
-brew install swift-package-list
 
 # Ensure that everything on the system is up-to-date
 brew upgrade
