@@ -35,7 +35,7 @@ jobs:
   docs:
     name: Documentation Deployment
     # needs: buildandtest
-    uses: StanfordBDHG/.github/.github/workflows/docc-github-pages.yml@v2
+    uses: StanfordBDHG/.github/.github/workflows/docc-github-pages.yml@docs
     permissions:
       contents: read
       pages: write
