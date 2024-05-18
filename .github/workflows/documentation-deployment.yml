@@ -19,7 +19,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-
 jobs:
   docs:
     name: Documentation Deployment
@@ -30,4 +29,4 @@ jobs:
       id-token: write
     with:
       scheme: 'TemplateApplication'
-      dryrun: ${{ github.ref != 'main' }}
+      dryrun: ${{ github.ref == 'main' }}
