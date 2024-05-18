@@ -22,11 +22,11 @@ concurrency:
 jobs:
   docs:
     name: Documentation Deployment
-    uses: StanfordBDHG/.github/.github/workflows/docc-github-pages.yml@docs
+    uses: StanfordBDHG/.github/.github/workflows/docc-github-pages.yml@v2
     permissions:
       contents: read
       pages: write
       id-token: write
     with:
       scheme: 'TemplateApplication'
-      dryrun: ${{ github.ref == 'main' }}
+      dryrun: ${{ github.ref != 'main' }}
