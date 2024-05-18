@@ -15,40 +15,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  # buildandtest:
-  #   name: Build and Test
-  #   uses: ./.github/workflows/build-and-test.yml
-  #   permissions:
-  #     contents: read
-  #   secrets: inherit
-  # iosapptestflightdeployment:
-  #   name: iOS App TestFlight Deployment
-  #   needs: buildandtest
-  #   uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
-  #   permissions:
-  #     contents: read
-  #   with:
-  #     googleserviceinfoplistpath: 'TemplateApplication/Supporting Files/GoogleService-Info.plist'
-  #     setupsigning: true
-  #     fastlanelane: beta
-  #   secrets: inherit
-  docs:
-    name: Documentation Deployment
-    # needs: buildandtest
-    uses: StanfordBDHG/.github/.github/workflows/docc-github-pages.yml@docs
+  buildandtest:
+    name: Build and Test
+    uses: ./.github/workflows/build-and-test.yml
     permissions:
       contents: read
-      pages: write
-      id-token: write
+    secrets: inherit
+  iosapptestflightdeployment:
+    name: iOS App TestFlight Deployment
+    needs: buildandtest
+    uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
+    permissions:
+      contents: read
     with:
-      scheme: 'TemplateApplication'
-  # deployfirebase:
-  #   name: Deploy Firebase Project
-  #   needs: iosapptestflightdeployment
-  #   uses: StanfordBDHG/.github/.github/workflows/firebase-deploy.yml@v2
-  #   permissions:
-  #     contents: read
-  #   with:
-  #     arguments: '--debug'
-  #   secrets:
-  #     GOOGLE_APPLICATION_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}
+      googleserviceinfoplistpath: 'TemplateApplication/Supporting Files/GoogleService-Info.plist'
+      setupsigning: true
+      fastlanelane: beta
+    secrets: inherit
+  deployfirebase:
+    name: Deploy Firebase Project
+    needs: iosapptestflightdeployment
+    uses: StanfordBDHG/.github/.github/workflows/firebase-deploy.yml@v2
+    permissions:
+      contents: read
+    with:
+      arguments: '--debug'
+    secrets:
+      GOOGLE_APPLICATION_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}
