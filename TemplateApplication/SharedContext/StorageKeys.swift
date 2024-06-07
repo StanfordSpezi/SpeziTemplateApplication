@@ -11,7 +11,7 @@ enum StorageKeys {
     // MARK: - Onboarding
     /// A `Bool` flag indicating of the onboarding was completed.
     static let onboardingFlowComplete = "onboardingFlow.complete"
-    
+    static let unusedConstant = "Let's hope periphery detects this ..."
     
     // MARK: - Home
     /// The currently selected home tab.
