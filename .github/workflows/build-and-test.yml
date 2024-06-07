@@ -26,7 +26,7 @@ jobs:
       contents: read
   periphery:
     name: Periphery
-    uses: StanfordBDHG/.github/.github/workflows/periphery.yml@periphery
+    uses: StanfordSpezi/.github/.github/workflows/periphery.yml@periphery
     permissions:
       contents: read
     with:
