@@ -22,7 +22,12 @@ import SpeziQuestionnaire
 import SwiftUI
 
 
-actor TemplateApplicationStandard: Standard, EnvironmentAccessible, HealthKitConstraint, OnboardingConstraint, AccountStorageConstraint {
+actor TemplateApplicationStandard: Standard,
+                                   EnvironmentAccessible,
+                                   HealthKitConstraint,
+                                   OnboardingConstraint,
+                                   AccountStorageConstraint,
+                                   AccountNotifyConstraint {
     enum TemplateApplicationStandardError: Error {
         case userNotAuthenticatedYet
     }

@@ -11,8 +11,6 @@ enum StorageKeys {
     // MARK: - Onboarding
     /// A `Bool` flag indicating of the onboarding was completed.
     static let onboardingFlowComplete = "onboardingFlow.complete"
-    /// A `Step` flag indicating the current step in the onboarding process.
-    static let onboardingFlowStep = "onboardingFlow.step"
     
     
     // MARK: - Home
