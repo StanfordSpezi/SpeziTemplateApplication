@@ -19,6 +19,8 @@ jobs:
     name: Build and Test
     uses: ./.github/workflows/build-and-test.yml
     permissions:
+      security-events: write
+      actions: read
       contents: read
     secrets: inherit
   iosapptestflightdeployment:
