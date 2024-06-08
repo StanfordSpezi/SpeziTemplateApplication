@@ -1,0 +1,6 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: TemplateApplication.xcodeproj/*
+Copyright: 2024 Stanford University and the project authors (see CONTRIBUTORS.md)
+License: MIT
+Comment: All Xcode Project Configuration Files are part of the Stanford Spezi Template Application open-source project.

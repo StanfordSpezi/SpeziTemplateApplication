@@ -8,6 +8,7 @@
 
 import Spezi
 import SpeziFirebaseAccount
+import SpeziViews
 import SwiftUI
 
 

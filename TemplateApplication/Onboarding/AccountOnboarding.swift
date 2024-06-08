@@ -12,7 +12,6 @@ import SwiftUI
 
 
 struct AccountOnboarding: View {
-    @Environment(Account.self) private var account
     @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
     
     
