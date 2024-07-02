@@ -71,7 +71,7 @@ The following screenshots show a wide variety of features based on Spezi Modules
         }
     }
 }
-@Row(numberOfColumns: 2) {
+@Row(numberOfColumns: 3) {
     @Column(size: 1) {
         @Image(source: "Contacts", alt: "A screen displaying the Contact UI.") {
             Contact Information.
