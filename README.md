@@ -37,9 +37,9 @@ The following screenshots show a wide variety of features based on Spezi Modules
 |:--:|:--:|:--:|
 |Trigger Local Notifications|Display Questionnaires|Keep Track of Tasks|
 
-|![A screen displaying the Contact UI.](TemplateApplication/Supporting%20Files/TemplateApplication.docc/Resources/Context/Contacts.png#gh-light-mode-only) ![A screen displaying the Contact UI.](TemplateApplication/Supporting%20Files/TemplateApplication.docc/Resources/Context/Contacts~dark.png#gh-dark-mode-only)|![License information to list all used Swift Packages](TemplateApplication/Supporting%20Files/TemplateApplication.docc/Resources/Context/License.png#gh-light-mode-only) ![License information to list all used Swift Packages](TemplateApplication/Supporting%20Files/TemplateApplication.docc/Resources/Context/License~dark.png#gh-dark-mode-only)|![User Interface of the Mock Web Service](TemplateApplication/Supporting%20Files/TemplateApplication.docc/Resources/Context/Request.png#gh-light-mode-only) ![User Interface of the Mock Web Service](TemplateApplication/Supporting%20Files/TemplateApplication.docc/Resources/Context/Request~dark.png#gh-dark-mode-only)
-|:--:|:--:|:--:|
-|Contact Information|License Information|Mock Web Service Requests|
+|![A screen displaying the Contact UI.](TemplateApplication/Supporting%20Files/TemplateApplication.docc/Resources/Context/Contacts.png#gh-light-mode-only) ![A screen displaying the Contact UI.](TemplateApplication/Supporting%20Files/TemplateApplication.docc/Resources/Context/Contacts~dark.png#gh-dark-mode-only)|![License information to list all used Swift Packages](TemplateApplication/Supporting%20Files/TemplateApplication.docc/Resources/Context/License.png#gh-light-mode-only) ![License information to list all used Swift Packages](TemplateApplication/Supporting%20Files/TemplateApplication.docc/Resources/Context/License~dark.png#gh-dark-mode-only)|
+|:--:|:--:|
+|Contact Information|License Information|
 
 > [!NOTE] 
 > You can find all the used Spezi Modules in the [Stanford Spezi GitHub Organization](https://github.com/StanfordSpezi).
