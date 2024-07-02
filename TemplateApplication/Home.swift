@@ -14,7 +14,6 @@ struct HomeView: View {
     enum Tabs: String {
         case schedule
         case contact
-        case mockUpload
     }
     
     static var accountEnabled: Bool {

@@ -71,7 +71,7 @@ The following screenshots show a wide variety of features based on Spezi Modules
         }
     }
 }
-@Row(numberOfColumns: 3) {
+@Row(numberOfColumns: 2) {
     @Column(size: 1) {
         @Image(source: "Contacts", alt: "A screen displaying the Contact UI.") {
             Contact Information.
@@ -80,11 +80,6 @@ The following screenshots show a wide variety of features based on Spezi Modules
     @Column(size: 1) {
         @Image(source: "License", alt: "License information to list all used Swift Packages") {
             License Information.
-        }
-    }
-    @Column(size: 1) {
-        @Image(source: "Request", alt: "User Interface of the Mock Web Service") {
-            Mock Web Service Requests.
         }
     }
 }

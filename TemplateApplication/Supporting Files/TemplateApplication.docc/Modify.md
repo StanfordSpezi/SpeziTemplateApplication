@@ -88,7 +88,7 @@ The [**Spezi Contacts** module](https://github.com/StanfordSpezi/SpeziContact) u
 The application also gives credit to all dependencies in the Account Details. It uses the [**Spezi License** module](https://github.com/StanfordSpezi/SpeziLicense) to show a list of used Swift Packages.
 
 
-@Row(numberOfColumns: 4) {
+@Row(numberOfColumns: 2) {
     @Column(size: 1) {
         @Image(source: "Contacts", alt: "A screen displaying the Contact UI.") {
             You can find and modify the contact information in the ``Contacts`` view.
@@ -97,11 +97,6 @@ The application also gives credit to all dependencies in the Account Details. It
     @Column(size: 1) {
         @Image(source: "License", alt: "License information to list all used Swift Packages") {
             You can investigate the [**Spezi License** module](https://github.com/StanfordSpezi/SpeziLicense) to learn how the application loads and displays the license information.
-        }
-    }
-    @Column(size: 1) {
-        @Image(source: "Request", alt: "User Interface of the Mock Web Service") {
-            If Firebase is disabled, the [**Spezi Mock Web Service** module](https://github.com/StanfordSpezi/SpeziMockWebService) allows you to see the requests that would be sent to a web service.
         }
     }
 }
