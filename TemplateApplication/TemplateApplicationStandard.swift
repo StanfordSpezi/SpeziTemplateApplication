@@ -16,7 +16,6 @@ import SpeziAccount
 import SpeziFirebaseAccountStorage
 import SpeziFirestore
 import SpeziHealthKit
-import SpeziMockWebService
 import SpeziOnboarding
 import SpeziQuestionnaire
 import SwiftUI
@@ -36,12 +35,10 @@ actor TemplateApplicationStandard: Standard,
         Firestore.firestore().collection("users")
     }
 
-    @Dependency var mockWebService: MockWebService?
     @Dependency var accountStorage: FirestoreAccountStorage?
 
     @AccountReference var account: Account
-
-    private let logger = Logger(subsystem: "TemplateApplication", category: "Standard")
+    @Application(\.logger) private var logger
     
     
     private var userDocumentReference: DocumentReference {
@@ -73,11 +70,8 @@ actor TemplateApplicationStandard: Standard,
 
 
     func add(sample: HKSample) async {
-        if let mockWebService {
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
-            let jsonRepresentation = (try? String(data: encoder.encode(sample.resource), encoding: .utf8)) ?? ""
-            try? await mockWebService.upload(path: "healthkit/\(sample.uuid.uuidString)", body: jsonRepresentation)
+        if FeatureFlags.disableFirebase {
+            logger.debug("Received new HealthKit sample: \(sample)")
             return
         }
         
@@ -89,8 +83,8 @@ actor TemplateApplicationStandard: Standard,
     }
     
     func remove(sample: HKDeletedObject) async {
-        if let mockWebService {
-            try? await mockWebService.remove(path: "healthkit/\(sample.uuid.uuidString)")
+        if FeatureFlags.disableFirebase {
+            logger.debug("Received new removed healthkit sample with id \(sample.uuid)")
             return
         }
         
@@ -104,9 +98,9 @@ actor TemplateApplicationStandard: Standard,
     func add(response: ModelsR4.QuestionnaireResponse) async {
         let id = response.identifier?.value?.value?.string ?? UUID().uuidString
         
-        if let mockWebService {
+        if FeatureFlags.disableFirebase {
             let jsonRepresentation = (try? String(data: JSONEncoder().encode(response), encoding: .utf8)) ?? ""
-            try? await mockWebService.upload(path: "questionnaireResponse/\(id)", body: jsonRepresentation)
+            logger.debug("Received questionnaire response: \(jsonRepresentation)")
             return
         }
         

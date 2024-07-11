@@ -49,15 +49,15 @@ The following screenshots show a wide variety of features based on Spezi Modules
         }
     }
     @Column(size: 1) {
-        @Image(source: "Schedule", alt: "A screen displaying the Scheduler UI.") {
-            Schedule Tasks.
+        @Image(source: "Notifications", alt: "Onboarding screen showing the Notifications permission screen.") {
+            Trigger Local Notifications.
         }
     }
 }
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
-        @Image(source: "Notifications", alt: "Onboarding screen showing the Notifications permission screen.") {
-            Trigger Local Notifications.
+        @Image(source: "Schedule", alt: "A screen displaying the Scheduler UI.") {
+            Schedule Tasks.
         }
     }
     @Column(size: 1) {
@@ -78,13 +78,13 @@ The following screenshots show a wide variety of features based on Spezi Modules
         }
     }
     @Column(size: 1) {
-        @Image(source: "License", alt: "License information to list all used Swift Packages") {
-            License Information.
+        @Image(source: "Account", alt: "A screen displaying the current user account information.") {
+            Account Overview.
         }
     }
     @Column(size: 1) {
-        @Image(source: "Request", alt: "User Interface of the Mock Web Service") {
-            Mock Web Service Requests.
+        @Image(source: "License", alt: "License information to list all used Swift Packages") {
+            License Information.
         }
     }
 }

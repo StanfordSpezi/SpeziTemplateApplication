@@ -7,7 +7,6 @@
 //
 
 import SpeziAccount
-import SpeziMockWebService
 import SwiftUI
 
 
@@ -15,7 +14,6 @@ struct HomeView: View {
     enum Tabs: String {
         case schedule
         case contact
-        case mockUpload
     }
     
     static var accountEnabled: Bool {
@@ -39,13 +37,6 @@ struct HomeView: View {
                 .tabItem {
                     Label("CONTACTS_TAB_TITLE", systemImage: "person.fill")
                 }
-            if FeatureFlags.disableFirebase {
-                MockUpload(presentingAccount: $presentingAccount)
-                    .tag(Tabs.mockUpload)
-                    .tabItem {
-                        Label("MOCK_WEB_SERVICE_TAB_TITLE", systemImage: "server.rack")
-                    }
-            }
         }
             .sheet(isPresented: $presentingAccount) {
                 AccountSheet()
@@ -67,7 +58,6 @@ struct HomeView: View {
     return HomeView()
         .previewWith(standard: TemplateApplicationStandard()) {
             TemplateApplicationScheduler()
-            MockWebService()
             AccountConfiguration(building: details, active: MockUserIdPasswordAccountService())
         }
 }
@@ -77,7 +67,6 @@ struct HomeView: View {
     return HomeView()
         .previewWith(standard: TemplateApplicationStandard()) {
             TemplateApplicationScheduler()
-            MockWebService()
             AccountConfiguration {
                 MockUserIdPasswordAccountService()
             }

@@ -54,7 +54,6 @@ jobs:
     with:
       artifactname: TemplateApplication.xcresult
       runsonlabels: '["macOS", "self-hosted"]'
-      setupSimulators: true
       setupfirebaseemulator: true
       customcommand: "firebase emulators:exec 'fastlane test'"
   uploadcoveragereport:

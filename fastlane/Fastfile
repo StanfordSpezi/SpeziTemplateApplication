@@ -10,7 +10,7 @@ default_platform(:ios)
 
 platform :ios do
   before_all do
-    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "5"
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "10"
     ENV["FASTLANE_XCODEBUILD_SETTINGS_RETRIES"] = "6"
   end
 
@@ -35,6 +35,7 @@ platform :ios do
 
   desc "CodeQL"
   lane :codeql do
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "320" # CodeQL runs on GitHub CI. We need much higher timeout here.
     build_app(
       skip_archive: true,
       skip_codesigning: true,
