@@ -49,15 +49,15 @@ The following screenshots show a wide variety of features based on Spezi Modules
         }
     }
     @Column(size: 1) {
-        @Image(source: "Schedule", alt: "A screen displaying the Scheduler UI.") {
-            Schedule Tasks.
+        @Image(source: "Notifications", alt: "Onboarding screen showing the Notifications permission screen.") {
+            Trigger Local Notifications.
         }
     }
 }
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
-        @Image(source: "Notifications", alt: "Onboarding screen showing the Notifications permission screen.") {
-            Trigger Local Notifications.
+        @Image(source: "Schedule", alt: "A screen displaying the Scheduler UI.") {
+            Schedule Tasks.
         }
     }
     @Column(size: 1) {
@@ -75,6 +75,11 @@ The following screenshots show a wide variety of features based on Spezi Modules
     @Column(size: 1) {
         @Image(source: "Contacts", alt: "A screen displaying the Contact UI.") {
             Contact Information.
+        }
+    }
+    @Column(size: 1) {
+        @Image(source: "Account", alt: "A screen displaying the current user account information.") {
+            Account Overview.
         }
     }
     @Column(size: 1) {
