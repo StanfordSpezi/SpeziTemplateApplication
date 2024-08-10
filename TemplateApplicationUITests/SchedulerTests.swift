@@ -34,7 +34,5 @@ class SchedulerTests: XCTestCase {
         app.staticTexts["Start Questionnaire"].tap()
         
         XCTAssertTrue(app.staticTexts["Social Support"].waitForExistence(timeout: 2))
-
-        // TODO: test questionnaure with account?
     }
 }

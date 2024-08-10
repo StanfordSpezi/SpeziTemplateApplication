@@ -390,6 +390,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A9E1D3462C67B0A300CED217 /* PBXTargetDependency */,
 				653A255F28338800005D4D48 /* PBXTargetDependency */,
 			);
 			name = TemplateApplicationTests;
@@ -408,6 +409,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A9E1D3482C67B0A700CED217 /* PBXTargetDependency */,
 				653A256928338800005D4D48 /* PBXTargetDependency */,
 			);
 			name = TemplateApplicationUITests;
@@ -585,6 +587,14 @@
 		A9E1D3432C67A3F800CED217 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = A9E1D3422C67A3F800CED217 /* SwiftLintBuildToolPlugin */;
+		};
+		A9E1D3462C67B0A300CED217 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A9E1D3452C67B0A300CED217 /* SwiftLintBuildToolPlugin */;
+		};
+		A9E1D3482C67B0A700CED217 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A9E1D3472C67B0A700CED217 /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1346,6 +1356,16 @@
 			productName = SpeziFirebaseAccountStorage;
 		};
 		A9E1D3422C67A3F800CED217 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F66D20D2BB723180010D555 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		A9E1D3452C67B0A300CED217 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F66D20D2BB723180010D555 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		A9E1D3472C67B0A700CED217 /* SwiftLintBuildToolPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2F66D20D2BB723180010D555 /* XCRemoteSwiftPackageReference "SwiftLint" */;
 			productName = "plugin:SwiftLintBuildToolPlugin";
