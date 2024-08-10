@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
+@_spi(TestingSupport)
 import SpeziAccount
 import SpeziLicense
 import SwiftUI
@@ -18,28 +19,19 @@ struct AccountSheet: View {
     @Environment(\.accountRequired) var accountRequired
     
     @State var isInSetup = false
-    @State var overviewIsEditing = false
     
     
     var body: some View {
         NavigationStack {
             ZStack {
                 if account.signedIn && !isInSetup {
-                    AccountOverview(isEditing: $overviewIsEditing) {
+                    AccountOverview(close: .showCloseButton) {
                         NavigationLink {
                             ContributionsList(projectLicense: .mit)
                         } label: {
                             Text("LICENSE_INFO_TITLE")
                         }
                     }
-                        .onDisappear {
-                            overviewIsEditing = false
-                        }
-                        .toolbar {
-                            if !overviewIsEditing {
-                                closeButton
-                            }
-                        }
                 } else {
                     AccountSetup { _ in
                         dismiss() // we just signed in, dismiss the account setup sheet
@@ -71,22 +63,20 @@ struct AccountSheet: View {
 
 #if DEBUG
 #Preview("AccountSheet") {
-    let details = AccountDetails.Builder()
-        .set(\.userId, value: "lelandstanford@stanford.edu")
-        .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
+    var details = AccountDetails()
+    details.userId = "lelandstanford@stanford.edu"
+    details.name = PersonNameComponents(givenName: "Leland", familyName: "Stanford")
     
     return AccountSheet()
         .previewWith {
-            AccountConfiguration(building: details, active: MockUserIdPasswordAccountService())
+            AccountConfiguration(service: InMemoryAccountService(), activeDetails: details)
         }
 }
 
 #Preview("AccountSheet SignIn") {
     AccountSheet()
         .previewWith {
-            AccountConfiguration {
-                MockUserIdPasswordAccountService()
-            }
+            AccountConfiguration(service: InMemoryAccountService())
         }
 }
 #endif

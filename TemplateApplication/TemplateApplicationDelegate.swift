@@ -9,6 +9,7 @@
 import Spezi
 import SpeziAccount
 import SpeziFirebaseAccount
+import SpeziFirebaseAccountStorage
 import SpeziFirebaseStorage
 import SpeziFirestore
 import SpeziHealthKit
@@ -21,23 +22,19 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
     override var configuration: Configuration {
         Configuration(standard: TemplateApplicationStandard()) {
             if !FeatureFlags.disableFirebase {
-                AccountConfiguration(configuration: [
-                    .requires(\.userId),
-                    .requires(\.name),
+                AccountConfiguration(
+                    service: FirebaseAccountService(providers: [.emailAndPassword, .signInWithApple], emulatorSettings: accountEmulator),
+                    storageProvider: FirestoreAccountStorage(storeIn: TemplateApplicationStandard.userCollection),
+                    configuration: [
+                        .requires(\.userId),
+                        .requires(\.name),
 
-                    // additional values stored using the `FirestoreAccountStorage` within our Standard implementation
-                    .collects(\.genderIdentity),
-                    .collects(\.dateOfBirth)
-                ])
+                        // additional values stored using the `FirestoreAccountStorage` within our Standard implementation
+                        .collects(\.genderIdentity),
+                        .collects(\.dateOfBirth)
+                    ]
+                )
 
-                if FeatureFlags.useFirebaseEmulator {
-                    FirebaseAccountConfiguration(
-                        authenticationMethods: [.emailAndPassword, .signInWithApple],
-                        emulatorSettings: (host: "localhost", port: 9099)
-                    )
-                } else {
-                    FirebaseAccountConfiguration(authenticationMethods: [.emailAndPassword, .signInWithApple])
-                }
                 firestore
                 if FeatureFlags.useFirebaseEmulator {
                     FirebaseStorageConfiguration(emulatorSettings: (host: "localhost", port: 9199))
@@ -54,7 +51,15 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
             OnboardingDataSource()
         }
     }
-    
+
+    private var accountEmulator: (host: String, port: Int)? {
+        if FeatureFlags.useFirebaseEmulator {
+            (host: "localhost", port: 9099)
+        } else {
+            nil
+        }
+    }
+
     
     private var firestore: Firestore {
         let settings = FirestoreSettings()

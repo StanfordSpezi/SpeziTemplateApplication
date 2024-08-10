@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
+@_spi(TestingSupport)
 import SpeziAccount
 import SwiftUI
 
@@ -44,32 +45,20 @@ struct HomeView: View {
             .accountRequired(Self.accountEnabled) {
                 AccountSheet()
             }
-            .verifyRequiredAccountDetails(Self.accountEnabled)
     }
 }
 
 
 #if DEBUG
 #Preview {
-    let details = AccountDetails.Builder()
-        .set(\.userId, value: "lelandstanford@stanford.edu")
-        .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
+    var details = AccountDetails()
+    details.userId = "lelandstanford@stanford.edu"
+    details.name = PersonNameComponents(givenName: "Leland", familyName: "Stanford")
     
     return HomeView()
         .previewWith(standard: TemplateApplicationStandard()) {
             TemplateApplicationScheduler()
-            AccountConfiguration(building: details, active: MockUserIdPasswordAccountService())
-        }
-}
-
-#Preview {
-    CommandLine.arguments.append("--disableFirebase") // make sure the MockWebService is displayed
-    return HomeView()
-        .previewWith(standard: TemplateApplicationStandard()) {
-            TemplateApplicationScheduler()
-            AccountConfiguration {
-                MockUserIdPasswordAccountService()
-            }
+            AccountConfiguration(service: InMemoryAccountService(), activeDetails: details)
         }
 }
 #endif

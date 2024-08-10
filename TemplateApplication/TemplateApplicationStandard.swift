@@ -6,18 +6,17 @@
 // SPDX-License-Identifier: MIT
 //
 
-import FirebaseFirestore
-import FirebaseStorage
+@preconcurrency import FirebaseFirestore
+@preconcurrency import FirebaseStorage
 import HealthKitOnFHIR
 import OSLog
 import PDFKit
 import Spezi
 import SpeziAccount
-import SpeziFirebaseAccountStorage
 import SpeziFirestore
 import SpeziHealthKit
 import SpeziOnboarding
-import SpeziQuestionnaire
+@preconcurrency import SpeziQuestionnaire
 import SwiftUI
 
 
@@ -25,21 +24,19 @@ actor TemplateApplicationStandard: Standard,
                                    EnvironmentAccessible,
                                    HealthKitConstraint,
                                    OnboardingConstraint,
-                                   AccountStorageConstraint,
                                    AccountNotifyConstraint {
     enum TemplateApplicationStandardError: Error {
         case userNotAuthenticatedYet
     }
 
-    private static var userCollection: CollectionReference {
+    static var userCollection: CollectionReference {
         Firestore.firestore().collection("users")
     }
 
-    @Dependency var accountStorage: FirestoreAccountStorage?
-
-    @AccountReference var account: Account
     @Application(\.logger) private var logger
-    
+
+    @Dependency(Account.self) private var account
+
     
     private var userDocumentReference: DocumentReference {
         get async throws {
@@ -47,7 +44,7 @@ actor TemplateApplicationStandard: Standard,
                 throw TemplateApplicationStandardError.userNotAuthenticatedYet
             }
 
-            return Self.userCollection.document(details.accountId)
+            return userDocumentReference(for: details.accountId)
         }
     }
     
@@ -62,10 +59,11 @@ actor TemplateApplicationStandard: Standard,
     }
 
 
-    init() {
-        if !FeatureFlags.disableFirebase {
-            _accountStorage = Dependency(wrappedValue: FirestoreAccountStorage(storeIn: TemplateApplicationStandard.userCollection))
-        }
+    init() {}
+
+
+    private func userDocumentReference(for accountId: String) -> DocumentReference {
+        Self.userCollection.document(accountId)
     }
 
 
@@ -121,12 +119,13 @@ actor TemplateApplicationStandard: Standard,
             .document(uuid.uuidString) // Set the document identifier to the UUID of the document.
     }
 
-    func deletedAccount() async throws {
-        // delete all user associated data
-        do {
-            try await userDocumentReference.delete()
-        } catch {
-            logger.error("Could not delete user document: \(error)")
+    func respondToEvent(_ event: AccountNotifications.Event) async {
+        if case let .deletingAccount(accountId) = event {
+            do {
+                try await userDocumentReference(for: accountId).delete()
+            } catch {
+                logger.error("Could not delete user document: \(error)")
+            }
         }
     }
     
@@ -155,48 +154,14 @@ actor TemplateApplicationStandard: Standard,
                 logger.error("Could not store consent form.")
                 return
             }
-            
+
             let metadata = StorageMetadata()
             metadata.contentType = "application/pdf"
-            _ = try await userBucketReference.child("consent/\(dateString).pdf").putDataAsync(consentData, metadata: metadata)
+            _ = try await userBucketReference
+                .child("consent/\(dateString).pdf")
+                .putDataAsync(consentData, metadata: metadata) { @Sendable _ in }
         } catch {
             logger.error("Could not store consent form: \(error)")
         }
-    }
-
-
-    func create(_ identifier: AdditionalRecordId, _ details: SignupDetails) async throws {
-        guard let accountStorage else {
-            preconditionFailure("Account Storage was requested although not enabled in current configuration.")
-        }
-        try await accountStorage.create(identifier, details)
-    }
-
-    func load(_ identifier: AdditionalRecordId, _ keys: [any AccountKey.Type]) async throws -> PartialAccountDetails {
-        guard let accountStorage else {
-            preconditionFailure("Account Storage was requested although not enabled in current configuration.")
-        }
-        return try await accountStorage.load(identifier, keys)
-    }
-
-    func modify(_ identifier: AdditionalRecordId, _ modifications: AccountModifications) async throws {
-        guard let accountStorage else {
-            preconditionFailure("Account Storage was requested although not enabled in current configuration.")
-        }
-        try await accountStorage.modify(identifier, modifications)
-    }
-
-    func clear(_ identifier: AdditionalRecordId) async {
-        guard let accountStorage else {
-            preconditionFailure("Account Storage was requested although not enabled in current configuration.")
-        }
-        await accountStorage.clear(identifier)
-    }
-
-    func delete(_ identifier: AdditionalRecordId) async throws {
-        guard let accountStorage else {
-            preconditionFailure("Account Storage was requested although not enabled in current configuration.")
-        }
-        try await accountStorage.delete(identifier)
     }
 }

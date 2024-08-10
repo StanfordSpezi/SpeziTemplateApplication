@@ -38,6 +38,8 @@ struct AccountSetupHeader: View {
 #if DEBUG
 #Preview {
     AccountSetupHeader()
-        .environment(Account())
+        .previewWith {
+            AccountConfiguration(service: InMemoryAccountService())
+        }
 }
 #endif

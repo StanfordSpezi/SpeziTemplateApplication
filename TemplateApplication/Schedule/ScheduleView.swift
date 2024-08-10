@@ -72,7 +72,8 @@ struct ScheduleView: View {
         self._presentingAccount = presentingAccount
     }
     
-    
+
+    @MainActor
     private func destination(withContext eventContext: EventContext) -> some View {
         @ViewBuilder var destination: some View {
             switch eventContext.task.context {
@@ -89,7 +90,7 @@ struct ScheduleView: View {
                 }
             case let .test(string):
                 ModalView(text: string, buttonText: String(localized: "CLOSE")) {
-                    await eventContext.event.complete(true)
+                    eventContext.event.complete(true)
                 }
             }
         }
@@ -111,9 +112,7 @@ struct ScheduleView: View {
     ScheduleView(presentingAccount: .constant(false))
         .previewWith(standard: TemplateApplicationStandard()) {
             TemplateApplicationScheduler()
-            AccountConfiguration {
-                MockUserIdPasswordAccountService()
-            }
+            AccountConfiguration(service: InMemoryAccountService())
         }
 }
 #endif

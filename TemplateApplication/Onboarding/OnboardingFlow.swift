@@ -10,6 +10,7 @@ import SpeziAccount
 import SpeziFirebaseAccount
 import SpeziHealthKit
 import SpeziOnboarding
+@preconcurrency import SpeziScheduler
 import SwiftUI
 
 
@@ -65,13 +66,10 @@ struct OnboardingFlow: View {
 #if DEBUG
 #Preview {
     OnboardingFlow()
-        .environment(Account(MockUserIdPasswordAccountService()))
         .previewWith(standard: TemplateApplicationStandard()) {
             OnboardingDataSource()
             HealthKit()
-            AccountConfiguration {
-                MockUserIdPasswordAccountService()
-            }
+            AccountConfiguration(service: InMemoryAccountService())
 
             TemplateApplicationScheduler()
         }
