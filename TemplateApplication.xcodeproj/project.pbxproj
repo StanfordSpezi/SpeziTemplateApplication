@@ -345,7 +345,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2F66D20F2BB723200010D555 /* PBXTargetDependency */,
+				A9E1D3432C67A3F800CED217 /* PBXTargetDependency */,
 				56E7083D2BB06FCA00B08F0A /* PBXTargetDependency */,
 			);
 			name = TemplateApplication;
@@ -568,10 +568,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2F66D20F2BB723200010D555 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 2F66D20E2BB723200010D555 /* SwiftLintPlugin */;
-		};
 		56E7083D2BB06FCA00B08F0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 56E7083C2BB06FCA00B08F0A /* SwiftPackageListPlugin */;
@@ -585,6 +581,10 @@
 			isa = PBXTargetDependency;
 			target = 653A254C283387FE005D4D48 /* TemplateApplication */;
 			targetProxy = 653A256828338800005D4D48 /* PBXContainerItemProxy */;
+		};
+		A9E1D3432C67A3F800CED217 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = A9E1D3422C67A3F800CED217 /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1221,11 +1221,6 @@
 			package = 2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "Spezi" */;
 			productName = Spezi;
 		};
-		2F66D20E2BB723200010D555 /* SwiftLintPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F66D20D2BB723180010D555 /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = "plugin:SwiftLintPlugin";
-		};
 		2FB099AE2A875DF100B20952 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2FE5DC9029EDD9C3004B9AB4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -1349,6 +1344,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2FE5DC7329EDD8E6004B9AB4 /* XCRemoteSwiftPackageReference "SpeziFirebase" */;
 			productName = SpeziFirebaseAccountStorage;
+		};
+		A9E1D3422C67A3F800CED217 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F66D20D2BB723180010D555 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

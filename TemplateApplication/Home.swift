@@ -6,8 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
-@_spi(TestingSupport)
-import SpeziAccount
+@_spi(TestingSupport) import SpeziAccount
 import SwiftUI
 
 
@@ -15,10 +14,6 @@ struct HomeView: View {
     enum Tabs: String {
         case schedule
         case contact
-    }
-    
-    static var accountEnabled: Bool {
-        !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding
     }
 
 
@@ -42,7 +37,7 @@ struct HomeView: View {
             .sheet(isPresented: $presentingAccount) {
                 AccountSheet()
             }
-            .accountRequired(Self.accountEnabled) {
+            .accountRequired(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding) {
                 AccountSheet()
             }
     }

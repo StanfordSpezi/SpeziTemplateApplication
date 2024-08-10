@@ -15,7 +15,7 @@ private struct TemplateAppTestingSetup: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .task {
+            .onAppear {
                 if FeatureFlags.skipOnboarding {
                     completedOnboardingFlow = true
                 }

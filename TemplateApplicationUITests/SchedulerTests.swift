@@ -24,13 +24,17 @@ class SchedulerTests: XCTestCase {
     
     func testScheduler() throws {
         let app = XCUIApplication()
-        
-        XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Schedule"].waitForExistence(timeout: 2))
+
+        XCTAssertTrue(app.wait(for: .runningForeground, timeout: 2.0))
+
+        XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Schedule"].exists)
         app.tabBars["Tab Bar"].buttons["Schedule"].tap()
         
         XCTAssertTrue(app.staticTexts["Start Questionnaire"].waitForExistence(timeout: 2))
         app.staticTexts["Start Questionnaire"].tap()
         
         XCTAssertTrue(app.staticTexts["Social Support"].waitForExistence(timeout: 2))
+
+        // TODO: test questionnaure with account?
     }
 }
