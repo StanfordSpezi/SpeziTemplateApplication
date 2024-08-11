@@ -54,7 +54,7 @@ class OnboardingTests: XCTestCase {
 }
 
 
-extension XCUIApplication {    
+extension XCUIApplication {
     fileprivate func navigateOnboardingFlow(
         email: String = "leland@stanford.edu",
         repeated skippedIfRepeated: Bool = false
