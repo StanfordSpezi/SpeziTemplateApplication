@@ -54,15 +54,7 @@ class OnboardingTests: XCTestCase {
 }
 
 
-extension XCUIApplication {
-    func conductOnboardingIfNeeded(email: String = "leland@stanford.edu") throws {
-        let app = XCUIApplication()
-        
-        if app.staticTexts["Spezi\nTemplate Application"].waitForExistence(timeout: 5) {
-            try app.navigateOnboardingFlow(email: email)
-        }
-    }
-    
+extension XCUIApplication {    
     fileprivate func navigateOnboardingFlow(
         email: String = "leland@stanford.edu",
         repeated skippedIfRepeated: Bool = false
