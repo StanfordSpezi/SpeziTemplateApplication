@@ -17,7 +17,7 @@ import SpeziFirebaseAccount
 import SpeziFirestore
 import SpeziHealthKit
 import SpeziOnboarding
-@preconcurrency import SpeziQuestionnaire
+import SpeziQuestionnaire
 import SwiftUI
 
 
@@ -83,7 +83,8 @@ actor TemplateApplicationStandard: Standard,
         }
         
         do {
-            try await healthKitDocument(id: sample.id).setData(from: sample.resource)
+            try await healthKitDocument(id: sample.id)
+                .setData(from: sample.resource)
         } catch {
             logger.error("Could not store HealthKit sample: \(error)")
         }

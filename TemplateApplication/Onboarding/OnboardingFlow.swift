@@ -10,7 +10,7 @@ import SpeziAccount
 import SpeziFirebaseAccount
 import SpeziHealthKit
 import SpeziOnboarding
-@preconcurrency import SpeziScheduler
+import SpeziScheduler
 import SwiftUI
 
 
