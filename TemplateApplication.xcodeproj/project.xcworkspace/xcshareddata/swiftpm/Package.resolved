@@ -187,7 +187,7 @@
       "location" : "https://github.com/StanfordSpezi/Spezi",
       "state" : {
         "branch" : "feature/dependency-restructure",
-        "revision" : "ded33ca7a468331fadf9549279c8de6ef95a7440"
+        "revision" : "95d73430e7a3170402577a59f9d8f92fc45ebb2e"
       }
     },
     {
@@ -232,7 +232,7 @@
       "location" : "https://github.com/StanfordSpezi/SpeziHealthKit.git",
       "state" : {
         "branch" : "feature/strict-concurrency",
-        "revision" : "97e92461ccbab386c9016e8c93341f52a9d373dc"
+        "revision" : "984328de1a7087602254e2051375ebf018e2f1fb"
       }
     },
     {
@@ -268,7 +268,7 @@
       "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
       "state" : {
         "branch" : "feature/strict-concurrency",
-        "revision" : "703af1112b942fbf3e332fa2612d85336ad766ef"
+        "revision" : "56547ad80c0571f8e245352fdc6544dea66601fd"
       }
     },
     {
