@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/app-check.git",
       "state" : {
-        "revision" : "3b62f154d00019ae29a71e9738800bb6f18b236d",
-        "version" : "10.19.2"
+        "revision" : "21fe1af9be463a359aaf8d96789ef73fc3760d09",
+        "version" : "11.0.1"
       }
     },
     {
@@ -60,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk.git",
       "state" : {
-        "revision" : "eca84fd638116dd6adb633b5a3f31cc7befcbb7d",
-        "version" : "10.29.0"
+        "revision" : "a5c253d1b4409eb8aef4346015ba000f9935cb2d",
+        "version" : "11.0.0"
       }
     },
     {
@@ -69,8 +69,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleAppMeasurement.git",
       "state" : {
-        "revision" : "fe727587518729046fc1465625b9afd80b5ab361",
-        "version" : "10.28.0"
+        "revision" : "ca30c987b732d130732fb60b071e0b655a85ada7",
+        "version" : "11.0.0"
       }
     },
     {
@@ -78,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleDataTransport.git",
       "state" : {
-        "revision" : "a637d318ae7ae246b02d7305121275bc75ed5565",
-        "version" : "9.4.0"
+        "revision" : "617af071af9aa1d6a091d59a202910ac482128f9",
+        "version" : "10.1.0"
       }
     },
     {
@@ -87,8 +87,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleUtilities.git",
       "state" : {
-        "revision" : "57a1d307f42df690fdef2637f3e5b776da02aad6",
-        "version" : "7.13.3"
+        "revision" : "53156c7ec267db846e6b64c9f4c4e31ba4cf75eb",
+        "version" : "8.0.2"
       }
     },
     {
@@ -96,8 +96,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/grpc-binary.git",
       "state" : {
-        "revision" : "e9fad491d0673bdda7063a0341fb6b47a30c5359",
-        "version" : "1.62.2"
+        "revision" : "f56d8fc3162de9a498377c7b6cea43431f4f5083",
+        "version" : "1.65.1"
       }
     },
     {
@@ -186,8 +186,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/Spezi",
       "state" : {
-        "branch" : "feature/dependency-restructure",
-        "revision" : "95d73430e7a3170402577a59f9d8f92fc45ebb2e"
+        "revision" : "87d735b4db005b1ff825bb3b55733cb78a69f899",
+        "version" : "1.7.1"
       }
     },
     {
@@ -196,7 +196,7 @@
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
         "branch" : "feature/account-service-singleton",
-        "revision" : "94bfd9bd5b8349744a4816a7a29d014c8836c6c0"
+        "revision" : "3db76156a91c24d2e7ff872ef495d4abed676323"
       }
     },
     {
@@ -204,8 +204,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziContact.git",
       "state" : {
-        "revision" : "494b776f8c98d771e4a609a1fb706097dba4c030",
-        "version" : "1.0.0"
+        "revision" : "9a7aa7e4ca0930b61046b8e8ee5b9df863b8d00e",
+        "version" : "1.0.1"
       }
     },
     {
@@ -214,16 +214,16 @@
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
         "branch" : "feature/spezi-account-2.0",
-        "revision" : "0d1d88166d90d1f93cb78e6370ef3cde4641b405"
+        "revision" : "9d50c68185634b8ca46a4a73b62701a24a433b7a"
       }
     },
     {
       "identity" : "spezifoundation",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordSpezi/SpeziFoundation",
+      "location" : "https://github.com/StanfordSpezi/SpeziFoundation.git",
       "state" : {
-        "revision" : "4781d96a09587f3d47ac3f3e71d197149b288146",
-        "version" : "1.1.3"
+        "revision" : "d3a675735c734001e29e51689217d160bde51ce2",
+        "version" : "2.0.0-beta.1"
       }
     },
     {
@@ -231,8 +231,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziHealthKit.git",
       "state" : {
-        "branch" : "feature/strict-concurrency",
-        "revision" : "984328de1a7087602254e2051375ebf018e2f1fb"
+        "revision" : "fbdec78fcb2f90d6338f1968e21dd11fbee65070",
+        "version" : "0.6.0"
       }
     },
     {
@@ -240,8 +240,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziLicense",
       "state" : {
-        "revision" : "d839e7138ca2e231f5bdd90c3e4ab06dba9bc30b",
-        "version" : "0.1.0"
+        "revision" : "2249ce615a624a072834e31e7906b779ba82b824",
+        "version" : "0.1.1"
       }
     },
     {
@@ -249,8 +249,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziOnboarding",
       "state" : {
-        "revision" : "8d6dda3501720a1952573439b21a503cbecd9e0f",
-        "version" : "1.2.0"
+        "revision" : "ec570fe5b26bd80a0ee7bc047ae680767621aaa4",
+        "version" : "1.2.1"
       }
     },
     {
@@ -267,8 +267,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
       "state" : {
-        "branch" : "feature/strict-concurrency",
-        "revision" : "56547ad80c0571f8e245352fdc6544dea66601fd"
+        "revision" : "896eb442eb2941f9b2f7721c3ac871373934142a",
+        "version" : "0.8.3"
       }
     },
     {
@@ -285,8 +285,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziViews.git",
       "state" : {
-        "revision" : "4a8245e77307949f845adedcc9bc1b5faf05e4bb",
-        "version" : "1.5.1"
+        "revision" : "427f4f3a7acb0e00ea11c4c3ca7b60e36d2557a0",
+        "version" : "1.6.0"
       }
     },
     {
@@ -301,7 +301,7 @@
     {
       "identity" : "swift-atomics",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-atomics.git",
+      "location" : "https://github.com/apple/swift-atomics",
       "state" : {
         "revision" : "cd142fd2f64be2100422d658e7411e39489da985",
         "version" : "1.2.0"
@@ -337,7 +337,7 @@
     {
       "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-syntax",
+      "location" : "https://github.com/apple/swift-syntax.git",
       "state" : {
         "revision" : "2bc86522d115234d1f588efe2bcb4ce4be8f8b82",
         "version" : "510.0.3"
@@ -393,8 +393,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTRuntimeAssertions",
       "state" : {
-        "revision" : "7ce28015c0bee62b523a860e343e3d6b7ec40fda",
-        "version" : "1.1.1"
+        "revision" : "a2b127559cae78ae497273f047ccd99b28bf319b",
+        "version" : "1.1.2"
       }
     },
     {
