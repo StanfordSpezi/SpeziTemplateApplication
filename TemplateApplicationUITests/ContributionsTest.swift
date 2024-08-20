@@ -10,9 +10,9 @@ import XCTest
 
 
 final class ContributionsTest: XCTestCase {
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        
+    @MainActor
+    override func setUp() async throws {
+
         continueAfterFailure = false
         
         let app = XCUIApplication()
@@ -20,6 +20,7 @@ final class ContributionsTest: XCTestCase {
         app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
     }
 
+    @MainActor
     func testLicenseInformationPage() throws {
         let app = XCUIApplication()
 

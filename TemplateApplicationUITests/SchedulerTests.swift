@@ -11,9 +11,8 @@ import XCTestExtensions
 
 
 class SchedulerTests: XCTestCase {
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        
+    @MainActor
+    override func setUp() async throws {
         continueAfterFailure = false
         
         let app = XCUIApplication()
@@ -21,7 +20,8 @@ class SchedulerTests: XCTestCase {
         app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
     }
     
-    
+
+    @MainActor
     func testScheduler() throws {
         let app = XCUIApplication()
 

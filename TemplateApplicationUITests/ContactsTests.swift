@@ -10,9 +10,9 @@ import XCTest
 
 
 class ContactsTests: XCTestCase {
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        
+    @MainActor
+    override func setUp() async throws {
+
         continueAfterFailure = false
         
         let app = XCUIApplication()
@@ -20,7 +20,8 @@ class ContactsTests: XCTestCase {
         app.launch()
     }
     
-    
+
+    @MainActor
     func testContacts() throws {
         let app = XCUIApplication()
 
