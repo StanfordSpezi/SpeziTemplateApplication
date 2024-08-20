@@ -7,7 +7,7 @@
 //
 
 import OrderedCollections
-import SpeziAccount
+@_spi(TestingSupport) import SpeziAccount
 import SpeziQuestionnaire
 import SpeziScheduler
 import SwiftUI
@@ -16,6 +16,7 @@ import SwiftUI
 struct ScheduleView: View {
     @Environment(TemplateApplicationStandard.self) private var standard
     @Environment(TemplateApplicationScheduler.self) private var scheduler
+    @Environment(Account.self) private var account: Account?
 
     @State private var presentedContext: EventContext?
     @Binding private var presentingAccount: Bool
@@ -59,7 +60,7 @@ struct ScheduleView: View {
                     destination(withContext: presentedContext)
                 }
                 .toolbar {
-                    if AccountButton.shouldDisplay {
+                    if account != nil {
                         AccountButton(isPresented: $presentingAccount)
                     }
                 }

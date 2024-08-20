@@ -195,8 +195,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
-        "branch" : "feature/account-service-singleton",
-        "revision" : "3db76156a91c24d2e7ff872ef495d4abed676323"
+        "revision" : "40fa3f5e84d22c700ad152e1a29f459cc5e41447",
+        "version" : "2.0.0-beta.4"
       }
     },
     {
@@ -204,8 +204,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziContact.git",
       "state" : {
-        "revision" : "9a7aa7e4ca0930b61046b8e8ee5b9df863b8d00e",
-        "version" : "1.0.1"
+        "revision" : "8dd7cb426e79f30ced23f37e438c0ca38bfe9a47",
+        "version" : "1.0.2"
       }
     },
     {
@@ -213,8 +213,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
-        "branch" : "feature/spezi-account-2.0",
-        "revision" : "9d50c68185634b8ca46a4a73b62701a24a433b7a"
+        "revision" : "7855a911c7309bf34d3cb693f76989ede15737fc",
+        "version" : "2.0.0-beta.1"
       }
     },
     {
@@ -375,8 +375,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTestExtensions.git",
       "state" : {
-        "revision" : "f54334604408ed3fe52887e46d6be85e83ec2da0",
-        "version" : "0.4.13"
+        "revision" : "aad6c161a09d658f30c7170deb4a61e8916a4a4c",
+        "version" : "1.0.0"
       }
     },
     {
