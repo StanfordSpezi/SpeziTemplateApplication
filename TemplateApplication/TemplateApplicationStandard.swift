@@ -142,14 +142,15 @@ actor TemplateApplicationStandard: Standard,
     /// Stores the given consent form in the user's document directory with a unique timestamped filename.
     ///
     /// - Parameter consent: The consent form's data to be stored as a `PDFDocument`.
+    @MainActor
     func store(consent: PDFDocument) async {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd_HHmmss"
         let dateString = formatter.string(from: Date())
-        
+
         guard !FeatureFlags.disableFirebase else {
             guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-                logger.error("Could not create path for writing consent form to user document directory.")
+                await logger.error("Could not create path for writing consent form to user document directory.")
                 return
             }
             
@@ -161,7 +162,7 @@ actor TemplateApplicationStandard: Standard,
         
         do {
             guard let consentData = consent.dataRepresentation() else {
-                logger.error("Could not store consent form.")
+                await logger.error("Could not store consent form.")
                 return
             }
 
@@ -171,7 +172,7 @@ actor TemplateApplicationStandard: Standard,
                 .child("consent/\(dateString).pdf")
                 .putDataAsync(consentData, metadata: metadata) { @Sendable _ in }
         } catch {
-            logger.error("Could not store consent form: \(error)")
+            await logger.error("Could not store consent form: \(error)")
         }
     }
 

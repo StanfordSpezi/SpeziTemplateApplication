@@ -24,7 +24,7 @@ struct OnboardingFlow: View {
     @State private var localNotificationAuthorization = false
     
     
-    private var healthKitAuthorization: Bool {
+    @MainActor private var healthKitAuthorization: Bool {
         // As HealthKit not available in preview simulator
         if ProcessInfo.processInfo.isPreviewSimulator {
             return false

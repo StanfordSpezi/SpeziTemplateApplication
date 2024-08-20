@@ -12,9 +12,8 @@ import XCTHealthKit
 
 
 class OnboardingTests: XCTestCase {
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-
+    @MainActor
+    override func setUp() async throws {
         continueAfterFailure = false
         
         let app = XCUIApplication()
@@ -22,7 +21,8 @@ class OnboardingTests: XCTestCase {
         app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
     }
     
-    
+
+    @MainActor
     func testOnboardingFlow() throws {
         let app = XCUIApplication()
         let email = "leland@onboarding.stanford.edu"
@@ -32,7 +32,8 @@ class OnboardingTests: XCTestCase {
         app.assertOnboardingComplete()
         try app.assertAccountInformation(email: email)
     }
-    
+
+    @MainActor
     func testOnboardingFlowRepeated() throws {
         let app = XCUIApplication()
         app.launchArguments = ["--showOnboarding", "--disableFirebase"]
