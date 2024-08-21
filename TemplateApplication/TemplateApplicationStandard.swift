@@ -28,7 +28,7 @@ actor TemplateApplicationStandard: Standard,
                                    AccountNotifyConstraint {
     @Application(\.logger) private var logger
 
-    @Dependency(FireConfiguration.self) private var configuration
+    @Dependency(FirebaseConfiguration.self) private var configuration
 
     init() {}
 

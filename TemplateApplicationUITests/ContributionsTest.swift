@@ -12,7 +12,6 @@ import XCTest
 final class ContributionsTest: XCTestCase {
     @MainActor
     override func setUp() async throws {
-
         continueAfterFailure = false
         
         let app = XCUIApplication()

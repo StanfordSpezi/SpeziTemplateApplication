@@ -13,7 +13,7 @@ import SpeziAccount
 import SpeziFirebaseAccount
 
 
-final class FireConfiguration: Module, DefaultInitializable, @unchecked Sendable {
+final class FirebaseConfiguration: Module, DefaultInitializable, @unchecked Sendable {
     enum ConfigurationError: Error {
         case userNotAuthenticatedYet
     }

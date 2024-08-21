@@ -12,7 +12,6 @@ import XCTest
 class ContactsTests: XCTestCase {
     @MainActor
     override func setUp() async throws {
-
         continueAfterFailure = false
         
         let app = XCUIApplication()
