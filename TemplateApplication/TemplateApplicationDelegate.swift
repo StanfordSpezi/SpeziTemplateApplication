@@ -26,7 +26,7 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
             if !FeatureFlags.disableFirebase {
                 AccountConfiguration(
                     service: FirebaseAccountService(providers: [.emailAndPassword, .signInWithApple], emulatorSettings: accountEmulator),
-                    storageProvider: FirestoreAccountStorage(storeIn: TemplateApplicationStandard.userCollection),
+                    storageProvider: FirestoreAccountStorage(storeIn: FirebaseConfiguration.userCollection),
                     configuration: [
                         .requires(\.userId),
                         .requires(\.name),
