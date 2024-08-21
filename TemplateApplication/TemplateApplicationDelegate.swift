@@ -6,7 +6,6 @@
 // SPDX-License-Identifier: MIT
 //
 
-// TODO: why are these two imports now required?
 import class FirebaseFirestore.FirestoreSettings
 import class FirebaseFirestore.MemoryCacheSettings
 import Spezi
