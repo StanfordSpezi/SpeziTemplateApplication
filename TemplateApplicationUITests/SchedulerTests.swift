@@ -11,9 +11,8 @@ import XCTestExtensions
 
 
 class SchedulerTests: XCTestCase {
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        
+    @MainActor
+    override func setUp() async throws {
         continueAfterFailure = false
         
         let app = XCUIApplication()
@@ -21,11 +20,14 @@ class SchedulerTests: XCTestCase {
         app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
     }
     
-    
+
+    @MainActor
     func testScheduler() throws {
         let app = XCUIApplication()
-        
-        XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Schedule"].waitForExistence(timeout: 2))
+
+        XCTAssertTrue(app.wait(for: .runningForeground, timeout: 2.0))
+
+        XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Schedule"].exists)
         app.tabBars["Tab Bar"].buttons["Schedule"].tap()
         
         XCTAssertTrue(app.staticTexts["Start Questionnaire"].waitForExistence(timeout: 2))

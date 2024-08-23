@@ -6,10 +6,11 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziAccount
+@_spi(TestingSupport) import SpeziAccount
 import SpeziFirebaseAccount
 import SpeziHealthKit
 import SpeziOnboarding
+import SpeziScheduler
 import SwiftUI
 
 
@@ -23,7 +24,7 @@ struct OnboardingFlow: View {
     @State private var localNotificationAuthorization = false
     
     
-    private var healthKitAuthorization: Bool {
+    @MainActor private var healthKitAuthorization: Bool {
         // As HealthKit not available in preview simulator
         if ProcessInfo.processInfo.isPreviewSimulator {
             return false
@@ -65,13 +66,10 @@ struct OnboardingFlow: View {
 #if DEBUG
 #Preview {
     OnboardingFlow()
-        .environment(Account(MockUserIdPasswordAccountService()))
         .previewWith(standard: TemplateApplicationStandard()) {
             OnboardingDataSource()
             HealthKit()
-            AccountConfiguration {
-                MockUserIdPasswordAccountService()
-            }
+            AccountConfiguration(service: InMemoryAccountService())
 
             TemplateApplicationScheduler()
         }

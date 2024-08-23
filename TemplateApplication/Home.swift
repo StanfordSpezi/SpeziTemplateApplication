@@ -6,7 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziAccount
+@_spi(TestingSupport) import SpeziAccount
 import SwiftUI
 
 
@@ -14,10 +14,6 @@ struct HomeView: View {
     enum Tabs: String {
         case schedule
         case contact
-    }
-    
-    static var accountEnabled: Bool {
-        !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding
     }
 
 
@@ -41,35 +37,23 @@ struct HomeView: View {
             .sheet(isPresented: $presentingAccount) {
                 AccountSheet()
             }
-            .accountRequired(Self.accountEnabled) {
+            .accountRequired(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding) {
                 AccountSheet()
             }
-            .verifyRequiredAccountDetails(Self.accountEnabled)
     }
 }
 
 
 #if DEBUG
 #Preview {
-    let details = AccountDetails.Builder()
-        .set(\.userId, value: "lelandstanford@stanford.edu")
-        .set(\.name, value: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
+    var details = AccountDetails()
+    details.userId = "lelandstanford@stanford.edu"
+    details.name = PersonNameComponents(givenName: "Leland", familyName: "Stanford")
     
     return HomeView()
         .previewWith(standard: TemplateApplicationStandard()) {
             TemplateApplicationScheduler()
-            AccountConfiguration(building: details, active: MockUserIdPasswordAccountService())
-        }
-}
-
-#Preview {
-    CommandLine.arguments.append("--disableFirebase") // make sure the MockWebService is displayed
-    return HomeView()
-        .previewWith(standard: TemplateApplicationStandard()) {
-            TemplateApplicationScheduler()
-            AccountConfiguration {
-                MockUserIdPasswordAccountService()
-            }
+            AccountConfiguration(service: InMemoryAccountService(), activeDetails: details)
         }
 }
 #endif

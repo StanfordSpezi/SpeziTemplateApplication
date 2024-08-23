@@ -23,4 +23,8 @@ enum FeatureFlags {
     #endif
     /// Adds a test task to the schedule at the current time
     static let testSchedule = CommandLine.arguments.contains("--testSchedule")
+    /// Automatically sign in into a test account upon app launch.
+    ///
+    /// Requires ``disableFirebase`` to be `false`.
+    static let setupTestAccount = CommandLine.arguments.contains("--setupTestAccount")
 }

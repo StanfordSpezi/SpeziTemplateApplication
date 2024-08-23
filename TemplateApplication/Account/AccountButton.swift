@@ -10,18 +10,13 @@ import SwiftUI
 
 
 struct AccountButton: View {
-    static let shouldDisplay = !FeatureFlags.disableFirebase || ProcessInfo.processInfo.isPreviewSimulator
-
     @Binding private var isPresented: Bool
 
 
     var body: some View {
-        Button(action: {
+        Button("ACCOUNT_TITLE", systemImage: "person.crop.circle") {
             isPresented = true
-        }) {
-            Image(systemName: "person.crop.circle")
         }
-            .accessibilityLabel("ACCOUNT_TITLE")
     }
 
 

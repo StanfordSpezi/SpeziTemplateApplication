@@ -13,6 +13,7 @@ import ModelsR4
 /// The context attached to each task in the Spezi Template Application.
 ///
 /// We currently only support `Questionnaire`s, more cases can be added in the future.
+@MainActor
 enum TemplateApplicationTaskContext: Codable, Identifiable {
     /// The task should display a `Questionnaire`.
     case questionnaire(Questionnaire)
@@ -20,7 +21,7 @@ enum TemplateApplicationTaskContext: Codable, Identifiable {
     case test(String)
     
     
-    var id: FHIRPrimitive<FHIRString>? {
+    nonisolated var id: FHIRPrimitive<FHIRString>? {
         switch self {
         case let .questionnaire(questionnaire):
             return questionnaire.id

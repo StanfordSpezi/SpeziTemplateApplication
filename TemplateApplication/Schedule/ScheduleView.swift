@@ -7,7 +7,7 @@
 //
 
 import OrderedCollections
-import SpeziAccount
+@_spi(TestingSupport) import SpeziAccount
 import SpeziQuestionnaire
 import SpeziScheduler
 import SwiftUI
@@ -16,12 +16,13 @@ import SwiftUI
 struct ScheduleView: View {
     @Environment(TemplateApplicationStandard.self) private var standard
     @Environment(TemplateApplicationScheduler.self) private var scheduler
+    @Environment(Account.self) private var account: Account?
 
     @State private var presentedContext: EventContext?
     @Binding private var presentingAccount: Bool
     
     
-    private var eventContextsByDate: OrderedDictionary<Date, [EventContext]> {
+    @MainActor private var eventContextsByDate: OrderedDictionary<Date, [EventContext]> {
         let eventContexts = scheduler.tasks.flatMap { task in
             task
                 .events(
@@ -59,7 +60,7 @@ struct ScheduleView: View {
                     destination(withContext: presentedContext)
                 }
                 .toolbar {
-                    if AccountButton.shouldDisplay {
+                    if account != nil {
                         AccountButton(isPresented: $presentingAccount)
                     }
                 }
@@ -72,7 +73,8 @@ struct ScheduleView: View {
         self._presentingAccount = presentingAccount
     }
     
-    
+
+    @MainActor
     private func destination(withContext eventContext: EventContext) -> some View {
         @ViewBuilder var destination: some View {
             switch eventContext.task.context {
@@ -89,7 +91,7 @@ struct ScheduleView: View {
                 }
             case let .test(string):
                 ModalView(text: string, buttonText: String(localized: "CLOSE")) {
-                    await eventContext.event.complete(true)
+                    eventContext.event.complete(true)
                 }
             }
         }
@@ -111,9 +113,7 @@ struct ScheduleView: View {
     ScheduleView(presentingAccount: .constant(false))
         .previewWith(standard: TemplateApplicationStandard()) {
             TemplateApplicationScheduler()
-            AccountConfiguration {
-                MockUserIdPasswordAccountService()
-            }
+            AccountConfiguration(service: InMemoryAccountService())
         }
 }
 #endif
