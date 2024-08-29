@@ -50,6 +50,7 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
             }
             
             TemplateApplicationScheduler()
+            ILScheduler()
             OnboardingDataSource()
         }
     }

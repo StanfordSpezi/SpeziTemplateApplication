@@ -20,8 +20,9 @@ struct ScheduleView: View {
 
     @State private var presentedContext: EventContext?
     @Binding private var presentingAccount: Bool
-    
-    
+
+    @Environment(ILScheduler.self) private var ilScheduler
+
     @MainActor private var eventContextsByDate: OrderedDictionary<Date, [EventContext]> {
         let eventContexts = scheduler.tasks.flatMap { task in
             task
@@ -33,18 +34,22 @@ struct ScheduleView: View {
                     EventContext(event: event, task: task)
                 }
         }
-            .sorted()
+            .sorted() // TODO: double sort!
 
         return OrderedDictionary(grouping: eventContexts) { eventContext in
             Calendar.current.startOfDay(for: eventContext.event.scheduledAt)
         }
     }
 
+    private var eventsToday: Any {
+        ilScheduler.queryEvents(for: .now..<Date.tomorrow)
+    }
+
     
     var body: some View {
         NavigationStack {
             let eventContextsByDate = eventContextsByDate
-            List(eventContextsByDate.keys, id: \.timeIntervalSinceNow) { startOfDay in
+            List(eventContextsByDate.keys, id: \.timeIntervalSinceReferenceDate) { startOfDay in
                 Section(format(startOfDay: startOfDay)) {
                     ForEach(eventContextsByDate[startOfDay] ?? [], id: \.event) { eventContext in
                         EventContextView(eventContext: eventContext)

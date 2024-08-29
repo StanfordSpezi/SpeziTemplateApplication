@@ -15,7 +15,7 @@ struct EventContextView: View {
     
     
     var body: some View {
-        HStack {
+        HStack { // TODO: see if we can introduce the tile views from NAMS? => automatically make it a gird layout on iPad?
             VStack(alignment: .leading) {
                 HStack {
                     if eventContext.event.complete {

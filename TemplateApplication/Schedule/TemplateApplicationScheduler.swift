@@ -16,6 +16,16 @@ typealias TemplateApplicationScheduler = Scheduler<TemplateApplicationTaskContex
 
 
 extension TemplateApplicationScheduler {
+    static var newSocialSupportTask: ILTask {
+        // TODO: support testSchedule!
+        ILTask(
+            id: "social-support-questionnaire",
+            title: String(localized: "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_TITLE"),
+            instructions: String(localized: "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_DESCRIPTION"),
+            schedule: .daily(hour: 8, minute: 0, startingAt: .today)
+        )
+    }
+
     static var socialSupportTask: SpeziScheduler.Task<TemplateApplicationTaskContext> {
         let dateComponents: DateComponents
         if FeatureFlags.testSchedule {
@@ -38,6 +48,7 @@ extension TemplateApplicationScheduler {
                 end: .numberOfEvents(365)
             ),
             notifications: true,
+            // TODO: we probably WANT to store the questionnaire along the task? to properly version it? Or just the identifier to make it easier to update?
             context: TemplateApplicationTaskContext.questionnaire(Bundle.main.questionnaire(withName: "SocialSupportQuestionnaire"))
         )
     }

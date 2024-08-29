@@ -18,6 +18,7 @@ import SpeziFirestore
 import SpeziHealthKit
 import SpeziOnboarding
 import SpeziQuestionnaire
+import SpeziScheduler
 import SwiftUI
 
 
@@ -29,8 +30,13 @@ actor TemplateApplicationStandard: Standard,
     @Application(\.logger) private var logger
 
     @Dependency(FirebaseConfiguration.self) private var configuration
+    @Dependency(ILScheduler.self) private var scheduler
 
     init() {}
+
+    @MainActor func configure() {
+        
+    }
 
 
     func add(sample: HKSample) async {
