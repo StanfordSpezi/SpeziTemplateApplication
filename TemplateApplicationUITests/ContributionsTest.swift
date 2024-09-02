@@ -24,7 +24,8 @@ final class ContributionsTest: XCTestCase {
         let app = XCUIApplication()
 
         XCTAssertTrue(app.wait(for: .runningForeground, timeout: 2.0))
-        
+
+        sleep(1)
         XCTAssertTrue(app.navigationBars.buttons["Your Account"].waitForExistence(timeout: 6.0))
         app.navigationBars.buttons["Your Account"].tap()
         
