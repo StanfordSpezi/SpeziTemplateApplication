@@ -49,7 +49,7 @@
     {
       "identity" : "fhirmodels",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/FHIRModels.git",
+      "location" : "https://github.com/apple/FHIRModels",
       "state" : {
         "revision" : "861afd5816a98d38f86220eab2f812d76cad84a0",
         "version" : "0.5.0"
@@ -157,7 +157,7 @@
     {
       "identity" : "researchkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/StanfordBDHG/ResearchKit.git",
+      "location" : "https://github.com/StanfordBDHG/ResearchKit",
       "state" : {
         "revision" : "08ab0290140e5a5e0e81d46cade1f09c7282facf",
         "version" : "3.0.3"
@@ -196,7 +196,7 @@
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
         "branch" : "feature/swift-syntax-6",
-        "revision" : "76317960b52228a509919efaa766ef0243e9e9b0"
+        "revision" : "d2bfede6e4ac07e4dd5dc2d3dc3fa564de9226a6"
       }
     },
     {
@@ -250,7 +250,7 @@
       "location" : "https://github.com/StanfordSpezi/SpeziNotifications",
       "state" : {
         "branch" : "feature/initial-version",
-        "revision" : "f09473d3ef8c76dd1dbfb384fabaf567d46b2aa5"
+        "revision" : "535d4763882d24d56b58781977513de8c46b1823"
       }
     },
     {
@@ -402,8 +402,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTestExtensions.git",
       "state" : {
-        "revision" : "aad6c161a09d658f30c7170deb4a61e8916a4a4c",
-        "version" : "1.0.0"
+        "revision" : "5379d70249cae926927105bfb6686770f03ee5b9",
+        "version" : "1.1.0"
       }
     },
     {

@@ -1236,7 +1236,7 @@
 		};
 		A94DDFFB2CBD1190004930BD /* XCRemoteSwiftPackageReference "SpeziNotifications" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordSpezi/SpeziNotifications";
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziNotifications.git";
 			requirement = {
 				branch = "feature/initial-version";
 				kind = branch;
