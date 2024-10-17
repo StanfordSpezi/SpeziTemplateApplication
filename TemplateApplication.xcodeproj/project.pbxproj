@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27FA29902A388E9B009CAC45 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FA298F2A388E9B009CAC45 /* ModalView.swift */; };
 		2F1AC9DF2B4E840E00C24973 /* TemplateApplication.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2F1AC9DE2B4E840E00C24973 /* TemplateApplication.docc */; };
 		2F3D4ABC2A4E7C290068FB2F /* SpeziScheduler in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3D4ABB2A4E7C290068FB2F /* SpeziScheduler */; };
 		2F49B7762980407C00BCB272 /* Spezi in Frameworks */ = {isa = PBXBuildFile; productRef = 2F49B7752980407B00BCB272 /* Spezi */; };
@@ -35,8 +34,6 @@
 		2FE5DC4029EDD7EE004B9AB4 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3E29EDD7ED004B9AB4 /* FeatureFlags.swift */; };
 		2FE5DC4129EDD7EE004B9AB4 /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3F29EDD7EE004B9AB4 /* StorageKeys.swift */; };
 		2FE5DC4E29EDD7FA004B9AB4 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC4829EDD7FA004B9AB4 /* ScheduleView.swift */; };
-		2FE5DC4F29EDD7FA004B9AB4 /* EventContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC4929EDD7FA004B9AB4 /* EventContext.swift */; };
-		2FE5DC5029EDD7FA004B9AB4 /* EventContextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC4A29EDD7FA004B9AB4 /* EventContextView.swift */; };
 		2FE5DC5129EDD7FA004B9AB4 /* TemplateApplicationTaskContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC4B29EDD7FA004B9AB4 /* TemplateApplicationTaskContext.swift */; };
 		2FE5DC5229EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC4C29EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift */; };
 		2FE5DC5329EDD7FA004B9AB4 /* Bundle+Questionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC4D29EDD7FA004B9AB4 /* Bundle+Questionnaire.swift */; };
@@ -65,7 +62,9 @@
 		9739A0C62AD7B5730084BEA5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9739A0C52AD7B5730084BEA5 /* FirebaseStorage */; };
 		97D73D6A2AD860AD00B47FA0 /* SpeziFirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 97D73D692AD860AD00B47FA0 /* SpeziFirebaseStorage */; };
 		A92E4DF02BAA001100AC8DE8 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = A92E4DEF2BAA001100AC8DE8 /* OrderedCollections */; };
+		A94DDFFD2CBD1190004930BD /* SpeziNotifications in Frameworks */ = {isa = PBXBuildFile; productRef = A94DDFFC2CBD1190004930BD /* SpeziNotifications */; };
 		A9720E432ABB68CC00872D23 /* AccountSetupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */; };
+		A9947BF02CC131ED0068AA8A /* SpeziSchedulerUI in Frameworks */ = {isa = PBXBuildFile; productRef = A9947BEF2CC131ED0068AA8A /* SpeziSchedulerUI */; };
 		A9A3DCC82C75CBBD00FC9B69 /* FirebaseConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3DCC72C75CB9A00FC9B69 /* FirebaseConfiguration.swift */; };
 		A9D83F962B083794000D0C78 /* SpeziFirebaseAccountStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A9D83F952B083794000D0C78 /* SpeziFirebaseAccountStorage */; };
 		A9DFE8A92ABE551400428242 /* AccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DFE8A82ABE551400428242 /* AccountButton.swift */; };
@@ -90,7 +89,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		27FA298F2A388E9B009CAC45 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		2F1AC9DE2B4E840E00C24973 /* TemplateApplication.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TemplateApplication.docc; sourceTree = "<group>"; };
 		2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
 		2F4E23822989D51F0013F3D9 /* TemplateApplicationTestingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplicationTestingSetup.swift; sourceTree = "<group>"; };
@@ -113,8 +111,6 @@
 		2FE5DC3E29EDD7ED004B9AB4 /* FeatureFlags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		2FE5DC3F29EDD7EE004B9AB4 /* StorageKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageKeys.swift; sourceTree = "<group>"; };
 		2FE5DC4829EDD7FA004B9AB4 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
-		2FE5DC4929EDD7FA004B9AB4 /* EventContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventContext.swift; sourceTree = "<group>"; };
-		2FE5DC4A29EDD7FA004B9AB4 /* EventContextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventContextView.swift; sourceTree = "<group>"; };
 		2FE5DC4B29EDD7FA004B9AB4 /* TemplateApplicationTaskContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateApplicationTaskContext.swift; sourceTree = "<group>"; };
 		2FE5DC4C29EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateApplicationScheduler.swift; sourceTree = "<group>"; };
 		2FE5DC4D29EDD7FA004B9AB4 /* Bundle+Questionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Questionnaire.swift"; sourceTree = "<group>"; };
@@ -143,11 +139,13 @@
 			files = (
 				9733CFC62A8066DE001B7ABC /* SpeziOnboarding in Frameworks */,
 				2FE5DC6429EDD883004B9AB4 /* SpeziAccount in Frameworks */,
+				A9947BF02CC131ED0068AA8A /* SpeziSchedulerUI in Frameworks */,
 				2FB099AF2A875DF100B20952 /* FirebaseAuth in Frameworks */,
 				97D73D6A2AD860AD00B47FA0 /* SpeziFirebaseStorage in Frameworks */,
 				2FE5DC6729EDD894004B9AB4 /* SpeziContact in Frameworks */,
 				2FE5DC8429EDD934004B9AB4 /* SpeziQuestionnaire in Frameworks */,
 				2FB099B12A875DF100B20952 /* FirebaseFirestore in Frameworks */,
+				A94DDFFD2CBD1190004930BD /* SpeziNotifications in Frameworks */,
 				A9D83F962B083794000D0C78 /* SpeziFirebaseAccountStorage in Frameworks */,
 				2FB099B62A875E2B00B20952 /* HealthKitOnFHIR in Frameworks */,
 				56E7083B2BB06F6F00B08F0A /* SwiftPackageList in Frameworks */,
@@ -235,12 +233,9 @@
 			isa = PBXGroup;
 			children = (
 				2FE5DC4D29EDD7FA004B9AB4 /* Bundle+Questionnaire.swift */,
-				2FE5DC4929EDD7FA004B9AB4 /* EventContext.swift */,
-				2FE5DC4A29EDD7FA004B9AB4 /* EventContextView.swift */,
 				2FE5DC4829EDD7FA004B9AB4 /* ScheduleView.swift */,
 				2FE5DC4C29EDD7FA004B9AB4 /* TemplateApplicationScheduler.swift */,
 				2FE5DC4B29EDD7FA004B9AB4 /* TemplateApplicationTaskContext.swift */,
-				27FA298F2A388E9B009CAC45 /* ModalView.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -382,6 +377,8 @@
 				A92E4DEF2BAA001100AC8DE8 /* OrderedCollections */,
 				56E708342BB06B7100B08F0A /* SpeziLicense */,
 				56E7083A2BB06F6F00B08F0A /* SwiftPackageList */,
+				A94DDFFC2CBD1190004930BD /* SpeziNotifications */,
+				A9947BEF2CC131ED0068AA8A /* SpeziSchedulerUI */,
 			);
 			productName = TemplateApplication;
 			productReference = 653A254D283387FE005D4D48 /* TemplateApplication.app */;
@@ -437,7 +434,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					653A254C283387FE005D4D48 = {
 						CreatedOnToolsVersion = 13.4;
@@ -453,7 +450,6 @@
 				};
 			};
 			buildConfigurationList = 653A2548283387FE005D4D48 /* Build configuration list for PBXProject "TemplateApplication" */;
-			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -480,7 +476,10 @@
 				A92E4DEE2BAA001100AC8DE8 /* XCRemoteSwiftPackageReference "swift-collections" */,
 				56E708332BB06B7100B08F0A /* XCRemoteSwiftPackageReference "SpeziLicense" */,
 				2F66D20D2BB723180010D555 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				A945FCD32C9C6BFA00B9EBC7 /* XCRemoteSwiftPackageReference "ResearchKitOnFHIR" */,
+				A94DDFFB2CBD1190004930BD /* XCRemoteSwiftPackageReference "SpeziNotifications" */,
 			);
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 653A254E283387FE005D4D48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -541,8 +540,6 @@
 				2FF53D8D2A8729D600042B76 /* TemplateApplicationStandard.swift in Sources */,
 				A9720E432ABB68CC00872D23 /* AccountSetupHeader.swift in Sources */,
 				2FE5DC4029EDD7EE004B9AB4 /* FeatureFlags.swift in Sources */,
-				2FE5DC4F29EDD7FA004B9AB4 /* EventContext.swift in Sources */,
-				2FE5DC5029EDD7FA004B9AB4 /* EventContextView.swift in Sources */,
 				2F4E23832989D51F0013F3D9 /* TemplateApplicationTestingSetup.swift in Sources */,
 				2FE5DC5329EDD7FA004B9AB4 /* Bundle+Questionnaire.swift in Sources */,
 				2FE5DC5129EDD7FA004B9AB4 /* TemplateApplicationTaskContext.swift in Sources */,
@@ -552,7 +549,6 @@
 				653A2551283387FE005D4D48 /* TemplateApplication.swift in Sources */,
 				2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */,
 				2F65B44E2A3B8B0600A36932 /* NotificationPermissions.swift in Sources */,
-				27FA29902A388E9B009CAC45 /* ModalView.swift in Sources */,
 				2FE5DC2629EDD38A004B9AB4 /* Contacts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -721,7 +717,6 @@
 		2FEE10322998C89C000822E1 /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -740,7 +735,6 @@
 		2FEE10332998C89C000822E1 /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 637867499T;
@@ -975,7 +969,6 @@
 		653A257528338800005D4D48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -994,7 +987,6 @@
 		653A257628338800005D4D48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1013,7 +1005,6 @@
 		653A257828338800005D4D48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 637867499T;
@@ -1031,7 +1022,6 @@
 		653A257928338800005D4D48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 637867499T;
@@ -1096,16 +1086,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziScheduler.git";
 			requirement = {
-				branch = "feature/infinity-loop";
+				branch = "feature/il-notifications-support";
 				kind = branch;
 			};
 		};
 		2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "Spezi" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordSpezi/Spezi";
+			repositoryURL = "https://github.com/StanfordSpezi/Spezi.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.1;
+				branch = "feature/application-for-swiftui";
+				kind = branch;
 			};
 		};
 		2F66D20D2BB723180010D555 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
@@ -1113,7 +1103,7 @@
 			repositoryURL = "https://github.com/realm/SwiftLint.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.55.0;
+				minimumVersion = 0.56.0;
 			};
 		};
 		2FB099B42A875E2B00B20952 /* XCRemoteSwiftPackageReference "HealthKitOnFHIR" */ = {
@@ -1128,8 +1118,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziAccount.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = "2.0.0-beta.7";
+				branch = "feature/swift-syntax-6";
+				kind = branch;
 			};
 		};
 		2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */ = {
@@ -1153,7 +1143,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziFirebase.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = "2.0.0-beta.3";
+				minimumVersion = "2.0.0-beta.4";
 			};
 		};
 		2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "SpeziQuestionnaire" */ = {
@@ -1161,7 +1151,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziQuestionnaire.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.0;
+				minimumVersion = 1.2.3;
 			};
 		};
 		2FE5DC8829EDD972004B9AB4 /* XCRemoteSwiftPackageReference "SpeziStorage" */ = {
@@ -1214,7 +1204,7 @@
 		};
 		56E708332BB06B7100B08F0A /* XCRemoteSwiftPackageReference "SpeziLicense" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordSpezi/SpeziLicense";
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziLicense.git";
 			requirement = {
 				kind = upToNextMinorVersion;
 				minimumVersion = 0.1.1;
@@ -1222,7 +1212,7 @@
 		};
 		97F466E62A76BBEE005DC9B4 /* XCRemoteSwiftPackageReference "SpeziOnboarding" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/StanfordSpezi/SpeziOnboarding";
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziOnboarding.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.2.1;
@@ -1234,6 +1224,22 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.1.0;
+			};
+		};
+		A945FCD32C9C6BFA00B9EBC7 /* XCRemoteSwiftPackageReference "ResearchKitOnFHIR" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StanfordBDHG/ResearchKitOnFHIR.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+		A94DDFFB2CBD1190004930BD /* XCRemoteSwiftPackageReference "SpeziNotifications" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StanfordSpezi/SpeziNotifications";
+			requirement = {
+				branch = "feature/initial-version";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1362,6 +1368,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A92E4DEE2BAA001100AC8DE8 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
+		};
+		A94DDFFC2CBD1190004930BD /* SpeziNotifications */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A94DDFFB2CBD1190004930BD /* XCRemoteSwiftPackageReference "SpeziNotifications" */;
+			productName = SpeziNotifications;
+		};
+		A9947BEF2CC131ED0068AA8A /* SpeziSchedulerUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F3D4ABA2A4E7C290068FB2F /* XCRemoteSwiftPackageReference "SpeziScheduler" */;
+			productName = SpeziSchedulerUI;
 		};
 		A9D83F952B083794000D0C78 /* SpeziFirebaseAccountStorage */ = {
 			isa = XCSwiftPackageProductDependency;

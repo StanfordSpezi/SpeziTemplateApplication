@@ -7,54 +7,41 @@
 //
 
 import Foundation
+import Spezi
 import SpeziScheduler
+import class ModelsR4.Questionnaire
+import class ModelsR4.QuestionnaireResponse
 
 
-/// A `Scheduler` using the ``TemplateApplicationTaskContext`` to schedule and manage tasks and events in the
-/// Spezi Template Application.
-typealias TemplateApplicationScheduler = Scheduler<TemplateApplicationTaskContext>
+final class TemplateApplicationScheduler: Module, DefaultInitializable {
+    @Dependency(Scheduler.self) private var scheduler
 
-
-extension TemplateApplicationScheduler {
-    static var newSocialSupportTask: ILTask {
-        // TODO: support testSchedule!
-        ILTask(
-            id: "social-support-questionnaire",
-            title: String(localized: "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_TITLE"),
-            instructions: String(localized: "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_DESCRIPTION"),
-            schedule: .daily(hour: 8, minute: 0, startingAt: .today)
-        )
-    }
-
-    static var socialSupportTask: SpeziScheduler.Task<TemplateApplicationTaskContext> {
-        let dateComponents: DateComponents
-        if FeatureFlags.testSchedule {
-            // Adds a task at the current time for UI testing if the `--testSchedule` feature flag is set
-            dateComponents = DateComponents(
-                hour: Calendar.current.component(.hour, from: .now),
-                minute: Calendar.current.component(.minute, from: .now)
-            )
-        } else {
-            // For the normal app usage, we schedule the task for every day at 8:00 AM
-            dateComponents = DateComponents(hour: 8, minute: 0)
+    init() {}
+    
+    /// Add or update the current list of task upon app startup.
+    func configure() {
+        do {
+            // TODO: support test schedule flag: FeatureFlags.testSchedule for UI testing!
+            try scheduler.createOrUpdateTask(
+                id: "social-support-questionnaire",
+                title: "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_TITLE",
+                instructions: "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_DESCRIPTION",
+                schedule: .daily(hour: 8, minute: 0, startingAt: .today)
+            ) { context in
+                context.questionnaire = Bundle.main.questionnaire(withName: "SocialSupportQuestionnaire")
+            }
+        } catch {
+            // TODO: we should visualize this? or at least allow to visualize it!
         }
-
-        return Task(
-            title: String(localized: "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_TITLE"),
-            description: String(localized: "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_DESCRIPTION"),
-            schedule: Schedule(
-                start: Calendar.current.startOfDay(for: Date()),
-                repetition: .matching(dateComponents),
-                end: .numberOfEvents(365)
-            ),
-            notifications: true,
-            // TODO: we probably WANT to store the questionnaire along the task? to properly version it? Or just the identifier to make it easier to update?
-            context: TemplateApplicationTaskContext.questionnaire(Bundle.main.questionnaire(withName: "SocialSupportQuestionnaire"))
-        )
     }
+}
 
-    /// Creates a default instance of the ``TemplateApplicationScheduler`` by scheduling the tasks listed below.
-    convenience init() {
-        self.init(tasks: [Self.socialSupportTask])
-    }
+
+extension Task.Context {
+    @Property var questionnaire: Questionnaire?
+}
+
+
+extension Outcome {
+    @Property var questionnaireResponse: QuestionnaireResponse?
 }

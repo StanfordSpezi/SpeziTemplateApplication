@@ -9,18 +9,20 @@
 @_spi(TestingSupport) import SpeziAccount
 import SpeziFirebaseAccount
 import SpeziHealthKit
+import SpeziNotifications
 import SpeziOnboarding
-import SpeziScheduler
 import SwiftUI
 
 
 /// Displays an multi-step onboarding flow for the Spezi Template Application.
 struct OnboardingFlow: View {
     @Environment(HealthKit.self) private var healthKitDataSource
-    @Environment(TemplateApplicationScheduler.self) private var scheduler
+
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.notificationSettings) private var notificationSettings
 
     @AppStorage(StorageKeys.onboardingFlowComplete) private var completedOnboardingFlow = false
-    
+
     @State private var localNotificationAuthorization = false
     
     
@@ -55,10 +57,16 @@ struct OnboardingFlow: View {
                 NotificationPermissions()
             }
         }
-            .task {
-                localNotificationAuthorization = await scheduler.localNotificationAuthorization
-            }
             .interactiveDismissDisabled(!completedOnboardingFlow)
+            .onChange(of: scenePhase, initial: true) {
+                guard case .active = scenePhase else {
+                    return
+                }
+
+                Task {
+                    localNotificationAuthorization = await notificationSettings().authorizationStatus == .authorized
+                }
+            }
     }
 }
 

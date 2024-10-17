@@ -23,16 +23,12 @@ struct HomeView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            ScheduleView(presentingAccount: $presentingAccount)
-                .tag(Tabs.schedule)
-                .tabItem {
-                    Label("SCHEDULE_TAB_TITLE", systemImage: "list.clipboard")
-                }
-            Contacts(presentingAccount: $presentingAccount)
-                .tag(Tabs.contact)
-                .tabItem {
-                    Label("CONTACTS_TAB_TITLE", systemImage: "person.fill")
-                }
+            Tab("SCHEDULE_TAB_TITLE", systemImage: "list.clipboard", value: .schedule) {
+                ScheduleView(presentingAccount: $presentingAccount)
+            }
+            Tab("CONTACTS_TAB_TITLE", systemImage: "person.fill", value: .contact) {
+                Contacts(presentingAccount: $presentingAccount)
+            }
         }
             .sheet(isPresented: $presentingAccount) {
                 AccountSheet()

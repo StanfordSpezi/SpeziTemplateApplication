@@ -10,59 +10,53 @@ import OrderedCollections
 @_spi(TestingSupport) import SpeziAccount
 import SpeziQuestionnaire
 import SpeziScheduler
+import SpeziSchedulerUI
 import SwiftUI
 
 
-struct ScheduleView: View {
+struct EventView: View {
+    private let event: Event
+
     @Environment(TemplateApplicationStandard.self) private var standard
-    @Environment(TemplateApplicationScheduler.self) private var scheduler
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        if let questionnaire = event.task.questionnaire {
+            QuestionnaireView(questionnaire: questionnaire) { result in
+                dismiss()
+
+                guard case let .completed(response) = result else {
+                    return // user cancelled the task
+                }
+
+                event.complete()
+                await standard.add(response: response)
+            }
+        }
+    }
+
+    init(_ event: Event) {
+        self.event = event
+    }
+}
+
+
+struct ScheduleView: View {
     @Environment(Account.self) private var account: Account?
 
-    @State private var presentedContext: EventContext?
+    @State private var presentedEvent: Event?
     @Binding private var presentingAccount: Bool
-
-    @Environment(ILScheduler.self) private var ilScheduler
-
-    @MainActor private var eventContextsByDate: OrderedDictionary<Date, [EventContext]> {
-        let eventContexts = scheduler.tasks.flatMap { task in
-            task
-                .events(
-                    from: Calendar.current.startOfDay(for: .now),
-                    to: .numberOfEventsOrEndDate(100, .now)
-                )
-                .map { event in
-                    EventContext(event: event, task: task)
-                }
-        }
-            .sorted() // TODO: double sort!
-
-        return OrderedDictionary(grouping: eventContexts) { eventContext in
-            Calendar.current.startOfDay(for: eventContext.event.scheduledAt)
-        }
-    }
-
-    private var eventsToday: Any {
-        ilScheduler.queryEvents(for: .now..<Date.tomorrow)
-    }
 
     
     var body: some View {
         NavigationStack {
-            let eventContextsByDate = eventContextsByDate
-            List(eventContextsByDate.keys, id: \.timeIntervalSinceReferenceDate) { startOfDay in
-                Section(format(startOfDay: startOfDay)) {
-                    ForEach(eventContextsByDate[startOfDay] ?? [], id: \.event) { eventContext in
-                        EventContextView(eventContext: eventContext)
-                            .onTapGesture {
-                                if !eventContext.event.complete {
-                                    presentedContext = eventContext
-                                }
-                            }
-                    }
+            TodayList { event in
+                InstructionsTile(event) { // TODO: use TASK_CONTEXT_ACTION_QUESTIONNAIRE for the footer Action button!
+                    presentedEvent = event
                 }
             }
-                .sheet(item: $presentedContext) { presentedContext in
-                    destination(withContext: presentedContext)
+                .sheet(item: $presentedEvent) { event in
+                    EventView(event)
                 }
                 .toolbar {
                     if account != nil {
@@ -77,39 +71,6 @@ struct ScheduleView: View {
     init(presentingAccount: Binding<Bool>) {
         self._presentingAccount = presentingAccount
     }
-    
-
-    @MainActor
-    private func destination(withContext eventContext: EventContext) -> some View {
-        @ViewBuilder var destination: some View {
-            switch eventContext.task.context {
-            case let .questionnaire(questionnaire):
-                QuestionnaireView(questionnaire: questionnaire) { result in
-                    presentedContext = nil
-
-                    guard case let .completed(response) = result else {
-                        return // user cancelled the task
-                    }
-
-                    eventContext.event.complete(true)
-                    await standard.add(response: response)
-                }
-            case let .test(string):
-                ModalView(text: string, buttonText: String(localized: "CLOSE")) {
-                    eventContext.event.complete(true)
-                }
-            }
-        }
-        return destination
-    }
-    
-    
-    private func format(startOfDay: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .none
-        return dateFormatter.string(from: startOfDay)
-    }
 }
 
 
@@ -117,6 +78,7 @@ struct ScheduleView: View {
 #Preview("ScheduleView") {
     ScheduleView(presentingAccount: .constant(false))
         .previewWith(standard: TemplateApplicationStandard()) {
+            Scheduler()
             TemplateApplicationScheduler()
             AccountConfiguration(service: InMemoryAccountService())
         }
