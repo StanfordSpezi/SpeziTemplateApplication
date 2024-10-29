@@ -9,29 +9,32 @@
 import Foundation
 import Spezi
 import SpeziScheduler
+import SpeziViews
 import class ModelsR4.Questionnaire
 import class ModelsR4.QuestionnaireResponse
 
 
+@Observable
 final class TemplateApplicationScheduler: Module, DefaultInitializable {
-    @Dependency(Scheduler.self) private var scheduler
+    @Dependency(Scheduler.self) @ObservationIgnored private var scheduler
+
+    @MainActor var viewState: ViewState = .idle
 
     init() {}
     
     /// Add or update the current list of task upon app startup.
     func configure() {
         do {
-            // TODO: support test schedule flag: FeatureFlags.testSchedule for UI testing!
             try scheduler.createOrUpdateTask(
                 id: "social-support-questionnaire",
-                title: "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_TITLE",
-                instructions: "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_DESCRIPTION",
+                title: "Social Support Questionnaire",
+                instructions: "Please fill out the Social Support Questionnaire every day.",
                 schedule: .daily(hour: 8, minute: 0, startingAt: .today)
             ) { context in
                 context.questionnaire = Bundle.main.questionnaire(withName: "SocialSupportQuestionnaire")
             }
         } catch {
-            // TODO: we should visualize this? or at least allow to visualize it!
+            viewState = .error(AnyLocalizedError(error: error, defaultErrorDescription: "Failed to create or update scheduled tasks."))
         }
     }
 }

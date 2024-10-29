@@ -28,7 +28,7 @@ struct AccountSheet: View {
                         NavigationLink {
                             ContributionsList(projectLicense: .mit)
                         } label: {
-                            Text("LICENSE_INFO_TITLE")
+                            Text("License Information")
                         }
                     }
                 } else {
@@ -52,7 +52,7 @@ struct AccountSheet: View {
 
     var closeButton: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
-            Button("CLOSE") {
+            Button("Close") {
                 dismiss()
             }
         }

@@ -17,7 +17,7 @@ struct AccountSetupHeader: View {
     
     var body: some View {
         VStack {
-            Text("ACCOUNT_TITLE")
+            Text("Your Account")
                 .font(.largeTitle)
                 .bold()
                 .padding(.bottom)

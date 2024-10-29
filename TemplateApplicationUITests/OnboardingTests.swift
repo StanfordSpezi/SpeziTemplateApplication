@@ -9,6 +9,7 @@
 import XCTest
 import XCTestExtensions
 import XCTHealthKit
+import XCTSpeziNotifications
 
 
 class OnboardingTests: XCTestCase {
@@ -156,12 +157,8 @@ extension XCUIApplication {
         
         XCTAssertTrue(buttons["Allow Notifications"].exists)
         buttons["Allow Notifications"].tap()
-        
-        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
-        let alertAllowButton = springboard.buttons["Allow"]
-        if alertAllowButton.waitForExistence(timeout: 5) {
-           alertAllowButton.tap()
-        }
+
+        confirmNotificationAuthorization(action: .allow)
     }
     
     fileprivate func assertOnboardingComplete() {

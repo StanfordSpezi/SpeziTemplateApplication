@@ -24,8 +24,8 @@ struct NotificationPermissions: View {
             contentView: {
                 VStack {
                     OnboardingTitleView(
-                        title: "NOTIFICATION_PERMISSIONS_TITLE",
-                        subtitle: "NOTIFICATION_PERMISSIONS_SUBTITLE"
+                        title: "Notifications",
+                        subtitle: "Spezi Scheduler Notifications."
                     )
                     Spacer()
                     Image(systemName: "bell.square.fill")
@@ -39,7 +39,7 @@ struct NotificationPermissions: View {
                 }
             }, actionView: {
                 OnboardingActionsView(
-                    "NOTIFICATION_PERMISSIONS_BUTTON",
+                    "Allow Notifications",
                     action: {
                         do {
                             notificationProcessing = true

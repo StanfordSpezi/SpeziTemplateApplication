@@ -23,7 +23,7 @@ struct HealthKitPermissions: View {
             contentView: {
                 VStack {
                     OnboardingTitleView(
-                        title: "HEALTHKIT_PERMISSIONS_TITLE",
+                        title: "HealthKit Access",
                         subtitle: "HEALTHKIT_PERMISSIONS_SUBTITLE"
                     )
                     Spacer()
@@ -38,7 +38,7 @@ struct HealthKitPermissions: View {
                 }
             }, actionView: {
                 OnboardingActionsView(
-                    "HEALTHKIT_PERMISSIONS_BUTTON",
+                    "Grant Access",
                     action: {
                         do {
                             healthKitProcessing = true

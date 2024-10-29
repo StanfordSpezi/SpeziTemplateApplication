@@ -6,55 +6,34 @@
 // SPDX-License-Identifier: MIT
 //
 
-import OrderedCollections
 @_spi(TestingSupport) import SpeziAccount
-import SpeziQuestionnaire
 import SpeziScheduler
 import SpeziSchedulerUI
+import SpeziViews
 import SwiftUI
-
-
-struct EventView: View {
-    private let event: Event
-
-    @Environment(TemplateApplicationStandard.self) private var standard
-    @Environment(\.dismiss) private var dismiss
-
-    var body: some View {
-        if let questionnaire = event.task.questionnaire {
-            QuestionnaireView(questionnaire: questionnaire) { result in
-                dismiss()
-
-                guard case let .completed(response) = result else {
-                    return // user cancelled the task
-                }
-
-                event.complete()
-                await standard.add(response: response)
-            }
-        }
-    }
-
-    init(_ event: Event) {
-        self.event = event
-    }
-}
 
 
 struct ScheduleView: View {
     @Environment(Account.self) private var account: Account?
+    @Environment(TemplateApplicationScheduler.self) private var scheduler: TemplateApplicationScheduler
 
     @State private var presentedEvent: Event?
     @Binding private var presentingAccount: Bool
 
     
     var body: some View {
+        @Bindable var scheduler = scheduler
+
         NavigationStack {
             TodayList { event in
-                InstructionsTile(event) { // TODO: use TASK_CONTEXT_ACTION_QUESTIONNAIRE for the footer Action button!
-                    presentedEvent = event
+                InstructionsTile(event) {
+                    EventActionButton(event: event, "Start Questionnaire") {
+                        presentedEvent = event
+                    }
                 }
             }
+                .navigationTitle("Schedule")
+                .viewStateAlert(state: $scheduler.viewState)
                 .sheet(item: $presentedEvent) { event in
                     EventView(event)
                 }
@@ -63,7 +42,6 @@ struct ScheduleView: View {
                         AccountButton(isPresented: $presentingAccount)
                     }
                 }
-                .navigationTitle("SCHEDULE_LIST_TITLE")
         }
     }
     
@@ -76,7 +54,9 @@ struct ScheduleView: View {
 
 #if DEBUG
 #Preview("ScheduleView") {
-    ScheduleView(presentingAccount: .constant(false))
+    @Previewable @State var presentingAccount = false
+
+    ScheduleView(presentingAccount: $presentingAccount)
         .previewWith(standard: TemplateApplicationStandard()) {
             Scheduler()
             TemplateApplicationScheduler()

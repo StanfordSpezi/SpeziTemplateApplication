@@ -23,10 +23,10 @@ struct HomeView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            Tab("SCHEDULE_TAB_TITLE", systemImage: "list.clipboard", value: .schedule) {
+            Tab("Schedule", systemImage: "list.clipboard", value: .schedule) {
                 ScheduleView(presentingAccount: $presentingAccount)
             }
-            Tab("CONTACTS_TAB_TITLE", systemImage: "person.fill", value: .contact) {
+            Tab("Contacts", systemImage: "person.fill", value: .contact) {
                 Contacts(presentingAccount: $presentingAccount)
             }
         }

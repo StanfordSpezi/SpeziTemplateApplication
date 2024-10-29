@@ -14,7 +14,7 @@ struct AccountButton: View {
 
 
     var body: some View {
-        Button("ACCOUNT_TITLE", systemImage: "person.crop.circle") {
+        Button("Your Account", systemImage: "person.crop.circle") {
             isPresented = true
         }
     }

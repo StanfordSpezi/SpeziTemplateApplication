@@ -61,7 +61,7 @@ It uses the [**Spezi Scheduler**](https://github.com/StanfordSpezi/SpeziSchedule
 @Row(numberOfColumns: 4) {
     @Column(size: 1) {
         @Image(source: "Schedule", alt: "A screen displaying the Scheduler UI.") {
-            The elements that are displayed as part of a schedule are defined in the ``TemplateApplicationTaskContext`` and displayed using the ``EventContextView`` and logic in the ``ScheduleView``.
+            The elements that are displayed as partof the schedule are defined in the ``TemplateApplicationScheduler`` and displayed using the ``ScheduleView``.
         }
     }
     @Column(size: 1) {
