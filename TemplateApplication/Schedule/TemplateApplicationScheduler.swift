@@ -24,8 +24,8 @@ final class TemplateApplicationScheduler: Module, DefaultInitializable, Environm
     
     /// Add or update the current list of task upon app startup.
     func configure() {
-        do { // TODO: update visuals and update docs!
-            let task = try scheduler.createOrUpdateTask(
+        do {
+            try scheduler.createOrUpdateTask(
                 id: "social-support-questionnaire",
                 title: "Social Support Questionnaire",
                 instructions: "Please fill out the Social Support Questionnaire every day.",
@@ -34,9 +34,6 @@ final class TemplateApplicationScheduler: Module, DefaultInitializable, Environm
             ) { context in
                 context.questionnaire = Bundle.main.questionnaire(withName: "SocialSupportQuestionnaire")
             }
-
-            print(task) // TODO: remove
-            print(task.task.questionnaire!)
         } catch {
             viewState = .error(AnyLocalizedError(error: error, defaultErrorDescription: "Failed to create or update scheduled tasks."))
         }
@@ -45,10 +42,10 @@ final class TemplateApplicationScheduler: Module, DefaultInitializable, Environm
 
 
 extension Task.Context {
-    @Property var questionnaire: Questionnaire?
+    @Property(coding: .json) var questionnaire: Questionnaire?
 }
 
 
 extension Outcome {
-    @Property var questionnaireResponse: QuestionnaireResponse?
+    @Property(coding: .json) var questionnaireResponse: QuestionnaireResponse?
 }

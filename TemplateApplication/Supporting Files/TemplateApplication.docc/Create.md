@@ -43,7 +43,7 @@ The following example shows renaming the application to "My Spezi App":
 $ sh Scripts/create.sh --name "My Spezi App" --bundleIdentifier "edu.stanford.spezi.myapp"
 ```
 
-## 3. Setup the Continous Integration and Delivery Setup
+## 3. Setup the Continuous Integration and Delivery Setup
 
 Continuous integration (CI) and continuous delivery (CD) are essential to automatically test and deploy your application at any time.
 Each Spezi Template Application-based Spezi app already has the necessary infrastructure in place; the Spezi Template Application includes continuous integration (CI) and continuous delivery (CD) setup:
