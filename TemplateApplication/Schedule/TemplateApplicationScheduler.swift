@@ -15,7 +15,7 @@ import class ModelsR4.QuestionnaireResponse
 
 
 @Observable
-final class TemplateApplicationScheduler: Module, DefaultInitializable {
+final class TemplateApplicationScheduler: Module, DefaultInitializable, EnvironmentAccessible {
     @Dependency(Scheduler.self) @ObservationIgnored private var scheduler
 
     @MainActor var viewState: ViewState = .idle
@@ -24,15 +24,19 @@ final class TemplateApplicationScheduler: Module, DefaultInitializable {
     
     /// Add or update the current list of task upon app startup.
     func configure() {
-        do {
-            try scheduler.createOrUpdateTask(
+        do { // TODO: update visuals and update docs!
+            let task = try scheduler.createOrUpdateTask(
                 id: "social-support-questionnaire",
                 title: "Social Support Questionnaire",
                 instructions: "Please fill out the Social Support Questionnaire every day.",
+                category: .questionnaire,
                 schedule: .daily(hour: 8, minute: 0, startingAt: .today)
             ) { context in
                 context.questionnaire = Bundle.main.questionnaire(withName: "SocialSupportQuestionnaire")
             }
+
+            print(task) // TODO: remove
+            print(task.task.questionnaire!)
         } catch {
             viewState = .error(AnyLocalizedError(error: error, defaultErrorDescription: "Failed to create or update scheduled tasks."))
         }

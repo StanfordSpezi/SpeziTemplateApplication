@@ -18,6 +18,8 @@ struct HomeView: View {
 
 
     @AppStorage(StorageKeys.homeTabSelection) private var selectedTab = Tabs.schedule
+    @AppStorage(StorageKeys.tabViewCustomization) private var tabViewCustomization = TabViewCustomization()
+
     @State private var presentingAccount = false
 
     
@@ -26,10 +28,14 @@ struct HomeView: View {
             Tab("Schedule", systemImage: "list.clipboard", value: .schedule) {
                 ScheduleView(presentingAccount: $presentingAccount)
             }
+                .customizationID("home.schedule")
             Tab("Contacts", systemImage: "person.fill", value: .contact) {
                 Contacts(presentingAccount: $presentingAccount)
             }
+                .customizationID("home.contacts")
         }
+            .tabViewStyle(.sidebarAdaptable)
+            .tabViewCustomization($tabViewCustomization)
             .sheet(isPresented: $presentingAccount) {
                 AccountSheet()
             }

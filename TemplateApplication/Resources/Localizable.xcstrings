@@ -361,6 +361,12 @@
         }
       }
     },
+    "This type of event is currently unsupported. Please contact the developer of this app." : {
+
+    },
+    "Unsupported Event" : {
+
+    },
     "WELCOME_AREA1_DESCRIPTION" : {
       "localizations" : {
         "en" : {

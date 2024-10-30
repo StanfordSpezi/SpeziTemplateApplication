@@ -24,7 +24,7 @@
 		2FC3439029EE6346002D773C /* SocialSupportQuestionnaire.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC5529EDD811004B9AB4 /* SocialSupportQuestionnaire.json */; };
 		2FC3439129EE6349002D773C /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2A29EDD78D004B9AB4 /* AppIcon.png */; };
 		2FC3439229EE634B002D773C /* ConsentDocument.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2C29EDD78E004B9AB4 /* ConsentDocument.md */; };
-		2FC975A82978F11A00BA99FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* Home.swift */; };
+		2FC975A82978F11A00BA99FE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC975A72978F11A00BA99FE /* HomeView.swift */; };
 		2FE5DC2629EDD38A004B9AB4 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2529EDD38A004B9AB4 /* Contacts.swift */; };
 		2FE5DC3529EDD7CA004B9AB4 /* Consent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC2F29EDD7CA004B9AB4 /* Consent.swift */; };
 		2FE5DC3629EDD7CA004B9AB4 /* HealthKitPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5DC3029EDD7CA004B9AB4 /* HealthKitPermissions.swift */; };
@@ -63,6 +63,7 @@
 		A94DDFFD2CBD1190004930BD /* SpeziNotifications in Frameworks */ = {isa = PBXBuildFile; productRef = A94DDFFC2CBD1190004930BD /* SpeziNotifications */; };
 		A9720E432ABB68CC00872D23 /* AccountSetupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9720E422ABB68CC00872D23 /* AccountSetupHeader.swift */; };
 		A98FF2B12CD131F500DFC949 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98FF2B02CD131F500DFC949 /* EventView.swift */; };
+		A994264E2CD25EB3002F8BD5 /* XCTSpeziAccount in Frameworks */ = {isa = PBXBuildFile; productRef = A994264D2CD25EB3002F8BD5 /* XCTSpeziAccount */; };
 		A9947BF02CC131ED0068AA8A /* SpeziSchedulerUI in Frameworks */ = {isa = PBXBuildFile; productRef = A9947BEF2CC131ED0068AA8A /* SpeziSchedulerUI */; };
 		A9947BF42CC142BD0068AA8A /* XCTSpeziNotifications in Frameworks */ = {isa = PBXBuildFile; productRef = A9947BF32CC142BD0068AA8A /* XCTSpeziNotifications */; };
 		A9A3DCC82C75CBBD00FC9B69 /* FirebaseConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3DCC72C75CB9A00FC9B69 /* FirebaseConfiguration.swift */; };
@@ -99,7 +100,7 @@
 		2FA0BFEC2ACC977500E0EF83 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2FAEC07F297F583900C11C42 /* TemplateApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TemplateApplication.entitlements; sourceTree = "<group>"; };
 		2FC94CD4298B0A1D009C8209 /* TemplateApplication.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateApplication.xctestplan; sourceTree = "<group>"; };
-		2FC975A72978F11A00BA99FE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		2FC975A72978F11A00BA99FE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2FE5DC2529EDD38A004B9AB4 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		2FE5DC2A29EDD78D004B9AB4 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		2FE5DC2C29EDD78E004B9AB4 /* ConsentDocument.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ConsentDocument.md; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 			files = (
 				2FE5DC9929EDD9D9004B9AB4 /* XCTestExtensions in Frameworks */,
 				2FE5DC9C29EDD9EF004B9AB4 /* XCTHealthKit in Frameworks */,
+				A994264E2CD25EB3002F8BD5 /* XCTSpeziAccount in Frameworks */,
 				A9947BF42CC142BD0068AA8A /* XCTSpeziNotifications in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +276,7 @@
 		653A254F283387FE005D4D48 /* TemplateApplication */ = {
 			isa = PBXGroup;
 			children = (
-				2FC975A72978F11A00BA99FE /* Home.swift */,
+				2FC975A72978F11A00BA99FE /* HomeView.swift */,
 				653A2550283387FE005D4D48 /* TemplateApplication.swift */,
 				2F5E32BC297E05EA003432F8 /* TemplateApplicationDelegate.swift */,
 				2FF53D8C2A8729D600042B76 /* TemplateApplicationStandard.swift */,
@@ -421,6 +423,7 @@
 				2FE5DC9829EDD9D9004B9AB4 /* XCTestExtensions */,
 				2FE5DC9B29EDD9EF004B9AB4 /* XCTHealthKit */,
 				A9947BF32CC142BD0068AA8A /* XCTSpeziNotifications */,
+				A994264D2CD25EB3002F8BD5 /* XCTSpeziAccount */,
 			);
 			productName = TemplateApplicationUITests;
 			productReference = 653A256728338800005D4D48 /* TemplateApplicationUITests.xctest */;
@@ -530,7 +533,7 @@
 				2FE5DC3A29EDD7CA004B9AB4 /* Welcome.swift in Sources */,
 				2FE5DC3829EDD7CA004B9AB4 /* InterestingModules.swift in Sources */,
 				2FE5DC3529EDD7CA004B9AB4 /* Consent.swift in Sources */,
-				2FC975A82978F11A00BA99FE /* Home.swift in Sources */,
+				2FC975A82978F11A00BA99FE /* HomeView.swift in Sources */,
 				2FE5DC4E29EDD7FA004B9AB4 /* ScheduleView.swift in Sources */,
 				A9DFE8A92ABE551400428242 /* AccountButton.swift in Sources */,
 				A9A3DCC82C75CBBD00FC9B69 /* FirebaseConfiguration.swift in Sources */,
@@ -1117,8 +1120,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziAccount.git";
 			requirement = {
-				kind = revision;
-				revision = 7ef29a7743c01a083ba69e93479e82d3be199ac0;
+				branch = "feature/non-generic-configuration";
+				kind = branch;
 			};
 		};
 		2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */ = {
@@ -1359,6 +1362,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A94DDFFB2CBD1190004930BD /* XCRemoteSwiftPackageReference "SpeziNotifications" */;
 			productName = SpeziNotifications;
+		};
+		A994264D2CD25EB3002F8BD5 /* XCTSpeziAccount */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FE5DC6229EDD883004B9AB4 /* XCRemoteSwiftPackageReference "SpeziAccount" */;
+			productName = XCTSpeziAccount;
 		};
 		A9947BEF2CC131ED0068AA8A /* SpeziSchedulerUI */ = {
 			isa = XCSwiftPackageProductDependency;

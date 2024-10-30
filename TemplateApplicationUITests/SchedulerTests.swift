@@ -30,8 +30,8 @@ class SchedulerTests: XCTestCase {
         XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Schedule"].exists)
         app.tabBars["Tab Bar"].buttons["Schedule"].tap()
         
-        XCTAssertTrue(app.staticTexts["Start Questionnaire"].waitForExistence(timeout: 2))
-        app.staticTexts["Start Questionnaire"].tap()
+        XCTAssertTrue(app.buttons["Start Questionnaire"].waitForExistence(timeout: 2))
+        app.buttons["Start Questionnaire"].tap()
         
         XCTAssertTrue(app.staticTexts["Social Support"].waitForExistence(timeout: 2))
     }

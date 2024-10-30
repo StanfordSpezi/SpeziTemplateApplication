@@ -9,6 +9,7 @@
 import XCTest
 import XCTestExtensions
 import XCTHealthKit
+import XCTSpeziAccount
 import XCTSpeziNotifications
 
 
@@ -102,16 +103,10 @@ extension XCUIApplication {
         XCTAssertTrue(buttons["Signup"].exists)
         buttons["Signup"].tap()
 
+
         XCTAssertTrue(staticTexts["Create a new Account"].waitForExistence(timeout: 2))
 
-        XCTAssertTrue(collectionViews.textFields["E-Mail Address"].exists)
-        try collectionViews.textFields["E-Mail Address"].enter(value: email)
-        XCTAssertTrue(collectionViews.secureTextFields["Password"].exists)
-        try collectionViews.secureTextFields["Password"].enter(value: "StanfordRocks")
-        XCTAssertTrue(collectionViews.textFields["enter first name"].exists)
-        try textFields["enter first name"].enter(value: "Leland")
-        XCTAssertTrue(collectionViews.textFields["enter last name"].exists)
-        try textFields["enter last name"].enter(value: "Stanford")
+        try fillSignupForm(email: email, password: "StanfordRocks", name: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
 
         XCTAssertTrue(collectionViews.buttons["Signup"].exists)
         collectionViews.buttons["Signup"].tap()
@@ -186,8 +181,7 @@ extension XCUIApplication {
         XCTAssertTrue(navigationBars.buttons["Edit"].waitForExistence(timeout: 2))
         navigationBars.buttons["Edit"].tap()
 
-        usleep(500_00)
-        XCTAssertFalse(navigationBars.buttons["Close"].exists)
+        XCTAssertTrue(navigationBars.buttons["Close"].waitForNonExistence(timeout: 0.5))
 
         XCTAssertTrue(buttons["Delete Account"].waitForExistence(timeout: 2))
         buttons["Delete Account"].tap()
@@ -204,12 +198,7 @@ extension XCUIApplication {
 
         sleep(2)
 
-        // Login
-        try textFields["E-Mail Address"].enter(value: email)
-        try secureTextFields["Password"].enter(value: "StanfordRocks")
-
-        XCTAssertTrue(buttons["Login"].waitForExistence(timeout: 0.5))
-        buttons["Login"].tap()
+        try login(email: email, password: "StanfordRocks")
 
         XCTAssertTrue(alerts["Invalid Credentials"].waitForExistence(timeout: 2.0))
     }

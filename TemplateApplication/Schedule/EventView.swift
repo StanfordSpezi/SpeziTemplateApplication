@@ -30,6 +30,17 @@ struct EventView: View {
                 event.complete()
                 await standard.add(response: response)
             }
+        } else {
+            ContentUnavailableView(
+                "Unsupported Event",
+                systemImage: "list.bullet.clipboard",
+                description: Text("This type of event is currently unsupported. Please contact the developer of this app.")
+            )
+                .toolbar {
+                    Button("Close") {
+                        dismiss()
+                    }
+                }
         }
     }
 
