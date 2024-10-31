@@ -47,5 +47,6 @@ extension Task.Context {
 
 
 extension Outcome {
+    // periphery:ignore - demonstration of how to store additional context within an outcome
     @Property(coding: .json) var questionnaireResponse: QuestionnaireResponse?
 }
