@@ -60,7 +60,7 @@ actor TemplateApplicationStandard: Standard,
         }
     }
 
-    // periphery:ignore:parameters isolated
+    // periphery:ignore:parameters isolation
     func add(response: ModelsR4.QuestionnaireResponse, isolation: isolated (any Actor)? = #isolation) async {
         let id = response.identifier?.value?.value?.string ?? UUID().uuidString
         
