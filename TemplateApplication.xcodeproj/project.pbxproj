@@ -261,7 +261,7 @@
 			path = SharedContext;
 			sourceTree = "<group>";
 		};
-		63E851762CE0FF85005554E7 /* Logs */ = {
+		63E851762CE0FF85005554E7 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
 				63E8517F2CE10014005554E7 /* LogsListView.swift */,
@@ -270,7 +270,7 @@
 				63E851792CE0FFDC005554E7 /* LogLevel.swift */,
 				63E851772CE0FFC5005554E7 /* OSLogEntryLog+FormattedLogOutput.swift */,
 			);
-			path = Logs;
+			path = Logging;
 			sourceTree = "<group>";
 		};
 		653A2544283387FE005D4D48 = {
@@ -309,7 +309,7 @@
 				2FE5DC2829EDD398004B9AB4 /* Onboarding */,
 				2FE5DC2D29EDD792004B9AB4 /* Resources */,
 				2FE5DC3B29EDD7D0004B9AB4 /* Schedule */,
-				63E851762CE0FF85005554E7 /* Logs */,
+				63E851762CE0FF85005554E7 /* Logging */,
 				2FE5DC3C29EDD7DA004B9AB4 /* SharedContext */,
 				2FC9759D2978E30800BA99FE /* Supporting Files */,
 			);
