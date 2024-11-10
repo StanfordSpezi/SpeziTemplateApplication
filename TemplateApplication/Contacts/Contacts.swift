@@ -58,7 +58,7 @@ struct Contacts: View {
     var body: some View {
         NavigationStack {
             ContactsList(contacts: contacts)
-                .navigationTitle(String(localized: "CONTACTS_NAVIGATION_TITLE"))
+                .navigationTitle("Contacts")
                 .toolbar {
                     if account != nil {
                         AccountButton(isPresented: $presentingAccount)

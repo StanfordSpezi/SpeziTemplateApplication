@@ -15,6 +15,7 @@ import SpeziFirebaseAccountStorage
 import SpeziFirebaseStorage
 import SpeziFirestore
 import SpeziHealthKit
+import SpeziNotifications
 import SpeziOnboarding
 import SpeziScheduler
 import SwiftUI
@@ -50,7 +51,10 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
             }
             
             TemplateApplicationScheduler()
+            Scheduler()
             OnboardingDataSource()
+
+            Notifications()
         }
     }
 

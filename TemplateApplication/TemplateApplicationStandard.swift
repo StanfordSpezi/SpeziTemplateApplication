@@ -59,13 +59,14 @@ actor TemplateApplicationStandard: Standard,
             logger.error("Could not remove HealthKit sample: \(error)")
         }
     }
-    
-    func add(response: ModelsR4.QuestionnaireResponse) async {
+
+    // periphery:ignore:parameters isolation
+    func add(response: ModelsR4.QuestionnaireResponse, isolation: isolated (any Actor)? = #isolation) async {
         let id = response.identifier?.value?.value?.string ?? UUID().uuidString
         
         if FeatureFlags.disableFirebase {
             let jsonRepresentation = (try? String(data: JSONEncoder().encode(response), encoding: .utf8)) ?? ""
-            logger.debug("Received questionnaire response: \(jsonRepresentation)")
+            await logger.debug("Received questionnaire response: \(jsonRepresentation)")
             return
         }
         
@@ -75,7 +76,7 @@ actor TemplateApplicationStandard: Standard,
                 .document(id) // Set the document identifier to the id of the response.
                 .setData(from: response)
         } catch {
-            logger.error("Could not store questionnaire response: \(error)")
+            await logger.error("Could not store questionnaire response: \(error)")
         }
     }
     

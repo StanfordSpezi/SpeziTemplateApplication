@@ -15,4 +15,6 @@ enum StorageKeys {
     // MARK: - Home
     /// The currently selected home tab.
     static let homeTabSelection = "home.tabselection"
+    /// The TabView customization on iPadOS
+    static let tabViewCustomization = "home.tab-view-customization"
 }
