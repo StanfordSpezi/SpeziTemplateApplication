@@ -12,7 +12,6 @@ import Spezi
 import SwiftUI
 
 actor LogManager: Module, DefaultInitializable, EnvironmentAccessible {
-    @Application(\.logger) private var logger
     
     func query(
         startDate: Date,

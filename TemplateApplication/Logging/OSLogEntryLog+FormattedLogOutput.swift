@@ -12,12 +12,7 @@ import OSLog
 extension Array where Element == OSLogEntryLog {
     func formattedLogOutput() -> String {
         self.map { entry in
-            let timestamp = entry.date.formatted()
-            let level = entry.level.rawValue
-            let category = entry.category
-            let message = entry.composedMessage
-            
-            return "[\(timestamp)] [\(category)] [\(level)]: \(message)"
+            "[\(entry.date.formatted())] [\(entry.category)] [\(entry.level.rawValue)]: \(entry.composedMessage)"
         }
         .joined(separator: "\n")
     }
