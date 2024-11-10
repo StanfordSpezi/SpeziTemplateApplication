@@ -55,8 +55,6 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
             OnboardingDataSource()
 
             Notifications()
-            
-            LogManager()
         }
     }
 

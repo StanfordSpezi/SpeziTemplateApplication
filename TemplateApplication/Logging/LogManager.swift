@@ -11,8 +11,7 @@ import OSLog
 import Spezi
 import SwiftUI
 
-actor LogManager: Module, DefaultInitializable, EnvironmentAccessible {
-    
+class LogManager {
     func query(
         startDate: Date,
         endDate: Date? = nil,

@@ -12,7 +12,7 @@ import SwiftUI
 
 
 struct LogViewer: View {
-    @Environment(LogManager.self) var manager
+    let manager = LogManager()
     
     @State private var startDate: Date = Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date()
     @State private var endDate = Date()
@@ -92,7 +92,7 @@ struct LogViewer: View {
         queryTask = Task(priority: .userInitiated) { [manager, startDate, endDate, selectedLogLevel] in
             do {
                 /// Run the query
-                let result = try await manager.query(
+                let result = try manager.query(
                     startDate: startDate,
                     endDate: endDate,
                     logLevel: selectedLogLevel.osLogLevel
