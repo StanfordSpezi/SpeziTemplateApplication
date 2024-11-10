@@ -231,12 +231,82 @@
         }
       }
     },
+    "LOGS_FROM_DATE_LABEL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date From"
+          }
+        }
+      }
+    },
+    "LOGS_LEVEL_LABEL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log Level"
+          }
+        }
+      }
+    },
+    "LOGS_LOADING_LABEL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading Logs…"
+          }
+        }
+      }
+    },
+    "LOGS_SHARE_PREVIEW_TITLE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logs"
+          }
+        }
+      }
+    },
+    "LOGS_TO_DATE_LABEL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date To"
+          }
+        }
+      }
+    },
+    "LOGS_VIEWER_TITLE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log Viewer"
+          }
+        }
+      }
+    },
     "Next" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Next"
+          }
+        }
+      }
+    },
+    "NO_LOGS_AVAILABLE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Logs Available"
           }
         }
       }
@@ -257,6 +327,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notifications"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
           }
         }
       }
@@ -366,6 +446,16 @@
     },
     "Unsupported Event" : {
 
+    },
+    "View Logs" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View Logs"
+          }
+        }
+      }
     },
     "WELCOME_AREA1_DESCRIPTION" : {
       "localizations" : {

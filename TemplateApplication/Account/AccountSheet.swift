@@ -30,6 +30,12 @@ struct AccountSheet: View {
                         } label: {
                             Text("License Information")
                         }
+                        
+                        NavigationLink {
+                            LogViewer()
+                        } label: {
+                            Text("View Logs")
+                        }
                     }
                 } else {
                     AccountSetup { _ in
