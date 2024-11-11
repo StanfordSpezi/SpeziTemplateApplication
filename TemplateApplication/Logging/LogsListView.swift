@@ -33,6 +33,12 @@ struct LogsListView: View {
                             .background(LogLevel(from: entry.level).color)
                             .cornerRadius(4)
                     }
+                    Text(entry.subsystem)
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .padding(2)
+                        .background(Color(.systemGray5))
+                        .cornerRadius(4)
                     Text(entry.composedMessage)
                 }
             }

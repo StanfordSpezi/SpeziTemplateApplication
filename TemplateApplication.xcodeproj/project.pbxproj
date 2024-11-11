@@ -53,6 +53,8 @@
 		5680DD3E2AB8CD84004E6D4A /* ContributionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5680DD3D2AB8CD84004E6D4A /* ContributionsTest.swift */; };
 		56E708352BB06B7100B08F0A /* SpeziLicense in Frameworks */ = {isa = PBXBuildFile; productRef = 56E708342BB06B7100B08F0A /* SpeziLicense */; };
 		56E7083B2BB06F6F00B08F0A /* SwiftPackageList in Frameworks */ = {isa = PBXBuildFile; productRef = 56E7083A2BB06F6F00B08F0A /* SwiftPackageList */; };
+		63A315532CE14A9300310EF5 /* LogViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A315522CE14A8E00310EF5 /* LogViewerTests.swift */; };
+		63A315562CE14C1000310EF5 /* LogManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A315552CE14C0900310EF5 /* LogManagerError.swift */; };
 		63E851782CE0FFCB005554E7 /* OSLogEntryLog+FormattedLogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E851772CE0FFC5005554E7 /* OSLogEntryLog+FormattedLogOutput.swift */; };
 		63E8517A2CE0FFDE005554E7 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E851792CE0FFDC005554E7 /* LogLevel.swift */; };
 		63E8517C2CE0FFF9005554E7 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8517B2CE0FFF6005554E7 /* LogManager.swift */; };
@@ -123,6 +125,8 @@
 		2FE5DCAC29EE6107004B9AB4 /* AccountOnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountOnboarding.swift; sourceTree = "<group>"; };
 		2FF53D8C2A8729D600042B76 /* TemplateApplicationStandard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateApplicationStandard.swift; sourceTree = "<group>"; };
 		5680DD3D2AB8CD84004E6D4A /* ContributionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionsTest.swift; sourceTree = "<group>"; };
+		63A315522CE14A8E00310EF5 /* LogViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewerTests.swift; sourceTree = "<group>"; };
+		63A315552CE14C0900310EF5 /* LogManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManagerError.swift; sourceTree = "<group>"; };
 		63E851772CE0FFC5005554E7 /* OSLogEntryLog+FormattedLogOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLogEntryLog+FormattedLogOutput.swift"; sourceTree = "<group>"; };
 		63E851792CE0FFDC005554E7 /* LogLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
 		63E8517B2CE0FFF6005554E7 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 		63E851762CE0FF85005554E7 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
+				63A315552CE14C0900310EF5 /* LogManagerError.swift */,
 				63E8517F2CE10014005554E7 /* LogsListView.swift */,
 				63E8517D2CE10005005554E7 /* LogViewer.swift */,
 				63E8517B2CE0FFF6005554E7 /* LogManager.swift */,
@@ -327,6 +332,7 @@
 		653A256A28338800005D4D48 /* TemplateApplicationUITests */ = {
 			isa = PBXGroup;
 			children = (
+				63A315522CE14A8E00310EF5 /* LogViewerTests.swift */,
 				2F4E237D2989A2FE0013F3D9 /* OnboardingTests.swift */,
 				653A256B28338800005D4D48 /* SchedulerTests.swift */,
 				2F4E23862989DB360013F3D9 /* ContactsTests.swift */,
@@ -560,6 +566,7 @@
 				2FC975A82978F11A00BA99FE /* HomeView.swift in Sources */,
 				63E851782CE0FFCB005554E7 /* OSLogEntryLog+FormattedLogOutput.swift in Sources */,
 				2FE5DC4E29EDD7FA004B9AB4 /* ScheduleView.swift in Sources */,
+				63A315562CE14C1000310EF5 /* LogManagerError.swift in Sources */,
 				63E851802CE10016005554E7 /* LogsListView.swift in Sources */,
 				A9DFE8A92ABE551400428242 /* AccountButton.swift in Sources */,
 				A9A3DCC82C75CBBD00FC9B69 /* FirebaseConfiguration.swift in Sources */,
@@ -596,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5680DD3E2AB8CD84004E6D4A /* ContributionsTest.swift in Sources */,
+				63A315532CE14A9300310EF5 /* LogViewerTests.swift in Sources */,
 				2F4E23872989DB360013F3D9 /* ContactsTests.swift in Sources */,
 				2F4E237E2989A2FE0013F3D9 /* OnboardingTests.swift in Sources */,
 				653A256C28338800005D4D48 /* SchedulerTests.swift in Sources */,
