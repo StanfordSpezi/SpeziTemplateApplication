@@ -23,33 +23,45 @@ struct LogViewer: View {
     @State private var queryTask: Task<Void, Never>?
     @State private var showingAlert = false
     @State private var errorMessage = ""
+    @State private var searchText = ""
+    
+    private var searchResults: [OSLogEntryLog] {
+        if searchText.isEmpty {
+            return logs
+        } else {
+            return logs.filter { $0.composedMessage.contains(searchText) }
+        }
+    }
     
     var body: some View {
-        VStack {
+        
+        NavigationView {
             VStack {
-                DatePicker("LOGS_FROM_DATE_LABEL", selection: $startDate, displayedComponents: [.date, .hourAndMinute])
-                DatePicker("LOGS_TO_DATE_LABEL", selection: $endDate, displayedComponents: [.date, .hourAndMinute])
-                HStack {
-                    Text("LOGS_LEVEL_LABEL")
-                    Spacer()
-                    Picker("LOGS_LEVEL_LABEL", selection: $selectedLogLevel) {
-                        ForEach(LogLevel.allCases) { level in
-                            Text(level.rawValue).tag(level)
+                VStack {
+                    DatePicker("LOGS_FROM_DATE_LABEL", selection: $startDate, displayedComponents: [.date, .hourAndMinute])
+                    DatePicker("LOGS_TO_DATE_LABEL", selection: $endDate, displayedComponents: [.date, .hourAndMinute])
+                    HStack {
+                        Text("LOGS_LEVEL_LABEL")
+                        Spacer()
+                        Picker("LOGS_LEVEL_LABEL", selection: $selectedLogLevel) {
+                            ForEach(LogLevel.allCases) { level in
+                                Text(level.rawValue).tag(level)
+                            }
                         }
                     }
                 }
-            }
-            .padding()
-            
-            if isLoading {
+                .padding()
+                
+                if isLoading {
+                    Spacer()
+                    ProgressView("LOGS_LOADING_LABEL").padding()
+                    Spacer()
+                } else {
+                    LogsListView(logs: logs)
+                }
+                
                 Spacer()
-                ProgressView("LOGS_LOADING_LABEL").padding()
-                Spacer()
-            } else {
-                LogsListView(logs: logs)
             }
-            
-            Spacer()
         }
         .navigationTitle("LOGS_VIEWER_TITLE")
         .onAppear {
@@ -83,8 +95,9 @@ struct LogViewer: View {
             }
         }
         .alert(errorMessage, isPresented: $showingAlert) {
-                   Button("OK", role: .cancel) { }
+            Button("OK", role: .cancel) { }
         }
+        .searchable(text: $searchText)
     }
     
     init() {
