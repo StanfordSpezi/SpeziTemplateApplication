@@ -25,7 +25,7 @@ struct LogViewer: View {
     @State private var errorMessage = ""
     @State private var searchText = ""
     
-    private var searchResults: [OSLogEntryLog] {
+    private var filteredLogs: [OSLogEntryLog] {
         if searchText.isEmpty {
             return logs
         } else {
@@ -34,7 +34,6 @@ struct LogViewer: View {
     }
     
     var body: some View {
-        
         NavigationView {
             VStack {
                 VStack {
@@ -57,7 +56,7 @@ struct LogViewer: View {
                     ProgressView("LOGS_LOADING_LABEL").padding()
                     Spacer()
                 } else {
-                    LogsListView(logs: logs)
+                    LogsListView(logs: filteredLogs)
                 }
                 
                 Spacer()
