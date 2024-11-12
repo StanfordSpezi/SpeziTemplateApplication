@@ -34,33 +34,31 @@ struct LogViewer: View {
     }
     
     var body: some View {
-        NavigationView {
+        VStack {
             VStack {
-                VStack {
-                    DatePicker("LOGS_FROM_DATE_LABEL", selection: $startDate, displayedComponents: [.date, .hourAndMinute])
-                    DatePicker("LOGS_TO_DATE_LABEL", selection: $endDate, displayedComponents: [.date, .hourAndMinute])
-                    HStack {
-                        Text("LOGS_LEVEL_LABEL")
-                        Spacer()
-                        Picker("LOGS_LEVEL_LABEL", selection: $selectedLogLevel) {
-                            ForEach(LogLevel.allCases) { level in
-                                Text(level.rawValue).tag(level)
-                            }
+                DatePicker("LOGS_FROM_DATE_LABEL", selection: $startDate, displayedComponents: [.date, .hourAndMinute])
+                DatePicker("LOGS_TO_DATE_LABEL", selection: $endDate, displayedComponents: [.date, .hourAndMinute])
+                HStack {
+                    Text("LOGS_LEVEL_LABEL")
+                    Spacer()
+                    Picker("LOGS_LEVEL_LABEL", selection: $selectedLogLevel) {
+                        ForEach(LogLevel.allCases) { level in
+                            Text(level.rawValue).tag(level)
                         }
                     }
                 }
-                .padding()
-                
-                if isLoading {
-                    Spacer()
-                    ProgressView("LOGS_LOADING_LABEL").padding()
-                    Spacer()
-                } else {
-                    LogsListView(logs: filteredLogs)
-                }
-                
-                Spacer()
             }
+            .padding()
+            
+            if isLoading {
+                Spacer()
+                ProgressView("LOGS_LOADING_LABEL").padding()
+                Spacer()
+            } else {
+                LogsListView(logs: filteredLogs)
+            }
+            
+            Spacer()
         }
         .navigationTitle("LOGS_VIEWER_TITLE")
         .onAppear {
