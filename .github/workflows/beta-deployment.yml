@@ -21,9 +21,9 @@ jobs:
     permissions:
       contents: read
     secrets: inherit
-  linting:
-    name: Lint
-    uses: ./.github/workflows/pull_request.yml
+  staticanaylsis:
+    name: Static Analysis
+    uses: ./.github/workflows/static_analysis.yml
     permissions:
       security-events: write
       actions: read
