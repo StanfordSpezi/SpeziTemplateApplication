@@ -19,6 +19,12 @@ jobs:
     name: Build and Test
     uses: ./.github/workflows/build-and-test.yml
     permissions:
+      contents: read
+    secrets: inherit
+  linting:
+    name: Lint
+    uses: ./.github/workflows/pull_request.yml
+    permissions:
       security-events: write
       actions: read
       contents: read
