@@ -14,10 +14,20 @@ on:
       - main
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   buildandtest:
     name: Build and Test
     uses: ./.github/workflows/build-and-test.yml
+    permissions:
+      contents: read
+    secrets: inherit
+  staticanaylsis:
+    name: Static Analysis
+    uses: ./.github/workflows/static-analysis.yml
     permissions:
       security-events: write
       actions: read
