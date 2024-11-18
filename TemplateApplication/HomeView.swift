@@ -37,7 +37,7 @@ struct HomeView: View {
             .tabViewStyle(.sidebarAdaptable)
             .tabViewCustomization($tabViewCustomization)
             .sheet(isPresented: $presentingAccount) {
-                AccountSheet()
+                AccountSheet(dismissAfterSignIn: false) // presentation was user initiated, do not automatically dismiss
             }
             .accountRequired(!FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding) {
                 AccountSheet()
