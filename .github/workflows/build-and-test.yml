@@ -14,7 +14,7 @@ on:
   workflow_call:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: Build-and-Test-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
