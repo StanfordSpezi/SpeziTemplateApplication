@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: Documentation-Deployment-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:

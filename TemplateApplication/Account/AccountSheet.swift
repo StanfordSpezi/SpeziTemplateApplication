@@ -12,6 +12,8 @@ import SwiftUI
 
 
 struct AccountSheet: View {
+    private let dismissAfterSignIn: Bool
+
     @Environment(\.dismiss) var dismiss
     
     @Environment(Account.self) private var account
@@ -39,7 +41,9 @@ struct AccountSheet: View {
                     }
                 } else {
                     AccountSetup { _ in
-                        dismiss() // we just signed in, dismiss the account setup sheet
+                        if dismissAfterSignIn {
+                            dismiss() // we just signed in, dismiss the account setup sheet
+                        }
                     } header: {
                         AccountSetupHeader()
                     }
@@ -56,12 +60,16 @@ struct AccountSheet: View {
         }
     }
 
-    var closeButton: some ToolbarContent {
+    @ToolbarContentBuilder private var closeButton: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
             Button("Close") {
                 dismiss()
             }
         }
+    }
+
+    init(dismissAfterSignIn: Bool = true) {
+        self.dismissAfterSignIn = dismissAfterSignIn
     }
 }
 

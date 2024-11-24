@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}
+  group: Beta-Deployment
   cancel-in-progress: false
 
 jobs:
