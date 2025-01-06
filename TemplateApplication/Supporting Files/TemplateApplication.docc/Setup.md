@@ -46,10 +46,11 @@ You can learn more about Xcode, including [creating an Xcode project for an app]
 
 ## 2. Install Helper Tools
 
-The Spezi Template Application and applications derived from it provide a pre-configured setup of integrated tools that make the development of applications easier and enforce best practices during the development of your application.
+The Spezi Template Application provides a set of pre-configured tools that simplify app development and enforce best practices.
 
 We provide a simple setup script that installs essential tools like [homebrew](https://brew.sh) (macOS package manager) and [git LFS](https://git-lfs.com) (Git extension for versioning large files).
-The script also installs the [Google Firebase emulator and command line interface (CLI)](https://firebase.google.com/docs/cli), including java, node, and other dependencies needed to execute the Firebase emulator to allow you to locally test your application's future cloud connection without setting up a cloud firebase project.
+
+The script also installs the [Google Firebase emulator and command line interface (CLI)](https://firebase.google.com/docs/cli) and all its dependencies, including Java and Node.js, letting you test cloud features locally without setting up a Firebase project.
 
 You can simply run the script by opening up your macOS [Terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac) and executing the following command:
 
