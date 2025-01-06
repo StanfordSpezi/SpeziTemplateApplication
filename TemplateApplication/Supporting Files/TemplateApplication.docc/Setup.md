@@ -22,9 +22,9 @@ You will need access to a macOS-based machine to build and run the Swift-based S
 Please ensure that your Mac meets the following criteria and that you install or update the software on your Mac accordingly.
 
 
-### macOS - Sonoma 14.5 Or Newer
+### macOS - Sequoia 15.2 Or Newer
 
-The Mac needs to run macOS Sonoma 14.5 or newer. Please [update to the latest operating system version following the Apple-provided instructions](https://support.apple.com/en-us/HT201541).
+The Mac needs to run macOS Sequoia 15.2 or newer. Please [update to the latest operating system version following the Apple-provided instructions](https://support.apple.com/en-us/HT201541).
 
 You can verify that you run the latest macOS version by clicking on the Apple Logo on the top left of your screen and selecting "About this Mac". You can see the macOS version number in the specs list under your Mac picture.
 
