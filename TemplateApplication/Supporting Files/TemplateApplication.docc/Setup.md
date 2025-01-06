@@ -10,7 +10,7 @@
 #       
 -->
 
-The Spezi Template Application is a fully functioning iOS application built using Spezi that can be used as a starting point for creating your own iOS app. The following tutorial will walk you through the steps needed to configure your Mac to build and run the Spezi Template Application.
+The Spezi Template Application is a fully functioning iOS application built using Spezi that can be used as a starting point for creating your own iOS app. The following tutorial will walk you through the steps needed to configure your Mac to build and run the Spezi Template Application, after which you can customize it for your own project.
 
 ## 1. Install Xcode
 
@@ -65,8 +65,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/StanfordSpezi/Spe
 
 [Google Firebase](https://firebase.google.com) is a set of managed backend cloud computing services and application development platforms provided by Google.
 It hosts databases, services, authentication, and integration for a variety of applications, including mobile applications like the Spezi Template Application.
-Stanford provides its version of a Firebase instance in the form of the [Stanford mHealth platform](https://med.stanford.edu/mhealth.html).
-We use Firebase and the mHealth platform as the default integrated cloud provided in the Spezi Template Application.
+Stanford provides its version of a Firebase instance in the form of the *Stanford mHealth platform*, which we use for many of our projects.
 
 > Tip: Spezi itself is independent of any cloud provider or platform! Spezi offers different modules to connect to cloud providers, including [Spezi Firebase](https://github.com/StanfordSpezi/SpeziFirebase), which is the cloud provider demonstrated in the Spezi Template Application.
 
