@@ -1,4 +1,4 @@
-# Build And Run an iOS App Using the Spezi Template Application
+# Build And Run an App based on the Spezi Template Application
 
 <!--
 #
@@ -29,15 +29,15 @@ The Mac needs to run macOS Sonoma 14.5 or newer. Please [update to the latest op
 You can verify that you run the latest macOS version by clicking on the Apple Logo on the top left of your screen and selecting "About this Mac". You can see the macOS version number in the specs list under your Mac picture.
 
 
-### Xcode - 16.0 Or Newer
+### Xcode - 16.2 Or Newer
 
 Xcode is the integrated development environment (IDE) that is required to build and run Swift-based iOS applications.
-You need to have Xcode 16.0 or later installed.
+You need to have Xcode 16.2 or later installed.
 [You can install Xcode using the Mac AppStore](https://apps.apple.com/us/app/xcode/id497799835).
 
 Please open Xcode and follow the instructions to finish the installation.
 
-You can verify that you run the latest version of Xcode and everything is installed if you can see the "Welcome to Xcode" screen when you open Xcode, showing 16.0 or newer as the version number.
+You can verify that you run the latest version of Xcode and everything is installed if you can see the "Welcome to Xcode" screen when you open Xcode, showing 16.2 or newer as the version number.
 
 @Image(source: "Xcode", alt: "Screenshot showing the Welcome to Xcode window.")
 
