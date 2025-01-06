@@ -1,4 +1,4 @@
-# Build And Run a Spezi Template Application-based Application
+# Build And Run an iOS App Using the Spezi Template Application
 
 <!--
 #
@@ -10,33 +10,34 @@
 #       
 -->
 
-How to install all the nescessary software to build, run, and modify your Spezi Template Application-base Spezi app.
+The Spezi Template Application is a fully functioning iOS application built using Spezi that can be used as a starting point for creating your own iOS app. The following tutorial will walk you through the steps needed to configure your Mac to build and run the Spezi Template Application.
 
 ## 1. Install Xcode
 
 Applications for the Apple ecosystem are written in the [Swift programming language](https://swift.org).
 The framework for developing the user interface for mobile applications in Swift is called [SwiftUI](https://developer.apple.com/xcode/swiftui/).
+
 You will need access to a macOS-based machine to build and run the Swift-based Spezi Template Application.
 
 Please ensure that your Mac meets the following criteria and that you install or update the software on your Mac accordingly.
 
 
-### macOS - Sonoma 14.2 Or Newer
+### macOS - Sonoma 14.5 Or Newer
 
-The Mac needs to run macOS Sonoma 14.2 or newer. Please [update to the latest operating system version following the Apple-provided instructions](https://support.apple.com/en-us/HT201541).
+The Mac needs to run macOS Sonoma 14.5 or newer. Please [update to the latest operating system version following the Apple-provided instructions](https://support.apple.com/en-us/HT201541).
 
 You can verify that you run the latest macOS version by clicking on the Apple Logo on the top left of your screen and selecting "About this Mac". You can see the macOS version number in the specs list under your Mac picture.
 
 
-### Xcode - 15.2 Or Newer
+### Xcode - 16.0 Or Newer
 
 Xcode is the integrated development environment (IDE) that is required to build and run Swift-based iOS applications.
-You need to have Xcode 15.2 or later installed.
+You need to have Xcode 16.0 or later installed.
 [You can install Xcode using the Mac AppStore](https://apps.apple.com/us/app/xcode/id497799835).
 
 Please open Xcode and follow the instructions to finish the installation.
 
-You can verify that you run the latest version of Xcode and everything is installed if you can see the "Welcome to Xcode" screen when you open Xcode, showing 15.2 or newer as the version number.
+You can verify that you run the latest version of Xcode and everything is installed if you can see the "Welcome to Xcode" screen when you open Xcode, showing 16.0 or newer as the version number.
 
 @Image(source: "Xcode", alt: "Screenshot showing the Welcome to Xcode window.")
 
@@ -51,6 +52,7 @@ We provide a simple setup script that installs essential tools like [homebrew](h
 The script also installs the [Google Firebase emulator and command line interface (CLI)](https://firebase.google.com/docs/cli), including java, node, and other dependencies needed to execute the Firebase emulator to allow you to locally test your application's future cloud connection without setting up a cloud firebase project.
 
 You can simply run the script by opening up your macOS [Terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac) and executing the following command:
+
 ```bash
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/StanfordSpezi/SpeziTemplateApplication/HEAD/Scripts/setup.sh)"
 ```
@@ -60,10 +62,10 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/StanfordSpezi/Spe
 
 ## 3. Run The Application
 
-[Google Firebase](https://firebase.google.com) is a set of backend cloud computing services and application development platforms provided by Google.
+[Google Firebase](https://firebase.google.com) is a set of managed backend cloud computing services and application development platforms provided by Google.
 It hosts databases, services, authentication, and integration for a variety of applications, including mobile applications like the Spezi Template Application.
 Stanford provides its version of a Firebase instance in the form of the [Stanford mHealth platform](https://med.stanford.edu/mhealth.html).
-We use Firebase and the mHealt platform as the default integrated cloud provided in the Spezi Template Application.
+We use Firebase and the mHealth platform as the default integrated cloud provided in the Spezi Template Application.
 
 > Tip: Spezi itself is independent of any cloud provider or platform! Spezi offers different modules to connect to cloud providers, including [Spezi Firebase](https://github.com/StanfordSpezi/SpeziFirebase), which is the cloud provider demonstrated in the Spezi Template Application.
 
