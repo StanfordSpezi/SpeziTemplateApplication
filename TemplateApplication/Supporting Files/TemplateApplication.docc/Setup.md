@@ -63,18 +63,16 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/StanfordSpezi/Spe
 
 ## 3. Run The Application
 
-[Google Firebase](https://firebase.google.com) is a set of managed backend cloud computing services and application development platforms provided by Google.
-It hosts databases, services, authentication, and integration for a variety of applications, including mobile applications like the Spezi Template Application.
-Stanford provides its version of a Firebase instance in the form of the *Stanford mHealth platform*, which we use for many of our projects.
+[Google Firebase](https://firebase.google.com) is a set of managed backend cloud computing platform provided by Google. It hosts databases, services, authentication, and integration for a variety of applications, including mobile applications like the Spezi Template Application. Stanford provides its own Firebase instance in the form of the *Stanford mHealth platform*, which we use for many of our digital health projects.
 
 > Tip: Spezi itself is independent of any cloud provider or platform! Spezi offers different modules to connect to cloud providers, including [Spezi Firebase](https://github.com/StanfordSpezi/SpeziFirebase), which is the cloud provider demonstrated in the Spezi Template Application.
 
 
 ### Alternative A: Get Started without Firebase
 
-You can start using the application without a cloud connection if you enable the `--disableFirebase` feature flag, enabled by default when opening the Xcode project.
+You can start using the application without a Firebase account if you enable the `--disableFirebase` feature flag, enabled by default when opening the Xcode project. This will disable all cloud-based functionality in the application.
 
-The application includes feature flags that can be configured in the [scheme editor in Xcode](https://help.apple.com/xcode/mac/11.4/index.html?localePath=en.lproj#/dev0bee46f46) and selecting your application scheme (default **TemplateApplication**), the **Run** configuration, and to switch to the **Arguments** tab to add, enable, disable, or remove arguments passed on launch.
+The application includes a number of feature flags that can be configured in the [scheme editor in Xcode](https://help.apple.com/xcode/mac/11.4/index.html?localePath=en.lproj#/dev0bee46f46) and selecting your application scheme (default **TemplateApplication**), the **Run** configuration, and to switch to the **Arguments** tab to add, enable, disable, or remove arguments passed on launch.
 
 @Image(source: "Scheme", alt: "Screenshot showing the application scheme Run configuration's launch arguments.")
 
