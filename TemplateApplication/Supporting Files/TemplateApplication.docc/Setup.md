@@ -122,6 +122,8 @@ You can follow the Apple Documentation on [Building and running an app](https://
     }
 }
 
+> Tip: When building the application you may encounter a build error "Target 'SpeziAccountMacros' must be enabled before it can be used.'". This error can be addressed by clicking on the error message in the Issue Navigator and selecting the "Trust & Enable" option.
+
 ## 5. Modify The Application
 
 > Tip: You can learn more about changing up the code if the application and customizing your Spezi Template Application-based app in the <doc:Modify> article.
