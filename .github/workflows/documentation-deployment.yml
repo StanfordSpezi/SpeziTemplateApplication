@@ -29,4 +29,4 @@ jobs:
       id-token: write
     with:
       scheme: 'TemplateApplication'
-      dryrun: ${{ github.ref != 'main' }}
+      dryrun: ${{ github.ref_name != 'main' }}
