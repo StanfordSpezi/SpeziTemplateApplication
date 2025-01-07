@@ -43,6 +43,7 @@ brew upgrade
 # Check if firebase.json exists and create if it doesn't
 if [ ! -f "firebase.json" ]; then
   echo "Creating firebase.json file..."
+  CREATED_FIREBASE_JSON=true
   cat > firebase.json << 'EOL'
 {
   "firestore": {
@@ -72,5 +73,8 @@ EOL
 
 firebase emulators:exec --project test "echo 'Firebase emulator installed and started successfully!'"
 
-# Clean up the firebase.json file
-rm firebase.json
+# Clean up the firebase.json file only if we created it
+if [ "$CREATED_FIREBASE_JSON" = true ]; then
+  echo "Cleaning up temporary firebase.json file..."
+  rm firebase.json
+fi
