@@ -59,9 +59,6 @@ if [ ! -f "firebase.json" ]; then
       "enabled": true,
       "port": 4000
     },
-    "storage": {
-      "port": 9199
-    },
     "singleProjectMode": true
   }
 }
