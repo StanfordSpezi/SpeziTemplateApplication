@@ -116,7 +116,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This onboarding step allows you to customize the onboarding flow to explain how the application uses the HealhtKit data and allows a user to cusomize the selection."
+            "value" : "This onboarding step allows you to customize the onboarding flow to explain how the application uses the HealthKit data and allows a user to customize the selection."
           }
         }
       }
@@ -362,10 +362,24 @@
       }
     },
     "This type of event is currently unsupported. Please contact the developer of this app." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This type of event is currently unsupported. Please contact the developer of this app."
+          }
+        }
+      }
     },
     "Unsupported Event" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unsupported Event"
+          }
+        }
+      }
     },
     "WELCOME_AREA1_DESCRIPTION" : {
       "localizations" : {
