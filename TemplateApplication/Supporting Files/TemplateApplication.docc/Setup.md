@@ -91,7 +91,7 @@ $ firebase emulators:start
 
 @Image(source: "FirebaseCLI", alt: "Screenshot showing the terminal and the running Firebase Emulators.")
 
-After the emulators have started up, you can open the web interface by navigating to [`http://127.0.0.1:4000/`](http://127.0.0.1:4000/) in your web browser. When you run the Spezi Template Application in the next step, you will be able to use the application and see data populating in the emulator.
+After the emulators have started up, you can open the web interface by navigating to `http://127.0.0.1:4000/` in your web browser. When you run the Spezi Template Application in the next step, you will be able to use the application and see data populating in the emulator.
 
 @Image(source: "FirebaseWeb", alt: "Screenshot showing Safari and the Firebase Emulators web interface.")
 
