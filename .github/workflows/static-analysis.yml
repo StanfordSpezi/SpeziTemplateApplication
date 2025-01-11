@@ -50,3 +50,4 @@ jobs:
     with:
       codeql: true
       fastlanelane: codeql
+      xcodeversion: "16.1"

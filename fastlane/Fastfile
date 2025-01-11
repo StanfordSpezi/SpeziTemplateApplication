@@ -40,7 +40,6 @@ platform :ios do
       skip_archive: true,
       skip_codesigning: true,
       derived_data_path: ".derivedData",
-      destination: "generic/platform=iOS Simulator", # GitHub Action Runners seem to fail with the default "generic/platform=iOS".
       xcargs: [
         "-skipPackagePluginValidation",
         "-skipMacroValidation"
