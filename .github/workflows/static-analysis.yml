@@ -50,4 +50,4 @@ jobs:
     with:
       codeql: true
       fastlanelane: codeql
-      xcodeversion: "16.1"
+      xcodeversion: "16.1" # Temporary workaround for: https://github.com/actions/runner-images/issues/11335. Remove when resolved.
