@@ -20,12 +20,14 @@ final class ContributionsTest: XCTestCase {
     }
 
     @MainActor
-    func testLicenseInformationPage() throws {
+    func testLicenseInformationPage() async throws {
         let app = XCUIApplication()
-
+        
         XCTAssertTrue(app.wait(for: .runningForeground, timeout: 2.0))
-
-        sleep(1)
+        
+        // Waiting until the setup test accounts actions have been finished & sheets are dismissed.
+        try await Task.sleep(for: .seconds(5))
+        
         XCTAssertTrue(app.navigationBars.buttons["Your Account"].waitForExistence(timeout: 6.0))
         app.navigationBars.buttons["Your Account"].tap()
         
