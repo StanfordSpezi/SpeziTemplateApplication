@@ -52,6 +52,7 @@ class SchedulerTests: XCTestCase {
         XCTAssert(app.staticTexts["What is your age?"].waitForExistence(timeout: 0.5))
         XCTAssert(app.textFields["Tap to answer"].exists)
         try app.textFields["Tap to answer"].enter(value: "25")
+        app.buttons["Done"].tap()
 
         XCTAssert(nextButton.isEnabled)
         nextButton.tap()
