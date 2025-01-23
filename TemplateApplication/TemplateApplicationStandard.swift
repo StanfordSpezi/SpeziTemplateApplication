@@ -10,7 +10,7 @@
 @preconcurrency import FirebaseStorage
 import HealthKitOnFHIR
 import OSLog
-import PDFKit
+@preconcurrency import PDFKit.PDFDocument
 import Spezi
 import SpeziAccount
 import SpeziFirebaseAccount
@@ -24,7 +24,7 @@ import SwiftUI
 actor TemplateApplicationStandard: Standard,
                                    EnvironmentAccessible,
                                    HealthKitConstraint,
-                                   OnboardingConstraint,
+                                   ConsentConstraint,
                                    AccountNotifyConstraint {
     @Application(\.logger) private var logger
 
@@ -101,7 +101,7 @@ actor TemplateApplicationStandard: Standard,
     ///
     /// - Parameter consent: The consent form's data to be stored as a `PDFDocument`.
     @MainActor
-    func store(consent: PDFDocument) async {
+    func store(consent: ConsentDocumentExport) async throws {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd_HHmmss"
         let dateString = formatter.string(from: Date())
@@ -113,13 +113,13 @@ actor TemplateApplicationStandard: Standard,
             }
             
             let filePath = basePath.appending(path: "consentForm_\(dateString).pdf")
-            consent.write(to: filePath)
+            await consent.pdf.write(to: filePath)
             
             return
         }
         
         do {
-            guard let consentData = consent.dataRepresentation() else {
+            guard let consentData = await consent.pdf.dataRepresentation() else {
                 await logger.error("Could not store consent form.")
                 return
             }
