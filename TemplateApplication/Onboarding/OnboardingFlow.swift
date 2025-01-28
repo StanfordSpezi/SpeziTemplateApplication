@@ -11,6 +11,7 @@ import SpeziFirebaseAccount
 import SpeziHealthKit
 import SpeziNotifications
 import SpeziOnboarding
+import class SpeziScheduler.Scheduler
 import SwiftUI
 
 
@@ -78,7 +79,7 @@ struct OnboardingFlow: View {
             OnboardingDataSource()
             HealthKit()
             AccountConfiguration(service: InMemoryAccountService())
-
+            Scheduler()
             TemplateApplicationScheduler()
         }
 }

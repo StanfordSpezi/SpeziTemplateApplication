@@ -53,7 +53,7 @@ struct ScheduleView: View {
 
 
 #if DEBUG
-#Preview("ScheduleView") {
+#Preview {
     @Previewable @State var presentingAccount = false
 
     ScheduleView(presentingAccount: $presentingAccount)

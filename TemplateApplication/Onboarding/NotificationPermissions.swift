@@ -8,6 +8,7 @@
 
 import SpeziNotifications
 import SpeziOnboarding
+import class SpeziScheduler.Scheduler
 import SwiftUI
 
 
@@ -73,6 +74,7 @@ struct NotificationPermissions: View {
     }
         .previewWith {
             TemplateApplicationScheduler()
+            Scheduler()
         }
 }
 #endif
