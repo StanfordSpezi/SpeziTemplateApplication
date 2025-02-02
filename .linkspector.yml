@@ -1,0 +1,20 @@
+#
+# This source file is part of the Stanford Spezi Template Application open-source project
+#
+# SPDX-FileCopyrightText: 2023 Stanford University
+#
+# SPDX-License-Identifier: MIT
+#
+
+dirs:
+  - .
+excludedFiles:
+  - ./Scripts/TEMPLATEREADME.md
+useGitIgnore: true
+ignorePatterns:
+  - pattern: '^doc:.*$'
+replacementPatterns:
+  - pattern: '(.*)#gh-dark-mode-only'
+    replacement: '$1'
+  - pattern: '(.*)#gh-light-mode-only'
+    replacement: '$1'
