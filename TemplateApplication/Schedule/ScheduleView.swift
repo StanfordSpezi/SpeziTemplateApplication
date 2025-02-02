@@ -58,7 +58,6 @@ struct ScheduleView: View {
 
     ScheduleView(presentingAccount: $presentingAccount)
         .previewWith(standard: TemplateApplicationStandard()) {
-            Scheduler()
             TemplateApplicationScheduler()
             AccountConfiguration(service: InMemoryAccountService())
         }

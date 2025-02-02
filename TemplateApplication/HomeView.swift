@@ -7,7 +7,6 @@
 //
 
 @_spi(TestingSupport) import SpeziAccount
-import class SpeziScheduler.Scheduler
 import SwiftUI
 
 
@@ -55,7 +54,6 @@ struct HomeView: View {
     
     return HomeView()
         .previewWith(standard: TemplateApplicationStandard()) {
-            Scheduler()
             TemplateApplicationScheduler()
             AccountConfiguration(service: InMemoryAccountService(), activeDetails: details)
         }
