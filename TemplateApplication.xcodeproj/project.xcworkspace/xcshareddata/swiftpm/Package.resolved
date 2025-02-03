@@ -60,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk.git",
       "state" : {
-        "revision" : "0d885d28250fb1196b614bc9455079b75c531f72",
-        "version" : "11.7.0"
+        "revision" : "075679d6b25b28f4cb167f1d7769b58fb556fb30",
+        "version" : "11.8.0"
       }
     },
     {
@@ -402,8 +402,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTestExtensions.git",
       "state" : {
-        "revision" : "d3a128997ddc3f958cbd6a534d71814f42eed1b3",
-        "version" : "1.1.1"
+        "branch" : "feature/fixDeletion",
+        "revision" : "1f2d42cd625321681bdb2eecfb5ece58fb4cd6f8"
       }
     },
     {
