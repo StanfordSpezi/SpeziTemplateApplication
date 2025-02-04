@@ -40,7 +40,7 @@ The following screenshots show a wide variety of features based on Spezi Modules
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
         @Image(source: "HealthKitAccess", alt: "HealthKit Onboarding Flow") {
-            ``HealthKitAccess``
+            ``HealthKitPermissions``
         }
     }
     @Column(size: 1) {
