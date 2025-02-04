@@ -9,12 +9,14 @@
 import SpeziOnboarding
 import SwiftUI
 
+
 /// Feature the core components of your app.
 ///
 /// Use the InterestingModules view to highlight the Spezi modules used to achieve your app's core functionality.
 ///
+/// [Spezi Onboarding GitHub](https://github.com/StanfordSpezi/SpeziOnboarding)
+///
 /// ![A screenshot of the InterestingModules screen](InterestingModules)
-
 struct InterestingModules: View {
     @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
     
