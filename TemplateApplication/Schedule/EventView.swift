@@ -8,7 +8,6 @@
 
 import SpeziQuestionnaire
 import SpeziScheduler
-import SpeziSchedulerUI
 import SwiftUI
 
 

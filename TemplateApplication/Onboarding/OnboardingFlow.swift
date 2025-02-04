@@ -78,7 +78,6 @@ struct OnboardingFlow: View {
             OnboardingDataSource()
             HealthKit()
             AccountConfiguration(service: InMemoryAccountService())
-
             TemplateApplicationScheduler()
         }
 }

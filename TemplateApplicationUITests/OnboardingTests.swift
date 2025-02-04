@@ -108,7 +108,7 @@ extension XCUIApplication {
 
         try fillSignupForm(email: email, password: "StanfordRocks", name: PersonNameComponents(givenName: "Leland", familyName: "Stanford"))
 
-        XCTAssertTrue(collectionViews.buttons["Signup"].exists)
+        XCTAssertTrue(collectionViews.buttons["Signup"].waitForExistence(timeout: 2))
         collectionViews.buttons["Signup"].tap()
 
         if staticTexts["Consent"].waitForExistence(timeout: 4.0) && navigationBars.buttons["Back"].exists {

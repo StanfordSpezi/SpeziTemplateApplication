@@ -199,9 +199,6 @@ done
 rm -rf "./${appNameNoSpacesEscaped}/Supporting Files/${appNameNoSpacesEscaped}.docc"
 mv "./Scripts/TEMPLATEREADME.md" "./README.md"
 
-linkCheckDisabledEscaped=$(sed 's:/:\\/:g' <<< "<!-- markdown-link-check-disable-line -->")
-sed -i '' "s/${linkCheckDisabledEscaped}//g" "./README.md"
-
-
+rm -f ".linkspector.yml"
 rm -rf "./Scripts"
 rm -f "./.github/workflows/documentation-deployment.yml"

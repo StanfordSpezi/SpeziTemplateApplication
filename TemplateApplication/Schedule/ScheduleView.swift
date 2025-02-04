@@ -53,12 +53,11 @@ struct ScheduleView: View {
 
 
 #if DEBUG
-#Preview("ScheduleView") {
+#Preview {
     @Previewable @State var presentingAccount = false
 
     ScheduleView(presentingAccount: $presentingAccount)
         .previewWith(standard: TemplateApplicationStandard()) {
-            Scheduler()
             TemplateApplicationScheduler()
             AccountConfiguration(service: InMemoryAccountService())
         }
