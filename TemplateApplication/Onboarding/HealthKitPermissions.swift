@@ -15,7 +15,7 @@ import SwiftUI
 ///
 /// Customize the HealthKitPermissions view to specify your app's usage of HealthKit data to the user.
 ///
-/// [Spezi Onboarding GitHub](https://github.com/StanfordSpezi/SpeziOnboarding)
+/// You can learn more about [Spezi Onboarding in the GitHub repository](https://github.com/StanfordSpezi/SpeziOnboarding)
 ///
 /// ![A screenshot of the HealthKitPermissions screen](HealthKitAccess)
 /// ![A screenshot of the HealthKitSheet screen](HealthKitSheet)

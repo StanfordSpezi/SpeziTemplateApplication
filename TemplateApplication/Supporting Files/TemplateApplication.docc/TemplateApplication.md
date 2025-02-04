@@ -23,68 +23,68 @@ The following screenshots show a wide variety of features based on Spezi Modules
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
         @Image(source: "Welcome", alt: "A screen displaying welcome information.") {
-            [Welcome View](https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/welcome)
+            ``Welcome``
         }
     }
     @Column(size: 1) {
         @Image(source: "InterestingModules", alt: "A screen showing an overview of the modules used in the Spezi Template Application.") {
-            [Interesting Modules](https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/interestingmodules)
+            ``InterestingModules``
         }
     }
     @Column(size: 1) {
         @Image(source: "Consent", alt: "A screen displaying the consent view.") {
-            [Consent Signature](https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/consent)
+            ``Consent``
         }
     }
 }
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
         @Image(source: "HealthKitAccess", alt: "HealthKit Onboarding Flow") {
-            [HealthKit Access](https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/healthkitpermissions)
+            ``HealthKitAccess``
         }
     }
     @Column(size: 1) {
         @Image(source: "HealthKitSheet", alt: "Permissions screen of the HealthKit framework") {
-            [Granular HealthKit Share Control](https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/healthkitpermissions)
+            ``HealthKitPermissions``
         }
     }
     @Column(size: 1) {
         @Image(source: "Schedule", alt: "A screen displaying the Scheduler UI.") {
-            [Schedule Tasks](https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/scheduleview)
+            ``ScheduleView``
         }
     }
 }
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
         @Image(source: "Notifications", alt: "Onboarding screen showing the Notifications permission screen.") {
-            [Trigger Local Notifications](https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/notificationpermissions)
+            ``NotificationPermissions``
         }
     }
     @Column(size: 1) {
         @Image(source: "Questionnaire", alt: "A screen showing a questionnaire using ResearchKit.") {
-            [Display Questionnaires](https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/scheduleview)
+            ``ScheduleView``
         }
     }
     @Column(size: 1) {
         @Image(source: "ScheduleComplete", alt: "The scheduler screen showing the completed UI") {
-            [Keep Track of Tasks](https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/scheduleview)
+            ``ScheduleView``
         }
     }
 }
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
         @Image(source: "Contacts", alt: "A screen displaying the Contact UI.") {
-            [Contact Information](https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/contacts)
+            ``Contacts``
         }
     }
     @Column(size: 1) {
         @Image(source: "License", alt: "License information to list all used Swift Packages") {
-            [License Information](https://spezi.health/SpeziTemplateApplication/documentation/templateapplication/licensetype)
+            ``AccountSheet``
         }
     }
     @Column(size: 1) {
         @Image(source: "Account", alt: "A screen displaying the current user account information.") {
-            Account Overview.
+            ``AccountSheet``
         }
     }
 }

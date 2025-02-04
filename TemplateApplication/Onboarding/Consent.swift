@@ -16,7 +16,7 @@ import SwiftUI
 ///
 /// - Note: The `OnboardingConsentView` exports the signed consent form as PDF to the Spezi `Standard`, necessitating the conformance of the `Standard` to the `OnboardingConstraint`.
 ///
-/// [Spezi Onboarding GitHub](https://github.com/StanfordSpezi/SpeziOnboarding)
+/// You can learn more about [Spezi Onboarding in the GitHub repository](https://github.com/StanfordSpezi/SpeziOnboarding)
 ///
 /// ![A screenshot of the Consent screen](Consent)
 struct Consent: View {

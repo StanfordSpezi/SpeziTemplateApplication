@@ -14,7 +14,7 @@ import SwiftUI
 ///
 /// The Welcome view can provide first time users with important information about your app.
 ///
-/// [Spezi Onboarding GitHub](https://github.com/StanfordSpezi/SpeziOnboarding)
+/// You can learn more about [Spezi Onboarding in the GitHub repository](https://github.com/StanfordSpezi/SpeziOnboarding)
 ///
 /// ![A screenshot of the Welcome screen](Welcome)
 struct Welcome: View {
