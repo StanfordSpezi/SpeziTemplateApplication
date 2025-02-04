@@ -402,8 +402,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTestExtensions.git",
       "state" : {
-        "branch" : "feature/fixDeletion",
-        "revision" : "1f2d42cd625321681bdb2eecfb5ece58fb4cd6f8"
+        "revision" : "03eb0646dbceededbbb9d46b289f6eb50a4ec791",
+        "version" : "1.1.2"
       }
     },
     {
