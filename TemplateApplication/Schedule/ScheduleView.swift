@@ -13,6 +13,13 @@ import SpeziViews
 import SwiftUI
 
 
+/// Schedule questionnaires in your app.
+///
+/// Modify your schedule and path to your JSON questionnaire in the ``TemplateApplicationScheduler``. These changes will be reflected in the ScheduleView.
+///
+/// You can learn more about [Spezi Scheduler in the GitHub repository](https://github.com/StanfordSpezi/SpeziScheduler)
+///
+/// ![A screenshot of the Schedule screen](Schedule)
 struct ScheduleView: View {
     @Environment(Account.self) private var account: Account?
     @Environment(TemplateApplicationScheduler.self) private var scheduler: TemplateApplicationScheduler
