@@ -6,25 +6,25 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziAccount
+@_spi(TestingSupport) import SpeziAccount
 import SwiftUI
 
 
 struct AccountSetupHeader: View {
     @Environment(Account.self) private var account
-    @Environment(\._accountSetupState) private var setupState
+    @Environment(\.accountSetupState) private var setupState
     
     
     var body: some View {
         VStack {
-            Text("ACCOUNT_TITLE")
+            Text("Your Account")
                 .font(.largeTitle)
                 .bold()
                 .padding(.bottom)
                 .padding(.top, 30)
             Text("ACCOUNT_SUBTITLE")
                 .padding(.bottom, 8)
-            if account.signedIn, case .generic = setupState {
+            if account.signedIn, case .presentingExistingAccount = setupState {
                 Text("ACCOUNT_SIGNED_IN_DESCRIPTION")
             } else {
                 Text("ACCOUNT_SETUP_DESCRIPTION")
@@ -38,6 +38,8 @@ struct AccountSetupHeader: View {
 #if DEBUG
 #Preview {
     AccountSetupHeader()
-        .environment(Account())
+        .previewWith {
+            AccountConfiguration(service: InMemoryAccountService())
+        }
 }
 #endif

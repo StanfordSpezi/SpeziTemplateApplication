@@ -61,7 +61,7 @@ It uses the [**Spezi Scheduler**](https://github.com/StanfordSpezi/SpeziSchedule
 @Row(numberOfColumns: 4) {
     @Column(size: 1) {
         @Image(source: "Schedule", alt: "A screen displaying the Scheduler UI.") {
-            The elements that are displayed as part of a schedule are defined in the ``TemplateApplicationTaskContext`` and displayed using the ``EventContextView`` and logic in the ``ScheduleView``.
+            The elements that are displayed as part of the schedule are defined in the ``TemplateApplicationScheduler`` and displayed using the ``ScheduleView`` and ``EventView``.
         }
     }
     @Column(size: 1) {
@@ -97,11 +97,6 @@ The application also gives credit to all dependencies in the Account Details. It
     @Column(size: 1) {
         @Image(source: "License", alt: "License information to list all used Swift Packages") {
             You can investigate the [**Spezi License** module](https://github.com/StanfordSpezi/SpeziLicense) to learn how the application loads and displays the license information.
-        }
-    }
-    @Column(size: 1) {
-        @Image(source: "Request", alt: "User Interface of the Mock Web Service") {
-            If Firebase is disabled, the [**Spezi Mock Web Service** module](https://github.com/StanfordSpezi/SpeziMockWebService) allows you to see the requests that would be sent to a web service.
         }
     }
 }

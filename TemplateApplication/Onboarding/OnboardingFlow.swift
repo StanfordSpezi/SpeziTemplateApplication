@@ -6,9 +6,10 @@
 // SPDX-License-Identifier: MIT
 //
 
-import SpeziAccount
+@_spi(TestingSupport) import SpeziAccount
 import SpeziFirebaseAccount
 import SpeziHealthKit
+import SpeziNotifications
 import SpeziOnboarding
 import SwiftUI
 
@@ -16,14 +17,16 @@ import SwiftUI
 /// Displays an multi-step onboarding flow for the Spezi Template Application.
 struct OnboardingFlow: View {
     @Environment(HealthKit.self) private var healthKitDataSource
-    @Environment(TemplateApplicationScheduler.self) private var scheduler
+
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.notificationSettings) private var notificationSettings
 
     @AppStorage(StorageKeys.onboardingFlowComplete) private var completedOnboardingFlow = false
-    
+
     @State private var localNotificationAuthorization = false
     
     
-    private var healthKitAuthorization: Bool {
+    @MainActor private var healthKitAuthorization: Bool {
         // As HealthKit not available in preview simulator
         if ProcessInfo.processInfo.isPreviewSimulator {
             return false
@@ -54,10 +57,16 @@ struct OnboardingFlow: View {
                 NotificationPermissions()
             }
         }
-            .task {
-                localNotificationAuthorization = await scheduler.localNotificationAuthorization
-            }
             .interactiveDismissDisabled(!completedOnboardingFlow)
+            .onChange(of: scenePhase, initial: true) {
+                guard case .active = scenePhase else {
+                    return
+                }
+
+                Task {
+                    localNotificationAuthorization = await notificationSettings().authorizationStatus == .authorized
+                }
+            }
     }
 }
 
@@ -65,14 +74,10 @@ struct OnboardingFlow: View {
 #if DEBUG
 #Preview {
     OnboardingFlow()
-        .environment(Account(MockUserIdPasswordAccountService()))
         .previewWith(standard: TemplateApplicationStandard()) {
             OnboardingDataSource()
             HealthKit()
-            AccountConfiguration {
-                MockUserIdPasswordAccountService()
-            }
-
+            AccountConfiguration(service: InMemoryAccountService())
             TemplateApplicationScheduler()
         }
 }

@@ -1,4 +1,4 @@
-# Build And Run a Spezi Template Application-based Application
+# Build And Run the Spezi Template Application
 
 <!--
 #
@@ -10,33 +10,27 @@
 #       
 -->
 
-How to install all the nescessary software to build, run, and modify your Spezi Template Application-base Spezi app.
+The Spezi Template Application is a fully functioning iOS application built using the [Stanford Spezi](https://spezi.stanford.edu) ecosystem that can be used as a starting point for creating your own iOS app. The following tutorial will walk you through the steps needed to configure your Mac to build and run the Spezi Template Application, after which you can customize it for your own project.
 
 ## 1. Install Xcode
 
 Applications for the Apple ecosystem are written in the [Swift programming language](https://swift.org).
 The framework for developing the user interface for mobile applications in Swift is called [SwiftUI](https://developer.apple.com/xcode/swiftui/).
-You will need access to a macOS-based machine to build and run the Swift-based Spezi Template Application.
 
-Please ensure that your Mac meets the following criteria and that you install or update the software on your Mac accordingly.
+You will need access to a macOS-based machine to build and run the Swift-based Spezi Template Application. Please ensure that your Mac meets the following criteria and that you install or update the software on your Mac accordingly.
 
+### macOS - Sequoia 15.2 Or Newer
 
-### macOS - Sonoma 14.2 Or Newer
+The Mac needs to run macOS Sequoia 15.2 or newer. Please [update to the latest operating system version following the Apple-provided instructions](https://support.apple.com/en-us/HT201541). You can verify that you run the latest macOS version by clicking on the Apple Logo on the top left of your screen and selecting "About this Mac". You can see the macOS version number in the specs list under your Mac picture.
 
-The Mac needs to run macOS Sonoma 14.2 or newer. Please [update to the latest operating system version following the Apple-provided instructions](https://support.apple.com/en-us/HT201541).
-
-You can verify that you run the latest macOS version by clicking on the Apple Logo on the top left of your screen and selecting "About this Mac". You can see the macOS version number in the specs list under your Mac picture.
-
-
-### Xcode - 15.2 Or Newer
+### Xcode - 16.2 Or Newer
 
 Xcode is the integrated development environment (IDE) that is required to build and run Swift-based iOS applications.
-You need to have Xcode 15.2 or later installed.
-[You can install Xcode using the Mac AppStore](https://apps.apple.com/us/app/xcode/id497799835).
+You need to have Xcode 16.2 or later installed. [You can install Xcode using the Mac AppStore](https://apps.apple.com/us/app/xcode/id497799835).
 
 Please open Xcode and follow the instructions to finish the installation.
 
-You can verify that you run the latest version of Xcode and everything is installed if you can see the "Welcome to Xcode" screen when you open Xcode, showing 15.2 or newer as the version number.
+You can verify that you run the latest version of Xcode and everything is installed if you can see the "Welcome to Xcode" screen when you open Xcode, showing 16.2 or newer as the version number.
 
 @Image(source: "Xcode", alt: "Screenshot showing the Welcome to Xcode window.")
 
@@ -45,12 +39,14 @@ You can learn more about Xcode, including [creating an Xcode project for an app]
 
 ## 2. Install Helper Tools
 
-The Spezi Template Application and applications derived from it provide a pre-configured setup of integrated tools that make the development of applications easier and enforce best practices during the development of your application.
+The Spezi Template Application provides a set of pre-configured tools that simplify app development and enforce best practices.
 
 We provide a simple setup script that installs essential tools like [homebrew](https://brew.sh) (macOS package manager) and [git LFS](https://git-lfs.com) (Git extension for versioning large files).
-The script also installs the [Google Firebase emulator and command line interface (CLI)](https://firebase.google.com/docs/cli), including java, node, and other dependencies needed to execute the Firebase emulator to allow you to locally test your application's future cloud connection without setting up a cloud firebase project.
+
+The script also installs the [Google Firebase emulator and command line interface (CLI)](https://firebase.google.com/docs/cli) and all its dependencies, including Java and Node.js, letting you test cloud features locally without setting up a Firebase project.
 
 You can simply run the script by opening up your macOS [Terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac) and executing the following command:
+
 ```bash
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/StanfordSpezi/SpeziTemplateApplication/HEAD/Scripts/setup.sh)"
 ```
@@ -58,52 +54,53 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/StanfordSpezi/Spe
 > Tip: If you don't feel comfortable running the setup script, you can [inspect the script yourself](https://raw.githubusercontent.com/StanfordSpezi/SpeziTemplateApplication/HEAD/Scripts/setup.sh) and use the commands in the script to install the required software yourself selectively.
 
 
-## 3. Run The Application
+## 3. Set Up the Backend
 
-[Google Firebase](https://firebase.google.com) is a set of backend cloud computing services and application development platforms provided by Google.
-It hosts databases, services, authentication, and integration for a variety of applications, including mobile applications like the Spezi Template Application.
-Stanford provides its version of a Firebase instance in the form of the [Stanford mHealth platform](https://med.stanford.edu/mhealth.html).
-We use Firebase and the mHealt platform as the default integrated cloud provided in the Spezi Template Application.
+As with most complex mobile applications, Stanford Spezi relies on a cloud-based backend to handle user authentication, data storage, and other services. [Google Firebase](https://firebase.google.com) is a managed backend cloud computing platform provided by Google that is pre-integrated with the Spezi Template Application.
 
-> Tip: Spezi itself is independent of any cloud provider or platform! Spezi offers different modules to connect to cloud providers, including [Spezi Firebase](https://github.com/StanfordSpezi/SpeziFirebase), which is the cloud provider demonstrated in the Spezi Template Application.
+> Tip: Although the Spezi Template Application is pre-integrated with Google Firebase, Spezi itself is independent of any cloud provider or platform! Spezi offers different modules to connect to cloud providers, including [Spezi Firebase](https://github.com/StanfordSpezi/SpeziFirebase), which is the cloud provider demonstrated in the Spezi Template Application.
 
+There are two alternatives for testing the Spezi Template Application.
 
-### Alternative A: Get Started without Firebase
+- A. Run the application without Firebase: This option disables all cloud-based functionality but allows for basic testing of local features.
+- B. Use the Firebase Emulator Suite: This method emulates Firebase services locally on your Mac, providing a more complete testing environment that mimics cloud functionality.
 
-You can start using the application without a cloud connection if you enable the `--disableFirebase` feature flag, enabled by default when opening the Xcode project.
+> Important: These testing approaches are meant for development purposes only. For production deployment, you'll need to use an actual Firebase account. Stanford researchers can utilize the Stanford mHealth platform, Stanford's dedicated Firebase instance that supports many digital health projects.
 
-The application includes feature flags that can be configured in the [scheme editor in Xcode](https://help.apple.com/xcode/mac/11.4/index.html?localePath=en.lproj#/dev0bee46f46) and selecting your application scheme (default **TemplateApplication**), the **Run** configuration, and to switch to the **Arguments** tab to add, enable, disable, or remove arguments passed on launch.
+### Alternative A: Test without Firebase
+
+You can test the application without a backend if you enable the `--disableFirebase` feature flag, which is *enabled by default when opening the Xcode project*. This will disable all cloud-based functionality in the application, including user registration, sign in, and data upload. The login and account setup steps will therefore be skipped in this configuration.
+
+> Tip: Feature flags can be configured in the [scheme editor in Xcode](https://help.apple.com/xcode/mac/11.4/index.html?localePath=en.lproj#/dev0bee46f46) and selecting your application scheme (default **TemplateApplication**), the **Run** configuration, and to switch to the **Arguments** tab to add, enable, disable, or remove arguments passed on launch.
 
 @Image(source: "Scheme", alt: "Screenshot showing the application scheme Run configuration's launch arguments.")
 
-The login and account setup is skipped in this configuration.
 
+### Alternative B: Set Up the Firebase Emulator Suite
 
-### Alternative B: Firebase Setup
+The application also provides a [Firebase Firestore](https://firebase.google.com/docs/firestore)-based data upload mechanism and [Firebase Authentication](https://firebase.google.com/docs/auth) login & sign-up. If you wish to test this functionality, you will need to have the [Firebase Emulator Suite](https://firebase.google.com/docs/emulator-suite) installed and running. This tool emulates a cloud-based backend on your Mac and does not require that you have a Firebase account to use.
 
-The application also provides a [Firebase Firestore](https://firebase.google.com/docs/firestore)-based data upload and [Firebase Authentication](https://firebase.google.com/docs/auth) login & sign-up.
-It is required to have the [Firebase Emulator Suite](https://firebase.google.com/docs/emulator-suite) to be up and running to use these features to build and test the application locally.
 The setup script described above installs the [Firebase Emulator Suite](https://firebase.google.com/docs/emulator-suite).
 
 > Important: You do not have to make any modifications to the Firebase configuration, log into the `Firebase` CLI using your Google account, or create a project in Firebase to run, build, and test the application!
 
-Navigate to the root folder of this setup containing your **.xcodeproj** file ([using `cd` in your terminal](https://tutorials.codebar.io/command-line/introduction/tutorial.html)) and startup the [Firebase Emulator Suite](https://firebase.google.com/docs/emulator-suite) in your [Terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac) using
+Navigate to the root folder of this setup containing your **.xcodeproj** file ([using `cd` in your terminal](https://tutorials.codebar.io/command-line/introduction/tutorial.html)) and start the [Firebase Emulator Suite](https://firebase.google.com/docs/emulator-suite) in your [Terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac) using
 ```bash
 $ firebase emulators:start
 ```
 
 @Image(source: "FirebaseCLI", alt: "Screenshot showing the terminal and the running Firebase Emulators.")
 
-After the emulators have started up, you can run the application in your simulator to build, test, and run the application and see the results show up in Firebase.
+After the emulators have started up, you can open the web interface by navigating to `http://127.0.0.1:4000/` in your web browser. When you run the Spezi Template Application in the next step, you will be able to use the application and see data populating in the emulator.
 
 @Image(source: "FirebaseWeb", alt: "Screenshot showing Safari and the Firebase Emulators web interface.")
 
 
-### Run the App
+## 4. Run the App
 
-You can build and run the application using [Xcode](https://developer.apple.com/xcode/) by opening up the **.xcodeproj** file in the root of the repository.
+You can build and run the Spezi Template Application using [Xcode](https://developer.apple.com/xcode/) by opening up the **.xcodeproj** file in the root of the repository. Ensure that the `Run Destination` in the upper toolbar is set to an iOS simulator such as `iPhone 16 Pro (18.0)`.
 
-You can follow the Apple Documentation on [Building and running an app](https://developer.apple.com/documentation/xcode/building-and-running-an-app) to run the application in the iOS simulator right on your Mac.
+For more information and details on how to run the app on other simulators or physical devices, please see [Building and running an app](https://developer.apple.com/documentation/xcode/building-and-running-an-app) in the official Apple documentation.
 
 @Row(numberOfColumns: 4) {
     @Column(size: 3) {
@@ -118,9 +115,11 @@ You can follow the Apple Documentation on [Building and running an app](https://
     }
 }
 
-## 4. Modify The Application
+> Tip: When building the application you may encounter a build error "Target 'SpeziAccountMacros' must be enabled before it can be used.'". This error can be addressed by clicking on the error message in the Issue Navigator and selecting the "Trust & Enable" option.
 
-> Tip: You can learn more about changing up the code if the application and customizing your Spezi Template Application-based app in the <doc:Modify> article.
+## 5. Modify The Application
+
+Now that you have successfully built and run the Spezi Template Application on your Mac, you can start customizing the application for your project. Continue with the <doc:Modify> article to learn how to make common modifications to the Spezi Template Application.
 
 
 ### Firebase Cloud Setup

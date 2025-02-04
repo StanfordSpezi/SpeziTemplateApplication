@@ -39,4 +39,36 @@ brew upgrade
 
 
 # 3. Test and start the firebase emulator
+
+# Check if firebase.json exists and create if it doesn't
+CREATED_FIREBASE_JSON=false
+
+if [ ! -f "firebase.json" ]; then
+  echo "Creating firebase.json file..."
+  CREATED_FIREBASE_JSON=true
+  cat << 'EOL' > firebase.json
+{
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "ui": {
+      "enabled": true,
+      "port": 4000
+    },
+    "singleProjectMode": true
+  }
+}
+EOL
+fi
+
 firebase emulators:exec --project test "echo 'Firebase emulator installed and started successfully!'"
+
+# Clean up the firebase.json file only if we created it
+if [ "$CREATED_FIREBASE_JSON" = true ]; then
+  echo "Cleaning up temporary firebase.json file..."
+  rm firebase.json
+fi

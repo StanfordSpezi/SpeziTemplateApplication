@@ -6,15 +6,16 @@
 // SPDX-License-Identifier: MIT
 //
 
+import SpeziNotifications
 import SpeziOnboarding
-import SpeziScheduler
 import SwiftUI
 
 
 struct NotificationPermissions: View {
-    @Environment(TemplateApplicationScheduler.self) private var scheduler
     @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
-    
+
+    @Environment(\.requestNotificationAuthorization) private var requestNotificationAuthorization
+
     @State private var notificationProcessing = false
     
     
@@ -23,8 +24,8 @@ struct NotificationPermissions: View {
             contentView: {
                 VStack {
                     OnboardingTitleView(
-                        title: "NOTIFICATION_PERMISSIONS_TITLE",
-                        subtitle: "NOTIFICATION_PERMISSIONS_SUBTITLE"
+                        title: "Notifications",
+                        subtitle: "Spezi Scheduler Notifications."
                     )
                     Spacer()
                     Image(systemName: "bell.square.fill")
@@ -38,7 +39,7 @@ struct NotificationPermissions: View {
                 }
             }, actionView: {
                 OnboardingActionsView(
-                    "NOTIFICATION_PERMISSIONS_BUTTON",
+                    "Allow Notifications",
                     action: {
                         do {
                             notificationProcessing = true
@@ -46,7 +47,7 @@ struct NotificationPermissions: View {
                             if ProcessInfo.processInfo.isPreviewSimulator {
                                 try await _Concurrency.Task.sleep(for: .seconds(5))
                             } else {
-                                try await scheduler.requestLocalNotificationAuthorization()
+                                try await requestNotificationAuthorization(options: [.alert, .sound, .badge])
                             }
                         } catch {
                             print("Could not request notification permissions.")

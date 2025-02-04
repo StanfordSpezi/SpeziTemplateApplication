@@ -11,11 +11,10 @@ enum StorageKeys {
     // MARK: - Onboarding
     /// A `Bool` flag indicating of the onboarding was completed.
     static let onboardingFlowComplete = "onboardingFlow.complete"
-    /// A `Step` flag indicating the current step in the onboarding process.
-    static let onboardingFlowStep = "onboardingFlow.step"
-    
     
     // MARK: - Home
     /// The currently selected home tab.
     static let homeTabSelection = "home.tabselection"
+    /// The TabView customization on iPadOS
+    static let tabViewCustomization = "home.tab-view-customization"
 }

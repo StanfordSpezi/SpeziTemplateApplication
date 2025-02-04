@@ -83,8 +83,8 @@ The following screenshots show a wide variety of features based on Spezi Modules
         }
     }
     @Column(size: 1) {
-        @Image(source: "Request", alt: "User Interface of the Mock Web Service") {
-            Mock Web Service Requests
+        @Image(source: "Account", alt: "A screen displaying the current user account information.") {
+            Account Overview.
         }
     }
 }

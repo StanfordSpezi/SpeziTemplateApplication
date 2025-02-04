@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SpeziAccount
 import SpeziContact
 import SwiftUI
 
@@ -54,16 +55,18 @@ struct Contacts: View {
             ]
         )
     ]
-    
+
+    @Environment(Account.self) private var account: Account?
+
     @Binding var presentingAccount: Bool
     
     
     var body: some View {
         NavigationStack {
             ContactsList(contacts: contacts)
-                .navigationTitle(String(localized: "CONTACTS_NAVIGATION_TITLE"))
+                .navigationTitle("Contacts")
                 .toolbar {
-                    if AccountButton.shouldDisplay {
+                    if account != nil {
                         AccountButton(isPresented: $presentingAccount)
                     }
                 }

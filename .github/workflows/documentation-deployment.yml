@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: Documentation-Deployment-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -29,4 +29,5 @@ jobs:
       id-token: write
     with:
       scheme: 'TemplateApplication'
-      dryrun: ${{ github.ref != 'main' }}
+      dryrun: ${{ github.ref_name != 'main' }}
+      xcodeversion: "16.1" # Temporary workaround for: https://github.com/actions/runner-images/issues/11335. Remove when resolved.

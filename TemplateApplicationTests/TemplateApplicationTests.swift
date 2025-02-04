@@ -11,7 +11,8 @@ import XCTest
 
 
 class TemplateApplicationTests: XCTestCase {
-    func testExample() throws {
-        XCTAssertTrue(true)
+    @MainActor
+    func testContactsCount() throws {
+        XCTAssertEqual(Contacts(presentingAccount: .constant(true)).contacts.count, 1)
     }
 }

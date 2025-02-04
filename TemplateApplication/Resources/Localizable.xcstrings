@@ -1,16 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "ACCOUNT_NEXT" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next"
-          }
-        }
-      }
-    },
     "ACCOUNT_SETUP_DESCRIPTION" : {
       "localizations" : {
         "en" : {
@@ -41,34 +31,22 @@
         }
       }
     },
-    "ACCOUNT_TITLE" : {
-      "comment" : "MARK: Account",
+    "Allow Notifications" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your Account"
+            "value" : "Allow Notifications"
           }
         }
       }
     },
-    "CLOSE" : {
-      "comment" : "MARK: General",
+    "Close" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Close"
-          }
-        }
-      }
-    },
-    "COMPLETED_TASK_LABEL %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Completed Task: %@"
           }
         }
       }
@@ -83,7 +61,17 @@
         }
       }
     },
-    "CONTACTS_NAVIGATION_TITLE" : {
+    "Contact" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contact"
+          }
+        }
+      }
+    },
+    "Contacts" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -93,18 +81,7 @@
         }
       }
     },
-    "CONTACTS_TAB_TITLE" : {
-      "comment" : "MARK: - Contacts",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Contacts"
-          }
-        }
-      }
-    },
-    "HEALTHKIT_PERMISSIONS_BUTTON" : {
+    "Grant Access" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -114,12 +91,32 @@
         }
       }
     },
+    "HealthKit Access" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HealthKit Access"
+          }
+        }
+      }
+    },
+    "HealthKit Data Source" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HealthKit Data Source"
+          }
+        }
+      }
+    },
     "HEALTHKIT_PERMISSIONS_DESCRIPTION" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This onboarding step allows you to customize the onboarding flow to explain how the application uses the HealhtKit data and allows a user to cusomize the selection."
+            "value" : "This onboarding step allows you to customize the onboarding flow to explain how the application uses the HealthKit data and allows a user to customize the selection."
           }
         }
       }
@@ -134,13 +131,22 @@
         }
       }
     },
-    "HEALTHKIT_PERMISSIONS_TITLE" : {
-      "comment" : "MARK: HealthKit",
+    "HL7 FHIR" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HealthKit Access"
+            "value" : "HL7 FHIR"
+          }
+        }
+      }
+    },
+    "Interesting Modules" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interesting Modules"
           }
         }
       }
@@ -155,32 +161,12 @@
         }
       }
     },
-    "INTERESTING_MODULES_AREA1_TITLE" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Onboarding"
-          }
-        }
-      }
-    },
     "INTERESTING_MODULES_AREA2_DESCRIPTION" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The application uses HL7 FHIR to provide a common standard to encode data gathered by the application."
-          }
-        }
-      }
-    },
-    "INTERESTING_MODULES_AREA2_TITLE" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HL7 FHIR"
           }
         }
       }
@@ -195,42 +181,12 @@
         }
       }
     },
-    "INTERESTING_MODULES_AREA3_TITLE" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Contact"
-          }
-        }
-      }
-    },
     "INTERESTING_MODULES_AREA4_DESCRIPTION" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The HealthKit data source module allows you to fetch data from HealthKit and e.g. transform it to FHIR resources."
-          }
-        }
-      }
-    },
-    "INTERESTING_MODULES_AREA4_TITLE" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HealthKit Data Source"
-          }
-        }
-      }
-    },
-    "INTERESTING_MODULES_BUTTON" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next"
           }
         }
       }
@@ -245,13 +201,12 @@
         }
       }
     },
-    "INTERESTING_MODULES_TITLE" : {
-      "comment" : "MARK: Interesting Modules",
+    "Learn More" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Interesting Modules"
+            "value" : "Learn More"
           }
         }
       }
@@ -266,7 +221,7 @@
         }
       }
     },
-    "LICENSE_INFO_TITLE" : {
+    "License Information" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -276,23 +231,12 @@
         }
       }
     },
-    "MOCK_WEB_SERVICE_TAB_TITLE" : {
-      "comment" : "MARK: - Mock Upload Data Storage Provider",
+    "Next" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mock Web Service"
-          }
-        }
-      }
-    },
-    "NOTIFICATION_PERMISSIONS_BUTTON" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Allow Notifications"
+            "value" : "Next"
           }
         }
       }
@@ -307,18 +251,7 @@
         }
       }
     },
-    "NOTIFICATION_PERMISSIONS_SUBTITLE" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spezi Scheduler Notifications."
-          }
-        }
-      }
-    },
-    "NOTIFICATION_PERMISSIONS_TITLE" : {
-      "comment" : "MARK: Notifications",
+    "Notifications" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -328,58 +261,17 @@
         }
       }
     },
-    "SCHEDULE_LIST_TITLE" : {
+    "Onboarding" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schedule"
+            "value" : "Onboarding"
           }
         }
       }
     },
-    "SCHEDULE_TAB_TITLE" : {
-      "comment" : "MARK: - Schedule",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schedule"
-          }
-        }
-      }
-    },
-    "TASK_CONTEXT_ACTION_QUESTIONNAIRE" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start Questionnaire"
-          }
-        }
-      }
-    },
-    "TASK_CONTEXT_ACTION_TEST" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start Test"
-          }
-        }
-      }
-    },
-    "TASK_LABEL %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Task: %@"
-          }
-        }
-      }
-    },
-    "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_DESCRIPTION" : {
+    "Please fill out the Social Support Questionnaire every day." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -389,12 +281,102 @@
         }
       }
     },
-    "TASK_SOCIAL_SUPPORT_QUESTIONNAIRE_TITLE" : {
+    "Schedule" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schedule"
+          }
+        }
+      }
+    },
+    "Social Support Questionnaire" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Social Support Questionnaire"
+          }
+        }
+      }
+    },
+    "Spezi Modules" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi Modules"
+          }
+        }
+      }
+    },
+    "Spezi Scheduler Notifications." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi Scheduler Notifications."
+          }
+        }
+      }
+    },
+    "Spezi Template Application" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi\nTemplate Application"
+          }
+        }
+      }
+    },
+    "Start Questionnaire" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start Questionnaire"
+          }
+        }
+      }
+    },
+    "Swift Package Manager" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swift Package Manager"
+          }
+        }
+      }
+    },
+    "The Spezi Framework" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Spezi Framework"
+          }
+        }
+      }
+    },
+    "This type of event is currently unsupported. Please contact the developer of this app." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This type of event is currently unsupported. Please contact the developer of this app."
+          }
+        }
+      }
+    },
+    "Unsupported Event" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unsupported Event"
           }
         }
       }
@@ -409,32 +391,12 @@
         }
       }
     },
-    "WELCOME_AREA1_TITLE" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The Spezi Framework"
-          }
-        }
-      }
-    },
     "WELCOME_AREA2_DESCRIPTION" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Spezi uses the Swift Package Manager to import it as a dependency."
-          }
-        }
-      }
-    },
-    "WELCOME_AREA2_TITLE" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Swift Package Manager"
           }
         }
       }
@@ -449,26 +411,6 @@
         }
       }
     },
-    "WELCOME_AREA3_TITLE" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spezi Modules"
-          }
-        }
-      }
-    },
-    "WELCOME_BUTTON" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Learn More"
-          }
-        }
-      }
-    },
     "WELCOME_SUBTITLE" : {
       "localizations" : {
         "en" : {
@@ -479,13 +421,12 @@
         }
       }
     },
-    "WELCOME_TITLE" : {
-      "comment" : "MARK: Welcome",
+    "Your Account" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spezi\nTemplate Application"
+            "value" : "Your Account"
           }
         }
       }
