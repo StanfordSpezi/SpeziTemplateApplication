@@ -60,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk.git",
       "state" : {
-        "revision" : "075679d6b25b28f4cb167f1d7769b58fb556fb30",
-        "version" : "11.8.0"
+        "revision" : "6318278e8e64d21f0fdcc69004395e4d34048aaf",
+        "version" : "11.8.1"
       }
     },
     {
@@ -105,8 +105,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/gtm-session-fetcher.git",
       "state" : {
-        "revision" : "3cdb78efb79b4a5383c3911488d8025bfc545b5e",
-        "version" : "4.3.0"
+        "revision" : "4d70340d55d7d07cc2fdf8e8125c4c126c1d5f35",
+        "version" : "4.4.0"
       }
     },
     {
@@ -195,8 +195,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziAccount.git",
       "state" : {
-        "revision" : "de427909c99aa0575f6d12620f3a8098d28b8999",
-        "version" : "2.1.2"
+        "revision" : "6f6684486d37fa72e532725578582328b2546995",
+        "version" : "2.1.3"
       }
     },
     {
@@ -213,8 +213,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziFirebase.git",
       "state" : {
-        "revision" : "5dd57f9de42c02d6a94f3af4d8cf3d9b81ec6661",
-        "version" : "2.0.1"
+        "revision" : "73b8aa818044597231d5dff002415b1e836280d1",
+        "version" : "2.0.3"
       }
     },
     {
@@ -231,8 +231,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziHealthKit.git",
       "state" : {
-        "revision" : "fbdec78fcb2f90d6338f1968e21dd11fbee65070",
-        "version" : "0.6.0"
+        "revision" : "837979e4201b924bc781dd7ab777e217dac05a38",
+        "version" : "1.0.0-beta.2"
       }
     },
     {
@@ -276,8 +276,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziScheduler.git",
       "state" : {
-        "revision" : "deb213f0be235c8cb606e2bb1a195f475637df2d",
-        "version" : "1.1.1"
+        "revision" : "d2059174c05b25ae284f26288154b7d2dd46e44c",
+        "version" : "1.1.2"
       }
     },
     {
@@ -285,8 +285,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziStorage.git",
       "state" : {
-        "revision" : "935a7e121d7235a394a2c744ba8b83fd52f71ece",
-        "version" : "1.2.3"
+        "revision" : "b5dfb4a551d3f4243e2798133d6da2414a70e274",
+        "version" : "2.1.0"
       }
     },
     {
@@ -303,8 +303,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-algorithms.git",
       "state" : {
-        "revision" : "f6919dfc309e7f1b56224378b11e28bab5bccc42",
-        "version" : "1.2.0"
+        "revision" : "87e50f483c54e6efd60e885f7f5aa946cee68023",
+        "version" : "1.2.1"
       }
     },
     {
@@ -348,8 +348,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/FelixHerrmann/swift-package-list",
       "state" : {
-        "revision" : "5e954ec39ce2374ff28a38224fd4e6bba7c57cdc",
-        "version" : "4.4.2"
+        "revision" : "04bf1229e12e80ee5e52c2d90a274c9029179ea1",
+        "version" : "4.5.0"
       }
     },
     {
@@ -402,8 +402,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTestExtensions.git",
       "state" : {
-        "revision" : "03eb0646dbceededbbb9d46b289f6eb50a4ec791",
-        "version" : "1.1.2"
+        "revision" : "3b44aad358897cf85139b46f32902cd60d9e5cb4",
+        "version" : "1.2.1"
       }
     },
     {
@@ -411,8 +411,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTHealthKit.git",
       "state" : {
-        "revision" : "6e9344a2d632b801d94fe3bbd1d891817e032103",
-        "version" : "0.3.5"
+        "revision" : "9353b5fea249a73e9b35761bd781c63c02088203",
+        "version" : "1.1.1"
       }
     },
     {
@@ -429,8 +429,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jpsim/Yams.git",
       "state" : {
-        "revision" : "3036ba9d69cf1fd04d433527bc339dc0dc75433d",
-        "version" : "5.1.3"
+        "revision" : "2688707e563b44d7d87c29ba6c5ca04ce86ae58b",
+        "version" : "5.3.0"
       }
     }
   ],

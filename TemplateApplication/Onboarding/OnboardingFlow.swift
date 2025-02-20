@@ -16,7 +16,7 @@ import SwiftUI
 
 /// Displays an multi-step onboarding flow for the Spezi Template Application.
 struct OnboardingFlow: View {
-    @Environment(HealthKit.self) private var healthKitDataSource
+    @Environment(HealthKit.self) private var healthKit
 
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.notificationSettings) private var notificationSettings
@@ -31,8 +31,7 @@ struct OnboardingFlow: View {
         if ProcessInfo.processInfo.isPreviewSimulator {
             return false
         }
-        
-        return healthKitDataSource.authorized
+        return healthKit.isFullyAuthorized
     }
     
     

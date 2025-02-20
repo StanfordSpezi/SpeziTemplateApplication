@@ -12,7 +12,7 @@ import SwiftUI
 
 
 struct HealthKitPermissions: View {
-    @Environment(HealthKit.self) private var healthKitDataSource
+    @Environment(HealthKit.self) private var healthKit
     @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
     
     @State private var healthKitProcessing = false
@@ -46,7 +46,7 @@ struct HealthKitPermissions: View {
                             if ProcessInfo.processInfo.isPreviewSimulator {
                                 try await _Concurrency.Task.sleep(for: .seconds(5))
                             } else {
-                                try await healthKitDataSource.askForAuthorization()
+                                try await healthKit.askForAuthorization()
                             }
                         } catch {
                             print("Could not request HealthKit permissions.")
