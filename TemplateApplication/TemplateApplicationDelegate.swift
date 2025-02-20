@@ -46,9 +46,7 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
                 }
             }
 
-            if HKHealthStore.isHealthDataAvailable() {
-                healthKit
-            }
+            healthKit
             
             TemplateApplicationScheduler()
             Scheduler()
@@ -83,10 +81,8 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
     
     private var healthKit: HealthKit {
         HealthKit {
-            CollectSample(
-                HKQuantityType(.stepCount),
-                deliverySetting: .anchorQuery(.automatic)
-            )
+            CollectSample(.stepCount)
+            CollectSample(.heartRate)
         }
     }
 }
