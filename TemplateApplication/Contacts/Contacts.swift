@@ -12,7 +12,13 @@ import SpeziContact
 import SwiftUI
 
 
-/// Displays the contacts for the Spezi Template Application.
+/// Display contacts for your app.
+///
+/// Modify the contact details for your app in the Contacts view.
+///
+/// You can learn more about [Spezi Contact in the GitHub repository](https://github.com/StanfordSpezi/SpeziContact)
+///
+/// ![A screenshot of the Contact screen](Contacts)
 struct Contacts: View {
     let contacts = [
         Contact(
