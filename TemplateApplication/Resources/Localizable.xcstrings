@@ -3,137 +3,305 @@
   "strings" : {
     "ACCOUNT_SETUP_DESCRIPTION" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie können sich in Ihr bestehendes Konto einloggen. Oder erstellen Sie ein neues, falls Sie noch keins haben."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "You may login to your existing account. Or create a new one if you don't have one already."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du kan logga in på ditt befintliga konto. Eller skapa ett nytt om du inte redan har ett.\n"
           }
         }
       }
     },
     "ACCOUNT_SIGNED_IN_DESCRIPTION" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sie sind bereits mit dem unten angezeigten Konto eingeloggt. Fahren Sie fort oder ändern Sie Ihr Konto, indem Sie sich abmelden."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "You are already logged in with the account shown below. Continue or change your account by logging out."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du är redan inloggad med kontot som visas nedan. Fortsätt eller byt konto genom att logga ut."
           }
         }
       }
     },
     "ACCOUNT_SUBTITLE" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Vorlagen-Anwendung demonstriert die Verwendung des Firebase-Konto-Moduls."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The Template Application demonstrates the usage of the Firebase Account Module."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exempelapplikationen visar användningen av Firebase-kontomodulen.\n"
           }
         }
       }
     },
     "Allow Notifications" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benachrichtigungen erlauben"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Allow Notifications"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tillåt notiser"
           }
         }
       }
     },
     "Close" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schließen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Close"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stäng"
           }
         }
       }
     },
     "CONSENT_LOADING_ERROR" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte fügen Sie ein Markdown-basiertes Dokument namens \"ConsentDocument\" in Ihrem Modul-Bundle ein."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Please include a markdown based document named \"ConsentDocument\" in your module Bundle."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vänligen inkludera ett markdown-baserat dokument med namnet \"ConsentDocument\" i din modulpaket."
           }
         }
       }
     },
     "Contact" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontakt"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Contact"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontakt"
           }
         }
       }
     },
     "Contacts" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontakte"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Contacts"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontakter"
           }
         }
       }
     },
     "Grant Access" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zugriff gewähren"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Grant Access"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ge åtkomst"
           }
         }
       }
     },
     "HealthKit Access" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HealthKit-Zugriff"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "HealthKit Access"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HealthKit-åtkomst"
           }
         }
       }
     },
     "HealthKit Data Source" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HealthKit-Datenquelle"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "HealthKit Data Source"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HealthKit-datakälla"
           }
         }
       }
     },
     "HEALTHKIT_PERMISSIONS_DESCRIPTION" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieser Einführungsschritt ermöglicht es Ihnen, den Einführungsprozess anzupassen, um zu erklären, wie die Anwendung die HealthKit-Daten verwendet, und erlaubt einem Benutzer, die Auswahl individuell anzupassen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "This onboarding step allows you to customize the onboarding flow to explain how the application uses the HealthKit data and allows a user to customize the selection."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det här introduktionssteget låter dig anpassa introduktionsflödet för att förklara hur applikationen använder HealthKit-data och ger användaren möjlighet att anpassa urvalet."
           }
         }
       }
     },
     "HEALTHKIT_PERMISSIONS_SUBTITLE" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi kann mittels des HealthKitDataSource-Moduls auf Daten von HealthKit zugreifen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Spezi can access data from HealthKit using the HealthKitDataSource module."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi kan komma åt data från HealthKit genom att använda HealthKitDataSource-modulen."
           }
         }
       }
     },
     "HL7 FHIR" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HL7 FHIR"
+          }
+        },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HL7 FHIR"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "HL7 FHIR"
@@ -143,207 +311,459 @@
     },
     "Interesting Modules" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interessante Module"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Interesting Modules"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intressanta moduler"
           }
         }
       }
     },
     "INTERESTING_MODULES_AREA1_DESCRIPTION" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Onboarding-Modul ermöglicht es Ihnen, einen Einführungsprozess wie diesen zu erstellen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The onboarding module allows you to build an onboarding flow like this one."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduktionsmodulen låter dig bygga ett introduktionsflöde som detta."
           }
         }
       }
     },
     "INTERESTING_MODULES_AREA2_DESCRIPTION" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Anwendung verwendet HL7 FHIR, um einen gemeinsamen Standard für die Kodierung der von der Anwendung gesammelten Daten bereitzustellen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The application uses HL7 FHIR to provide a common standard to encode data gathered by the application."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Applikationen använder HL7 FHIR för att tillhandahålla en gemensam standard för att koda data som samlas in av applikationen."
           }
         }
       }
     },
     "INTERESTING_MODULES_AREA3_DESCRIPTION" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Kontakt-Modul ermöglicht es Ihnen, Kontaktinformationen in Ihrer Anwendung anzuzeigen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The contact module allows you to display contact information in your application."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontaktmodulen låter dig visa kontaktinformation i din applikation.\n"
           }
         }
       }
     },
     "INTERESTING_MODULES_AREA4_DESCRIPTION" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das HealthKit-Datenquellen-Modul ermöglicht es Ihnen, Daten aus HealthKit abzurufen und z.B. in FHIR-Ressourcen umzuwandeln."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The HealthKit data source module allows you to fetch data from HealthKit and e.g. transform it to FHIR resources."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HealthKit-datakällmodulen låter dig hämta data från HealthKit och t.ex. omvandla den till FHIR-resurser."
           }
         }
       }
     },
     "INTERESTING_MODULES_SUBTITLE" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hier sind einige Spezi-Module, die interessant zu kennen sind ..."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Here are a few Spezi modules that are interesting to know about ..."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Här är några Spezi-moduler som är intressanta att känna till ..."
           }
         }
       }
     },
     "Learn More" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mehr erfahren"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Learn More"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Läs mer"
           }
         }
       }
     },
     "LELAND_STANFORD_BIO" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amasa Leland Stanford (9. März 1824 – 21. Juni 1893) war ein amerikanischer Industrieller und Politiker. [...] Er und seine Frau Jane waren außerdem die Gründer der Stanford University, die sie nach ihrem verstorbenen Sohn benannten.\n[https://en.wikipedia.org/wiki/Leland_Stanford]"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Amasa Leland Stanford (March 9, 1824 – June 21, 1893) was an American industrialist and politician. [...] He and his wife Jane were also the founders of Stanford University, which they named after their late son.\n[https://en.wikipedia.org/wiki/Leland_Stanford]"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amasa Leland Stanford (9 mars 1824 – 21 juni 1893) var en amerikansk industrialist och politiker. [...] Han och hans fru Jane var också grundare av Stanford University, som de namngav efter sin avlidne son.\n[https://en.wikipedia.org/wiki/Leland_Stanford]"
           }
         }
       }
     },
     "License Information" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lizenzinformationen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "License Information"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licensinformation"
           }
         }
       }
     },
     "Next" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weiter"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Next"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nästa"
           }
         }
       }
     },
     "NOTIFICATION_PERMISSIONS_DESCRIPTION" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Spezi-Scheduler-Modul ermöglicht es, lokale Benachrichtigungen zu senden, wenn ein neues Ereignis einer Aufgabe geplant ist."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The Spezi Scheduler module enables to send out local notifications when a new event of a task is scheduled."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi Scheduler-modulen gör det möjligt att skicka lokala notiser när en ny händelse för en uppgift är schemalagd."
           }
         }
       }
     },
     "Notifications" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benachrichtigungen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notifications"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notiser"
           }
         }
       }
     },
     "Onboarding" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einführung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Onboarding"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduktion"
           }
         }
       }
     },
     "Please fill out the Social Support Questionnaire every day." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte füllen Sie jeden Tag den Fragebogen zur sozialen Unterstützung aus."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Please fill out the Social Support Questionnaire every day."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vänligen fyll i formuläret för socialt stöd varje dag."
           }
         }
       }
     },
     "Schedule" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeitplan"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Schedule"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schema"
           }
         }
       }
     },
     "Social Support Questionnaire" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fragebogen zur sozialen Unterstützung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Social Support Questionnaire"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Formulär för socialt stöd"
           }
         }
       }
     },
     "Spezi Modules" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi-Module"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Spezi Modules"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi-moduler"
           }
         }
       }
     },
     "Spezi Scheduler Notifications." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi-Scheduler-Benachrichtigungen."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Spezi Scheduler Notifications."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi Scheduler-notiser."
           }
         }
       }
     },
     "Spezi Template Application" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi\nVorlagen-Anwendung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Spezi\nTemplate Application"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi\nExempelapplikation"
           }
         }
       }
     },
     "Start Questionnaire" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fragebogen starten"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Start Questionnaire"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starta formulär"
           }
         }
       }
     },
     "Swift Package Manager" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swift Package Manager"
+          }
+        },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swift Package Manager"
+          }
+        },
+        "sv" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Swift Package Manager"
@@ -353,80 +773,176 @@
     },
     "The Spezi Framework" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Spezi-Framework"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The Spezi Framework"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi-ramverket"
           }
         }
       }
     },
     "This type of event is currently unsupported. Please contact the developer of this app." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Art von Ereignis wird derzeit nicht unterstützt. Bitte kontaktieren Sie den Entwickler dieser App."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "This type of event is currently unsupported. Please contact the developer of this app."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denna typ av händelse stöds för närvarande inte. Vänligen kontakta utvecklaren av denna app."
           }
         }
       }
     },
     "Unsupported Event" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicht unterstütztes Ereignis"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unsupported Event"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Händelse som inte stöds"
           }
         }
       }
     },
     "WELCOME_AREA1_DESCRIPTION" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Spezi-Framework bildet die Grundlage dieser Anwendung."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The Spezi Framework builds the foundation of this application."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi-ramverket utgör grunden för denna applikation."
           }
         }
       }
     },
     "WELCOME_AREA2_DESCRIPTION" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi verwendet den Swift Package Manager, um es als Abhängigkeit zu importieren."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Spezi uses the Swift Package Manager to import it as a dependency."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi använder Swift Package Manager för att importera det som en beroende."
           }
         }
       }
     },
     "WELCOME_AREA3_DESCRIPTION" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi bietet mehrere Module an, darunter HealthKit-Integration, Fragebögen und mehr ..."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Spezi offers several modules including HealthKit integration, questionnaires, and more ..."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi erbjuder flera moduler inklusive HealthKit-integration, frågeformulär och mer ..."
           }
         }
       }
     },
     "WELCOME_SUBTITLE" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Anwendung demonstriert verschiedene Spezi-Funktionen und -Module."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "This application demonstrates several Spezi features & modules."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denna applikation demonstrerar flera Spezi-funktioner och -moduler."
           }
         }
       }
     },
     "Your Account" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ihr Konto"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Your Account"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ditt konto"
           }
         }
       }
