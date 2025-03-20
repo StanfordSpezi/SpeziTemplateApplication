@@ -18,7 +18,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Du kan logga in på ditt befintliga konto. Eller skapa ett nytt om du inte redan har ett.\n"
+            "value" : "Du kan logga in på ditt befintliga konto. Eller skapa ett nytt om du inte redan har ett."
           }
         }
       }
@@ -62,7 +62,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Exempelapplikationen visar användningen av Firebasekontomodulen.\n"
+            "value" : "Exempelapplikationen visar användningen av Firebasekontomodulen."
           }
         }
       }
@@ -282,7 +282,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spezi kan komma åt data från HealthKit genom att använda HealthKitDataSourcemodulen.\t"
+            "value" : "Spezi kan komma åt data från HealthKit genom att använda HealthKitDataSourcemodulen."
           }
         }
       }
