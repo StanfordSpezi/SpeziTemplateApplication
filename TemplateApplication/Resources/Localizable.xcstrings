@@ -62,7 +62,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Exempelapplikationen visar användningen av Firebase-kontomodulen.\n"
+            "value" : "Exempelapplikationen visar användningen av Firebasekontomodulen.\n"
           }
         }
       }
@@ -282,7 +282,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spezi kan komma åt data från HealthKit genom att använda HealthKitDataSource-modulen."
+            "value" : "Spezi kan komma åt data från HealthKit genom att använda HealthKitDataSourcemodulen.\t"
           }
         }
       }
@@ -436,7 +436,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Här är några Spezi-moduler som är intressanta att känna till ..."
+            "value" : "Här är några Spezimoduler som är intressanta att känna till ..."
           }
         }
       }
@@ -546,7 +546,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spezi Scheduler-modulen gör det möjligt att skicka lokala notiser när en ny händelse för en uppgift är schemalagd."
+            "value" : "Spezi Schedulermodulen gör det möjligt att skicka lokala notiser när en ny händelse för en uppgift är schemalagd."
           }
         }
       }
@@ -678,7 +678,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spezi-moduler"
+            "value" : "Spezimoduler"
           }
         }
       }
@@ -700,7 +700,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spezi Scheduler-notiser."
+            "value" : "Spezi Schedulernotiser."
           }
         }
       }
@@ -722,7 +722,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spezi\nExempelapplikation"
+            "value" : "Spezi applikationsmall"
           }
         }
       }
@@ -788,7 +788,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spezi-ramverket"
+            "value" : "Speziramverket"
           }
         }
       }
@@ -898,7 +898,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spezi erbjuder flera moduler inklusive HealthKit-integration, frågeformulär och mer ..."
+            "value" : "Spezi erbjuder flera moduler inklusive HealthKit-integration, frågeformulär med mera ..."
           }
         }
       }
@@ -920,7 +920,7 @@
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Denna applikation demonstrerar flera Spezi-funktioner och -moduler."
+            "value" : "Denna applikation demonstrerar flera Spezifunktioner och -moduler."
           }
         }
       }
