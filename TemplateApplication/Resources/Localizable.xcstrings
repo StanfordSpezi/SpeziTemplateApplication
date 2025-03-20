@@ -28,7 +28,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sie sind bereits mit dem unten angezeigten Konto eingeloggt. Fahren Sie fort oder ändern Sie Ihr Konto, indem Sie sich abmelden."
+            "value" : "Sie sind bereits mit dem unten angezeigten Konto eingeloggt. Fahren Sie fort oder wechseln Sie das Konto, indem Sie sich abmelden."
           }
         },
         "en" : {
@@ -50,7 +50,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Die Vorlagen-Anwendung demonstriert die Verwendung des Firebase-Konto-Moduls."
+            "value" : "Die Template Application demonstriert die Verwendung des Firebase-Konto-Moduls."
           }
         },
         "en" : {
@@ -248,7 +248,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dieser Einführungsschritt ermöglicht es Ihnen, den Einführungsprozess anzupassen, um zu erklären, wie die Anwendung die HealthKit-Daten verwendet, und erlaubt einem Benutzer, die Auswahl individuell anzupassen."
+            "value" : "Dieser Einführungsschritt ermöglicht es Ihnen, den Einführungsprozess anzupassen, um dem Benutzer zu erklären, wie die Anwendung die HealthKit-Daten verwendet, und erlaubt einem Benutzer, die Auswahl individuell anzupassen."
           }
         },
         "en" : {
@@ -336,7 +336,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Das Onboarding-Modul ermöglicht es Ihnen, einen Einführungsprozess wie diesen zu erstellen."
+            "value" : "Das Onboarding-Modul erlaubt Ihnen, einen Einführungsprozess wie diesen aufzubauen."
           }
         },
         "en" : {
@@ -358,7 +358,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Die Anwendung verwendet HL7 FHIR, um einen gemeinsamen Standard für die Kodierung der von der Anwendung gesammelten Daten bereitzustellen."
+            "value" : "Die Applikation nutzt HL7 FHIR als einheitlichen Standard zur Strukturierung der erfassten Daten."
           }
         },
         "en" : {
@@ -402,7 +402,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Das HealthKit-Datenquellen-Modul ermöglicht es Ihnen, Daten aus HealthKit abzurufen und z.B. in FHIR-Ressourcen umzuwandeln."
+            "value" : "Mit dem HealthKit-Datenquellen-Modul können Sie Daten aus HealthKit abrufen und z.B. in FHIR-Strukturen transformieren."
           }
         },
         "en" : {
@@ -424,7 +424,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hier sind einige Spezi-Module, die interessant zu kennen sind ..."
+            "value" : "Hier sind einige Spezi-Module, die interessant sein könnten ..."
           }
         },
         "en" : {
@@ -578,7 +578,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Einführung"
+            "value" : "Onboarding"
           }
         },
         "en" : {
@@ -622,7 +622,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zeitplan"
+            "value" : "Plan"
           }
         },
         "en" : {
@@ -710,7 +710,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spezi\nVorlagen-Anwendung"
+            "value" : "Spezi\nTemplate Application"
           }
         },
         "en" : {
@@ -864,7 +864,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spezi verwendet den Swift Package Manager, um es als Abhängigkeit zu importieren."
+            "value" : "Spezi benutzt den Swift Package Manager zum Import als Abhängigkeit."
           }
         },
         "en" : {
