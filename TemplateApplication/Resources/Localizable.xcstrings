@@ -402,7 +402,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mit dem HealthKit-Datenquellen-Modul können Sie Daten aus HealthKit abrufen und z.B. in FHIR-Strukturen transformieren."
+            "value" : "Mit dem HealthKit-Data-Source-Modul können Sie Daten aus HealthKit abrufen und z.B. in FHIR-Strukturen transformieren."
           }
         },
         "en" : {
