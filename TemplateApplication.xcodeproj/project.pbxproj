@@ -292,7 +292,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					653A254C283387FE005D4D48 = {
 						CreatedOnToolsVersion = 13.4;
@@ -433,6 +433,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -489,6 +490,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TEST;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
 				SWIFT_VERSION = 6.0;
 			};
 			name = Test;
@@ -578,6 +580,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -634,6 +637,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
 				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
@@ -643,6 +647,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -692,6 +697,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
 				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -911,7 +917,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziScheduler.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.2;
+				minimumVersion = 1.2.7;
 			};
 		};
 		2F49B7742980407B00BCB272 /* XCRemoteSwiftPackageReference "Spezi" */ = {
@@ -919,7 +925,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/Spezi.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.8.0;
+				minimumVersion = 1.8.1;
 			};
 		};
 		2F66D20D2BB723180010D555 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
@@ -927,7 +933,7 @@
 			repositoryURL = "https://github.com/realm/SwiftLint.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.56.0;
+				minimumVersion = 0.59.1;
 			};
 		};
 		2FB099B42A875E2B00B20952 /* XCRemoteSwiftPackageReference "HealthKitOnFHIR" */ = {
@@ -935,7 +941,7 @@
 			repositoryURL = "https://github.com/StanfordBDHG/HealthKitOnFHIR.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.2.4;
+				minimumVersion = 0.2.15;
 			};
 		};
 		2FE5DC6229EDD883004B9AB4 /* XCRemoteSwiftPackageReference "SpeziAccount" */ = {
@@ -943,7 +949,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziAccount.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.4;
+				minimumVersion = 2.1.6;
 			};
 		};
 		2FE5DC6529EDD894004B9AB4 /* XCRemoteSwiftPackageReference "SpeziContact" */ = {
@@ -959,7 +965,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziFirebase.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.3;
+				minimumVersion = 2.0.4;
 			};
 		};
 		2FE5DC8229EDD934004B9AB4 /* XCRemoteSwiftPackageReference "SpeziQuestionnaire" */ = {
@@ -983,7 +989,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziViews.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.9.2;
+				minimumVersion = 1.10.1;
 			};
 		};
 		2FE5DC9029EDD9C3004B9AB4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -991,7 +997,7 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 11.0.0;
+				minimumVersion = 11.12.0;
 			};
 		};
 		2FE5DC9729EDD9D9004B9AB4 /* XCRemoteSwiftPackageReference "XCTestExtensions" */ = {
@@ -1007,7 +1013,7 @@
 			repositoryURL = "https://github.com/StanfordBDHG/XCTHealthKit.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.1.1;
+				minimumVersion = 1.1.2;
 			};
 		};
 		5661551B2AB8384200209B80 /* XCRemoteSwiftPackageReference "swift-package-list" */ = {
@@ -1015,7 +1021,7 @@
 			repositoryURL = "https://github.com/FelixHerrmann/swift-package-list";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.0;
+				minimumVersion = 4.8.0;
 			};
 		};
 		56E708332BB06B7100B08F0A /* XCRemoteSwiftPackageReference "SpeziLicense" */ = {
@@ -1031,7 +1037,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziHealthKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = "1.0.0-beta.3";
+				minimumVersion = 1.1.3;
 			};
 		};
 		97F466E62A76BBEE005DC9B4 /* XCRemoteSwiftPackageReference "SpeziOnboarding" */ = {
@@ -1039,7 +1045,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziOnboarding.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.1;
+				minimumVersion = 1.2.2;
 			};
 		};
 		A945FCD32C9C6BFA00B9EBC7 /* XCRemoteSwiftPackageReference "ResearchKitOnFHIR" */ = {
@@ -1047,7 +1053,7 @@
 			repositoryURL = "https://github.com/StanfordBDHG/ResearchKitOnFHIR.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.2;
+				minimumVersion = 2.0.3;
 			};
 		};
 		A94DDFFB2CBD1190004930BD /* XCRemoteSwiftPackageReference "SpeziNotifications" */ = {
@@ -1055,7 +1061,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziNotifications.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.2;
+				minimumVersion = 1.0.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

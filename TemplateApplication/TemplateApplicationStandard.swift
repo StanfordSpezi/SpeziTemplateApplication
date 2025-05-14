@@ -31,32 +31,36 @@ actor TemplateApplicationStandard: Standard,
     @Dependency(FirebaseConfiguration.self) private var configuration
 
     init() {}
-
-
-    func add(sample: HKSample) async {
-        if FeatureFlags.disableFirebase {
-            logger.debug("Received new HealthKit sample: \(sample)")
-            return
-        }
-        
-        do {
-            try await healthKitDocument(id: sample.id)
-                .setData(from: sample.resource)
-        } catch {
-            logger.error("Could not store HealthKit sample: \(error)")
+    
+    
+    func handleNewSamples<Sample>(_ addedSamples: some Collection<Sample>, ofType sampleType: SampleType<Sample>) async {
+        for sample in addedSamples {
+            if FeatureFlags.disableFirebase {
+                logger.debug("Received new HealthKit sample: \(sample)")
+                return
+            }
+            
+            do {
+                try await healthKitDocument(for: sampleType, sampleId: sample.id)
+                    .setData(from: sample.resource())
+            } catch {
+                logger.error("Could not store HealthKit sample: \(error)")
+            }
         }
     }
     
-    func remove(sample: HKDeletedObject) async {
-        if FeatureFlags.disableFirebase {
-            logger.debug("Received new removed healthkit sample with id \(sample.uuid)")
-            return
-        }
-        
-        do {
-            try await healthKitDocument(id: sample.uuid).delete()
-        } catch {
-            logger.error("Could not remove HealthKit sample: \(error)")
+    func handleDeletedObjects<Sample>(_ deletedObjects: some Collection<HKDeletedObject>, ofType sampleType: SampleType<Sample>) async {
+        for object in deletedObjects {
+            if FeatureFlags.disableFirebase {
+                logger.debug("Received new removed healthkit sample with id \(object.uuid)")
+                return
+            }
+            
+            do {
+                try await healthKitDocument(for: sampleType, sampleId: object.uuid).delete()
+            } catch {
+                logger.error("Could not remove HealthKit sample: \(error)")
+            }
         }
     }
 
@@ -81,10 +85,10 @@ actor TemplateApplicationStandard: Standard,
     }
     
     
-    private func healthKitDocument(id uuid: UUID) async throws -> DocumentReference {
+    private func healthKitDocument(for sampleType: SampleType<some Any>, sampleId uuid: UUID) async throws -> FirebaseFirestore.DocumentReference {
         try await configuration.userDocumentReference
-            .collection("HealthKit") // Add all HealthKit sources in a /HealthKit collection.
-            .document(uuid.uuidString) // Set the document identifier to the UUID of the document.
+            .collection("HealthKitObservations_\(sampleType.hkSampleType.identifier)")
+            .document(uuid.uuidString)
     }
 
     func respondToEvent(_ event: AccountNotifications.Event) async {

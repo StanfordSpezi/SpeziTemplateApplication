@@ -19,5 +19,7 @@
 	<array>
 		<string>fetch</string>
 	</array>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
 </dict>
 </plist>

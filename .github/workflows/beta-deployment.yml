@@ -1,48 +1,128 @@
 #
 # This source file is part of the Stanford Spezi Template Application open-source project
 #
-# SPDX-FileCopyrightText: 2023 Stanford University
+# SPDX-FileCopyrightText: 2023 Stanford University and the project authors (see CONTRIBUTORS.md)
 #
 # SPDX-License-Identifier: MIT
 #
 
-name: Beta Deployment
+name: Deployment
 
 on:
   push:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      environment:
+        description: |
+          The GitHub deployment environment.
+        required: true
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+      version:
+        description: |
+          The semantic version of the app that should be released.
+        required: true
+        type: string
+      releasenotes:
+        description: |
+          Release notes of what changed in this version.
+        required: false
+        type: string
+        default: Bug fixes and performance improvements.
+  workflow_call:
+    inputs:
+      environment:
+        description: |
+          The GitHub deployment environment.
+        required: false
+        type: string
+        default: staging
+      version:
+        description: |
+          The semantic version of the app that should be released.
+        required: true
+        type: string
+      releasenotes:
+        description: |
+          Release notes of what changed in this version.
+        required: false
+        type: string
+        default: Bug fixes and performance improvements.
 
 concurrency:
-  group: Beta-Deployment
+  group: deployment
   cancel-in-progress: false
 
 jobs:
+  determineenvironment:
+    name: Determine Environment
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.determineenvironment.outputs.environment }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Determine Environment
+        id: determineenvironment
+        run: |
+          if [[ -z "${{ inputs.environment }}" ]]; then
+            echo "environment=staging" >> $GITHUB_OUTPUT
+            echo "environment: staging"
+          else
+            echo "environment=${{ inputs.environment }}" >> $GITHUB_OUTPUT
+            echo "environment: ${{ inputs.environment }}"
+          fi
+  vars:
+    name: Inject Environment Variables In Deployment Workflow
+    needs: determineenvironment
+    runs-on: ubuntu-latest
+    environment: ${{ needs.determineenvironment.outputs.environment }}
+    outputs:
+      version: ${{ steps.script.outputs.version }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - uses: actions-ecosystem/action-get-latest-tag@v1
+        id: get-latest-tag
+        with:
+          semver_only: true
+          initial_version: "1.0.0"
+      - id: script
+        run: |
+          echo "Injecting Environment Variables In Deployment Workflow ..."
+          if [[ -z "${{ inputs.version }}" ]]; then
+            echo "version=${{ steps.get-latest-tag.outputs.tag }}" >> $GITHUB_OUTPUT
+            echo "version: ${{ steps.get-latest-tag.outputs.tag }}"
+          else
+            echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
+            echo "version: ${{ inputs.version }}"
+          fi
+          echo "releasenotes: ${{ inputs.releasenotes }}"
   buildandtest:
     name: Build and Test
+    needs: determineenvironment
     uses: ./.github/workflows/build-and-test.yml
     permissions:
       contents: read
     secrets: inherit
-  staticanaylsis:
-    name: Static Analysis
-    uses: ./.github/workflows/static-analysis.yml
-    permissions:
-      security-events: write
-      actions: read
-      contents: read
-    secrets: inherit
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
-    needs: buildandtest
-    uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
+    needs: [determineenvironment, vars, buildandtest]
+    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     permissions:
       contents: read
     with:
+      runsonlabels: '["macOS", "self-hosted"]'
+      environment: ${{ needs.determineenvironment.outputs.environment }}
       googleserviceinfoplistpath: 'TemplateApplication/Supporting Files/GoogleService-Info.plist'
       setupsigning: true
-      fastlanelane: beta
+      fastlanelane: deploy environment:"${{ needs.determineenvironment.outputs.environment }}" versionname:"${{ needs.vars.outputs.version }}" releasenotes:"${{ inputs.releasenotes }}"
     secrets: inherit
   deployfirebase:
     name: Deploy Firebase Project
