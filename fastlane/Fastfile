@@ -160,10 +160,16 @@ platform :ios do
 
     releasenotes = releasenotes.gsub('\u2019', "'")
 
-    if environment == "production"
+    currentversion = get_version_number()
+    UI.message("Current version: #{currentversion}")
+
+    if Gem::Version.new(versionname) > Gem::Version.new(currentversion)
       increment_version_number(
         version_number: versionname
       )
+      UI.message("Version bumped to #{versionname}")
+    else
+      UI.message("No version bump needed. Current version (#{currentversion}) is greater than or equal to desired version (#{versionname}).")
     end
     
     signin
