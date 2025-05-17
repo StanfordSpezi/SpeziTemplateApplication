@@ -25,7 +25,7 @@ struct ScheduleView: View {
         @Bindable var scheduler = scheduler
 
         NavigationStack {
-            TodayList { event in
+            EventScheduleList { event in
                 InstructionsTile(event) {
                     EventActionButton(event: event, "Start Questionnaire") {
                         presentedEvent = event

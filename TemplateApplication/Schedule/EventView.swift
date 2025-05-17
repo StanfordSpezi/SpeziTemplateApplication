@@ -26,7 +26,7 @@ struct EventView: View {
                     return // user cancelled the task
                 }
 
-                event.complete()
+                _ = try? event.complete()
                 await standard.add(response: response)
             }
         } else {
