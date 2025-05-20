@@ -65,19 +65,29 @@ actor TemplateApplicationStandard: Standard,
     }
 
     // periphery:ignore:parameters isolation
-    func add(response: ModelsR4.QuestionnaireResponse, isolation: isolated (any Actor)? = #isolation) async {
-        let id = response.identifier?.value?.value?.string ?? UUID().uuidString
+    func add(
+        response: ModelsR4.QuestionnaireResponse,
+        for questionnaire: ModelsR4.Questionnaire,
+        isolation: isolated (any Actor)? = #isolation
+    ) async {
+        let responseId = response.identifier?.value?.value?.string ?? UUID().uuidString
+        let questionnaireId = questionnaire.id?.value?.string
         
         if FeatureFlags.disableFirebase {
             let jsonRepresentation = (try? String(data: JSONEncoder().encode(response), encoding: .utf8)) ?? ""
-            await logger.debug("Received questionnaire response: \(jsonRepresentation)")
+            await logger.debug("Received questionnaire response \(jsonRepresentation) for questionnaire: \(questionnaireId ?? "unkown")")
             return
         }
         
         do {
+            let collection = if let questionnaireId = questionnaireId {
+                "QuestionnaireResponses_\(questionnaireId)"
+            } else {
+                "QuestionnaireResponses"
+            }
             try await configuration.userDocumentReference
-                .collection("QuestionnaireResponse") // Add all HealthKit sources in a /QuestionnaireResponse collection.
-                .document(id) // Set the document identifier to the id of the response.
+                .collection(collection)
+                .document(responseId)
                 .setData(from: response)
         } catch {
             await logger.error("Could not store questionnaire response: \(error)")
@@ -87,7 +97,7 @@ actor TemplateApplicationStandard: Standard,
     
     private func healthKitDocument(for sampleType: SampleType<some Any>, sampleId uuid: UUID) async throws -> FirebaseFirestore.DocumentReference {
         try await configuration.userDocumentReference
-            .collection("HealthKitObservations_\(sampleType.hkSampleType.identifier)")
+            .collection("Observations_\(sampleType.displayTitle.replacingOccurrences(of: "\\s", with: "", options: .regularExpression))")
             .document(uuid.uuidString)
     }
 

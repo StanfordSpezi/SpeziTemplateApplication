@@ -1,7 +1,7 @@
 {
   "resourceType": "Questionnaire",
   "language": "en-US",
-  "id": "socialsupport",
+  "id": "SocialSupport",
   "name": "SocialSupport",
   "title": "Social Support",
   "description": "This survey measures tangible social support plus a couple of demographic questions.",

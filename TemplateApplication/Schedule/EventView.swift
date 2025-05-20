@@ -27,7 +27,7 @@ struct EventView: View {
                 }
 
                 _ = try? event.complete()
-                await standard.add(response: response)
+                await standard.add(response: response, for: questionnaire)
             }
         } else {
             NavigationStack {
