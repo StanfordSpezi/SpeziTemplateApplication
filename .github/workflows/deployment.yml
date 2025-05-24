@@ -94,7 +94,7 @@ jobs:
     environment: ${{ needs.determineenvironment.outputs.environment }}
     outputs:
       version: ${{ steps.script.outputs.version }}
-      firebaseProjectID: ${{ vars.FIREBASE_PROJECT_ID }}
+      firebaseprojectid: ${{ vars.FIREBASE_PROJECT_ID }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -120,36 +120,36 @@ jobs:
           fi
           echo "buildnumber: ${{ inputs.buildnumber }}"
           echo "releasenotes: ${{ inputs.releasenotes }}"
-          echo "firebaseProjectID: ${{ vars.FIREBASE_PROJECT_ID }}"
-  # buildandtest:
-  #   name: Build and Test
-  #   needs: determineenvironment
-  #   uses: ./.github/workflows/build-and-test.yml
-  #   permissions:
-  #     contents: read
-  #   secrets: inherit
-  # iosapptestflightdeployment:
-  #   name: iOS App TestFlight Deployment
-  #   needs: [determineenvironment, vars, buildandtest]
-  #   uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
-  #   permissions:
-  #     contents: read
-  #   with:
-  #     runsonlabels: '["macOS", "self-hosted"]'
-  #     environment: ${{ needs.determineenvironment.outputs.environment }}
-  #     googleserviceinfoplistpath: 'TemplateApplication/Supporting Files/GoogleService-Info.plist'
-  #     setupsigning: true
-  #     fastlanelane: deploy environment:"${{ needs.determineenvironment.outputs.environment }}" versionname:"${{ needs.vars.outputs.version }}" releasenotes:"${{ inputs.releasenotes }}" ${{ inputs.buildnumber && format('buildnumber:"{0}"', inputs.buildnumber) || '' }}
-  #   secrets: inherit
+          echo "firebaseprojectid: ${{ vars.FIREBASE_PROJECT_ID }}"
+  buildandtest:
+    name: Build and Test
+    needs: determineenvironment
+    uses: ./.github/workflows/build-and-test.yml
+    permissions:
+      contents: read
+    secrets: inherit
+  iosapptestflightdeployment:
+    name: iOS App TestFlight Deployment
+    needs: [determineenvironment, vars, buildandtest]
+    uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
+    permissions:
+      contents: read
+    with:
+      runsonlabels: '["macOS", "self-hosted"]'
+      environment: ${{ needs.determineenvironment.outputs.environment }}
+      googleserviceinfoplistpath: 'TemplateApplication/Supporting Files/GoogleService-Info.plist'
+      setupsigning: true
+      fastlanelane: deploy environment:"${{ needs.determineenvironment.outputs.environment }}" versionname:"${{ needs.vars.outputs.version }}" releasenotes:"${{ inputs.releasenotes }}" ${{ inputs.buildnumber && format('buildnumber:"{0}"', inputs.buildnumber) || '' }}
+    secrets: inherit
   deployfirebase:
     name: Deploy Firebase Project
-    needs: [determineenvironment, vars] #, iosapptestflightdeployment]
+    needs: [determineenvironment, vars, iosapptestflightdeployment]
     uses: StanfordBDHG/.github/.github/workflows/firebase-deploy.yml@v2
     permissions:
       contents: read
     with:
       path: 'firebase'
-      arguments: '--debug --project ${{ needs.vars.outputs.firebaseProjectID }}'
+      arguments: '--debug --project ${{ needs.vars.outputs.firebaseprojectid }}'
       environment: ${{ needs.determineenvironment.outputs.environment }}
     secrets:
       GOOGLE_APPLICATION_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}
