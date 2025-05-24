@@ -18,10 +18,9 @@ on:
         description: |
           The GitHub deployment environment.
         required: true
-        default: 'development'
+        default: 'staging'
         type: choice
         options:
-          - development
           - staging
           - production
       version:
@@ -130,7 +129,7 @@ jobs:
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
     needs: [determineenvironment, vars, buildandtest]
-    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
+    uses: StanfordSpezi/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     permissions:
       contents: read
     with:
