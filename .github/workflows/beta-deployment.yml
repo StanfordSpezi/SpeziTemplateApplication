@@ -18,10 +18,9 @@ on:
         description: |
           The GitHub deployment environment.
         required: true
-        default: 'development'
+        default: 'staging'
         type: choice
         options:
-          - development
           - staging
           - production
       version:
