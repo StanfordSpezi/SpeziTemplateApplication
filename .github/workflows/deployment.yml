@@ -87,38 +87,40 @@ jobs:
             echo "environment=${{ inputs.environment }}" >> $GITHUB_OUTPUT
             echo "environment: ${{ inputs.environment }}"
           fi
-  # vars:
-  #   name: Inject Environment Variables In Deployment Workflow
-  #   needs: determineenvironment
-  #   runs-on: ubuntu-latest
-  #   environment: ${{ needs.determineenvironment.outputs.environment }}
-  #   outputs:
-  #     version: ${{ steps.script.outputs.version }}
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v4
-  #     - uses: actions-ecosystem/action-get-latest-tag@v1
-  #       id: get-latest-tag
-  #       with:
-  #         semver_only: true
-  #         initial_version: "1.0.0"
-  #     - id: script
-  #       run: |
-  #         echo "Injecting Environment Variables In Deployment Workflow ..."
-  #         if [[ -z "${{ inputs.version }}" ]]; then
-  #           IFS='.' read -r MAJOR MINOR PATCH <<< "${{ steps.get-latest-tag.outputs.tag }}"
+  vars:
+    name: Inject Environment Variables In Deployment Workflow
+    needs: determineenvironment
+    runs-on: ubuntu-latest
+    environment: ${{ needs.determineenvironment.outputs.environment }}
+    outputs:
+      version: ${{ steps.script.outputs.version }}
+      firebaseProjectID: ${{ vars.FIREBASE_PROJECT_ID }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - uses: actions-ecosystem/action-get-latest-tag@v1
+        id: get-latest-tag
+        with:
+          semver_only: true
+          initial_version: "1.0.0"
+      - id: script
+        run: |
+          echo "Injecting Environment Variables In Deployment Workflow ..."
+          if [[ -z "${{ inputs.version }}" ]]; then
+            IFS='.' read -r MAJOR MINOR PATCH <<< "${{ steps.get-latest-tag.outputs.tag }}"
 
-  #           PATCH=$((PATCH + 1))
-  #           NEW_VERSION="${MAJOR}.${MINOR}.${PATCH}"
+            PATCH=$((PATCH + 1))
+            NEW_VERSION="${MAJOR}.${MINOR}.${PATCH}"
 
-  #           echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
-  #           echo "version: $NEW_VERSION"
-  #         else
-  #           echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
-  #           echo "version: ${{ inputs.version }}"
-  #         fi
-  #         echo "buildnumber: ${{ inputs.buildnumber }}"
-  #         echo "releasenotes: ${{ inputs.releasenotes }}"
+            echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+            echo "version: $NEW_VERSION"
+          else
+            echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
+            echo "version: ${{ inputs.version }}"
+          fi
+          echo "buildnumber: ${{ inputs.buildnumber }}"
+          echo "releasenotes: ${{ inputs.releasenotes }}"
+          echo "firebaseProjectID: ${{ vars.FIREBASE_PROJECT_ID }}"
   # buildandtest:
   #   name: Build and Test
   #   needs: determineenvironment
@@ -141,13 +143,13 @@ jobs:
   #   secrets: inherit
   deployfirebase:
     name: Deploy Firebase Project
-    needs: [determineenvironment] #, iosapptestflightdeployment]
+    needs: [determineenvironment, vars] #, iosapptestflightdeployment]
     uses: StanfordBDHG/.github/.github/workflows/firebase-deploy.yml@v2
     permissions:
       contents: read
     with:
       path: 'firebase'
-      arguments: '--debug'
+      arguments: '--debug --project ${{ needs.vars.outputs.firebaseProjectID }}'
       environment: ${{ needs.determineenvironment.outputs.environment }}
     secrets:
       GOOGLE_APPLICATION_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}
