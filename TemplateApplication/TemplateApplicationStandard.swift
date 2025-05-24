@@ -31,49 +31,63 @@ actor TemplateApplicationStandard: Standard,
     @Dependency(FirebaseConfiguration.self) private var configuration
 
     init() {}
-
-
-    func add(sample: HKSample) async {
-        if FeatureFlags.disableFirebase {
-            logger.debug("Received new HealthKit sample: \(sample)")
-            return
-        }
-        
-        do {
-            try await healthKitDocument(id: sample.id)
-                .setData(from: sample.resource)
-        } catch {
-            logger.error("Could not store HealthKit sample: \(error)")
+    
+    
+    func handleNewSamples<Sample>(_ addedSamples: some Collection<Sample>, ofType sampleType: SampleType<Sample>) async {
+        for sample in addedSamples {
+            if FeatureFlags.disableFirebase {
+                logger.debug("Received new HealthKit sample: \(sample)")
+                return
+            }
+            
+            do {
+                try await healthKitDocument(for: sampleType, sampleId: sample.id)
+                    .setData(from: sample.resource())
+            } catch {
+                logger.error("Could not store HealthKit sample: \(error)")
+            }
         }
     }
     
-    func remove(sample: HKDeletedObject) async {
-        if FeatureFlags.disableFirebase {
-            logger.debug("Received new removed healthkit sample with id \(sample.uuid)")
-            return
-        }
-        
-        do {
-            try await healthKitDocument(id: sample.uuid).delete()
-        } catch {
-            logger.error("Could not remove HealthKit sample: \(error)")
+    func handleDeletedObjects<Sample>(_ deletedObjects: some Collection<HKDeletedObject>, ofType sampleType: SampleType<Sample>) async {
+        for object in deletedObjects {
+            if FeatureFlags.disableFirebase {
+                logger.debug("Received new removed healthkit sample with id \(object.uuid)")
+                return
+            }
+            
+            do {
+                try await healthKitDocument(for: sampleType, sampleId: object.uuid).delete()
+            } catch {
+                logger.error("Could not remove HealthKit sample: \(error)")
+            }
         }
     }
 
     // periphery:ignore:parameters isolation
-    func add(response: ModelsR4.QuestionnaireResponse, isolation: isolated (any Actor)? = #isolation) async {
-        let id = response.identifier?.value?.value?.string ?? UUID().uuidString
+    func add(
+        response: ModelsR4.QuestionnaireResponse,
+        for questionnaire: ModelsR4.Questionnaire,
+        isolation: isolated (any Actor)? = #isolation
+    ) async {
+        let responseId = response.identifier?.value?.value?.string ?? UUID().uuidString
+        let questionnaireId = questionnaire.id?.value?.string
         
         if FeatureFlags.disableFirebase {
             let jsonRepresentation = (try? String(data: JSONEncoder().encode(response), encoding: .utf8)) ?? ""
-            await logger.debug("Received questionnaire response: \(jsonRepresentation)")
+            await logger.debug("Received questionnaire response \(jsonRepresentation) for questionnaire: \(questionnaireId ?? "unkown")")
             return
         }
         
         do {
+            let collection = if let questionnaireId = questionnaireId {
+                "QuestionnaireResponses_\(questionnaireId)"
+            } else {
+                "QuestionnaireResponses"
+            }
             try await configuration.userDocumentReference
-                .collection("QuestionnaireResponse") // Add all HealthKit sources in a /QuestionnaireResponse collection.
-                .document(id) // Set the document identifier to the id of the response.
+                .collection(collection)
+                .document(responseId)
                 .setData(from: response)
         } catch {
             await logger.error("Could not store questionnaire response: \(error)")
@@ -81,10 +95,10 @@ actor TemplateApplicationStandard: Standard,
     }
     
     
-    private func healthKitDocument(id uuid: UUID) async throws -> DocumentReference {
+    private func healthKitDocument(for sampleType: SampleType<some Any>, sampleId uuid: UUID) async throws -> FirebaseFirestore.DocumentReference {
         try await configuration.userDocumentReference
-            .collection("HealthKit") // Add all HealthKit sources in a /HealthKit collection.
-            .document(uuid.uuidString) // Set the document identifier to the UUID of the document.
+            .collection("Observations_\(sampleType.displayTitle.replacingOccurrences(of: "\\s", with: "", options: .regularExpression))")
+            .document(uuid.uuidString)
     }
 
     func respondToEvent(_ event: AccountNotifications.Event) async {
