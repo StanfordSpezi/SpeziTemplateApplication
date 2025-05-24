@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
+
 /// Constants shared across the Spezi Teamplate Application to access storage information including the `AppStorage` and `SceneStorage`
 enum StorageKeys {
     // MARK: - Onboarding

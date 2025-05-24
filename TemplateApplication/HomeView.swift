@@ -15,13 +15,13 @@ struct HomeView: View {
         case schedule
         case contact
     }
-
-
+    
+    
     @AppStorage(StorageKeys.homeTabSelection) private var selectedTab = Tabs.schedule
     @AppStorage(StorageKeys.tabViewCustomization) private var tabViewCustomization = TabViewCustomization()
-
+    
     @State private var presentingAccount = false
-
+    
     
     var body: some View {
         TabView(selection: $selectedTab) {
