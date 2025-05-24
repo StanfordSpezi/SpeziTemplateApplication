@@ -18,7 +18,7 @@ struct EventView: View {
     @Environment(TemplateApplicationStandard.self) private var standard
     @Environment(\.dismiss) private var dismiss
     
-    @State var viewState: ViewState = .idle
+    @State private var viewState: ViewState = .idle
     
 
     var body: some View {
