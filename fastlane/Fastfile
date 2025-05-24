@@ -167,18 +167,27 @@ platform :ios do
       increment_version_number(
         version_number: versionname
       )
-      UI.message("Version bumped to #{versionname}")
+      UI.message("Version bumped to #{versionname}.")
     else
       UI.message("No version bump needed. Current version (#{currentversion}) is greater than or equal to desired version (#{versionname}).")
     end
     
     signin
-    latest_build_number = latest_testflight_build_number(
-      app_identifier: appidentifier
-    )
+    
+    buildnumber = options[:buildnumber].to_s.strip
+    if buildnumber.empty?
+      latest_build_number = latest_testflight_build_number(
+        app_identifier: appidentifier
+      )
+      buildnumber = latest_build_number + 1
+      UI.message("No build number provided. Incrementing to #{buildnumber}.")
+    else
+      UI.message("Using provided build number: #{buildnumber}.")
+    end
     increment_build_number(
-      build_number: latest_build_number + 1
+      build_number: buildnumber
     )
+
     archive(
       appidentifier: appidentifier,
       provisioningProfile: provisioningProfile,

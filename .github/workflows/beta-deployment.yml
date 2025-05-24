@@ -29,6 +29,11 @@ on:
           The semantic version of the app that should be released.
         required: true
         type: string
+      buildnumber:
+        description: |
+          Optional build number to use for deployment.
+        required: false
+        type: string
       releasenotes:
         description: |
           Release notes of what changed in this version.
@@ -47,6 +52,11 @@ on:
         description: |
           The semantic version of the app that should be released.
         required: true
+        type: string
+      buildnumber:
+        description: |
+          Optional build number to use for deployment.
+        required: false
         type: string
       releasenotes:
         description: |
@@ -108,6 +118,7 @@ jobs:
             echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
             echo "version: ${{ inputs.version }}"
           fi
+          echo "buildnumber: ${{ inputs.buildnumber }}"
           echo "releasenotes: ${{ inputs.releasenotes }}"
   buildandtest:
     name: Build and Test
@@ -127,7 +138,7 @@ jobs:
       environment: ${{ needs.determineenvironment.outputs.environment }}
       googleserviceinfoplistpath: 'TemplateApplication/Supporting Files/GoogleService-Info.plist'
       setupsigning: true
-      fastlanelane: deploy environment:"${{ needs.determineenvironment.outputs.environment }}" versionname:"${{ needs.vars.outputs.version }}" releasenotes:"${{ inputs.releasenotes }}"
+      fastlanelane: deploy environment:"${{ needs.determineenvironment.outputs.environment }}" versionname:"${{ needs.vars.outputs.version }}" releasenotes:"${{ inputs.releasenotes }}" ${{ inputs.buildnumber && format('buildnumber:"{0}"', inputs.buildnumber) || '' }}
     secrets: inherit
   deployfirebase:
     name: Deploy Firebase Project
