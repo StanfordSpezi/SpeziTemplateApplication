@@ -49,9 +49,9 @@ struct Contacts: View {
             ]
         )
     ]
-
+    
     @Environment(Account.self) private var account: Account?
-
+    
     @Binding var presentingAccount: Bool
     
     

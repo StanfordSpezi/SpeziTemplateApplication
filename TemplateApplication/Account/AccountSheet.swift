@@ -13,7 +13,7 @@ import SwiftUI
 
 struct AccountSheet: View {
     private let dismissAfterSignIn: Bool
-
+    
     @Environment(\.dismiss) var dismiss
     
     @Environment(Account.self) private var account
@@ -53,7 +53,7 @@ struct AccountSheet: View {
             }
         }
     }
-
+    
     @ToolbarContentBuilder private var closeButton: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
             Button("Close") {
@@ -61,7 +61,8 @@ struct AccountSheet: View {
             }
         }
     }
-
+    
+    
     init(dismissAfterSignIn: Bool = true) {
         self.dismissAfterSignIn = dismissAfterSignIn
     }

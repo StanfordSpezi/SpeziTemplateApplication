@@ -6,6 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
+
 /// A collection of feature flags for the Template Application.
 enum FeatureFlags {
     /// Skips the onboarding flow to enable easier development of features in the application and to allow UI tests to skip the onboarding flow.

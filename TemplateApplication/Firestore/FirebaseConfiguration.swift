@@ -17,56 +17,57 @@ final class FirebaseConfiguration: Module, DefaultInitializable, @unchecked Send
     enum ConfigurationError: Error {
         case userNotAuthenticatedYet
     }
-
+    
     static var userCollection: CollectionReference {
         Firestore.firestore().collection("users")
     }
-
-
+    
+    
+    @Application(\.logger) private var logger
+    
+    @Dependency(Account.self) private var account: Account? // optional, as Firebase might be disabled
+    @Dependency(FirebaseAccountService.self) private var accountService: FirebaseAccountService?
+    
+    
     @MainActor var userDocumentReference: DocumentReference {
         get throws {
             guard let details = account?.details else {
                 throw ConfigurationError.userNotAuthenticatedYet
             }
-
+            
             return userDocumentReference(for: details.accountId)
         }
     }
-
+    
     @MainActor var userBucketReference: StorageReference {
         get throws {
             guard let details = account?.details else {
                 throw ConfigurationError.userNotAuthenticatedYet
             }
-
+            
             return Storage.storage().reference().child("users/\(details.accountId)")
         }
     }
-
-    @Application(\.logger) private var logger
-
-    @Dependency(Account.self) private var account: Account? // optional, as Firebase might be disabled
-    @Dependency(FirebaseAccountService.self) private var accountService: FirebaseAccountService?
-
+    
+    
     init() {}
-
+    
+    
     func userDocumentReference(for accountId: String) -> DocumentReference {
         Self.userCollection.document(accountId)
     }
-
-
+    
     func configure() {
         Task {
             await setupTestAccount()
         }
     }
-
-
+    
     private func setupTestAccount() async {
         guard let accountService, FeatureFlags.setupTestAccount else {
             return
         }
-
+        
         do {
             try await accountService.login(userId: "lelandstanford@stanford.edu", password: "StanfordRocks!")
             return
@@ -77,14 +78,14 @@ final class FirebaseConfiguration: Module, DefaultInitializable, @unchecked Send
                 return
             }
         }
-
+        
         // account doesn't exist yet, signup
         var details = AccountDetails()
         details.userId = "lelandstanford@stanford.edu"
         details.password = "StanfordRocks!"
         details.name = PersonNameComponents(givenName: "Leland", familyName: "Stanford")
         details.genderIdentity = .male
-
+        
         do {
             try await accountService.signUp(with: details)
         } catch {

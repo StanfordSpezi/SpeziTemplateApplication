@@ -16,14 +16,14 @@ import SwiftUI
 struct ScheduleView: View {
     @Environment(Account.self) private var account: Account?
     @Environment(TemplateApplicationScheduler.self) private var scheduler: TemplateApplicationScheduler
-
+    
     @State private var presentedEvent: Event?
     @Binding private var presentingAccount: Bool
-
+    
     
     var body: some View {
         @Bindable var scheduler = scheduler
-
+        
         NavigationStack {
             EventScheduleList { event in
                 InstructionsTile(event) {
@@ -55,7 +55,7 @@ struct ScheduleView: View {
 #if DEBUG
 #Preview {
     @Previewable @State var presentingAccount = false
-
+    
     ScheduleView(presentingAccount: $presentingAccount)
         .previewWith(standard: TemplateApplicationStandard()) {
             TemplateApplicationScheduler()

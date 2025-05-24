@@ -17,12 +17,12 @@ import SwiftUI
 /// Displays an multi-step onboarding flow for the Spezi Template Application.
 struct OnboardingFlow: View {
     @Environment(HealthKit.self) private var healthKit
-
+    
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.notificationSettings) private var notificationSettings
-
+    
     @AppStorage(StorageKeys.onboardingFlowComplete) private var completedOnboardingFlow = false
-
+    
     @State private var localNotificationAuthorization = false
     
     
@@ -34,7 +34,6 @@ struct OnboardingFlow: View {
         return healthKit.isFullyAuthorized
     }
     
-    
     var body: some View {
         OnboardingStack(onboardingFlowComplete: $completedOnboardingFlow) {
             Welcome()
@@ -45,7 +44,7 @@ struct OnboardingFlow: View {
             }
             
             #if !(targetEnvironment(simulator) && (arch(i386) || arch(x86_64)))
-                Consent()
+            Consent()
             #endif
             
             if HKHealthStore.isHealthDataAvailable() && !healthKitAuthorization {
@@ -61,7 +60,7 @@ struct OnboardingFlow: View {
                 guard case .active = scenePhase else {
                     return
                 }
-
+                
                 Task {
                     localNotificationAuthorization = await notificationSettings().authorizationStatus == .authorized
                 }

@@ -14,13 +14,13 @@ import SwiftUI
 
 struct EventView: View {
     private let event: Event
-
+    
     @Environment(TemplateApplicationStandard.self) private var standard
     @Environment(\.dismiss) private var dismiss
     
     @State private var viewState: ViewState = .idle
     
-
+    
     var body: some View {
         if let questionnaire = event.task.questionnaire {
             QuestionnaireView(questionnaire: questionnaire) { result in
@@ -28,7 +28,7 @@ struct EventView: View {
                     dismiss()
                     return
                 }
-
+                
                 do {
                     _ = try event.complete()
                     await standard.add(response: response, for: questionnaire)
@@ -59,7 +59,8 @@ struct EventView: View {
             }
         }
     }
-
+    
+    
     init(_ event: Event) {
         self.event = event
     }

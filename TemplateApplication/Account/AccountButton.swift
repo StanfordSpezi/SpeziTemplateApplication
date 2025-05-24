@@ -11,15 +11,15 @@ import SwiftUI
 
 struct AccountButton: View {
     @Binding private var isPresented: Bool
-
-
+    
+    
     var body: some View {
         Button("Your Account", systemImage: "person.crop.circle") {
             isPresented = true
         }
     }
-
-
+    
+    
     init(isPresented: Binding<Bool>) {
         self._isPresented = isPresented
     }

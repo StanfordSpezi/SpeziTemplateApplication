@@ -27,9 +27,10 @@ actor TemplateApplicationStandard: Standard,
                                    ConsentConstraint,
                                    AccountNotifyConstraint {
     @Application(\.logger) private var logger
-
+    
     @Dependency(FirebaseConfiguration.self) private var configuration
-
+    
+    
     init() {}
     
     
@@ -63,7 +64,7 @@ actor TemplateApplicationStandard: Standard,
             }
         }
     }
-
+    
     // periphery:ignore:parameters isolation
     func add(
         response: ModelsR4.QuestionnaireResponse,
@@ -94,13 +95,12 @@ actor TemplateApplicationStandard: Standard,
         }
     }
     
-    
     private func healthKitDocument(for sampleType: SampleType<some Any>, sampleId uuid: UUID) async throws -> FirebaseFirestore.DocumentReference {
         try await configuration.userDocumentReference
             .collection("Observations_\(sampleType.displayTitle.replacingOccurrences(of: "\\s", with: "", options: .regularExpression))")
             .document(uuid.uuidString)
     }
-
+    
     func respondToEvent(_ event: AccountNotifications.Event) async {
         if case let .deletingAccount(accountId) = event {
             do {
@@ -119,7 +119,7 @@ actor TemplateApplicationStandard: Standard,
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd_HHmmss"
         let dateString = formatter.string(from: Date())
-
+        
         guard !FeatureFlags.disableFirebase else {
             guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
                 await logger.error("Could not create path for writing consent form to user document directory.")
@@ -137,7 +137,7 @@ actor TemplateApplicationStandard: Standard,
                 await logger.error("Could not store consent form.")
                 return
             }
-
+            
             let metadata = StorageMetadata()
             metadata.contentType = "application/pdf"
             _ = try await configuration.userBucketReference

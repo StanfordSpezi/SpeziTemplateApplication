@@ -23,7 +23,6 @@ struct Consent: View {
         return data
     }
     
-    
     var body: some View {
         OnboardingConsentView(
             markdown: {
