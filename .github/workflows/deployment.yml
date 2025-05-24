@@ -146,7 +146,7 @@ jobs:
     permissions:
       contents: read
     with:
-      path: './firebase'
+      path: 'firebase'
       arguments: '--debug'
       environment: ${{ needs.determineenvironment.outputs.environment }}
     secrets:
