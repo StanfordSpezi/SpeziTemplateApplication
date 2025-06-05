@@ -122,6 +122,7 @@ platform :ios do
     build_app(
       scheme: APP_CONFIG[:scheme],
       derived_data_path: ".derivedData",
+      skip_profile_detection: true,
       xcargs: [
         "-skipPackagePluginValidation",
         "-skipMacroValidation"
