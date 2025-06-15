@@ -17,10 +17,12 @@ import class ModelsR4.QuestionnaireResponse
 @Observable
 final class TemplateApplicationScheduler: Module, DefaultInitializable, EnvironmentAccessible {
     @Dependency(Scheduler.self) @ObservationIgnored private var scheduler
-
+    
     @MainActor var viewState: ViewState = .idle
-
+    
+    
     init() {}
+    
     
     /// Add or update the current list of task upon app startup.
     func configure() {
