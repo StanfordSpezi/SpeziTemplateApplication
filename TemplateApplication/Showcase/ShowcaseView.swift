@@ -12,6 +12,10 @@ import Spezi
 import SpeziAccount
 import SpeziHealthKit
 import SpeziNotifications
+// import SpeziLLM
+// import SpeziLLMOpenAI
+import SpeziBluetooth
+import SpeziDevices
 import SpeziOnboarding
 import SpeziQuestionnaire
 import SpeziScheduler
@@ -62,7 +66,35 @@ struct ShowcaseView: View {
             notificationsSection
             questionnaireSection
             schedulerSection
+            llmSection
+            bluetoothSection
+            devicesSection
             onboardingSection
+        }
+    }
+
+    @ViewBuilder
+    private var llmSection: some View {
+        Section("LLM") {
+            Text("SpeziLLM added. Configure OpenAI token to demo chat.")
+                .foregroundStyle(.secondary)
+        }
+    }
+
+    @ViewBuilder
+    private var bluetoothSection: some View {
+        Section("Bluetooth") {
+            Text("SpeziBluetooth added. Enable Bluetooth in Settings to use.")
+                .foregroundStyle(.secondary)
+            Button("Open System Settings") { openAppSettings() }
+        }
+    }
+
+    @ViewBuilder
+    private var devicesSection: some View {
+        Section("Devices") {
+            Text("SpeziDevices added. Integrate specific device plugins as needed.")
+                .foregroundStyle(.secondary)
         }
     }
 
