@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Account" : {
+
+    },
+    "Account is disabled (Firebase is turned off). Enable Firebase to use account features." : {
+
+    },
     "ACCOUNT_SETUP_DESCRIPTION" : {
       "localizations" : {
         "de" : {
@@ -88,6 +94,9 @@
           }
         }
       }
+    },
+    "Authorized" : {
+
     },
     "Close" : {
       "localizations" : {
@@ -177,6 +186,9 @@
         }
       }
     },
+    "Firebase" : {
+
+    },
     "Grant Access" : {
       "localizations" : {
         "de" : {
@@ -198,6 +210,12 @@
           }
         }
       }
+    },
+    "Health Permissions" : {
+
+    },
+    "HealthKit" : {
+
     },
     "HealthKit Access" : {
       "localizations" : {
@@ -507,6 +525,12 @@
         }
       }
     },
+    "Manage Account" : {
+
+    },
+    "Name" : {
+
+    },
     "Next" : {
       "localizations" : {
         "de" : {
@@ -528,6 +552,9 @@
           }
         }
       }
+    },
+    "Not signed in" : {
+
     },
     "NOTIFICATION_PERMISSIONS_DESCRIPTION" : {
       "localizations" : {
@@ -595,6 +622,12 @@
         }
       }
     },
+    "Open Notification Settings" : {
+
+    },
+    "Open Schedule" : {
+
+    },
     "Please fill out the Social Support Questionnaire every day." : {
       "localizations" : {
         "de" : {
@@ -617,6 +650,18 @@
         }
       }
     },
+    "Present Social Support Questionnaire" : {
+
+    },
+    "Questionnaire" : {
+
+    },
+    "Request Permissions" : {
+
+    },
+    "Run Onboarding Again" : {
+
+    },
     "Schedule" : {
       "localizations" : {
         "de" : {
@@ -638,6 +683,12 @@
           }
         }
       }
+    },
+    "Scheduler" : {
+
+    },
+    "Settings" : {
+
     },
     "Social Support Questionnaire" : {
       "localizations" : {
@@ -837,6 +888,12 @@
         }
       }
     },
+    "Upload Sample to Storage" : {
+
+    },
+    "User ID" : {
+
+    },
     "WELCOME_AREA1_DESCRIPTION" : {
       "localizations" : {
         "de" : {
@@ -924,6 +981,9 @@
           }
         }
       }
+    },
+    "Write Sample Firestore Document" : {
+
     },
     "Your Account" : {
       "localizations" : {
