@@ -49,7 +49,6 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
             
             TemplateApplicationScheduler()
             Scheduler()
-            OnboardingDataSource()
             
             Notifications()
         }

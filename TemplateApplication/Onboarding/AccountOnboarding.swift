@@ -12,35 +12,25 @@ import SwiftUI
 
 
 struct AccountOnboarding: View {
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
-    
-    
     var body: some View {
-        AccountSetup { _ in
-            Task {
-                // Placing the nextStep() call inside this task will ensure that the sheet dismiss animation is
-                // played till the end before we navigate to the next step.
-                onboardingNavigationPath.nextStep()
+        OnboardingView(
+            header: {
+                AccountSetupHeader()
+            },
+            content: {
+                AccountSetup { _ in }
+            },
+            footer: {
+                OnboardingActionsView("Done", action: {})
             }
-        } header: {
-            AccountSetupHeader()
-        } continue: {
-            OnboardingActionsView(
-                "Next",
-                action: {
-                    onboardingNavigationPath.nextStep()
-                }
-            )
-        }
+        )
     }
 }
 
 
 #if DEBUG
 #Preview("Account Onboarding SignIn") {
-    OnboardingStack {
-        AccountOnboarding()
-    }
+    AccountOnboarding()
         .previewWith {
             AccountConfiguration(service: InMemoryAccountService())
         }
@@ -51,9 +41,7 @@ struct AccountOnboarding: View {
     details.userId = "lelandstanford@stanford.edu"
     details.name = PersonNameComponents(givenName: "Leland", familyName: "Stanford")
     
-    return OnboardingStack {
-        AccountOnboarding()
-    }
+    return AccountOnboarding()
         .previewWith {
             AccountConfiguration(service: InMemoryAccountService(), activeDetails: details)
         }

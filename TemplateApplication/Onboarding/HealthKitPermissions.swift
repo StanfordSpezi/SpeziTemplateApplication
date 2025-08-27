@@ -13,20 +13,21 @@ import SwiftUI
 
 struct HealthKitPermissions: View {
     @Environment(HealthKit.self) private var healthKit
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
+    // OnboardingNavigationPath removed in SpeziOnboarding 2.x
     
     @State private var healthKitProcessing = false
     
     
     var body: some View {
         OnboardingView(
-            contentView: {
+            header: {
+                OnboardingTitleView(
+                    title: "HealthKit Access",
+                    subtitle: "HEALTHKIT_PERMISSIONS_SUBTITLE"
+                )
+            },
+            content: {
                 VStack {
-                    OnboardingTitleView(
-                        title: "HealthKit Access",
-                        subtitle: "HEALTHKIT_PERMISSIONS_SUBTITLE"
-                    )
-                    Spacer()
                     Image(systemName: "heart.text.square.fill")
                         .font(.system(size: 150))
                         .foregroundColor(.accentColor)
@@ -36,7 +37,7 @@ struct HealthKitPermissions: View {
                         .padding(.vertical, 16)
                     Spacer()
                 }
-            }, actionView: {
+            }, footer: {
                 OnboardingActionsView(
                     "Grant Access",
                     action: {
@@ -52,8 +53,6 @@ struct HealthKitPermissions: View {
                             print("Could not request HealthKit permissions.")
                         }
                         healthKitProcessing = false
-                        
-                        onboardingNavigationPath.nextStep()
                     }
                 )
             }
@@ -67,9 +66,7 @@ struct HealthKitPermissions: View {
 
 #if DEBUG
 #Preview {
-    OnboardingStack {
-        HealthKitPermissions()
-    }
+    HealthKitPermissions()
         .previewWith(standard: TemplateApplicationStandard()) {
             HealthKit()
         }

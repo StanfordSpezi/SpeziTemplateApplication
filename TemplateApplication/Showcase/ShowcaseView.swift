@@ -12,8 +12,8 @@ import Spezi
 import SpeziAccount
 import SpeziHealthKit
 import SpeziNotifications
-// import SpeziLLM
-// import SpeziLLMOpenAI
+import SpeziLLM
+import SpeziLLMOpenAI
 import SpeziBluetooth
 import SpeziDevices
 import SpeziOnboarding
@@ -66,7 +66,7 @@ struct ShowcaseView: View {
             notificationsSection
             questionnaireSection
             schedulerSection
-            llmSection
+            // Chat moved to dedicated tab
             bluetoothSection
             devicesSection
             onboardingSection
@@ -76,8 +76,7 @@ struct ShowcaseView: View {
     @ViewBuilder
     private var llmSection: some View {
         Section("LLM") {
-            Text("SpeziLLM added. Configure OpenAI token to demo chat.")
-                .foregroundStyle(.secondary)
+            NavigationLink("OpenAI Chat Demo") { LLMChatDemoView() }
         }
     }
 

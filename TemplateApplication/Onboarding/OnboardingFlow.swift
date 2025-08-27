@@ -35,36 +35,38 @@ struct OnboardingFlow: View {
     }
     
     var body: some View {
-        OnboardingStack(onboardingFlowComplete: $completedOnboardingFlow) {
-            Welcome()
-            InterestingModules()
-            
-            if !FeatureFlags.disableFirebase {
-                AccountOnboarding()
+        OnboardingView(
+            header: {
+                OnboardingTitleView(
+                    title: "Spezi Template Application",
+                    subtitle: "WELCOME_SUBTITLE"
+                )
+            },
+            content: {
+                VStack(spacing: 16) {
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 80))
+                        .foregroundColor(.accentColor)
+                        .accessibilityHidden(true)
+                    Text("WELCOME_AREA1_DESCRIPTION")
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                }
+            },
+            footer: {
+                OnboardingActionsView(
+                    "Continue",
+                    action: { completedOnboardingFlow = true }
+                )
             }
-            
-            #if !(targetEnvironment(simulator) && (arch(i386) || arch(x86_64)))
-            Consent()
-            #endif
-            
-            if HKHealthStore.isHealthDataAvailable() && !healthKitAuthorization {
-                HealthKitPermissions()
-            }
-            
-            if !localNotificationAuthorization {
-                NotificationPermissions()
+        )
+        .interactiveDismissDisabled(!completedOnboardingFlow)
+        .onChange(of: scenePhase, initial: true) {
+            guard case .active = scenePhase else { return }
+            Task {
+                localNotificationAuthorization = await notificationSettings().authorizationStatus == .authorized
             }
         }
-            .interactiveDismissDisabled(!completedOnboardingFlow)
-            .onChange(of: scenePhase, initial: true) {
-                guard case .active = scenePhase else {
-                    return
-                }
-                
-                Task {
-                    localNotificationAuthorization = await notificationSettings().authorizationStatus == .authorized
-                }
-            }
     }
 }
 
@@ -73,10 +75,7 @@ struct OnboardingFlow: View {
 #Preview {
     OnboardingFlow()
         .previewWith(standard: TemplateApplicationStandard()) {
-            OnboardingDataSource()
             HealthKit()
-            AccountConfiguration(service: InMemoryAccountService())
-            TemplateApplicationScheduler()
         }
 }
 #endif

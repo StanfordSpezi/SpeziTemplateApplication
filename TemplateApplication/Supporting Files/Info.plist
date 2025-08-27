@@ -71,5 +71,11 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>CFWorkersAI.GatewayURL</key>
+	<string>https://api.cloudflare.com/client/v4/accounts/115e03820979674efcc9baa1d9fcd081/autorag/rags/s2y-ai-omer/ai-search</string>
+	<key>CFWorkersAI.ModelPath</key>
+	<string></string>
+	<key>CFWorkersAI.BearerToken</key>
+	<string></string>
 </dict>
 </plist>

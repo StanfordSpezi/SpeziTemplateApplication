@@ -12,7 +12,7 @@ import SwiftUI
 
 /// - Note: The `OnboardingConsentView` exports the signed consent form as PDF to the Spezi `Standard`, necessitating the conformance of the `Standard` to the `OnboardingConstraint`.
 struct Consent: View {
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
+    // OnboardingNavigationPath removed in SpeziOnboarding 2.x
     
     
     private var consentDocument: Data {
@@ -24,12 +24,18 @@ struct Consent: View {
     }
     
     var body: some View {
-        OnboardingConsentView(
-            markdown: {
-                consentDocument
+        OnboardingView(
+            header: {
+                OnboardingTitleView(title: "Consent", subtitle: "")
             },
-            action: {
-                onboardingNavigationPath.nextStep()
+            content: {
+                ScrollView {
+                    Text(String(decoding: consentDocument, as: UTF8.self))
+                        .padding()
+                }
+            },
+            footer: {
+                OnboardingActionsView("Continue", action: {})
             }
         )
     }
@@ -38,11 +44,8 @@ struct Consent: View {
 
 #if DEBUG
 #Preview {
-    OnboardingStack {
-        Consent()
-    }
+    Consent()
         .previewWith(standard: TemplateApplicationStandard()) {
-            OnboardingDataSource()
         }
 }
 #endif

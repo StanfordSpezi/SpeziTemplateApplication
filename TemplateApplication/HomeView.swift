@@ -12,6 +12,7 @@ import SwiftUI
 
 struct HomeView: View {
     enum Tabs: String {
+        case chat
         case schedule
         case contact
         case showcase
@@ -26,6 +27,10 @@ struct HomeView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
+            Tab("Chat", systemImage: "message", value: .chat) {
+                LLMChatDemoView()
+            }
+                .customizationID("home.chat")
             Tab("Schedule", systemImage: "list.clipboard", value: .schedule) {
                 ScheduleView(presentingAccount: $presentingAccount)
             }

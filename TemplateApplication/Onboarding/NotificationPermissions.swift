@@ -12,7 +12,7 @@ import SwiftUI
 
 
 struct NotificationPermissions: View {
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
+    // OnboardingNavigationPath removed in 2.x
     
     @Environment(\.requestNotificationAuthorization) private var requestNotificationAuthorization
     
@@ -21,13 +21,14 @@ struct NotificationPermissions: View {
     
     var body: some View {
         OnboardingView(
-            contentView: {
+            header: {
+                OnboardingTitleView(
+                    title: "Notifications",
+                    subtitle: "Spezi Scheduler Notifications."
+                )
+            },
+            content: {
                 VStack {
-                    OnboardingTitleView(
-                        title: "Notifications",
-                        subtitle: "Spezi Scheduler Notifications."
-                    )
-                    Spacer()
                     Image(systemName: "bell.square.fill")
                         .font(.system(size: 150))
                         .foregroundColor(.accentColor)
@@ -37,7 +38,8 @@ struct NotificationPermissions: View {
                         .padding(.vertical, 16)
                     Spacer()
                 }
-            }, actionView: {
+            },
+            footer: {
                 OnboardingActionsView(
                     "Allow Notifications",
                     action: {
@@ -53,8 +55,6 @@ struct NotificationPermissions: View {
                             print("Could not request notification permissions.")
                         }
                         notificationProcessing = false
-                        
-                        onboardingNavigationPath.nextStep()
                     }
                 )
             }
@@ -68,9 +68,7 @@ struct NotificationPermissions: View {
 
 #if DEBUG
 #Preview {
-    OnboardingStack {
-        NotificationPermissions()
-    }
+    NotificationPermissions()
         .previewWith {
             TemplateApplicationScheduler()
         }

@@ -11,34 +11,30 @@ import SwiftUI
 
 
 struct InterestingModules: View {
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
-    
-    
     var body: some View {
-        SequentialOnboardingView(
-            title: "Interesting Modules",
-            subtitle: "INTERESTING_MODULES_SUBTITLE",
-            content: [
-                SequentialOnboardingView.Content(
-                    title: "Onboarding",
-                    description: "INTERESTING_MODULES_AREA1_DESCRIPTION"
-                ),
-                SequentialOnboardingView.Content(
-                    title: "HL7 FHIR",
-                    description: "INTERESTING_MODULES_AREA2_DESCRIPTION"
-                ),
-                SequentialOnboardingView.Content(
-                    title: "Contact",
-                    description: "INTERESTING_MODULES_AREA3_DESCRIPTION"
-                ),
-                SequentialOnboardingView.Content(
-                    title: "HealthKit Data Source",
-                    description: "INTERESTING_MODULES_AREA4_DESCRIPTION"
+        OnboardingView(
+            header: {
+                OnboardingTitleView(
+                    title: "Interesting Modules",
+                    subtitle: "INTERESTING_MODULES_SUBTITLE"
                 )
-            ],
-            actionText: "Next",
-            action: {
-                onboardingNavigationPath.nextStep()
+            },
+            content: {
+                SequentialOnboardingView(
+                    title: "Interesting Modules",
+                    subtitle: "INTERESTING_MODULES_SUBTITLE",
+                    steps: [
+                        .init(title: "Onboarding", description: "INTERESTING_MODULES_AREA1_DESCRIPTION"),
+                        .init(title: "HL7 FHIR", description: "INTERESTING_MODULES_AREA2_DESCRIPTION"),
+                        .init(title: "Contact", description: "INTERESTING_MODULES_AREA3_DESCRIPTION"),
+                        .init(title: "HealthKit Data Source", description: "INTERESTING_MODULES_AREA4_DESCRIPTION")
+                    ],
+                    actionText: "Next",
+                    action: {}
+                )
+            },
+            footer: {
+                OnboardingActionsView("Next", action: {})
             }
         )
     }
@@ -47,8 +43,6 @@ struct InterestingModules: View {
 
 #if DEBUG
 #Preview {
-    OnboardingStack {
-        InterestingModules()
-    }
+    InterestingModules()
 }
 #endif

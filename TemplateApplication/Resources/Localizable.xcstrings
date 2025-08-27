@@ -1,6 +1,15 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    "🤖" : {
+
+    },
+    "🧑" : {
+
+    },
     "Account" : {
 
     },
@@ -98,6 +107,12 @@
     "Authorized" : {
 
     },
+    "Bluetooth" : {
+
+    },
+    "Chat" : {
+
+    },
     "Close" : {
       "localizations" : {
         "de" : {
@@ -119,6 +134,9 @@
           }
         }
       }
+    },
+    "Consent" : {
+
     },
     "CONSENT_LOADING_ERROR" : {
       "localizations" : {
@@ -185,6 +203,15 @@
           }
         }
       }
+    },
+    "Continue" : {
+
+    },
+    "Devices" : {
+
+    },
+    "Done" : {
+
     },
     "Firebase" : {
 
@@ -460,6 +487,7 @@
       }
     },
     "Learn More" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -524,6 +552,9 @@
           }
         }
       }
+    },
+    "LLM" : {
+
     },
     "Manage Account" : {
 
@@ -628,6 +659,12 @@
     "Open Schedule" : {
 
     },
+    "Open System Settings" : {
+
+    },
+    "OpenAI Chat Demo" : {
+
+    },
     "Please fill out the Social Support Questionnaire every day." : {
       "localizations" : {
         "de" : {
@@ -685,6 +722,9 @@
       }
     },
     "Scheduler" : {
+
+    },
+    "Send message" : {
 
     },
     "Settings" : {
@@ -778,6 +818,12 @@
         }
       }
     },
+    "SpeziBluetooth added. Enable Bluetooth in Settings to use." : {
+
+    },
+    "SpeziDevices added. Integrate specific device plugins as needed." : {
+
+    },
     "Start Questionnaire" : {
       "localizations" : {
         "de" : {
@@ -865,6 +911,9 @@
           }
         }
       }
+    },
+    "Type a message..." : {
+
     },
     "Unsupported Event" : {
       "localizations" : {

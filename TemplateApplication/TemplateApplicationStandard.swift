@@ -24,7 +24,6 @@ import SwiftUI
 actor TemplateApplicationStandard: Standard,
                                    EnvironmentAccessible,
                                    HealthKitConstraint,
-                                   ConsentConstraint,
                                    AccountNotifyConstraint {
     @Application(\.logger) private var logger
     
@@ -111,40 +110,5 @@ actor TemplateApplicationStandard: Standard,
         }
     }
     
-    /// Stores the given consent form in the user's document directory with a unique timestamped filename.
-    ///
-    /// - Parameter consent: The consent form's data to be stored as a `PDFDocument`.
-    @MainActor
-    func store(consent: ConsentDocumentExport) async throws {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd_HHmmss"
-        let dateString = formatter.string(from: Date())
-        
-        guard !FeatureFlags.disableFirebase else {
-            guard let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-                await logger.error("Could not create path for writing consent form to user document directory.")
-                return
-            }
-            
-            let filePath = basePath.appending(path: "consentForm_\(dateString).pdf")
-            await consent.pdf.write(to: filePath)
-            
-            return
-        }
-        
-        do {
-            guard let consentData = await consent.pdf.dataRepresentation() else {
-                await logger.error("Could not store consent form.")
-                return
-            }
-            
-            let metadata = StorageMetadata()
-            metadata.contentType = "application/pdf"
-            _ = try await configuration.userBucketReference
-                .child("consent/\(dateString).pdf")
-                .putDataAsync(consentData, metadata: metadata) { @Sendable _ in }
-        } catch {
-            await logger.error("Could not store consent form: \(error)")
-        }
-    }
+    // Consent export handling removed for SpeziOnboarding 2.x migration.
 }
