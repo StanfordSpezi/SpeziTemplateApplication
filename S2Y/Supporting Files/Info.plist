@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleAllowMixedLocalizations</key>
+	<true/>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>This message should never appear. Please adjust this when you start using camera information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>S2Y uses the step count to demonstrate health data integration.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>S2Y uses the step count to demonstrate health data integration.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This message should never appear. Please adjust this when you start using location information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This message should never appear. Please adjust this when you start using location information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This message should never appear. Please adjust this when you start using microphone information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>This message should never appear. Please adjust this when you start using motion information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>This message should never appear. Please adjust this when you start using speech recognition. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Bluetooth is used to connect to nearby health devices.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Bluetooth is used to connect to nearby health devices.</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict/>
+	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string></string>
+	</dict>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	</array>
+	<key>CFWorkersAI.GatewayURL</key>
+	<string>https://api.cloudflare.com/client/v4/accounts/115e03820979674efcc9baa1d9fcd081/autorag/rags/s2y-ai-omer/ai-search</string>
+	<key>CFWorkersAI.ModelPath</key>
+	<string></string>
+	<key>CFWorkersAI.BearerToken</key>
+	<string></string>
+</dict>
+</plist>
