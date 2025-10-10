@@ -111,28 +111,6 @@
         }
       }
     },
-    "CONSENT_LOADING_ERROR" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bitte fügen Sie ein Markdown-basiertes Dokument namens \"ConsentDocument\" in Ihrem Modul-Bundle ein."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Please include a markdown based document named \"ConsentDocument\" in your module Bundle."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vänligen inkludera ett markdown-baserat dokument med namnet \"ConsentDocument\" i din modulpaket."
-          }
-        }
-      }
-    },
     "Contact" : {
       "localizations" : {
         "de" : {

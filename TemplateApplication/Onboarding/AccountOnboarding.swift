@@ -8,11 +8,12 @@
 
 @_spi(TestingSupport) import SpeziAccount
 import SpeziOnboarding
+import SpeziViews
 import SwiftUI
 
 
 struct AccountOnboarding: View {
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
+    @Environment(ManagedNavigationStack.Path.self) private var managedNavigationPath
     
     
     var body: some View {
@@ -20,7 +21,7 @@ struct AccountOnboarding: View {
             Task {
                 // Placing the nextStep() call inside this task will ensure that the sheet dismiss animation is
                 // played till the end before we navigate to the next step.
-                onboardingNavigationPath.nextStep()
+                managedNavigationPath.nextStep()
             }
         } header: {
             AccountSetupHeader()
@@ -28,22 +29,24 @@ struct AccountOnboarding: View {
             OnboardingActionsView(
                 "Next",
                 action: {
-                    onboardingNavigationPath.nextStep()
+                    managedNavigationPath.nextStep()
                 }
             )
         }
+        .navigationTitle(Text(verbatim: ""))
+        .toolbar(.visible)
     }
 }
 
 
 #if DEBUG
 #Preview("Account Onboarding SignIn") {
-    OnboardingStack {
+    ManagedNavigationStack {
         AccountOnboarding()
     }
-        .previewWith {
-            AccountConfiguration(service: InMemoryAccountService())
-        }
+    .previewWith {
+        AccountConfiguration(service: InMemoryAccountService())
+    }
 }
 
 #Preview("Account Onboarding") {
@@ -51,11 +54,11 @@ struct AccountOnboarding: View {
     details.userId = "lelandstanford@stanford.edu"
     details.name = PersonNameComponents(givenName: "Leland", familyName: "Stanford")
     
-    return OnboardingStack {
+    return ManagedNavigationStack {
         AccountOnboarding()
     }
-        .previewWith {
-            AccountConfiguration(service: InMemoryAccountService(), activeDetails: details)
-        }
+    .previewWith {
+        AccountConfiguration(service: InMemoryAccountService(), activeDetails: details)
+    }
 }
 #endif

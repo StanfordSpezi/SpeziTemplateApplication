@@ -11,6 +11,7 @@ import SpeziFirebaseAccount
 import SpeziHealthKit
 import SpeziNotifications
 import SpeziOnboarding
+import SpeziViews
 import SwiftUI
 
 
@@ -35,7 +36,7 @@ struct OnboardingFlow: View {
     }
     
     var body: some View {
-        OnboardingStack(onboardingFlowComplete: $completedOnboardingFlow) {
+        ManagedNavigationStack(didComplete: $completedOnboardingFlow) {
             Welcome()
             InterestingModules()
             
@@ -43,9 +44,9 @@ struct OnboardingFlow: View {
                 AccountOnboarding()
             }
             
-            #if !(targetEnvironment(simulator) && (arch(i386) || arch(x86_64)))
+#if !(targetEnvironment(simulator) && (arch(i386) || arch(x86_64)))
             Consent()
-            #endif
+#endif
             
             if HKHealthStore.isHealthDataAvailable() && !healthKitAuthorization {
                 HealthKitPermissions()
@@ -55,16 +56,16 @@ struct OnboardingFlow: View {
                 NotificationPermissions()
             }
         }
-            .interactiveDismissDisabled(!completedOnboardingFlow)
-            .onChange(of: scenePhase, initial: true) {
-                guard case .active = scenePhase else {
-                    return
-                }
-                
-                Task {
-                    localNotificationAuthorization = await notificationSettings().authorizationStatus == .authorized
-                }
+        .interactiveDismissDisabled(!completedOnboardingFlow)
+        .onChange(of: scenePhase, initial: true) {
+            guard case .active = scenePhase else {
+                return
             }
+            
+            Task {
+                localNotificationAuthorization = await notificationSettings().authorizationStatus == .authorized
+            }
+        }
     }
 }
 
@@ -73,7 +74,6 @@ struct OnboardingFlow: View {
 #Preview {
     OnboardingFlow()
         .previewWith(standard: TemplateApplicationStandard()) {
-            OnboardingDataSource()
             HealthKit()
             AccountConfiguration(service: InMemoryAccountService())
             TemplateApplicationScheduler()

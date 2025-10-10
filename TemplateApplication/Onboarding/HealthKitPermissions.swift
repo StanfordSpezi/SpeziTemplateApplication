@@ -8,19 +8,20 @@
 
 import SpeziHealthKit
 import SpeziOnboarding
+import SpeziViews
 import SwiftUI
 
 
 struct HealthKitPermissions: View {
     @Environment(HealthKit.self) private var healthKit
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
+    @Environment(ManagedNavigationStack.Path.self) private var managedNavigationPath
     
     @State private var healthKitProcessing = false
     
     
     var body: some View {
         OnboardingView(
-            contentView: {
+            content: {
                 VStack {
                     OnboardingTitleView(
                         title: "HealthKit Access",
@@ -36,7 +37,8 @@ struct HealthKitPermissions: View {
                         .padding(.vertical, 16)
                     Spacer()
                 }
-            }, actionView: {
+            },
+            footer: {
                 OnboardingActionsView(
                     "Grant Access",
                     action: {
@@ -53,25 +55,25 @@ struct HealthKitPermissions: View {
                         }
                         healthKitProcessing = false
                         
-                        onboardingNavigationPath.nextStep()
+                        managedNavigationPath.nextStep()
                     }
                 )
             }
         )
-            .navigationBarBackButtonHidden(healthKitProcessing)
-            // Small fix as otherwise "Login" or "Sign up" is still shown in the nav bar
-            .navigationTitle(Text(verbatim: ""))
+        .navigationBarBackButtonHidden(healthKitProcessing)
+        .navigationTitle(Text(verbatim: ""))
+        .toolbar(.visible)
     }
 }
 
 
 #if DEBUG
 #Preview {
-    OnboardingStack {
+    ManagedNavigationStack {
         HealthKitPermissions()
     }
-        .previewWith(standard: TemplateApplicationStandard()) {
-            HealthKit()
-        }
+    .previewWith(standard: TemplateApplicationStandard()) {
+        HealthKit()
+    }
 }
 #endif

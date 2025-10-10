@@ -30,7 +30,7 @@ platform :ios do
       skip_build: true,
       derived_data_path: ".derivedData",
       code_coverage: true,
-      devices: ["iPhone 16 Plus"],
+      devices: ["iPhone 17"],
       disable_slide_to_type: false,
       concurrent_workers: 1,
       max_concurrent_simulators: 1,
@@ -60,7 +60,7 @@ platform :ios do
       test_without_building: true,
       derived_data_path: ".derivedData",
       devices: [
-        "iPhone 16 Plus",
+        "iPhone 17 Pro Max",
         "iPad Pro 13-inch (M4)"
       ],
       languages: [
@@ -74,8 +74,8 @@ platform :ios do
       skip_open_summary: true
     )
     
-    # Workaround for https://github.com/fastlane/fastlane/issues/21759 and 
-    Dir.glob("./screenshots/**/iPhone 16 Plus-*.png").each do |file|
+    # Workaround for https://github.com/fastlane/fastlane/issues/21759 
+    Dir.glob("./screenshots/**/iPhone 17 Pro Max-*.png").each do |file|
       sh("sips --resampleHeightWidth 2796 1290 '#{file}'")
     end
   end
