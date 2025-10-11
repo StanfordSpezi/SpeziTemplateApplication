@@ -126,10 +126,10 @@ extension XCUIApplication {
         XCTAssertTrue(staticTexts["Consent"].waitForExistence(timeout: 2))
 
         XCTAssertTrue(staticTexts["First Name"].exists)
-        try textFields["Enter your first name ..."].enter(value: "Leland")
+        try textFields["Enter your first name…"].enter(value: "Leland")
         
         XCTAssertTrue(staticTexts["Last Name"].exists)
-        try textFields["Enter your last name ..."].enter(value: "Stanford")
+        try textFields["Enter your last name…"].enter(value: "Stanford")
 
         XCTAssertTrue(scrollViews["Signature Field"].exists)
         scrollViews["Signature Field"].swipeRight()
@@ -144,7 +144,7 @@ extension XCUIApplication {
         XCTAssertTrue(buttons["Grant Access"].exists)
         buttons["Grant Access"].tap()
         
-        try handleHealthKitAuthorization()
+        handleHealthKitAuthorization()
     }
     
     private func navigateOnboardingFlowNotification() throws {

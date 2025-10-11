@@ -8,11 +8,12 @@
 
 import SpeziNotifications
 import SpeziOnboarding
+import SpeziViews
 import SwiftUI
 
 
 struct NotificationPermissions: View {
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
+    @Environment(ManagedNavigationStack.Path.self) private var managedNavigationPath
     
     @Environment(\.requestNotificationAuthorization) private var requestNotificationAuthorization
     
@@ -21,7 +22,7 @@ struct NotificationPermissions: View {
     
     var body: some View {
         OnboardingView(
-            contentView: {
+            content: {
                 VStack {
                     OnboardingTitleView(
                         title: "Notifications",
@@ -37,7 +38,8 @@ struct NotificationPermissions: View {
                         .padding(.vertical, 16)
                     Spacer()
                 }
-            }, actionView: {
+            },
+            footer: {
                 OnboardingActionsView(
                     "Allow Notifications",
                     action: {
@@ -47,32 +49,32 @@ struct NotificationPermissions: View {
                             if ProcessInfo.processInfo.isPreviewSimulator {
                                 try await _Concurrency.Task.sleep(for: .seconds(5))
                             } else {
-                                try await requestNotificationAuthorization(options: [.alert, .sound, .badge])
+                                _ = try await requestNotificationAuthorization(options: [.alert, .sound, .badge])
                             }
                         } catch {
                             print("Could not request notification permissions.")
                         }
                         notificationProcessing = false
                         
-                        onboardingNavigationPath.nextStep()
+                        managedNavigationPath.nextStep()
                     }
                 )
             }
         )
-            .navigationBarBackButtonHidden(notificationProcessing)
-            // Small fix as otherwise "Login" or "Sign up" is still shown in the nav bar
-            .navigationTitle(Text(verbatim: ""))
+        .navigationBarBackButtonHidden(notificationProcessing)
+        .navigationTitle(Text(verbatim: ""))
+        .toolbar(.visible)
     }
 }
 
 
 #if DEBUG
 #Preview {
-    OnboardingStack {
+    ManagedNavigationStack {
         NotificationPermissions()
     }
-        .previewWith {
-            TemplateApplicationScheduler()
-        }
+    .previewWith {
+        TemplateApplicationScheduler()
+    }
 }
 #endif

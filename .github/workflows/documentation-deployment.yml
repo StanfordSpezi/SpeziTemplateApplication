@@ -30,4 +30,3 @@ jobs:
     with:
       scheme: 'TemplateApplication'
       dryrun: ${{ github.ref_name != 'main' }}
-      xcodeversion: "16.1" # Temporary workaround for: https://github.com/actions/runner-images/issues/11335. Remove when resolved.
