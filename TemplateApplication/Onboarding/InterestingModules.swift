@@ -46,10 +46,8 @@ struct InterestingModules: View {
 }
 
 
-#if DEBUG
 #Preview {
     ManagedNavigationStack {
         InterestingModules()
     }
 }
-#endif

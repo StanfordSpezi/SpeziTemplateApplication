@@ -68,7 +68,6 @@ struct NotificationPermissions: View {
 }
 
 
-#if DEBUG
 #Preview {
     ManagedNavigationStack {
         NotificationPermissions()
@@ -77,4 +76,3 @@ struct NotificationPermissions: View {
         TemplateApplicationScheduler()
     }
 }
-#endif

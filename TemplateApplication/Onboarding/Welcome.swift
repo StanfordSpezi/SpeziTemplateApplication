@@ -55,10 +55,8 @@ struct Welcome: View {
 }
 
 
-#if DEBUG
 #Preview {
     ManagedNavigationStack {
         Welcome()
     }
 }
-#endif

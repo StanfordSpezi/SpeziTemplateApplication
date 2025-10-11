@@ -27,11 +27,11 @@ struct TemplateApplication: App {
                     EmptyView()
                 }
             }
-                .sheet(isPresented: !$completedOnboardingFlow) {
-                    OnboardingFlow()
-                }
-                .testingSetup()
-                .spezi(appDelegate)
+            .sheet(isPresented: !$completedOnboardingFlow) {
+                OnboardingFlow()
+            }
+            .testingSetup()
+            .spezi(appDelegate)
         }
     }
 }

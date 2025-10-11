@@ -30,16 +30,14 @@ struct AccountSetupHeader: View {
                 Text("ACCOUNT_SETUP_DESCRIPTION")
             }
         }
-            .multilineTextAlignment(.center)
+        .multilineTextAlignment(.center)
     }
 }
 
 
-#if DEBUG
 #Preview {
     AccountSetupHeader()
         .previewWith {
             AccountConfiguration(service: InMemoryAccountService())
         }
 }
-#endif

@@ -70,7 +70,6 @@ struct OnboardingFlow: View {
 }
 
 
-#if DEBUG
 #Preview {
     OnboardingFlow()
         .previewWith(standard: TemplateApplicationStandard()) {
@@ -79,4 +78,3 @@ struct OnboardingFlow: View {
             TemplateApplicationScheduler()
         }
 }
-#endif

@@ -74,8 +74,6 @@ struct Contacts: View {
 }
 
 
-#if DEBUG
 #Preview {
     Contacts(presentingAccount: .constant(false))
 }
-#endif

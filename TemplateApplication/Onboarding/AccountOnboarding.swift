@@ -39,7 +39,6 @@ struct AccountOnboarding: View {
 }
 
 
-#if DEBUG
 #Preview("Account Onboarding SignIn") {
     ManagedNavigationStack {
         AccountOnboarding()
@@ -61,4 +60,3 @@ struct AccountOnboarding: View {
         AccountConfiguration(service: InMemoryAccountService(), activeDetails: details)
     }
 }
-#endif

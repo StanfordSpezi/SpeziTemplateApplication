@@ -26,8 +26,6 @@ struct AccountButton: View {
 }
 
 
-#if DEBUG
 #Preview(traits: .sizeThatFitsLayout) {
     AccountButton(isPresented: .constant(false))
 }
-#endif
