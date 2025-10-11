@@ -53,11 +53,9 @@ struct Consent: View {
 }
 
 
-#if DEBUG
 #Preview {
     ManagedNavigationStack {
         Consent()
     }
     .previewWith(standard: TemplateApplicationStandard()) {}
 }
-#endif

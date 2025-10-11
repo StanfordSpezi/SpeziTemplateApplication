@@ -67,7 +67,6 @@ struct HealthKitPermissions: View {
 }
 
 
-#if DEBUG
 #Preview {
     ManagedNavigationStack {
         HealthKitPermissions()
@@ -76,4 +75,3 @@ struct HealthKitPermissions: View {
         HealthKit()
     }
 }
-#endif

@@ -37,13 +37,13 @@ struct EventView: View {
                     viewState = .error(AnyLocalizedError(error: error))
                 }
             }
-                .viewStateAlert(state: $viewState)
-                .onChange(of: viewState) { oldViewState, newViewState in
-                    guard case .error = oldViewState, newViewState == .idle else {
-                        return
-                    }
-                    dismiss()
+            .viewStateAlert(state: $viewState)
+            .onChange(of: viewState) { oldViewState, newViewState in
+                guard case .error = oldViewState, newViewState == .idle else {
+                    return
                 }
+                dismiss()
+            }
         } else {
             NavigationStack {
                 ContentUnavailableView(
@@ -51,11 +51,11 @@ struct EventView: View {
                     systemImage: "list.bullet.clipboard",
                     description: Text("This type of event is currently unsupported. Please contact the developer of this app.")
                 )
-                    .toolbar {
-                        Button("Close") {
-                            dismiss()
-                        }
+                .toolbar {
+                    Button("Close") {
+                        dismiss()
                     }
+                }
             }
         }
     }
