@@ -89,6 +89,9 @@
         }
       }
     },
+    "Chat" : {
+
+    },
     "Close" : {
       "localizations" : {
         "de" : {

@@ -15,6 +15,8 @@ import SpeziFirebaseAccountStorage
 import SpeziFirebaseStorage
 import SpeziFirestore
 import SpeziHealthKit
+import SpeziLLM
+import SpeziLLMOpenAI
 import SpeziNotifications
 import SpeziOnboarding
 import SpeziScheduler
@@ -51,6 +53,10 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
             Scheduler()
             
             Notifications()
+            
+            LLMRunner {
+                LLMOpenAIPlatform(configuration: LLMOpenAIPlatformConfiguration(authToken: .constant("...")))
+            }
         }
     }
     
