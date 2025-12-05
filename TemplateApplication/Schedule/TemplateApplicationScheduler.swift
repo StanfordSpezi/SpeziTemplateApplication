@@ -7,11 +7,11 @@
 //
 
 import Foundation
+import class ModelsR4.Questionnaire
+import class ModelsR4.QuestionnaireResponse
 import Spezi
 import SpeziScheduler
 import SpeziViews
-import class ModelsR4.Questionnaire
-import class ModelsR4.QuestionnaireResponse
 
 
 @Observable

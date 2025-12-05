@@ -1,6 +1,6 @@
 version = 1
 
 [[annotations]]
-path = ["TemplateApplication.xcodeproj/**", "TemplateApplication/Resources/Assets.xcassets/**", "TemplateApplication/Supporting Files/**"]
+path = ["TemplateApplication.xcodeproj/**", "TemplateApplication/Resources/**", "TemplateApplication/Supporting Files/**"]
 SPDX-FileCopyrightText = "2025 Stanford University and the project authors (see CONTRIBUTORS.md)"
 SPDX-License-Identifier = "MIT"

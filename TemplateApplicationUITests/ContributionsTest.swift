@@ -16,7 +16,7 @@ final class ContributionsTest: XCTestCase {
         
         let app = XCUIApplication()
         app.launchArguments = ["--setupTestAccount", "--skipOnboarding"]
-        app.deleteAndLaunch(withSpringboardAppName: "TemplateApplication")
+        app.deleteAndLaunch(withSpringboardAppName: "Spezi")
     }
     
     @MainActor
