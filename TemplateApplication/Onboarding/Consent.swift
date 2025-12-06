@@ -12,7 +12,15 @@ import SpeziViews
 import SwiftUI
 
 
+/// Enable consent for your app.
+///
+/// The Consent view allows users to sign a custom markdown ConsentDocument for your app.
+///
 /// - Note: The `OnboardingConsentView` exports the signed consent form as PDF to the Spezi `Standard`, necessitating the conformance of the `Standard` to the `OnboardingConstraint`.
+///
+/// You can learn more about [Spezi Onboarding in the GitHub repository](https://github.com/StanfordSpezi/SpeziOnboarding)
+///
+/// ![A screenshot of the Consent screen](Consent)
 struct Consent: View {
     @Environment(ManagedNavigationStack.Path.self) private var managedNavigationPath
     @Environment(TemplateApplicationStandard.self) private var standard

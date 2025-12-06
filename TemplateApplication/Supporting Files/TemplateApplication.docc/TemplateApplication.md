@@ -18,73 +18,73 @@ The Spezi Template Application demonstrates using the [Spezi](https://github.com
 
 > Tip: Do you want to try out the Spezi Template Application? You can download it to your iOS device using [TestFlight](https://testflight.apple.com/join/ipEezBY1)!
 
-The following screenshots show a wide variety of features based on Spezi Modules that are part of the Spezi Template Application.
+The following screenshots show a wide variety of features based on Spezi Modules that are part of the Spezi Template Application. Click on the links below the screenshots to learn more about the specific Spezi module.
 
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
         @Image(source: "Welcome", alt: "A screen displaying welcome information.") {
-            Welcome View.
+            ``Welcome``
         }
     }
     @Column(size: 1) {
         @Image(source: "InterestingModules", alt: "A screen showing an overview of the modules used in the Spezi Template Application.") {
-            Interesting Modules
+            ``InterestingModules``
         }
     }
     @Column(size: 1) {
         @Image(source: "Consent", alt: "A screen displaying the consent view.") {
-            Consent Signature.
+            ``Consent``
         }
     }
 }
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
         @Image(source: "HealthKitAccess", alt: "HealthKit Onboarding Flow") {
-            HealthKit Access.
+            ``HealthKitPermissions``
         }
     }
     @Column(size: 1) {
         @Image(source: "HealthKitSheet", alt: "Permissions screen of the HealthKit framework") {
-            Granular HealthKit Share Control.
+            ``HealthKitPermissions``
         }
     }
     @Column(size: 1) {
-        @Image(source: "Notifications", alt: "Onboarding screen showing the Notifications permission screen.") {
-            Trigger Local Notifications.
+        @Image(source: "Schedule", alt: "A screen displaying the Scheduler UI.") {
+            ``ScheduleView``
         }
     }
 }
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
-        @Image(source: "Schedule", alt: "A screen displaying the Scheduler UI.") {
-            Schedule Tasks.
+        @Image(source: "Notifications", alt: "Onboarding screen showing the Notifications permission screen.") {
+            ``NotificationPermissions``
         }
     }
     @Column(size: 1) {
         @Image(source: "Questionnaire", alt: "A screen showing a questionnaire using ResearchKit.") {
-            Display Questionnaires.
+            ``ScheduleView``
         }
     }
     @Column(size: 1) {
         @Image(source: "ScheduleComplete", alt: "The scheduler screen showing the completed UI") {
-            Keep Track of Tasks.
+            ``ScheduleView``
         }
     }
 }
 @Row(numberOfColumns: 3) {
     @Column(size: 1) {
         @Image(source: "Contacts", alt: "A screen displaying the Contact UI.") {
-            Contact Information.
-        }
-    }
-    @Column(size: 1) {
-        @Image(source: "Account", alt: "A screen displaying the current user account information.") {
-            Account Overview.
+            ``Contacts``
         }
     }
     @Column(size: 1) {
         @Image(source: "License", alt: "License information to list all used Swift Packages") {
-            License Information.
+            ``AccountSheet``
+        }
+    }
+    @Column(size: 1) {
+        @Image(source: "Account", alt: "A screen displaying the current user account information.") {
+            ``AccountSheet``
         }
     }
 }

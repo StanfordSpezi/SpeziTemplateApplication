@@ -12,6 +12,14 @@ import SpeziViews
 import SwiftUI
 
 
+/// Gain access to HealthKit data.
+///
+/// Customize the HealthKitPermissions view to specify your app's usage of HealthKit data to the user.
+///
+/// You can learn more about [Spezi Onboarding in the GitHub repository](https://github.com/StanfordSpezi/SpeziOnboarding)
+///
+/// ![A screenshot of the HealthKitPermissions screen](HealthKitAccess)
+/// ![A screenshot of the HealthKitSheet screen](HealthKitSheet)
 struct HealthKitPermissions: View {
     @Environment(HealthKit.self) private var healthKit
     @Environment(ManagedNavigationStack.Path.self) private var managedNavigationPath
