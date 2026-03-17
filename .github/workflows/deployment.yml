@@ -107,7 +107,9 @@ jobs:
         run: |
           echo "Injecting Environment Variables In Deployment Workflow ..."
           if [[ -z "${{ inputs.version }}" ]]; then
-            IFS='.' read -r MAJOR MINOR PATCH <<< "${{ steps.get-latest-tag.outputs.tag }}"
+            TAG="${{ steps.get-latest-tag.outputs.tag }}"
+            TAG="${TAG#v}"
+            IFS='.' read -r MAJOR MINOR PATCH <<< "$TAG"
 
             PATCH=$((PATCH + 1))
             NEW_VERSION="${MAJOR}.${MINOR}.${PATCH}"
