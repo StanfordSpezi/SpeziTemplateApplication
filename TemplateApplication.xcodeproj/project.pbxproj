@@ -829,7 +829,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziLicense.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.1.0;
 			};
 		};
 		654AE96C2E999FEF00EBDC7B /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
