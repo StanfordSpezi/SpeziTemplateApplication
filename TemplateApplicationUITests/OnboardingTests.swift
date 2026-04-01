@@ -20,7 +20,8 @@ final class OnboardingTests: XCTestCase {
         let app = XCUIApplication()
         app.resetAuthorizationStatus(for: .health)
         app.launchArguments = ["--showOnboarding"]
-        app.launch()
+        // if FB22386630 is ever fixed, we can skip the delete and instead simply use `resetAuthorizationStatus(for:)`
+        app.deleteAndLaunch(withSpringboardAppName: "Spezi")
     }
     
     
