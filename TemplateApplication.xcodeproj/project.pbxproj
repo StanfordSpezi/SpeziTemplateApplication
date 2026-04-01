@@ -781,7 +781,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziStorage.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.1;
+				minimumVersion = 2.1.4;
 			};
 		};
 		2FE5DC8D29EDD980004B9AB4 /* XCRemoteSwiftPackageReference "SpeziViews" */ = {
@@ -845,7 +845,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziConsent.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.1.1;
+				minimumVersion = 0.1.4;
 			};
 		};
 		80C7B86E2D67DE6F0016BCAF /* XCRemoteSwiftPackageReference "SpeziHealthKit" */ = {
@@ -853,7 +853,7 @@
 			repositoryURL = "https://github.com/StanfordSpezi/SpeziHealthKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.7;
+				minimumVersion = 1.4.0;
 			};
 		};
 		97F466E62A76BBEE005DC9B4 /* XCRemoteSwiftPackageReference "SpeziOnboarding" */ = {
