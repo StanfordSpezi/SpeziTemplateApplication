@@ -10,11 +10,10 @@ import XCTest
 import XCTestExtensions
 
 
-class SchedulerTests: XCTestCase {
+final class SchedulerTests: XCTestCase {
     @MainActor
     override func setUp() async throws {
         continueAfterFailure = false
-        
         let app = XCUIApplication()
         app.launchArguments = ["--skipOnboarding"]
         app.deleteAndLaunch(withSpringboardAppName: "Spezi")

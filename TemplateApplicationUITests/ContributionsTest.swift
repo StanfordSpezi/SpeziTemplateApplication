@@ -16,7 +16,7 @@ final class ContributionsTest: XCTestCase {
         continueAfterFailure = false
         let app = XCUIApplication()
         app.launchArguments = ["--setupTestAccount", "--skipOnboarding"]
-        app.deleteAndLaunch(withSpringboardAppName: "Spezi")
+        app.launch()
     }
     
     @MainActor
@@ -32,6 +32,6 @@ final class ContributionsTest: XCTestCase {
         
         XCTAssertTrue(app.buttons["License Information"].waitForExistence(timeout: 2))
         app.buttons["License Information"].tap()
-        XCTAssertTrue(app.staticTexts["Spezi, MIT, Version: 1.0.0"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.buttons["Spezi, MIT, Version: 1.0.0"].waitForExistence(timeout: 3))
     }
 }

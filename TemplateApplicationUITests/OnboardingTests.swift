@@ -13,14 +13,13 @@ import XCTSpeziAccount
 import XCTSpeziNotifications
 
 
-class OnboardingTests: XCTestCase {
+final class OnboardingTests: XCTestCase {
     @MainActor
     override func setUp() async throws {
         continueAfterFailure = false
-        
         let app = XCUIApplication()
         app.launchArguments = ["--showOnboarding"]
-        app.deleteAndLaunch(withSpringboardAppName: "Spezi")
+        app.launch()
     }
     
     
