@@ -77,8 +77,8 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
     
     private var healthKit: HealthKit {
         HealthKit {
-            CollectSample(.stepCount)
-            CollectSample(.heartRate)
+            CollectSamples(.stepCount)
+            CollectSamples(.heartRate)
         }
     }
 }

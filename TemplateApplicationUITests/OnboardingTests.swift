@@ -13,13 +13,14 @@ import XCTSpeziAccount
 import XCTSpeziNotifications
 
 
-class OnboardingTests: XCTestCase {
+final class OnboardingTests: XCTestCase {
     @MainActor
     override func setUp() async throws {
         continueAfterFailure = false
-        
         let app = XCUIApplication()
+        app.resetAuthorizationStatus(for: .health)
         app.launchArguments = ["--showOnboarding"]
+        // if FB22386630 is ever fixed, we can skip the delete and instead simply use `resetAuthorizationStatus(for:)`
         app.deleteAndLaunch(withSpringboardAppName: "Spezi")
     }
     
