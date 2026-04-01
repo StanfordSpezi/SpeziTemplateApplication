@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import XCTestExtensions
 
 
 final class ContactsTests: XCTestCase {
@@ -20,13 +21,13 @@ final class ContactsTests: XCTestCase {
     
     
     @MainActor
-    func testContacts() async throws {
+    func testContacts() {
         let app = XCUIApplication()
         
         XCTAssertTrue(app.wait(for: .runningForeground, timeout: 2.0))
         
         // Waiting until the setup test accounts actions have been finished & sheets are dismissed.
-        try await Task.sleep(for: .seconds(5))
+        sleep(for: .seconds(5))
         
         XCTAssertTrue(app.tabBars["Tab Bar"].buttons["Contacts"].waitForExistence(timeout: 1))
         app.tabBars["Tab Bar"].buttons["Contacts"].tap()
