@@ -18,6 +18,7 @@ final class OnboardingTests: XCTestCase {
     override func setUp() async throws {
         continueAfterFailure = false
         let app = XCUIApplication()
+        app.resetAuthorizationStatus(for: .health)
         app.launchArguments = ["--showOnboarding"]
         app.launch()
     }
