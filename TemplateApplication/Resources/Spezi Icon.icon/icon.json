@@ -1,0 +1,50 @@
+{
+  "fill" : "automatic",
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "fill" : {
+            "linear-gradient" : [
+              "extended-srgb:1.00000,0.21961,0.23529,1.00000",
+              "extended-srgb:1.00000,0.80000,0.00000,1.00000"
+            ],
+            "orientation" : {
+              "start" : {
+                "x" : 0.12641303302343648,
+                "y" : 0.5
+              },
+              "stop" : {
+                "x" : 1.13490198777139,
+                "y" : 0.5
+              }
+            }
+          },
+          "image-name" : "Spezi.png",
+          "name" : "Spezi",
+          "position" : {
+            "scale" : 0.94,
+            "translation-in-points" : [
+              3,
+              3
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

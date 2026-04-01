@@ -7,6 +7,7 @@
 //
 
 import SpeziOnboarding
+import SpeziViews
 import SwiftUI
 
 
@@ -18,44 +19,42 @@ import SwiftUI
 ///
 /// ![A screenshot of the InterestingModules screen](InterestingModules)
 struct InterestingModules: View {
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
+    @Environment(ManagedNavigationStack.Path.self) private var managedNavigationPath
     
     
     var body: some View {
         SequentialOnboardingView(
             title: "Interesting Modules",
             subtitle: "INTERESTING_MODULES_SUBTITLE",
-            content: [
-                SequentialOnboardingView.Content(
+            steps: [
+                SequentialOnboardingView.Step(
                     title: "Onboarding",
                     description: "INTERESTING_MODULES_AREA1_DESCRIPTION"
                 ),
-                SequentialOnboardingView.Content(
+                SequentialOnboardingView.Step(
                     title: "HL7 FHIR",
                     description: "INTERESTING_MODULES_AREA2_DESCRIPTION"
                 ),
-                SequentialOnboardingView.Content(
+                SequentialOnboardingView.Step(
                     title: "Contact",
                     description: "INTERESTING_MODULES_AREA3_DESCRIPTION"
                 ),
-                SequentialOnboardingView.Content(
+                SequentialOnboardingView.Step(
                     title: "HealthKit Data Source",
                     description: "INTERESTING_MODULES_AREA4_DESCRIPTION"
                 )
             ],
             actionText: "Next",
             action: {
-                onboardingNavigationPath.nextStep()
+                managedNavigationPath.nextStep()
             }
         )
     }
 }
 
 
-#if DEBUG
 #Preview {
-    OnboardingStack {
+    ManagedNavigationStack {
         InterestingModules()
     }
 }
-#endif

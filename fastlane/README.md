@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Build and test
 
+### ios screenshots
+
+```sh
+[bundle exec] fastlane ios screenshots
+```
+
+Screenshots
+
 ### ios codeql
 
 ```sh
@@ -39,6 +47,14 @@ CodeQL
 
 Build app
 
+### ios archive
+
+```sh
+[bundle exec] fastlane ios archive
+```
+
+Archive app
+
 ### ios signin
 
 ```sh
@@ -47,13 +63,13 @@ Build app
 
 Sign in to the App Store Connect API
 
-### ios beta
+### ios deploy
 
 ```sh
-[bundle exec] fastlane ios beta
+[bundle exec] fastlane ios deploy
 ```
 
-Publish a beta release to internal TestFlight testers
+Publish a release to TestFlight or the App Store depending on the environment
 
 ----
 

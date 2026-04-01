@@ -13,7 +13,7 @@ import SwiftUI
 
 struct AccountSheet: View {
     private let dismissAfterSignIn: Bool
-
+    
     @Environment(\.dismiss) var dismiss
     
     @Environment(Account.self) private var account
@@ -41,19 +41,19 @@ struct AccountSheet: View {
                     } header: {
                         AccountSetupHeader()
                     }
-                        .onAppear {
-                            isInSetup = true
+                    .onAppear {
+                        isInSetup = true
+                    }
+                    .toolbar {
+                        if !accountRequired {
+                            closeButton
                         }
-                        .toolbar {
-                            if !accountRequired {
-                                closeButton
-                            }
-                        }
+                    }
                 }
             }
         }
     }
-
+    
     @ToolbarContentBuilder private var closeButton: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
             Button("Close") {
@@ -61,14 +61,14 @@ struct AccountSheet: View {
             }
         }
     }
-
+    
+    
     init(dismissAfterSignIn: Bool = true) {
         self.dismissAfterSignIn = dismissAfterSignIn
     }
 }
 
 
-#if DEBUG
 #Preview("AccountSheet") {
     var details = AccountDetails()
     details.userId = "lelandstanford@stanford.edu"
@@ -86,4 +86,3 @@ struct AccountSheet: View {
             AccountConfiguration(service: InMemoryAccountService())
         }
 }
-#endif

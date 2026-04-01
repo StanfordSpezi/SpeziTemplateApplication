@@ -8,26 +8,41 @@
 
 import SpeziQuestionnaire
 import SpeziScheduler
+import SpeziViews
 import SwiftUI
 
 
 struct EventView: View {
     private let event: Event
-
+    
     @Environment(TemplateApplicationStandard.self) private var standard
     @Environment(\.dismiss) private var dismiss
-
+    
+    @State private var viewState: ViewState = .idle
+    
+    
     var body: some View {
         if let questionnaire = event.task.questionnaire {
             QuestionnaireView(questionnaire: questionnaire) { result in
-                dismiss()
-
-                guard case let .completed(response) = result else {
-                    return // user cancelled the task
+                guard case let .completed(response) = result else { // user cancelled the task
+                    dismiss()
+                    return
                 }
-
-                event.complete()
-                await standard.add(response: response)
+                
+                do {
+                    _ = try event.complete()
+                    await standard.add(response: response, for: questionnaire)
+                    dismiss()
+                } catch {
+                    viewState = .error(AnyLocalizedError(error: error))
+                }
+            }
+            .viewStateAlert(state: $viewState)
+            .onChange(of: viewState) { oldViewState, newViewState in
+                guard case .error = oldViewState, newViewState == .idle else {
+                    return
+                }
+                dismiss()
             }
         } else {
             NavigationStack {
@@ -36,15 +51,16 @@ struct EventView: View {
                     systemImage: "list.bullet.clipboard",
                     description: Text("This type of event is currently unsupported. Please contact the developer of this app.")
                 )
-                    .toolbar {
-                        Button("Close") {
-                            dismiss()
-                        }
+                .toolbar {
+                    Button("Close") {
+                        dismiss()
                     }
+                }
             }
         }
     }
-
+    
+    
     init(_ event: Event) {
         self.event = event
     }

@@ -31,13 +31,12 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
                     configuration: [
                         .requires(\.userId),
                         .requires(\.name),
-
                         // additional values stored using the `FirestoreAccountStorage` within our Standard implementation
                         .collects(\.genderIdentity),
                         .collects(\.dateOfBirth)
                     ]
                 )
-
+                
                 firestore
                 if FeatureFlags.useFirebaseEmulator {
                     FirebaseStorageConfiguration(emulatorSettings: (host: "localhost", port: 9199))
@@ -45,19 +44,16 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
                     FirebaseStorageConfiguration()
                 }
             }
-
-            if HKHealthStore.isHealthDataAvailable() {
-                healthKit
-            }
+            
+            healthKit
             
             TemplateApplicationScheduler()
             Scheduler()
-            OnboardingDataSource()
-
+            
             Notifications()
         }
     }
-
+    
     private var accountEmulator: (host: String, port: Int)? {
         if FeatureFlags.useFirebaseEmulator {
             (host: "localhost", port: 9099)
@@ -65,7 +61,6 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
             nil
         }
     }
-
     
     private var firestore: Firestore {
         let settings = FirestoreSettings()
@@ -80,13 +75,10 @@ class TemplateApplicationDelegate: SpeziAppDelegate {
         )
     }
     
-    
     private var healthKit: HealthKit {
         HealthKit {
-            CollectSample(
-                HKQuantityType(.stepCount),
-                deliverySetting: .anchorQuery(.automatic)
-            )
+            CollectSamples(.stepCount)
+            CollectSamples(.heartRate)
         }
     }
 }

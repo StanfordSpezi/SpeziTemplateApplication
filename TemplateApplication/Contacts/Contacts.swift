@@ -55,9 +55,9 @@ struct Contacts: View {
             ]
         )
     ]
-
+    
     @Environment(Account.self) private var account: Account?
-
+    
     @Binding var presentingAccount: Bool
     
     
@@ -80,8 +80,6 @@ struct Contacts: View {
 }
 
 
-#if DEBUG
 #Preview {
     Contacts(presentingAccount: .constant(false))
 }
-#endif

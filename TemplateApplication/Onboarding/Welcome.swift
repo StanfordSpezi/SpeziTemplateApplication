@@ -7,6 +7,7 @@
 //
 
 import SpeziOnboarding
+import SpeziViews
 import SwiftUI
 
 
@@ -18,14 +19,14 @@ import SwiftUI
 ///
 /// ![A screenshot of the Welcome screen](Welcome)
 struct Welcome: View {
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
+    @Environment(ManagedNavigationStack.Path.self) private var managedNavigationPath
     
     var body: some View {
         OnboardingView(
             title: "Spezi Template Application",
             subtitle: "WELCOME_SUBTITLE",
             areas: [
-                OnboardingInformationView.Content(
+                OnboardingInformationView.Area(
                     icon: {
                         Image(systemName: "apps.iphone")
                             .accessibilityHidden(true)
@@ -33,7 +34,7 @@ struct Welcome: View {
                     title: "The Spezi Framework",
                     description: "WELCOME_AREA1_DESCRIPTION"
                 ),
-                OnboardingInformationView.Content(
+                OnboardingInformationView.Area(
                     icon: {
                         Image(systemName: "shippingbox.fill")
                             .accessibilityHidden(true)
@@ -41,7 +42,7 @@ struct Welcome: View {
                     title: "Swift Package Manager",
                     description: "WELCOME_AREA2_DESCRIPTION"
                 ),
-                OnboardingInformationView.Content(
+                OnboardingInformationView.Area(
                     icon: {
                         Image(systemName: "list.bullet.clipboard.fill")
                             .accessibilityHidden(true)
@@ -52,18 +53,16 @@ struct Welcome: View {
             ],
             actionText: "Learn More",
             action: {
-                onboardingNavigationPath.nextStep()
+                managedNavigationPath.nextStep()
             }
         )
-            .padding(.top, 24)
+        .padding(.top, 24)
     }
 }
 
 
-#if DEBUG
 #Preview {
-    OnboardingStack {
+    ManagedNavigationStack {
         Welcome()
     }
 }
-#endif

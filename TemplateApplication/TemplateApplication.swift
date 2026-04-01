@@ -16,7 +16,7 @@ import SwiftUI
 struct TemplateApplication: App {
     @UIApplicationDelegateAdaptor(TemplateApplicationDelegate.self) var appDelegate
     @AppStorage(StorageKeys.onboardingFlowComplete) var completedOnboardingFlow = false
-
+    
     
     var body: some Scene {
         WindowGroup {
@@ -27,11 +27,11 @@ struct TemplateApplication: App {
                     EmptyView()
                 }
             }
-                .sheet(isPresented: !$completedOnboardingFlow) {
-                    OnboardingFlow()
-                }
-                .testingSetup()
-                .spezi(appDelegate)
+            .sheet(isPresented: !$completedOnboardingFlow) {
+                OnboardingFlow()
+            }
+            .testingSetup()
+            .spezi(appDelegate)
         }
     }
 }

@@ -23,32 +23,32 @@ import SwiftUI
 struct ScheduleView: View {
     @Environment(Account.self) private var account: Account?
     @Environment(TemplateApplicationScheduler.self) private var scheduler: TemplateApplicationScheduler
-
+    
     @State private var presentedEvent: Event?
     @Binding private var presentingAccount: Bool
-
+    
     
     var body: some View {
         @Bindable var scheduler = scheduler
-
+        
         NavigationStack {
-            TodayList { event in
+            EventScheduleList { event in
                 InstructionsTile(event) {
                     EventActionButton(event: event, "Start Questionnaire") {
                         presentedEvent = event
                     }
                 }
             }
-                .navigationTitle("Schedule")
-                .viewStateAlert(state: $scheduler.viewState)
-                .sheet(item: $presentedEvent) { event in
-                    EventView(event)
+            .navigationTitle("Schedule")
+            .viewStateAlert(state: $scheduler.viewState)
+            .sheet(item: $presentedEvent) { event in
+                EventView(event)
+            }
+            .toolbar {
+                if account != nil {
+                    AccountButton(isPresented: $presentingAccount)
                 }
-                .toolbar {
-                    if account != nil {
-                        AccountButton(isPresented: $presentingAccount)
-                    }
-                }
+            }
         }
     }
     
@@ -59,14 +59,12 @@ struct ScheduleView: View {
 }
 
 
-#if DEBUG
 #Preview {
     @Previewable @State var presentingAccount = false
-
+    
     ScheduleView(presentingAccount: $presentingAccount)
         .previewWith(standard: TemplateApplicationStandard()) {
             TemplateApplicationScheduler()
             AccountConfiguration(service: InMemoryAccountService())
         }
 }
-#endif
