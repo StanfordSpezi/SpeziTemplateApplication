@@ -143,15 +143,3 @@ jobs:
       setupsigning: true
       fastlanelane: deploy environment:"${{ needs.determineenvironment.outputs.environment }}" versionname:"${{ needs.vars.outputs.version }}" releasenotes:"${{ inputs.releasenotes }}" ${{ inputs.buildnumber && format('buildnumber:"{0}"', inputs.buildnumber) || '' }}
     secrets: inherit
-  deployfirebase:
-    name: Deploy Firebase Project
-    needs: [determineenvironment, vars, iosapptestflightdeployment]
-    uses: StanfordBDHG/.github/.github/workflows/firebase-deploy.yml@v2
-    permissions:
-      contents: read
-    with:
-      path: 'firebase'
-      arguments: '--debug --project ${{ needs.vars.outputs.firebaseprojectid }}'
-      environment: ${{ needs.determineenvironment.outputs.environment }}
-    secrets:
-      GOOGLE_APPLICATION_CREDENTIALS_BASE64: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_BASE64 }}
