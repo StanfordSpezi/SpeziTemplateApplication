@@ -1,0 +1,213 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi"
+          }
+        }
+      }
+    },
+    "NSCameraUsageDescription" : {
+      "comment" : "Privacy - Camera Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Nachricht sollte niemals erscheinen. Bitte passen Sie diese an, wenn Sie die Kamera verwenden. Wir müssen dies hier einfügen, da ResearchKit die Möglichkeit hat, es zu verwenden, und das Weglassen einen Fehler bei AppStore Connect verursacht."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This message should never appear. Please adjust this when you start using camera information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det här meddelandet ska aldrig visas. Vänligen justera detta när du börjar använda kamerainformation. Vi måste lägga in detta här eftersom ResearchKit har möjlighet att använda det och att inte lägga in det här returnerar ett fel på AppStore Connect."
+          }
+        }
+      }
+    },
+    "NSHealthShareUsageDescription" : {
+      "comment" : "Privacy - Health Share Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Spezi Template Application verwendet die Schrittzahl, um die Integration von Spezi mit HealthKit zu demonstrieren."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Spezi Template Application uses the step count to demonstrate Spezi's integration with HealthKit."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi Template Application använder stegräknaren för att demonstrera Spezis integration med HealthKit."
+          }
+        }
+      }
+    },
+    "NSHealthUpdateUsageDescription" : {
+      "comment" : "Privacy - Health Update Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Spezi Template Application verwendet die Schrittzahl, um die Integration von Spezi mit HealthKit zu demonstrieren."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Spezi Template Application uses the step count to demonstrate Spezi's integration with HealthKit."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spezi Template Application använder stegräknaren för att demonstrera Spezis integration med HealthKit."
+          }
+        }
+      }
+    },
+    "NSLocationAlwaysAndWhenInUseUsageDescription" : {
+      "comment" : "Privacy - Location Always and When In Use Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Nachricht sollte niemals erscheinen. Bitte passen Sie diese an, wenn Sie Standortinformationen verwenden. Wir müssen dies hier einfügen, da ResearchKit die Möglichkeit hat, es zu verwenden, und das Weglassen einen Fehler bei AppStore Connect verursacht."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This message should never appear. Please adjust this when you start using location information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det här meddelandet ska aldrig visas. Vänligen justera detta när du börjar använda platsinformation. Vi måste lägga in detta här eftersom ResearchKit har möjlighet att använda det och att inte lägga in det här returnerar ett fel på AppStore Connect."
+          }
+        }
+      }
+    },
+    "NSLocationWhenInUseUsageDescription" : {
+      "comment" : "Privacy - Location When In Use Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Nachricht sollte niemals erscheinen. Bitte passen Sie diese an, wenn Sie Standortinformationen verwenden. Wir müssen dies hier einfügen, da ResearchKit die Möglichkeit hat, es zu verwenden, und das Weglassen einen Fehler bei AppStore Connect verursacht."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This message should never appear. Please adjust this when you start using location information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det här meddelandet ska aldrig visas. Vänligen justera detta när du börjar använda platsinformation. Vi måste lägga in detta här eftersom ResearchKit har möjlighet att använda det och att inte lägga in det här returnerar ett fel på AppStore Connect."
+          }
+        }
+      }
+    },
+    "NSMicrophoneUsageDescription" : {
+      "comment" : "Privacy - Microphone Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Nachricht sollte niemals erscheinen. Bitte passen Sie diese an, wenn Sie Mikrofoninformationen verwenden. Wir müssen dies hier einfügen, da ResearchKit die Möglichkeit hat, es zu verwenden, und das Weglassen einen Fehler bei AppStore Connect verursacht."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This message should never appear. Please adjust this when you start using microphone information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det här meddelandet ska aldrig visas. Vänligen justera detta när du börjar använda mikrofoninformation. Vi måste lägga in detta här eftersom ResearchKit har möjlighet att använda det och att inte lägga in det här returnerar ett fel på AppStore Connect."
+          }
+        }
+      }
+    },
+    "NSMotionUsageDescription" : {
+      "comment" : "Privacy - Motion Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Nachricht sollte niemals erscheinen. Bitte passen Sie diese an, wenn Sie Bewegungsinformationen verwenden. Wir müssen dies hier einfügen, da ResearchKit die Möglichkeit hat, es zu verwenden, und das Weglassen einen Fehler bei AppStore Connect verursacht."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This message should never appear. Please adjust this when you start using motion information. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det här meddelandet ska aldrig visas. Vänligen justera detta när du börjar använda rörelseinformation. Vi måste lägga in detta här eftersom ResearchKit har möjlighet att använda det och att inte lägga in det här returnerar ett fel på AppStore Connect."
+          }
+        }
+      }
+    },
+    "NSSpeechRecognitionUsageDescription" : {
+      "comment" : "Privacy - Speech Recognition Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Nachricht sollte niemals erscheinen. Bitte passen Sie diese an, wenn Sie Spracherkennung verwenden. Wir müssen dies hier einfügen, da ResearchKit die Möglichkeit hat, es zu verwenden, und das Weglassen einen Fehler bei AppStore Connect verursacht."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This message should never appear. Please adjust this when you start using speech recognition. We have to put this in here as ResearchKit has the possibility to use it and not putting it here returns an error on AppStore Connect."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det här meddelandet ska aldrig visas. Vänligen justera detta när du börjar använda taligenkänning. Vi måste lägga in detta här eftersom ResearchKit har möjlighet att använda det och att inte lägga in det här returnerar ett fel på AppStore Connect."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
