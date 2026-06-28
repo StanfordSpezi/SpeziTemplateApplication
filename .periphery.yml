@@ -9,3 +9,7 @@
 project: TemplateApplication.xcodeproj
 schemes:
 - TemplateApplication
+targets:
+- TemplateApplication
+- TemplateApplicationTests
+- TemplateApplicationUITests
