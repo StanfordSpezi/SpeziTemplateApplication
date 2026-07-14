@@ -10,22 +10,45 @@ import Foundation
 import class ModelsR4.Questionnaire
 import class ModelsR4.QuestionnaireResponse
 import Spezi
+import SpeziAccount
 import SpeziScheduler
 import SpeziViews
 
 
+@MainActor
 @Observable
 final class TemplateApplicationScheduler: Module, DefaultInitializable, EnvironmentAccessible {
     @Dependency(Scheduler.self) @ObservationIgnored private var scheduler
-    
-    @MainActor var viewState: ViewState = .idle
-    
-    
-    init() {}
-    
-    
-    /// Add or update the current list of task upon app startup.
+    @Dependency(Account.self) @ObservationIgnored private var account: Account?
+
+    var viewState: ViewState = .idle
+
+    /// Whether the app gates its content behind a user account.
+    ///
+    /// When `false` (e.g. `--disableFirebase` or `--skipOnboarding`), there is no login step, so tasks are always scheduled.
+    private var requiresAccount: Bool {
+        !FeatureFlags.disableFirebase && !FeatureFlags.skipOnboarding
+    }
+
+
+    nonisolated init() {}
+
+
     func configure() {
+        // Only schedule tasks when there is an active user context: either the app doesn't require an account,
+        // or a user is currently signed in. Login/logout transitions are forwarded from `TemplateApplicationStandard`
+        // so that a logged-out user does not keep receiving notifications.
+        // See https://github.com/StanfordSpezi/SpeziTemplateApplication/issues/57.
+        if !requiresAccount || account?.signedIn == true {
+            createOrUpdateTasks()
+        }
+    }
+
+    /// Creates or updates the app's scheduled tasks.
+    ///
+    /// This is the single source of truth for the app's schedule: add new tasks here and they are automatically
+    /// (re)scheduled when a user signs in and cleared when they sign out — no other changes required.
+    func createOrUpdateTasks() {
         do {
             try scheduler.createOrUpdateTask(
                 id: "social-support-questionnaire",
@@ -38,6 +61,19 @@ final class TemplateApplicationScheduler: Module, DefaultInitializable, Environm
             }
         } catch {
             viewState = .error(AnyLocalizedError(error: error, defaultErrorDescription: "Failed to create or update scheduled tasks."))
+        }
+    }
+
+    /// Removes all scheduled tasks and any queued notifications, e.g. when the user logs out.
+    ///
+    /// Clearing every scheduled task (instead of specific identifiers) means tasks added to
+    /// ``createOrUpdateTasks()`` are cleaned up automatically, without any additional bookkeeping here.
+    func cancelAllTasks() {
+        do {
+            let tasks = try scheduler.queryTasks(for: Date.distantPast..<Date.distantFuture)
+            try scheduler.deleteTasks(tasks)
+        } catch {
+            viewState = .error(AnyLocalizedError(error: error, defaultErrorDescription: "Failed to clear scheduled tasks."))
         }
     }
 }

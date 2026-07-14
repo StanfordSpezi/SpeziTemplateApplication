@@ -26,8 +26,9 @@ actor TemplateApplicationStandard: Standard,
                                    HealthKitConstraint,
                                    AccountNotifyConstraint {
     @Application(\.logger) private var logger
-    
+
     @Dependency(FirebaseConfiguration.self) private var configuration
+    @Dependency(TemplateApplicationScheduler.self) private var scheduler
     
     
     init() {}
@@ -101,12 +102,21 @@ actor TemplateApplicationStandard: Standard,
     }
     
     func respondToEvent(_ event: AccountNotifications.Event) async {
-        if case let .deletingAccount(accountId) = event {
+        switch event {
+        case let .deletingAccount(accountId):
             do {
                 try await configuration.userDocumentReference(for: accountId).delete()
             } catch {
                 logger.error("Could not delete user document: \(error)")
             }
+        case .associatedAccount:
+            // A user signed in (or a stored session was restored): (re)create their scheduled tasks.
+            await scheduler.createOrUpdateTasks()
+        case .disassociatingAccount:
+            // A user signed out or their account is being deleted: clear the schedule and its queued notifications.
+            await scheduler.cancelAllTasks()
+        case .detailsChanged:
+            break
         }
     }
     
