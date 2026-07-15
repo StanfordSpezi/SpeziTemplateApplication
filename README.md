@@ -18,6 +18,19 @@ This repository contains the Spezi Template Application.
 It demonstrates using the [Spezi](https://github.com/StanfordSpezi/Spezi) ecosystem and builds on top of the [Stanford Biodesign Digital Health Template Application](https://github.com/StanfordBDHG/TemplateApplication).
 
 
+## Quick Start
+
+Want to try it in a couple of minutes, with no backend to set up?
+
+1. Clone the repository and open `TemplateApplication.xcodeproj` in Xcode.
+2. Select the `TemplateApplication` scheme and an iPhone simulator.
+3. Run (⌘R). The scheme runs with `--disableFirebase` by default, so **no Firebase account or emulator is required**.
+
+To use the full backend (login and data upload), follow the [Setup guide](<TemplateApplication/Supporting Files/TemplateApplication.docc/Setup.md>) to start the Firebase Emulator Suite.
+
+**Building with an AI coding agent?** This repo ships an [`AGENTS.md`](AGENTS.md) (and [`CLAUDE.md`](CLAUDE.md)) that orient Claude Code, Codex, Cursor, and other agents to how the project is structured, run, and tested. For product and clinical planning, install the [SpeziVibe](https://github.com/StanfordSpezi/SpeziVibe) skills into your agent with `npx skills add StanfordSpezi/SpeziVibe --all` — their planning briefs and implementation plan drop straight into this template for you to build.
+
+
 ## Application Content
 
 The following screenshots show a wide variety of features based on Spezi Modules that are part of the Spezi Template Application.
