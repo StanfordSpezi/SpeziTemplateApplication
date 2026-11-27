@@ -213,8 +213,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziContact.git",
       "state" : {
-        "revision" : "f44b915dab50a862e7152cc77081ba9cb743fca4",
-        "version" : "1.0.3"
+        "revision" : "9551af0162b67356bdf5a9b13a789d8afd1f3600",
+        "version" : "1.1.0"
       }
     },
     {
@@ -303,8 +303,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordSpezi/SpeziViews.git",
       "state" : {
-        "revision" : "236fd063407aaba2a34f3f61b3034dd3a01f22c5",
-        "version" : "1.12.14"
+        "revision" : "6261beceb4c963f6e92c7b62d50da30ec63d12a1",
+        "version" : "1.13.0"
       }
     },
     {
@@ -447,8 +447,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StanfordBDHG/XCTHealthKit.git",
       "state" : {
-        "revision" : "f2e956b4d5e09a6b396c8f5bb38aaba05eaa35a1",
-        "version" : "1.2.6"
+        "revision" : "43eecdefdc1014e3312173e1ce77b6b22c5c19d6",
+        "version" : "1.2.8"
       }
     },
     {

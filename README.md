@@ -12,7 +12,7 @@ SPDX-License-Identifier: MIT
 
 [![Deployment](https://github.com/StanfordSpezi/SpeziTemplateApplication/actions/workflows/deployment.yml/badge.svg)](https://github.com/StanfordSpezi/SpeziTemplateApplication/actions/workflows/deployment.yml)
 [![codecov](https://codecov.io/gh/StanfordSpezi/SpeziTemplateApplication/branch/main/graph/badge.svg?token=9fvSAiFJUY)](https://codecov.io/gh/StanfordSpezi/SpeziTemplateApplication)
-[![DOI](https://zenodo.org/badge/589846478.svg)](https://zenodo.org/badge/latestdoi/589846478)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7600783.svg)](https://doi.org/10.5281/zenodo.7600783)
 
 This repository contains the Spezi Template Application.
 It demonstrates using the [Spezi](https://github.com/StanfordSpezi/Spezi) ecosystem and builds on top of the [Stanford Biodesign Digital Health Template Application](https://github.com/StanfordBDHG/TemplateApplication).
