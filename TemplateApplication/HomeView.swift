@@ -20,6 +20,7 @@ struct HomeView: View {
     @AppStorage(StorageKeys.homeTabSelection) private var selectedTab = Tabs.schedule
     @AppStorage(StorageKeys.tabViewCustomization) private var tabViewCustomization = TabViewCustomization()
     
+    // periphery:ignore - only read through its projected value (`$presentingAccount`), which some Xcode versions don't record in the index
     @State private var presentingAccount = false
     
     

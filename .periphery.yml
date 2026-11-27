@@ -9,7 +9,6 @@
 project: TemplateApplication.xcodeproj
 schemes:
 - TemplateApplication
-targets:
-- TemplateApplication
-- TemplateApplicationTests
-- TemplateApplicationUITests
+# Whether a `periphery:ignore` is needed depends on the Xcode version (some record projected-value uses
+# like `$presentingAccount` in the index and some don't), so don't report ignore comments that turn out to be redundant.
+superfluous_ignore_comments: false
